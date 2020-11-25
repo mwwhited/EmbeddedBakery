@@ -1,0 +1,51 @@
+-U lfuse:w:0x62:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m
+
+avrdude.exe -c avrisp -p m328p -P COM13 -b 19200 -U lfuse:r:-i -v
+
+
+avrdude -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -vvvv -patmega328p -carduino -PCOM13 -b19200 -e -Ulock:w:0x3F:m -Uefuse:w:0x05:m -Uhfuse:w:0xDA:m -Ulfuse:w:0xE2:m 
+
+
+avrdude -vvvv -patmega328p -c arduino -PCOM13 -b19200 -e -Ulock:w:0x3F:m -Uefuse:w:0x05:m -Uhfuse:w:0xDA:m -Ulfuse:w:0xE2:m 
+avrdude -vvvv -patmega328p -c avrisp  -PCOM13 -b19200 -e -Ulock:w:0x3F:m -Uefuse:w:0x05:m -Uhfuse:w:0xDA:m -Ulfuse:w:0xE2:m 
+
+
+
+
+"C:\Program Files (x86)\Arduino\hardware\arduino\avr\bootloaders\atmega\ATmegaBOOT_168_atmega328.hex"
+
+
+./avrdude -p m328p -C /Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -c usbtiny -F -e -U flash:w:/Applications/Arduino22.app/Contents/Resources/Java/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_atmega328.hex
+
+avrdude -p m328p -c avrisp -F -e -U flash:w:"C:\Program Files (x86)\Arduino\hardware\arduino\avr\bootloaders\atmega\ATmegaBOOT_168_atmega328.hex"
+
+REM --- READ FUSES ---
+avrdude.exe -c avrisp -p m328p -P COM13 -b 19200 -U lfuse:r:-i -v
+
+avrdude -v -p m328p -c avrisp  -PCOM13 -b19200 -e -Ulock:w:0x3F:m -Uefuse:w:0x05:m -Uhfuse:w:0xDA:m -Ulfuse:w:0xE2:m
+
+REM -- Write boot loader --
+avrdude -p m328p -P COM13 -b 19200 -c avrisp -F -e -U flash:w:"..\..\..\arduino\avr\bootloaders\atmega\ATmegaBOOT_168_atmega328.hex"
+
+avrdude -p m328p -P COM13 -b 19200 -c avrisp -F -e -U flash:w:"..\..\..\arduino\avr\bootloaders\optiboot\optiboot_atmega328.hex" -vvvv
+
+
+
+
+
+
+REM Call avrdude with the relevant parameters to burn the ATMEGA328P-PU Bootloader to the chip
+
+REM paste all of this into a .bat file and run it.
+REM The fuse settings work.
+"C:\Program Files\arduino-1.6.5-r5\hardware\tools\avr\bin\avrdude" "-CC:\Program Files\arduino-1.6.5-r5/hardware/tools/avr/etc/avrdude.conf" -v -patmega328p -cstk500v2 -Pusb "-Uflash:w:C:\Program Files\arduino-1.6.5-r5\hardware\arduino\avr/bootloaders/optiboot/optiboot_atmega328.hex:i" -Ulock:w:0x0F:m -U lfuse:w:0xff:m -U hfuse:w:0xde:m -U efuse:w:0x05:m
+
+@echo Bootloader successfully burnt. Please input the COM Port to use (e.g. 2):
+@set /p ArduinoCOMPort= COM
+
+REM Call avrdude to upload an HEX file to the ATMEGA chip using the bootloader we previously burned
+REM To change the flashed file, simply modify the -Uflash parameter:
+REM -Uflash:w:FILE.hex:i
+"C:\Program Files\arduino-1.6.5-r5\hardware\tools\avr\bin\avrdude" "-CC:\Program Files\arduino-1.6.5-r5/hardware/tools/avr/etc/avrdude.conf" -v -patmega328p -carduino -PCOM%ArduinoCOMPort% -b115200 -D -Uflash:w:MyProg.hex:i
+@echo Success.
+@pause
