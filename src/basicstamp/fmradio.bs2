@@ -1,0 +1,15 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+SerialOut   PIN 0
+SerialClk   PIN 1
+ChipSelect  PIN 2
+
+OUTPUT SerialOut
+OUTPUT SerialClk
+OUTPUT ChipSelect
+
+ChipSelect = 0
+SHIFTOUT SerialOut, SerialClk, MSBFIRST, [180\8, 128\8] '0xB480
+ChipSelect = 1
+

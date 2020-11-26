@@ -1,0 +1,66 @@
+'{$STAMP BS2} 'I2C test program. 27/4/2003 Ben Lennard
+
+'Bit Bashing I2C on a Parallax BS2
+'Write to a Matrix Orbital LCD via I2C on a BS2
+
+'CONSTANTS
+SDA CON 0 'I2C Data line
+SCL CON 1 'I2C Clock line
+
+'VARIABLES
+ack VAR Bit 'Acknowledge from the I2C bus
+I2C_data VAR Byte 'Data to/from the I2C bus
+
+Main:
+  PAUSE 1000 'wait for init
+
+  GOSUB StartI2C
+
+  I2C_data = %11000000 'MO Display address for WRITING to
+  GOSUB Write_data
+
+  I2C_data = %01000000       '1
+  GOSUB Write_data
+
+  I2C_data = %00000000       '2
+  GOSUB Write_data
+
+  I2C_data = %10000000       '3
+  GOSUB Write_data
+
+  I2C_data = %00001000       '4
+  GOSUB Write_data
+
+  I2C_data = %10000000       '5
+  GOSUB Write_data
+
+  GOSUB StopI2C
+END
+
+'^^^^^^^^^^^^^^ I2C SUBROUTINES ^^^^^^^^^^^^^^
+
+'Start Procedure. Set start condition on bus: SDA Hi-Lo while SCL Hi
+StartI2C:
+  HIGH SDA
+  HIGH SCL
+  LOW SDA
+  LOW SCL
+RETURN
+
+'Stop Procedure. Set stop condition on bus: SDA Lo-Hi while SCL Hi
+StopI2C:
+  LOW SDA
+  HIGH SCL
+  HIGH SDA
+RETURN
+
+'Write Address/Data Procedure
+Write_data:
+  SHIFTOUT SDA, SCL, MSBFIRST, [I2C_data]
+
+
+  SHIFTIN SDA, SCL, [ack]
+  DEBUG
+RETURN
+
+'^^^^^^^^^^^^^^ I2C SUBROUTINES ^^^^^^^^^^^^^^

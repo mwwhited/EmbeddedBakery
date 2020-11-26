@@ -1,0 +1,57 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+SerialOut   PIN   0
+SerialIn    PIN   1
+SerialClk   PIN   2
+ChipSelect  PIN   3
+DataRequest PIN   4
+Reset       PIN   5
+
+ReturnVal   VAR   Word
+i           VAR   Nib
+test        VAR   Byte
+init        VAR   Word
+
+test = 126
+init = 3360
+
+OUTPUT Reset
+OUTPUT ChipSelect
+INPUT DataRequest
+ReturnVal = 255
+
+DEBUG "Reset Chip...", CR
+Reset = 1
+PAUSE 500
+DEBUG "Boot Chip....", CR
+Reset = 0
+PAUSE 1000
+
+DEBUG "Starting.....", CR
+
+'=========================================================================
+ChipSelect = 0
+
+SHIFTOUT SerialOut, SerialClk, MSBFIRST, [2\8, 0\8, init\16] '3104
+DEBUG "Write........0x00,", HEX init, CR
+ChipSelect = 1
+
+'=========================================================================
+'FOR i = 0 TO 15
+'  ChipSelect = 0
+'  SHIFTOUT  SerialOut, SerialClk, MSBFIRST, [3, i]
+'  SHIFTIN   SerialIn,  SerialClk, MSBPRE, [ReturnVal\16]
+'  DEBUG "Read.........", DEC i, "_", DEC ReturnVal, "_", DEC DataRequest, CR
+'  DO WHILE DataRequest = 0
+'  LOOP
+'  ChipSelect = 1
+'NEXT
+
+'=========================================================================
+DEBUG "Sine Test....", HEX test, CR
+ChipSelect = 0
+SHIFTOUT SerialOut, SerialClk, MSBFIRST, [83\8, 239\8, 110\8, test\8, 0\8, 0\8, 0\8, 0\8]
+DO WHILE DataRequest = 0
+LOOP
+ChipSelect = 1

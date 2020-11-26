@@ -1,0 +1,82 @@
+' {$STAMP BS2}
+'AI for Phase 1
+'Written by Matthew Whited
+'Alpha release - v0.1 - 12/29/2001
+
+'irpd    left   pin0
+'irpd    right   pin1
+'irpd    signal  pin2
+
+'h-bridge  b1  pin3  left motor
+'h-bridge  b2  pin4  left motor
+'h-bridge  a1  pin5  right motor
+'h-bridge  a2  pin6  right motor
+
+'LED      pin7
+
+templ VAR Bit
+tempr VAR Bit
+action VAR Nib
+
+PAUSE 1000
+
+start:
+    PAUSE 750
+
+    'test right
+    HIGH 1: PAUSE 5
+    LOW 1: PAUSE 5
+    HIGH 1: PAUSE 5
+    tempr = IN2
+    LOW 1
+
+    'test left
+    HIGH 0: PAUSE 5
+    LOW 0: PAUSE 5
+    HIGH 0:PAUSE 5
+    templ = IN2
+    LOW 0
+
+    action = 0
+        IF templ=1 THEN cont1
+        action=action+1
+cont1:
+        IF tempr=1 THEN cont2
+        action=action+2
+cont2:
+
+    BRANCH action, [ forward, turn_r, turn_l, backup ]
+
+GOTO start
+
+forward:
+    LOW 3
+    LOW 6
+    HIGH 5
+    HIGH 4
+    LOW 7
+GOTO start
+
+turn_r:
+    LOW 3
+    LOW 5
+    HIGH 4
+    HIGH 6
+    LOW 7
+GOTO start
+
+turn_l:
+    LOW 4
+    LOW 6
+    HIGH 3
+    HIGH 5
+    LOW 7
+GOTO start
+
+backup:
+    LOW 4
+    LOW 5
+    HIGH 3
+    HIGH 6
+    HIGH 7
+GOTO start

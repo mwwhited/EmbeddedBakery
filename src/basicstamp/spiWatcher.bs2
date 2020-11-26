@@ -1,0 +1,30 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+clk PIN 0
+so  PIN 1
+si  PIN 2
+pi  PIN 3
+cs  PIN 4
+
+INPUT pi
+INPUT cs
+returnVal VAR Byte
+
+DEBUG "Start", CR
+DO
+
+  DO WHILE cs
+  LOOP
+
+  IF pi THEN
+    SHIFTIN   si,  clk, MSBPRE, [returnVal\8]
+  ELSE
+    SHIFTIN   so,  clk, MSBPRE, [returnVal\8]
+  ENDIF
+
+'  IF (returnVal <> 255 AND returnVal <> 0) THEN
+    DEBUG DEC pi, " ", HEX returnVal, CR
+'  ENDIF
+
+LOOP

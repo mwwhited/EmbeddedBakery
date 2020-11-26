@@ -1,0 +1,308 @@
+' PROGRAM:    (1 Joystick Drive)
+' Written by: Matthew Whited
+' Date:       2003 Jan. 18
+'
+' {$PBASIC 2.5}
+' {$STAMP BS2SX}
+
+
+'=============================================================================================================
+'========== DECLARE VARIABLES ================================================================================
+'=============================================================================================================
+p1_x		VAR byte	'Port 1, X-axis on Joystick
+p1_y		VAR byte	'Port 1, Y-axis on Joystick
+p3_y		VAR byte	'Port 3, Y-Axis on Joystick
+
+oi_swA		VAR byte	'OI Digital Switch Inputs 1 thru 8
+
+rc_swA		VAR byte	'RC Digital Inputs 1 thru 8
+
+relayA		VAR byte
+
+packet_num	VAR byte
+PB_mode		VAR byte
+drive_R		VAR byte	'Drive Right (PWM1)
+drive_L		VAR byte	'Drive Left (PWM2)
+
+'=============================================================================================================
+'========== DEFINE ALIASES ===================================================================================
+'=============================================================================================================
+
+p1_sw_trig	VAR oi_swA.bit0	'Pneu Toggle
+p1_sw_top	VAR oi_swA.bit1
+p1_sw_aux1	VAR oi_swA.bit2	'Port 4 Pin 9 (1 stick = 0 or 2 sticks = 1)
+
+rc_sw1		VAR rc_swA.bit0	'Sensor C [Center] (Reflection = 1 Deflection = 0)
+rc_sw2		VAR rc_swA.bit1	'Sensor A [Left] (Reflection = 1 Deflection = 0)
+rc_sw3		VAR rc_swA.bit2	'Sensor B [Right] (Reflection = 1 Deflection = 0)
+rc_sw4		VAR rc_swA.bit3	'Search T (Left = 1 or Right = 0)
+rc_sw5		VAR rc_swA.bit4	'Pressure Sensor (<90 = 1 or >115 = 0)
+rc_sw6		VAR rc_swA.bit5
+rc_sw7		VAR rc_swA.bit6
+rc_sw8		VAR rc_swA.bit7
+
+relay1_fwd	VAR RelayA.bit0	'Pump (On = 1 or Off = 0)
+RelayA.bit1 = 0			'DO NOT LET PUMP REVERSE
+relay2_fwd	VAR RelayA.bit2	'Light (On = 1 or Off = 0)
+RelayA.bit3 = 0			'DO NOT LET LIGHT REVERSE
+relay3_fwd	VAR RelayA.bit4	'Pull Solenoid
+RelayA.bit5 = 0			'DO NOT LET SOLENOID REVERSE
+relay4_fwd	VAR RelayA.bit6	
+relay4_rev	VAR RelayA.bit7
+
+comp_mode		VAR PB_mode.bit7	'Competition Mode (Enabled = 1 or Disabled = 0)
+auton_mode		VAR PB_mode.bit6	'Autonomous Mode (Autonomous = 1 or Normal = 0)
+user_display_mode	VAR PB_mode.bit5 	'User Mode
+
+
+'Vars created by Matthew Whited
+mw_bot_x	var	byte	'Remap X-Axis for more useful codeing
+mw_bot_y	var	byte	'Remap Y-Axis for more useful codeing
+mw_t_cnt	var	word	'Create a counter for number of time to hunt for line
+c_mw_t_cnt	CON	10000	'Max number of times to hunt for line
+mw_dz		CON	10	'width of deadzone +/- dz
+mw_sol_lst	var	bit	'Solenoid Last State
+mw_p1_trig_lst	var	bit	'P1 Trigger Last State
+
+'=============================================================================================================
+'========= DEFINE CONSTANTS FOR INITIALIZATION ===============================================================
+'=============================================================================================================
+c_p1_y		CON	1
+c_p2_y		CON	0
+c_p3_y		CON	1
+c_p4_y		CON	0	 
+
+c_p1_x		CON	1
+c_p2_x		CON	0	 
+c_p3_x		CON	0
+c_p4_x		CON	0	 
+
+c_p1_wheel	CON	0
+c_p2_wheel	CON	0	 
+c_p3_wheel	CON	0
+c_p4_wheel	CON	0	 
+
+c_p1_aux	CON	0	 
+c_p2_aux	CON	0	 
+c_p3_aux	CON	0	 
+c_p4_aux	CON	0	 
+
+c_oi_swA	CON	1
+c_oi_swB	CON	0
+
+c_sensor1	CON	0
+c_sensor2	CON	0
+c_sensor3	CON	0
+c_sensor4	CON	0
+c_sensor5	CON	0
+c_sensor6	CON	0
+c_sensor7	CON	0
+c_batt_volt	CON	0
+
+c_rc_swA	CON	1
+c_rc_swB	CON	0
+
+c_delta_t	CON	0
+c_PB_mode	CON	1
+c_packet_num	CON	1
+c_res01		CON	0
+
+dataInitVolt	CON 	140	'Signal Low at 9 Volts ((vlow@ * 16.46)-8.35)
+
+'=============================================================================================================
+'========== DEFINE CONSTANTS (DO NOT CHANGE) =================================================================
+'=============================================================================================================
+OUTBAUD		CON 	20	'(62500, 8N1, Noninverted)
+INBAUD		CON 	20	'(62500, 8N1, Noninverted)
+USERCPU		CON 	4
+FPIN		CON 	1
+COMA		CON 	1
+COMB		CON 	2
+COMC		CON 	3
+
+Output		COMB
+Input		COMA
+Input		COMC
+Output		7	'define Basic Run LED on RC => out7
+Output      	8	'define Robot Feedback LED => out8  => PWM1 Green
+Output      	9	'define Robot Feedback LED => out9  => PWM1 Red
+Output      	10	'define Robot Feedback LED => out10 => PWM2 Green
+Output      	11	'define Robot Feedback LED => out11 => PWM2 Red
+Output      	13	'define Robot Feedback LED => out13 => Relay1 Green
+Output      	15	'define Robot Feedback LED => out15 => Relay2 Green
+Out7  = 1		'Basic Run LED on RC
+Out8  = 0		'PWM1 LED - Green
+Out9  = 0		'PWM1 LED - Red
+Out10 = 0		'PWM2 LED - Green
+Out11 = 0		'PWM2 LED - Red
+Out13 = 0		'Relay1 LED - Green
+Out15 = 0		'Relay2 LED - Green
+
+tempA		CON	c_p3_x <<1 + c_p4_x <<1 + c_p1_x <<1 + c_p2_x <<1 + c_rc_swB
+dataInitA	CON	tempA <<1 + c_rc_swA <<1 + c_oi_swB <<1 + c_oi_swA
+tempB		CON	c_sensor4 <<1 + c_sensor3 <<1 + c_p1_y <<1 + c_p2_y <<1 + c_sensor2
+dataInitB	CON	tempB <<1 + c_sensor1 <<1 + c_packet_num <<1 + c_PB_mode
+tempC		CON	c_batt_volt <<1 + c_sensor7 <<1 + c_p1_wheel <<1 + c_p2_wheel <<1 + c_sensor6
+dataInitC	CON	tempC <<1 + c_sensor5 <<1 + c_p3_y <<1 + c_p4_y
+tempD		CON	c_res01 <<1 + c_delta_t <<1 + c_p3_aux <<1 + c_p4_aux <<1 + c_p1_aux
+dataInitD	CON	tempD <<1 + c_p2_aux  <<1 + c_p3_wheel <<1 + c_p4_wheel
+Output		COMA
+low		COMA
+low		COMB
+Input		COMC
+Wait_init:	if IN3 = 1 then Wait_init:
+Shiftout	COMB,COMA,1, [dataInitA,dataInitB,dataInitC,dataInitD,dataInitVolt]
+Input		COMA
+high		COMB
+Output		COMC
+low		COMC
+
+
+'=============================================================================================================
+'========== MAIN DO LOOP =====================================================================================
+'=============================================================================================================
+
+mw_sol_lst = 0
+relay2_fwd = 1	'Light On
+
+Do
+	Serin COMA\COMB, INBAUD, [oi_swA,rc_swA,p1_x,PB_mode,packet_num,p1_y,p3_y]	'Get Data from master uP
+	Toggle 7	'Basic Run LED on the RC is toggled ON/OFF every loop.
+	
+	gosub Check_Pump	'Check the Status of the Pump
+	gosub User_Mode		'Check Calibration 
+
+	if p1_sw_trig = 1 then gosub Pull_Trig else gosub Rele_Trig	'Check if P1 Trigger is pulled
+
+	if auton_mode = 0 then			'Check if robot id Autonomous
+		if p1_sw_aux1 = 0 then		'1 Stick
+			mw_bot_x = p1_x
+			mw_bot_y = p1_y
+		else				'2 Sticks
+			mw_bot_x = p1_y
+			mw_bot_y = p3_y
+		endif
+		gosub Drive			'Manual Drive
+	else
+		gosub AutoDrive			'Auto Drive
+	endif
+
+	Serout USERCPU, OUTBAUD, [255,255,drive_R,relayA,drive_L,0,127,127,127,127,127,127,127,127,127,127,127,127,127,127]
+
+Loop	'Never Exits
+
+Pull_Trig:
+if mw_p1_trig_lst = 0 then
+	mw_p1_trig_lst = 1
+	if mw_sol_lst = 0 then
+		relay3_fwd = 1
+		mw_sol_lst = 1
+	else
+		relay3_fwd = 0
+		mw_sol_lst = 0
+	endif
+endif
+return
+
+Rele_Trig:
+mw_p1_trig_lst = 0
+return
+
+Drive:
+select (mw_bot_x)		'X-Axis Deadzone
+	case (127 - mw_dz) to (127 + mw_dz)
+		mw_bot_x = 127
+endselect
+select (mw_bot_y)		'Y-Axis Deadzone
+	case (127 - mw_dz) to (127 + mw_dz)
+		mw_bot_y = 127
+endselect
+if (auton_mode = 0 and p1_sw_aux1 = 1) then	'2 Sticks
+	drive_R = mw_bot_x
+	drive_L = mw_bot_y
+else						'1 Stick or Auto Drive
+	drive_R = (((2000 + mw_bot_y + mw_bot_x - 127) Min 2000 Max 2254) - 2000)	'Calc Right Wheel Speed
+	drive_L = (((2000 + mw_bot_y - mw_bot_x + 127) Min 2000 Max 2254) - 2000)	'Calc Left Wheel Speed
+endif
+
+Return
+
+AutoDrive: 
+if rc_sw1 = 1 then 					'Center On the Line
+	if (rc_sw2 = 1 and rc_sw3 = 0) then 		'Left and Center on Line - Turn right
+		mw_bot_y = 127
+		mw_bot_x = 192
+	endif
+	if (rc_sw2 = 0 and rc_sw3 = 1) then 		'Right and Center on Line - Turn left
+		mw_bot_y = 127
+		mw_bot_x = 63
+	else						'Only Center on the Line - Go Straight
+		mw_bot_y = 127
+		mw_bot_x = 192
+	endif
+	gosub Drive
+else
+	if mw_t_cnt < c_mw_t_cnt then 			'Check if lost contact time out
+		mw_t_cnt = mw_t_cnt + 1
+		if (rc_sw2 = 1 and rc_sw3 = 0) then 	'Left Contact Found - Turn Left
+			mw_bot_y = 127
+			mw_bot_x = 63
+		endif
+		if (rc_sw2 = 0 and rc_sw3 = 1) then	'Right Contact Found - Turn Right
+			mw_bot_y = 127
+			mw_bot_x = 192
+		else					'No Contact - Hunt
+			if rc_sw4 = 1 then		'Hunt Left
+				mw_bot_y = 192
+				mw_bot_x = 63
+			else				'Hunt Right
+				mw_bot_y = 192
+				mw_bot_x = 192
+			endif
+		endif
+		gosub Drive
+	endif
+endif		
+
+
+Check_Pump: 'Check The Status of the Pump
+if rc_sw5 = 1 then	'If Pressure is Low
+	relay1_fwd = 1	'Pump On
+	Out13 = 1
+else
+	relay1_fwd = 0	'Pump Off
+	Out13 = 0
+endif
+Return
+
+User_Mode:	'If you Hit User Mode you can Adjust Stick on port 1 to center
+if user_display_mode = 1 then 			'User Mode is On (Adjust Sticks)
+	select (p1_y)					'Check position of Port 1 Y-Axis
+		case 0 to (126 - mw_dz)				'Turn Adjustment Knob Up
+			Out8 = 0
+			Out9 = 1
+		case (127 - mw_dz) to (127 + mw_dz)		'Adjustment is Centered
+			Out8 = 1
+			Out9 = 1
+		case else					'Turn Adjustment Knob Down
+			Out8 = 1
+			Out9 = 0
+	endselect
+	select (p1_x)					'Check position of Port 1 X-Axis
+		case 0 to (126 - mw_dz)				'Turn Adjustment Knob Right
+			Out10 = 0
+			Out11 = 1
+		case (127 - mw_dz) to (127 + mw_dz)		'Adjustment is Centered
+			Out10 = 1
+			Out11 = 1
+		case else					'Turn Adjustment Know Left
+			Out10 = 1
+			Out11 = 0
+	endselect
+else
+	Out8 = 0
+	Out9 = 0
+	Out10 = 0
+	Out11 = 0
+endif
+Return

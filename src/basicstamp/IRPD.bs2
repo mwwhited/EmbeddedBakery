@@ -1,0 +1,26 @@
+templ var bit
+tempr var bit
+action var nib
+
+'dirs = %1110111111111111
+
+pause 1000
+start:
+pause 750
+
+high 1: pause 5
+low 1: pause 5
+high 1: pause 5
+tempr = in2
+low 1
+
+high 0: pause 5
+low 0: pause 5
+high 0:pause 5
+templ = in2
+low 0
+
+debug "right ", dec tempr,cr
+debug "left ", dec templ, cr
+
+goto start

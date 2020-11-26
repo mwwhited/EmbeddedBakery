@@ -1,0 +1,17 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' {$PORT COM8}
+
+DEBUG "Hello World!", CR
+OUTPUT 8
+Main:
+  DO 'WHILE (1=1)
+    HIGH 8
+    DEBUG "H", CR
+    PAUSE 500
+    LOW 8
+    PAUSE 500
+    DEBUG "L", CR
+  LOOP
+'  GOTO Main
+  END

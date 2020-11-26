@@ -1,0 +1,14 @@
+' {$STAMP BS2}
+' {$PBASIC 2.0}
+
+start:
+
+  HIGH 7
+
+'  PAUSE 750
+
+  LOW 7
+
+'  PAUSE 750
+
+  GOTO start
