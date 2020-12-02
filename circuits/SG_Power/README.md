@@ -1,0 +1,1 @@
+This design needs reconstructed after the KiCAD upgrade from v4 to v5

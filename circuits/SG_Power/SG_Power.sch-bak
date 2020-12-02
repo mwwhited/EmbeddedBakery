@@ -1,5 +1,35 @@
-EESchema Schematic File Version 4
-EELAYER 30 0
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:SG_Power-cache
+EELAYER 25 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
@@ -13,6 +43,17 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L DIN_5 SG-Machine
+U 1 1 5A5AADA1
+P 3700 3550
+F 0 "SG-Machine" H 3700 3200 50  0000 C CNN
+F 1 "DIN_5" H 3700 3125 50  0000 C CNN
+F 2 "" H 3700 3550 50  0001 C CNN
+F 3 "" H 3700 3550 50  0001 C CNN
+	1    3700 3550
+	1    0    0    -1  
+$EndComp
 $Comp
 L 7805 U?
 U 1 1 5A5AAEAC
@@ -34,6 +75,17 @@ F 2 "" H 7150 3850 50  0001 C CNN
 F 3 "" H 7150 3850 50  0001 C CNN
 	1    7150 3850
 	0    1    1    0   
+$EndComp
+$Comp
+L RJ45 Breakout
+U 1 1 5A5AAF9E
+P 3750 1850
+F 0 "Breakout" H 3950 2350 50  0000 C CNN
+F 1 "RJ45" H 3600 2350 50  0000 C CNN
+F 2 "" H 3750 1850 50  0001 C CNN
+F 3 "" H 3750 1850 50  0001 C CNN
+	1    3750 1850
+	1    0    0    -1  
 $EndComp
 $Comp
 L RJ45 Breakout
@@ -59,6 +111,17 @@ F 3 "" H 8100 2100 50  0001 C CNN
 $EndComp
 $Comp
 L GND #PWR?
+U 1 1 5A5AB4BD
+P 4350 4050
+F 0 "#PWR?" H 4350 3800 50  0001 C CNN
+F 1 "GND" H 4350 3900 50  0000 C CNN
+F 2 "" H 4350 4050 50  0001 C CNN
+F 3 "" H 4350 4050 50  0001 C CNN
+	1    4350 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
 U 1 1 5A5ABD0D
 P 6900 4000
 F 0 "#PWR?" H 6900 3750 50  0001 C CNN
@@ -66,6 +129,17 @@ F 1 "GND" H 6900 3850 50  0000 C CNN
 F 2 "" H 6900 4000 50  0001 C CNN
 F 3 "" H 6900 4000 50  0001 C CNN
 	1    6900 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR?
+U 1 1 5A5AC31A
+P 3550 2850
+F 0 "#PWR?" H 3550 2700 50  0001 C CNN
+F 1 "+12V" H 3550 2990 50  0000 C CNN
+F 2 "" H 3550 2850 50  0001 C CNN
+F 3 "" H 3550 2850 50  0001 C CNN
+	1    3550 2850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -143,16 +217,18 @@ Wire Wire Line
 Wire Wire Line
 	3600 2500 3600 2300
 Wire Wire Line
-	3700 3150 3700 2850
+	3700 3150 3700 2300
 Wire Wire Line
 	3700 3850 4350 3850
 Wire Wire Line
-	4350 2600 4350 3850
+	4350 2600 4350 4050
 Wire Wire Line
 	3800 2300 3800 2600
 Wire Wire Line
 	3800 2600 4350 2600
 Connection ~ 4350 3850
+Wire Wire Line
+	4100 3550 4250 3550
 Wire Wire Line
 	4250 3550 4250 2400
 Wire Wire Line
@@ -174,7 +250,9 @@ Wire Wire Line
 Wire Wire Line
 	3200 2400 3200 3550
 Wire Wire Line
-	6900 3650 6900 3700
+	3200 3550 3300 3550
+Wire Wire Line
+	6900 3650 6900 4000
 Wire Wire Line
 	7000 3850 6900 3850
 Connection ~ 6900 3850
@@ -193,17 +271,17 @@ Wire Wire Line
 Wire Wire Line
 	8050 2500 8050 2300
 Wire Wire Line
-	6500 2300 6500 2850
+	6500 2300 6500 3350
 Wire Wire Line
 	6600 2300 6600 2600
 Wire Wire Line
 	6600 2600 7850 2600
 Wire Wire Line
-	7850 2300 7850 2600
+	7850 2300 7850 3700
 Wire Wire Line
 	7300 3350 8350 3350
 Wire Wire Line
-	8350 3350 8350 2850
+	8350 3350 8350 2300
 Wire Wire Line
 	7850 3700 6900 3700
 Connection ~ 6900 3700
@@ -247,70 +325,4 @@ Wire Wire Line
 	4000 5650 5200 5450
 Wire Wire Line
 	4000 5550 5200 5850
-Wire Wire Line
-	4350 3850 4350 4050
-Wire Wire Line
-	6900 3850 6900 4000
-Wire Wire Line
-	6900 3700 6900 3850
-Wire Wire Line
-	7850 2600 7850 3700
-Wire Wire Line
-	3700 2850 3700 2300
-Wire Wire Line
-	6500 2850 6500 3350
-Wire Wire Line
-	8350 2850 8350 2300
-$Comp
-L Connector:DIN-5 J?
-U 1 1 5FC717F7
-P 3700 3450
-F 0 "J?" H 3700 3175 50  0000 C CNN
-F 1 "DIN-5" H 3700 3084 50  0000 C CNN
-F 2 "" H 3700 3450 50  0001 C CNN
-F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 3700 3450 50  0001 C CNN
-	1    3700 3450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4000 3350 4100 3350
-Wire Wire Line
-	4000 3550 4250 3550
-Wire Wire Line
-	3200 3550 3400 3550
-Wire Wire Line
-	3300 3350 3400 3350
-$Comp
-L power:GND #PWR?
-U 1 1 5FC7AD0D
-P 4350 4050
-F 0 "#PWR?" H 4350 3800 50  0001 C CNN
-F 1 "GND" H 4355 3877 50  0000 C CNN
-F 2 "" H 4350 4050 50  0001 C CNN
-F 3 "" H 4350 4050 50  0001 C CNN
-	1    4350 4050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC 12v
-U 1 1 5FC7CC43
-P 3550 2850
-F 0 "12v" H 3638 2933 50  0000 L CNN
-F 1 "VCC" H 3638 2842 50  0000 L CNN
-F 2 "" H 3550 2850 50  0001 C CNN
-F 3 "" H 3550 2850 50  0001 C CNN
-	1    3550 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:RJ45 J?
-U 1 1 5FC7EC99
-P 3700 1900
-F 0 "J?" H 3757 2567 50  0000 C CNN
-F 1 "RJ45" H 3757 2476 50  0000 C CNN
-F 2 "" V 3700 1925 50  0001 C CNN
-F 3 "~" V 3700 1925 50  0001 C CNN
-	1    3700 1900
-	0    1    1    0   
-$EndComp
 $EndSCHEMATC

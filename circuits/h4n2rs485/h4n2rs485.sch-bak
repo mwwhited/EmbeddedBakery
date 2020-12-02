@@ -1,17 +1,18 @@
 EESchema Schematic File Version 4
-EELAYER 30 0
+LIBS:h4n2rs485-cache
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Zoom H4N to RS-485 Bridge"
+Title ""
 Date ""
 Rev ""
-Comp "Out-of-Band Development, LLC"
+Comp ""
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 "Matthew Whited"
+Comment4 ""
 $EndDescr
 $Comp
 L Connector:AVR-ISP-6 J2
