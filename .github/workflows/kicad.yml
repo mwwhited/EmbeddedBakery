@@ -1,0 +1,33 @@
+name: Export KiCAD Designs
+
+on:
+  #push:
+  #  branches: [ main ]
+  #  paths: ['circuits/**']   
+     
+  #pull_request:
+  #  branches: [ main ]
+  #  paths: ['circuits/**']    
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - uses: nerdyscout/kicad-exports@v2.2
+        with:
+          config: docs.kibot.yaml
+          dir: docs
+          schema: '*.sch'
+          board: '*.*pcb'
+
+      - name: upload results
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: docs
