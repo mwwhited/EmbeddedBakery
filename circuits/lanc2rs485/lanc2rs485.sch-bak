@@ -11,7 +11,7 @@ Comp "Out-of-Band Development, LLC"
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 "Matthew Whited"
+Comment4 ""
 $EndDescr
 $Comp
 L MCU_Module:Arduino_Nano_v2.x A?
