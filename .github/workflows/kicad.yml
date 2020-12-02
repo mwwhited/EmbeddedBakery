@@ -24,7 +24,7 @@ jobs:
           config: docs.kibot.yaml
           dir: docs
           schema: '*.sch'
-          board: '*.*pcb'
+          #board: '*.*pcb'
 
       - name: upload results
         uses: actions/upload-artifact@v2
