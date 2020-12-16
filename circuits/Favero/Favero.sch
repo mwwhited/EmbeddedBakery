@@ -1,0 +1,125 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:RJ9 J?
+U 1 1 5FD984BB
+P 7450 2300
+F 0 "J?" H 7120 2304 50  0000 R CNN
+F 1 "RJ9" H 7120 2395 50  0000 R CNN
+F 2 "" V 7450 2350 50  0001 C CNN
+F 3 "~" V 7450 2350 50  0001 C CNN
+	1    7450 2300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R2.2k
+U 1 1 5FD9CB1D
+P 5850 2750
+F 0 "R2.2k" V 6055 2750 50  0000 C CNN
+F 1 "R_US" V 5964 2750 50  0000 C CNN
+F 2 "" V 5890 2740 50  0001 C CNN
+F 3 "~" H 5850 2750 50  0001 C CNN
+	1    5850 2750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_US R180
+U 1 1 5FD9D6E6
+P 6550 3350
+F 0 "R180" H 6618 3396 50  0000 L CNN
+F 1 "R_US" H 6618 3305 50  0000 L CNN
+F 2 "" V 6590 3340 50  0001 C CNN
+F 3 "~" H 6550 3350 50  0001 C CNN
+	1    6550 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7050 2300 7000 2300
+Wire Wire Line
+	7000 2300 7000 2400
+Wire Wire Line
+	7000 2400 7050 2400
+Wire Wire Line
+	7050 2200 6950 2200
+Wire Wire Line
+	6950 2200 6950 2500
+Wire Wire Line
+	6950 2500 7050 2500
+$Comp
+L Transistor_BJT:2N2219 Q?
+U 1 1 5FD9F896
+P 6450 2750
+F 0 "Q?" H 6640 2796 50  0000 L CNN
+F 1 "2N2219" H 6640 2705 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-39-3" H 6650 2675 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N2219-D.PDF" H 6450 2750 50  0001 L CNN
+	1    6450 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5FDA47AE
+P 5550 2300
+F 0 "#PWR?" H 5550 2150 50  0001 C CNN
+F 1 "VCC" H 5565 2473 50  0000 C CNN
+F 2 "" H 5550 2300 50  0001 C CNN
+F 3 "" H 5550 2300 50  0001 C CNN
+	1    5550 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint SerialData
+U 1 1 5FDA7390
+P 7900 3000
+F 0 "SerialData" H 7958 3118 50  0000 L CNN
+F 1 "TestPoint" H 7958 3027 50  0000 L CNN
+F 2 "" H 8100 3000 50  0001 C CNN
+F 3 "~" H 8100 3000 50  0001 C CNN
+	1    7900 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 2550 6550 2400
+Wire Wire Line
+	6550 2400 7000 2400
+Connection ~ 7000 2400
+Wire Wire Line
+	6250 2750 6000 2750
+Wire Wire Line
+	5700 2750 5550 2750
+Wire Wire Line
+	5550 2750 5550 2300
+Wire Wire Line
+	6550 2950 6550 3000
+Wire Wire Line
+	7900 3000 6550 3000
+Connection ~ 6550 3000
+Wire Wire Line
+	6550 3000 6550 3200
+$Comp
+L power:GND #PWR?
+U 1 1 5FDAA0AD
+P 6550 3600
+F 0 "#PWR?" H 6550 3350 50  0001 C CNN
+F 1 "GND" H 6555 3427 50  0000 C CNN
+F 2 "" H 6550 3600 50  0001 C CNN
+F 3 "" H 6550 3600 50  0001 C CNN
+	1    6550 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 3500 6550 3600
+$EndSCHEMATC
