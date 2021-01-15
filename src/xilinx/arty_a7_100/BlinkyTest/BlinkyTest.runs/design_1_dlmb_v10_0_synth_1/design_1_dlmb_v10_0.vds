@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Jan 12 10:35:43 2021
+# Process ID: 11044
+# Current directory: C:/Repos/mwwhited/BlinkyTest/BlinkyTest.runs/design_1_dlmb_v10_0_synth_1
+# Command line: vivado.exe -log design_1_dlmb_v10_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_dlmb_v10_0.tcl
+# Log file: C:/Repos/mwwhited/BlinkyTest/BlinkyTest.runs/design_1_dlmb_v10_0_synth_1/design_1_dlmb_v10_0.vds
+# Journal file: C:/Repos/mwwhited/BlinkyTest/BlinkyTest.runs/design_1_dlmb_v10_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_dlmb_v10_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_dlmb_v10_0, cache-ID = 46de46d8c8c94025.
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 12 10:35:51 2021...
