@@ -78,6 +78,14 @@
 *.runs/impl*/*.bat
 !*.runs/impl*/*utilization*.rpt
 
+### project cache
+*/*.cache/*
+*.cache/*
+
+### project sim
+*/*.sim/*
+*.sim/*
+
 ### block design
 */*/bd/*/hdl
 */*/*/bd/*/hdl
