@@ -1,7 +1,3 @@
-set_property IOSTANDARD LVCMOS33 [get_ports eth_ref_clk]
-set_property PACKAGE_PIN G18 [get_ports eth_ref_clk]
-
-
 ## This file is a general .xdc for the Arty A7-100 Rev. D
 ## To use it in a project:
 ## - uncomment the lines corresponding to used pins
