@@ -1,0 +1,82 @@
+# Clocks and reset
+set_location_assignment PIN_17 -to clk
+set_location_assignment PIN_144 -to n_reset
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to n_reset
+# PS/2
+set_location_assignment PIN_87 -to ps2Data
+set_location_assignment PIN_86 -to ps2Clk
+# ACIA (Serial)
+set_location_assignment PIN_60 -to serSelect
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to serSelect
+set_location_assignment PIN_104 -to urts1
+set_location_assignment PIN_101 -to urxd1
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to rxd1
+set_location_assignment PIN_103 -to utxd1
+# External SRAM
+set_location_assignment PIN_4 -to n_sRamWE
+set_location_assignment PIN_126 -to n_sRamCS
+set_location_assignment PIN_134 -to n_sRamOE
+set_location_assignment PIN_32 -to sramAddress[16]
+set_location_assignment PIN_8 -to sramAddress[15]
+set_location_assignment PIN_30 -to sramAddress[14]
+set_location_assignment PIN_24 -to sramAddress[13]
+set_location_assignment PIN_28 -to sramAddress[12]
+set_location_assignment PIN_136 -to sramAddress[11]
+set_location_assignment PIN_132 -to sramAddress[10]
+set_location_assignment PIN_139 -to sramAddress[9]
+set_location_assignment PIN_142 -to sramAddress[8]
+set_location_assignment PIN_143 -to sramAddress[7]
+set_location_assignment PIN_141 -to sramAddress[6]
+set_location_assignment PIN_137 -to sramAddress[5]
+set_location_assignment PIN_135 -to sramAddress[4]
+set_location_assignment PIN_133 -to sramAddress[3]
+set_location_assignment PIN_129 -to sramAddress[2]
+set_location_assignment PIN_125 -to sramAddress[1]
+set_location_assignment PIN_121 -to sramAddress[0]
+set_location_assignment PIN_122 -to sramData[7]
+set_location_assignment PIN_120 -to sramData[6]
+set_location_assignment PIN_118 -to sramData[5]
+set_location_assignment PIN_114 -to sramData[4]
+set_location_assignment PIN_112 -to sramData[3]
+set_location_assignment PIN_113 -to sramData[2]
+set_location_assignment PIN_115 -to sramData[1]
+set_location_assignment PIN_119 -to sramData[0]
+# Composite Video
+set_location_assignment PIN_75 -to video
+set_location_assignment PIN_74 -to videoSync
+# VGA
+set_location_assignment PIN_64 -to videoB0
+set_location_assignment PIN_63 -to videoB1
+set_location_assignment PIN_67 -to videoG0
+set_location_assignment PIN_65 -to videoG1
+set_location_assignment PIN_70 -to videoR0
+set_location_assignment PIN_69 -to videoR1
+set_location_assignment PIN_71 -to hSync
+set_location_assignment PIN_72 -to vSync
+# SD Card
+set_location_assignment PIN_92 -to sdMISO
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to sdMISO
+set_location_assignment PIN_94 -to sdSCLK
+set_location_assignment PIN_93 -to sdMOSI
+set_location_assignment PIN_97 -to sdCS
+set_location_assignment PIN_3 -to driveLED
+# LED
+set_location_assignment PIN_E4 -to driveLED
+# J6 IO
+set_location_assignment PIN_25 -to J6IO8[0]
+set_location_assignment PIN_31 -to J6IO8[1]
+set_location_assignment PIN_41 -to J6IO8[2]
+set_location_assignment PIN_40 -to J6IO8[3]
+set_location_assignment PIN_43 -to J6IO8[4]
+set_location_assignment PIN_42 -to J6IO8[5]
+set_location_assignment PIN_45 -to J6IO8[6]
+set_location_assignment PIN_44 -to J6IO8[7]
+# J8 I/O
+set_location_assignment PIN_48 -to J8IO8[0]
+set_location_assignment PIN_47 -to J8IO8[1]
+set_location_assignment PIN_52 -to J8IO8[2]
+set_location_assignment PIN_51 -to J8IO8[3]
+set_location_assignment PIN_58 -to J8IO8[4]
+set_location_assignment PIN_55 -to J8IO8[5]
+set_location_assignment PIN_76 -to J8IO8[6]
+# set_location_assignment PIN_60 -to J8IO8[7]
