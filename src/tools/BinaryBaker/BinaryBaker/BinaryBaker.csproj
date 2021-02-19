@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPFHexaEditor" Version="2.1.6" />
+    <PackageReference Include="Xceed.Products.Wpf.Toolkit.Full" Version="4.1.21063.2360" />
+  </ItemGroup>
+
+</Project>
