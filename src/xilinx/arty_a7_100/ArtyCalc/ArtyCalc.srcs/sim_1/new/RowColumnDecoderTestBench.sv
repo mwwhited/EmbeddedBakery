@@ -25,22 +25,17 @@ module RowColumnDecoderTestBench;
     
     wire [3:0] column;
     wire [3:0] result;  
-    
-    wire sequenceClock;  
-    wire sequenceClockOneShot;  
-    wire [7:0] delayCounter;  
-    
+        
     RowColumnDecoder underTest(
         .clock(clock),
         .row(row),
         .column(column),
-        .result(result)
-        
-        ,.sequenceClock(sequenceClock)
-        ,.sequenceClockOneShot(sequenceClockOneShot)
-        ,.delayCounter(delayCounter)
+        .result(result)        
     );
         
+    always #1 clock = ~clock; 
+    
+    /*    
     initial
     begin  
         repeat(100000000)
@@ -48,5 +43,6 @@ module RowColumnDecoderTestBench;
             #1 clock = !clock;
         end
     end 
-
+    */
+    
 endmodule

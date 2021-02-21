@@ -23,12 +23,12 @@ module RowColumnDecoder(
     input clock,
     input [3:0] row,
     output reg [3:0] column,
-    output reg [3:0] result,
-    
-    output sequenceClock,
-    output reg sequenceClockOneShot,
-    output reg [7:0] delayCounter
+    output reg [3:0] result    
     );
+    
+    reg sequenceClock;
+    reg sequenceClockOneShot;
+    reg [7:0] delayCounter;
     
     initial
     begin
@@ -52,6 +52,7 @@ module RowColumnDecoder(
                     4'b0111 : column <= 4'b1011;
                     4'b1011 : column <= 4'b1101;
                     4'b1101 : column <= 4'b1110;
+                    4'b1110 : column <= 4'b0111;
                     default : column <= 4'b0111; 
                 endcase
                 sequenceClockOneShot <= 1;                
@@ -69,15 +70,15 @@ module RowColumnDecoder(
                     8'b1011_1101: result <= 'h8;
                     8'b1011_1110: result <= 'hF;
                     
-                    8'b0111_0111: result <= 'h3;
-                    8'b0111_1011: result <= 'h6;
-                    8'b0111_1101: result <= 'h9;
-                    8'b0111_1110: result <= 'hE;
+                    8'b1101_0111: result <= 'h3;
+                    8'b1101_1011: result <= 'h6;
+                    8'b1101_1101: result <= 'h9;
+                    8'b1101_1110: result <= 'hE;
                     
-                    8'b1011_0111: result <= 'hA;
-                    8'b1011_1011: result <= 'hB;
-                    8'b1011_1101: result <= 'hC;
-                    8'b1011_1110: result <= 'hD;
+                    8'b1110_0111: result <= 'hA;
+                    8'b1110_1011: result <= 'hB;
+                    8'b1110_1101: result <= 'hC;
+                    8'b1110_1110: result <= 'hD;
                 endcase
             end else begin
                 delayCounter = delayCounter + 1;

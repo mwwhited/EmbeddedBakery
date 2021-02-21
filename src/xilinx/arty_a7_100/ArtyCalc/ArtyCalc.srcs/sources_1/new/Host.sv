@@ -23,19 +23,19 @@
 module Host(    
     input  CLK100MHZ,  // Clock signal
     input  [3:0] sw,   // Register + Byte[2:0] Selector
-    output [3:0] led,  // Register + Byte[2:0] Selected
-    output [3:0] ledB, // Selected hexadecimalvalue byte value
-    output [3:0] ledG, // Selected operator {Addition, Subtraction, Multiplication, Division}
-    output reg [3:0] ledR, // Current byte value
+    output [3:0] led,  // Current byte value
+    output reg [3:0] ledB, // Selected hexadecimalvalue byte value
+    output reg [3:0] ledG, // Selected operator {Addition, Subtraction, Multiplication, Division}
+    output reg [3:0] ledR, // Register + Byte[2:0] Selected
     input  [3:0] btn,  // Operator selector {Addition, Subtraction, Multiplication, Division}
     inout  [7:0] jd    // PModKypd (hexadecimal keypad)
 );
 
 //SW3) Register selector (A = 0, B = 1)
-//LD7) Register selected 
+//LD3R) Register selected 
 
 //SW2:SW0) Register byte selector
-//LD6:LD4) Register  byte selcted
+//LD2R:LDR0) Register  byte selcted
 
 //BTN3) Addition              A <= A + B
 //BTN2) Subtraction           A <= A - B
@@ -45,30 +45,29 @@ module Host(
 
 //JD + PModKypd) Hexadecimal Input
 //LD3B:LD0B) Selected hexadecimalvalue byte value
-//LD3R:LD0R) Current byte value
+//LD7:LD4) Current byte value
 
-    assign led = sw;
+    assign ledR = sw;
     //assign ledB = // PModKypd output
     assign ledG = btn;    
-    // assign ledR = //value in selected register
+    // assign led = //value in selected register
 
+/*
+    // apx 1ms period
     ClockDivider clockDivider(
         .clockIn(CLK100MHZ),
-        .clockOut(ledR[0])
+        .clockOut(led[0])
     );
     
+    // apx .5s period
     ClockDivider #(
         .counterLength(26),
         .counterTarget(50000000)
     ) clockDivider2(
         .clockIn(CLK100MHZ),
-        .clockOut(ledR[1])
+        .clockOut(led[1])
     );
-    
-    always @(posedge CLK100MHZ)    
-    begin
-        ledR[2] <= ~ledR[2];
-    end
+*/
               
     RowColumnDecoder pmodKeypad(
         .clock(CLK100MHZ),
