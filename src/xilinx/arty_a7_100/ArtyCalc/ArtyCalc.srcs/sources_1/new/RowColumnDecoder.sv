@@ -26,56 +26,65 @@ module RowColumnDecoder(
     output reg [3:0] result,
     
     output sequenceClock,
-    output columnDelay
+    output reg sequenceClockOneShot,
+    output reg [7:0] delayCounter
     );
     
-    bit sequenceClock;
-    bit columnDelay;
-    reg [1:0] columnCounter; 
+    initial
+    begin
+        result = 4'bZ;
+        column = 4'b0111;         
+    end
     
     ClockDivider clockDivider(
         .clockIn(clock),
         .clockOut(sequenceClock)
     );
-    
-    // delay clock
-    always #100 columnDelay = sequenceClock;
-    
-     // write column
-    always @(posedge sequenceClock)
+        
+    always @(posedge clock)
     begin
-        case (column)
-            4'b0111 : column <= 4'b1011;
-            4'b1011 : column <= 4'b1101;
-            4'b1101 : column <= 4'b1110;
-            default : column <= 4'b0111; 
-        endcase
-    end
-    
-    // read row
-    always @(posedge columnDelay)
-    begin
-        case({column, row})
-            8'b0111_0111: result <= 'h1;
-            8'b0111_1011: result <= 'h4;
-            8'b0111_1101: result <= 'h7;
-            8'b0111_1110: result <= 'h0;
+        if (sequenceClock)
+        begin        
+            if (sequenceClockOneShot == 0)
+            begin
+                // write column
+                case (column)
+                    4'b0111 : column <= 4'b1011;
+                    4'b1011 : column <= 4'b1101;
+                    4'b1101 : column <= 4'b1110;
+                    default : column <= 4'b0111; 
+                endcase
+                sequenceClockOneShot <= 1;                
+            end else if(delayCounter == 8) begin
             
-            8'b1011_0111: result <= 'h2;
-            8'b1011_1011: result <= 'h5;
-            8'b1011_1101: result <= 'h8;
-            8'b1011_1110: result <= 'hF;
-            
-            8'b0111_0111: result <= 'h3;
-            8'b0111_1011: result <= 'h6;
-            8'b0111_1101: result <= 'h9;
-            8'b0111_1110: result <= 'hE;
-            
-            8'b1011_0111: result <= 'hA;
-            8'b1011_1011: result <= 'hB;
-            8'b1011_1101: result <= 'hC;
-            8'b1011_1110: result <= 'hD;
-        endcase
-    end
-    
+                // read row
+                case({column, row})
+                    8'b0111_0111: result <= 'h1;
+                    8'b0111_1011: result <= 'h4;
+                    8'b0111_1101: result <= 'h7;
+                    8'b0111_1110: result <= 'h0;
+                    
+                    8'b1011_0111: result <= 'h2;
+                    8'b1011_1011: result <= 'h5;
+                    8'b1011_1101: result <= 'h8;
+                    8'b1011_1110: result <= 'hF;
+                    
+                    8'b0111_0111: result <= 'h3;
+                    8'b0111_1011: result <= 'h6;
+                    8'b0111_1101: result <= 'h9;
+                    8'b0111_1110: result <= 'hE;
+                    
+                    8'b1011_0111: result <= 'hA;
+                    8'b1011_1011: result <= 'hB;
+                    8'b1011_1101: result <= 'hC;
+                    8'b1011_1110: result <= 'hD;
+                endcase
+            end else begin
+                delayCounter = delayCounter + 1;
+            end                        
+        end else begin
+            sequenceClockOneShot <= 0;
+            delayCounter <= 0;
+        end       
+    end    
 endmodule

@@ -19,16 +19,21 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module ClockDivider
-#(
-    int counterLength = 17,
-    int counterTarget = 100000
+module ClockDivider #(
+    parameter counterLength = 17,
+    parameter counterTarget = 100000
 )
 (
     input clockIn,
-    input reg clockOut
+    output reg clockOut
 );    
-    reg [(counterLength-1):0] counter;
+    reg [counterLength-1:0] counter;
+    
+    initial
+    begin
+        counter = 0;
+        clockOut = 0;
+    end    
     
     always @(posedge clockIn)
     begin
@@ -37,7 +42,7 @@ module ClockDivider
         if (counter >= counterTarget - 1)
         begin
             counter <= 0;
-            clockOut <= ~clockOut;
+            clockOut = ~clockOut;
         end        
     end
     

@@ -26,7 +26,7 @@ module Host(
     output [3:0] led,  // Register + Byte[2:0] Selected
     output [3:0] ledB, // Selected hexadecimalvalue byte value
     output [3:0] ledG, // Selected operator {Addition, Subtraction, Multiplication, Division}
-    output [3:0] ledR, // Current byte value
+    output reg [3:0] ledR, // Current byte value
     input  [3:0] btn,  // Operator selector {Addition, Subtraction, Multiplication, Division}
     inout  [7:0] jd    // PModKypd (hexadecimal keypad)
 );
@@ -50,18 +50,31 @@ module Host(
     assign led = sw;
     //assign ledB = // PModKypd output
     assign ledG = btn;    
-   // assign ledR = //value in selected register
-   
-   assign ledB = jd[3:0];
-     
+    // assign ledR = //value in selected register
+
+    ClockDivider clockDivider(
+        .clockIn(CLK100MHZ),
+        .clockOut(ledR[0])
+    );
+    
+    ClockDivider #(
+        .counterLength(26),
+        .counterTarget(50000000)
+    ) clockDivider2(
+        .clockIn(CLK100MHZ),
+        .clockOut(ledR[1])
+    );
+    
+    always @(posedge CLK100MHZ)    
+    begin
+        ledR[2] <= ~ledR[2];
+    end
+              
     RowColumnDecoder pmodKeypad(
         .clock(CLK100MHZ),
         .row(jd[7:4]),
         .column(jd[3:0]),
-        .result(ledB),
-        
-        .sequenceClock(ledR[1]),
-        .columnDelay(ledR[2])
+        .result(ledB)
     );
       
   /*  
