@@ -1,0 +1,18 @@
+This is a very simple calculator build using Digilent Arty A7-100.  The intention is to 
+create a simple 2 register, 32bit, 4 function calculator
+
+SW3) Register selector (A = 0, B = 1)
+LD7) Register selected 
+
+SW2:SW0) Register byte selector
+LD6:LD4) Register  byte selcted
+
+BTN3) Addition              A <= A + B
+BTN2) Subtraction           A <= A - B
+BTN1) Multiplication        A <= A * B
+BTN0) Division              A <= A / B
+LD3G:LD0G) Selected operator {Addition, Subtraction, Multiplication, Division}
+
+JD + PModKypd) Hexadecimal Input
+LD3B:LD0B) Selected hexadecimalvalue byte value
+LD3R:LD0R) Current byte value

@@ -19,6 +19,13 @@ namespace RomFonts
                 var outRevfile = Path.ChangeExtension(file, ".rev.txt");
                 using var outRevStream = File.CreateText(outRevfile);
 
+                var outHexfile = Path.ChangeExtension(file, ".mem.txt");
+                using var outHexStream = File.CreateText(outHexfile);
+
+                var outRevHexfile = Path.ChangeExtension(file, ".rev.mem.txt");
+                using var outRevHexStream = File.CreateText(outRevHexfile);
+
+
                 var data = File.ReadAllBytes(file);
                 foreach (var i in data.Select((v, i) => new { v, i }))
                 {
@@ -31,12 +38,20 @@ namespace RomFonts
                     await outStream.WriteLineAsync(outLine);
                     await outRevStream.WriteLineAsync($"{i.i:X3}\t{i.v:X2}\t{string.Join("",dis.Reverse())}");
 
+                    await outHexStream.WriteLineAsync($"{i.v:X2} // {i.i:X4}: {dis}");
+                    byte[] outByte = new byte[1];
+                    new BitArray(bits.Cast<bool>().Reverse().ToArray()).CopyTo(outByte, 0);
+                    await outRevHexStream.WriteLineAsync($"{outByte[0]:X2} // {i.i:X4}: {string.Join("", dis.Reverse())}");
+
                     if (i.i % 8 == 7)
                     {
                         var splitter = new string('-', 32);
                         await Console.Out.WriteLineAsync(splitter);
                         await outStream.WriteLineAsync(splitter);
                         await outRevStream.WriteLineAsync(splitter);
+
+                        await outHexStream.WriteLineAsync("// " + splitter);
+                        await outRevHexStream.WriteLineAsync("// " + splitter);
                     }
                 }
             }
