@@ -41,11 +41,20 @@ module Host(
     
     
     /*
+    
     NibbleReader(
     input [31:0] data,
     input [2:0] index,
     output [3:0] nibble
     );
+    
+    NibbleWriter nibbleWriter(
+        .dataIn(data),
+        .index(index),
+        .nibble(nibble),
+        .dataOut(result)
+    );
+            
     */
     
 //SW3) Register selector (A = 0, B = 1)

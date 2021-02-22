@@ -19,25 +19,22 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module NibbleWriter(
-    input clock,
-    inout reg [31:0] data,
+    input [31:0] dataIn,
     input [2:0] index,
-    input [3:0] nibble
+    input [3:0] nibble,
+    output [31:0] dataOut
     );
-    
-    always @(posedge clock) begin        
-        case(index)
-            3'b000 : data[03:00] <= nibble;
-            3'b001 : data[07:04] <= nibble;
-            3'b010 : data[11:08] <= nibble;
-            3'b011 : data[15:12] <= nibble;
-            3'b100 : data[19:16] <= nibble;
-            3'b101 : data[23:20] <= nibble;
-            3'b110 : data[27:24] <= nibble;
-            3'b111 : data[31:28] <= nibble;
-        endcase
-    end         
+
+    assign dataOut = 
+        index == 3'b000 ? { dataIn[31:04], nibble               } : 
+        index == 3'b001 ? { dataIn[31:08], nibble, dataIn[03:00]} : 
+        index == 3'b010 ? { dataIn[31:12], nibble, dataIn[07:00]} : 
+        index == 3'b011 ? { dataIn[31:16], nibble, dataIn[11:00]} : 
+        index == 3'b100 ? { dataIn[31:20], nibble, dataIn[15:00]} : 
+        index == 3'b101 ? { dataIn[31:24], nibble, dataIn[19:00]} : 
+        index == 3'b110 ? { dataIn[31:28], nibble, dataIn[23:00]} : 
+        index == 3'b111 ? {                nibble, dataIn[27:00]} : 
+        32'bZ;
         
 endmodule

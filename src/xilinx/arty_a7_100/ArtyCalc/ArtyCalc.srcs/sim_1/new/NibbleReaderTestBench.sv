@@ -12,6 +12,7 @@ module NibbleReaderTestBench;
         .nibble(nibble)
     );
     
+    
     byte testData;    
     initial begin
         for(testData = 0; testData < 16; testData = testData + 1) begin
