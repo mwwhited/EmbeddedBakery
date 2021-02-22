@@ -35,14 +35,4 @@ module RowColumnDecoderTestBench;
         
     always #1 clock = ~clock; 
     
-    /*    
-    initial
-    begin  
-        repeat(100000000)
-        begin
-            #1 clock = !clock;
-        end
-    end 
-    */
-    
 endmodule
