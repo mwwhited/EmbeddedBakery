@@ -2,37 +2,50 @@
 
 module I2cWriteByteTestBench;
 
-    reg SystemClock=0;
-    reg Reset;
-    reg Trigger;
-    
-    reg [6:0] Address;
-    reg [7:0] Data;    
-    
     wire SDA;
     wire SCL;
-    wire busy;
-    wire [4:0] state;
-    wire [6:0] oAddress;
-    wire [7:0] oData;
-        
+    wire Running;
+    
+    reg SystemClock = 0;
+    reg Reset;
+    reg Trigger;    
+    reg [6:0] Address;
+    reg [7:0] Data;
+/*        
+    wire i2c_SDA;
+    wire i2c_SCL;
+    wire internalClock;
+    wire next_Address;
+    wire next_Data;
+    wire [5:0] currentState;
+    wire [7:0] targetAddress;
+    wire [7:0] sendingData;
+    wire [3:0] pointer;  
+    wire clocked;
+*/        
     I2cWriteByte #(
-        .ClockingRatio(2) 
-        ) underTest(
+        //.ClockingRatio(2) 
+        ) underTest (
         .SDA(SDA),
         .SCL(SCL),
-        .busy(busy),
+        .Running(Running),
         
         .SystemClock(SystemClock),
         .Reset(Reset),
         .Trigger(Trigger),
-        
         .Address(Address),
         .Data(Data)
-        
-        ,.state(state)
-        ,.tempAddress(oAddress)
-        ,.tempData(oData)
+/*        
+        ,.i2c_SDA(i2c_SDA)
+        ,.i2c_SCL(i2c_SCL)
+        ,.internalClock(internalClock)
+        ,.next_Address(next_Address)
+        ,.next_Data(next_Data)
+        ,.currentState(currentState)
+        ,.targetAddress(targetAddress)
+        ,.sendingData(sendingData)
+        ,.pointer(pointer)
+*/        
     ) ;
         
     int testHarness = preload; 
@@ -43,7 +56,7 @@ module I2cWriteByteTestBench;
         trigger=4,
         run=5,
         stop=6  
-    } states;
+    } testStates;
      
     always #1 begin
         SystemClock = ~SystemClock;
@@ -51,7 +64,7 @@ module I2cWriteByteTestBench;
         Reset <= 1'b0;
         Trigger <= 1'b0;
         
-        if (!busy) begin
+        if (!Running) begin
                 
             case (testHarness) 
                 preload : begin
