@@ -21,20 +21,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module SimpleCalculator(
-    input clock,
     input [3:0] operation, // {Addition, Subtraction, Multiplication, Division}
     input [31:0] inputA,
     input [31:0] inputB,
-    output reg [31:0] result
+    output [31:0] result
     );
     
-    always @ (posedge clock) begin
-        case (operation)
-            4'b1000: result <= inputA + inputB;
-            4'b0100: result <= inputA - inputB;
-            4'b0010: result <= inputA * inputB;
-            4'b0001: result <= inputA / inputB;
-        endcase
-    end
+    assign result = 
+        operation == 4'b1000 ? inputA + inputB :
+        operation == 4'b0100 ? inputA - inputB :
+        operation == 4'b0010 ? inputA * inputB :
+        operation == 4'b0001 ? inputA / inputB :
+        32'bZ;
     
 endmodule

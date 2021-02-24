@@ -37,90 +37,57 @@ module Host(
         .row(jd[7:4]),
         .column(jd[3:0]),
         .result(ledB)
-    );
-    
-    
-    /*
-    
-    NibbleReader(
-    input [31:0] data,
-    input [2:0] index,
-    output [3:0] nibble
-    );
-    
-    NibbleWriter nibbleWriter(
-        .dataIn(data),
-        .index(index),
-        .nibble(nibble),
-        .dataOut(result)
-    );
-            
-    */
+    );   
     
 //SW3) Register selector (A = 0, B = 1)
 //LD3R) Register selected
 //SW2:SW0) Register byte selector
 //LD2R:LDR0) Register  byte selcted
     assign ledR = sw;
+      
+    
     reg [31:0] registerA;
     reg [31:0] registerB;
     
-    always @(negedge CLK100MHZ) begin
-        case(sw)
-            4'b0_000 : led = registerA[03:00];
-            4'b0_001 : led = registerA[07:04];
-            4'b0_010 : led = registerA[11:08];
-            4'b0_011 : led = registerA[15:12];
-            4'b0_100 : led = registerA[19:16];
-            4'b0_101 : led = registerA[23:20];
-            4'b0_110 : led = registerA[27:24];
-            4'b0_111 : led = registerA[31:28];
-            /*
-            
-            4'b0_000 : led = 4'b1111;// registerA[03:00];
-            4'b0_001 : led = 4'b1110;// registerA[07:04];
-            4'b0_010 : led = 4'b1101;// registerA[11:08];
-            4'b0_011 : led = 4'b1011;// registerA[15:12];
-            4'b0_100 : led = 4'b0111;// registerA[19:16];
-            4'b0_101 : led = 4'b1010;// registerA[23:20];
-            4'b0_110 : led = 4'b0101;// registerA[27:24];
-            4'b0_111 : led = 4'b0110;// registerA[31:28];
-            
-            4'b1_000 : led = registerB[03:00];
-            4'b1_001 : led = registerB[07:04];
-            4'b1_010 : led = registerB[11:08];
-            4'b1_011 : led = registerB[15:12];
-            4'b1_100 : led = registerB[19:16];
-            4'b1_101 : led = registerB[23:20];
-            4'b1_110 : led = registerB[27:24];
-            4'b1_111 : led = registerB[31:28];
-            */
-        endcase
+    reg [31:0] registerR;
+    reg [31:0] currentNibble;  
+      
+    assign currentRegister =
+        sw[3] == 1 ?  registerA :
+        sw[3] == 0 ?  registerB :
+        32'bZ;
+    
+    NibbleWriter nibbleWriter(
+        .dataIn(currentRegister),
+        .index(sw[2:0]),
+        .nibble(ledB),
+        .dataOut(registerR)
+    );
+    
+    NibbleReader(
+        .data(registerR),
+        .index(sw[2:0]),
+        .nibble(led)
+    );        
+      
+      /*  
+    always @(ledB) begin
+        if (sw[3]) begin
+            registerA <= registerR;
+        end else begin
+            registerB <= registerR;
+        end   
     end
-        
-    always @(ledB)
-    begin
-        case(sw)
-            4'b0_000 : registerA[03:00] = ledB;
-            4'b0_001 : registerA[07:04] = ledB;
-            4'b0_010 : registerA[11:08] = ledB;
-            4'b0_011 : registerA[15:12] = ledB;
-            4'b0_100 : registerA[19:16] = ledB;
-            4'b0_101 : registerA[23:20] = ledB;
-            4'b0_110 : registerA[27:24] = ledB;
-            4'b0_111 : registerA[31:28] = ledB;
-            /*
-            4'b1_000 : registerB[03:00] = ledB;
-            4'b1_001 : registerB[07:04] = ledB;
-            4'b1_010 : registerB[11:08] = ledB;
-            4'b1_011 : registerB[15:12] = ledB;
-            4'b1_100 : registerB[19:16] = ledB;
-            4'b1_101 : registerB[23:20] = ledB;
-            4'b1_110 : registerB[27:24] = ledB;
-            4'b1_111 : registerB[31:28] = ledB;
-            */
-        endcase
+    
+    always @(sw) begin
+        if (sw[3]) begin
+            registerR <= registerA;
+        end else begin
+            registerR <= registerB;
+        end  
     end
+    */
+
         
 //LD7:LD4) Current byte value
        

@@ -23,7 +23,7 @@ module RowColumnDecoder(
     input clock,
     input [3:0] row,
     output reg [3:0] column,
-    output reg [3:0] result    
+    output reg [3:0] result 
     );
     
     reg sequenceClock;
