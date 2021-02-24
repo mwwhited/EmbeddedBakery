@@ -24,7 +24,7 @@ module I2cWriteByteTestBench;
     wire clocked;
 */        
     I2cWriteByte #(
-        //.ClockingRatio(2) 
+        .ClockingRatio(25) 
         ) underTest (
         .SDA(SDA),
         .SCL(SCL),

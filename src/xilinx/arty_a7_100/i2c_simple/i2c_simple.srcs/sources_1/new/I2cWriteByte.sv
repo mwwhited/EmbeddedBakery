@@ -47,7 +47,6 @@ module I2cWriteByte #(
     ,output clocked
     */
 );   
-  
     localparam START_BIT = 1'b0;
     localparam STOP_BIT = 1'b1;
     localparam ACK_BIT = 1'b1;
@@ -72,8 +71,9 @@ module I2cWriteByte #(
     
     assign clocked = currentState[1];
     assign Running = currentState[0];
-    assign SDA = Running ? i2c_SDA : 1'b1;
-    assign SCL = Running ? i2c_SCL : 1'b1;
+    
+    assign SDA = Running ? (i2c_SDA ? 1'bZ : 1'b0) : 1'bZ;
+    assign SCL = Running ? (i2c_SCL ? 1'bZ : 1'b0) : 1'bZ;
     
     ClockDivider #(
         .counterLength(ClockingRatioLength),
@@ -95,17 +95,7 @@ module I2cWriteByte #(
         i2c_SDA <= 1'b1;
         i2c_SCL <= 1'b1;
     end 
-    
-    /*
-    always @(posedge SystemClock) begin
-        if (currentState == COMPLETE) begin
-            currentState <= IDLE;
-            i2c_SDA <= 1'b1;
-            i2c_SCL <= 1'b1;
-        end
-    end 
-    */
-    
+        
     always @(posedge Trigger) begin
         if (!Running) begin
             currentState <= START;
@@ -171,96 +161,5 @@ module I2cWriteByte #(
             i2c_SCL <= 1'b0; //~i2c_SCL;
         end
     end    
-    
-    
-
-
-    /*
-    reg [16:00] count = 0;    
-    reg adjustedClock = 0;
-    reg [4:0] bytePostion = 0; 
-    reg enabled = 0;
-    
-    reg [4:0] state;
-    reg [7:0] internalAddress;
-    reg [7:0] internalData;
-    
-    assign tempAddress = internalAddress[7:1];
-    assign tempData = internalData;
-    assign busy = enabled;
-    
-    initial begin
-        count <= 0;
-        state <= IDLE;
-        enabled <= 0;
-        SDA <= 1;
-        SCL <= 1;        
-    end
-            
-    always @(posedge SystemClock) begin
-        if (Reset) begin
-            state <= IDLE;
-            enabled <= 0;
-            SDA <= 1;
-            SCL <= 1;
-        end else if (Trigger & enabled != 1) begin
-            enabled <= 1;
-            count <= 0;
-            internalAddress <= {Address, 1'b0};
-            internalData <= Data;
-        end else if (enabled) begin
-            count <= count + 1;
-            
-            if (count >= (ClockingRatio >> 1)) begin
-                count <= 0;
-                adjustedClock <= ~adjustedClock;
-                SCL <= adjustedClock;
-                
-                case (state)
-                    IDLE: begin
-                         SDA <= 0;
-                         state <= SEND_ADDRESS;
-                         bytePostion <= 0;
-                    end
-                    
-                    SEND_ADDRESS : begin                        
-                        SDA <= internalAddress[7];
-                        internalAddress <= internalAddress << 1;
-                        bytePostion <= bytePostion + 1;
-                        if (bytePostion >= 8) begin
-                            state <= SEND_ADDRESS_ACK;
-                        end                        
-                    end
-                    
-                    SEND_ADDRESS_ACK : begin
-                        SDA <= 1;
-                        state <= SEND_DATA; 
-                        bytePostion <= 0;            
-                    end
-                    
-                    SEND_DATA : begin   
-                        SDA <= internalData[7];
-                        internalData <= internalData << 1;
-                        bytePostion <= bytePostion + 1;
-                        if (bytePostion >= 8) begin
-                            state <= SEND_DATA_ACK;
-                        end                        
-                    end
-                    
-                    SEND_DATA_ACK : begin
-                        SDA <= 1;
-                        state <= SEND_STOP;             
-                    end
-                    
-                    SEND_STOP : begin
-                        SDA <= 1;
-                        state <= IDLE; 
-                        enabled <= 0;            
-                    end
-                endcase 
-            end
-        end
-    end
-    */
-    
+        
 endmodule
