@@ -73,7 +73,8 @@ module I2cLcd #(
         
         Complete =3'b0110        
     } writeMachine;
-        
+    
+    
     /*
         Write command is 
         High nibble, High nibble + Enable, High Nibble

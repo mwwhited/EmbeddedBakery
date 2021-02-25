@@ -75,7 +75,10 @@ module I2cWriteByte #(
     assign SDA = Running ? (i2c_SDA ? 1'bZ : 1'b0) : 1'bZ;
     assign SCL = Running ? (i2c_SCL ? 1'bZ : 1'b0) : 1'bZ;
     
-    ClockDivider_0 i2cClock
+    ClockDivider #(
+        .counterLength(ClockingRatioLength),
+        .counterTarget(ClockingRatio/2)
+    ) i2cClock
     (
         .clockIn(SystemClock),
         .clockOut(internalClock)

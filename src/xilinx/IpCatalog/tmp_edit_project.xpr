@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="54" Path="C:/Repos/mwwhited/EmbeddedBakery/src/xilinx/tempip/ClockDivider/ClockDivider.xpr">
+<Project Version="7" Minor="54" Path="c:/repos/mwwhited/embeddedbakery/src/xilinx/ipcatalog/tmp_edit_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="54323c8126d64531b1393db39c3c2cda"/>
+    <Option Name="Id" Val="21987a3724224653b85366b415985c64"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -31,13 +31,13 @@
     <Option Name="SimulatorGccInstallDirVCS" Val=""/>
     <Option Name="SimulatorGccInstallDirRiviera" Val=""/>
     <Option Name="SimulatorGccInstallDirActiveHdl" Val=""/>
+    <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="BoardPart" Val="digilentinc.com:arty-a7-100:part0:1.0"/>
-    <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../../../../Users/mwwhi/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store"/>
+    <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../../../Users/mwwhi/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../IpCatalog/ClockDivider"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../mwwhited-forks/vivado-library"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../../../../Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -77,44 +77,46 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/imports/new/ClockDivider.sv">
+      <File Path="$PPRDIR/../../../../../../Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/src/top.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../arty_a7_100/ArtyCalc/ArtyCalc.srcs/sources_1/new/ClockDivider.sv"/>
-          <Attr Name="ImportTime" Val="1613934323"/>
+          <Attr Name="Library" Val=""/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../IpCatalog/ClockDivider/component.xml">
+      <File Path="$PPRDIR/../../../../../../Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/src/clk_wiz_0/clk_wiz_0.xci">
+        <FileInfo>
+          <Attr Name="Library" Val=""/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../../../../../Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="ClockDivider"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="TopModule" Val="top"/>
+        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../../Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/src/top.vhd"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
       <Filter Type="Constrs"/>
+      <File Path="$PPRDIR/../../../../../../Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/src/Arty_Master.xdc">
+        <FileInfo>
+          <Attr Name="Library" Val=""/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
-      <File Path="$PSRCDIR/sim_1/imports/new/ClockDividerTestBench.sv">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../arty_a7_100/ArtyCalc/ArtyCalc.srcs/sim_1/new/ClockDividerTestBench.sv"/>
-          <Attr Name="ImportTime" Val="1613934494"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="ClockDividerTestBench"/>
-        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopModule" Val="top"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
