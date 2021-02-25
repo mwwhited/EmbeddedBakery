@@ -1,0 +1,284 @@
+Release 6.3.02i - xst G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.45 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.45 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: divider.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : divider.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : divider
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : divider
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : divider.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/Multip/div_buff.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_div_buff is up to date.
+Architecture behavioral of Entity div_buff is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/f_adder.vhf in Library work.
+Architecture behavioral of Entity add1_mxilinx_f_adder is up to date.
+Architecture behavioral of Entity add4_mxilinx_f_adder is up to date.
+Architecture behavioral of Entity f_adder is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/twocompl_2.vhf in Library work.
+Architecture behavioral of Entity twocompl_2 is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/div_inp.vhf in Library work.
+Architecture behavioral of Entity buf4_mxilinx_div_inp is up to date.
+Architecture behavioral of Entity div_inp is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/divider.vhf in Library work.
+Architecture behavioral of Entity bufe8_mxilinx_divider is up to date.
+Architecture behavioral of Entity buf4_mxilinx_divider is up to date.
+Architecture behavioral of Entity divider is up to date.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <divider> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_21_0" for instance <XLXI_21> in unit <divider>.
+    Set user-defined property "HU_SET =  XLXI_26_1" for instance <XLXI_26> in unit <divider>.
+Entity <divider> analyzed. Unit <divider> generated.
+
+Analyzing Entity <div_buff> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_2_0" for instance <XLXI_2> in unit <div_buff>.
+    Set user-defined property "HU_SET =  XLXI_3_1" for instance <XLXI_3> in unit <div_buff>.
+Entity <div_buff> analyzed. Unit <div_buff> generated.
+
+Analyzing Entity <BUFE4_MXILINX_div_buff> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_div_buff> analyzed. Unit <BUFE4_MXILINX_div_buff> generated.
+
+Analyzing Entity <f_adder> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/f_adder.vhf line 545: Unconnected output port 'OFL' of component 'ADD4_MXILINX_f_adder'.
+    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <f_adder>.
+    Set user-defined property "HU_SET =  XLXI_2_1" for instance <XLXI_2> in unit <f_adder>.
+Entity <f_adder> analyzed. Unit <f_adder> generated.
+
+Analyzing Entity <ADD4_MXILINX_f_adder> (Architecture <behavioral>).
+Entity <ADD4_MXILINX_f_adder> analyzed. Unit <ADD4_MXILINX_f_adder> generated.
+
+Analyzing Entity <ADD1_MXILINX_f_adder> (Architecture <behavioral>).
+Entity <ADD1_MXILINX_f_adder> analyzed. Unit <ADD1_MXILINX_f_adder> generated.
+
+Analyzing Entity <twocompl_2> (Architecture <behavioral>).
+Entity <twocompl_2> analyzed. Unit <twocompl_2> generated.
+
+Analyzing Entity <div_inp> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <div_inp>.
+    Set user-defined property "HU_SET =  XLXI_2_1" for instance <XLXI_2> in unit <div_inp>.
+Entity <div_inp> analyzed. Unit <div_inp> generated.
+
+Analyzing Entity <BUF4_MXILINX_div_inp> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_div_inp> analyzed. Unit <BUF4_MXILINX_div_inp> generated.
+
+Analyzing Entity <BUF4_MXILINX_divider> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_divider> analyzed. Unit <BUF4_MXILINX_divider> generated.
+
+Analyzing Entity <BUFE8_MXILINX_divider> (Architecture <behavioral>).
+Entity <BUFE8_MXILINX_divider> analyzed. Unit <BUFE8_MXILINX_divider> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <BUF4_MXILINX_div_inp>.
+    Related source file is C:/Xilinx/bin/Multip/div_inp.vhf.
+Unit <BUF4_MXILINX_div_inp> synthesized.
+
+
+Synthesizing Unit <ADD1_MXILINX_f_adder>.
+    Related source file is C:/Xilinx/bin/Multip/f_adder.vhf.
+Unit <ADD1_MXILINX_f_adder> synthesized.
+
+
+Synthesizing Unit <ADD4_MXILINX_f_adder>.
+    Related source file is C:/Xilinx/bin/Multip/f_adder.vhf.
+Unit <ADD4_MXILINX_f_adder> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_div_buff>.
+    Related source file is C:/Xilinx/bin/Multip/div_buff.vhf.
+Unit <BUFE4_MXILINX_div_buff> synthesized.
+
+
+Synthesizing Unit <BUFE8_MXILINX_divider>.
+    Related source file is C:/Xilinx/bin/Multip/divider.vhf.
+Unit <BUFE8_MXILINX_divider> synthesized.
+
+
+Synthesizing Unit <BUF4_MXILINX_divider>.
+    Related source file is C:/Xilinx/bin/Multip/divider.vhf.
+Unit <BUF4_MXILINX_divider> synthesized.
+
+
+Synthesizing Unit <div_inp>.
+    Related source file is C:/Xilinx/bin/Multip/div_inp.vhf.
+Unit <div_inp> synthesized.
+
+
+Synthesizing Unit <twocompl_2>.
+    Related source file is C:/Xilinx/bin/Multip/twocompl_2.vhf.
+Unit <twocompl_2> synthesized.
+
+
+Synthesizing Unit <f_adder>.
+    Related source file is C:/Xilinx/bin/Multip/f_adder.vhf.
+WARNING:Xst:647 - Input <A<5>> is never used.
+WARNING:Xst:647 - Input <B<5>> is never used.
+Unit <f_adder> synthesized.
+
+
+Synthesizing Unit <div_buff>.
+    Related source file is C:/Xilinx/bin/Multip/div_buff.vhf.
+WARNING:Xst:647 - Input <A<4:5>> is never used.
+WARNING:Xst:647 - Input <B<4>> is never used.
+Unit <div_buff> synthesized.
+
+
+Synthesizing Unit <divider>.
+    Related source file is C:/Xilinx/bin/Multip/divider.vhf.
+WARNING:Xst:646 - Signal <Modulas<0>> is assigned but never used.
+WARNING:Xst:646 - Signal <Modulas<5>> is assigned but never used.
+Unit <divider> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1348 - Unit BUFE8_MXILINX_divider is merged (output interface has tristates)
+
+Optimizing unit <divider> ...
+
+Optimizing unit <twocompl_2> ...
+
+Optimizing unit <BUF4_MXILINX_divider> ...
+
+Optimizing unit <BUFE4_MXILINX_div_buff> ...
+
+Optimizing unit <ADD4_MXILINX_f_adder> ...
+
+Optimizing unit <ADD1_MXILINX_f_adder> ...
+
+Optimizing unit <BUF4_MXILINX_div_inp> ...
+
+Optimizing unit <div_buff> ...
+
+Optimizing unit <f_adder> ...
+
+Optimizing unit <div_inp> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : divider.ngr
+Top Level Output File Name         : divider
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 194
+#      AND2                        : 36
+#      AND3                        : 16
+#      AND4                        : 12
+#      AND5                        : 8
+#      BUF                         : 26
+#      GND                         : 15
+#      INV                         : 8
+#      OR2                         : 16
+#      OR3                         : 8
+#      OR4                         : 4
+#      OR5                         : 4
+#      VCC                         : 1
+#      XOR2                        : 40
+# Tri-States                       : 32
+#      BUFE                        : 32
+# IO Buffers                       : 17
+#      IBUF                        : 9
+#      OBUFE                       : 8
+# Others                           : 16
+#      AND2B1                      : 8
+#      AND3B1                      : 4
+#      AND3B2                      : 4
+=========================================================================
+CPU : 2.47 / 3.25 s | Elapsed : 3.00 / 4.00 s
+ 
+--> 
+
+Total memory usage is 51568 kilobytes
+
+

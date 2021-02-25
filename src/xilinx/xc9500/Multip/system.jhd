@@ -1,0 +1,11 @@
+MODULE system
+	SUBMODULE calc
+		INSTANCE Calc_S
+	SUBMODULE eightbits
+		INSTANCE Bits_In
+	SUBMODULE eightleds
+		INSTANCE Bits_Out
+	SUBMODULE counter
+		INSTANCE Cntr
+	SUBMODULE momentsw
+		INSTANCE Sw

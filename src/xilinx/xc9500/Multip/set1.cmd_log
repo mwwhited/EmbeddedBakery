@@ -1,0 +1,2 @@
+sch2vhdl -family xc9500 -flat -suppress -w Set1.sch set1.vhf
+sch2vhdl -family xc9500 -flat -suppress -w Set1.sch set1.vhf

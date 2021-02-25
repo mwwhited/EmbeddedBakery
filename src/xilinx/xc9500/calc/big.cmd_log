@@ -1,0 +1,130 @@
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -i -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w Big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -i -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -i -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -i -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+XSLTProcess "big_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+XSLTProcess "big_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+XSLTProcess "big_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+XSLTProcess "big_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+sch2vhdl -family xc9500 -flat -suppress -w big.sch big.vhf
+xst -intstyle ise -ifn __projnav/big.xst -ofn big.syr
+ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk big.ngd
+hprep6 -s IEEE1149 -n big -i big
+taengine -f big -w --format html1 -l c:\codeset\xilinx\calc/big_html/tim/timing_report.htm
+XSLTProcess "big_build.xml"

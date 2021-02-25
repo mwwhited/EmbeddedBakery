@@ -1,0 +1,196 @@
+Release 6.3.01i - xst G.36
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.50 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.50 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: sevenseg.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : sevenseg.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : sevenseg
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : sevenseg
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : sevenseg.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/adder/sevenseg.vhf in Library work.
+Architecture behavioral of Entity buf4_mxilinx_sevenseg is up to date.
+Architecture behavioral of Entity obufe_mxilinx_sevenseg is up to date.
+Architecture behavioral of Entity obufe4_mxilinx_sevenseg is up to date.
+Architecture behavioral of Entity sevenseg is up to date.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <sevenseg> (Architecture <behavioral>).
+    Set user-defined property "LOC =  p15" for signal <Za> in unit <sevenseg>.
+    Set user-defined property "LOC =  p18" for signal <Zb> in unit <sevenseg>.
+    Set user-defined property "LOC =  p23" for signal <Zc> in unit <sevenseg>.
+    Set user-defined property "LOC =  p21" for signal <Zd> in unit <sevenseg>.
+    Set user-defined property "LOC =  p24" for signal <Zdp> in unit <sevenseg>.
+    Set user-defined property "LOC =  p19" for signal <Ze> in unit <sevenseg>.
+    Set user-defined property "LOC =  p14" for signal <Zf> in unit <sevenseg>.
+    Set user-defined property "LOC =  p17" for signal <Zg> in unit <sevenseg>.
+    Set user-defined property "HU_SET =  XLXI_4_4" for instance <XLXI_4> in unit <sevenseg>.
+    Set user-defined property "HU_SET =  XLXI_5_5" for instance <XLXI_5> in unit <sevenseg>.
+    Set user-defined property "HU_SET =  XLXI_15_6" for instance <XLXI_15> in unit <sevenseg>.
+    Set user-defined property "HU_SET =  XLXI_16_7" for instance <XLXI_16> in unit <sevenseg>.
+Entity <sevenseg> analyzed. Unit <sevenseg> generated.
+
+Analyzing Entity <OBUFE4_MXILINX_sevenseg> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_37_3" for instance <I_36_37> in unit <OBUFE4_MXILINX_sevenseg>.
+    Set user-defined property "HU_SET =  I_36_38_0" for instance <I_36_38> in unit <OBUFE4_MXILINX_sevenseg>.
+    Set user-defined property "HU_SET =  I_36_39_1" for instance <I_36_39> in unit <OBUFE4_MXILINX_sevenseg>.
+    Set user-defined property "HU_SET =  I_36_40_2" for instance <I_36_40> in unit <OBUFE4_MXILINX_sevenseg>.
+Entity <OBUFE4_MXILINX_sevenseg> analyzed. Unit <OBUFE4_MXILINX_sevenseg> generated.
+
+Analyzing Entity <OBUFE_MXILINX_sevenseg> (Architecture <behavioral>).
+Entity <OBUFE_MXILINX_sevenseg> analyzed. Unit <OBUFE_MXILINX_sevenseg> generated.
+
+Analyzing Entity <BUF4_MXILINX_sevenseg> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_sevenseg> analyzed. Unit <BUF4_MXILINX_sevenseg> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <OBUFE_MXILINX_sevenseg>.
+    Related source file is C:/Xilinx/bin/adder/sevenseg.vhf.
+Unit <OBUFE_MXILINX_sevenseg> synthesized.
+
+
+Synthesizing Unit <BUF4_MXILINX_sevenseg>.
+    Related source file is C:/Xilinx/bin/adder/sevenseg.vhf.
+Unit <BUF4_MXILINX_sevenseg> synthesized.
+
+
+Synthesizing Unit <OBUFE4_MXILINX_sevenseg>.
+    Related source file is C:/Xilinx/bin/adder/sevenseg.vhf.
+Unit <OBUFE4_MXILINX_sevenseg> synthesized.
+
+
+Synthesizing Unit <sevenseg>.
+    Related source file is C:/Xilinx/bin/adder/sevenseg.vhf.
+Unit <sevenseg> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <sevenseg> ...
+  implementation constraint: LOC=p15	 : Za
+  implementation constraint: LOC=p18	 : Zb
+  implementation constraint: LOC=p23	 : Zc
+  implementation constraint: LOC=p21	 : Zd
+  implementation constraint: LOC=p19	 : Ze
+  implementation constraint: LOC=p14	 : Zf
+  implementation constraint: LOC=p17	 : Zg
+  implementation constraint: LOC=p24	 : Zdp
+
+Optimizing unit <BUF4_MXILINX_sevenseg> ...
+
+Optimizing unit <OBUFE_MXILINX_sevenseg> ...
+
+Optimizing unit <OBUFE4_MXILINX_sevenseg> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : sevenseg.ngr
+Top Level Output File Name         : sevenseg
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 17
+#      BUF                         : 9
+#      INV                         : 8
+# IO Buffers                       : 17
+#      IBUF                        : 9
+#      OBUFT                       : 8
+=========================================================================
+CPU : 1.72 / 2.55 s | Elapsed : 2.00 / 3.00 s
+ 
+--> 
+
+Total memory usage is 49392 kilobytes
+
+

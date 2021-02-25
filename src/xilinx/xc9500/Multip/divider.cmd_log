@@ -1,0 +1,9 @@
+sch2vhdl -family xc9500 -flat -suppress -w divider.sch divider.vhf
+xst -intstyle ise -ifn __projnav/divider.xst -ofn divider.syr
+sch2vhdl -family xc9500 -flat -suppress -w divider.sch divider.vhf
+sch2vhdl -family xc9500 -flat -suppress -w divider.sch divider.vhf
+xst -intstyle ise -ifn __projnav/divider.xst -ofn divider.syr
+ngdbuild -dd _ngo -i -p xc9500 divider.ngc divider.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk divider.ngd
+hprep6 -s IEEE1149 -n divider -i divider
+sch2vhdl -family xc9500 -flat -suppress -w divider.sch divider.vhf

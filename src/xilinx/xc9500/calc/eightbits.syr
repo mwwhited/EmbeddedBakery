@@ -1,0 +1,195 @@
+Release 6.3.01i - xst G.36
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.51 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.51 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: eightbits.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : eightbits.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : eightbits
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : eightbits
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : eightbits.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/adder/eightbits.vhf in Library work.
+Entity <ibuf4_mxilinx_eightbits> (Architecture <behavioral>) compiled.
+Entity <obufe_mxilinx_eightbits> (Architecture <behavioral>) compiled.
+Entity <obufe4_mxilinx_eightbits> (Architecture <behavioral>) compiled.
+Entity <eightbits> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <eightbits> (Architecture <behavioral>).
+    Set user-defined property "LOC =  p6" for signal <A1> in unit <eightbits>.
+    Set user-defined property "LOC =  p7" for signal <A2> in unit <eightbits>.
+    Set user-defined property "LOC =  p11" for signal <A3> in unit <eightbits>.
+    Set user-defined property "LOC =  p5" for signal <A4> in unit <eightbits>.
+    Set user-defined property "LOC =  p72" for signal <A5> in unit <eightbits>.
+    Set user-defined property "LOC =  p71" for signal <A6> in unit <eightbits>.
+    Set user-defined property "LOC =  p66" for signal <A7> in unit <eightbits>.
+    Set user-defined property "LOC =  p70" for signal <A8> in unit <eightbits>.
+    Set user-defined property "HU_SET =  XLXI_1_4" for instance <XLXI_1> in unit <eightbits>.
+    Set user-defined property "HU_SET =  XLXI_2_5" for instance <XLXI_2> in unit <eightbits>.
+    Set user-defined property "HU_SET =  XLXI_3_6" for instance <XLXI_3> in unit <eightbits>.
+    Set user-defined property "HU_SET =  XLXI_4_7" for instance <XLXI_4> in unit <eightbits>.
+Entity <eightbits> analyzed. Unit <eightbits> generated.
+
+Analyzing Entity <OBUFE4_MXILINX_eightbits> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_37_3" for instance <I_36_37> in unit <OBUFE4_MXILINX_eightbits>.
+    Set user-defined property "HU_SET =  I_36_38_0" for instance <I_36_38> in unit <OBUFE4_MXILINX_eightbits>.
+    Set user-defined property "HU_SET =  I_36_39_1" for instance <I_36_39> in unit <OBUFE4_MXILINX_eightbits>.
+    Set user-defined property "HU_SET =  I_36_40_2" for instance <I_36_40> in unit <OBUFE4_MXILINX_eightbits>.
+Entity <OBUFE4_MXILINX_eightbits> analyzed. Unit <OBUFE4_MXILINX_eightbits> generated.
+
+Analyzing Entity <OBUFE_MXILINX_eightbits> (Architecture <behavioral>).
+Entity <OBUFE_MXILINX_eightbits> analyzed. Unit <OBUFE_MXILINX_eightbits> generated.
+
+Analyzing Entity <IBUF4_MXILINX_eightbits> (Architecture <behavioral>).
+Entity <IBUF4_MXILINX_eightbits> analyzed. Unit <IBUF4_MXILINX_eightbits> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <OBUFE_MXILINX_eightbits>.
+    Related source file is C:/Xilinx/bin/adder/eightbits.vhf.
+Unit <OBUFE_MXILINX_eightbits> synthesized.
+
+
+Synthesizing Unit <IBUF4_MXILINX_eightbits>.
+    Related source file is C:/Xilinx/bin/adder/eightbits.vhf.
+Unit <IBUF4_MXILINX_eightbits> synthesized.
+
+
+Synthesizing Unit <OBUFE4_MXILINX_eightbits>.
+    Related source file is C:/Xilinx/bin/adder/eightbits.vhf.
+Unit <OBUFE4_MXILINX_eightbits> synthesized.
+
+
+Synthesizing Unit <eightbits>.
+    Related source file is C:/Xilinx/bin/adder/eightbits.vhf.
+Unit <eightbits> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <eightbits> ...
+  implementation constraint: LOC=p6	 : A1
+  implementation constraint: LOC=p7	 : A2
+  implementation constraint: LOC=p11	 : A3
+  implementation constraint: LOC=p5	 : A4
+  implementation constraint: LOC=p72	 : A5
+  implementation constraint: LOC=p71	 : A6
+  implementation constraint: LOC=p66	 : A7
+  implementation constraint: LOC=p70	 : A8
+
+Optimizing unit <IBUF4_MXILINX_eightbits> ...
+
+Optimizing unit <OBUFE_MXILINX_eightbits> ...
+
+Optimizing unit <OBUFE4_MXILINX_eightbits> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : eightbits.ngr
+Top Level Output File Name         : eightbits
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 8
+#      INV                         : 8
+# IO Buffers                       : 17
+#      IBUF                        : 9
+#      OBUFT                       : 8
+=========================================================================
+CPU : 1.72 / 2.61 s | Elapsed : 2.00 / 3.00 s
+ 
+--> 
+
+Total memory usage is 49392 kilobytes
+
+

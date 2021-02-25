@@ -1,0 +1,5 @@
+sch2vhdl -family xc9500 -flat -suppress -w div_buff.sch div_buff.vhf
+xst -intstyle ise -ifn __projnav/div_buff.xst -ofn div_buff.syr
+sch2vhdl -family xc9500 -flat -suppress -w div_buff.sch div_buff.vhf
+sch2vhdl -family xc9500 -flat -suppress -w div_buff.sch div_buff.vhf
+sch2vhdl -family xc9500 -flat -suppress -w div_buff.sch div_buff.vhf

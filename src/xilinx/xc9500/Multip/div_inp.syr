@@ -1,0 +1,152 @@
+Release 6.3.02i - xst G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.53 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.53 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: div_inp.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : div_inp.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : div_inp
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : div_inp
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : div_inp.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/Multip/div_inp.vhf in Library work.
+Architecture behavioral of Entity buf4_mxilinx_div_inp is up to date.
+Architecture behavioral of Entity div_inp is up to date.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <div_inp> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <div_inp>.
+    Set user-defined property "HU_SET =  XLXI_2_1" for instance <XLXI_2> in unit <div_inp>.
+Entity <div_inp> analyzed. Unit <div_inp> generated.
+
+Analyzing Entity <BUF4_MXILINX_div_inp> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_div_inp> analyzed. Unit <BUF4_MXILINX_div_inp> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <BUF4_MXILINX_div_inp>.
+    Related source file is C:/Xilinx/bin/Multip/div_inp.vhf.
+Unit <BUF4_MXILINX_div_inp> synthesized.
+
+
+Synthesizing Unit <div_inp>.
+    Related source file is C:/Xilinx/bin/Multip/div_inp.vhf.
+Unit <div_inp> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <div_inp> ...
+
+Optimizing unit <BUF4_MXILINX_div_inp> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : div_inp.ngr
+Top Level Output File Name         : div_inp
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 13
+
+Cell Usage :
+# BELS                             : 10
+#      BUF                         : 9
+#      GND                         : 1
+# IO Buffers                       : 13
+#      IBUF                        : 4
+#      OBUF                        : 9
+=========================================================================
+CPU : 1.47 / 2.38 s | Elapsed : 2.00 / 2.00 s
+ 
+--> 
+
+Total memory usage is 49520 kilobytes
+
+

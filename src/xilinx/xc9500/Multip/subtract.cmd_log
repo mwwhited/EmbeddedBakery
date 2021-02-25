@@ -1,0 +1,10 @@
+sch2vhdl -family xc9500 -flat -suppress -w subtract.sch subtract.vhf
+xst -intstyle ise -ifn __projnav/subtract.xst -ofn subtract.syr
+sch2vhdl -family xc9500 -flat -suppress -w subtract.sch subtract.vhf
+sch2vhdl -family xc9500 -flat -suppress -w subtract.sch subtract.vhf
+sch2vhdl -family xc9500 -flat -suppress -w subtract.sch subtract.vhf
+xst -intstyle ise -ifn __projnav/subtract.xst -ofn subtract.syr
+ngdbuild -dd _ngo -i -p xc9500 subtract.ngc subtract.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk subtract.ngd
+hprep6 -s IEEE1149 -n subtract -i subtract
+sch2vhdl -family xc9500 -flat -suppress -w subtract.sch subtract.vhf

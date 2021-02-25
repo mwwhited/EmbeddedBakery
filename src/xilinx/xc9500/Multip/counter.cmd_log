@@ -1,0 +1,2 @@
+sch2vhdl -family xc9500 -flat -suppress -w Counter.sch counter.vhf
+sch2vhdl -family xc9500 -flat -suppress -w counter.sch counter.vhf

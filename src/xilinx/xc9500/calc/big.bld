@@ -1,0 +1,23 @@
+Release 6.3.01i - ngdbuild G.36
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -dd _ngo -uc big.ucf -p xc9500 big.ngc big.ngd 
+
+Reading NGO file "C:/Xilinx/bin/calc/big.ngc" ...
+Reading component libraries for design expansion...
+
+Annotating constraints to design from file "big.ucf" ...
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:454 - logical net 'XLXI_2/XLXI_14/D8' has no load
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 36992 kilobytes
+
+Writing NGD file "big.ngd" ...
+
+Writing NGDBUILD log file "big.bld"...

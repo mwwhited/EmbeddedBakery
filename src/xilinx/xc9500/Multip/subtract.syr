@@ -1,0 +1,216 @@
+Release 6.3.02i - xst G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.47 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.47 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: subtract.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : subtract.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : subtract
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : subtract
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : subtract.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/Multip/twocompl.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_twocompl is up to date.
+Architecture behavioral of Entity twocompl is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/subtract.vhf in Library work.
+Entity <bufe4_mxilinx_subtract> (Architecture <behavioral>) compiled.
+Entity <add1_mxilinx_subtract> (Architecture <behavioral>) compiled.
+Entity <add4_mxilinx_subtract> (Architecture <behavioral>) compiled.
+Entity <subtract> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <subtract> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/subtract.vhf line 667: Unconnected output port 'OFL' of component 'ADD4_MXILINX_subtract'.
+    Set user-defined property "HU_SET =  add_0_0" for instance <add_0> in unit <subtract>.
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/subtract.vhf line 684: Unconnected output port 'CO' of component 'ADD1_MXILINX_subtract'.
+    Set user-defined property "HU_SET =  add_1_1" for instance <add_1> in unit <subtract>.
+    Set user-defined property "HU_SET =  o_buf0_2" for instance <o_buf0> in unit <subtract>.
+Entity <subtract> analyzed. Unit <subtract> generated.
+
+Analyzing Entity <ADD4_MXILINX_subtract> (Architecture <behavioral>).
+Entity <ADD4_MXILINX_subtract> analyzed. Unit <ADD4_MXILINX_subtract> generated.
+
+Analyzing Entity <ADD1_MXILINX_subtract> (Architecture <behavioral>).
+Entity <ADD1_MXILINX_subtract> analyzed. Unit <ADD1_MXILINX_subtract> generated.
+
+Analyzing Entity <BUFE4_MXILINX_subtract> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_subtract> analyzed. Unit <BUFE4_MXILINX_subtract> generated.
+
+Analyzing Entity <twocompl> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_43_0" for instance <XLXI_43> in unit <twocompl>.
+Entity <twocompl> analyzed. Unit <twocompl> generated.
+
+Analyzing Entity <BUFE4_MXILINX_twocompl> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_twocompl> analyzed. Unit <BUFE4_MXILINX_twocompl> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <BUFE4_MXILINX_twocompl>.
+    Related source file is C:/Xilinx/bin/Multip/twocompl.vhf.
+Unit <BUFE4_MXILINX_twocompl> synthesized.
+
+
+Synthesizing Unit <twocompl>.
+    Related source file is C:/Xilinx/bin/Multip/twocompl.vhf.
+Unit <twocompl> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_subtract>.
+    Related source file is C:/Xilinx/bin/Multip/subtract.vhf.
+Unit <BUFE4_MXILINX_subtract> synthesized.
+
+
+Synthesizing Unit <ADD1_MXILINX_subtract>.
+    Related source file is C:/Xilinx/bin/Multip/subtract.vhf.
+Unit <ADD1_MXILINX_subtract> synthesized.
+
+
+Synthesizing Unit <ADD4_MXILINX_subtract>.
+    Related source file is C:/Xilinx/bin/Multip/subtract.vhf.
+Unit <ADD4_MXILINX_subtract> synthesized.
+
+
+Synthesizing Unit <subtract>.
+    Related source file is C:/Xilinx/bin/Multip/subtract.vhf.
+Unit <subtract> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1348 - Unit BUFE4_MXILINX_subtract is merged (output interface has tristates)
+
+Optimizing unit <subtract> ...
+
+Optimizing unit <ADD4_MXILINX_subtract> ...
+
+Optimizing unit <ADD1_MXILINX_subtract> ...
+
+Optimizing unit <BUFE4_MXILINX_twocompl> ...
+
+Optimizing unit <twocompl> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : subtract.ngr
+Top Level Output File Name         : subtract
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 14
+
+Cell Usage :
+# BELS                             : 52
+#      AND2                        : 12
+#      AND3                        : 4
+#      AND4                        : 3
+#      AND5                        : 2
+#      GND                         : 2
+#      INV                         : 5
+#      OR2                         : 4
+#      OR3                         : 2
+#      OR4                         : 1
+#      OR5                         : 1
+#      VCC                         : 2
+#      XOR2                        : 14
+# Tri-States                       : 5
+#      BUFE                        : 5
+# IO Buffers                       : 14
+#      IBUF                        : 9
+#      OBUFE                       : 5
+# Others                           : 4
+#      AND2B1                      : 2
+#      AND3B1                      : 1
+#      AND3B2                      : 1
+=========================================================================
+CPU : 1.78 / 2.58 s | Elapsed : 2.00 / 3.00 s
+ 
+--> 
+
+Total memory usage is 50544 kilobytes
+
+

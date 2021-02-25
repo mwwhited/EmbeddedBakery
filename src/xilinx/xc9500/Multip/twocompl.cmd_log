@@ -1,0 +1,4 @@
+sch2vhdl -family xc9500 -flat -suppress -w twocompl.sch twocompl.vhf
+sch2vhdl -family xc9500 -flat -suppress -w twocompl.sch twocompl.vhf
+sch2vhdl -family xc9500 -flat -suppress -w twocompl.sch twocompl.vhf
+sch2vhdl -family xc9500 -flat -suppress -w twocompl.sch twocompl.vhf

@@ -1,0 +1,3 @@
+sch2vhdl -family xc9500 -flat -suppress -w momentsw.sch momentsw.vhf
+sch2vhdl -family xc9500 -flat -suppress -w momentsw.sch momentsw.vhf
+sch2vhdl -family xc9500 -flat -suppress -w momentsw.sch momentsw.vhf

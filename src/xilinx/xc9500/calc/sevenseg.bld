@@ -1,0 +1,20 @@
+Release 6.3.01i - ngdbuild G.36
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -dd _ngo -i -p xc9500 sevenseg.ngc sevenseg.ngd 
+
+Reading NGO file "C:/Xilinx/bin/adder/sevenseg.ngc" ...
+Reading component libraries for design expansion...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 35968 kilobytes
+
+Writing NGD file "sevenseg.ngd" ...
+
+Writing NGDBUILD log file "sevenseg.bld"...

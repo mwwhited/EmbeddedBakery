@@ -1,0 +1,11 @@
+sch2vhdl -family xc9500 -flat -suppress -w adder.sch adder.vhf
+xst -intstyle ise -ifn __projnav/adder.xst -ofn adder.syr
+sch2vhdl -family xc9500 -flat -suppress -w adder.sch adder.vhf
+sch2vhdl -family xc9500 -flat -suppress -w adder.sch adder.vhf
+sch2vhdl -family xc9500 -flat -suppress -w adder.sch adder.vhf
+sch2vhdl -family xc9500 -flat -suppress -w adder.sch adder.vhf
+xst -intstyle ise -ifn __projnav/adder.xst -ofn adder.syr
+ngdbuild -dd _ngo -i -p xc9500 adder.ngc adder.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk adder.ngd
+hprep6 -s IEEE1149 -n adder -i adder
+sch2vhdl -family xc9500 -flat -suppress -w adder.sch adder.vhf

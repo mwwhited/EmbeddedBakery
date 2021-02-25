@@ -1,0 +1,3101 @@
+m255
+cModel Technology
+dC:\Xilinx\bin\Multip
+Eadd1_mxilinx_f_adder
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584723
+Ff_adder.vhf
+l0
+L27
+Vf2loYSR^hPT?K8g2iTiB>2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DE unisim or3 6PDKGc<3W8cdC1[nGkj5a3
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DE unisim and2b1 0Y2OzdmH6<]WE<Kmme5ho0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work add1_mxilinx_f_adder f2loYSR^hPT?K8g2iTiB>2
+l79
+L35
+V=I_jJ_E6<gA2`cc7WATfn0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eadd1_mxilinx_subtract
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584719
+Fsubtract.vhf
+l0
+L98
+VEU88WK2Pm0Ii2aD4FeG@n3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DE unisim or3 6PDKGc<3W8cdC1[nGkj5a3
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DE unisim and2b1 0Y2OzdmH6<]WE<Kmme5ho0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work add1_mxilinx_subtract EU88WK2Pm0Ii2aD4FeG@n3
+l150
+L106
+Vk^:>eZGMzCPb5mY=kPUj;1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eadd4_mxilinx_adder
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584718
+Fadder.vhf
+l0
+L98
+Vn0K:[1bKKD>`;4T`L[z7I0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim or5 5o^S7`I6cTcdURjF9;]>Y3
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DE unisim and4 QFoN7[9fRN5cBkJh6;28B2
+DE unisim and5 oJKa[d=mbS:EkdFBUeen>0
+DE unisim or4 [D3^MfE@3GXCH[d^bY]bG3
+DE unisim or3 6PDKGc<3W8cdC1[nGkj5a3
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work add4_mxilinx_adder n0K:[1bKKD>`;4T`L[z7I0
+l240
+L116
+V<]^@@L6nJ^7MaR]LmZ:BJ3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eadd4_mxilinx_e_adder
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662461
+Fe_adder.vhf
+l0
+L27
+Vn6FTZ35L0n8<3oQL4Q3k`0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim or5 5o^S7`I6cTcdURjF9;]>Y3
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DE unisim and4 QFoN7[9fRN5cBkJh6;28B2
+DE unisim and5 oJKa[d=mbS:EkdFBUeen>0
+DE unisim or4 [D3^MfE@3GXCH[d^bY]bG3
+DE unisim or3 6PDKGc<3W8cdC1[nGkj5a3
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work add4_mxilinx_e_adder n6FTZ35L0n8<3oQL4Q3k`0
+l169
+L45
+VaPH@n[ido0<6276e;1aV]0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eadd4_mxilinx_f_adder
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584723
+Ff_adder.vhf
+l0
+L150
+VVX5We;cKB^O2AJEbkjD4T2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim or5 5o^S7`I6cTcdURjF9;]>Y3
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DE unisim and4 QFoN7[9fRN5cBkJh6;28B2
+DE unisim and5 oJKa[d=mbS:EkdFBUeen>0
+DE unisim or4 [D3^MfE@3GXCH[d^bY]bG3
+DE unisim or3 6PDKGc<3W8cdC1[nGkj5a3
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work add4_mxilinx_f_adder VX5We;cKB^O2AJEbkjD4T2
+l292
+L168
+V7==T1i<:4QS85jN93Pl:N1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eadd4_mxilinx_subtract
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584719
+Fsubtract.vhf
+l0
+L221
+Vd7Bj>Q6QGZk7dYlZGeGC21
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim or5 5o^S7`I6cTcdURjF9;]>Y3
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DE unisim and4 QFoN7[9fRN5cBkJh6;28B2
+DE unisim and5 oJKa[d=mbS:EkdFBUeen>0
+DE unisim or4 [D3^MfE@3GXCH[d^bY]bG3
+DE unisim or3 6PDKGc<3W8cdC1[nGkj5a3
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work add4_mxilinx_subtract d7Bj>Q6QGZk7dYlZGeGC21
+l363
+L239
+VlHa<Yo6LgY@>Ng?Cl`ZRD3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eadder
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584718
+Fadder.vhf
+l0
+L448
+VzT?QeP3g2aJQ:NdcOd=3P0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE work bufe4_mxilinx_adder Nll8IoF_el6^PV5IHY;<W2
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DE work add4_mxilinx_adder n0K:[1bKKD>`;4T`L[z7I0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work adder zT?QeP3g2aJQ:NdcOd=3P0
+l508
+L455
+V=L`[FHCDmD6S[VbYEX:m`1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Eall_low
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331279
+Fall_low.vhf
+l0
+L98
+VXLiOP?3=BUkL?O5JgF[HG1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE work bufe4_mxilinx_all_low LKG]il39Gb<1K_`l6;BmF1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work all_low XLiOP?3=BUkL?O5JgF[HG1
+l128
+L106
+V:Fd4FcEj:iz26;NXc8N0X2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eand_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098154936
+Fand_array.vhf
+l0
+L98
+V^]5CNMT2n>jklHTP_JfPS2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work bufe4_mxilinx_and_array blZJg_a4[N6ekaICNok?`2
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work and_array ^]5CNMT2n>jklHTP_JfPS2
+l141
+L114
+VzWKi40Hk8<Vb[f[J:MPQ?3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eand_row
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662460
+Fand_row.vhf
+l0
+L27
+VzDz<QLaV84_Z2=?9JEjP12
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work and_row zDz<QLaV84_Z2=?9JEjP12
+l42
+L33
+VR4lin9a837Fc=[__SOg;c2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ebuf4_mxilinx_div_inp
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584724
+Fdiv_inp.vhf
+l0
+L27
+VdJ0kL[A><jY;V?@k;SzlZ3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work buf4_mxilinx_div_inp dJ0kL[A><jY;V?@k;SzlZ3
+l46
+L38
+Vf5dFSP?Q9JeULQ=Z031>U0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ebuf4_mxilinx_divider
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584722
+Fdivider.vhf
+l0
+L112
+VMVY=:EMHLomG@RLD_kS;82
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work buf4_mxilinx_divider MVY=:EMHLomG@RLD_kS;82
+l131
+L123
+VE0B2<@TGJYQQf7_1FZf==3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ebuf4_mxilinx_eightleds
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662777
+Feightleds.vhf
+l0
+L27
+VQUjUebT[FT?a[W^CBf`K53
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work buf4_mxilinx_eightleds QUjUebT[FT?a[W^CBf`K53
+l46
+L38
+V5]b9kjM?OZ[[Q<^hf99zb2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ebuf4_mxilinx_hex27seg
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414115
+Fhex27seg.vhf
+l0
+L27
+V<9_<`L2HDLJ0_KC?JWa1l0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work buf4_mxilinx_hex27seg <9_<`L2HDLJ0_KC?JWa1l0
+l46
+L38
+VIOaAnnZTNLCSNMggR[NLK3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ebuf4_mxilinx_multip
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414502
+Fmultip.vhf
+l0
+L98
+VP9Wh@=JU[E13CPFHfn[nS0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work buf4_mxilinx_multip P9Wh@=JU[E13CPFHfn[nS0
+l117
+L109
+VM]X4HkNG=YA2@Q[A[;Sn11
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ebuf4_mxilinx_set2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331275
+Fset2.vhf
+l0
+L98
+VGHD4EAhf8h42nSETVCAM>1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work buf4_mxilinx_set2 GHD4EAhf8h42nSETVCAM>1
+l117
+L109
+V:`5mb?hWNmZNkC<C?SF?Z2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ebuf4_mxilinx_sevenseg
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414117
+Fsevenseg.vhf
+l0
+L27
+V8^kOeAnTM3Qb5]3g`QK[Q1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work buf4_mxilinx_sevenseg 8^kOeAnTM3Qb5]3g`QK[Q1
+l46
+L38
+VeWKSK0VQ3;NWgAJEnY<1:2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_adder
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584718
+Fadder.vhf
+l0
+L27
+VNll8IoF_el6^PV5IHY;<W2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_adder Nll8IoF_el6^PV5IHY;<W2
+l48
+L39
+V:FKAh@EdEaE0[RPeJ]mj@1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_all_low
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331279
+Fall_low.vhf
+l0
+L27
+VLKG]il39Gb<1K_`l6;BmF1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_all_low LKG]il39Gb<1K_`l6;BmF1
+l48
+L39
+VJ6:h?o?7W@i7`jfiBSKZ^0
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_and_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098154936
+Fand_array.vhf
+l0
+L27
+VblZJg_a4[N6ekaICNok?`2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_and_array blZJg_a4[N6ekaICNok?`2
+l48
+L39
+VBIhW;3Bli2BL:=[A0RVc@3
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_div_buff
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584722
+Fdiv_buff.vhf
+l0
+L27
+VT8<7A6`BEbbZi5d0o=ZDa2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_div_buff T8<7A6`BEbbZi5d0o=ZDa2
+l48
+L39
+V[QMHfclG_InJJzSFe1mKb3
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_eightbits
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662777
+Feightbits.vhf
+l0
+L27
+V[GM?Dmk<WJF6>kW>DSPPz3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_eightbits [GM?Dmk<WJF6>kW>DSPPz3
+l48
+L39
+Vz:]HJE?<1:Y;e:b0<7@2f3
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_evenp
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098154937
+Fevenp.vhf
+l0
+L27
+ViX9AXVF7ZNH[S[NmDd57H1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_evenp iX9AXVF7ZNH[S[NmDd57H1
+l48
+L39
+VZ0n5:OeNa4mHXYU@_LaDJ2
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_hex27seg
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414115
+Fhex27seg.vhf
+l0
+L92
+VcQ?STWjAd09iTQ[YC5NGO1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_hex27seg cQ?STWjAd09iTQ[YC5NGO1
+l113
+L104
+VE6Y6bJJjF31N3D=@Z][HX2
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_multip
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414502
+Fmultip.vhf
+l0
+L27
+V_PQIEiNS>IeVV9hk?c2F43
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_multip _PQIEiNS>IeVV9hk?c2F43
+l48
+L39
+V[9fbj7z_L3a4Q9obWiLHa1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_nand_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098154936
+Fnand_array.vhf
+l0
+L27
+V2_l_5ZRjhoLhe_dni9CFz0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_nand_array 2_l_5ZRjhoLhe_dni9CFz0
+l48
+L39
+Vf_i0ZBbZScj0TQRiE=o4l3
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_nor_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331277
+Fnor_array.vhf
+l0
+L27
+V@9ISXJhNG81n:jOQ;go?40
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_nor_array @9ISXJhNG81n:jOQ;go?40
+l48
+L39
+V_MK_X;UmdoPIDjhjA;`BR3
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_not_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098154937
+Fnot_array.vhf
+l0
+L27
+VECQ>PVKAB^kTzORU6b6^U2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_not_array ECQ>PVKAB^kTzORU6b6^U2
+l48
+L39
+Vg_THFmkQ6k:WOImOQ?I[Z2
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_or_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331276
+For_array.vhf
+l0
+L27
+Vk>Al<NTQ=2TOH7QK_eE[90
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_or_array k>Al<NTQ=2TOH7QK_eE[90
+l48
+L39
+V4X_abM]M2Lhi9ThRY?zbB0
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_set1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331274
+Fset1.vhf
+l0
+L27
+VFia_WA7FL8DPgM9BgCzQU2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_set1 Fia_WA7FL8DPgM9BgCzQU2
+l48
+L39
+V>i0LfB8[FX9X<==Y5H3DF2
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_set2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331275
+Fset2.vhf
+l0
+L27
+VN5>39g==[V4Yo:F0HzDn>1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_set2 N5>39g==[V4Yo:F0HzDn>1
+l48
+L39
+V=Dz;WA_SU:RQWHOmTlTio1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_set3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331278
+Fset3.vhf
+l0
+L27
+Vh1G91cIEz5a7lW9IkN0Hm3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_set3 h1G91cIEz5a7lW9IkN0Hm3
+l48
+L39
+VN:OG9GL54X`eXH6jeKLJM2
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_shift_l
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331280
+Fshift_l.vhf
+l0
+L27
+V4oHzoj5V<e18f^Cz=6XUR1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_shift_l 4oHzoj5V<e18f^Cz=6XUR1
+l48
+L39
+V_B>jnmjHT59nIYmX@79I10
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_shift_r
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331280
+Fshift_r.vhf
+l0
+L27
+Vd5:B7>loUDh4PAm[Y^;MM3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_shift_r d5:B7>loUDh4PAm[Y^;MM3
+l48
+L39
+Vo^@W`gO[1B[i2n`_OaNXj2
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_subtract
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584719
+Fsubtract.vhf
+l0
+L27
+VBX;Ggg9:BJmF3WKZR_G?j0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_subtract BX;Ggg9:BJmF3WKZR_G?j0
+l48
+L39
+V3k]<2ED9@RYm`RQaMibGj2
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_twocompl
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584719
+Ftwocompl.vhf
+l0
+L27
+VThWM;>ZGSYFIW9RUCn5ZM3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_twocompl ThWM;>ZGSYFIW9RUCn5ZM3
+l48
+L39
+Vd<W1AnnXad9VhDaYY9n>k3
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_xnor_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331277
+Fxnor_array.vhf
+l0
+L27
+V[[JnEZ>l@O0bh96C[DH2A2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_xnor_array [[JnEZ>l@O0bh96C[DH2A2
+l48
+L39
+VNKRR>;H^E_9AY[n8X<G8F2
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe4_mxilinx_xor_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331278
+Fxor_array.vhf
+l0
+L27
+VbG0fB5LUGk[ff[UYme9Vj3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe4_mxilinx_xor_array bG0fB5LUGk[ff[UYme9Vj3
+l48
+L39
+V:j40SVIfzaFJXM7IB;mBi1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe8_mxilinx_calc
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098663796
+Fcalc.vhf
+l0
+L27
+V[?^kQIj6K]Q]6P_:j0N9H1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe8_mxilinx_calc [?^kQIj6K]Q]6P_:j0N9H1
+l42
+L33
+V_l96IK_F[5:caFnjfBo2b1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe8_mxilinx_divider
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584722
+Fdivider.vhf
+l0
+L27
+VmaJA_8ODTRNHnW]:n4MaQ3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe8_mxilinx_divider maJA_8ODTRNHnW]:n4MaQ3
+l42
+L33
+Vj9OQGLh@X^XQ?_mj7GEhh1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe8_mxilinx_multip
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662560
+Fmultip.vhf
+l0
+L27
+V]nlckJU[JaRc>zLJS;>982
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe8_mxilinx_multip ]nlckJU[JaRc>zLJS;>982
+l42
+L33
+V=XU3B<Jg<[Wh[aIhB>]jk1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ebufe8_mxilinx_set0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662776
+FSet0.vhf
+l0
+L27
+VIzA9Z?A;Rg[<C3336hVQ;0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work bufe8_mxilinx_set0 IzA9Z?A;Rg[<C3336hVQ;0
+l42
+L33
+Vz=j5kWBS[DhoCcX_4G19d3
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ecalc
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098663796
+Fcalc.vhf
+l0
+L202
+VKTY?6[?<;FBWMWmaHWnHJ3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work set3 J4?LIdl=lc>I4aBF`5^1g1
+DE work set2 GfS]D8]M2n4Vf1:S9Rj:g3
+DE work set1 :Cz^`cRefVh>9laHU;>]H2
+DE work bufe8_mxilinx_calc [?^kQIj6K]Q]6P_:j0N9H1
+DE work set0 `?9fzBPN54Kg]3@[a;c@c2
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE work d2_4e_mxilinx_calc Oh[G:O<hWMMJQLdVV:CCH3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work calc KTY?6[?<;FBWMWmaHWnHJ3
+l274
+L210
+VfFoe25PPIZS9G9FNeSdGE0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ecb4re_mxilinx_counter
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662778
+Fcounter.vhf
+l0
+L282
+VHXlj9d_0FKbo5eX2kh>?h3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work ftrse_mxilinx_counter A`Z]Hm70T_WO?GLXbdA`41
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim vcc j5_NQRL:z@=6kj:U?VSii1
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DE unisim and4 QFoN7[9fRN5cBkJh6;28B2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work cb4re_mxilinx_counter HXlj9d_0FKbo5eX2kh>?h3
+l353
+L294
+VNOgQB4`oOT`4<`nK>aYK_1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ecounter
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662778
+Fcounter.vhf
+l0
+L449
+V=aI4J1=6KGce[:o<YO5=n3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE work cb4re_mxilinx_counter HXlj9d_0FKbo5eX2kh>?h3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work counter =aI4J1=6KGce[:o<YO5=n3
+l477
+L455
+V>CaXmmU3:SVB]P>eWg=:]0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ed2_4e_mxilinx_calc
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098663796
+Fcalc.vhf
+l0
+L112
+VOh[G:O<hWMMJQLdVV:CCH3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work d2_4e_mxilinx_calc Oh[G:O<hWMMJQLdVV:CCH3
+l148
+L122
+V5E:d8U;k=URiAJLYeo9Y?1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ed2_4e_mxilinx_set0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662776
+FSet0.vhf
+l0
+L112
+V55U0K2@:^;CF50Q_hb?IU2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work d2_4e_mxilinx_set0 55U0K2@:^;CF50Q_hb?IU2
+l148
+L122
+VgY5RZnUBS9;8ob_kLKPlS1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ed2_4e_mxilinx_set1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331274
+Fset1.vhf
+l0
+L98
+VFJo5jnBiO8GQP]]ECGQPg2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work d2_4e_mxilinx_set1 FJo5jnBiO8GQP]]ECGQPg2
+l134
+L108
+VWO:U;>[^RNSG^0jR]o1R=0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ed2_4e_mxilinx_set2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331275
+Fset2.vhf
+l0
+L163
+V@da@Mfez@ml;Mj?bcVZVN2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work d2_4e_mxilinx_set2 @da@Mfez@ml;Mj?bcVZVN2
+l199
+L173
+VH5QLG5DKaoA^0NSb2bA6N0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ed2_4e_mxilinx_set3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331278
+Fset3.vhf
+l0
+L98
+V<Ok_S608H6UV5NWhH^>]i3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DE unisim and3 ELhBg<NU@TA:IhN`6<?_Y3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work d2_4e_mxilinx_set3 <Ok_S608H6UV5NWhH^>]i3
+l134
+L108
+VaW=N`eR4]XhdJDIcLGUnn2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ed4_16e_mxilinx_hex27seg
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414115
+Fhex27seg.vhf
+l0
+L236
+VRoeKzdh_OQ>kzWn<8hn6:1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and5b4 MY5l^D<^g?K5G8X0761=<0
+DE unisim and5 oJKa[d=mbS:EkdFBUeen>0
+DE unisim and5b1 @MiRKLzcHOolVN<_O?O4e3
+DE unisim and5b2 _F8iGMIJX8CXCV8a<lGOI3
+DE unisim and5b3 0_CWX4k?Rgim2iKWc^X5z0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work d4_16e_mxilinx_hex27seg RoeKzdh_OQ>kzWn<8hn6:1
+l312
+L260
+VB]?3L65_kGE1LO3Y^E44d0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ediv_buff
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584722
+Fdiv_buff.vhf
+l0
+L98
+VYOn]M^7`5m7ONUQM@_`:O3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim inv [cU`k4QoEcIo_>YIQz;dI3
+DE work bufe4_mxilinx_div_buff T8<7A6`BEbbZi5d0o=ZDa2
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work div_buff YOn]M^7`5m7ONUQM@_`:O3
+l142
+L105
+VH6[zfN<<1<RcA5S7d;UBF3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ediv_inp
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584724
+Fdiv_inp.vhf
+l0
+L92
+VW?Jh>OIh<AfMiJRgRE;R;1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE work buf4_mxilinx_div_inp dJ0kL[A><jY;V?@k;SzlZ3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work div_inp W?Jh>OIh<AfMiJRgRE;R;1
+l128
+L100
+VakHT>h7ioQZ<kV`@37<FV3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Edivider
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584722
+Fdivider.vhf
+l0
+L177
+ViLg_XjiFSJYn`FZJ>8GBR2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work bufe8_mxilinx_divider maJA_8ODTRNHnW]:n4MaQ3
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE work buf4_mxilinx_divider MVY=:EMHLomG@RLD_kS;82
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE work div_inp W?Jh>OIh<AfMiJRgRE;R;1
+DE work twocompl_2 2fC_<BHbdPPSg3W9m6o4g2
+DE work f_adder m1AXn`W>11V2Pb=[e@AiR2
+DE work div_buff YOn]M^7`5m7ONUQM@_`:O3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work divider iLg_XjiFSJYn`FZJ>8GBR2
+l258
+L184
+Va?R6XWKPlV_MF<iW;b08L1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ee_adder
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662461
+Fe_adder.vhf
+l0
+L377
+VNZla0O8B922:NFaa0PU5b1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE work add4_mxilinx_e_adder n6FTZ35L0n8<3oQL4Q3k`0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work e_adder NZla0O8B922:NFaa0PU5b1
+l418
+L384
+VEJcRe8m1o;I3eO6Zmjhh40
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eeightbits
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662777
+Feightbits.vhf
+l0
+L163
+VnNQ5]<]fckH;P]LzMhLV91
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work bufe4_mxilinx_eightbits [GM?Dmk<WJF6>kW>DSPPz3
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE work ibuf4_mxilinx_eightbits Gm;kT`;0cOnhKN7_6:VP]1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work eightbits nNQ5]<]fckH;P]LzMhLV91
+l214
+L169
+VN1A8G`odcOCUYNL2Lgiae2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eeightleds
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662777
+Feightleds.vhf
+l0
+L227
+VK``MBWbGhSS6VMbOZTI1a1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work obufe4_mxilinx_eightleds O_b4bS>fj_MZ>fc9LRobc1
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE work buf4_mxilinx_eightleds QUjUebT[FT?a[W^CBf`K53
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work eightleds K``MBWbGhSS6VMbOZTI1a1
+l278
+L233
+V?9JajWWf>^BDgX<=Lo_hh2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eevenp
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098154937
+Fevenp.vhf
+l0
+L98
+V5iU[lT]dQHhNO8o[8PF:11
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE work bufe4_mxilinx_evenp iX9AXVF7ZNH[S[NmDd57H1
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DE unisim xor4 >CWUmBAnPKShSb:Xb8>;=3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work evenp 5iU[lT]dQHhNO8o[8PF:11
+l144
+L111
+VM?413[_zDXo@E`HYf`1080
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Ef_adder
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584723
+Ff_adder.vhf
+l0
+L500
+Vm1AXn`W>11V2Pb=[e@AiR2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE work add1_mxilinx_f_adder f2loYSR^hPT?K8g2iTiB>2
+DE work add4_mxilinx_f_adder VX5We;cKB^O2AJEbkjD4T2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work f_adder m1AXn`W>11V2Pb=[e@AiR2
+l544
+L506
+Vj@cY^jC?Yo1=h^=D_:]:l1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Efd_mxilinx_counter
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662778
+Fcounter.vhf
+l0
+L27
+VE5YHnlhURcF]]@<8k^cQS0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim fdcp 0:Aei4c2ZDjNhWYfOR7fW2
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work fd_mxilinx_counter E5YHnlhURcF]]@<8k^cQS0
+l50
+L33
+VDccb7R52VCD3Uz8i8^V^n0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Efdre_mxilinx_counter
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662778
+Fcounter.vhf
+l0
+L90
+V73P`>;FH`nK7@z2bY?6?m1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work fd_mxilinx_counter E5YHnlhURcF]]@<8k^cQS0
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE unisim and3b2 hKlRlHYbaaWMkg;HX<0D_3
+DE unisim and3b1 :B3IKn<PMOJ[T6GCYR59`0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work fdre_mxilinx_counter 73P`>;FH`nK7@z2bY?6?m1
+l137
+L98
+V047dQgVob<;<:_kB<5`^41
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eftrse_mxilinx_counter
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662778
+Fcounter.vhf
+l0
+L190
+VA`Z]Hm70T_WO?GLXbdA`41
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE work fdre_mxilinx_counter 73P`>;FH`nK7@z2bY?6?m1
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work ftrse_mxilinx_counter A`Z]Hm70T_WO?GLXbdA`41
+l229
+L199
+V^9;?GC9d[=K9DaUmo^oY`3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Ehex27seg
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414115
+Fhex27seg.vhf
+l0
+L470
+V?^aN=9kdBS:mVeeGo2L721
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE work buf4_mxilinx_hex27seg <9_<`L2HDLJ0_KC?JWa1l0
+DE work bufe4_mxilinx_hex27seg cQ?STWjAd09iTQ[YC5NGO1
+DE unisim inv [cU`k4QoEcIo_>YIQz;dI3
+DE work or6_mxilinx_hex27seg @W;`cAZH:hC=NF?J8kk]T0
+DE unisim or4 [D3^MfE@3GXCH[d^bY]bG3
+DE work d4_16e_mxilinx_hex27seg RoeKzdh_OQ>kzWn<8hn6:1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work hex27seg ?^aN=9kdBS:mVeeGo2L721
+l600
+L477
+VgEH]^HL0;LVcVSmWG=gcH2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eibuf4_mxilinx_eightbits
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662777
+Feightbits.vhf
+l0
+L98
+VGm;kT`;0cOnhKN7_6:VP]1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim ibuf >ZXEbW5`7hz8zP2>EdhaN1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work ibuf4_mxilinx_eightbits Gm;kT`;0cOnhKN7_6:VP]1
+l117
+L109
+VP7FIP>nG@oU_GL<bakl7j0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Einv4_mxilinx_not_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098154937
+Fnot_array.vhf
+l0
+L98
+V8n^b[UTWFn11LL_;oAVVY0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim inv [cU`k4QoEcIo_>YIQz;dI3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work inv4_mxilinx_not_array 8n^b[UTWFn11LL_;oAVVY0
+l117
+L109
+V4_Y]Bkac=oUF_0ZoAcP5b0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Emomentsw
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662778
+Fmomentsw.vhf
+l0
+L27
+V0kIRC9Sd6fK4glaQka1kE0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DE unisim ibuf >ZXEbW5`7hz8zP2>EdhaN1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work momentsw 0kIRC9Sd6fK4glaQka1kE0
+l51
+L35
+VT6Q<NeX?gn7InzPeI8cT@0
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Emultip
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662560
+Fmultip.vhf
+l0
+L112
+Vol_=nmkRRcNm83jBDa@le2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work bufe8_mxilinx_multip ]nlckJU[JaRc>zLJS;>982
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE work e_adder NZla0O8B922:NFaa0PU5b1
+DE work and_row zDz<QLaV84_Z2=?9JEjP12
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work multip ol_=nmkRRcNm83jBDa@le2
+l154
+L119
+VYFVL9?:?K9mZ_:jVE@o0C0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Enand_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098154936
+Fnand_array.vhf
+l0
+L98
+VY;C_baPQNJinzeGTNBbcS2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim nand2 nlfO=R?c^Ul0`?ccShFmn2
+DE work bufe4_mxilinx_nand_array 2_l_5ZRjhoLhe_dni9CFz0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work nand_array Y;C_baPQNJinzeGTNBbcS2
+l141
+L114
+V02ZFd:gWQhhQI6B=V[TD`3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Enor_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331277
+Fnor_array.vhf
+l0
+L98
+VYP2m7B]4ZZdBW^ID5=K^P0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim nor2 ;SUA<M`>6nYY9ZDCMAk2U0
+DE work bufe4_mxilinx_nor_array @9ISXJhNG81n:jOQ;go?40
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work nor_array YP2m7B]4ZZdBW^ID5=K^P0
+l141
+L114
+VSSBWXYGhjH2Xe>cXJC1Yd1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Enot_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098154937
+Fnot_array.vhf
+l0
+L163
+V0:`;JTNDOL[RUZlHnoj]Z2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work bufe4_mxilinx_not_array ECQ>PVKAB^kTzORU6b6^U2
+DE work inv4_mxilinx_not_array 8n^b[UTWFn11LL_;oAVVY0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work not_array 0:`;JTNDOL[RUZlHnoj]Z2
+l206
+L175
+V@_4IoF:GzVP63=9n3_Q]C1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eobufe4_mxilinx_eightleds
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662777
+Feightleds.vhf
+l0
+L153
+VO_b4bS>fj_MZ>fc9LRobc1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work obufe_mxilinx_eightleds lN@zbFJMRHIi]f?F>`V:K0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work obufe4_mxilinx_eightleds O_b4bS>fj_MZ>fc9LRobc1
+l177
+L165
+V_7OGOj^=LHC^6^b:Kd87O2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eobufe4_mxilinx_sevenseg
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414117
+Fsevenseg.vhf
+l0
+L153
+VXNazbche5Izi:UVQ7:J@D0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work obufe_mxilinx_sevenseg >ZUdK0Q>XH[a3enlAdcXn2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work obufe4_mxilinx_sevenseg XNazbche5Izi:UVQ7:J@D0
+l177
+L165
+VT9I;n42ETee_i2_`@j0dZ1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eobufe_mxilinx_eightleds
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662777
+Feightleds.vhf
+l0
+L92
+VlN@zbFJMRHIi]f?F>`V:K0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim inv [cU`k4QoEcIo_>YIQz;dI3
+DE unisim obuft AQJn4Sk9]07FYLb0@3ES^0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work obufe_mxilinx_eightleds lN@zbFJMRHIi]f?F>`V:K0
+l114
+L98
+VI7bzni0nL^SX^lzzdQHL^2
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Eobufe_mxilinx_sevenseg
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414117
+Fsevenseg.vhf
+l0
+L92
+V>ZUdK0Q>XH[a3enlAdcXn2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim inv [cU`k4QoEcIo_>YIQz;dI3
+DE unisim obuft AQJn4Sk9]07FYLb0@3ES^0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work obufe_mxilinx_sevenseg >ZUdK0Q>XH[a3enlAdcXn2
+l114
+L98
+V]1zbO0@YZnaBJCOWIdYhF1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Eor6_mxilinx_hex27seg
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414115
+Fhex27seg.vhf
+l0
+L163
+V@W;`cAZH:hC=NF?J8kk]T0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim or3 6PDKGc<3W8cdC1[nGkj5a3
+DE unisim or4 [D3^MfE@3GXCH[d^bY]bG3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work or6_mxilinx_hex27seg @W;`cAZH:hC=NF?J8kk]T0
+l193
+L173
+VI`7f=89DAmI<aiL:iJ_l41
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eor_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331276
+For_array.vhf
+l0
+L98
+V;NSUUNzbJ^A6g1B[z<78]1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE work bufe4_mxilinx_or_array k>Al<NTQ=2TOH7QK_eE[90
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work or_array ;NSUUNzbJ^A6g1B[z<78]1
+l141
+L114
+Vd8HbTGg2<0Cna]P^3UZ8m2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eset0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098662776
+FSet0.vhf
+l0
+L202
+V`?9fzBPN54Kg]3@[a;c@c2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE work subtract :WHgmWkXz_zK`0_O2OHM60
+DE work adder zT?QeP3g2aJQ:NdcOd=3P0
+DE work bufe8_mxilinx_set0 IzA9Z?A;Rg[<C3336hVQ;0
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim or2 2laDOMIO_gU?<Z1WD:hT`2
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DE work divider iLg_XjiFSJYn`FZJ>8GBR2
+DE work multip ol_=nmkRRcNm83jBDa@le2
+DE work d2_4e_mxilinx_set0 55U0K2@:^;CF50Q_hb?IU2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work set0 `?9fzBPN54Kg]3@[a;c@c2
+l288
+L210
+VHUXRfamNAjP=Ien?EI>Pj0
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Eset1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331274
+Fset1.vhf
+l0
+L188
+V:Cz^`cRefVh>9laHU;>]H2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DE work bufe4_mxilinx_set1 Fia_WA7FL8DPgM9BgCzQU2
+DE work evenp 5iU[lT]dQHhNO8o[8PF:11
+DE work d2_4e_mxilinx_set1 FJo5jnBiO8GQP]]ECGQPg2
+DE work not_array 0:`;JTNDOL[RUZlHnoj]Z2
+DE work nand_array Y;C_baPQNJinzeGTNBbcS2
+DE work and_array ^]5CNMT2n>jklHTP_JfPS2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work set1 :Cz^`cRefVh>9laHU;>]H2
+l304
+L196
+V1f@SAI]OU?4c6iaj>NZkV0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eset2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331275
+Fset2.vhf
+l0
+L253
+VGfS]D8]M2n4Vf1:S9Rj:g3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE work bufe4_mxilinx_set2 N5>39g==[V4Yo:F0HzDn>1
+DE work buf4_mxilinx_set2 GHD4EAhf8h42nSETVCAM>1
+DE work d2_4e_mxilinx_set2 @da@Mfez@ml;Mj?bcVZVN2
+DE work xor_array 7`W:6o3_k_ZAQYjMI2z:>3
+DE work xnor_array ]9cHbl1>BEYQ48z^5;4951
+DE work nor_array YP2m7B]4ZZdBW^ID5=K^P0
+DE work or_array ;NSUUNzbJ^A6g1B[z<78]1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work set2 GfS]D8]M2n4Vf1:S9Rj:g3
+l380
+L261
+VRV619C3dI[NeCOE:0W[lL1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eset3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331278
+Fset3.vhf
+l0
+L188
+VJ4?LIdl=lc>I4aBF`5^1g1
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DE work bufe4_mxilinx_set3 h1G91cIEz5a7lW9IkN0Hm3
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE work shift_r ;g?FKjlgX:i^ENT99ff>o0
+DE work shift_l jaPK?66:CcVZnD@OhnfHC0
+DE work all_low XLiOP?3=BUkL?O5JgF[HG1
+DE work d2_4e_mxilinx_set3 <Ok_S608H6UV5NWhH^>]i3
+DE work twocompl BYX=MNa=QB2;QBEdaNkRO3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work set3 J4?LIdl=lc>I4aBF`5^1g1
+l293
+L195
+Vhl=kAU3NaO2P;SdhE>2dT1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Esevenseg
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098414117
+Fsevenseg.vhf
+l0
+L227
+V;_LJ1Pzb^L7NT=Iae;[473
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work buf4_mxilinx_sevenseg 8^kOeAnTM3Qb5]3g`QK[Q1
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE work obufe4_mxilinx_sevenseg XNazbche5Izi:UVQ7:J@D0
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work sevenseg ;_LJ1Pzb^L7NT=Iae;[473
+l278
+L233
+V]?IlUG=o2HU@5Bb6f6J7N2
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eshift_l
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331280
+Fshift_l.vhf
+l0
+L98
+VjaPK?66:CcVZnD@OhnfHC0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work bufe4_mxilinx_shift_l 4oHzoj5V<e18f^Cz=6XUR1
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work shift_l jaPK?66:CcVZnD@OhnfHC0
+l125
+L110
+VDnJe=RTC75[Tlk^;OAZcF1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Eshift_r
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331280
+Fshift_r.vhf
+l0
+L98
+V;g?FKjlgX:i^ENT99ff>o0
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work bufe4_mxilinx_shift_r d5:B7>loUDh4PAm[Y^;MM3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work shift_r ;g?FKjlgX:i^ENT99ff>o0
+l125
+L110
+Va9;LOBRc_L2<GYokU_MdS3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Esubtract
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584719
+Fsubtract.vhf
+l0
+L571
+V:WHgmWkXz_zK`0_O2OHM60
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim vcc j5_NQRL:z@=6kj:U?VSii1
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE work twocompl BYX=MNa=QB2;QBEdaNkRO3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DE work bufe4_mxilinx_subtract BX;Ggg9:BJmF3WKZR_G?j0
+DE work add1_mxilinx_subtract EU88WK2Pm0Ii2aD4FeG@n3
+DE work add4_mxilinx_subtract d7Bj>Q6QGZk7dYlZGeGC21
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work subtract :WHgmWkXz_zK`0_O2OHM60
+l666
+L578
+V1MPLzh8fZ56HI2edkcL`g3
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Esystem
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098663230
+Fsystem.vhf
+l0
+L27
+Vfjn]C<Vl1e9C0CREVl;@l3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE work momentsw 0kIRC9Sd6fK4glaQka1kE0
+DE unisim vcc j5_NQRL:z@=6kj:U?VSii1
+DE work counter =aI4J1=6KGce[:o<YO5=n3
+DE work calc KTY?6[?<;FBWMWmaHWnHJ3
+DE work eightleds K``MBWbGhSS6VMbOZTI1a1
+DE work eightbits nNQ5]<]fckH;P]LzMhLV91
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work system fjn]C<Vl1e9C0CREVl;@l3
+l77
+L33
+V4Y@PD<RGA6b^:KeFigH;e0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Etwocompl
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584719
+Ftwocompl.vhf
+l0
+L98
+VBYX=MNa=QB2;QBEdaNkRO3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DP ieee vital_primitives E9g6AWKAc2T]enMfl94If3
+DE unisim bufe RK8TzX;GbO9zHUiUXU`<X0
+DE work bufe4_mxilinx_twocompl ThWM;>ZGSYFIW9RUCn5ZM3
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DE unisim vcc j5_NQRL:z@=6kj:U?VSii1
+DE unisim inv [cU`k4QoEcIo_>YIQz;dI3
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work twocompl BYX=MNa=QB2;QBEdaNkRO3
+l175
+L112
+VIVD_O`?GS@oATW6ND`;PS1
+OX;C;5.7g;15
+31
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 unisim vcomponents
+M2 ieee vital_timing
+M1 ieee vital_primitives
+o-93 -explicit -O0
+tExplicit T
+Etwocompl_2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098584723
+Ftwocompl_2.vhf
+l0
+L27
+V2fC_<BHbdPPSg3W9m6o4g2
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim gnd TV6m^Jc32j6:c1^1H^8LP2
+DE unisim buf >H4J=@@IY;4oZG1]kh7e10
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DE unisim vcc j5_NQRL:z@=6kj:U?VSii1
+DE unisim inv [cU`k4QoEcIo_>YIQz;dI3
+DE unisim and2 Q5U227hIokh40fO;N@nM^3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work twocompl_2 2fC_<BHbdPPSg3W9m6o4g2
+l79
+L32
+V[M@o[5UiEWY6BzGUNmFDc1
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Exnor_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331277
+Fxnor_array.vhf
+l0
+L98
+V]9cHbl1>BEYQ48z^5;4951
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim xnor2 2b7B3i1f0`@UV81hINol=0
+DE work bufe4_mxilinx_xnor_array [[JnEZ>l@O0bh96C[DH2A2
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work xnor_array ]9cHbl1>BEYQ48z^5;4951
+l141
+L114
+V<enc36_1BAMAk5EdQh8T:3
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T
+Exor_array
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1098331278
+Fxor_array.vhf
+l0
+L98
+V7`W:6o3_k_ZAQYjMI2z:>3
+OX;C;5.7g;15
+31
+o-93 -explicit -O0
+tExplicit T
+Abehavioral
+DE unisim xor2 k57z_0iGWE87[RUC<U4=n3
+DE work bufe4_mxilinx_xor_array bG0fB5LUGk[ff[UYme9Vj3
+DP ieee vital_timing OBWK>;kUYmkG<OChK2lhV1
+DP unisim vcomponents A5e6cGW00;[U_ZN87Uf@D2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work xor_array 7`W:6o3_k_ZAQYjMI2z:>3
+l141
+L114
+VPE@H8NiKj3:FabBV@Az>H0
+OX;C;5.7g;15
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 unisim vcomponents
+M1 ieee vital_timing
+o-93 -explicit -O0
+tExplicit T

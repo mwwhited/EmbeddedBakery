@@ -1,0 +1,31 @@
+sch2vhdl -family xc9500 -flat -suppress -w System.sch system.vhf
+xst -intstyle ise -ifn __projnav/system.xst -ofn system.syr
+sch2vhdl -family xc9500 -flat -suppress -w System.sch system.vhf
+xst -intstyle ise -ifn __projnav/system.xst -ofn system.syr
+ngdbuild -dd _ngo -i -p xc9500 system.ngc system.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk system.ngd
+sch2vhdl -family xc9500 -flat -suppress -w System.sch system.vhf
+xst -intstyle ise -ifn __projnav/system.xst -ofn system.syr
+ngdbuild -dd _ngo -i -p xc9500 system.ngc system.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk system.ngd
+xst -intstyle ise -ifn __projnav/system.xst -ofn system.syr
+ngdbuild -dd _ngo -i -p xc9500 system.ngc system.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk system.ngd
+sch2vhdl -family xc9500 -flat -suppress -w system.sch system.vhf
+xst -intstyle ise -ifn __projnav/system.xst -ofn system.syr
+ngdbuild -dd _ngo -i -p xc9500 system.ngc system.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk system.ngd
+sch2vhdl -family xc9500 -flat -suppress -w system.sch system.vhf
+sch2vhdl -family xc9500 -flat -suppress -w system.sch system.vhf
+sch2vhdl -family xc9500 -flat -suppress -w system.sch system.vhf
+sch2vhdl -family xc9500 -flat -suppress -w system.sch system.vhf
+xst -intstyle ise -ifn __projnav/system.xst -ofn system.syr
+ngdbuild -dd _ngo -i -p xc9500 system.ngc system.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk system.ngd
+xst -intstyle ise -ifn __projnav/system.xst -ofn system.syr
+ngdbuild -dd _ngo -i -p xc9500 system.ngc system.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk system.ngd
+sch2vhdl -family xc9500 -flat -suppress -w system.sch system.vhf
+xst -intstyle ise -ifn __projnav/system.xst -ofn system.syr
+ngdbuild -dd _ngo -i -p xc9500 system.ngc system.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk system.ngd

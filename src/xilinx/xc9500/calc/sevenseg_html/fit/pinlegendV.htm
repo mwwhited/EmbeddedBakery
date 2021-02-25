@@ -1,0 +1,166 @@
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+      function showTop() { document.location.href = '#'; }
+    </script>
+  </head>
+  <body class="pgBgnd">
+    <span id="legend" class="pgRef">
+      <h3 align="center">Legends</h3>
+      <table align="center" width="90%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="right">
+            <form><input type="button" onclick="javascript:document.location.href='pinlegend.htm'" value="brief">
+            </form>
+          </td>
+        </tr>
+      </table>
+      <table align="center" width="90%" border="1" cellpadding="0" cellspacing="0">
+        <tr>
+          <th width="20%">Acronym</th>
+          <th width="80%">Verbose Description</th>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;CLK</td>
+          <td width="80%">&nbsp;Global Clock</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;GCK0</td>
+          <td width="80%">&nbsp;Global clock zero</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;GCK1</td>
+          <td width="80%">&nbsp;Global clock one</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;GCK2</td>
+          <td width="80%">&nbsp;Global clock two</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;GND</td>
+          <td width="80%">&nbsp;Dedicated Ground Pin</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;GSR</td>
+          <td width="80%">&nbsp;Global set-reset</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;GTS0</td>
+          <td width="80%">&nbsp;Global tristate zero (output enable)</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;GTS1</td>
+          <td width="80%">&nbsp;Global tristate one (output enable)</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;GTS2</td>
+          <td width="80%">&nbsp;Global tristate two (output enable)</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;GTS3</td>
+          <td width="80%">&nbsp;Global tristate three (output enable)</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;I/O</td>
+          <td width="80%">&nbsp;Input/Output</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;INIT</td>
+          <td width="80%">&nbsp;Initial state</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;ISP</td>
+          <td width="80%">&nbsp;The use of the JTAG port to program the chip while it is powered in a system.</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;JTAG</td>
+          <td width="80%">&nbsp;IEEE Standard 1149 (JTAG) boundary-scan test standard.</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;KPR</td>
+          <td width="80%">&nbsp;Unused I/O with weak keeper (leave unconnected)</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;NC</td>
+          <td width="80%">&nbsp;Not Connected, unbonded pin</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;PGND</td>
+          <td width="80%">&nbsp;Programmable ground pin</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;PROHIBITED</td>
+          <td width="80%">&nbsp;User reserved pin</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;R</td>
+          <td width="80%">&nbsp;Reset</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;S</td>
+          <td width="80%">&nbsp;Set</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;TCK</td>
+          <td width="80%">&nbsp;One of four terminals required by (JTAG) IEEE Std 1149 or IEEE Std 1532.  Test operations of the device are synchronous to TCK.  Data is captured on the rising edge of TCK and outputs change on the falling edge of TCK.  An internal pull-up forces TCK to a high level if left unconnected.</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;TDI</td>
+          <td width="80%">&nbsp;One of four terminals required by (JTAG) IEEE Std 1149 or IEEE Std 1532. It is the serial input for shifting data through the instruction register or selected data register.  An internal pull-up forces TDI to a high level if left unconnected.</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;TDO</td>
+          <td width="80%">&nbsp;One of four terminals required by (JTAG) IEEE Std 1149 or IEEE Std 1532. It is the serial output for shifting data through the instruction register or selected data register.  An internal pull-up forces TDI to a high level when it is not driven from an external source.</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;TIE</td>
+          <td width="80%">&nbsp;Unused I/O floating -- must tie to VCC, GND or other signal</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;TMS</td>
+          <td width="80%">&nbsp;One of four terminals required by (JTAG) IEEE Std 1149 or IEEE Std 1532. It directs the device through its Test Access Port controller states.  An internal pull-up forces TDI to a high level when it is not driven from an external source.  TMS also provides the optional test reset signal of IEEE Std 1149 or IEEE Std 1532.</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;LVCMOS</td>
+          <td width="80%">&nbsp;Low Voltage Complementary Metal Oxide Semiconductor 3.3 Volts</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;LVCMOS25</td>
+          <td width="80%">&nbsp;External I/O supply voltage for LVCMOS25</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;LVCMOS33</td>
+          <td width="80%">&nbsp;External I/O supply voltage for LVCMOS33</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;LVTTL</td>
+          <td width="80%">&nbsp;Low Voltage Transistor Transistor Logic 3.3Volts</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;VCCIO</td>
+          <td width="80%">&nbsp;External power for Inputs/Outputs</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;VCC</td>
+          <td width="80%">&nbsp;Dedicated Power Pin, Internal supply voltage for the device</td>
+        </tr>
+        <tr>
+          <td width="20%">&nbsp;WPU</td>
+          <td width="80%">&nbsp;Unused I/O with Internal Weak Pull Up (leave unconnected)</td>
+        </tr>
+      </table>
+    </span>
+    <form>
+      <span class="pgRef">
+        <table width="90%" align="center">
+          <tr>
+            <td align="left"><input type="button" onclick="showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top">
+            </td>
+            <td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page">
+            </td>
+          </tr>
+        </table>
+      </span>
+    </form>
+  </body>
+</html>

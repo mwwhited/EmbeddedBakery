@@ -1,0 +1,14 @@
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+xst -intstyle ise -ifn __projnav/calc.xst -ofn calc.syr
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf
+sch2vhdl -family xc9500 -flat -suppress -w calc.sch calc.vhf

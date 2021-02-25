@@ -1,0 +1,20 @@
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+xst -intstyle ise -ifn __projnav/set0.xst -ofn set0.syr
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+xst -intstyle ise -ifn __projnav/set0.xst -ofn set0.syr
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+xst -intstyle ise -ifn __projnav/set0.xst -ofn set0.syr
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+xst -intstyle ise -ifn __projnav/set0.xst -ofn set0.syr
+ngdbuild -dd _ngo -i -p xc9500 set0.ngc set0.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk set0.ngd
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf
+xst -intstyle ise -ifn __projnav/set0.xst -ofn set0.syr
+ngdbuild -dd _ngo -i -p xc9500 set0.ngc set0.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk set0.ngd
+sch2vhdl -family xc9500 -flat -suppress -w Set0.sch set0.vhf

@@ -1,0 +1,999 @@
+<html><body><pre> 
+cpldfit:  version G.36                              Xilinx Inc.
+                                  Fitter Report
+Design Name: big                                 Date: 10-16-2004,  6:24PM
+Device Used: XC95108-7-PC84
+Fitting Status: Successful
+
+****************************  Resource Summary  ****************************
+
+Macrocells     Product Terms    Registers      Pins           Function Block 
+Used           Used             Used           Used           Inputs Used    
+33 /108 ( 31%) 318 /540  ( 59%) 0  /108 (  0%) 25 /69  ( 36%) 84 /216 ( 39%)
+
+PIN RESOURCES:
+
+Signal Type    Required     Mapped  |  Pin Type            Used   Remaining 
+------------------------------------|---------------------------------------
+Input         :    9           9    |  I/O              :    24       39
+Output        :   15          15    |  GCK/IO           :     1        2
+Bidirectional :    1           1    |  GTS/IO           :     0        2
+GCK           :    0           0    |  GSR/IO           :     0        1
+GTS           :    0           0    |
+GSR           :    0           0    |
+                 ----        ----
+        Total     25          25
+
+MACROCELL RESOURCES:
+
+Total Macrocells Available                   108
+Registered Macrocells                          0
+Non-registered Macrocell driving I/O          16
+
+GLOBAL RESOURCES:
+
+Global clock net(s) unused.
+Global output enable net(s) unused.
+Global set/reset net(s) unused.
+
+POWER DATA:
+
+There are 33 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+There are a total of 33 macrocells used (MC).
+
+End of Resource Summary
+****************************  Errors and Warnings  *************************
+
+WARNING:Cpld:828 - Signal 'XLXI_4/XLXN_8.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_4/XLXN_9.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_4/XLXN_5.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_4/XLXN_4.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_4/XLXN_3.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_4/XLXN_7.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_4/XLXN_6.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_84.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_59.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_81.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_80.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_79.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_83.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_82.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_4/XLXN_10.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_58.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_6/XLXN_4.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_6/XLXN_3.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_6/XLXN_2.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_6/XLXN_1.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_6/XLXN_5.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_6/XLXN_6.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_6/XLXN_7.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXI_6/XLXN_8.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_222.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_221.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_220.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_219.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_223.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_224.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_225.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'XLXN_226.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB3,
+   because too many function block product terms are required. Buffering output
+   signal zf to allow all signals assigned to this function block to be placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB3,
+   because too many function block product terms are required. Buffering output
+   signal ze to allow all signals assigned to this function block to be placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB3,
+   because too many function block product terms are required. Buffering output
+   signal zb to allow all signals assigned to this function block to be placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB3,
+   because too many function block product terms are required. Buffering output
+   signal zc to allow all signals assigned to this function block to be placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB3,
+   because too many function block product terms are required. Buffering output
+   signal zg to allow all signals assigned to this function block to be placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB5,
+   because too many function block product terms are required. Buffering output
+   signal o6 to allow all signals assigned to this function block to be placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB5,
+   because too many function block product terms are required. Buffering output
+   signal o5 to allow all signals assigned to this function block to be placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB5,
+   because too many function block product terms are required. Buffering output
+   signal o3 to allow all signals assigned to this function block to be placed.
+*************** Summary of Required Resources ******************
+
+** LOGIC **
+Signal              Total   Signals Loc     Pwr  Slew Pin  Pin       Pin       Reg Init
+Name                Pt      Used            Mode Rate #    Type      Use       State
+$OpTx$FX_DC$28      2       2       FB3_15  STD       25   I/O       (b)       
+$OpTx$FX_DC$41      5       5       FB2_9   STD       77   GTS/I/O   (b)       
+XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2                    4       4       FB4_1   STD            (b)       (b)       
+XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2                    8       6       FB1_17  STD       13   I/O       (b)       
+XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2                    24      10      FB2_3   STD       72   I/O       I         
+XLXN_248/XLXN_248_D 3       3       FB3_16  STD       26   I/O       (b)       
+XLXN_249/XLXN_249_D 5       5       FB4_13  STD            (b)       (b)       
+XLXN_250/XLXN_250_D 15      7       FB4_17  STD       70   I/O       I         
+XLXN_250/XLXN_250_D8_                    13      8       FB4_14  STD       68   I/O       (b)       
+o1                  1       1       FB5_17  STD  FAST 44   I/O       O         
+o2                  1       1       FB5_15  STD  FAST 43   I/O       O         
+o3                  1       1       FB5_14  STD  FAST 41   I/O       O         
+o3_BUFR             14      11      FB2_16  STD       83   I/O       (b)       
+o4                  13      10      FB5_12  STD  FAST 40   I/O       I/O       
+o5                  1       1       FB5_11  STD  FAST 39   I/O       O         
+o5_BUFR             15      11      FB2_13  STD            (b)       (b)       
+o6                  1       1       FB5_9   STD  FAST 37   I/O       O         
+o6_BUFR             19      8       FB2_11  STD       79   I/O       (b)       
+o7                  6       5       FB5_8   STD  FAST 36   I/O       O         
+o8                  2       2       FB5_6   STD  FAST 35   I/O       O         
+za                  15      17      FB3_3   STD  FAST 15   I/O       O         
+zb                  1       1       FB3_6   STD  FAST 18   I/O       O         
+zb_BUFR             23      15      FB1_3   STD       2    I/O       (b)       
+zc                  1       1       FB3_12  STD  FAST 23   I/O       O         
+zc_BUFR             22      16      FB1_15  STD       11   I/O       I         
+zd                  20      11      FB3_11  STD  FAST 21   I/O       O         
+zdp                 13      10      FB3_14  STD  FAST 24   I/O       O         
+ze                  1       1       FB3_8   STD  FAST 19   I/O       O         
+ze_BUFR             23      14      FB1_10  STD            (b)       (b)       
+zf                  1       1       FB3_2   STD  FAST 14   I/O       O         
+zf_BUFR             24      16      FB5_1   STD            (b)       (b)       
+zg                  1       1       FB3_5   STD  FAST 17   I/O       O         
+zg_BUFR             20      17      FB3_18  STD            (b)       (b)       
+
+** INPUTS **
+Signal                              Loc               Pin  Pin       Pin
+Name                                                  #    Type      Use
+addsub                              FB1_14            10   GCK/I/O   I
+i1                                  FB1_9             6    I/O       I
+i2                                  FB1_11            7    I/O       I
+i3                                  FB1_15            11   I/O       I
+i4                                  FB1_8             5    I/O       I
+j1                                  FB2_3             72   I/O       I
+j2                                  FB2_2             71   I/O       I
+j3                                  FB4_11            66   I/O       I
+j4                                  FB4_17            70   I/O       I
+
+End of Resources
+
+*********************Function Block Resource Summary***********************
+Function    # of        FB Inputs   Signals     Total       O/IO      IO    
+Block       Macrocells  Used        Used        Pt Used     Req       Avail 
+FB1           4          20          20           76         0/0       12   
+FB2           5          15          15           77         0/0       12   
+FB3          11          23          23           78         8/0       12   
+FB4           4           8           8           37         0/0       11   
+FB5           9          18          18           50         7/1       11   
+FB6           0           0           0            0         0/0       11   
+            ----                                -----       -----     ----- 
+             33                                  318        15/1       69   
+*********************************** FB1 ***********************************
+Number of function block inputs used/remaining:               20/16
+Number of signals used by logic mapping into function block:  20
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+(unused)              0       0   \/5   0     FB1_1               (b)     (b)
+(unused)              0       0   \/5   0     FB1_2         1     I/O     (b)
+zb_BUFR              23      18<-   0   0     FB1_3   STD   2     I/O     (b)
+(unused)              0       0   /\5   0     FB1_4               (b)     (b)
+(unused)              0       0   /\3   2     FB1_5         3     I/O     (b)
+(unused)              0       0     0   5     FB1_6         4     I/O     
+(unused)              0       0     0   5     FB1_7               (b)     
+(unused)              0       0   \/3   2     FB1_8         5     I/O     I
+(unused)              0       0   \/5   0     FB1_9         6     I/O     I
+ze_BUFR              23      18<-   0   0     FB1_10  STD         (b)     (b)
+(unused)              0       0   /\5   0     FB1_11        7     I/O     I
+(unused)              0       0   /\5   0     FB1_12        9     GCK/I/O (b)
+(unused)              0       0   \/5   0     FB1_13              (b)     (b)
+(unused)              0       0   \/5   0     FB1_14        10    GCK/I/O I
+zc_BUFR              22      17<-   0   0     FB1_15  STD   11    I/O     I
+(unused)              0       0   /\5   0     FB1_16        12    GCK/I/O (b)
+XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+                      8       5<- /\2   0     FB1_17  STD   13    I/O     (b)
+(unused)              0       0   /\5   0     FB1_18              (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_DC$41     8: j3                15: XLXN_249/XLXN_249_D 
+  2: i1                 9: j4                16: XLXN_250/XLXN_250_D 
+  3: i2                10: XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 
+                                             17: o4.PIN 
+  4: i3                11: XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK 
+                                             18: o6_BUFR 
+  5: i4                12: XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 
+                                             19: ze_BUFR.FBK.LFBK 
+  6: j1                13: addsub            20: zf_BUFR 
+  7: j2                14: XLXN_248/XLXN_248_D 
+                                            
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+zb_BUFR              XXXXXXXXX.XXX.X..X.X.................... 15      15
+ze_BUFR              .XXX.XXX.X.XXXXXXX...................... 14      14
+zc_BUFR              .XXXXXXXX.XXXXX..XXX.................... 16      16
+XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 
+                     ...XX.XXX...X........................... 6       6
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB2 ***********************************
+Number of function block inputs used/remaining:               15/21
+Number of signals used by logic mapping into function block:  15
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+(unused)              0       0   \/5   0     FB2_1               (b)     (b)
+(unused)              0       0   \/5   0     FB2_2         71    I/O     I
+XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+                     24      19<-   0   0     FB2_3   STD   72    I/O     I
+(unused)              0       0   /\5   0     FB2_4               (b)     (b)
+(unused)              0       0   /\4   1     FB2_5         74    GSR/I/O (b)
+(unused)              0       0     0   5     FB2_6         75    I/O     
+(unused)              0       0     0   5     FB2_7               (b)     
+(unused)              0       0   \/3   2     FB2_8         76    GTS/I/O (b)
+$OpTx$FX_DC$41        5       3<- \/3   0     FB2_9   STD   77    GTS/I/O (b)
+(unused)              0       0   \/5   0     FB2_10              (b)     (b)
+o6_BUFR              19      14<-   0   0     FB2_11  STD   79    I/O     (b)
+(unused)              0       0   /\5   0     FB2_12        80    I/O     (b)
+o5_BUFR              15      11<- /\1   0     FB2_13  STD         (b)     (b)
+(unused)              0       0   /\5   0     FB2_14        81    I/O     (b)
+(unused)              0       0   /\5   0     FB2_15        82    I/O     (b)
+o3_BUFR              14      10<- /\1   0     FB2_16  STD   83    I/O     (b)
+(unused)              0       0   /\5   0     FB2_17        84    I/O     (b)
+(unused)              0       0   /\5   0     FB2_18              (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_DC$28     6: j1                11: XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK 
+  2: i1                 7: j2                12: addsub 
+  3: i2                 8: j3                13: XLXN_249/XLXN_249_D 
+  4: i3                 9: j4                14: XLXN_250/XLXN_250_D8_ 
+  5: i4                10: XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 
+                                             15: o4.PIN 
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 
+                     ..XXXXXXX..XXX.......................... 10      10
+$OpTx$FX_DC$41       ...XX..XX..X............................ 5       5
+o6_BUFR              X.XXX.XXX..X............................ 8       8
+o5_BUFR              .XXXXXXXXXXX............................ 11      11
+o3_BUFR              ..XXXXXXXX.X.XX......................... 11      11
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB3 ***********************************
+Number of function block inputs used/remaining:               23/13
+Number of signals used by logic mapping into function block:  23
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+(unused)              0       0   /\5   0     FB3_1               (b)     (b)
+zf                    1       0   /\4   0     FB3_2   STD   14    I/O     O
+za                   15      10<-   0   0     FB3_3   STD   15    I/O     O
+(unused)              0       0   /\5   0     FB3_4               (b)     (b)
+zg                    1       1<- /\5   0     FB3_5   STD   17    I/O     O
+zb                    1       0   /\1   3     FB3_6   STD   18    I/O     O
+(unused)              0       0     0   5     FB3_7               (b)     
+ze                    1       0   \/1   3     FB3_8   STD   19    I/O     O
+(unused)              0       0   \/5   0     FB3_9         20    I/O     (b)
+(unused)              0       0   \/5   0     FB3_10              (b)     (b)
+zd                   20      15<-   0   0     FB3_11  STD   21    I/O     O
+zc                    1       0   /\4   0     FB3_12  STD   23    I/O     O
+(unused)              0       0   \/5   0     FB3_13              (b)     (b)
+zdp                  13       8<-   0   0     FB3_14  STD   24    I/O     O
+$OpTx$FX_DC$28        2       0   /\3   0     FB3_15  STD   25    I/O     (b)
+XLXN_248/XLXN_248_D   3       0   \/1   1     FB3_16  STD   26    I/O     (b)
+(unused)              0       0   \/5   0     FB3_17        31    I/O     (b)
+zg_BUFR              20      15<-   0   0     FB3_18  STD         (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: i1                 9: XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 
+                                             17: o4.PIN 
+  2: i2                10: XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 
+                                             18: o6_BUFR 
+  3: i3                11: XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 
+                                             19: zb_BUFR 
+  4: i4                12: addsub            20: zc_BUFR 
+  5: j1                13: XLXN_248/XLXN_248_D.FBK.LFBK 
+                                             21: ze_BUFR 
+  6: j2                14: XLXN_249/XLXN_249_D 
+                                             22: zf_BUFR 
+  7: j3                15: XLXN_250/XLXN_250_D 
+                                             23: zg_BUFR.FBK.LFBK 
+  8: j4                16: XLXN_250/XLXN_250_D8_ 
+                                            
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+zf                   .....................X.................. 1       1
+za                   XXXXXXXX.XXX.XXXX...XX.................. 17      17
+zg                   ......................X................. 1       1
+zb                   ..................X..................... 1       1
+ze                   ....................X................... 1       1
+zd                   X.XX..XX..XX.X..XX..X................... 11      11
+zc                   ...................X.................... 1       1
+zdp                  XXXXXXXX.X.X............................ 10      10
+$OpTx$FX_DC$28       .....X.....X............................ 2       2
+XLXN_248/XLXN_248_D  ...X...X...X............................ 3       3
+zg_BUFR              XXXXXXXXX.XXXXX.XX..X................... 17      17
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB4 ***********************************
+Number of function block inputs used/remaining:               8/28
+Number of signals used by logic mapping into function block:  8
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2
+                      4       0     0   1     FB4_1   STD         (b)     (b)
+(unused)              0       0     0   5     FB4_2         57    I/O     
+(unused)              0       0     0   5     FB4_3         58    I/O     
+(unused)              0       0     0   5     FB4_4               (b)     
+(unused)              0       0     0   5     FB4_5         61    I/O     
+(unused)              0       0     0   5     FB4_6         62    I/O     
+(unused)              0       0     0   5     FB4_7               (b)     
+(unused)              0       0     0   5     FB4_8         63    I/O     
+(unused)              0       0     0   5     FB4_9         65    I/O     
+(unused)              0       0     0   5     FB4_10              (b)     
+(unused)              0       0     0   5     FB4_11        66    I/O     I
+(unused)              0       0   \/3   2     FB4_12        67    I/O     (b)
+XLXN_249/XLXN_249_D   5       3<- \/3   0     FB4_13  STD         (b)     (b)
+XLXN_250/XLXN_250_D8_
+                     13       8<-   0   0     FB4_14  STD   68    I/O     (b)
+(unused)              0       0   /\5   0     FB4_15        69    I/O     (b)
+(unused)              0       0   \/5   0     FB4_16              (b)     (b)
+XLXN_250/XLXN_250_D  15      10<-   0   0     FB4_17  STD   70    I/O     I
+(unused)              0       0   /\5   0     FB4_18              (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_DC$28     4: i4                 7: j4 
+  2: i2                 5: j2                 8: addsub 
+  3: i3                 6: j3               
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 
+                     ...X.XXX................................ 4       4
+XLXN_249/XLXN_249_D  ..XX.XXX................................ 5       5
+XLXN_250/XLXN_250_D8_ 
+                     XXXXXXXX................................ 8       8
+XLXN_250/XLXN_250_D  .XXXXXXX................................ 7       7
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB5 ***********************************
+Number of function block inputs used/remaining:               18/18
+Number of signals used by logic mapping into function block:  18
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+zf_BUFR              24      19<-   0   0     FB5_1   STD         (b)     (b)
+(unused)              0       0   /\5   0     FB5_2         32    I/O     (b)
+(unused)              0       0   /\5   0     FB5_3         33    I/O     (b)
+(unused)              0       0     0   5     FB5_4               (b)     
+(unused)              0       0     0   5     FB5_5         34    I/O     
+o8                    2       0     0   3     FB5_6   STD   35    I/O     O
+(unused)              0       0   \/1   4     FB5_7               (b)     (b)
+o7                    6       1<-   0   0     FB5_8   STD   36    I/O     O
+o6                    1       0     0   4     FB5_9   STD   37    I/O     O
+(unused)              0       0     0   5     FB5_10              (b)     
+o5                    1       0   \/4   0     FB5_11  STD   39    I/O     O
+o4                   13       8<-   0   0     FB5_12  STD   40    I/O     I/O
+(unused)              0       0   /\4   1     FB5_13              (b)     (b)
+o3                    1       0     0   4     FB5_14  STD   41    I/O     O
+o2                    1       0     0   4     FB5_15  STD   43    I/O     O
+(unused)              0       0     0   5     FB5_16              (b)     
+o1                    1       0   \/4   0     FB5_17  STD   44    I/O     O
+(unused)              0       0   \/5   0     FB5_18              (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: i1                 7: j3                13: XLXN_248/XLXN_248_D 
+  2: i2                 8: j4                14: XLXN_249/XLXN_249_D 
+  3: i3                 9: XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 
+                                             15: XLXN_250/XLXN_250_D 
+  4: i4                10: XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 
+                                             16: o3_BUFR 
+  5: j1                11: XLXI_6/XLXN_5.FBK.LFBK 
+                                             17: o5_BUFR 
+  6: j2                12: addsub            18: o6_BUFR 
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+zf_BUFR              XXXXXXXX.XXXXXXX.X...................... 16      16
+o8                   ...X...X................................ 2       2
+o7                   ..XX..XX...X............................ 5       5
+o6                   .................X...................... 1       1
+o5                   ................X....................... 1       1
+o4                   XXXXXXXXX..X............................ 10      10
+o3                   ...............X........................ 1       1
+o2                   ...........X............................ 1       1
+o1                   ...........X............................ 1       1
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB6 ***********************************
+Number of function block inputs used/remaining:               0/36
+Number of signals used by logic mapping into function block:  0
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+(unused)              0       0     0   5     FB6_1               (b)     
+(unused)              0       0     0   5     FB6_2         45    I/O     
+(unused)              0       0     0   5     FB6_3         46    I/O     
+(unused)              0       0     0   5     FB6_4               (b)     
+(unused)              0       0     0   5     FB6_5         47    I/O     
+(unused)              0       0     0   5     FB6_6         48    I/O     
+(unused)              0       0     0   5     FB6_7               (b)     
+(unused)              0       0     0   5     FB6_8         50    I/O     
+(unused)              0       0     0   5     FB6_9         51    I/O     
+(unused)              0       0     0   5     FB6_10              (b)     
+(unused)              0       0     0   5     FB6_11        52    I/O     
+(unused)              0       0     0   5     FB6_12        53    I/O     
+(unused)              0       0     0   5     FB6_13              (b)     
+(unused)              0       0     0   5     FB6_14        54    I/O     
+(unused)              0       0     0   5     FB6_15        55    I/O     
+(unused)              0       0     0   5     FB6_16              (b)     
+(unused)              0       0     0   5     FB6_17        56    I/O     
+(unused)              0       0     0   5     FB6_18              (b)     
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+;;-----------------------------------------------------------------;;
+; Implemented Equations.
+
+
+$OpTx$FX_DC$28 <= j2
+	 XOR 
+$OpTx$FX_DC$28 <= addsub;
+
+
+$OpTx$FX_DC$41 <= NOT (i3
+	 XOR 
+$OpTx$FX_DC$41 <= NOT (((EXP16_.EXP)
+	OR (j3 AND i4 AND NOT addsub)));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 <= ((j3 AND NOT j4 AND i4)
+	OR (j3 AND NOT i4 AND addsub)
+	OR (NOT j3 AND j4 AND i4)
+	OR (NOT j3 AND NOT i4 AND NOT addsub));
+
+
+XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 <= NOT (j2
+	 XOR 
+XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 <= NOT (((EXP11_.EXP)
+	OR (NOT j3 AND i3 AND NOT addsub)
+	OR (NOT i3 AND NOT i4 AND addsub)));
+
+
+XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 <= ((EXP13_.EXP)
+	OR (EXP14_.EXP)
+	OR (j1 AND NOT j2 AND addsub AND XLXN_250/XLXN_250_D8_)
+	OR (j1 AND NOT j2 AND NOT addsub AND NOT XLXN_250/XLXN_250_D8_)
+	OR (NOT j1 AND j2 AND addsub AND NOT XLXN_250/XLXN_250_D8_)
+	OR (NOT j1 AND j2 AND NOT addsub AND XLXN_250/XLXN_250_D8_)
+	OR (NOT j1 AND j3 AND j2 AND j4 AND i4));
+
+
+zdp <= ((EXP27_.EXP)
+	OR ($OpTx$FX_DC$28.EXP)
+	OR (j1 AND i1 AND addsub)
+	OR (NOT j1 AND i1 AND NOT addsub)
+	OR (i1 AND i2 AND 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2)
+	OR (j1 AND j2 AND addsub AND 
+	NOT XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2)
+	OR (j1 AND i2 AND addsub AND 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2));
+
+
+za <= ((EXP24_.EXP)
+	OR (j4 AND i4 AND ze_BUFR)
+	OR (NOT j4 AND NOT i4 AND ze_BUFR)
+	OR (zf_BUFR AND XLXN_249/XLXN_249_D AND 
+	XLXN_250/XLXN_250_D)
+	OR (j1 AND i1 AND NOT addsub AND 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 AND NOT XLXN_249/XLXN_249_D)
+	OR (NOT j2 AND NOT i2 AND NOT j4 AND zf_BUFR AND NOT addsub));
+
+
+zd <= ((EXP26_.EXP)
+	OR (_11_.EXP)
+	OR (i1 AND ze_BUFR AND NOT XLXN_249/XLXN_249_D AND 
+	NOT XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2)
+	OR (NOT i1 AND ze_BUFR AND XLXN_249/XLXN_249_D AND 
+	NOT XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2)
+	OR (ze_BUFR AND XLXN_249/XLXN_249_D AND 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 AND o4.PIN)
+	OR (ze_BUFR AND NOT XLXN_249/XLXN_249_D AND 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 AND NOT o4.PIN)
+	OR (j3 AND i3 AND j4 AND NOT i4 AND o6_BUFR));
+
+
+o8 <= j4
+	 XOR 
+o8 <= i4;
+
+
+o7 <= NOT (i3
+	 XOR 
+o7 <= NOT (((EXP35_.EXP)
+	OR (NOT j3 AND NOT i4)
+	OR (NOT j3 AND j4 AND NOT addsub)
+	OR (NOT j3 AND NOT j4 AND addsub)
+	OR (j3 AND j4 AND i4 AND addsub)));
+
+
+o4 <= ((_14_.EXP)
+	OR (EXP36_.EXP)
+	OR (j1 AND i1 AND addsub)
+	OR (NOT j1 AND i1 AND NOT addsub)
+	OR (i1 AND i2 AND 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2)
+	OR (j1 AND j2 AND addsub AND 
+	NOT XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2)
+	OR (j1 AND i2 AND addsub AND 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2));
+
+
+o2 <= NOT addsub;
+
+
+o1 <= addsub;
+
+
+XLXN_248/XLXN_248_D <= NOT (i4
+	 XOR 
+XLXN_248/XLXN_248_D <= NOT (((j4 AND NOT addsub)
+	OR (NOT j4 AND addsub)));
+
+
+XLXN_249/XLXN_249_D <= NOT (i3
+	 XOR 
+XLXN_249/XLXN_249_D <= NOT (((EXP29_.EXP)
+	OR (j3 AND j4 AND i4)));
+
+
+XLXN_250/XLXN_250_D <= NOT (i2
+	 XOR 
+XLXN_250/XLXN_250_D <= NOT (((EXP31_.EXP)
+	OR (EXP32_.EXP)
+	OR (j3 AND j2 AND i3 AND addsub)
+	OR (NOT j3 AND NOT j2 AND i3 AND NOT addsub)
+	OR (j2 AND NOT i3 AND NOT i4 AND NOT addsub)
+	OR (NOT j2 AND NOT i3 AND NOT i4 AND addsub)));
+
+
+XLXN_250/XLXN_250_D8_ <= NOT (i2
+	 XOR 
+XLXN_250/XLXN_250_D8_ <= NOT (((XLXN_249/XLXN_249_D.EXP)
+	OR (EXP30_.EXP)
+	OR (j3 AND j2 AND j4 AND i4)
+	OR (j3 AND j2 AND NOT i4 AND NOT addsub)
+	OR (NOT j3 AND NOT j2 AND NOT j4 AND i4)
+	OR (NOT j3 AND NOT j2 AND NOT i4 AND addsub)));
+
+
+zb <= zb_BUFR;
+
+
+zc <= zc_BUFR;
+
+
+zg <= _10_.EXP;
+
+
+o6 <= o6_BUFR;
+
+
+o5 <= o5_BUFR;
+
+
+o3 <= o3_BUFR;
+
+
+zf <= zf_BUFR;
+
+
+ze <= ze_BUFR;
+
+
+o3_BUFR <= ((EXP21_.EXP)
+	OR (j1 AND NOT j2 AND NOT addsub AND NOT XLXN_250/XLXN_250_D8_ AND 
+	NOT o4.PIN)
+	OR (NOT j1 AND j2 AND NOT addsub AND 
+	NOT XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 AND o4.PIN)
+	OR (NOT j1 AND NOT addsub AND 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 AND XLXN_250/XLXN_250_D8_ AND o4.PIN)
+	OR (j1 AND NOT j3 AND i2 AND NOT j4 AND i4 AND NOT addsub AND NOT o4.PIN));
+
+
+o5_BUFR <= addsub
+	 XOR 
+o5_BUFR <= ((EXP19_.EXP)
+	OR (NOT i1 AND 
+	NOT XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK)
+	OR (j1 AND i1 AND addsub AND 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK)
+	OR (i1 AND i2 AND 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 AND XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK));
+
+
+o6_BUFR <= i2
+	 XOR 
+o6_BUFR <= ((EXP17_.EXP)
+	OR (EXP18_.EXP)
+	OR (j3 AND j2 AND NOT i4 AND NOT addsub)
+	OR (NOT j3 AND j2 AND NOT i4 AND addsub)
+	OR (j3 AND i3 AND NOT i4 AND addsub AND $OpTx$FX_DC$28)
+	OR (NOT j3 AND i3 AND NOT i4 AND NOT addsub AND NOT $OpTx$FX_DC$28));
+
+
+zb_BUFR <= ((NOT zf_BUFR)
+	OR (EXP1_.EXP)
+	OR (EXP2_.EXP)
+	OR (j4 AND i4 AND NOT o6_BUFR)
+	OR (NOT j4 AND NOT i4 AND NOT o6_BUFR)
+	OR (NOT o6_BUFR AND addsub AND NOT XLXN_249/XLXN_249_D)
+	OR (NOT o6_BUFR AND NOT addsub AND XLXN_249/XLXN_249_D));
+
+
+zc_BUFR <= ((EXP9_.EXP)
+	OR (EXP10_.EXP)
+	OR (NOT ze_BUFR.FBK.LFBK)
+	OR (zf_BUFR AND NOT o6_BUFR)
+	OR (NOT zf_BUFR AND addsub AND XLXN_248/XLXN_248_D)
+	OR (NOT addsub AND XLXN_249/XLXN_249_D AND 
+	NOT XLXN_248/XLXN_248_D)
+	OR (NOT i1 AND zf_BUFR AND addsub AND 
+	NOT XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2));
+
+
+ze_BUFR <= ((EXP5_.EXP)
+	OR (EXP6_.EXP)
+	OR (addsub AND XLXN_249/XLXN_249_D AND 
+	NOT XLXN_248/XLXN_248_D)
+	OR (addsub AND NOT XLXN_250/XLXN_250_D AND 
+	NOT XLXN_248/XLXN_248_D)
+	OR (NOT addsub AND NOT XLXN_249/XLXN_249_D AND 
+	XLXN_248/XLXN_248_D)
+	OR (NOT addsub AND XLXN_250/XLXN_250_D AND 
+	XLXN_248/XLXN_248_D)
+	OR (i1 AND addsub AND XLXN_250/XLXN_250_D AND NOT o4.PIN));
+
+
+zf_BUFR <= NOT (((EXP33_.EXP)
+	OR (EXP37_.EXP)
+	OR (i1 AND NOT addsub AND XLXN_250/XLXN_250_D AND 
+	NOT XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 AND NOT XLXN_248/XLXN_248_D)
+	OR (NOT i1 AND addsub AND NOT XLXN_250/XLXN_250_D AND 
+	NOT XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 AND XLXN_248/XLXN_248_D)
+	OR (addsub AND XLXN_249/XLXN_249_D AND 
+	NOT XLXN_250/XLXN_250_D AND XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 AND 
+	XLXI_6/XLXN_5.FBK.LFBK)
+	OR (addsub AND NOT XLXN_250/XLXN_250_D AND 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 AND XLXN_248/XLXN_248_D AND XLXI_6/XLXN_5.FBK.LFBK)
+	OR (NOT addsub AND XLXN_250/XLXN_250_D AND 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 AND NOT XLXN_248/XLXN_248_D AND NOT XLXI_6/XLXN_5.FBK.LFBK)));
+
+
+zg_BUFR <= ((EXP23_.EXP)
+	OR (EXP28_.EXP)
+	OR (ze_BUFR AND addsub AND XLXN_249/XLXN_249_D)
+	OR (ze_BUFR AND NOT addsub AND NOT XLXN_249/XLXN_249_D)
+	OR (NOT ze_BUFR AND NOT XLXN_249/XLXN_249_D AND 
+	XLXN_250/XLXN_250_D)
+	OR (o6_BUFR AND NOT XLXN_249/XLXN_249_D AND 
+	XLXN_248/XLXN_248_D.FBK.LFBK)
+	OR (NOT o6_BUFR AND XLXN_249/XLXN_249_D AND 
+	NOT XLXN_250/XLXN_250_D));
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE); 
+ FTCPE (Q,D,C,CLR,PRE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+****************************  Device Pin Out ****************************
+
+Device : XC95108-7-PC84
+
+
+   --------------------------------------------------------------  
+  /11 10 9  8  7  6  5  4  3  2  1  84 83 82 81 80 79 78 77 76 75 \
+ | 12                                                          74 | 
+ | 13                                                          73 | 
+ | 14                                                          72 | 
+ | 15                                                          71 | 
+ | 16                                                          70 | 
+ | 17                                                          69 | 
+ | 18                                                          68 | 
+ | 19                                                          67 | 
+ | 20                                                          66 | 
+ | 21                       XC95108-7-PC84                     65 | 
+ | 22                                                          64 | 
+ | 23                                                          63 | 
+ | 24                                                          62 | 
+ | 25                                                          61 | 
+ | 26                                                          60 | 
+ | 27                                                          59 | 
+ | 28                                                          58 | 
+ | 29                                                          57 | 
+ | 30                                                          56 | 
+ | 31                                                          55 | 
+ | 32                                                          54 | 
+ \ 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 /
+   --------------------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 TIE                              43 o2                            
+  2 TIE                              44 o1                            
+  3 TIE                              45 TIE                           
+  4 TIE                              46 TIE                           
+  5 i4                               47 TIE                           
+  6 i1                               48 TIE                           
+  7 i2                               49 GND                           
+  8 GND                              50 TIE                           
+  9 TIE                              51 TIE                           
+ 10 addsub                           52 TIE                           
+ 11 i3                               53 TIE                           
+ 12 TIE                              54 TIE                           
+ 13 TIE                              55 TIE                           
+ 14 zf                               56 TIE                           
+ 15 za                               57 TIE                           
+ 16 GND                              58 TIE                           
+ 17 zg                               59 TDO                           
+ 18 zb                               60 GND                           
+ 19 ze                               61 TIE                           
+ 20 TIE                              62 TIE                           
+ 21 zd                               63 TIE                           
+ 22 VCC                              64 VCC                           
+ 23 zc                               65 TIE                           
+ 24 zdp                              66 j3                            
+ 25 TIE                              67 TIE                           
+ 26 TIE                              68 TIE                           
+ 27 GND                              69 TIE                           
+ 28 TDI                              70 j4                            
+ 29 TMS                              71 j2                            
+ 30 TCK                              72 j1                            
+ 31 TIE                              73 VCC                           
+ 32 TIE                              74 TIE                           
+ 33 TIE                              75 TIE                           
+ 34 TIE                              76 TIE                           
+ 35 o8                               77 TIE                           
+ 36 o7                               78 VCC                           
+ 37 o6                               79 TIE                           
+ 38 VCC                              80 TIE                           
+ 39 o5                               81 TIE                           
+ 40 o4                               82 TIE                           
+ 41 o3                               83 TIE                           
+ 42 GND                              84 TIE                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+         PE   = Port Enable pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc95108-7-PC84
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+FASTConnect/UIM optimzation                 : ON
+Local Feedback                              : ON
+Pin Feedback                                : ON
+Input Limit                                 : 36
+Pterm Limit                                 : 25
+</pre><?xml version="1.0" encoding="utf-8"?>
+<form>
+  <span class="pgRef">
+    <table width="90%" align="center">
+      <tr>
+        <td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"/>
+        </td>
+        <td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"/>
+        </td>
+      </tr>
+    </table>
+  </span>
+</form></body></html>

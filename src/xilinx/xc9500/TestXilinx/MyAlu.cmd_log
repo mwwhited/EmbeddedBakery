@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/Matthew Whited/Documents/CodeSets/xilinx/TestXilinx/MyAlu.xst" -ofn "C:/Users/Matthew Whited/Documents/CodeSets/xilinx/TestXilinx/MyAlu.syr" 

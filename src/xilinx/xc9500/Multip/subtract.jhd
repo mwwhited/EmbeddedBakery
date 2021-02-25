@@ -1,0 +1,3 @@
+MODULE subtract
+	SUBMODULE twocompl
+		INSTANCE XLXI_5

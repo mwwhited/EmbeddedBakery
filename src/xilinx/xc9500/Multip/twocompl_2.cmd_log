@@ -1,0 +1,5 @@
+sch2vhdl -family xc9500 -flat -suppress -w twocompl_2.sch twocompl_2.vhf
+xst -intstyle ise -ifn __projnav/twocompl_2.xst -ofn twocompl_2.syr
+sch2vhdl -family xc9500 -flat -suppress -w twocompl_2.sch twocompl_2.vhf
+sch2vhdl -family xc9500 -flat -suppress -w twocompl_2.sch twocompl_2.vhf
+sch2vhdl -family xc9500 -flat -suppress -w twocompl_2.sch twocompl_2.vhf

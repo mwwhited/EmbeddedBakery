@@ -1,0 +1,215 @@
+Release 6.3.02i - xst G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.45 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.45 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: multip.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : multip.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : multip
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : multip
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : multip.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/Multip/and_row.vhf in Library work.
+Architecture behavioral of Entity and_row is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/e_adder.vhf in Library work.
+Architecture behavioral of Entity add4_mxilinx_e_adder is up to date.
+Architecture behavioral of Entity e_adder is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/multip.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_multip is up to date.
+Architecture behavioral of Entity buf4_mxilinx_multip is up to date.
+Architecture behavioral of Entity multip is up to date.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <multip> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_11_0" for instance <XLXI_11> in unit <multip>.
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/multip.vhf line 413: Unconnected output port 'Cout' of component 'e_adder'.
+    Set user-defined property "HU_SET =  XLXI_23_1" for instance <XLXI_23> in unit <multip>.
+    Set user-defined property "HU_SET =  XLXI_24_2" for instance <XLXI_24> in unit <multip>.
+Entity <multip> analyzed. Unit <multip> generated.
+
+Analyzing Entity <and_row> (Architecture <behavioral>).
+Entity <and_row> analyzed. Unit <and_row> generated.
+
+Analyzing Entity <BUF4_MXILINX_multip> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_multip> analyzed. Unit <BUF4_MXILINX_multip> generated.
+
+Analyzing Entity <e_adder> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/e_adder.vhf line 430: Unconnected output port 'OFL' of component 'ADD4_MXILINX_e_adder'.
+    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <e_adder>.
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/e_adder.vhf line 447: Unconnected output port 'OFL' of component 'ADD4_MXILINX_e_adder'.
+    Set user-defined property "HU_SET =  XLXI_2_1" for instance <XLXI_2> in unit <e_adder>.
+Entity <e_adder> analyzed. Unit <e_adder> generated.
+
+Analyzing Entity <ADD4_MXILINX_e_adder> (Architecture <behavioral>).
+Entity <ADD4_MXILINX_e_adder> analyzed. Unit <ADD4_MXILINX_e_adder> generated.
+
+Analyzing Entity <BUFE4_MXILINX_multip> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_multip> analyzed. Unit <BUFE4_MXILINX_multip> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <ADD4_MXILINX_e_adder>.
+    Related source file is C:/Xilinx/bin/Multip/e_adder.vhf.
+Unit <ADD4_MXILINX_e_adder> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_multip>.
+    Related source file is C:/Xilinx/bin/Multip/multip.vhf.
+Unit <BUFE4_MXILINX_multip> synthesized.
+
+
+Synthesizing Unit <e_adder>.
+    Related source file is C:/Xilinx/bin/Multip/e_adder.vhf.
+Unit <e_adder> synthesized.
+
+
+Synthesizing Unit <BUF4_MXILINX_multip>.
+    Related source file is C:/Xilinx/bin/Multip/multip.vhf.
+Unit <BUF4_MXILINX_multip> synthesized.
+
+
+Synthesizing Unit <and_row>.
+    Related source file is C:/Xilinx/bin/Multip/and_row.vhf.
+Unit <and_row> synthesized.
+
+
+Synthesizing Unit <multip>.
+    Related source file is C:/Xilinx/bin/Multip/multip.vhf.
+Unit <multip> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1348 - Unit BUFE4_MXILINX_multip is merged (output interface has tristates)
+
+Optimizing unit <multip> ...
+
+Optimizing unit <and_row> ...
+
+Optimizing unit <BUF4_MXILINX_multip> ...
+
+Optimizing unit <ADD4_MXILINX_e_adder> ...
+
+Optimizing unit <e_adder> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : multip.ngr
+Top Level Output File Name         : multip
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 195
+#      AND2                        : 46
+#      AND3                        : 24
+#      AND4                        : 18
+#      AND5                        : 12
+#      BUF                         : 4
+#      GND                         : 7
+#      OR2                         : 18
+#      OR3                         : 6
+#      OR4                         : 6
+#      OR5                         : 6
+#      XOR2                        : 48
+# IO Buffers                       : 17
+#      IBUF                        : 9
+#      OBUFE                       : 8
+# Others                           : 12
+#      AND3B1                      : 6
+#      AND3B2                      : 6
+=========================================================================
+CPU : 1.75 / 2.53 s | Elapsed : 1.00 / 2.00 s
+ 
+--> 
+
+Total memory usage is 51568 kilobytes
+
+

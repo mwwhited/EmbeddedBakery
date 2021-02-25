@@ -1,0 +1,58 @@
+Release 6.3.02i - ngdbuild G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -dd _ngo -i -p xc9500 system.ngc system.ngd 
+
+Reading NGO file "C:/Xilinx/bin/Multip/system.ngc" ...
+Reading component libraries for design expansion...
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_3/D1' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_3/D2' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_3/D3' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_13/add_main/OFL' has no
+   load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/Divisor<5>' has no
+   load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/XLXN_6<5>' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/OR9<4>' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/IR7<5>' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/IR4<5>' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/XLXN_14<5>' has no
+   load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/OR12<4>' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/OR6<4>' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/OR3<4>' has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/OFL'
+   has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/XLXI_12/XLXI_1/OFL'
+   has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/XLXI_7/Z<5>' has no
+   load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/XLXI_7/Z<0>' has no
+   load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/OFL'
+   has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/OFL'
+   has no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_4/ea1/f_adder/OFL' has
+   no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_4/ea2/f_adder/OFL' has
+   no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_4/ea3/f_adder/OFL' has
+   no load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_14/add_0/OFL' has no
+   load
+WARNING:NgdBuild:454 - logical net 'Calc_S/XLXI_11/XLXI_14/add_1/CO' has no load
+WARNING:NgdBuild:454 - logical net 'Cntr/Cntr/CEO' has no load
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:  25
+
+Total memory usage is 37108 kilobytes
+
+Writing NGD file "system.ngd" ...
+
+Writing NGDBUILD log file "system.bld"...

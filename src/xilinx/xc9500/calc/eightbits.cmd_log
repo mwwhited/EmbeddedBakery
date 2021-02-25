@@ -1,0 +1,38 @@
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+xst -intstyle ise -ifn __projnav/eightbits.xst -ofn eightbits.syr
+ngdbuild -dd _ngo -i -p xc9500 eightbits.ngc eightbits.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk eightbits.ngd
+hprep6 -s IEEE1149 -n eightbits -i eightbits
+XSLTProcess "eightbits_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+xst -intstyle ise -ifn __projnav/eightbits.xst -ofn eightbits.syr
+ngdbuild -dd _ngo -uc eightbits.ucf -p xc9500 eightbits.ngc eightbits.ngd
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+xst -intstyle ise -ifn __projnav/eightbits.xst -ofn eightbits.syr
+ngdbuild -dd _ngo -uc eightbits.ucf -p xc9500 eightbits.ngc eightbits.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk eightbits.ngd
+hprep6 -s IEEE1149 -n eightbits -i eightbits
+XSLTProcess "eightbits_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+xst -intstyle ise -ifn __projnav/eightbits.xst -ofn eightbits.syr
+ngdbuild -dd _ngo -uc eightbits.ucf -p xc9500 eightbits.ngc eightbits.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk eightbits.ngd
+hprep6 -s IEEE1149 -n eightbits -i eightbits
+XSLTProcess "eightbits_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf

@@ -1,0 +1,718 @@
+Release 6.3.02i - xst G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.41 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.41 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: system.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : system.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : system
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : system
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : system.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/Multip/twocompl.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_twocompl is up to date.
+Architecture behavioral of Entity twocompl is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/div_buff.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_div_buff is up to date.
+Architecture behavioral of Entity div_buff is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/f_adder.vhf in Library work.
+Architecture behavioral of Entity add1_mxilinx_f_adder is up to date.
+Architecture behavioral of Entity add4_mxilinx_f_adder is up to date.
+Architecture behavioral of Entity f_adder is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/twocompl_2.vhf in Library work.
+Architecture behavioral of Entity twocompl_2 is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/div_inp.vhf in Library work.
+Architecture behavioral of Entity buf4_mxilinx_div_inp is up to date.
+Architecture behavioral of Entity div_inp is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/and_row.vhf in Library work.
+Architecture behavioral of Entity and_row is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/e_adder.vhf in Library work.
+Architecture behavioral of Entity add4_mxilinx_e_adder is up to date.
+Architecture behavioral of Entity e_adder is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/multip.vhf in Library work.
+Architecture behavioral of Entity bufe8_mxilinx_multip is up to date.
+Architecture behavioral of Entity multip is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/divider.vhf in Library work.
+Architecture behavioral of Entity bufe8_mxilinx_divider is up to date.
+Architecture behavioral of Entity buf4_mxilinx_divider is up to date.
+Architecture behavioral of Entity divider is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/adder.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_adder is up to date.
+Architecture behavioral of Entity add4_mxilinx_adder is up to date.
+Architecture behavioral of Entity adder is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/subtract.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_subtract is up to date.
+Architecture behavioral of Entity add1_mxilinx_subtract is up to date.
+Architecture behavioral of Entity add4_mxilinx_subtract is up to date.
+Architecture behavioral of Entity subtract is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/Set0.vhf in Library work.
+Architecture behavioral of Entity bufe8_mxilinx_set0 is up to date.
+Architecture behavioral of Entity d2_4e_mxilinx_set0 is up to date.
+Architecture behavioral of Entity set0 is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/eightbits.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_eightbits is up to date.
+Architecture behavioral of Entity ibuf4_mxilinx_eightbits is up to date.
+Architecture behavioral of Entity eightbits is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/eightleds.vhf in Library work.
+Architecture behavioral of Entity buf4_mxilinx_eightleds is up to date.
+Architecture behavioral of Entity obufe_mxilinx_eightleds is up to date.
+Architecture behavioral of Entity obufe4_mxilinx_eightleds is up to date.
+Architecture behavioral of Entity eightleds is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/calc.vhf in Library work.
+Entity <bufe8_mxilinx_calc> (Architecture <behavioral>) compiled.
+Entity <d2_4e_mxilinx_calc> (Architecture <behavioral>) compiled.
+Entity <calc> (Architecture <behavioral>) compiled.
+Compiling vhdl file C:/Xilinx/bin/Multip/counter.vhf in Library work.
+Architecture behavioral of Entity fd_mxilinx_counter is up to date.
+Architecture behavioral of Entity fdre_mxilinx_counter is up to date.
+Architecture behavioral of Entity ftrse_mxilinx_counter is up to date.
+Architecture behavioral of Entity cb4re_mxilinx_counter is up to date.
+Architecture behavioral of Entity counter is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/momentsw.vhf in Library work.
+Architecture behavioral of Entity momentsw is up to date.
+Compiling vhdl file C:/Xilinx/bin/Multip/system.vhf in Library work.
+Entity <system> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <system> (Architecture <behavioral>).
+    Set user-defined property "LOC =  p10" for signal <A1> in unit <momentsw>.
+Entity <system> analyzed. Unit <system> generated.
+
+Analyzing Entity <eightbits> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  in_buf0_0" for instance <in_buf0> in unit <eightbits>.
+    Set user-defined property "HU_SET =  in_buf1_1" for instance <in_buf1> in unit <eightbits>.
+    Set user-defined property "HU_SET =  out_buf0_3" for instance <out_buf0> in unit <eightbits>.
+    Set user-defined property "HU_SET =  out_buf1_2" for instance <out_buf1> in unit <eightbits>.
+Entity <eightbits> analyzed. Unit <eightbits> generated.
+
+Analyzing Entity <IBUF4_MXILINX_eightbits> (Architecture <behavioral>).
+Entity <IBUF4_MXILINX_eightbits> analyzed. Unit <IBUF4_MXILINX_eightbits> generated.
+
+Analyzing Entity <BUFE4_MXILINX_eightbits> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_eightbits> analyzed. Unit <BUFE4_MXILINX_eightbits> generated.
+
+Analyzing Entity <eightleds> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  in_buf0_6" for instance <in_buf0> in unit <eightleds>.
+    Set user-defined property "HU_SET =  in_buf1_7" for instance <in_buf1> in unit <eightleds>.
+    Set user-defined property "HU_SET =  out_buf0_4" for instance <out_buf0> in unit <eightleds>.
+    Set user-defined property "HU_SET =  out_buf1_5" for instance <out_buf1> in unit <eightleds>.
+Entity <eightleds> analyzed. Unit <eightleds> generated.
+
+Analyzing Entity <BUF4_MXILINX_eightleds> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_eightleds> analyzed. Unit <BUF4_MXILINX_eightleds> generated.
+
+Analyzing Entity <OBUFE4_MXILINX_eightleds> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_37_3" for instance <I_36_37> in unit <OBUFE4_MXILINX_eightleds>.
+    Set user-defined property "HU_SET =  I_36_38_0" for instance <I_36_38> in unit <OBUFE4_MXILINX_eightleds>.
+    Set user-defined property "HU_SET =  I_36_39_1" for instance <I_36_39> in unit <OBUFE4_MXILINX_eightleds>.
+    Set user-defined property "HU_SET =  I_36_40_2" for instance <I_36_40> in unit <OBUFE4_MXILINX_eightleds>.
+Entity <OBUFE4_MXILINX_eightleds> analyzed. Unit <OBUFE4_MXILINX_eightleds> generated.
+
+Analyzing Entity <OBUFE_MXILINX_eightleds> (Architecture <behavioral>).
+Entity <OBUFE_MXILINX_eightleds> analyzed. Unit <OBUFE_MXILINX_eightleds> generated.
+
+Analyzing Entity <calc> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/calc.vhf line 249: Unconnected output port 'D1' of component 'D2_4E_MXILINX_calc'.
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/calc.vhf line 249: Unconnected output port 'D2' of component 'D2_4E_MXILINX_calc'.
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/calc.vhf line 249: Unconnected output port 'D3' of component 'D2_4E_MXILINX_calc'.
+    Set user-defined property "HU_SET =  XLXI_3_0" for instance <XLXI_3> in unit <calc>.
+    Set user-defined property "HU_SET =  XLXI_12_1" for instance <XLXI_12> in unit <calc>.
+Entity <calc> analyzed. Unit <calc> generated.
+
+Analyzing Entity <D2_4E_MXILINX_calc> (Architecture <behavioral>).
+Entity <D2_4E_MXILINX_calc> analyzed. Unit <D2_4E_MXILINX_calc> generated.
+
+Analyzing Entity <set0> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_3_0" for instance <XLXI_3> in unit <set0>.
+    Set user-defined property "HU_SET =  XLXI_12_1" for instance <XLXI_12> in unit <set0>.
+Entity <set0> analyzed. Unit <set0> generated.
+
+Analyzing Entity <D2_4E_MXILINX_set0> (Architecture <behavioral>).
+Entity <D2_4E_MXILINX_set0> analyzed. Unit <D2_4E_MXILINX_set0> generated.
+
+Analyzing Entity <multip> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  obufz_0" for instance <obufz> in unit <multip>.
+Entity <multip> analyzed. Unit <multip> generated.
+
+Analyzing Entity <and_row> (Architecture <behavioral>).
+Entity <and_row> analyzed. Unit <and_row> generated.
+
+Analyzing Entity <e_adder> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/e_adder.vhf line 419: Unconnected output port 'OFL' of component 'ADD4_MXILINX_e_adder'.
+    Set user-defined property "HU_SET =  f_adder_0" for instance <f_adder> in unit <e_adder>.
+Entity <e_adder> analyzed. Unit <e_adder> generated.
+
+Analyzing Entity <ADD4_MXILINX_e_adder> (Architecture <behavioral>).
+Entity <ADD4_MXILINX_e_adder> analyzed. Unit <ADD4_MXILINX_e_adder> generated.
+
+Analyzing Entity <BUFE8_MXILINX_multip> (Architecture <behavioral>).
+Entity <BUFE8_MXILINX_multip> analyzed. Unit <BUFE8_MXILINX_multip> generated.
+
+Analyzing Entity <divider> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_21_0" for instance <XLXI_21> in unit <divider>.
+    Set user-defined property "HU_SET =  XLXI_26_1" for instance <XLXI_26> in unit <divider>.
+Entity <divider> analyzed. Unit <divider> generated.
+
+Analyzing Entity <div_buff> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_2_0" for instance <XLXI_2> in unit <div_buff>.
+    Set user-defined property "HU_SET =  XLXI_3_1" for instance <XLXI_3> in unit <div_buff>.
+Entity <div_buff> analyzed. Unit <div_buff> generated.
+
+Analyzing Entity <BUFE4_MXILINX_div_buff> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_div_buff> analyzed. Unit <BUFE4_MXILINX_div_buff> generated.
+
+Analyzing Entity <f_adder> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/f_adder.vhf line 545: Unconnected output port 'OFL' of component 'ADD4_MXILINX_f_adder'.
+    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <f_adder>.
+    Set user-defined property "HU_SET =  XLXI_2_1" for instance <XLXI_2> in unit <f_adder>.
+Entity <f_adder> analyzed. Unit <f_adder> generated.
+
+Analyzing Entity <ADD4_MXILINX_f_adder> (Architecture <behavioral>).
+Entity <ADD4_MXILINX_f_adder> analyzed. Unit <ADD4_MXILINX_f_adder> generated.
+
+Analyzing Entity <ADD1_MXILINX_f_adder> (Architecture <behavioral>).
+Entity <ADD1_MXILINX_f_adder> analyzed. Unit <ADD1_MXILINX_f_adder> generated.
+
+Analyzing Entity <twocompl_2> (Architecture <behavioral>).
+Entity <twocompl_2> analyzed. Unit <twocompl_2> generated.
+
+Analyzing Entity <div_inp> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <div_inp>.
+    Set user-defined property "HU_SET =  XLXI_2_1" for instance <XLXI_2> in unit <div_inp>.
+Entity <div_inp> analyzed. Unit <div_inp> generated.
+
+Analyzing Entity <BUF4_MXILINX_div_inp> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_div_inp> analyzed. Unit <BUF4_MXILINX_div_inp> generated.
+
+Analyzing Entity <BUF4_MXILINX_divider> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_divider> analyzed. Unit <BUF4_MXILINX_divider> generated.
+
+Analyzing Entity <BUFE8_MXILINX_divider> (Architecture <behavioral>).
+Entity <BUFE8_MXILINX_divider> analyzed. Unit <BUFE8_MXILINX_divider> generated.
+
+Analyzing Entity <BUFE8_MXILINX_set0> (Architecture <behavioral>).
+Entity <BUFE8_MXILINX_set0> analyzed. Unit <BUFE8_MXILINX_set0> generated.
+
+Analyzing Entity <adder> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/adder.vhf line 509: Unconnected output port 'OFL' of component 'ADD4_MXILINX_adder'.
+    Set user-defined property "HU_SET =  add_main_0" for instance <add_main> in unit <adder>.
+    Set user-defined property "HU_SET =  low4_1" for instance <low4> in unit <adder>.
+Entity <adder> analyzed. Unit <adder> generated.
+
+Analyzing Entity <ADD4_MXILINX_adder> (Architecture <behavioral>).
+Entity <ADD4_MXILINX_adder> analyzed. Unit <ADD4_MXILINX_adder> generated.
+
+Analyzing Entity <BUFE4_MXILINX_adder> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_adder> analyzed. Unit <BUFE4_MXILINX_adder> generated.
+
+Analyzing Entity <subtract> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/subtract.vhf line 667: Unconnected output port 'OFL' of component 'ADD4_MXILINX_subtract'.
+    Set user-defined property "HU_SET =  add_0_0" for instance <add_0> in unit <subtract>.
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/subtract.vhf line 684: Unconnected output port 'CO' of component 'ADD1_MXILINX_subtract'.
+    Set user-defined property "HU_SET =  add_1_1" for instance <add_1> in unit <subtract>.
+    Set user-defined property "HU_SET =  o_buf0_2" for instance <o_buf0> in unit <subtract>.
+Entity <subtract> analyzed. Unit <subtract> generated.
+
+Analyzing Entity <ADD4_MXILINX_subtract> (Architecture <behavioral>).
+Entity <ADD4_MXILINX_subtract> analyzed. Unit <ADD4_MXILINX_subtract> generated.
+
+Analyzing Entity <ADD1_MXILINX_subtract> (Architecture <behavioral>).
+Entity <ADD1_MXILINX_subtract> analyzed. Unit <ADD1_MXILINX_subtract> generated.
+
+Analyzing Entity <BUFE4_MXILINX_subtract> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_subtract> analyzed. Unit <BUFE4_MXILINX_subtract> generated.
+
+Analyzing Entity <twocompl> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_43_0" for instance <XLXI_43> in unit <twocompl>.
+Entity <twocompl> analyzed. Unit <twocompl> generated.
+
+Analyzing Entity <BUFE4_MXILINX_twocompl> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_twocompl> analyzed. Unit <BUFE4_MXILINX_twocompl> generated.
+
+Analyzing Entity <BUFE8_MXILINX_calc> (Architecture <behavioral>).
+Entity <BUFE8_MXILINX_calc> analyzed. Unit <BUFE8_MXILINX_calc> generated.
+
+Analyzing Entity <counter> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/counter.vhf line 478: Unconnected output port 'CEO' of component 'CB4RE_MXILINX_counter'.
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/counter.vhf line 478: Unconnected output port 'TC' of component 'CB4RE_MXILINX_counter'.
+    Set user-defined property "HU_SET =  Cntr_6" for instance <Cntr> in unit <counter>.
+Entity <counter> analyzed. Unit <counter> generated.
+
+Analyzing Entity <CB4RE_MXILINX_counter> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  U0_2" for instance <U0> in unit <CB4RE_MXILINX_counter>.
+    Set user-defined property "HU_SET =  U1_3" for instance <U1> in unit <CB4RE_MXILINX_counter>.
+    Set user-defined property "HU_SET =  U2_4" for instance <U2> in unit <CB4RE_MXILINX_counter>.
+    Set user-defined property "HU_SET =  U3_5" for instance <U3> in unit <CB4RE_MXILINX_counter>.
+Entity <CB4RE_MXILINX_counter> analyzed. Unit <CB4RE_MXILINX_counter> generated.
+
+Analyzing Entity <FTRSE_MXILINX_counter> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_35_1" for instance <I_36_35> in unit <FTRSE_MXILINX_counter>.
+Entity <FTRSE_MXILINX_counter> analyzed. Unit <FTRSE_MXILINX_counter> generated.
+
+Analyzing Entity <FDRE_MXILINX_counter> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_42_0" for instance <I_36_42> in unit <FDRE_MXILINX_counter>.
+    Set user-defined property "RLOC =  R0C0" for instance <I_36_42> in unit <FDRE_MXILINX_counter>.
+Entity <FDRE_MXILINX_counter> analyzed. Unit <FDRE_MXILINX_counter> generated.
+
+Analyzing Entity <FD_MXILINX_counter> (Architecture <behavioral>).
+Entity <FD_MXILINX_counter> analyzed. Unit <FD_MXILINX_counter> generated.
+
+Analyzing Entity <momentsw> (Architecture <behavioral>).
+    Set user-defined property "LOC =  p10" for signal <A1> in unit <momentsw>.
+Entity <momentsw> analyzed. Unit <momentsw> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <FD_MXILINX_counter>.
+    Related source file is C:/Xilinx/bin/Multip/counter.vhf.
+Unit <FD_MXILINX_counter> synthesized.
+
+
+Synthesizing Unit <FDRE_MXILINX_counter>.
+    Related source file is C:/Xilinx/bin/Multip/counter.vhf.
+Unit <FDRE_MXILINX_counter> synthesized.
+
+
+Synthesizing Unit <FTRSE_MXILINX_counter>.
+    Related source file is C:/Xilinx/bin/Multip/counter.vhf.
+Unit <FTRSE_MXILINX_counter> synthesized.
+
+
+Synthesizing Unit <CB4RE_MXILINX_counter>.
+    Related source file is C:/Xilinx/bin/Multip/counter.vhf.
+Unit <CB4RE_MXILINX_counter> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_twocompl>.
+    Related source file is C:/Xilinx/bin/Multip/twocompl.vhf.
+Unit <BUFE4_MXILINX_twocompl> synthesized.
+
+
+Synthesizing Unit <twocompl>.
+    Related source file is C:/Xilinx/bin/Multip/twocompl.vhf.
+Unit <twocompl> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_subtract>.
+    Related source file is C:/Xilinx/bin/Multip/subtract.vhf.
+Unit <BUFE4_MXILINX_subtract> synthesized.
+
+
+Synthesizing Unit <ADD1_MXILINX_subtract>.
+    Related source file is C:/Xilinx/bin/Multip/subtract.vhf.
+Unit <ADD1_MXILINX_subtract> synthesized.
+
+
+Synthesizing Unit <ADD4_MXILINX_subtract>.
+    Related source file is C:/Xilinx/bin/Multip/subtract.vhf.
+Unit <ADD4_MXILINX_subtract> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_adder>.
+    Related source file is C:/Xilinx/bin/Multip/adder.vhf.
+Unit <BUFE4_MXILINX_adder> synthesized.
+
+
+Synthesizing Unit <ADD4_MXILINX_adder>.
+    Related source file is C:/Xilinx/bin/Multip/adder.vhf.
+Unit <ADD4_MXILINX_adder> synthesized.
+
+
+Synthesizing Unit <BUF4_MXILINX_div_inp>.
+    Related source file is C:/Xilinx/bin/Multip/div_inp.vhf.
+Unit <BUF4_MXILINX_div_inp> synthesized.
+
+
+Synthesizing Unit <ADD1_MXILINX_f_adder>.
+    Related source file is C:/Xilinx/bin/Multip/f_adder.vhf.
+Unit <ADD1_MXILINX_f_adder> synthesized.
+
+
+Synthesizing Unit <ADD4_MXILINX_f_adder>.
+    Related source file is C:/Xilinx/bin/Multip/f_adder.vhf.
+Unit <ADD4_MXILINX_f_adder> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_div_buff>.
+    Related source file is C:/Xilinx/bin/Multip/div_buff.vhf.
+Unit <BUFE4_MXILINX_div_buff> synthesized.
+
+
+Synthesizing Unit <BUFE8_MXILINX_divider>.
+    Related source file is C:/Xilinx/bin/Multip/divider.vhf.
+Unit <BUFE8_MXILINX_divider> synthesized.
+
+
+Synthesizing Unit <BUF4_MXILINX_divider>.
+    Related source file is C:/Xilinx/bin/Multip/divider.vhf.
+Unit <BUF4_MXILINX_divider> synthesized.
+
+
+Synthesizing Unit <div_inp>.
+    Related source file is C:/Xilinx/bin/Multip/div_inp.vhf.
+Unit <div_inp> synthesized.
+
+
+Synthesizing Unit <twocompl_2>.
+    Related source file is C:/Xilinx/bin/Multip/twocompl_2.vhf.
+Unit <twocompl_2> synthesized.
+
+
+Synthesizing Unit <f_adder>.
+    Related source file is C:/Xilinx/bin/Multip/f_adder.vhf.
+WARNING:Xst:647 - Input <A<5>> is never used.
+WARNING:Xst:647 - Input <B<5>> is never used.
+Unit <f_adder> synthesized.
+
+
+Synthesizing Unit <div_buff>.
+    Related source file is C:/Xilinx/bin/Multip/div_buff.vhf.
+WARNING:Xst:647 - Input <A<4:5>> is never used.
+WARNING:Xst:647 - Input <B<4>> is never used.
+Unit <div_buff> synthesized.
+
+
+Synthesizing Unit <ADD4_MXILINX_e_adder>.
+    Related source file is C:/Xilinx/bin/Multip/e_adder.vhf.
+Unit <ADD4_MXILINX_e_adder> synthesized.
+
+
+Synthesizing Unit <BUFE8_MXILINX_multip>.
+    Related source file is C:/Xilinx/bin/Multip/multip.vhf.
+Unit <BUFE8_MXILINX_multip> synthesized.
+
+
+Synthesizing Unit <e_adder>.
+    Related source file is C:/Xilinx/bin/Multip/e_adder.vhf.
+Unit <e_adder> synthesized.
+
+
+Synthesizing Unit <and_row>.
+    Related source file is C:/Xilinx/bin/Multip/and_row.vhf.
+Unit <and_row> synthesized.
+
+
+Synthesizing Unit <subtract>.
+    Related source file is C:/Xilinx/bin/Multip/subtract.vhf.
+Unit <subtract> synthesized.
+
+
+Synthesizing Unit <adder>.
+    Related source file is C:/Xilinx/bin/Multip/adder.vhf.
+Unit <adder> synthesized.
+
+
+Synthesizing Unit <BUFE8_MXILINX_set0>.
+    Related source file is C:/Xilinx/bin/Multip/Set0.vhf.
+Unit <BUFE8_MXILINX_set0> synthesized.
+
+
+Synthesizing Unit <divider>.
+    Related source file is C:/Xilinx/bin/Multip/divider.vhf.
+WARNING:Xst:646 - Signal <Modulas<0>> is assigned but never used.
+WARNING:Xst:646 - Signal <Modulas<5>> is assigned but never used.
+Unit <divider> synthesized.
+
+
+Synthesizing Unit <multip>.
+    Related source file is C:/Xilinx/bin/Multip/multip.vhf.
+Unit <multip> synthesized.
+
+
+Synthesizing Unit <D2_4E_MXILINX_set0>.
+    Related source file is C:/Xilinx/bin/Multip/Set0.vhf.
+Unit <D2_4E_MXILINX_set0> synthesized.
+
+
+Synthesizing Unit <BUFE8_MXILINX_calc>.
+    Related source file is C:/Xilinx/bin/Multip/calc.vhf.
+Unit <BUFE8_MXILINX_calc> synthesized.
+
+
+Synthesizing Unit <set0>.
+    Related source file is C:/Xilinx/bin/Multip/Set0.vhf.
+Unit <set0> synthesized.
+
+
+Synthesizing Unit <D2_4E_MXILINX_calc>.
+    Related source file is C:/Xilinx/bin/Multip/calc.vhf.
+Unit <D2_4E_MXILINX_calc> synthesized.
+
+
+Synthesizing Unit <OBUFE_MXILINX_eightleds>.
+    Related source file is C:/Xilinx/bin/Multip/eightleds.vhf.
+Unit <OBUFE_MXILINX_eightleds> synthesized.
+
+
+Synthesizing Unit <OBUFE4_MXILINX_eightleds>.
+    Related source file is C:/Xilinx/bin/Multip/eightleds.vhf.
+Unit <OBUFE4_MXILINX_eightleds> synthesized.
+
+
+Synthesizing Unit <BUF4_MXILINX_eightleds>.
+    Related source file is C:/Xilinx/bin/Multip/eightleds.vhf.
+Unit <BUF4_MXILINX_eightleds> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_eightbits>.
+    Related source file is C:/Xilinx/bin/Multip/eightbits.vhf.
+Unit <BUFE4_MXILINX_eightbits> synthesized.
+
+
+Synthesizing Unit <IBUF4_MXILINX_eightbits>.
+    Related source file is C:/Xilinx/bin/Multip/eightbits.vhf.
+Unit <IBUF4_MXILINX_eightbits> synthesized.
+
+
+Synthesizing Unit <momentsw>.
+    Related source file is C:/Xilinx/bin/Multip/momentsw.vhf.
+Unit <momentsw> synthesized.
+
+
+Synthesizing Unit <counter>.
+    Related source file is C:/Xilinx/bin/Multip/counter.vhf.
+Unit <counter> synthesized.
+
+
+Synthesizing Unit <calc>.
+    Related source file is C:/Xilinx/bin/Multip/calc.vhf.
+Unit <calc> synthesized.
+
+
+Synthesizing Unit <eightleds>.
+    Related source file is C:/Xilinx/bin/Multip/eightleds.vhf.
+Unit <eightleds> synthesized.
+
+
+Synthesizing Unit <eightbits>.
+    Related source file is C:/Xilinx/bin/Multip/eightbits.vhf.
+Unit <eightbits> synthesized.
+
+
+Synthesizing Unit <system>.
+    Related source file is C:/Xilinx/bin/Multip/system.vhf.
+Unit <system> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <system> ...
+
+Optimizing unit <momentsw> ...
+  implementation constraint: LOC=p10	 : A1
+
+Optimizing unit <IBUF4_MXILINX_eightbits> ...
+
+Optimizing unit <BUFE4_MXILINX_eightbits> ...
+
+Optimizing unit <BUF4_MXILINX_eightleds> ...
+
+Optimizing unit <OBUFE_MXILINX_eightleds> ...
+
+Optimizing unit <D2_4E_MXILINX_calc> ...
+
+Optimizing unit <BUFE8_MXILINX_calc> ...
+
+Optimizing unit <D2_4E_MXILINX_set0> ...
+
+Optimizing unit <BUFE8_MXILINX_set0> ...
+
+Optimizing unit <and_row> ...
+
+Optimizing unit <BUFE8_MXILINX_multip> ...
+
+Optimizing unit <ADD4_MXILINX_e_adder> ...
+
+Optimizing unit <twocompl_2> ...
+
+Optimizing unit <BUF4_MXILINX_divider> ...
+
+Optimizing unit <BUFE8_MXILINX_divider> ...
+
+Optimizing unit <BUFE4_MXILINX_div_buff> ...
+
+Optimizing unit <ADD4_MXILINX_f_adder> ...
+
+Optimizing unit <ADD1_MXILINX_f_adder> ...
+
+Optimizing unit <BUF4_MXILINX_div_inp> ...
+
+Optimizing unit <ADD4_MXILINX_adder> ...
+
+Optimizing unit <BUFE4_MXILINX_adder> ...
+
+Optimizing unit <ADD4_MXILINX_subtract> ...
+
+Optimizing unit <ADD1_MXILINX_subtract> ...
+
+Optimizing unit <BUFE4_MXILINX_subtract> ...
+
+Optimizing unit <BUFE4_MXILINX_twocompl> ...
+
+Optimizing unit <FD_MXILINX_counter> ...
+
+Optimizing unit <eightbits> ...
+
+Optimizing unit <OBUFE4_MXILINX_eightleds> ...
+
+Optimizing unit <adder> ...
+
+Optimizing unit <e_adder> ...
+
+Optimizing unit <div_buff> ...
+
+Optimizing unit <f_adder> ...
+
+Optimizing unit <div_inp> ...
+
+Optimizing unit <twocompl> ...
+
+Optimizing unit <FDRE_MXILINX_counter> ...
+
+Optimizing unit <eightleds> ...
+
+Optimizing unit <multip> ...
+
+Optimizing unit <divider> ...
+
+Optimizing unit <subtract> ...
+
+Optimizing unit <FTRSE_MXILINX_counter> ...
+
+Optimizing unit <set0> ...
+
+Optimizing unit <CB4RE_MXILINX_counter> ...
+
+Optimizing unit <calc> ...
+
+Optimizing unit <counter> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : system.ngr
+Top Level Output File Name         : system
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 439
+#      AND2                        : 86
+#      AND3                        : 39
+#      AND4                        : 28
+#      AND5                        : 18
+#      BUF                         : 42
+#      GND                         : 33
+#      INV                         : 21
+#      OR2                         : 45
+#      OR3                         : 14
+#      OR4                         : 9
+#      OR5                         : 9
+#      VCC                         : 5
+#      XOR2                        : 90
+# FlipFlops/Latches                : 4
+#      FDCP                        : 4
+# Tri-States                       : 91
+#      BUFE                        : 91
+# IO Buffers                       : 17
+#      IBUF                        : 9
+#      OBUFT                       : 8
+# Others                           : 42
+#      AND2B1                      : 10
+#      AND3B1                      : 17
+#      AND3B2                      : 15
+=========================================================================
+CPU : 4.70 / 5.44 s | Elapsed : 5.00 / 6.00 s
+ 
+--> 
+
+Total memory usage is 58736 kilobytes
+
+

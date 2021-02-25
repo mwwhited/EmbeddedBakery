@@ -1,0 +1,1 @@
+sch2vhdl -family xc9500 -flat -suppress -w all_low.sch all_low.vhf

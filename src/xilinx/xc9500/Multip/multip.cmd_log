@@ -1,0 +1,11 @@
+sch2vhdl -family xc9500 -flat -suppress -w multip.sch multip.vhf
+xst -intstyle ise -ifn __projnav/multip.xst -ofn multip.syr
+sch2vhdl -family xc9500 -flat -suppress -w multip.sch multip.vhf
+sch2vhdl -family xc9500 -flat -suppress -w multip.sch multip.vhf
+xst -intstyle ise -ifn __projnav/multip.xst -ofn multip.syr
+ngdbuild -dd _ngo -i -p xc9500 multip.ngc multip.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk multip.ngd
+hprep6 -s IEEE1149 -n multip -i multip
+sch2vhdl -family xc9500 -flat -suppress -w multip.sch multip.vhf
+sch2vhdl -family xc9500 -flat -suppress -w multip.sch multip.vhf
+sch2vhdl -family xc9500 -flat -suppress -w multip.sch multip.vhf

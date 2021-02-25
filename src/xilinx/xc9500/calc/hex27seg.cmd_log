@@ -1,0 +1,72 @@
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -i -p xc9500 hex27seg.ngc hex27seg.ngd
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk hex27seg.ngd
+hprep6 -s IEEE1149 -n hex27seg -i hex27seg
+XSLTProcess "hex27seg_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk hex27seg.ngd
+hprep6 -s IEEE1149 -n hex27seg -i hex27seg
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk hex27seg.ngd
+hprep6 -s IEEE1149 -n hex27seg -i hex27seg
+XSLTProcess "hex27seg_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk hex27seg.ngd
+hprep6 -s IEEE1149 -n hex27seg -i hex27seg
+XSLTProcess "hex27seg_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk hex27seg.ngd
+hprep6 -s IEEE1149 -n hex27seg -i hex27seg
+XSLTProcess "hex27seg_build.xml"
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -i -p xc9500 hex27seg.ngc hex27seg.ngd
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk hex27seg.ngd
+hprep6 -s IEEE1149 -n hex27seg -i hex27seg
+XSLTProcess "hex27seg_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk hex27seg.ngd
+hprep6 -s IEEE1149 -n hex27seg -i hex27seg
+XSLTProcess "hex27seg_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+xst -intstyle ise -ifn __projnav/hex27seg.xst -ofn hex27seg.syr
+ngdbuild -dd _ngo -uc hex27seg.ucf -p xc9500 hex27seg.ngc hex27seg.ngd
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w hex27seg.sch hex27seg.vhf

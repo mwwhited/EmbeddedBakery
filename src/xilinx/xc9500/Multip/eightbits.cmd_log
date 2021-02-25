@@ -1,0 +1,2 @@
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf
+sch2vhdl -family xc9500 -flat -suppress -w eightbits.sch eightbits.vhf

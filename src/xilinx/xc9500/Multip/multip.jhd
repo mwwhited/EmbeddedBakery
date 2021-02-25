@@ -1,0 +1,15 @@
+MODULE multip
+	SUBMODULE and_row
+		INSTANCE ar1
+	SUBMODULE and_row
+		INSTANCE ar2
+	SUBMODULE and_row
+		INSTANCE ar3
+	SUBMODULE and_row
+		INSTANCE ar4
+	SUBMODULE e_adder
+		INSTANCE ea1
+	SUBMODULE e_adder
+		INSTANCE ea2
+	SUBMODULE e_adder
+		INSTANCE ea3

@@ -1,0 +1,27 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 12.4
+//  \   \         Application : sch2hdl
+//  /   /         Filename : MyAlu.vf
+// /___/   /\     Timestamp : 02/05/2011 16:39:19
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan3e -verilog "C:/Users/Matthew Whited/Documents/CodeSets/xilinx/TestXilinx/MyAlu.vf" -w "C:/Users/Matthew Whited/Documents/CodeSets/xilinx/TestXilinx/MyAlu.sch"
+//Design Name: MyAlu
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module MyAlu();
+
+   
+   
+endmodule

@@ -1,0 +1,105 @@
+MDF Database:  version 1.0
+MDF_INFO | hex27seg | XC95108-7-PC84
+MACROCELL | 5 | 1 | XLXN_111
+ATTRIBUTES | 281346 | 0
+INPUTS | 5 | Enable  | A2  | A3  | A4  | A1
+INPUTP | 5 | 4 | 46 | 15 | 87 | 131
+EQ | 4 | 
+   !Zg = Enable & !A2 & !A3 & !A4
+	# Enable & A1 & A2 & A3 & !A4
+	# Enable & !A1 & !A2 & A3 & A4;
+   Zg.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 2 | 10 | XLXN_112
+ATTRIBUTES | 281346 | 0
+INPUTS | 5 | Enable  | A1  | A3  | A4  | A2
+INPUTP | 5 | 4 | 131 | 15 | 87 | 46
+EQ | 4 | 
+   !Zf = Enable & A1 & !A3 & !A4
+	# Enable & A2 & !A3 & !A4
+	# Enable & A1 & !A2 & A3 & A4;
+   Zf.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 0 | 1 | XLXN_113
+ATTRIBUTES | 281346 | 0
+INPUTS | 5 | Enable  | A1  | A4  | A2  | A3
+INPUTP | 5 | 4 | 131 | 87 | 46 | 15
+EQ | 4 | 
+   !Ze = Enable & A1 & !A4
+	# Enable & A1 & !A2 & !A3
+	# Enable & !A2 & A3 & !A4;
+   Ze.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 1 | 1 | XLXN_114
+ATTRIBUTES | 281346 | 0
+INPUTS | 5 | Enable  | A1  | A2  | A3  | A4
+INPUTP | 5 | 4 | 131 | 46 | 15 | 87
+EQ | 5 | 
+   !Zd = Enable & A1 & A2 & A3
+	# Enable & A1 & !A2 & !A3
+	# Enable & !A1 & A2 & !A3 & A4
+	# Enable & !A1 & !A2 & A3 & !A4;
+   Zd.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 0 | 8 | XLXN_115
+ATTRIBUTES | 281346 | 0
+INPUTS | 5 | Enable  | A1  | A3  | A4  | A2
+INPUTP | 5 | 4 | 131 | 15 | 87 | 46
+EQ | 4 | 
+   !Zc = Enable & !A1 & A3 & A4
+	# Enable & A2 & A3 & A4
+	# Enable & !A1 & A2 & !A3 & !A4;
+   Zc.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 2 | 1 | XLXN_116
+ATTRIBUTES | 281346 | 0
+INPUTS | 5 | Enable  | A1  | A2  | A4  | A3
+INPUTP | 5 | 4 | 131 | 46 | 87 | 15
+EQ | 5 | 
+   !Zb = Enable & A1 & A2 & A4
+	# Enable & !A1 & A2 & A3
+	# Enable & !A1 & A3 & A4
+	# Enable & A1 & !A2 & A3 & !A4;
+   Zb.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 3 | 1 | XLXN_117
+ATTRIBUTES | 281346 | 0
+INPUTS | 5 | Enable  | A1  | A2  | A3  | A4
+INPUTP | 5 | 4 | 131 | 46 | 15 | 87
+EQ | 5 | 
+   !Za = Enable & A1 & A2 & !A3 & A4
+	# Enable & A1 & !A2 & A3 & A4
+	# Enable & A1 & !A2 & !A3 & !A4
+	# Enable & !A1 & !A2 & A3 & !A4;
+   Za.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 4 | 1 | XLXN_74$BUF0
+ATTRIBUTES | 281346 | 0
+INPUTS | 1 | Adp
+INPUTP | 1 | 101
+EQ | 2 | 
+   Zdp = Adp;
+   Zdp.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+PIN | Enable | 320 | 0 | N/A | 4 | 8 | 5 | 1 | 2 | 10 | 0 | 1 | 1 | 1 | 0 | 8 | 2 | 1 | 3 | 1 | 4 | 1
+PIN | A2 | 64 | 0 | N/A | 46 | 7 | 5 | 1 | 2 | 10 | 0 | 1 | 1 | 1 | 0 | 8 | 2 | 1 | 3 | 1
+PIN | A3 | 64 | 0 | N/A | 15 | 7 | 5 | 1 | 2 | 10 | 0 | 1 | 1 | 1 | 0 | 8 | 2 | 1 | 3 | 1
+PIN | A4 | 64 | 0 | N/A | 87 | 7 | 5 | 1 | 2 | 10 | 0 | 1 | 1 | 1 | 0 | 8 | 2 | 1 | 3 | 1
+PIN | A1 | 64 | 0 | N/A | 131 | 7 | 5 | 1 | 2 | 10 | 0 | 1 | 1 | 1 | 0 | 8 | 2 | 1 | 3 | 1
+PIN | Adp | 64 | 0 | N/A | 101 | 1 | 4 | 1
+PIN | Zg | 536871040 | 0 | N/A | 88
+PIN | Zf | 536871040 | 0 | N/A | 51
+PIN | Ze | 536871040 | 0 | N/A | 18
+PIN | Zd | 536871040 | 0 | N/A | 129
+PIN | Zc | 536871040 | 0 | N/A | 25
+PIN | Zb | 536871040 | 0 | N/A | 41
+PIN | Za | 536871040 | 0 | N/A | 112
+PIN | Zdp | 536871040 | 0 | N/A | 67

@@ -1,0 +1,21 @@
+# begin LFP file C:\Xilinx\bin\adder\hex27seg.lfp
+designfile hex27seg.ngd
+NET "Zg" COLOR=6  ;
+NET "Zf" COLOR=6  ;
+NET "Ze" COLOR=6  ;
+NET "Zdp" COLOR=6  ;
+NET "Zd" COLOR=6  ;
+NET "Zc" COLOR=6  ;
+NET "Zb" COLOR=6  ;
+NET "Za" COLOR=6  ;
+NET "Enable" COLOR=6  ;
+NET "A4" COLOR=6  ;
+NET "A3" COLOR=6  ;
+NET "A2" COLOR=6  ;
+NET "A1" COLOR=6  ;
+NET "Adp" COLOR=6  ;
+INST "XLXI_1" COLOR=7  ;
+INST "XLXI_14" COLOR=13  ;
+INST "XLXI_20" COLOR=12  ;
+INST "XLXI_17" COLOR=10  ;
+INST "XLXI_19" COLOR=8  ;

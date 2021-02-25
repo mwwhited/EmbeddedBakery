@@ -1,0 +1,749 @@
+# Reading C:/Modeltech_xe_starter/tcl/vsim/pref.tcl 
+# do system.ldo 
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_adder
+# -- Compiling architecture behavioral of bufe4_mxilinx_adder
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity add4_mxilinx_adder
+# -- Compiling architecture behavioral of add4_mxilinx_adder
+# -- Loading entity xor2
+# -- Loading entity or2
+# -- Loading entity or3
+# -- Loading entity or4
+# -- Loading entity and5
+# -- Loading entity and4
+# -- Loading entity and3
+# -- Loading entity and2
+# -- Loading entity or5
+# -- Loading entity gnd
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Compiling entity adder
+# -- Compiling architecture behavioral of adder
+# -- Loading entity add4_mxilinx_adder
+# -- Loading entity bufe4_mxilinx_adder
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_twocompl
+# -- Compiling architecture behavioral of bufe4_mxilinx_twocompl
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity twocompl
+# -- Compiling architecture behavioral of twocompl
+# -- Loading entity and2
+# -- Loading entity inv
+# -- Loading entity vcc
+# -- Loading entity xor2
+# -- Loading entity bufe4_mxilinx_twocompl
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_subtract
+# -- Compiling architecture behavioral of bufe4_mxilinx_subtract
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity add1_mxilinx_subtract
+# -- Compiling architecture behavioral of add1_mxilinx_subtract
+# -- Loading entity and2b1
+# -- Loading entity and2
+# -- Loading entity or2
+# -- Loading entity or3
+# -- Loading entity xor2
+# -- Compiling entity add4_mxilinx_subtract
+# -- Compiling architecture behavioral of add4_mxilinx_subtract
+# -- Loading entity or4
+# -- Loading entity and5
+# -- Loading entity and4
+# -- Loading entity and3
+# -- Loading entity or5
+# -- Loading entity gnd
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Compiling entity subtract
+# -- Compiling architecture behavioral of subtract
+# -- Loading entity add4_mxilinx_subtract
+# -- Loading entity add1_mxilinx_subtract
+# -- Loading entity bufe4_mxilinx_subtract
+# -- Loading entity twocompl
+# -- Loading entity vcc
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity and_row
+# -- Compiling architecture behavioral of and_row
+# -- Loading entity and2
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity add4_mxilinx_e_adder
+# -- Compiling architecture behavioral of add4_mxilinx_e_adder
+# -- Loading entity xor2
+# -- Loading entity or2
+# -- Loading entity or3
+# -- Loading entity or4
+# -- Loading entity and5
+# -- Loading entity and4
+# -- Loading entity and3
+# -- Loading entity and2
+# -- Loading entity or5
+# -- Loading entity gnd
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Compiling entity e_adder
+# -- Compiling architecture behavioral of e_adder
+# -- Loading entity add4_mxilinx_e_adder
+# -- Loading entity buf
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe8_mxilinx_multip
+# -- Compiling architecture behavioral of bufe8_mxilinx_multip
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity multip
+# -- Compiling architecture behavioral of multip
+# -- Loading entity and_row
+# -- Loading entity e_adder
+# -- Loading entity gnd
+# -- Loading entity bufe8_mxilinx_multip
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_div_buff
+# -- Compiling architecture behavioral of bufe4_mxilinx_div_buff
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity div_buff
+# -- Compiling architecture behavioral of div_buff
+# -- Loading entity buf
+# -- Loading entity bufe4_mxilinx_div_buff
+# -- Loading entity inv
+# -- Loading entity gnd
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity add1_mxilinx_f_adder
+# -- Compiling architecture behavioral of add1_mxilinx_f_adder
+# -- Loading entity and2b1
+# -- Loading entity and2
+# -- Loading entity or2
+# -- Loading entity or3
+# -- Loading entity xor2
+# -- Compiling entity add4_mxilinx_f_adder
+# -- Compiling architecture behavioral of add4_mxilinx_f_adder
+# -- Loading entity or4
+# -- Loading entity and5
+# -- Loading entity and4
+# -- Loading entity and3
+# -- Loading entity or5
+# -- Loading entity gnd
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Compiling entity f_adder
+# -- Compiling architecture behavioral of f_adder
+# -- Loading entity add4_mxilinx_f_adder
+# -- Loading entity add1_mxilinx_f_adder
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity twocompl_2
+# -- Compiling architecture behavioral of twocompl_2
+# -- Loading entity and2
+# -- Loading entity inv
+# -- Loading entity vcc
+# -- Loading entity xor2
+# -- Loading entity buf
+# -- Loading entity gnd
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity buf4_mxilinx_div_inp
+# -- Compiling architecture behavioral of buf4_mxilinx_div_inp
+# -- Loading entity buf
+# -- Compiling entity div_inp
+# -- Compiling architecture behavioral of div_inp
+# -- Loading entity buf4_mxilinx_div_inp
+# -- Loading entity gnd
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe8_mxilinx_divider
+# -- Compiling architecture behavioral of bufe8_mxilinx_divider
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity buf4_mxilinx_divider
+# -- Compiling architecture behavioral of buf4_mxilinx_divider
+# -- Loading entity buf
+# -- Compiling entity divider
+# -- Compiling architecture behavioral of divider
+# -- Loading entity div_buff
+# -- Loading entity f_adder
+# -- Loading entity twocompl_2
+# -- Loading entity div_inp
+# -- Loading entity gnd
+# -- Loading entity buf4_mxilinx_divider
+# -- Loading entity bufe8_mxilinx_divider
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe8_mxilinx_set0
+# -- Compiling architecture behavioral of bufe8_mxilinx_set0
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity d2_4e_mxilinx_set0
+# -- Compiling architecture behavioral of d2_4e_mxilinx_set0
+# -- Loading entity and3
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Compiling entity set0
+# -- Compiling architecture behavioral of set0
+# -- Loading entity d2_4e_mxilinx_set0
+# -- Loading entity multip
+# -- Loading entity divider
+# -- Loading entity or2
+# -- Loading entity gnd
+# -- Loading entity buf
+# -- Loading entity bufe8_mxilinx_set0
+# -- Loading entity adder
+# -- Loading entity subtract
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_and_array
+# -- Compiling architecture behavioral of bufe4_mxilinx_and_array
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity and_array
+# -- Compiling architecture behavioral of and_array
+# -- Loading entity and2
+# -- Loading entity bufe4_mxilinx_and_array
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_nand_array
+# -- Compiling architecture behavioral of bufe4_mxilinx_nand_array
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity nand_array
+# -- Compiling architecture behavioral of nand_array
+# -- Loading entity bufe4_mxilinx_nand_array
+# -- Loading entity nand2
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_not_array
+# -- Compiling architecture behavioral of bufe4_mxilinx_not_array
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity inv4_mxilinx_not_array
+# -- Compiling architecture behavioral of inv4_mxilinx_not_array
+# -- Loading entity inv
+# -- Compiling entity not_array
+# -- Compiling architecture behavioral of not_array
+# -- Loading entity inv4_mxilinx_not_array
+# -- Loading entity bufe4_mxilinx_not_array
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_evenp
+# -- Compiling architecture behavioral of bufe4_mxilinx_evenp
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity evenp
+# -- Compiling architecture behavioral of evenp
+# -- Loading entity xor4
+# -- Loading entity bufe4_mxilinx_evenp
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_set1
+# -- Compiling architecture behavioral of bufe4_mxilinx_set1
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity d2_4e_mxilinx_set1
+# -- Compiling architecture behavioral of d2_4e_mxilinx_set1
+# -- Loading entity and3
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Compiling entity set1
+# -- Compiling architecture behavioral of set1
+# -- Loading entity and_array
+# -- Loading entity nand_array
+# -- Loading entity not_array
+# -- Loading entity d2_4e_mxilinx_set1
+# -- Loading entity evenp
+# -- Loading entity bufe4_mxilinx_set1
+# -- Loading entity and2
+# -- Loading entity gnd
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_or_array
+# -- Compiling architecture behavioral of bufe4_mxilinx_or_array
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity or_array
+# -- Compiling architecture behavioral of or_array
+# -- Loading entity bufe4_mxilinx_or_array
+# -- Loading entity or2
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_nor_array
+# -- Compiling architecture behavioral of bufe4_mxilinx_nor_array
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity nor_array
+# -- Compiling architecture behavioral of nor_array
+# -- Loading entity bufe4_mxilinx_nor_array
+# -- Loading entity nor2
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_xnor_array
+# -- Compiling architecture behavioral of bufe4_mxilinx_xnor_array
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity xnor_array
+# -- Compiling architecture behavioral of xnor_array
+# -- Loading entity bufe4_mxilinx_xnor_array
+# -- Loading entity xnor2
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_xor_array
+# -- Compiling architecture behavioral of bufe4_mxilinx_xor_array
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity xor_array
+# -- Compiling architecture behavioral of xor_array
+# -- Loading entity bufe4_mxilinx_xor_array
+# -- Loading entity xor2
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_set2
+# -- Compiling architecture behavioral of bufe4_mxilinx_set2
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity buf4_mxilinx_set2
+# -- Compiling architecture behavioral of buf4_mxilinx_set2
+# -- Loading entity buf
+# -- Compiling entity d2_4e_mxilinx_set2
+# -- Compiling architecture behavioral of d2_4e_mxilinx_set2
+# -- Loading entity and3
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Compiling entity set2
+# -- Compiling architecture behavioral of set2
+# -- Loading entity or_array
+# -- Loading entity nor_array
+# -- Loading entity xnor_array
+# -- Loading entity xor_array
+# -- Loading entity d2_4e_mxilinx_set2
+# -- Loading entity buf4_mxilinx_set2
+# -- Loading entity bufe4_mxilinx_set2
+# -- Loading entity gnd
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_all_low
+# -- Compiling architecture behavioral of bufe4_mxilinx_all_low
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity all_low
+# -- Compiling architecture behavioral of all_low
+# -- Loading entity bufe4_mxilinx_all_low
+# -- Loading entity gnd
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_shift_l
+# -- Compiling architecture behavioral of bufe4_mxilinx_shift_l
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity shift_l
+# -- Compiling architecture behavioral of shift_l
+# -- Loading entity bufe4_mxilinx_shift_l
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_shift_r
+# -- Compiling architecture behavioral of bufe4_mxilinx_shift_r
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity shift_r
+# -- Compiling architecture behavioral of shift_r
+# -- Loading entity bufe4_mxilinx_shift_r
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_set3
+# -- Compiling architecture behavioral of bufe4_mxilinx_set3
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity d2_4e_mxilinx_set3
+# -- Compiling architecture behavioral of d2_4e_mxilinx_set3
+# -- Loading entity and3
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Compiling entity set3
+# -- Compiling architecture behavioral of set3
+# -- Loading entity twocompl
+# -- Loading entity d2_4e_mxilinx_set3
+# -- Loading entity all_low
+# -- Loading entity shift_l
+# -- Loading entity shift_r
+# -- Loading entity gnd
+# -- Loading entity bufe4_mxilinx_set3
+# -- Loading entity and2
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe8_mxilinx_calc
+# -- Compiling architecture behavioral of bufe8_mxilinx_calc
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity d2_4e_mxilinx_calc
+# -- Compiling architecture behavioral of d2_4e_mxilinx_calc
+# -- Loading entity and3
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Compiling entity calc
+# -- Compiling architecture behavioral of calc
+# -- Loading entity d2_4e_mxilinx_calc
+# -- Loading entity buf
+# -- Loading entity set0
+# -- Loading entity bufe8_mxilinx_calc
+# -- Loading entity set1
+# -- Loading entity set2
+# -- Loading entity set3
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity bufe4_mxilinx_eightbits
+# -- Compiling architecture behavioral of bufe4_mxilinx_eightbits
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# -- Compiling entity ibuf4_mxilinx_eightbits
+# -- Compiling architecture behavioral of ibuf4_mxilinx_eightbits
+# -- Loading entity ibuf
+# -- Compiling entity eightbits
+# -- Compiling architecture behavioral of eightbits
+# -- Loading entity ibuf4_mxilinx_eightbits
+# -- Loading entity buf
+# -- Loading entity bufe4_mxilinx_eightbits
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity buf4_mxilinx_eightleds
+# -- Compiling architecture behavioral of buf4_mxilinx_eightleds
+# -- Loading entity buf
+# -- Compiling entity obufe_mxilinx_eightleds
+# -- Compiling architecture behavioral of obufe_mxilinx_eightleds
+# -- Loading package vital_primitives
+# -- Loading entity obuft
+# -- Loading entity inv
+# -- Compiling entity obufe4_mxilinx_eightleds
+# -- Compiling architecture behavioral of obufe4_mxilinx_eightleds
+# -- Loading entity obufe_mxilinx_eightleds
+# -- Compiling entity eightleds
+# -- Compiling architecture behavioral of eightleds
+# -- Loading entity buf4_mxilinx_eightleds
+# -- Loading entity obufe4_mxilinx_eightleds
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity fd_mxilinx_counter
+# -- Compiling architecture behavioral of fd_mxilinx_counter
+# -- Loading entity gnd
+# -- Loading entity fdcp
+# -- Compiling entity fdre_mxilinx_counter
+# -- Compiling architecture behavioral of fdre_mxilinx_counter
+# -- Loading entity and3b1
+# -- Loading entity and3b2
+# -- Loading entity or2
+# -- Loading entity fd_mxilinx_counter
+# -- Compiling entity ftrse_mxilinx_counter
+# -- Compiling architecture behavioral of ftrse_mxilinx_counter
+# -- Loading entity xor2
+# -- Loading entity fdre_mxilinx_counter
+# -- Compiling entity cb4re_mxilinx_counter
+# -- Compiling architecture behavioral of cb4re_mxilinx_counter
+# -- Loading entity and4
+# -- Loading entity and3
+# -- Loading entity and2
+# -- Loading entity vcc
+# -- Loading entity ftrse_mxilinx_counter
+# -- Compiling entity counter
+# -- Compiling architecture behavioral of counter
+# -- Loading entity cb4re_mxilinx_counter
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity momentsw
+# -- Compiling architecture behavioral of momentsw
+# -- Loading entity ibuf
+# -- Loading package vital_primitives
+# -- Loading entity bufe
+# Model Technology ModelSim XE II vcom 5.7g Compiler 2003.10 Oct 13 2003
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package vital_timing
+# -- Loading package vcomponents
+# -- Compiling entity system
+# -- Compiling architecture behavioral of system
+# -- Loading entity eightbits
+# -- Loading entity eightleds
+# -- Loading entity calc
+# -- Loading entity counter
+# -- Loading entity vcc
+# -- Loading entity momentsw
+# vsim -t 1ps system 
+# Loading C:/Modeltech_xe_starter/win32xoem/../std.standard
+# Loading C:/Modeltech_xe_starter/win32xoem/../ieee.std_logic_1164(body)
+# Loading C:/Modeltech_xe_starter/win32xoem/../ieee.numeric_std(body)
+# Loading C:/Modeltech_xe_starter/win32xoem/../std.textio(body)
+# Loading C:/Modeltech_xe_starter/win32xoem/../ieee.vital_timing(body)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.vcomponents
+# Loading work.system(behavioral)
+# Loading work.eightbits(behavioral)
+# Loading work.ibuf4_mxilinx_eightbits(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.ibuf(ibuf_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.buf(buf_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../ieee.vital_primitives(body)
+# Loading work.bufe4_mxilinx_eightbits(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.bufe(bufe_v)
+# Loading work.eightleds(behavioral)
+# Loading work.buf4_mxilinx_eightleds(behavioral)
+# Loading work.obufe4_mxilinx_eightleds(behavioral)
+# Loading work.obufe_mxilinx_eightleds(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.obuft(obuft_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.inv(inv_v)
+# Loading work.calc(behavioral)
+# Loading work.d2_4e_mxilinx_calc(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.and3(and3_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.and3b1(and3b1_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.and3b2(and3b2_v)
+# Loading work.set0(behavioral)
+# Loading work.d2_4e_mxilinx_set0(behavioral)
+# Loading work.multip(behavioral)
+# Loading work.and_row(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.and2(and2_v)
+# Loading work.e_adder(behavioral)
+# Loading work.add4_mxilinx_e_adder(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.xor2(xor2_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.or2(or2_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.or3(or3_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.or4(or4_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.and5(and5_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.and4(and4_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.or5(or5_v)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.gnd(gnd_v)
+# Loading work.bufe8_mxilinx_multip(behavioral)
+# Loading work.divider(behavioral)
+# Loading work.div_buff(behavioral)
+# Loading work.bufe4_mxilinx_div_buff(behavioral)
+# Loading work.f_adder(behavioral)
+# Loading work.add4_mxilinx_f_adder(behavioral)
+# Loading work.add1_mxilinx_f_adder(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.and2b1(and2b1_v)
+# Loading work.twocompl_2(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.vcc(vcc_v)
+# Loading work.div_inp(behavioral)
+# Loading work.buf4_mxilinx_div_inp(behavioral)
+# Loading work.buf4_mxilinx_divider(behavioral)
+# Loading work.bufe8_mxilinx_divider(behavioral)
+# Loading work.bufe8_mxilinx_set0(behavioral)
+# Loading work.adder(behavioral)
+# Loading work.add4_mxilinx_adder(behavioral)
+# Loading work.bufe4_mxilinx_adder(behavioral)
+# Loading work.subtract(behavioral)
+# Loading work.add4_mxilinx_subtract(behavioral)
+# Loading work.add1_mxilinx_subtract(behavioral)
+# Loading work.bufe4_mxilinx_subtract(behavioral)
+# Loading work.twocompl(behavioral)
+# Loading work.bufe4_mxilinx_twocompl(behavioral)
+# Loading work.bufe8_mxilinx_calc(behavioral)
+# Loading work.set1(behavioral)
+# Loading work.and_array(behavioral)
+# Loading work.bufe4_mxilinx_and_array(behavioral)
+# Loading work.nand_array(behavioral)
+# Loading work.bufe4_mxilinx_nand_array(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.nand2(nand2_v)
+# Loading work.not_array(behavioral)
+# Loading work.inv4_mxilinx_not_array(behavioral)
+# Loading work.bufe4_mxilinx_not_array(behavioral)
+# Loading work.d2_4e_mxilinx_set1(behavioral)
+# Loading work.evenp(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.xor4(xor4_v)
+# Loading work.bufe4_mxilinx_evenp(behavioral)
+# Loading work.bufe4_mxilinx_set1(behavioral)
+# Loading work.set2(behavioral)
+# Loading work.or_array(behavioral)
+# Loading work.bufe4_mxilinx_or_array(behavioral)
+# Loading work.nor_array(behavioral)
+# Loading work.bufe4_mxilinx_nor_array(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.nor2(nor2_v)
+# Loading work.xnor_array(behavioral)
+# Loading work.bufe4_mxilinx_xnor_array(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.xnor2(xnor2_v)
+# Loading work.xor_array(behavioral)
+# Loading work.bufe4_mxilinx_xor_array(behavioral)
+# Loading work.d2_4e_mxilinx_set2(behavioral)
+# Loading work.buf4_mxilinx_set2(behavioral)
+# Loading work.bufe4_mxilinx_set2(behavioral)
+# Loading work.set3(behavioral)
+# Loading work.d2_4e_mxilinx_set3(behavioral)
+# Loading work.all_low(behavioral)
+# Loading work.bufe4_mxilinx_all_low(behavioral)
+# Loading work.shift_l(behavioral)
+# Loading work.bufe4_mxilinx_shift_l(behavioral)
+# Loading work.shift_r(behavioral)
+# Loading work.bufe4_mxilinx_shift_r(behavioral)
+# Loading work.bufe4_mxilinx_set3(behavioral)
+# Loading work.counter(behavioral)
+# Loading work.cb4re_mxilinx_counter(behavioral)
+# Loading work.ftrse_mxilinx_counter(behavioral)
+# Loading work.fdre_mxilinx_counter(behavioral)
+# Loading work.fd_mxilinx_counter(behavioral)
+# Loading C:/Modeltech_xe_starter/win32xoem/../xilinx/vhdl/unisim.fdcp(fdcp_v)
+# Loading work.momentsw(behavioral)
+# WARNING: Design size of 818 statements or 0 non-Xilinx leaf instances exceeds ModelSim XE-Starter recommended capacity.
+# Expect performance to be quite adversely affected.
+# .wave
+# .structure
+# .signals
+force -freeze sim:/system/a_in(0) 1 0, 0 {1 ps} -r 2
+force -freeze sim:/system/a_in(1) 1 0, 0 {2 ps} -r 4
+force -freeze sim:/system/a_in(2) 1 0, 0 {4 ps} -r 8
+force -freeze sim:/system/a_in(3) 1 0, 0 {8 ps} -r 16
+force -freeze sim:/system/a_in(4) 1 0, 0 {16 ps} -r 32
+force -freeze sim:/system/a_in(5) 1 0, 0 {32 ps} -r 64
+force -freeze sim:/system/a_in(6) 1 0, 0 {64 ps} -r 128
+force -freeze sim:/system/a_in(7) 1 0, 0 {128 ps} -r 256
+force -freeze sim:/system/m_in 1 0, 0 {256 ps} -r 512
+destroy .signals
+run -continue
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run -all
+# Break key hit 
+# Simulation stop requested
+run
+run
+destroy .wave

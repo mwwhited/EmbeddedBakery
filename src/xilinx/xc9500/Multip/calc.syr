@@ -1,0 +1,91 @@
+Release 6.3.01i - xst G.36
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.67 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.67 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: calc.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : calc.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : calc
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : calc
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : calc.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/Multip/and_array.vhf in Library work.
+Entity <BUFE4_MXILINX_and_array> (Architecture <BEHAVIORAL>) compiled.
+Entity <and_array> (Architecture <BEHAVIORAL>) compiled.
+Compiling vhdl file C:/Xilinx/bin/Multip/nand_array.vhf in Library work.
+Entity <BUFE4_MXILINX_nand_array> (Architecture <BEHAVIORAL>) compiled.
+Entity <nand_array> (Architecture <BEHAVIORAL>) compiled.
+Compiling vhdl file C:/Xilinx/bin/Multip/not_array.vhf in Library work.
+Entity <BUFE4_MXILINX_not_array> (Architecture <BEHAVIORAL>) compiled.
+Entity <INV4_MXILINX_not_array> (Architecture <BEHAVIORAL>) compiled.
+Entity <not_array> (Architecture <BEHAVIORAL>) compiled.
+Compiling vhdl file C:/Xilinx/bin/Multip/evenp.vhf in Library work.
+Entity <BUFE4_MXILINX_evenp> (Architecture <BEHAVIORAL>) compiled.
+Entity <evenp> (Architecture <BEHAVIORAL>) compiled.
+Compiling vhdl file C:/Xilinx/bin/Multip/Set1.vhf in Library work.
+Entity <BUFE4_MXILINX_set1> (Architecture <BEHAVIORAL>) compiled.
+Entity <D2_4E_MXILINX_set1> (Architecture <BEHAVIORAL>) compiled.
+Entity <set1> (Architecture <BEHAVIORAL>) compiled.
+Compiling vhdl file C:/Xilinx/bin/Multip/calc.vhf in Library work.
+ERROR:HDLParsers:164 - C:/Xilinx/bin/Multip/calc.vhf Line 28. parse error, unexpected CLOSEPAR, expecting IDENTIFIER
+--> 
+
+Total memory usage is 47344 kilobytes
+
+

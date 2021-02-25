@@ -1,0 +1,5 @@
+sch2vhdl -family xc9500 -flat -suppress -w f_adder.sch f_adder.vhf
+xst -intstyle ise -ifn __projnav/f_adder.xst -ofn f_adder.syr
+sch2vhdl -family xc9500 -flat -suppress -w f_adder.sch f_adder.vhf
+sch2vhdl -family xc9500 -flat -suppress -w f_adder.sch f_adder.vhf
+sch2vhdl -family xc9500 -flat -suppress -w f_adder.sch f_adder.vhf

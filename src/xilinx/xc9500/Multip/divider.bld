@@ -1,0 +1,35 @@
+Release 6.3.02i - ngdbuild G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -dd _ngo -i -p xc9500 divider.ngc divider.ngd 
+
+Reading NGO file "C:/Xilinx/bin/Multip/divider.ngc" ...
+Reading component libraries for design expansion...
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:454 - logical net 'Divisor<5>' has no load
+WARNING:NgdBuild:454 - logical net 'XLXN_6<5>' has no load
+WARNING:NgdBuild:454 - logical net 'OR9<4>' has no load
+WARNING:NgdBuild:454 - logical net 'IR7<5>' has no load
+WARNING:NgdBuild:454 - logical net 'IR4<5>' has no load
+WARNING:NgdBuild:454 - logical net 'XLXN_14<5>' has no load
+WARNING:NgdBuild:454 - logical net 'OR12<4>' has no load
+WARNING:NgdBuild:454 - logical net 'OR6<4>' has no load
+WARNING:NgdBuild:454 - logical net 'OR3<4>' has no load
+WARNING:NgdBuild:454 - logical net 'XLXI_13/XLXI_1/OFL' has no load
+WARNING:NgdBuild:454 - logical net 'XLXI_12/XLXI_1/OFL' has no load
+WARNING:NgdBuild:454 - logical net 'XLXI_7/Z<5>' has no load
+WARNING:NgdBuild:454 - logical net 'XLXI_7/Z<0>' has no load
+WARNING:NgdBuild:454 - logical net 'XLXI_14/XLXI_1/OFL' has no load
+WARNING:NgdBuild:454 - logical net 'XLXI_15/XLXI_1/OFL' has no load
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:  15
+
+Total memory usage is 36084 kilobytes
+
+Writing NGD file "divider.ngd" ...
+
+Writing NGDBUILD log file "divider.bld"...

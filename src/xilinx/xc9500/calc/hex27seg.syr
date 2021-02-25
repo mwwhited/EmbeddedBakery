@@ -1,0 +1,213 @@
+Release 6.3.01i - xst G.36
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.48 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.48 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: hex27seg.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : hex27seg.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : hex27seg
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : hex27seg
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : hex27seg.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/adder/hex27seg.vhf in Library work.
+Entity <obufe_mxilinx_hex27seg> (Architecture <behavioral>) compiled.
+Entity <obufe4_mxilinx_hex27seg> (Architecture <behavioral>) compiled.
+Entity <or6_mxilinx_hex27seg> (Architecture <behavioral>) compiled.
+Entity <d4_16e_mxilinx_hex27seg> (Architecture <behavioral>) compiled.
+Entity <ibuf4_mxilinx_hex27seg> (Architecture <behavioral>) compiled.
+Entity <hex27seg> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <hex27seg> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_1_4" for instance <XLXI_1> in unit <hex27seg>.
+WARNING:Xst:753 - C:/Xilinx/bin/adder/hex27seg.vhf line 689: Unconnected output port 'D8' of component 'D4_16E_MXILINX_hex27seg'.
+    Set user-defined property "HU_SET =  XLXI_14_5" for instance <XLXI_14> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_17_6" for instance <XLXI_17> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_19_7" for instance <XLXI_19> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_20_8" for instance <XLXI_20> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_39_9" for instance <XLXI_39> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_40_10" for instance <XLXI_40> in unit <hex27seg>.
+Entity <hex27seg> analyzed. Unit <hex27seg> generated.
+
+Analyzing Entity <IBUF4_MXILINX_hex27seg> (Architecture <behavioral>).
+Entity <IBUF4_MXILINX_hex27seg> analyzed. Unit <IBUF4_MXILINX_hex27seg> generated.
+
+Analyzing Entity <D4_16E_MXILINX_hex27seg> (Architecture <behavioral>).
+Entity <D4_16E_MXILINX_hex27seg> analyzed. Unit <D4_16E_MXILINX_hex27seg> generated.
+
+Analyzing Entity <OR6_MXILINX_hex27seg> (Architecture <behavioral>).
+Entity <OR6_MXILINX_hex27seg> analyzed. Unit <OR6_MXILINX_hex27seg> generated.
+
+Analyzing Entity <OBUFE4_MXILINX_hex27seg> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_37_3" for instance <I_36_37> in unit <OBUFE4_MXILINX_hex27seg>.
+    Set user-defined property "HU_SET =  I_36_38_0" for instance <I_36_38> in unit <OBUFE4_MXILINX_hex27seg>.
+    Set user-defined property "HU_SET =  I_36_39_1" for instance <I_36_39> in unit <OBUFE4_MXILINX_hex27seg>.
+    Set user-defined property "HU_SET =  I_36_40_2" for instance <I_36_40> in unit <OBUFE4_MXILINX_hex27seg>.
+Entity <OBUFE4_MXILINX_hex27seg> analyzed. Unit <OBUFE4_MXILINX_hex27seg> generated.
+
+Analyzing Entity <OBUFE_MXILINX_hex27seg> (Architecture <behavioral>).
+Entity <OBUFE_MXILINX_hex27seg> analyzed. Unit <OBUFE_MXILINX_hex27seg> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <OBUFE_MXILINX_hex27seg>.
+    Related source file is C:/Xilinx/bin/adder/hex27seg.vhf.
+Unit <OBUFE_MXILINX_hex27seg> synthesized.
+
+
+Synthesizing Unit <OBUFE4_MXILINX_hex27seg>.
+    Related source file is C:/Xilinx/bin/adder/hex27seg.vhf.
+Unit <OBUFE4_MXILINX_hex27seg> synthesized.
+
+
+Synthesizing Unit <OR6_MXILINX_hex27seg>.
+    Related source file is C:/Xilinx/bin/adder/hex27seg.vhf.
+Unit <OR6_MXILINX_hex27seg> synthesized.
+
+
+Synthesizing Unit <D4_16E_MXILINX_hex27seg>.
+    Related source file is C:/Xilinx/bin/adder/hex27seg.vhf.
+Unit <D4_16E_MXILINX_hex27seg> synthesized.
+
+
+Synthesizing Unit <IBUF4_MXILINX_hex27seg>.
+    Related source file is C:/Xilinx/bin/adder/hex27seg.vhf.
+Unit <IBUF4_MXILINX_hex27seg> synthesized.
+
+
+Synthesizing Unit <hex27seg>.
+    Related source file is C:/Xilinx/bin/adder/hex27seg.vhf.
+Unit <hex27seg> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <hex27seg> ...
+
+Optimizing unit <IBUF4_MXILINX_hex27seg> ...
+
+Optimizing unit <D4_16E_MXILINX_hex27seg> ...
+
+Optimizing unit <OR6_MXILINX_hex27seg> ...
+
+Optimizing unit <OBUFE_MXILINX_hex27seg> ...
+
+Optimizing unit <OBUFE4_MXILINX_hex27seg> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : hex27seg.ngr
+Top Level Output File Name         : hex27seg
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 14
+
+Cell Usage :
+# BELS                             : 26
+#      AND5                        : 1
+#      INV                         : 15
+#      OR3                         : 3
+#      OR4                         : 7
+# IO Buffers                       : 14
+#      IBUF                        : 6
+#      OBUFT                       : 8
+# Others                           : 15
+#      AND5B1                      : 4
+#      AND5B2                      : 6
+#      AND5B3                      : 4
+#      AND5B4                      : 1
+=========================================================================
+CPU : 1.81 / 2.64 s | Elapsed : 2.00 / 3.00 s
+ 
+--> 
+
+Total memory usage is 49392 kilobytes
+
+

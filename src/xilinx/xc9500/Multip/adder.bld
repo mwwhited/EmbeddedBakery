@@ -1,0 +1,21 @@
+Release 6.3.02i - ngdbuild G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -dd _ngo -i -p xc9500 adder.ngc adder.ngd 
+
+Reading NGO file "C:/Xilinx/bin/Multip/adder.ngc" ...
+Reading component libraries for design expansion...
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:454 - logical net 'add_main/OFL' has no load
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 36084 kilobytes
+
+Writing NGD file "adder.ngd" ...
+
+Writing NGDBUILD log file "adder.bld"...

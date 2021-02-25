@@ -1,0 +1,181 @@
+Release 6.3.01i - xst G.36
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.47 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.47 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: adder.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : adder.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : adder
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : adder
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : adder.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/adder/adder.vhf in Library work.
+Entity <obufe_mxilinx_adder> (Architecture <behavioral>) compiled.
+Entity <obufe4_mxilinx_adder> (Architecture <behavioral>) compiled.
+Entity <ibuf4_mxilinx_adder> (Architecture <behavioral>) compiled.
+Entity <adder> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <adder> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_28_4" for instance <XLXI_28> in unit <adder>.
+    Set user-defined property "HU_SET =  XLXI_29_5" for instance <XLXI_29> in unit <adder>.
+    Set user-defined property "HU_SET =  XLXI_118_6" for instance <XLXI_118> in unit <adder>.
+    Set user-defined property "HU_SET =  XLXI_119_7" for instance <XLXI_119> in unit <adder>.
+Entity <adder> analyzed. Unit <adder> generated.
+
+Analyzing Entity <IBUF4_MXILINX_adder> (Architecture <behavioral>).
+Entity <IBUF4_MXILINX_adder> analyzed. Unit <IBUF4_MXILINX_adder> generated.
+
+Analyzing Entity <OBUFE4_MXILINX_adder> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_37_3" for instance <I_36_37> in unit <OBUFE4_MXILINX_adder>.
+    Set user-defined property "HU_SET =  I_36_38_0" for instance <I_36_38> in unit <OBUFE4_MXILINX_adder>.
+    Set user-defined property "HU_SET =  I_36_39_1" for instance <I_36_39> in unit <OBUFE4_MXILINX_adder>.
+    Set user-defined property "HU_SET =  I_36_40_2" for instance <I_36_40> in unit <OBUFE4_MXILINX_adder>.
+Entity <OBUFE4_MXILINX_adder> analyzed. Unit <OBUFE4_MXILINX_adder> generated.
+
+Analyzing Entity <OBUFE_MXILINX_adder> (Architecture <behavioral>).
+Entity <OBUFE_MXILINX_adder> analyzed. Unit <OBUFE_MXILINX_adder> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <OBUFE_MXILINX_adder>.
+    Related source file is C:/Xilinx/bin/adder/adder.vhf.
+Unit <OBUFE_MXILINX_adder> synthesized.
+
+
+Synthesizing Unit <OBUFE4_MXILINX_adder>.
+    Related source file is C:/Xilinx/bin/adder/adder.vhf.
+Unit <OBUFE4_MXILINX_adder> synthesized.
+
+
+Synthesizing Unit <IBUF4_MXILINX_adder>.
+    Related source file is C:/Xilinx/bin/adder/adder.vhf.
+Unit <IBUF4_MXILINX_adder> synthesized.
+
+
+Synthesizing Unit <adder>.
+    Related source file is C:/Xilinx/bin/adder/adder.vhf.
+Unit <adder> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <adder> ...
+
+Optimizing unit <IBUF4_MXILINX_adder> ...
+
+Optimizing unit <OBUFE_MXILINX_adder> ...
+
+Optimizing unit <OBUFE4_MXILINX_adder> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : adder.ngr
+Top Level Output File Name         : adder
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 14
+
+Cell Usage :
+# BELS                             : 22
+#      AND2                        : 7
+#      INV                         : 5
+#      XOR2                        : 10
+# IO Buffers                       : 14
+#      IBUF                        : 9
+#      OBUFT                       : 5
+=========================================================================
+CPU : 1.64 / 2.47 s | Elapsed : 2.00 / 2.00 s
+ 
+--> 
+
+Total memory usage is 49392 kilobytes
+
+

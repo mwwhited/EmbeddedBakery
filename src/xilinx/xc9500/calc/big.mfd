@@ -1,0 +1,1701 @@
+MDF Database:  version 1.0
+MDF_INFO | big | XC95108-7-PC84
+MACROCELL | 2 | 13 | XLXI_4/XLXN_10
+ATTRIBUTES | 396034 | 0
+INPUTS | 8 | i1  | i2  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | j1  | addsub  | j2  | EXP27_.EXP  | $OpTx$FX_DC$28.EXP
+INPUTMC | 3 | 0 | 16 | 2 | 12 | 2 | 14
+INPUTP | 5 | 25 | 27 | 131 | 31 | 129
+IMPORTS | 2 | 2 | 12 | 2 | 14
+EQ | 26 | 
+   zdp = j1 & i1 & addsub
+	# !j1 & i1 & !addsub
+	# i1 & i2 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# j1 & j2 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# j1 & i2 & addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+;Imported pterms FB3_13
+	# !j1 & !j2 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# !j1 & i2 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & j3 & i3 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & !j3 & i3 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & j3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+;Imported pterms FB3_15
+	# i1 & !j3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & i3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & i3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2;
+
+MACROCELL | 2 | 2 | XLXI_4/XLXN_3
+ATTRIBUTES | 396034 | 0
+INPUTS | 13 | j1  | i1  | addsub  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | XLXN_249/XLXN_249_D  | j2  | i2  | j4  | zf_BUFR  | XLXN_250/XLXN_250_D  | i4  | ze_BUFR  | EXP24_.EXP
+INPUTMC | 6 | 0 | 16 | 3 | 12 | 4 | 0 | 3 | 16 | 0 | 9 | 2 | 3
+INPUTP | 7 | 131 | 25 | 31 | 129 | 27 | 127 | 23
+IMPORTS | 1 | 2 | 3
+EQ | 25 | 
+   za = j4 & i4 & ze_BUFR
+	# !j4 & !i4 & ze_BUFR
+	# zf_BUFR & XLXN_249/XLXN_249_D & 
+	XLXN_250/XLXN_250_D
+	# j1 & i1 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !XLXN_249/XLXN_249_D
+	# !j2 & !i2 & !j4 & zf_BUFR & !addsub
+;Imported pterms FB3_4
+	# i1 & !addsub & !XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# !i1 & addsub & XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# !j4 & i4 & !ze_BUFR & zf_BUFR
+	# addsub & XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# !addsub & !XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+;Imported pterms FB3_5
+	# j4 & !i4 & !ze_BUFR & zf_BUFR
+	# !j1 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D8_
+	# !j1 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !XLXN_249/XLXN_249_D & !o4.PIN
+	# j3 & j2 & !i2 & !i3 & zf_BUFR
+	# !j2 & !i2 & i3 & zf_BUFR & !addsub;
+
+MACROCELL | 0 | 2 | zb_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 2 | 5
+INPUTS | 8 | zf_BUFR  | j4  | i4  | o6_BUFR  | addsub  | XLXN_249/XLXN_249_D  | EXP1_.EXP  | EXP2_.EXP
+INPUTMC | 5 | 4 | 0 | 1 | 10 | 3 | 12 | 0 | 1 | 0 | 3
+INPUTP | 3 | 127 | 23 | 31
+IMPORTS | 2 | 0 | 1 | 0 | 3
+EQ | 59 | 
+   zb_BUFR = !zf_BUFR
+	# j4 & i4 & !o6_BUFR
+	# !j4 & !i4 & !o6_BUFR
+	# !o6_BUFR & addsub & !XLXN_249/XLXN_249_D
+	# !o6_BUFR & !addsub & XLXN_249/XLXN_249_D
+;Imported pterms FB1_2
+	# i1 & !addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41
+	# !i1 & addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41
+	# j1 & i1 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41
+	# j1 & !i1 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41
+	# i1 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_1
+	# j1 & j3 & j4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & j3 & !i4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & j4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & !i4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & i3 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_4
+	# j1 & j2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# !i1 & j2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# !i1 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_5
+	# j1 & j3 & !i3 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & j4 & i4 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & i3 & j4 & i4 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK;
+
+MACROCELL | 0 | 14 | zc_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 2 | 11
+INPUTS | 10 | zf_BUFR  | o6_BUFR  | addsub  | XLXN_248/XLXN_248_D  | XLXN_249/XLXN_249_D  | i1  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | EXP9_.EXP  | EXP10_.EXP  | ze_BUFR.FBK.LFBK
+INPUTMC | 8 | 4 | 0 | 1 | 10 | 2 | 15 | 3 | 12 | 1 | 2 | 0 | 13 | 0 | 15 | 0 | 9
+INPUTP | 2 | 31 | 25
+IMPORTS | 2 | 0 | 13 | 0 | 15
+EQ | 45 | 
+   zc_BUFR = !ze_BUFR.FBK.LFBK
+	# zf_BUFR & !o6_BUFR
+	# !zf_BUFR & addsub & XLXN_248/XLXN_248_D
+	# !addsub & XLXN_249/XLXN_249_D & 
+	!XLXN_248/XLXN_248_D
+	# !i1 & zf_BUFR & addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+;Imported pterms FB1_14
+	# i1 & zf_BUFR & !addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# j1 & i1 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# j1 & !i1 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# j1 & j2 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & i2 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_13
+	# j1 & j3 & !i3 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & j3 & !i4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & j4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & !i4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & i3 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_16
+	# j1 & i2 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i2 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# !i1 & j2 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# !i1 & !i2 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & j3 & j4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_17
+	# i1 & j3 & j4 & i4 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & i3 & j4 & i4 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK;
+
+MACROCELL | 2 | 10 | XLXI_4/XLXN_6
+ATTRIBUTES | 396034 | 0
+INPUTS | 12 | i1  | ze_BUFR  | XLXN_249/XLXN_249_D  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | j3  | i3  | j4  | i4  | o6_BUFR  | EXP26_.EXP  | _11_.EXP  | o4.PIN
+INPUTMC | 6 | 0 | 9 | 3 | 12 | 1 | 2 | 1 | 10 | 2 | 9 | 2 | 11
+INPUTP | 6 | 25 | 121 | 33 | 127 | 23 | 82
+IMPORTS | 2 | 2 | 9 | 2 | 11
+EQ | 28 | 
+   zd = i1 & ze_BUFR & !XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# !i1 & ze_BUFR & XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# ze_BUFR & XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# ze_BUFR & !XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# j3 & i3 & j4 & !i4 & o6_BUFR
+;Imported pterms FB3_10
+	# j3 & i3 & i4 & o6_BUFR & addsub
+	# j3 & !i3 & !j4 & !i4 & o6_BUFR
+	# !j3 & i3 & !j4 & !i4 & o6_BUFR
+	# !j3 & i3 & i4 & o6_BUFR & !addsub
+	# !j3 & !i3 & j4 & !i4 & o6_BUFR
+;Imported pterms FB3_9
+	# j3 & i3 & i4 & !o6_BUFR & !addsub
+	# j3 & !i3 & j4 & !i4 & !o6_BUFR
+	# j3 & !i3 & i4 & !o6_BUFR & addsub
+	# !j3 & i3 & i4 & !o6_BUFR & addsub
+	# !j3 & !i3 & !j4 & !i4 & !o6_BUFR
+;Imported pterms FB3_8
+	# !j3 & !i3 & i4 & !o6_BUFR & !addsub
+;Imported pterms FB3_12
+	# j3 & i3 & !j4 & !i4 & !o6_BUFR
+	# j3 & !i3 & i4 & o6_BUFR & !addsub
+	# !j3 & i3 & j4 & !i4 & !o6_BUFR
+	# !j3 & !i3 & i4 & o6_BUFR & addsub;
+
+MACROCELL | 0 | 9 | ze_BUFR.MC
+ATTRIBUTES | 199424 | 0
+OUTPUTMC | 7 | 2 | 2 | 2 | 4 | 2 | 10 | 2 | 17 | 2 | 7 | 2 | 3 | 0 | 14
+INPUTS | 8 | addsub  | XLXN_250/XLXN_250_D  | XLXN_248/XLXN_248_D  | XLXN_249/XLXN_249_D  | i1  | EXP5_.EXP  | EXP6_.EXP  | o4.PIN
+INPUTMC | 5 | 3 | 16 | 2 | 15 | 3 | 12 | 0 | 8 | 0 | 10
+INPUTP | 3 | 31 | 25 | 82
+IMPORTS | 2 | 0 | 8 | 0 | 10
+EQ | 46 | 
+   ze_BUFR = addsub & XLXN_249/XLXN_249_D & 
+	!XLXN_248/XLXN_248_D
+	# addsub & !XLXN_250/XLXN_250_D & 
+	!XLXN_248/XLXN_248_D
+	# !addsub & !XLXN_249/XLXN_249_D & 
+	XLXN_248/XLXN_248_D
+	# !addsub & XLXN_250/XLXN_250_D & 
+	XLXN_248/XLXN_248_D
+	# i1 & addsub & XLXN_250/XLXN_250_D & !o4.PIN
+;Imported pterms FB1_9
+	# !j1 & !i1 & !XLXN_250/XLXN_250_D & o4.PIN
+	# i1 & addsub & XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# i1 & addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D
+	# addsub & XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !addsub & !XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+;Imported pterms FB1_8
+	# j1 & i1 & j2 & i2 & addsub & 
+	XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2
+	# j1 & !i1 & j3 & j2 & !i2 & !addsub
+	# j1 & j2 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & o4.PIN
+;Imported pterms FB1_11
+	# !i1 & !addsub & !XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# j1 & !i1 & j2 & !i2 & !i3
+	# j1 & o6_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# j1 & o6_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# !j1 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D & !o4.PIN
+;Imported pterms FB1_12
+	# j1 & j3 & j2 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !j1 & j3 & j2 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# !j1 & j2 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & !o4.PIN
+	# !j1 & j2 & !i2 & !i3 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !j1 & j2 & !i2 & !i3 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN;
+
+MACROCELL | 4 | 0 | zf_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 10 | 2 | 2 | 0 | 2 | 0 | 14 | 2 | 1 | 0 | 12 | 0 | 13 | 0 | 15 | 0 | 16 | 2 | 3 | 2 | 4
+INPUTS | 9 | addsub  | XLXN_250/XLXN_250_D  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | XLXN_248/XLXN_248_D  | i1  | XLXN_249/XLXN_249_D  | EXP33_.EXP  | EXP37_.EXP  | XLXI_6/XLXN_5.FBK.LFBK
+INPUTMC | 7 | 3 | 16 | 1 | 2 | 2 | 15 | 3 | 12 | 4 | 1 | 4 | 17 | 4 | 11
+INPUTP | 2 | 31 | 25
+IMPORTS | 2 | 4 | 1 | 4 | 17
+EQ | 56 | 
+   !zf_BUFR = i1 & !addsub & XLXN_250/XLXN_250_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D
+	# !i1 & addsub & !XLXN_250/XLXN_250_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXN_248/XLXN_248_D
+	# addsub & XLXN_249/XLXN_249_D & 
+	!XLXN_250/XLXN_250_D & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & 
+	XLXI_6/XLXN_5.FBK.LFBK
+	# addsub & !XLXN_250/XLXN_250_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXN_248/XLXN_248_D & XLXI_6/XLXN_5.FBK.LFBK
+	# !addsub & XLXN_250/XLXN_250_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D & !XLXI_6/XLXN_5.FBK.LFBK
+;Imported pterms FB5_2
+	# j1 & o6_BUFR & !o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXN_248/XLXN_248_D
+	# j1 & o6_BUFR & !o3_BUFR & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D
+	# j3 & j2 & !i2 & o3_BUFR & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# j1 & !i1 & j3 & j2 & !i2 & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# j3 & j2 & i2 & !j4 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+;Imported pterms FB5_3
+	# j1 & !i1 & j2 & !i2 & !i3 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# j1 & i1 & j3 & j2 & i2 & !j4 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# j1 & i1 & j3 & j2 & i2 & !i4 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# !j3 & j2 & i2 & j4 & i4 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# j1 & i1 & !j3 & j2 & i2 & j4 & i4 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+;Imported pterms FB5_18
+	# i1 & !addsub & !XLXN_249/XLXN_249_D & 
+	XLXN_250/XLXN_250_D & !XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# i1 & !XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & 
+	XLXN_248/XLXN_248_D & !XLXI_6/XLXN_5.FBK.LFBK
+	# !i1 & addsub & XLXN_249/XLXN_249_D & 
+	!XLXN_250/XLXN_250_D & !XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# !addsub & !XLXN_249/XLXN_249_D & 
+	XLXN_250/XLXN_250_D & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & 
+	!XLXI_6/XLXN_5.FBK.LFBK
+	# !j1 & !i1 & XLXN_249/XLXN_249_D & 
+	!XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D & XLXI_6/XLXN_5.FBK.LFBK
+;Imported pterms FB5_17
+	# j1 & !i1 & j2 & !i2 & !i3 & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# !j1 & j2 & !i2 & !i3 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# !j1 & j2 & !i2 & !i3 & o3_BUFR & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# j3 & j2 & i2 & !i4 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D;
+
+MACROCELL | 2 | 17 | zg_BUFR.MC
+ATTRIBUTES | 199424 | 0
+OUTPUTMC | 1 | 2 | 5
+INPUTS | 8 | o6_BUFR  | XLXN_249/XLXN_249_D  | XLXN_250/XLXN_250_D  | ze_BUFR  | addsub  | EXP23_.EXP  | EXP28_.EXP  | XLXN_248/XLXN_248_D.FBK.LFBK
+INPUTMC | 7 | 1 | 10 | 3 | 12 | 3 | 16 | 0 | 9 | 2 | 0 | 2 | 16 | 2 | 15
+INPUTP | 1 | 31
+IMPORTS | 2 | 2 | 0 | 2 | 16
+EQ | 38 | 
+   zg_BUFR = ze_BUFR & addsub & XLXN_249/XLXN_249_D
+	# ze_BUFR & !addsub & !XLXN_249/XLXN_249_D
+	# !ze_BUFR & !XLXN_249/XLXN_249_D & 
+	XLXN_250/XLXN_250_D
+	# o6_BUFR & !XLXN_249/XLXN_249_D & 
+	XLXN_248/XLXN_248_D.FBK.LFBK
+	# !o6_BUFR & XLXN_249/XLXN_249_D & 
+	!XLXN_250/XLXN_250_D
+;Imported pterms FB3_1
+	# !o6_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !o6_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# !addsub & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & 
+	!XLXN_248/XLXN_248_D.FBK.LFBK & o4.PIN
+	# !XLXN_250/XLXN_250_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXN_248/XLXN_248_D.FBK.LFBK & !o4.PIN
+	# j1 & !i1 & j4 & !i4 & XLXN_249/XLXN_249_D
+;Imported pterms FB3_2
+	# i1 & j2 & !i2 & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2
+	# j2 & !i2 & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & !o4.PIN
+	# !j2 & i2 & !addsub & 
+	XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & !XLXN_248/XLXN_248_D.FBK.LFBK
+	# j2 & !i2 & i3 & j4 & !i4 & !addsub
+;Imported pterms FB3_17
+	# i1 & !o6_BUFR & addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# i1 & !XLXN_250/XLXN_250_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXN_248/XLXN_248_D.FBK.LFBK
+	# !i1 & !o6_BUFR & !addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# !i1 & !addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D.FBK.LFBK
+	# !j3 & i3 & !j4 & !XLXN_250/XLXN_250_D
+;Imported pterms FB3_16
+	# !j1 & i1 & j4 & !i4 & XLXN_249/XLXN_249_D;
+
+MACROCELL | 4 | 5 | XLXI_6/XLXN_1
+ATTRIBUTES | 396034 | 0
+INPUTS | 2 | j4  | i4
+INPUTP | 2 | 127 | 23
+EQ | 2 | 
+   o8 = j4
+	$ i4;
+
+MACROCELL | 4 | 7 | XLXI_6/XLXN_2
+ATTRIBUTES | 396034 | 0
+INPUTS | 6 | i3  | j3  | i4  | j4  | addsub  | EXP35_.EXP
+INPUTMC | 1 | 4 | 6
+INPUTP | 5 | 33 | 121 | 23 | 127 | 31
+IMPORTS | 1 | 4 | 6
+EQ | 7 | 
+   !o7 = i3
+	$ !j3 & !i4
+	# !j3 & j4 & !addsub
+	# !j3 & !j4 & addsub
+	# j3 & j4 & i4 & addsub
+;Imported pterms FB5_7
+	# j3 & !j4 & i4 & !addsub;
+
+MACROCELL | 1 | 10 | o6_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 13 | 0 | 2 | 0 | 14 | 2 | 10 | 4 | 8 | 2 | 16 | 2 | 17 | 0 | 10 | 2 | 0 | 2 | 7 | 2 | 8 | 2 | 9 | 2 | 11 | 4 | 1
+INPUTS | 9 | i2  | j3  | j2  | i4  | addsub  | i3  | $OpTx$FX_DC$28  | EXP17_.EXP  | EXP18_.EXP
+INPUTMC | 3 | 2 | 14 | 1 | 9 | 1 | 11
+INPUTP | 6 | 27 | 121 | 129 | 23 | 31 | 33
+IMPORTS | 2 | 1 | 9 | 1 | 11
+EQ | 23 | 
+   o6_BUFR = i2
+	$ j3 & j2 & !i4 & !addsub
+	# !j3 & j2 & !i4 & addsub
+	# j3 & i3 & !i4 & addsub & $OpTx$FX_DC$28
+	# !j3 & i3 & !i4 & !addsub & !$OpTx$FX_DC$28
+;Imported pterms FB2_10
+	# j3 & j2 & j4 & i4 & !addsub
+	# j3 & !j2 & j4 & i4 & addsub
+	# j3 & !i3 & !i4 & addsub & !$OpTx$FX_DC$28
+	# !j3 & j2 & !j4 & i4 & addsub
+	# !j3 & !i3 & !i4 & !addsub & $OpTx$FX_DC$28
+;Imported pterms FB2_9
+	# j3 & !i3 & !j4 & i4 & addsub & !$OpTx$FX_DC$28
+	# j3 & !i3 & !j4 & i4 & !addsub & $OpTx$FX_DC$28
+	# !j3 & !i3 & j4 & i4 & addsub & !$OpTx$FX_DC$28
+;Imported pterms FB2_12
+	# !j3 & !j2 & !j4 & i4 & !addsub
+	# j3 & i3 & !j4 & i4 & addsub & $OpTx$FX_DC$28
+	# j3 & i3 & !j4 & i4 & !addsub & !$OpTx$FX_DC$28
+	# !j3 & i3 & j4 & i4 & addsub & $OpTx$FX_DC$28
+	# !j3 & i3 & j4 & i4 & !addsub & !$OpTx$FX_DC$28
+;Imported pterms FB2_13
+	# !j3 & !i3 & j4 & i4 & !addsub & $OpTx$FX_DC$28;
+
+MACROCELL | 1 | 12 | o5_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 2 | 4 | 10 | 1 | 11
+INPUTS | 12 | addsub  | i1  | i2  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | j1  | j3  | i3  | j4  | i4  | $OpTx$FX_DC$28  | EXP19_.EXP  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+INPUTMC | 4 | 0 | 16 | 2 | 14 | 1 | 13 | 1 | 2
+INPUTP | 8 | 31 | 25 | 27 | 131 | 121 | 33 | 127 | 23
+EXPORTS | 1 | 1 | 11
+IMPORTS | 1 | 1 | 13
+EQ | 33 | 
+   o5_BUFR = addsub
+	$ !i1 & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# j1 & i1 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & i2 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB2_14
+	# !j1 & i1 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# j1 & j2 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# j1 & i2 & addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# !j1 & !j2 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# !j1 & i2 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB2_15
+	# i1 & j3 & i3 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & !j3 & i3 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & !j3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & i3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB2_16
+	# i1 & i3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK;
+    o5_BUFR.EXP  =  !j3 & !i3 & j4 & i4 & !addsub & $OpTx$FX_DC$28
+
+MACROCELL | 4 | 11 | XLXI_6/XLXN_5
+ATTRIBUTES | 461570 | 0
+OUTPUTMC | 2 | 4 | 0 | 4 | 17
+INPUTS | 8 | i1  | i2  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | j1  | addsub  | j2  | _14_.EXP  | EXP36_.EXP
+INPUTMC | 3 | 0 | 16 | 4 | 10 | 4 | 12
+INPUTP | 5 | 25 | 27 | 131 | 31 | 129
+IMPORTS | 2 | 4 | 10 | 4 | 12
+EQ | 26 | 
+   o4 = j1 & i1 & addsub
+	# !j1 & i1 & !addsub
+	# i1 & i2 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# j1 & j2 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# j1 & i2 & addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+;Imported pterms FB5_11
+	# !j1 & !j2 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# !j1 & i2 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & j3 & i3 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & !j3 & i3 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+;Imported pterms FB5_13
+	# i1 & j3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & !j3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & i3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & i3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2;
+
+MACROCELL | 1 | 15 | o3_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 5 | 4 | 13 | 4 | 1 | 4 | 2 | 4 | 16 | 1 | 14
+INPUTS | 14 | j1  | j2  | addsub  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | XLXN_250/XLXN_250_D8_  | j3  | i2  | j4  | i4  | i1  | i3  | o4.PIN  | EXP21_.EXP  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+INPUTMC | 4 | 0 | 16 | 3 | 13 | 1 | 16 | 1 | 2
+INPUTP | 10 | 131 | 129 | 31 | 121 | 27 | 127 | 23 | 25 | 33 | 82
+EXPORTS | 1 | 1 | 14
+IMPORTS | 1 | 1 | 16
+EQ | 24 | 
+   o3_BUFR = j1 & !j2 & !addsub & !XLXN_250/XLXN_250_D8_ & 
+	!o4.PIN
+	# !j1 & j2 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & o4.PIN
+	# !j1 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXN_250/XLXN_250_D8_ & o4.PIN
+	# j1 & !j3 & i2 & !j4 & i4 & !addsub & !o4.PIN
+;Imported pterms FB2_17
+	# j1 & !j2 & addsub & XLXN_250/XLXN_250_D8_ & 
+	o4.PIN
+	# !j1 & j2 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !o4.PIN
+	# !j1 & addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !XLXN_250/XLXN_250_D8_ & !o4.PIN
+	# j1 & !j3 & i2 & i3 & !addsub & !o4.PIN
+	# j1 & i2 & i3 & !j4 & i4 & !addsub & !o4.PIN
+;Imported pterms FB2_18
+	# j1 & !j3 & !i2 & !i3 & addsub & o4.PIN
+	# j1 & !j3 & !i2 & !j4 & addsub & o4.PIN
+	# j1 & !j3 & !i2 & !i4 & addsub & o4.PIN
+	# j1 & !i2 & !i3 & !j4 & addsub & o4.PIN
+	# j1 & !i2 & !i3 & !i4 & addsub & o4.PIN;
+    o3_BUFR.EXP  =  i1 & i3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 4 | 14 | XLXI_6/XLXN_7
+ATTRIBUTES | 396034 | 0
+INPUTS | 1 | addsub
+INPUTP | 1 | 31
+EQ | 1 | 
+   o2 = !addsub;
+
+MACROCELL | 4 | 16 | XLXI_6/XLXN_8
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 4 | 17
+INPUTS | 12 | addsub  | j1  | i1  | j2  | i2  | i3  | XLXN_249/XLXN_249_D  | XLXN_250/XLXN_250_D  | XLXN_248/XLXN_248_D  | o3_BUFR  | j3  | i4
+INPUTMC | 4 | 3 | 12 | 3 | 16 | 2 | 15 | 1 | 15
+INPUTP | 8 | 31 | 131 | 25 | 129 | 27 | 33 | 121 | 23
+EXPORTS | 1 | 4 | 17
+EQ | 9 | 
+   o1 = addsub;
+    XLXI_6/XLXN_8.EXP  =  j1 & !i1 & j2 & !i2 & !i3 & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# !j1 & j2 & !i2 & !i3 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# !j1 & j2 & !i2 & !i3 & o3_BUFR & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# j3 & j2 & i2 & !i4 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+
+MACROCELL | 0 | 16 | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+ATTRIBUTES | 199424 | 0
+OUTPUTMC | 21 | 2 | 13 | 2 | 2 | 2 | 14 | 1 | 14 | 1 | 12 | 4 | 11 | 1 | 15 | 4 | 10 | 2 | 12 | 2 | 4 | 1 | 16 | 1 | 13 | 4 | 12 | 0 | 15 | 0 | 16 | 0 | 0 | 0 | 1 | 0 | 3 | 0 | 4 | 0 | 12 | 0 | 13
+INPUTS | 11 | j2  | j3  | i3  | addsub  | i4  | i1  | j4  | zf_BUFR  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | EXP11_.EXP  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+INPUTMC | 4 | 4 | 0 | 1 | 2 | 0 | 17 | 0 | 16
+INPUTP | 7 | 129 | 121 | 33 | 31 | 23 | 25 | 127
+EXPORTS | 1 | 0 | 15
+IMPORTS | 1 | 0 | 17
+EQ | 13 | 
+   !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 = j2
+	$ !j3 & i3 & !addsub
+	# !i3 & !i4 & addsub
+;Imported pterms FB1_18
+	# !j3 & !i3 & addsub
+	# !j3 & !j4 & i4
+	# !j3 & !i4 & addsub
+	# !i3 & !j4 & addsub
+	# i3 & !j4 & i4 & !addsub;
+    XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.EXP  =  i1 & j3 & j4 & i4 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & i3 & j4 & i4 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 3 | 12 | XLXN_249/XLXN_249_D
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 19 | 2 | 2 | 0 | 2 | 0 | 14 | 2 | 10 | 0 | 9 | 4 | 0 | 2 | 17 | 1 | 1 | 0 | 8 | 0 | 10 | 2 | 0 | 2 | 3 | 2 | 4 | 2 | 15 | 4 | 1 | 4 | 2 | 4 | 16 | 4 | 17 | 3 | 13
+INPUTS | 7 | i3  | j3  | j4  | i4  | $OpTx$FX_DC$28  | addsub  | EXP29_.EXP
+INPUTMC | 2 | 2 | 14 | 3 | 11
+INPUTP | 5 | 33 | 121 | 127 | 23 | 31
+EXPORTS | 1 | 3 | 13
+IMPORTS | 1 | 3 | 11
+EQ | 9 | 
+   !XLXN_249/XLXN_249_D = i3
+	$ j3 & j4 & i4
+;Imported pterms FB4_12
+	# j3 & !i4 & !addsub
+	# !j3 & !j4 & i4
+	# !j3 & !i4 & addsub;
+    XLXN_249/XLXN_249_D.EXP  =  j3 & i3 & !j4 & i4 & !$OpTx$FX_DC$28
+	# j3 & i3 & !i4 & addsub & !$OpTx$FX_DC$28
+	# !j3 & i3 & j4 & i4 & !$OpTx$FX_DC$28
+
+MACROCELL | 3 | 16 | XLXN_250/XLXN_250_D
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 11 | 2 | 2 | 0 | 9 | 4 | 0 | 2 | 17 | 0 | 8 | 2 | 0 | 2 | 16 | 4 | 1 | 4 | 2 | 4 | 16 | 4 | 17
+INPUTS | 8 | i2  | j3  | j2  | i3  | addsub  | i4  | EXP31_.EXP  | EXP32_.EXP
+INPUTMC | 2 | 3 | 15 | 3 | 17
+INPUTP | 6 | 27 | 121 | 129 | 33 | 31 | 23
+IMPORTS | 2 | 3 | 15 | 3 | 17
+EQ | 17 | 
+   !XLXN_250/XLXN_250_D = i2
+	$ j3 & j2 & i3 & addsub
+	# !j3 & !j2 & i3 & !addsub
+	# j2 & !i3 & !i4 & !addsub
+	# !j2 & !i3 & !i4 & addsub
+;Imported pterms FB4_16
+	# j3 & j2 & !i3 & !addsub
+	# j3 & j2 & j4 & i4
+	# !j3 & !j2 & !i3 & addsub
+	# j2 & !i3 & j4 & !addsub
+	# !j2 & !i3 & !j4 & addsub
+;Imported pterms FB4_18
+	# j3 & j2 & !i4 & !addsub
+	# !j3 & !j2 & !j4 & i4
+	# !j3 & !j2 & !i4 & addsub
+	# j2 & i3 & j4 & i4 & addsub
+	# !j2 & i3 & !j4 & i4 & !addsub;
+
+MACROCELL | 1 | 2 | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+ATTRIBUTES | 199424 | 0
+OUTPUTMC | 25 | 2 | 1 | 0 | 1 | 0 | 14 | 2 | 10 | 0 | 8 | 4 | 0 | 2 | 16 | 4 | 17 | 0 | 0 | 0 | 3 | 0 | 4 | 0 | 7 | 0 | 10 | 0 | 11 | 0 | 12 | 0 | 13 | 0 | 15 | 0 | 16 | 2 | 3 | 2 | 0 | 4 | 1 | 1 | 12 | 1 | 15 | 1 | 13 | 1 | 14
+INPUTS | 9 | j1  | j2  | addsub  | XLXN_250/XLXN_250_D8_  | j3  | j4  | i4  | EXP13_.EXP  | EXP14_.EXP
+INPUTMC | 3 | 3 | 13 | 1 | 1 | 1 | 3
+INPUTP | 6 | 131 | 129 | 31 | 121 | 127 | 23
+IMPORTS | 2 | 1 | 1 | 1 | 3
+EQ | 30 | 
+   XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 = j1 & !j2 & addsub & XLXN_250/XLXN_250_D8_
+	# j1 & !j2 & !addsub & !XLXN_250/XLXN_250_D8_
+	# !j1 & j2 & addsub & !XLXN_250/XLXN_250_D8_
+	# !j1 & j2 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & j3 & j2 & j4 & i4
+;Imported pterms FB2_2
+	# j1 & !j3 & i2 & !addsub & !XLXN_249/XLXN_249_D
+	# j1 & !j3 & !i2 & !i3 & addsub
+	# j1 & !i2 & !j4 & addsub & XLXN_249/XLXN_249_D
+	# j1 & !i2 & !i4 & addsub & XLXN_249/XLXN_249_D
+	# !j1 & j3 & j2 & i3 & addsub
+;Imported pterms FB2_1
+	# !j1 & j3 & i3 & addsub & !XLXN_250/XLXN_250_D8_
+	# !j1 & j3 & !i3 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & j3 & !i4 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & !i3 & j4 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & !i3 & !i4 & !addsub & XLXN_250/XLXN_250_D8_
+;Imported pterms FB2_4
+	# !j1 & j3 & j2 & !i3 & !addsub
+	# !j1 & j3 & j2 & !i4 & !addsub
+	# !j1 & j3 & j4 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & j2 & !i3 & j4 & !addsub
+	# !j1 & j2 & !i3 & !i4 & !addsub
+;Imported pterms FB2_5
+	# j1 & i2 & i3 & !j4 & i4 & !addsub
+	# !j1 & j3 & j4 & i4 & addsub & 
+	!XLXN_250/XLXN_250_D8_
+	# !j1 & j2 & i3 & j4 & i4 & addsub
+	# !j1 & i3 & j4 & i4 & addsub & 
+	!XLXN_250/XLXN_250_D8_;
+
+MACROCELL | 3 | 13 | XLXN_250/XLXN_250_D8_
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 7 | 1 | 16 | 1 | 15 | 1 | 2 | 1 | 0 | 1 | 3 | 1 | 4 | 2 | 4
+INPUTS | 8 | i2  | j3  | j2  | j4  | i4  | addsub  | XLXN_249/XLXN_249_D.EXP  | EXP30_.EXP
+INPUTMC | 2 | 3 | 12 | 3 | 14
+INPUTP | 6 | 27 | 121 | 129 | 127 | 23 | 31
+IMPORTS | 2 | 3 | 12 | 3 | 14
+EQ | 15 | 
+   !XLXN_250/XLXN_250_D8_ = i2
+	$ j3 & j2 & j4 & i4
+	# j3 & j2 & !i4 & !addsub
+	# !j3 & !j2 & !j4 & i4
+	# !j3 & !j2 & !i4 & addsub
+;Imported pterms FB4_13
+	# j3 & i3 & !j4 & i4 & !$OpTx$FX_DC$28
+	# j3 & i3 & !i4 & addsub & !$OpTx$FX_DC$28
+	# !j3 & i3 & j4 & i4 & !$OpTx$FX_DC$28
+;Imported pterms FB4_15
+	# j3 & !i3 & !j4 & i4 & $OpTx$FX_DC$28
+	# j3 & !i3 & !i4 & addsub & $OpTx$FX_DC$28
+	# !j3 & i3 & !i4 & !addsub & !$OpTx$FX_DC$28
+	# !j3 & !i3 & j4 & i4 & $OpTx$FX_DC$28
+	# !j3 & !i3 & !i4 & !addsub & $OpTx$FX_DC$28;
+
+MACROCELL | 2 | 14 | $OpTx$FX_DC$28
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 8 | 1 | 10 | 3 | 12 | 1 | 8 | 1 | 9 | 1 | 11 | 1 | 12 | 3 | 14 | 2 | 13
+INPUTS | 8 | j2  | addsub  | i1  | j3  | j4  | i4  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | i3
+INPUTMC | 1 | 0 | 16
+INPUTP | 7 | 129 | 31 | 25 | 121 | 127 | 23 | 33
+EXPORTS | 1 | 2 | 13
+EQ | 8 | 
+   $OpTx$FX_DC$28 = j2
+	$ addsub;
+    $OpTx$FX_DC$28.EXP  =  i1 & !j3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & i3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & i3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+
+MACROCELL | 1 | 8 | $OpTx$FX_DC$41
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 5 | 0 | 1 | 0 | 0 | 0 | 3 | 0 | 4 | 1 | 9
+INPUTS | 7 | i3  | j3  | i4  | addsub  | j4  | $OpTx$FX_DC$28  | EXP16_.EXP
+INPUTMC | 2 | 2 | 14 | 1 | 7
+INPUTP | 5 | 33 | 121 | 23 | 31 | 127
+EXPORTS | 1 | 1 | 9
+IMPORTS | 1 | 1 | 7
+EQ | 9 | 
+   !$OpTx$FX_DC$41 = i3
+	$ j3 & i4 & !addsub
+;Imported pterms FB2_8
+	# j3 & !j4 & !i4
+	# !j3 & j4 & !i4
+	# !j3 & i4 & addsub;
+    $OpTx$FX_DC$41.EXP  =  j3 & !i3 & !j4 & i4 & addsub & !$OpTx$FX_DC$28
+	# j3 & !i3 & !j4 & i4 & !addsub & $OpTx$FX_DC$28
+	# !j3 & !i3 & j4 & i4 & addsub & !$OpTx$FX_DC$28
+
+MACROCELL | 2 | 15 | XLXN_248/XLXN_248_D
+ATTRIBUTES | 199424 | 0
+OUTPUTMC | 13 | 0 | 14 | 0 | 9 | 4 | 0 | 4 | 17 | 0 | 8 | 0 | 10 | 4 | 2 | 4 | 16 | 4 | 1 | 2 | 16 | 2 | 17 | 2 | 1 | 2 | 0
+INPUTS | 6 | i4  | j4  | addsub  | j1  | i1  | XLXN_249/XLXN_249_D
+INPUTMC | 1 | 3 | 12
+INPUTP | 5 | 23 | 127 | 31 | 131 | 25
+EXPORTS | 1 | 2 | 16
+EQ | 4 | 
+   !XLXN_248/XLXN_248_D = i4
+	$ j4 & !addsub
+	# !j4 & addsub;
+    XLXN_248/XLXN_248_D.EXP  =  !j1 & i1 & j4 & !i4 & XLXN_249/XLXN_249_D
+
+MACROCELL | 3 | 0 | XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 3 | 0 | 7 | 2 | 1 | 0 | 11
+INPUTS | 4 | j3  | i4  | addsub  | j4
+INPUTP | 4 | 121 | 23 | 31 | 127
+EQ | 4 | 
+   XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 = j3 & !j4 & i4
+	# j3 & !i4 & addsub
+	# !j3 & j4 & i4
+	# !j3 & !i4 & !addsub;
+
+MACROCELL | 2 | 1 | _8_
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 2 | 0
+INPUTS | 12 | zf_BUFR  | i1  | j2  | i2  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2  | addsub  | o4.PIN  | i3  | j4  | i4  | XLXN_248/XLXN_248_D.FBK.LFBK
+INPUTMC | 4 | 4 | 0 | 1 | 2 | 3 | 0 | 2 | 15
+INPUTP | 8 | 25 | 129 | 27 | 31 | 82 | 33 | 127 | 23
+EXPORTS | 1 | 2 | 0
+EQ | 8 | 
+   zf = zf_BUFR;
+    _8_.EXP  =  i1 & j2 & !i2 & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2
+	# j2 & !i2 & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & !o4.PIN
+	# !j2 & i2 & !addsub & 
+	XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & !XLXN_248/XLXN_248_D.FBK.LFBK
+	# j2 & !i2 & i3 & j4 & !i4 & !addsub
+
+MACROCELL | 2 | 7 | _9_
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 2 | 8
+INPUTS | 6 | ze_BUFR  | j3  | i3  | i4  | o6_BUFR  | addsub
+INPUTMC | 2 | 0 | 9 | 1 | 10
+INPUTP | 4 | 121 | 33 | 23 | 31
+EXPORTS | 1 | 2 | 8
+EQ | 2 | 
+   ze = ze_BUFR;
+    _9_.EXP  =  !j3 & !i3 & i4 & !o6_BUFR & !addsub
+
+MACROCELL | 2 | 5 | _10_
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 2 | 4
+INPUTS | 2 | zb_BUFR  | zg_BUFR.FBK.LFBK
+INPUTMC | 2 | 0 | 2 | 2 | 17
+EXPORTS | 1 | 2 | 4
+EQ | 2 | 
+   zb = zb_BUFR;
+    _10_.EXP  =  zg_BUFR.FBK.LFBK
+
+MACROCELL | 2 | 11 | _11_
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 2 | 10
+INPUTS | 7 | zc_BUFR  | j3  | i3  | j4  | i4  | o6_BUFR  | addsub
+INPUTMC | 2 | 0 | 14 | 1 | 10
+INPUTP | 5 | 121 | 33 | 127 | 23 | 31
+EXPORTS | 1 | 2 | 10
+EQ | 5 | 
+   zc = zc_BUFR;
+    _11_.EXP  =  j3 & i3 & !j4 & !i4 & !o6_BUFR
+	# j3 & !i3 & i4 & o6_BUFR & !addsub
+	# !j3 & i3 & j4 & !i4 & !o6_BUFR
+	# !j3 & !i3 & i4 & o6_BUFR & addsub
+
+MACROCELL | 2 | 4 | _12_
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 2 | 3
+INPUTS | 15 | j4  | i4  | ze_BUFR  | zf_BUFR  | j1  | addsub  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | XLXN_249/XLXN_249_D  | XLXN_250/XLXN_250_D8_  | j3  | j2  | i2  | i3  | _10_.EXP  | o4.PIN
+INPUTMC | 6 | 0 | 9 | 4 | 0 | 0 | 16 | 3 | 12 | 3 | 13 | 2 | 5
+INPUTP | 9 | 127 | 23 | 131 | 31 | 121 | 129 | 27 | 33 | 82
+EXPORTS | 1 | 2 | 3
+IMPORTS | 1 | 2 | 5
+EQ | 9 | 
+   zg = ;Imported pterms FB3_6
+	  zg_BUFR.FBK.LFBK;
+    _12_.EXP  =  j4 & !i4 & !ze_BUFR & zf_BUFR
+	# !j1 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D8_
+	# !j1 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !XLXN_249/XLXN_249_D & !o4.PIN
+	# j3 & j2 & !i2 & !i3 & zf_BUFR
+	# !j2 & !i2 & i3 & zf_BUFR & !addsub
+
+MACROCELL | 4 | 8 | _13_
+ATTRIBUTES | 396034 | 0
+INPUTS | 1 | o6_BUFR
+INPUTMC | 1 | 1 | 10
+EQ | 1 | 
+   o6 = o6_BUFR;
+
+MACROCELL | 4 | 10 | _14_
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 4 | 11
+INPUTS | 9 | o5_BUFR  | j1  | j2  | addsub  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | i2  | i1  | j3  | i3
+INPUTMC | 2 | 1 | 12 | 0 | 16
+INPUTP | 7 | 131 | 129 | 31 | 27 | 25 | 121 | 33
+EXPORTS | 1 | 4 | 11
+EQ | 9 | 
+   o5 = o5_BUFR;
+    _14_.EXP  =  !j1 & !j2 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# !j1 & i2 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & j3 & i3 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & !j3 & i3 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+
+MACROCELL | 4 | 13 | _15_
+ATTRIBUTES | 396034 | 0
+INPUTS | 1 | o3_BUFR
+INPUTMC | 1 | 1 | 15
+EQ | 1 | 
+   o3 = o3_BUFR;
+
+MACROCELL | 0 | 0 | EXP0_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 1
+INPUTS | 10 | j1  | j3  | j4  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | $OpTx$FX_DC$41  | i4  | i3  | i1  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+INPUTMC | 3 | 1 | 2 | 1 | 8 | 0 | 16
+INPUTP | 7 | 131 | 121 | 127 | 31 | 23 | 33 | 25
+EXPORTS | 1 | 0 | 1
+EQ | 15 | 
+       EXP0_.EXP  =  j1 & j3 & j4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & j3 & !i4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & j4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & !i4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & i3 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 0 | 1 | EXP1_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 2
+INPUTS | 8 | i1  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | $OpTx$FX_DC$41  | j1  | i2  | EXP0_.EXP  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+INPUTMC | 4 | 1 | 2 | 1 | 8 | 0 | 0 | 0 | 16
+INPUTP | 4 | 25 | 31 | 131 | 27
+EXPORTS | 1 | 0 | 2
+IMPORTS | 1 | 0 | 0
+EQ | 27 | 
+       EXP1_.EXP  =  i1 & !addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41
+	# !i1 & addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41
+	# j1 & i1 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41
+	# j1 & !i1 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41
+	# i1 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_1
+	# j1 & j3 & j4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & j3 & !i4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & j4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & !i4 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & i3 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 0 | 3 | EXP2_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 2
+INPUTS | 9 | j1  | j2  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | $OpTx$FX_DC$41  | i2  | i1  | EXP3_.EXP  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+INPUTMC | 4 | 1 | 2 | 1 | 8 | 0 | 4 | 0 | 16
+INPUTP | 5 | 131 | 129 | 31 | 27 | 25
+EXPORTS | 1 | 0 | 2
+IMPORTS | 1 | 0 | 4
+EQ | 25 | 
+       EXP2_.EXP  =  j1 & j2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# !i1 & j2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# !i1 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_5
+	# j1 & j3 & !i3 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & j4 & i4 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & i3 & j4 & i4 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 0 | 4 | EXP3_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 3
+INPUTS | 10 | j1  | j3  | i3  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | $OpTx$FX_DC$41  | i1  | j4  | i4  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+INPUTMC | 3 | 1 | 2 | 1 | 8 | 0 | 16
+INPUTP | 7 | 131 | 121 | 33 | 31 | 25 | 127 | 23
+EXPORTS | 1 | 0 | 3
+EQ | 9 | 
+       EXP3_.EXP  =  j1 & j3 & !i3 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & j4 & i4 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & i3 & j4 & i4 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & $OpTx$FX_DC$41 & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 0 | 7 | EXP4_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 8
+INPUTS | 9 | j1  | i1  | j2  | i2  | addsub  | XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2  | j3  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | o4.PIN
+INPUTMC | 2 | 3 | 0 | 1 | 2
+INPUTP | 7 | 131 | 25 | 129 | 27 | 31 | 121 | 82
+EXPORTS | 1 | 0 | 8
+EQ | 5 | 
+       EXP4_.EXP  =  j1 & i1 & j2 & i2 & addsub & 
+	XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2
+	# j1 & !i1 & j3 & j2 & !i2 & !addsub
+	# j1 & j2 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & o4.PIN
+
+MACROCELL | 0 | 8 | EXP5_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 9
+INPUTS | 9 | j1  | i1  | XLXN_250/XLXN_250_D  | addsub  | XLXN_249/XLXN_249_D  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | XLXN_248/XLXN_248_D  | EXP4_.EXP  | o4.PIN
+INPUTMC | 5 | 3 | 16 | 3 | 12 | 1 | 2 | 2 | 15 | 0 | 7
+INPUTP | 4 | 131 | 25 | 31 | 82
+EXPORTS | 1 | 0 | 9
+IMPORTS | 1 | 0 | 7
+EQ | 15 | 
+       EXP5_.EXP  =  !j1 & !i1 & !XLXN_250/XLXN_250_D & o4.PIN
+	# i1 & addsub & XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# i1 & addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D
+	# addsub & XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !addsub & !XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+;Imported pterms FB1_8
+	# j1 & i1 & j2 & i2 & addsub & 
+	XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2
+	# j1 & !i1 & j3 & j2 & !i2 & !addsub
+	# j1 & j2 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & o4.PIN
+
+MACROCELL | 0 | 10 | EXP6_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 9
+INPUTS | 12 | i1  | addsub  | XLXN_249/XLXN_249_D  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | j1  | j2  | i2  | i3  | o6_BUFR  | XLXN_248/XLXN_248_D  | EXP7_.EXP  | o4.PIN
+INPUTMC | 5 | 3 | 12 | 1 | 2 | 1 | 10 | 2 | 15 | 0 | 11
+INPUTP | 7 | 25 | 31 | 131 | 129 | 27 | 33 | 82
+EXPORTS | 1 | 0 | 9
+IMPORTS | 1 | 0 | 11
+EQ | 20 | 
+       EXP6_.EXP  =  !i1 & !addsub & !XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# j1 & !i1 & j2 & !i2 & !i3
+	# j1 & o6_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# j1 & o6_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# !j1 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D & !o4.PIN
+;Imported pterms FB1_12
+	# j1 & j3 & j2 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !j1 & j3 & j2 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# !j1 & j2 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & !o4.PIN
+	# !j1 & j2 & !i2 & !i3 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !j1 & j2 & !i2 & !i3 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+
+MACROCELL | 0 | 11 | EXP7_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 10
+INPUTS | 9 | j1  | j3  | j2  | i2  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2  | i3  | o4.PIN
+INPUTMC | 2 | 1 | 2 | 3 | 0
+INPUTP | 7 | 131 | 121 | 129 | 27 | 31 | 33 | 82
+EXPORTS | 1 | 0 | 10
+EQ | 10 | 
+       EXP7_.EXP  =  j1 & j3 & j2 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !j1 & j3 & j2 & !i2 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# !j1 & j2 & i2 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & !o4.PIN
+	# !j1 & j2 & !i2 & !i3 & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !j1 & j2 & !i2 & !i3 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+
+MACROCELL | 0 | 12 | EXP8_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 13
+INPUTS | 10 | j1  | j3  | i3  | zf_BUFR  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | i4  | j4  | i1  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+INPUTMC | 3 | 4 | 0 | 1 | 2 | 0 | 16
+INPUTP | 7 | 131 | 121 | 33 | 31 | 23 | 127 | 25
+EXPORTS | 1 | 0 | 13
+EQ | 10 | 
+       EXP8_.EXP  =  j1 & j3 & !i3 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & j3 & !i4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & j4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & !i4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & i3 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 0 | 13 | EXP9_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 14
+INPUTS | 9 | i1  | zf_BUFR  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | j1  | j2  | i2  | EXP8_.EXP  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+INPUTMC | 4 | 4 | 0 | 1 | 2 | 0 | 12 | 0 | 16
+INPUTP | 5 | 25 | 31 | 131 | 129 | 27
+EXPORTS | 1 | 0 | 14
+IMPORTS | 1 | 0 | 12
+EQ | 21 | 
+       EXP9_.EXP  =  i1 & zf_BUFR & !addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# j1 & i1 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# j1 & !i1 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# j1 & j2 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & i2 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_13
+	# j1 & j3 & !i3 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & j3 & !i4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & j4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i3 & !i4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & i3 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 0 | 15 | EXP10_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 14
+INPUTS | 11 | j1  | i2  | zf_BUFR  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | i1  | j2  | j3  | j4  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.EXP  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+INPUTMC | 4 | 4 | 0 | 1 | 2 | 0 | 16 | 0 | 16
+INPUTP | 7 | 131 | 27 | 31 | 25 | 129 | 121 | 127
+EXPORTS | 1 | 0 | 14
+IMPORTS | 1 | 0 | 16
+EQ | 15 | 
+       EXP10_.EXP  =  j1 & i2 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & !i2 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# !i1 & j2 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# !i1 & !i2 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# j1 & j3 & j4 & zf_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB1_17
+	# i1 & j3 & j4 & i4 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+	# i1 & i3 & j4 & i4 & zf_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 0 | 17 | EXP11_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 16
+INPUTS | 5 | j3  | i3  | addsub  | j4  | i4
+INPUTP | 5 | 121 | 33 | 31 | 127 | 23
+EXPORTS | 1 | 0 | 16
+EQ | 5 | 
+       EXP11_.EXP  =  !j3 & !i3 & addsub
+	# !j3 & !j4 & i4
+	# !j3 & !i4 & addsub
+	# !i3 & !j4 & addsub
+	# i3 & !j4 & i4 & !addsub
+
+MACROCELL | 1 | 0 | EXP12_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 1
+INPUTS | 7 | j1  | j3  | i3  | addsub  | XLXN_250/XLXN_250_D8_  | i4  | j4
+INPUTMC | 1 | 3 | 13
+INPUTP | 6 | 131 | 121 | 33 | 31 | 23 | 127
+EXPORTS | 1 | 1 | 1
+EQ | 5 | 
+       EXP12_.EXP  =  !j1 & j3 & i3 & addsub & !XLXN_250/XLXN_250_D8_
+	# !j1 & j3 & !i3 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & j3 & !i4 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & !i3 & j4 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & !i3 & !i4 & !addsub & XLXN_250/XLXN_250_D8_
+
+MACROCELL | 1 | 1 | EXP13_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 2
+INPUTS | 10 | j1  | j3  | i2  | addsub  | XLXN_249/XLXN_249_D  | i3  | j4  | i4  | j2  | EXP12_.EXP
+INPUTMC | 2 | 3 | 12 | 1 | 0
+INPUTP | 8 | 131 | 121 | 27 | 31 | 33 | 127 | 23 | 129
+EXPORTS | 1 | 1 | 2
+IMPORTS | 1 | 1 | 0
+EQ | 11 | 
+       EXP13_.EXP  =  j1 & !j3 & i2 & !addsub & !XLXN_249/XLXN_249_D
+	# j1 & !j3 & !i2 & !i3 & addsub
+	# j1 & !i2 & !j4 & addsub & XLXN_249/XLXN_249_D
+	# j1 & !i2 & !i4 & addsub & XLXN_249/XLXN_249_D
+	# !j1 & j3 & j2 & i3 & addsub
+;Imported pterms FB2_1
+	# !j1 & j3 & i3 & addsub & !XLXN_250/XLXN_250_D8_
+	# !j1 & j3 & !i3 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & j3 & !i4 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & !i3 & j4 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & !i3 & !i4 & !addsub & XLXN_250/XLXN_250_D8_
+
+MACROCELL | 1 | 3 | EXP14_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 2
+INPUTS | 9 | j1  | j3  | j2  | i3  | addsub  | i4  | j4  | XLXN_250/XLXN_250_D8_  | EXP15_.EXP
+INPUTMC | 2 | 3 | 13 | 1 | 4
+INPUTP | 7 | 131 | 121 | 129 | 33 | 31 | 23 | 127
+EXPORTS | 1 | 1 | 2
+IMPORTS | 1 | 1 | 4
+EQ | 12 | 
+       EXP14_.EXP  =  !j1 & j3 & j2 & !i3 & !addsub
+	# !j1 & j3 & j2 & !i4 & !addsub
+	# !j1 & j3 & j4 & !addsub & XLXN_250/XLXN_250_D8_
+	# !j1 & j2 & !i3 & j4 & !addsub
+	# !j1 & j2 & !i3 & !i4 & !addsub
+;Imported pterms FB2_5
+	# j1 & i2 & i3 & !j4 & i4 & !addsub
+	# !j1 & j3 & j4 & i4 & addsub & 
+	!XLXN_250/XLXN_250_D8_
+	# !j1 & j2 & i3 & j4 & i4 & addsub
+	# !j1 & i3 & j4 & i4 & addsub & 
+	!XLXN_250/XLXN_250_D8_
+
+MACROCELL | 1 | 4 | EXP15_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 3
+INPUTS | 9 | j1  | i2  | i3  | j4  | i4  | addsub  | j3  | XLXN_250/XLXN_250_D8_  | j2
+INPUTMC | 1 | 3 | 13
+INPUTP | 8 | 131 | 27 | 33 | 127 | 23 | 31 | 121 | 129
+EXPORTS | 1 | 1 | 3
+EQ | 6 | 
+       EXP15_.EXP  =  j1 & i2 & i3 & !j4 & i4 & !addsub
+	# !j1 & j3 & j4 & i4 & addsub & 
+	!XLXN_250/XLXN_250_D8_
+	# !j1 & j2 & i3 & j4 & i4 & addsub
+	# !j1 & i3 & j4 & i4 & addsub & 
+	!XLXN_250/XLXN_250_D8_
+
+MACROCELL | 1 | 7 | EXP16_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 8
+INPUTS | 4 | j3  | j4  | i4  | addsub
+INPUTP | 4 | 121 | 127 | 23 | 31
+EXPORTS | 1 | 1 | 8
+EQ | 3 | 
+       EXP16_.EXP  =  j3 & !j4 & !i4
+	# !j3 & j4 & !i4
+	# !j3 & i4 & addsub
+
+MACROCELL | 1 | 9 | EXP17_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 10
+INPUTS | 8 | j3  | j2  | j4  | i4  | addsub  | i3  | $OpTx$FX_DC$28  | $OpTx$FX_DC$41.EXP
+INPUTMC | 2 | 2 | 14 | 1 | 8
+INPUTP | 6 | 121 | 129 | 127 | 23 | 31 | 33
+EXPORTS | 1 | 1 | 10
+IMPORTS | 1 | 1 | 8
+EQ | 9 | 
+       EXP17_.EXP  =  j3 & j2 & j4 & i4 & !addsub
+	# j3 & !j2 & j4 & i4 & addsub
+	# j3 & !i3 & !i4 & addsub & !$OpTx$FX_DC$28
+	# !j3 & j2 & !j4 & i4 & addsub
+	# !j3 & !i3 & !i4 & !addsub & $OpTx$FX_DC$28
+;Imported pterms FB2_9
+	# j3 & !i3 & !j4 & i4 & addsub & !$OpTx$FX_DC$28
+	# j3 & !i3 & !j4 & i4 & !addsub & $OpTx$FX_DC$28
+	# !j3 & !i3 & j4 & i4 & addsub & !$OpTx$FX_DC$28
+
+MACROCELL | 1 | 11 | EXP18_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 10
+INPUTS | 8 | j3  | j2  | j4  | i4  | addsub  | i3  | $OpTx$FX_DC$28  | o5_BUFR.EXP
+INPUTMC | 2 | 2 | 14 | 1 | 12
+INPUTP | 6 | 121 | 129 | 127 | 23 | 31 | 33
+EXPORTS | 1 | 1 | 10
+IMPORTS | 1 | 1 | 12
+EQ | 7 | 
+       EXP18_.EXP  =  !j3 & !j2 & !j4 & i4 & !addsub
+	# j3 & i3 & !j4 & i4 & addsub & $OpTx$FX_DC$28
+	# j3 & i3 & !j4 & i4 & !addsub & !$OpTx$FX_DC$28
+	# !j3 & i3 & j4 & i4 & addsub & $OpTx$FX_DC$28
+	# !j3 & i3 & j4 & i4 & !addsub & !$OpTx$FX_DC$28
+;Imported pterms FB2_13
+	# !j3 & !i3 & j4 & i4 & !addsub & $OpTx$FX_DC$28
+
+MACROCELL | 1 | 13 | EXP19_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 12
+INPUTS | 8 | j1  | i1  | addsub  | j2  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | i2  | EXP20_.EXP  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+INPUTMC | 3 | 0 | 16 | 1 | 14 | 1 | 2
+INPUTP | 5 | 131 | 25 | 31 | 129 | 27
+EXPORTS | 1 | 1 | 12
+IMPORTS | 1 | 1 | 14
+EQ | 24 | 
+       EXP19_.EXP  =  !j1 & i1 & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# j1 & j2 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# j1 & i2 & addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# !j1 & !j2 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# !j1 & i2 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB2_15
+	# i1 & j3 & i3 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & !j3 & i3 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & !j3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & i3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB2_16
+	# i1 & i3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 1 | 14 | EXP20_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 13
+INPUTS | 9 | i1  | j3  | i3  | addsub  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | j4  | i4  | o3_BUFR.EXP  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+INPUTMC | 3 | 0 | 16 | 1 | 15 | 1 | 2
+INPUTP | 6 | 25 | 121 | 33 | 31 | 127 | 23
+EXPORTS | 1 | 1 | 13
+IMPORTS | 1 | 1 | 15
+EQ | 13 | 
+       EXP20_.EXP  =  i1 & j3 & i3 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & !j3 & i3 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & j3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & !j3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+	# i1 & i3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+;Imported pterms FB2_16
+	# i1 & i3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2.FBK.LFBK
+
+MACROCELL | 1 | 16 | EXP21_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 15
+INPUTS | 12 | j1  | j2  | addsub  | XLXN_250/XLXN_250_D8_  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | j3  | i2  | i3  | j4  | i4  | EXP22_.EXP  | o4.PIN
+INPUTMC | 3 | 3 | 13 | 0 | 16 | 1 | 17
+INPUTP | 9 | 131 | 129 | 31 | 121 | 27 | 33 | 127 | 23 | 82
+EXPORTS | 1 | 1 | 15
+IMPORTS | 1 | 1 | 17
+EQ | 14 | 
+       EXP21_.EXP  =  j1 & !j2 & addsub & XLXN_250/XLXN_250_D8_ & 
+	o4.PIN
+	# !j1 & j2 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !o4.PIN
+	# !j1 & addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !XLXN_250/XLXN_250_D8_ & !o4.PIN
+	# j1 & !j3 & i2 & i3 & !addsub & !o4.PIN
+	# j1 & i2 & i3 & !j4 & i4 & !addsub & !o4.PIN
+;Imported pterms FB2_18
+	# j1 & !j3 & !i2 & !i3 & addsub & o4.PIN
+	# j1 & !j3 & !i2 & !j4 & addsub & o4.PIN
+	# j1 & !j3 & !i2 & !i4 & addsub & o4.PIN
+	# j1 & !i2 & !i3 & !j4 & addsub & o4.PIN
+	# j1 & !i2 & !i3 & !i4 & addsub & o4.PIN
+
+MACROCELL | 1 | 17 | EXP22_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 16
+INPUTS | 8 | j1  | j3  | i2  | i3  | addsub  | j4  | i4  | o4.PIN
+INPUTP | 8 | 131 | 121 | 27 | 33 | 31 | 127 | 23 | 82
+EXPORTS | 1 | 1 | 16
+EQ | 5 | 
+       EXP22_.EXP  =  j1 & !j3 & !i2 & !i3 & addsub & o4.PIN
+	# j1 & !j3 & !i2 & !j4 & addsub & o4.PIN
+	# j1 & !j3 & !i2 & !i4 & addsub & o4.PIN
+	# j1 & !i2 & !i3 & !j4 & addsub & o4.PIN
+	# j1 & !i2 & !i3 & !i4 & addsub & o4.PIN
+
+MACROCELL | 2 | 0 | EXP23_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 17
+INPUTS | 12 | o6_BUFR  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | o4.PIN  | XLXN_250/XLXN_250_D  | j1  | i1  | j4  | i4  | XLXN_249/XLXN_249_D  | _8_.EXP  | XLXN_248/XLXN_248_D.FBK.LFBK
+INPUTMC | 6 | 1 | 10 | 1 | 2 | 3 | 16 | 3 | 12 | 2 | 1 | 2 | 15
+INPUTP | 6 | 31 | 82 | 131 | 25 | 127 | 23
+EXPORTS | 1 | 2 | 17
+IMPORTS | 1 | 2 | 1
+EQ | 17 | 
+       EXP23_.EXP  =  !o6_BUFR & addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+	# !o6_BUFR & !addsub & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# !addsub & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & 
+	!XLXN_248/XLXN_248_D.FBK.LFBK & o4.PIN
+	# !XLXN_250/XLXN_250_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXN_248/XLXN_248_D.FBK.LFBK & !o4.PIN
+	# j1 & !i1 & j4 & !i4 & XLXN_249/XLXN_249_D
+;Imported pterms FB3_2
+	# i1 & j2 & !i2 & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2
+	# j2 & !i2 & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & !o4.PIN
+	# !j2 & i2 & !addsub & 
+	XLXI_36/U1/XLXN_11/XLXI_36/U1/XLXN_11_D2 & !XLXN_248/XLXN_248_D.FBK.LFBK
+	# j2 & !i2 & i3 & j4 & !i4 & !addsub
+
+MACROCELL | 2 | 3 | EXP24_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 2
+INPUTS | 10 | i1  | addsub  | XLXN_249/XLXN_249_D  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | j4  | i4  | ze_BUFR  | zf_BUFR  | _12_.EXP  | o4.PIN
+INPUTMC | 5 | 3 | 12 | 1 | 2 | 0 | 9 | 4 | 0 | 2 | 4
+INPUTP | 5 | 25 | 31 | 127 | 23 | 82
+EXPORTS | 1 | 2 | 2
+IMPORTS | 1 | 2 | 4
+EQ | 17 | 
+       EXP24_.EXP  =  i1 & !addsub & !XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# !i1 & addsub & XLXN_249/XLXN_249_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# !j4 & i4 & !ze_BUFR & zf_BUFR
+	# addsub & XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & o4.PIN
+	# !addsub & !XLXN_249/XLXN_249_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !o4.PIN
+;Imported pterms FB3_5
+	# j4 & !i4 & !ze_BUFR & zf_BUFR
+	# !j1 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D8_
+	# !j1 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2 & !XLXN_249/XLXN_249_D & !o4.PIN
+	# j3 & j2 & !i2 & !i3 & zf_BUFR
+	# !j2 & !i2 & i3 & zf_BUFR & !addsub
+
+MACROCELL | 2 | 8 | EXP25_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 9
+INPUTS | 7 | j3  | i3  | i4  | o6_BUFR  | addsub  | j4  | _9_.EXP
+INPUTMC | 2 | 1 | 10 | 2 | 7
+INPUTP | 5 | 121 | 33 | 23 | 31 | 127
+EXPORTS | 1 | 2 | 9
+IMPORTS | 1 | 2 | 7
+EQ | 7 | 
+       EXP25_.EXP  =  j3 & i3 & i4 & !o6_BUFR & !addsub
+	# j3 & !i3 & j4 & !i4 & !o6_BUFR
+	# j3 & !i3 & i4 & !o6_BUFR & addsub
+	# !j3 & i3 & i4 & !o6_BUFR & addsub
+	# !j3 & !i3 & !j4 & !i4 & !o6_BUFR
+;Imported pterms FB3_8
+	# !j3 & !i3 & i4 & !o6_BUFR & !addsub
+
+MACROCELL | 2 | 9 | EXP26_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 10
+INPUTS | 7 | j3  | i3  | i4  | o6_BUFR  | addsub  | j4  | EXP25_.EXP
+INPUTMC | 2 | 1 | 10 | 2 | 8
+INPUTP | 5 | 121 | 33 | 23 | 31 | 127
+EXPORTS | 1 | 2 | 10
+IMPORTS | 1 | 2 | 8
+EQ | 13 | 
+       EXP26_.EXP  =  j3 & i3 & i4 & o6_BUFR & addsub
+	# j3 & !i3 & !j4 & !i4 & o6_BUFR
+	# !j3 & i3 & !j4 & !i4 & o6_BUFR
+	# !j3 & i3 & i4 & o6_BUFR & !addsub
+	# !j3 & !i3 & j4 & !i4 & o6_BUFR
+;Imported pterms FB3_9
+	# j3 & i3 & i4 & !o6_BUFR & !addsub
+	# j3 & !i3 & j4 & !i4 & !o6_BUFR
+	# j3 & !i3 & i4 & !o6_BUFR & addsub
+	# !j3 & i3 & i4 & !o6_BUFR & addsub
+	# !j3 & !i3 & !j4 & !i4 & !o6_BUFR
+;Imported pterms FB3_8
+	# !j3 & !i3 & i4 & !o6_BUFR & !addsub
+
+MACROCELL | 2 | 12 | EXP27_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 13
+INPUTS | 10 | j1  | j2  | addsub  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | i2  | i1  | j3  | i3  | j4  | i4
+INPUTMC | 1 | 0 | 16
+INPUTP | 9 | 131 | 129 | 31 | 27 | 25 | 121 | 33 | 127 | 23
+EXPORTS | 1 | 2 | 13
+EQ | 10 | 
+       EXP27_.EXP  =  !j1 & !j2 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# !j1 & i2 & !addsub & 
+	XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & j3 & i3 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & !j3 & i3 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & j3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+
+MACROCELL | 2 | 16 | EXP28_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 17
+INPUTS | 10 | i1  | o6_BUFR  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | XLXN_250/XLXN_250_D  | j3  | i3  | j4  | XLXN_248/XLXN_248_D.EXP  | XLXN_248/XLXN_248_D.FBK.LFBK
+INPUTMC | 5 | 1 | 10 | 1 | 2 | 3 | 16 | 2 | 15 | 2 | 15
+INPUTP | 5 | 25 | 31 | 121 | 33 | 127
+EXPORTS | 1 | 2 | 17
+IMPORTS | 1 | 2 | 15
+EQ | 11 | 
+       EXP28_.EXP  =  i1 & !o6_BUFR & addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# i1 & !XLXN_250/XLXN_250_D & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXN_248/XLXN_248_D.FBK.LFBK
+	# !i1 & !o6_BUFR & !addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# !i1 & !addsub & 
+	!XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D.FBK.LFBK
+	# !j3 & i3 & !j4 & !XLXN_250/XLXN_250_D
+;Imported pterms FB3_16
+	# !j1 & i1 & j4 & !i4 & XLXN_249/XLXN_249_D
+
+MACROCELL | 3 | 11 | EXP29_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 12
+INPUTS | 4 | j3  | i4  | addsub  | j4
+INPUTP | 4 | 121 | 23 | 31 | 127
+EXPORTS | 1 | 3 | 12
+EQ | 3 | 
+       EXP29_.EXP  =  j3 & !i4 & !addsub
+	# !j3 & !j4 & i4
+	# !j3 & !i4 & addsub
+
+MACROCELL | 3 | 14 | EXP30_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 13
+INPUTS | 6 | j3  | i3  | j4  | i4  | $OpTx$FX_DC$28  | addsub
+INPUTMC | 1 | 2 | 14
+INPUTP | 5 | 121 | 33 | 127 | 23 | 31
+EXPORTS | 1 | 3 | 13
+EQ | 5 | 
+       EXP30_.EXP  =  j3 & !i3 & !j4 & i4 & $OpTx$FX_DC$28
+	# j3 & !i3 & !i4 & addsub & $OpTx$FX_DC$28
+	# !j3 & i3 & !i4 & !addsub & !$OpTx$FX_DC$28
+	# !j3 & !i3 & j4 & i4 & $OpTx$FX_DC$28
+	# !j3 & !i3 & !i4 & !addsub & $OpTx$FX_DC$28
+
+MACROCELL | 3 | 15 | EXP31_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 16
+INPUTS | 6 | j3  | j2  | i3  | addsub  | j4  | i4
+INPUTP | 6 | 121 | 129 | 33 | 31 | 127 | 23
+EXPORTS | 1 | 3 | 16
+EQ | 5 | 
+       EXP31_.EXP  =  j3 & j2 & !i3 & !addsub
+	# j3 & j2 & j4 & i4
+	# !j3 & !j2 & !i3 & addsub
+	# j2 & !i3 & j4 & !addsub
+	# !j2 & !i3 & !j4 & addsub
+
+MACROCELL | 3 | 17 | EXP32_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 16
+INPUTS | 6 | j3  | j2  | i4  | addsub  | j4  | i3
+INPUTP | 6 | 121 | 129 | 23 | 31 | 127 | 33
+EXPORTS | 1 | 3 | 16
+EQ | 5 | 
+       EXP32_.EXP  =  j3 & j2 & !i4 & !addsub
+	# !j3 & !j2 & !j4 & i4
+	# !j3 & !j2 & !i4 & addsub
+	# j2 & i3 & j4 & i4 & addsub
+	# !j2 & i3 & !j4 & i4 & !addsub
+
+MACROCELL | 4 | 1 | EXP33_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 0
+INPUTS | 14 | j1  | o6_BUFR  | o3_BUFR  | addsub  | XLXN_249/XLXN_249_D  | XLXN_250/XLXN_250_D  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | XLXN_248/XLXN_248_D  | j3  | j2  | i2  | i1  | j4  | EXP34_.EXP
+INPUTMC | 7 | 1 | 10 | 1 | 15 | 3 | 12 | 3 | 16 | 1 | 2 | 2 | 15 | 4 | 2
+INPUTP | 7 | 131 | 31 | 121 | 129 | 27 | 25 | 127
+EXPORTS | 1 | 4 | 0
+IMPORTS | 1 | 4 | 2
+EQ | 23 | 
+       EXP33_.EXP  =  j1 & o6_BUFR & !o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & XLXN_248/XLXN_248_D
+	# j1 & o6_BUFR & !o3_BUFR & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & 
+	XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & !XLXN_248/XLXN_248_D
+	# j3 & j2 & !i2 & o3_BUFR & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# j1 & !i1 & j3 & j2 & !i2 & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# j3 & j2 & i2 & !j4 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+;Imported pterms FB5_3
+	# j1 & !i1 & j2 & !i2 & !i3 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# j1 & i1 & j3 & j2 & i2 & !j4 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# j1 & i1 & j3 & j2 & i2 & !i4 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# !j3 & j2 & i2 & j4 & i4 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# j1 & i1 & !j3 & j2 & i2 & j4 & i4 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+
+MACROCELL | 4 | 2 | EXP34_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 1
+INPUTS | 13 | j1  | i1  | j2  | i2  | i3  | addsub  | XLXN_249/XLXN_249_D  | XLXN_250/XLXN_250_D  | XLXN_248/XLXN_248_D  | j3  | j4  | i4  | o3_BUFR
+INPUTMC | 4 | 3 | 12 | 3 | 16 | 2 | 15 | 1 | 15
+INPUTP | 9 | 131 | 25 | 129 | 27 | 33 | 31 | 121 | 127 | 23
+EXPORTS | 1 | 4 | 1
+EQ | 10 | 
+       EXP34_.EXP  =  j1 & !i1 & j2 & !i2 & !i3 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# j1 & i1 & j3 & j2 & i2 & !j4 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# j1 & i1 & j3 & j2 & i2 & !i4 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# !j3 & j2 & i2 & j4 & i4 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# j1 & i1 & !j3 & j2 & i2 & j4 & i4 & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+
+MACROCELL | 4 | 6 | EXP35_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 7
+INPUTS | 4 | j3  | j4  | i4  | addsub
+INPUTP | 4 | 121 | 127 | 23 | 31
+EXPORTS | 1 | 4 | 7
+EQ | 1 | 
+       EXP35_.EXP  =  j3 & !j4 & i4 & !addsub
+
+MACROCELL | 4 | 12 | EXP36_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 11
+INPUTS | 7 | i1  | j3  | j4  | i4  | addsub  | XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2  | i3
+INPUTMC | 1 | 0 | 16
+INPUTP | 6 | 25 | 121 | 127 | 23 | 31 | 33
+EXPORTS | 1 | 4 | 11
+EQ | 8 | 
+       EXP36_.EXP  =  i1 & j3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & !j3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & i3 & j4 & i4 & addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+	# i1 & i3 & !j4 & i4 & !addsub & 
+	!XLXI_36/U2/XLXN_11/XLXI_36/U2/XLXN_11_D2
+
+MACROCELL | 4 | 17 | EXP37_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 0
+INPUTS | 9 | i1  | XLXN_249/XLXN_249_D  | XLXN_250/XLXN_250_D  | XLXN_248/XLXN_248_D  | addsub  | XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2  | j1  | XLXI_6/XLXN_8.EXP  | XLXI_6/XLXN_5.FBK.LFBK
+INPUTMC | 6 | 3 | 12 | 3 | 16 | 2 | 15 | 1 | 2 | 4 | 16 | 4 | 11
+INPUTP | 3 | 25 | 31 | 131
+EXPORTS | 1 | 4 | 0
+IMPORTS | 1 | 4 | 16
+EQ | 20 | 
+       EXP37_.EXP  =  i1 & !addsub & !XLXN_249/XLXN_249_D & 
+	XLXN_250/XLXN_250_D & !XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# i1 & !XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & 
+	XLXN_248/XLXN_248_D & !XLXI_6/XLXN_5.FBK.LFBK
+	# !i1 & addsub & XLXN_249/XLXN_249_D & 
+	!XLXN_250/XLXN_250_D & !XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2
+	# !addsub & !XLXN_249/XLXN_249_D & 
+	XLXN_250/XLXN_250_D & XLXI_36/U3/XLXN_11/XLXI_36/U3/XLXN_11_D2 & 
+	!XLXI_6/XLXN_5.FBK.LFBK
+	# !j1 & !i1 & XLXN_249/XLXN_249_D & 
+	!XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D & XLXI_6/XLXN_5.FBK.LFBK
+;Imported pterms FB5_17
+	# j1 & !i1 & j2 & !i2 & !i3 & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# !j1 & j2 & !i2 & !i3 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+	# !j1 & j2 & !i2 & !i3 & o3_BUFR & !addsub & 
+	XLXN_249/XLXN_249_D & !XLXN_250/XLXN_250_D & !XLXN_248/XLXN_248_D
+	# j3 & j2 & i2 & !i4 & o3_BUFR & addsub & 
+	!XLXN_249/XLXN_249_D & XLXN_250/XLXN_250_D & XLXN_248/XLXN_248_D
+
+PIN | j1 | 64 | 0 | N/A | 131 | 33 | 2 | 13 | 2 | 2 | 0 | 1 | 0 | 13 | 0 | 8 | 2 | 12 | 2 | 15 | 1 | 12 | 4 | 11 | 1 | 15 | 1 | 2 | 0 | 0 | 0 | 3 | 0 | 4 | 0 | 7 | 0 | 10 | 0 | 11 | 0 | 12 | 0 | 15 | 1 | 0 | 1 | 1 | 1 | 3 | 1 | 4 | 1 | 13 | 1 | 16 | 1 | 17 | 2 | 0 | 2 | 4 | 4 | 1 | 4 | 2 | 4 | 10 | 4 | 16 | 4 | 17
+PIN | i1 | 64 | 0 | N/A | 25 | 35 | 2 | 13 | 2 | 2 | 0 | 1 | 0 | 14 | 2 | 10 | 0 | 9 | 4 | 0 | 2 | 16 | 1 | 12 | 4 | 11 | 0 | 0 | 0 | 3 | 0 | 4 | 0 | 7 | 0 | 8 | 0 | 10 | 0 | 12 | 0 | 13 | 0 | 15 | 0 | 16 | 1 | 13 | 1 | 14 | 1 | 15 | 2 | 0 | 2 | 1 | 2 | 3 | 2 | 12 | 2 | 14 | 2 | 15 | 4 | 1 | 4 | 2 | 4 | 10 | 4 | 12 | 4 | 16 | 4 | 17
+PIN | j3 | 64 | 0 | N/A | 121 | 47 | 2 | 12 | 1 | 17 | 0 | 0 | 0 | 12 | 2 | 10 | 0 | 7 | 3 | 17 | 2 | 16 | 4 | 7 | 1 | 10 | 1 | 11 | 4 | 10 | 1 | 15 | 0 | 16 | 3 | 12 | 3 | 16 | 1 | 2 | 3 | 13 | 1 | 8 | 3 | 0 | 0 | 4 | 0 | 11 | 0 | 15 | 0 | 17 | 1 | 0 | 1 | 1 | 1 | 3 | 1 | 4 | 1 | 7 | 1 | 9 | 1 | 12 | 1 | 14 | 1 | 16 | 2 | 4 | 2 | 7 | 2 | 8 | 2 | 9 | 2 | 11 | 2 | 14 | 3 | 11 | 3 | 14 | 3 | 15 | 4 | 1 | 4 | 2 | 4 | 6 | 4 | 12 | 4 | 16
+PIN | j2 | 64 | 0 | N/A | 129 | 32 | 2 | 13 | 2 | 2 | 2 | 14 | 0 | 13 | 0 | 7 | 3 | 17 | 2 | 12 | 1 | 10 | 1 | 11 | 4 | 11 | 1 | 15 | 0 | 16 | 3 | 16 | 1 | 2 | 3 | 13 | 0 | 3 | 0 | 10 | 0 | 11 | 0 | 15 | 1 | 1 | 1 | 3 | 1 | 4 | 1 | 9 | 1 | 13 | 1 | 16 | 2 | 1 | 2 | 4 | 3 | 15 | 4 | 1 | 4 | 2 | 4 | 10 | 4 | 16
+PIN | i2 | 64 | 0 | N/A | 27 | 27 | 2 | 13 | 2 | 2 | 0 | 1 | 0 | 13 | 0 | 7 | 2 | 4 | 2 | 12 | 1 | 10 | 1 | 12 | 4 | 11 | 1 | 15 | 3 | 16 | 1 | 1 | 3 | 13 | 0 | 3 | 0 | 10 | 0 | 11 | 0 | 15 | 1 | 4 | 1 | 13 | 1 | 16 | 1 | 17 | 2 | 1 | 4 | 1 | 4 | 2 | 4 | 10 | 4 | 16
+PIN | i3 | 64 | 0 | N/A | 33 | 40 | 2 | 12 | 2 | 1 | 0 | 0 | 0 | 12 | 2 | 10 | 0 | 4 | 3 | 17 | 2 | 16 | 4 | 7 | 1 | 10 | 1 | 11 | 4 | 10 | 1 | 14 | 0 | 16 | 3 | 12 | 3 | 16 | 1 | 1 | 2 | 14 | 1 | 8 | 0 | 10 | 0 | 11 | 0 | 17 | 1 | 0 | 1 | 3 | 1 | 4 | 1 | 9 | 1 | 12 | 1 | 15 | 1 | 16 | 1 | 17 | 2 | 4 | 2 | 7 | 2 | 8 | 2 | 9 | 2 | 11 | 3 | 14 | 3 | 15 | 4 | 2 | 4 | 12 | 4 | 16
+PIN | j4 | 64 | 0 | N/A | 127 | 47 | 2 | 12 | 2 | 2 | 0 | 2 | 0 | 12 | 2 | 10 | 3 | 17 | 2 | 16 | 4 | 5 | 4 | 7 | 1 | 9 | 1 | 11 | 4 | 6 | 1 | 15 | 0 | 15 | 3 | 12 | 3 | 15 | 1 | 2 | 3 | 13 | 1 | 7 | 2 | 15 | 3 | 0 | 0 | 0 | 0 | 4 | 0 | 16 | 0 | 17 | 1 | 0 | 1 | 1 | 1 | 3 | 1 | 4 | 1 | 8 | 1 | 12 | 1 | 14 | 1 | 16 | 1 | 17 | 2 | 0 | 2 | 1 | 2 | 3 | 2 | 4 | 2 | 8 | 2 | 9 | 2 | 11 | 2 | 14 | 3 | 11 | 3 | 14 | 4 | 1 | 4 | 2 | 4 | 12
+PIN | i4 | 64 | 0 | N/A | 23 | 48 | 2 | 12 | 2 | 2 | 0 | 2 | 0 | 12 | 2 | 10 | 3 | 17 | 2 | 14 | 4 | 5 | 4 | 7 | 1 | 10 | 1 | 11 | 4 | 6 | 1 | 15 | 0 | 16 | 3 | 12 | 3 | 16 | 1 | 2 | 3 | 13 | 1 | 8 | 2 | 15 | 3 | 0 | 0 | 0 | 0 | 4 | 0 | 17 | 1 | 0 | 1 | 1 | 1 | 3 | 1 | 4 | 1 | 7 | 1 | 9 | 1 | 12 | 1 | 14 | 1 | 16 | 1 | 17 | 2 | 0 | 2 | 1 | 2 | 3 | 2 | 4 | 2 | 7 | 2 | 8 | 2 | 9 | 2 | 11 | 3 | 11 | 3 | 14 | 3 | 15 | 4 | 2 | 4 | 12 | 4 | 16
+PIN | addsub | 64 | 0 | N/A | 31 | 66 | 2 | 13 | 2 | 2 | 0 | 2 | 0 | 14 | 2 | 9 | 0 | 9 | 4 | 0 | 2 | 17 | 4 | 7 | 1 | 10 | 1 | 12 | 4 | 11 | 1 | 15 | 4 | 14 | 4 | 16 | 0 | 16 | 3 | 11 | 3 | 16 | 1 | 2 | 3 | 13 | 2 | 14 | 1 | 8 | 2 | 15 | 3 | 0 | 0 | 0 | 0 | 1 | 0 | 3 | 0 | 4 | 0 | 7 | 0 | 8 | 0 | 10 | 0 | 11 | 0 | 12 | 0 | 13 | 0 | 15 | 0 | 17 | 1 | 0 | 1 | 1 | 1 | 3 | 1 | 4 | 1 | 7 | 1 | 9 | 1 | 11 | 1 | 13 | 1 | 14 | 1 | 16 | 1 | 17 | 2 | 0 | 2 | 1 | 2 | 3 | 2 | 4 | 2 | 7 | 2 | 8 | 2 | 11 | 2 | 12 | 2 | 16 | 3 | 12 | 3 | 14 | 3 | 15 | 3 | 17 | 4 | 1 | 4 | 2 | 4 | 6 | 4 | 10 | 4 | 12 | 4 | 17
+PIN | zdp | 536871040 | 0 | N/A | 54
+PIN | za | 536871040 | 0 | N/A | 42
+PIN | zb | 536871040 | 0 | N/A | 47
+PIN | zc | 536871040 | 0 | N/A | 53
+PIN | zd | 536871040 | 0 | N/A | 51
+PIN | ze | 536871040 | 0 | N/A | 49
+PIN | zf | 536871040 | 0 | N/A | 41
+PIN | zg | 536871040 | 0 | N/A | 46
+PIN | o8 | 536871040 | 0 | N/A | 74
+PIN | o7 | 536871040 | 0 | N/A | 76
+PIN | o6 | 536871040 | 0 | N/A | 78
+PIN | o5 | 536871040 | 0 | N/A | 80
+PIN | o3 | 536871040 | 0 | N/A | 83
+PIN | o2 | 536871040 | 0 | N/A | 86
+PIN | o1 | 536871040 | 0 | N/A | 87
+PIN | o4 | 536870976 | 0 | N/A | 82 | 13 | 2 | 1 | 2 | 0 | 1 | 17 | 1 | 16 | 0 | 11 | 0 | 10 | 0 | 8 | 0 | 7 | 1 | 15 | 2 | 4 | 2 | 3 | 0 | 9 | 2 | 10

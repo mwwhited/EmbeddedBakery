@@ -1,0 +1,158 @@
+Release 6.3.02i - xst G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.47 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.47 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: div_buff.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : div_buff.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : div_buff
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : div_buff
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : div_buff.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/Multip/div_buff.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_div_buff is up to date.
+Architecture behavioral of Entity div_buff is up to date.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <div_buff> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_2_0" for instance <XLXI_2> in unit <div_buff>.
+    Set user-defined property "HU_SET =  XLXI_3_1" for instance <XLXI_3> in unit <div_buff>.
+Entity <div_buff> analyzed. Unit <div_buff> generated.
+
+Analyzing Entity <BUFE4_MXILINX_div_buff> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_div_buff> analyzed. Unit <BUFE4_MXILINX_div_buff> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <BUFE4_MXILINX_div_buff>.
+    Related source file is C:/Xilinx/bin/Multip/div_buff.vhf.
+Unit <BUFE4_MXILINX_div_buff> synthesized.
+
+
+Synthesizing Unit <div_buff>.
+    Related source file is C:/Xilinx/bin/Multip/div_buff.vhf.
+WARNING:Xst:647 - Input <A<4:5>> is never used.
+WARNING:Xst:647 - Input <B<4>> is never used.
+Unit <div_buff> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1348 - Unit BUFE4_MXILINX_div_buff is merged (output interface has tristates)
+
+Optimizing unit <div_buff> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : div_buff.ngr
+Top Level Output File Name         : div_buff
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 19
+
+Cell Usage :
+# BELS                             : 7
+#      AND2                        : 1
+#      BUF                         : 2
+#      GND                         : 1
+#      INV                         : 3
+# Tri-States                       : 8
+#      BUFE                        : 8
+# IO Buffers                       : 16
+#      IBUF                        : 10
+#      OBUF                        : 2
+#      OBUFT                       : 4
+=========================================================================
+CPU : 1.70 / 2.52 s | Elapsed : 2.00 / 3.00 s
+ 
+--> 
+
+Total memory usage is 49520 kilobytes
+
+

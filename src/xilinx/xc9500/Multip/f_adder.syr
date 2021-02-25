@@ -1,0 +1,178 @@
+Release 6.3.02i - xst G.37
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.01 / 0.47 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.47 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: f_adder.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : f_adder.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : f_adder
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : f_adder
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : f_adder.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/Multip/f_adder.vhf in Library work.
+Architecture behavioral of Entity add1_mxilinx_f_adder is up to date.
+Architecture behavioral of Entity add4_mxilinx_f_adder is up to date.
+Architecture behavioral of Entity f_adder is up to date.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <f_adder> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/Multip/f_adder.vhf line 545: Unconnected output port 'OFL' of component 'ADD4_MXILINX_f_adder'.
+    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <f_adder>.
+    Set user-defined property "HU_SET =  XLXI_2_1" for instance <XLXI_2> in unit <f_adder>.
+Entity <f_adder> analyzed. Unit <f_adder> generated.
+
+Analyzing Entity <ADD4_MXILINX_f_adder> (Architecture <behavioral>).
+Entity <ADD4_MXILINX_f_adder> analyzed. Unit <ADD4_MXILINX_f_adder> generated.
+
+Analyzing Entity <ADD1_MXILINX_f_adder> (Architecture <behavioral>).
+Entity <ADD1_MXILINX_f_adder> analyzed. Unit <ADD1_MXILINX_f_adder> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <ADD1_MXILINX_f_adder>.
+    Related source file is C:/Xilinx/bin/Multip/f_adder.vhf.
+Unit <ADD1_MXILINX_f_adder> synthesized.
+
+
+Synthesizing Unit <ADD4_MXILINX_f_adder>.
+    Related source file is C:/Xilinx/bin/Multip/f_adder.vhf.
+Unit <ADD4_MXILINX_f_adder> synthesized.
+
+
+Synthesizing Unit <f_adder>.
+    Related source file is C:/Xilinx/bin/Multip/f_adder.vhf.
+WARNING:Xst:647 - Input <A<5>> is never used.
+WARNING:Xst:647 - Input <B<5>> is never used.
+Unit <f_adder> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <f_adder> ...
+
+Optimizing unit <ADD4_MXILINX_f_adder> ...
+
+Optimizing unit <ADD1_MXILINX_f_adder> ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : f_adder.ngr
+Top Level Output File Name         : f_adder
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 18
+
+Cell Usage :
+# BELS                             : 36
+#      AND2                        : 8
+#      AND3                        : 4
+#      AND4                        : 3
+#      AND5                        : 2
+#      GND                         : 2
+#      OR2                         : 4
+#      OR3                         : 2
+#      OR4                         : 1
+#      OR5                         : 1
+#      XOR2                        : 9
+# IO Buffers                       : 16
+#      IBUF                        : 10
+#      OBUF                        : 6
+# Others                           : 4
+#      AND2B1                      : 2
+#      AND3B1                      : 1
+#      AND3B2                      : 1
+=========================================================================
+CPU : 1.69 / 2.50 s | Elapsed : 2.00 / 3.00 s
+ 
+--> 
+
+Total memory usage is 49520 kilobytes
+
+

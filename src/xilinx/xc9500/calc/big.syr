@@ -1,0 +1,483 @@
+Release 6.3.01i - xst G.36
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.63 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.63 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: big.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : big.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : big
+Output Format                      : NGC
+Target Device                      : xc9500
+
+---- Source Options
+Top Module Name                    : big
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : YES
+RTL Output                         : Yes
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+
+---- Other Options
+lso                                : big.lso
+verilog2001                        : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/calc/hex27seg.vhf in Library work.
+Architecture behavioral of Entity buf4_mxilinx_hex27seg is up to date.
+Architecture behavioral of Entity bufe4_mxilinx_hex27seg is up to date.
+Architecture behavioral of Entity or6_mxilinx_hex27seg is up to date.
+Architecture behavioral of Entity d4_16e_mxilinx_hex27seg is up to date.
+Architecture behavioral of Entity hex27seg is up to date.
+Compiling vhdl file C:/Xilinx/bin/calc/eightbits.vhf in Library work.
+Architecture behavioral of Entity bufe4_mxilinx_eightbits is up to date.
+Architecture behavioral of Entity ibuf4_mxilinx_eightbits is up to date.
+Architecture behavioral of Entity eightbits is up to date.
+Compiling vhdl file C:/Xilinx/bin/calc/sevenseg.vhf in Library work.
+Architecture behavioral of Entity buf4_mxilinx_sevenseg is up to date.
+Architecture behavioral of Entity obufe_mxilinx_sevenseg is up to date.
+Architecture behavioral of Entity obufe4_mxilinx_sevenseg is up to date.
+Architecture behavioral of Entity sevenseg is up to date.
+Compiling vhdl file C:/Xilinx/bin/calc/eightleds.vhf in Library work.
+Architecture behavioral of Entity buf4_mxilinx_eightleds is up to date.
+Architecture behavioral of Entity obufe_mxilinx_eightleds is up to date.
+Architecture behavioral of Entity obufe4_mxilinx_eightleds is up to date.
+Architecture behavioral of Entity eightleds is up to date.
+Compiling vhdl file C:/Xilinx/bin/calc/momentsw.vhf in Library work.
+Architecture behavioral of Entity momentsw is up to date.
+Compiling vhdl file C:/Xilinx/bin/calc/big.vhf in Library work.
+Entity <adsu1_mxilinx_big> (Architecture <behavioral>) compiled.
+Entity <adsu4_mxilinx_big> (Architecture <behavioral>) compiled.
+Entity <big> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <big> (Architecture <behavioral>).
+    Set user-defined property "LOC =  p6" for signal <A1> in unit <eightbits>.
+    Set user-defined property "LOC =  p7" for signal <A2> in unit <eightbits>.
+    Set user-defined property "LOC =  p11" for signal <A3> in unit <eightbits>.
+    Set user-defined property "LOC =  p5" for signal <A4> in unit <eightbits>.
+    Set user-defined property "LOC =  p72" for signal <A5> in unit <eightbits>.
+    Set user-defined property "LOC =  p71" for signal <A6> in unit <eightbits>.
+    Set user-defined property "LOC =  p66" for signal <A7> in unit <eightbits>.
+    Set user-defined property "LOC =  p70" for signal <A8> in unit <eightbits>.
+    Set user-defined property "LOC =  p15" for signal <Za> in unit <sevenseg>.
+    Set user-defined property "LOC =  p18" for signal <Zb> in unit <sevenseg>.
+    Set user-defined property "LOC =  p23" for signal <Zc> in unit <sevenseg>.
+    Set user-defined property "LOC =  p21" for signal <Zd> in unit <sevenseg>.
+    Set user-defined property "LOC =  p24" for signal <Zdp> in unit <sevenseg>.
+    Set user-defined property "LOC =  p19" for signal <Ze> in unit <sevenseg>.
+    Set user-defined property "LOC =  p14" for signal <Zf> in unit <sevenseg>.
+    Set user-defined property "LOC =  p17" for signal <Zg> in unit <sevenseg>.
+    Set user-defined property "LOC =  p44" for signal <Z1> in unit <eightleds>.
+    Set user-defined property "LOC =  p43" for signal <Z2> in unit <eightleds>.
+    Set user-defined property "LOC =  p41" for signal <Z3> in unit <eightleds>.
+    Set user-defined property "LOC =  p40" for signal <Z4> in unit <eightleds>.
+    Set user-defined property "LOC =  p39" for signal <Z5> in unit <eightleds>.
+    Set user-defined property "LOC =  p37" for signal <Z6> in unit <eightleds>.
+    Set user-defined property "LOC =  p36" for signal <Z7> in unit <eightleds>.
+    Set user-defined property "LOC =  p35" for signal <Z8> in unit <eightleds>.
+    Set user-defined property "LOC =  p10" for signal <A1> in unit <momentsw>.
+    Set user-defined property "HU_SET =  XLXI_36_4" for instance <XLXI_36> in unit <big>.
+Entity <big> analyzed. Unit <big> generated.
+
+Analyzing Entity <hex27seg> (Architecture <behavioral>).
+WARNING:Xst:753 - C:/Xilinx/bin/calc/hex27seg.vhf line 611: Unconnected output port 'D8' of component 'D4_16E_MXILINX_hex27seg'.
+    Set user-defined property "HU_SET =  XLXI_14_0" for instance <XLXI_14> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_17_1" for instance <XLXI_17> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_19_2" for instance <XLXI_19> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_20_3" for instance <XLXI_20> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_41_4" for instance <XLXI_41> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_42_5" for instance <XLXI_42> in unit <hex27seg>.
+    Set user-defined property "HU_SET =  XLXI_43_6" for instance <XLXI_43> in unit <hex27seg>.
+Entity <hex27seg> analyzed. Unit <hex27seg> generated.
+
+Analyzing Entity <D4_16E_MXILINX_hex27seg> (Architecture <behavioral>).
+Entity <D4_16E_MXILINX_hex27seg> analyzed. Unit <D4_16E_MXILINX_hex27seg> generated.
+
+Analyzing Entity <OR6_MXILINX_hex27seg> (Architecture <behavioral>).
+Entity <OR6_MXILINX_hex27seg> analyzed. Unit <OR6_MXILINX_hex27seg> generated.
+
+Analyzing Entity <BUFE4_MXILINX_hex27seg> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_hex27seg> analyzed. Unit <BUFE4_MXILINX_hex27seg> generated.
+
+Analyzing Entity <BUF4_MXILINX_hex27seg> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_hex27seg> analyzed. Unit <BUF4_MXILINX_hex27seg> generated.
+
+Analyzing Entity <eightbits> (Architecture <behavioral>).
+    Set user-defined property "LOC =  p6" for signal <A1> in unit <eightbits>.
+    Set user-defined property "LOC =  p7" for signal <A2> in unit <eightbits>.
+    Set user-defined property "LOC =  p11" for signal <A3> in unit <eightbits>.
+    Set user-defined property "LOC =  p5" for signal <A4> in unit <eightbits>.
+    Set user-defined property "LOC =  p72" for signal <A5> in unit <eightbits>.
+    Set user-defined property "LOC =  p71" for signal <A6> in unit <eightbits>.
+    Set user-defined property "LOC =  p66" for signal <A7> in unit <eightbits>.
+    Set user-defined property "LOC =  p70" for signal <A8> in unit <eightbits>.
+    Set user-defined property "HU_SET =  XLXI_3_0" for instance <XLXI_3> in unit <eightbits>.
+    Set user-defined property "HU_SET =  XLXI_4_1" for instance <XLXI_4> in unit <eightbits>.
+    Set user-defined property "HU_SET =  XLXI_6_2" for instance <XLXI_6> in unit <eightbits>.
+    Set user-defined property "HU_SET =  XLXI_7_3" for instance <XLXI_7> in unit <eightbits>.
+Entity <eightbits> analyzed. Unit <eightbits> generated.
+
+Analyzing Entity <IBUF4_MXILINX_eightbits> (Architecture <behavioral>).
+Entity <IBUF4_MXILINX_eightbits> analyzed. Unit <IBUF4_MXILINX_eightbits> generated.
+
+Analyzing Entity <BUFE4_MXILINX_eightbits> (Architecture <behavioral>).
+Entity <BUFE4_MXILINX_eightbits> analyzed. Unit <BUFE4_MXILINX_eightbits> generated.
+
+Analyzing Entity <sevenseg> (Architecture <behavioral>).
+    Set user-defined property "LOC =  p15" for signal <Za> in unit <sevenseg>.
+    Set user-defined property "LOC =  p18" for signal <Zb> in unit <sevenseg>.
+    Set user-defined property "LOC =  p23" for signal <Zc> in unit <sevenseg>.
+    Set user-defined property "LOC =  p21" for signal <Zd> in unit <sevenseg>.
+    Set user-defined property "LOC =  p24" for signal <Zdp> in unit <sevenseg>.
+    Set user-defined property "LOC =  p19" for signal <Ze> in unit <sevenseg>.
+    Set user-defined property "LOC =  p14" for signal <Zf> in unit <sevenseg>.
+    Set user-defined property "LOC =  p17" for signal <Zg> in unit <sevenseg>.
+    Set user-defined property "HU_SET =  XLXI_4_4" for instance <XLXI_4> in unit <sevenseg>.
+    Set user-defined property "HU_SET =  XLXI_5_5" for instance <XLXI_5> in unit <sevenseg>.
+    Set user-defined property "HU_SET =  XLXI_15_6" for instance <XLXI_15> in unit <sevenseg>.
+    Set user-defined property "HU_SET =  XLXI_16_7" for instance <XLXI_16> in unit <sevenseg>.
+Entity <sevenseg> analyzed. Unit <sevenseg> generated.
+
+Analyzing Entity <OBUFE4_MXILINX_sevenseg> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_37_3" for instance <I_36_37> in unit <OBUFE4_MXILINX_sevenseg>.
+    Set user-defined property "HU_SET =  I_36_38_0" for instance <I_36_38> in unit <OBUFE4_MXILINX_sevenseg>.
+    Set user-defined property "HU_SET =  I_36_39_1" for instance <I_36_39> in unit <OBUFE4_MXILINX_sevenseg>.
+    Set user-defined property "HU_SET =  I_36_40_2" for instance <I_36_40> in unit <OBUFE4_MXILINX_sevenseg>.
+Entity <OBUFE4_MXILINX_sevenseg> analyzed. Unit <OBUFE4_MXILINX_sevenseg> generated.
+
+Analyzing Entity <OBUFE_MXILINX_sevenseg> (Architecture <behavioral>).
+Entity <OBUFE_MXILINX_sevenseg> analyzed. Unit <OBUFE_MXILINX_sevenseg> generated.
+
+Analyzing Entity <BUF4_MXILINX_sevenseg> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_sevenseg> analyzed. Unit <BUF4_MXILINX_sevenseg> generated.
+
+Analyzing Entity <eightleds> (Architecture <behavioral>).
+    Set user-defined property "LOC =  p44" for signal <Z1> in unit <eightleds>.
+    Set user-defined property "LOC =  p43" for signal <Z2> in unit <eightleds>.
+    Set user-defined property "LOC =  p41" for signal <Z3> in unit <eightleds>.
+    Set user-defined property "LOC =  p40" for signal <Z4> in unit <eightleds>.
+    Set user-defined property "LOC =  p39" for signal <Z5> in unit <eightleds>.
+    Set user-defined property "LOC =  p37" for signal <Z6> in unit <eightleds>.
+    Set user-defined property "LOC =  p36" for signal <Z7> in unit <eightleds>.
+    Set user-defined property "LOC =  p35" for signal <Z8> in unit <eightleds>.
+    Set user-defined property "HU_SET =  XLXI_1_4" for instance <XLXI_1> in unit <eightleds>.
+    Set user-defined property "HU_SET =  XLXI_2_5" for instance <XLXI_2> in unit <eightleds>.
+    Set user-defined property "HU_SET =  XLXI_3_6" for instance <XLXI_3> in unit <eightleds>.
+    Set user-defined property "HU_SET =  XLXI_4_7" for instance <XLXI_4> in unit <eightleds>.
+Entity <eightleds> analyzed. Unit <eightleds> generated.
+
+Analyzing Entity <OBUFE4_MXILINX_eightleds> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_37_3" for instance <I_36_37> in unit <OBUFE4_MXILINX_eightleds>.
+    Set user-defined property "HU_SET =  I_36_38_0" for instance <I_36_38> in unit <OBUFE4_MXILINX_eightleds>.
+    Set user-defined property "HU_SET =  I_36_39_1" for instance <I_36_39> in unit <OBUFE4_MXILINX_eightleds>.
+    Set user-defined property "HU_SET =  I_36_40_2" for instance <I_36_40> in unit <OBUFE4_MXILINX_eightleds>.
+Entity <OBUFE4_MXILINX_eightleds> analyzed. Unit <OBUFE4_MXILINX_eightleds> generated.
+
+Analyzing Entity <OBUFE_MXILINX_eightleds> (Architecture <behavioral>).
+Entity <OBUFE_MXILINX_eightleds> analyzed. Unit <OBUFE_MXILINX_eightleds> generated.
+
+Analyzing Entity <BUF4_MXILINX_eightleds> (Architecture <behavioral>).
+Entity <BUF4_MXILINX_eightleds> analyzed. Unit <BUF4_MXILINX_eightleds> generated.
+
+Analyzing Entity <momentsw> (Architecture <behavioral>).
+    Set user-defined property "LOC =  p10" for signal <A1> in unit <momentsw>.
+Entity <momentsw> analyzed. Unit <momentsw> generated.
+
+Analyzing Entity <ADSU4_MXILINX_big> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  U0_3" for instance <U0> in unit <ADSU4_MXILINX_big>.
+    Set user-defined property "HU_SET =  U1_2" for instance <U1> in unit <ADSU4_MXILINX_big>.
+    Set user-defined property "HU_SET =  U2_0" for instance <U2> in unit <ADSU4_MXILINX_big>.
+    Set user-defined property "HU_SET =  U3_1" for instance <U3> in unit <ADSU4_MXILINX_big>.
+Entity <ADSU4_MXILINX_big> analyzed. Unit <ADSU4_MXILINX_big> generated.
+
+Analyzing Entity <ADSU1_MXILINX_big> (Architecture <behavioral>).
+Entity <ADSU1_MXILINX_big> analyzed. Unit <ADSU1_MXILINX_big> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <ADSU1_MXILINX_big>.
+    Related source file is C:/Xilinx/bin/calc/big.vhf.
+Unit <ADSU1_MXILINX_big> synthesized.
+
+
+Synthesizing Unit <OBUFE_MXILINX_eightleds>.
+    Related source file is C:/Xilinx/bin/calc/eightleds.vhf.
+Unit <OBUFE_MXILINX_eightleds> synthesized.
+
+
+Synthesizing Unit <BUF4_MXILINX_eightleds>.
+    Related source file is C:/Xilinx/bin/calc/eightleds.vhf.
+Unit <BUF4_MXILINX_eightleds> synthesized.
+
+
+Synthesizing Unit <OBUFE4_MXILINX_eightleds>.
+    Related source file is C:/Xilinx/bin/calc/eightleds.vhf.
+Unit <OBUFE4_MXILINX_eightleds> synthesized.
+
+
+Synthesizing Unit <OBUFE_MXILINX_sevenseg>.
+    Related source file is C:/Xilinx/bin/calc/sevenseg.vhf.
+Unit <OBUFE_MXILINX_sevenseg> synthesized.
+
+
+Synthesizing Unit <BUF4_MXILINX_sevenseg>.
+    Related source file is C:/Xilinx/bin/calc/sevenseg.vhf.
+Unit <BUF4_MXILINX_sevenseg> synthesized.
+
+
+Synthesizing Unit <OBUFE4_MXILINX_sevenseg>.
+    Related source file is C:/Xilinx/bin/calc/sevenseg.vhf.
+Unit <OBUFE4_MXILINX_sevenseg> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_eightbits>.
+    Related source file is C:/Xilinx/bin/calc/eightbits.vhf.
+Unit <BUFE4_MXILINX_eightbits> synthesized.
+
+
+Synthesizing Unit <IBUF4_MXILINX_eightbits>.
+    Related source file is C:/Xilinx/bin/calc/eightbits.vhf.
+Unit <IBUF4_MXILINX_eightbits> synthesized.
+
+
+Synthesizing Unit <BUF4_MXILINX_hex27seg>.
+    Related source file is C:/Xilinx/bin/calc/hex27seg.vhf.
+Unit <BUF4_MXILINX_hex27seg> synthesized.
+
+
+Synthesizing Unit <BUFE4_MXILINX_hex27seg>.
+    Related source file is C:/Xilinx/bin/calc/hex27seg.vhf.
+Unit <BUFE4_MXILINX_hex27seg> synthesized.
+
+
+Synthesizing Unit <OR6_MXILINX_hex27seg>.
+    Related source file is C:/Xilinx/bin/calc/hex27seg.vhf.
+Unit <OR6_MXILINX_hex27seg> synthesized.
+
+
+Synthesizing Unit <D4_16E_MXILINX_hex27seg>.
+    Related source file is C:/Xilinx/bin/calc/hex27seg.vhf.
+Unit <D4_16E_MXILINX_hex27seg> synthesized.
+
+
+Synthesizing Unit <ADSU4_MXILINX_big>.
+    Related source file is C:/Xilinx/bin/calc/big.vhf.
+Unit <ADSU4_MXILINX_big> synthesized.
+
+
+Synthesizing Unit <momentsw>.
+    Related source file is C:/Xilinx/bin/calc/momentsw.vhf.
+Unit <momentsw> synthesized.
+
+
+Synthesizing Unit <eightleds>.
+    Related source file is C:/Xilinx/bin/calc/eightleds.vhf.
+Unit <eightleds> synthesized.
+
+
+Synthesizing Unit <sevenseg>.
+    Related source file is C:/Xilinx/bin/calc/sevenseg.vhf.
+Unit <sevenseg> synthesized.
+
+
+Synthesizing Unit <eightbits>.
+    Related source file is C:/Xilinx/bin/calc/eightbits.vhf.
+Unit <eightbits> synthesized.
+
+
+Synthesizing Unit <hex27seg>.
+    Related source file is C:/Xilinx/bin/calc/hex27seg.vhf.
+Unit <hex27seg> synthesized.
+
+
+Synthesizing Unit <big>.
+    Related source file is C:/Xilinx/bin/calc/big.vhf.
+Unit <big> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <big> ...
+
+Optimizing unit <momentsw> ...
+  implementation constraint: LOC=p10	 : A1
+
+Optimizing unit <D4_16E_MXILINX_hex27seg> ...
+
+Optimizing unit <OR6_MXILINX_hex27seg> ...
+
+Optimizing unit <BUFE4_MXILINX_hex27seg> ...
+
+Optimizing unit <BUF4_MXILINX_hex27seg> ...
+
+Optimizing unit <IBUF4_MXILINX_eightbits> ...
+
+Optimizing unit <BUFE4_MXILINX_eightbits> ...
+
+Optimizing unit <BUF4_MXILINX_sevenseg> ...
+
+Optimizing unit <OBUFE_MXILINX_sevenseg> ...
+
+Optimizing unit <BUF4_MXILINX_eightleds> ...
+
+Optimizing unit <OBUFE_MXILINX_eightleds> ...
+
+Optimizing unit <ADSU1_MXILINX_big> ...
+
+Optimizing unit <hex27seg> ...
+
+Optimizing unit <eightbits> ...
+  implementation constraint: LOC=p6	 : A1
+  implementation constraint: LOC=p7	 : A2
+  implementation constraint: LOC=p11	 : A3
+  implementation constraint: LOC=p5	 : A4
+  implementation constraint: LOC=p72	 : A5
+  implementation constraint: LOC=p71	 : A6
+  implementation constraint: LOC=p66	 : A7
+  implementation constraint: LOC=p70	 : A8
+
+Optimizing unit <ADSU4_MXILINX_big> ...
+
+Optimizing unit <OBUFE4_MXILINX_sevenseg> ...
+
+Optimizing unit <OBUFE4_MXILINX_eightleds> ...
+
+Optimizing unit <sevenseg> ...
+  implementation constraint: LOC=p15	 : Za
+  implementation constraint: LOC=p18	 : Zb
+  implementation constraint: LOC=p23	 : Zc
+  implementation constraint: LOC=p21	 : Zd
+  implementation constraint: LOC=p19	 : Ze
+  implementation constraint: LOC=p14	 : Zf
+  implementation constraint: LOC=p17	 : Zg
+  implementation constraint: LOC=p24	 : Zdp
+
+Optimizing unit <eightleds> ...
+  implementation constraint: LOC=p44	 : Z1
+  implementation constraint: LOC=p43	 : Z2
+  implementation constraint: LOC=p41	 : Z3
+  implementation constraint: LOC=p40	 : Z4
+  implementation constraint: LOC=p39	 : Z5
+  implementation constraint: LOC=p37	 : Z6
+  implementation constraint: LOC=p36	 : Z7
+  implementation constraint: LOC=p35	 : Z8
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : big.ngr
+Top Level Output File Name         : big
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : xc9500
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 25
+
+Cell Usage :
+# BELS                             : 91
+#      AND2                        : 4
+#      AND3                        : 8
+#      AND5                        : 1
+#      BUF                         : 25
+#      GND                         : 1
+#      INV                         : 24
+#      OR3                         : 3
+#      OR4                         : 12
+#      OR5                         : 4
+#      VCC                         : 1
+#      XOR2                        : 8
+# Tri-States                       : 17
+#      BUFE                        : 17
+# IO Buffers                       : 25
+#      IBUF                        : 9
+#      OBUFT                       : 16
+# Others                           : 43
+#      AND3B1                      : 12
+#      AND3B2                      : 8
+#      AND3B3                      : 4
+#      AND4B1                      : 1
+#      AND4B2                      : 2
+#      AND4B3                      : 1
+#      AND5B1                      : 4
+#      AND5B2                      : 6
+#      AND5B3                      : 4
+#      AND5B4                      : 1
+=========================================================================
+CPU : 3.97 / 4.97 s | Elapsed : 4.00 / 5.00 s
+ 
+--> 
+
+Total memory usage is 51440 kilobytes
+
+

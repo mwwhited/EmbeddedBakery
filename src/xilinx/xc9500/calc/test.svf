@@ -1,0 +1,5 @@
+// Created using Xilinx iMPACT Software [ISE WebPACK - 6.3.01i]
+TRST OFF;
+ENDIR IDLE;
+ENDDR IDLE;
+STATE RESET IDLE;

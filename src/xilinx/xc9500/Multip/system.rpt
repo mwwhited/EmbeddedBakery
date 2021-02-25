@@ -1,0 +1,1873 @@
+ 
+cpldfit:  version G.37                              Xilinx Inc.
+                                  Fitter Report
+Design Name: system                              Date: 10-24-2004,  8:17PM
+Device Used: XC95108-7-PC84
+Fitting Status: Did NOT Fit
+
+****************************  Resource Summary  ****************************
+
+Macrocells     Product Terms    Registers      Pins           Function Block 
+Used           Used             Used           Used           Inputs Used    
+102/108 ( 94%) 636 /540  (118%) 4  /108 (  4%) 17 /69  ( 25%) 154/216 ( 71%)
+
+PIN RESOURCES:
+
+Signal Type    Required     Mapped  |  Pin Type            Used   Remaining 
+------------------------------------|---------------------------------------
+Input         :    8           0    |  I/O              :     8       55
+Output        :    8           8    |  GCK/IO           :     1        2
+Bidirectional :    0           0    |  GTS/IO           :     0        2
+GCK           :    1           1    |  GSR/IO           :     0        1
+GTS           :    0           0    |
+GSR           :    0           0    |
+                 ----        ----
+        Total     17           9
+
+MACROCELL RESOURCES:
+
+Total Macrocells Available                   108
+Registered Macrocells                          0
+Non-registered Macrocell driving I/O           8
+
+GLOBAL RESOURCES:
+
+Global clock net(s) unused.
+Global output enable net(s) unused.
+Global set/reset net(s) unused.
+
+POWER DATA:
+
+There are 102 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+There are a total of 102 macrocells used (MC).
+
+End of Resource Summary
+****************************  Errors and Warnings  *************************
+
+WARNING:Cpld:828 - Signal 'Bits_Out/q3.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Bits_Out/q2.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Bits_Out/q1.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Bits_Out/q0.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Bits_Out/q4.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Bits_Out/q5.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Bits_Out/q6.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Bits_Out/q7.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'ABus<3>.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'ABus<2>.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'ABus<1>.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'ABus<0>.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'ABus<7>.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'ABus<6>.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'ABus<5>.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'ABus<4>.TRST' has been minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:829 - Signal 'Calc_S/XLXI_11/XLXI_5/IR4<4>\$WA0.TRST' has been
+   minimized to 'GND'.
+WARNING:Cpld:829 - Signal 'Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA0.TRST' has been
+   minimized to 'GND'.
+WARNING:Cpld:829 - Signal 'Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA0.TRST' has been
+   minimized to 'GND'.
+WARNING:Cpld:829 - Signal 'Calc_S/XLXI_11/XLXI_5/IR4<1>\$WA0.TRST' has been
+   minimized to 'GND'.
+WARNING:Cpld:828 - Signal 'Calc_S/XLXI_11/XLXI_5/IR4<4>\$WA1.TRST' has been
+   minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA1.TRST' has been
+   minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA1.TRST' has been
+   minimized to 'VCC'.
+     The signal is removed.
+WARNING:Cpld:828 - Signal 'Calc_S/XLXI_11/XLXI_5/IR4<1>\$WA1.TRST' has been
+   minimized to 'VCC'.
+     The signal is removed.
+ERROR:Cpld:892 - Cannot place signal C_Bus<3>. Consider reducing the collapsing
+   input limit or the product term limit to prevent the fitter from creating
+   high input and/or high product term functions.
+*************** Summary of Required Resources ******************
+
+** LOGIC **
+Signal              Total   Signals Loc     Pwr  Slew Pin  Pin       Pin       Reg Init
+Name                Pt      Used            Mode Rate #    Type      Use       State
+$OpTx$$OpTx$BIN_STEP$558_INV$1525                    13      13              STD            (b)       (b)       
+$OpTx$$OpTx$BIN_STEP$563_INV$1526                    13      13              STD            (b)       (b)       
+$OpTx$$OpTx$BIN_STEP$601_INV$1527                    13      13              STD            (b)       (b)       
+$OpTx$$OpTx$FX_DC$70_INV$1528                    1       2               STD            (b)       (b)       
+$OpTx$$OpTx$FX_DC$71_INV$1529                    1       2               STD            (b)       (b)       
+$OpTx$$OpTx$FX_DC$72_INV$1530                    1       2               STD            (b)       (b)       
+$OpTx$BIN_AND$143   2       4               STD            (b)       (b)       
+$OpTx$BIN_STEP$206  11      8       FB5_17  STD       44   I/O       (b)       
+$OpTx$BIN_STEP$297  25      10              STD            (b)       (b)       
+$OpTx$BIN_STEP$560  2       7               STD            (b)       (b)       
+$OpTx$BIN_STEP$565  2       7       FB6_10  STD            (b)       (b)       
+$OpTx$BIN_STEP$603  2       7       FB6_12  STD       53   I/O       (b)       
+$OpTx$FX_DC$83      2       6               STD            (b)       (b)       
+C_Bus<0>            0       0               STD            (b)       (b)       RESET
+C_Bus<1>            1       1               STD            (b)       (b)       RESET
+C_Bus<2>            1       2               STD            (b)       (b)       RESET
+C_Bus<3>            1       3               STD            (b)       (b)       RESET
+Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27/Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27_D2                    7       6       FB5_15  STD       43   I/O       (b)       
+Calc_S/XLXI_11/XLXI_14/add_0/X3/Calc_S/XLXI_11/XLXI_14/add_0/X3_D                    5       5       FB2_6   STD       75   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/IR4<1>\$WA0                    1       1               STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR4<1>\$WA1                    2       2               STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA0                    0       0               STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA1                    3       3       FB4_8   STD       63   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA0                    0       0               STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA1                    4       4       FB4_9   STD       65   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/IR4<4>\$WA0                    0       0               STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR4<4>\$WA1                    5       5       FB3_12  STD       23   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA0                    2       3       FB6_5   STD       47   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA1                    3       3       FB4_7   STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA0                    2       5       FB2_7   STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1                    5       7       FB6_9   STD       51   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1/Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1_TRST__$INT                    23      16              STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA0                    2       5       FB6_4   STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA1                    17      11      FB6_3   STD       46   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA0                    2       5       FB3_7   STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA1                    13      12      FB6_14  STD       54   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/Modulas<1>\$WA0                    2       3       FB3_10  STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/Modulas<1>\$WA1                    3       3       FB3_11  STD       21   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/Modulas<2>\$WA0                    2       5       FB4_5   STD       61   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/Modulas<2>\$WA1                    5       7       FB4_10  STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA0                    2       5       FB3_6   STD       18   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1                    17      11      FB2_1   STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1/Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1_TRST__$INT                    23      16              STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/Modulas<4>\$WA0                    2       5       FB3_1   STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/Modulas<4>\$WA1                    13      12      FB6_17  STD       56   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3_D                    3       7       FB6_7   STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3_D                    3       7       FB6_6   STD       48   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3_D                    3       7       FB4_17  STD       70   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA0                    2       3       FB1_7   STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA1                    3       3       FB1_10  STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA0                    2       5       FB2_8   STD       76   GTS/I/O   (b)       
+Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA1                    5       7       FB6_8   STD       50   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA0                    2       5       FB5_7   STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1                    17      11      FB4_14  STD       68   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1/Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1_TRST__$INT                    23      16              STD            (b)       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA0                    2       5       FB5_6   STD       35   I/O       (b)       
+Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA1                    13      12      FB6_11  STD       52   I/O       (b)       
+Calc_S/XLXI_11/Zn<0>\$WA0                    3       6       FB5_9   STD       37   I/O       (b)       
+Calc_S/XLXI_11/Zn<0>\$WA1                    3       6       FB5_8   STD       36   I/O       (b)       
+Calc_S/XLXI_11/Zn<0>\$WA2                    1       4       FB3_15  STD       25   I/O       (b)       
+Calc_S/XLXI_11/Zn<0>\$WA3                    10      13      FB2_5   STD       74   GSR/I/O   (b)       
+Calc_S/XLXI_11/Zn<1>\$WA0                    5       8       FB5_11  STD       39   I/O       (b)       
+Calc_S/XLXI_11/Zn<1>\$WA1                    4       8       FB5_10  STD            (b)       (b)       
+Calc_S/XLXI_11/Zn<1>\$WA2                    24      22      FB2_15  STD       82   I/O       (b)       
+Calc_S/XLXI_11/Zn<1>\$WA3                    23      14      FB1_13  STD            (b)       (b)       
+Calc_S/XLXI_11/Zn<2>\$WA0                    10      11      FB4_12  STD       67   I/O       (b)       
+Calc_S/XLXI_11/Zn<2>\$WA1                    17      10      FB5_3   STD       33   I/O       (b)       
+Calc_S/XLXI_11/Zn<2>\$WA2                    24      20      FB3_3   STD       15   I/O       (b)       
+Calc_S/XLXI_11/Zn<2>\$WA3                    25      21      FB1_18  STD            (b)       (b)       
+Calc_S/XLXI_11/Zn<3>\$WA0                    10      12      FB4_6   STD       62   I/O       (b)       
+Calc_S/XLXI_11/Zn<3>\$WA1                    7       10      FB5_14  STD       41   I/O       (b)       
+Calc_S/XLXI_11/Zn<3>\$WA2                    24      22      FB4_2   STD       57   I/O       (b)       
+Calc_S/XLXI_11/Zn<3>\$WA3                    13      13      FB3_17  STD       31   I/O       (b)       
+Calc_S/XLXI_11/Zn<4>\$WA0                    16      12      FB3_14  STD       24   I/O       (b)       
+Calc_S/XLXI_11/Zn<4>\$WA1                    16      12      FB3_9   STD       20   I/O       (b)       
+Calc_S/XLXI_11/Zn<4>\$WA2                    2       8       FB4_16  STD            (b)       (b)       
+Calc_S/XLXI_11/Zn<4>\$WA3                    20      13      FB2_10  STD            (b)       (b)       
+Calc_S/XLXI_11/Zn<5>\$WA0                    7       10      FB5_12  STD       40   I/O       (b)       
+Calc_S/XLXI_11/Zn<5>\$WA1                    1       4       FB2_17  STD       84   I/O       (b)       
+Calc_S/XLXI_11/Zn<5>\$WA2                    2       7       FB3_18  STD            (b)       (b)       
+Calc_S/XLXI_11/Zn<6>\$WA0                    3       9       FB4_4   STD            (b)       (b)       
+Calc_S/XLXI_11/Zn<6>\$WA1                    1       4       FB2_18  STD            (b)       (b)       
+Calc_S/XLXI_11/Zn<6>\$WA2                    2       7       FB5_5   STD       34   I/O       (b)       
+Calc_S/XLXI_11/Zn<7>\$WA0                    2       6       FB5_2   STD       32   I/O       (b)       
+Calc_S/XLXI_11/Zn<7>\$WA1                    1       4       FB2_3   STD       72   I/O       (b)       
+Calc_S/XLXI_11/Zn<7>\$WA2                    2       8       FB2_12  STD       80   I/O       (b)       
+Calc_S/Zn<0>        2       7       FB1_4   STD            (b)       (b)       
+Calc_S/Zn<1>        2       7       FB4_15  STD       69   I/O       (b)       
+Calc_S/Zn<2>        2       7       FB6_1   STD            (b)       (b)       
+Calc_S/Zn<3>        2       7       FB5_1   STD            (b)       (b)       
+Calc_S/Zn<4>        2       7       FB5_18  STD            (b)       (b)       
+Calc_S/Zn<5>        2       7       FB5_13  STD            (b)       (b)       
+Calc_S/Zn<6>        2       8       FB6_18  STD            (b)       (b)       
+Calc_S/Zn<7>        2       8       FB6_15  STD       55   I/O       (b)       
+Z_Out<0>            1       1       FB1_2   STD  FAST 1    I/O       O         
+Z_Out<1>            1       1       FB1_3   STD  FAST 2    I/O       O         
+Z_Out<2>            1       1       FB1_5   STD  FAST 3    I/O       O         
+Z_Out<3>            1       1       FB1_6   STD  FAST 4    I/O       O         
+Z_Out<4>            1       1       FB1_8   STD  FAST 5    I/O       O         
+Z_Out<5>            1       1       FB1_9   STD  FAST 6    I/O       O         
+Z_Out<6>            1       1       FB1_11  STD  FAST 7    I/O       O         
+Z_Out<7>            1       1       FB1_15  STD  FAST 11   I/O       O         
+
+** INPUTS **
+Signal                              Loc               Pin  Pin       Pin
+Name                                                  #    Type      Use
+A_In<0>                                                              I
+A_In<1>                                                              I
+A_In<2>                                                              I
+A_In<3>                                                              I
+A_In<4>                                                              I
+A_In<5>                                                              I
+A_In<6>                                                              I
+A_In<7>                                                              I
+M_In                                FB1_14            10   GCK/I/O   GCK
+
+End of Resources
+
+*********************Function Block Resource Summary***********************
+Function    # of        FB Inputs   Signals     Total       O/IO      IO    
+Block       Macrocells  Used        Used        Pt Used     Req       Avail 
+FB1          13          27          36           63         8/0       12   
+FB2          11          24          42           85         0/0       12   
+FB3          12          27          41           88         0/0       12   
+FB4          13          25          44           88         0/0       11   
+FB5          16          21          39           78         0/0       11   
+FB6          15          30          65           86         0/0       11   
+            ----                                -----       -----     ----- 
+             80                                  488         8/0       69   
+*********************************** FB1 ***********************************
+Number of function block inputs used/remaining:               27/9
+Number of signals used by logic mapping into function block:  36
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+(unused)              0       0   /\5   0     FB1_1               (b)     (b)
+Z_Out<0>              1       1<- /\5   0     FB1_2   STD   1     I/O     O
+Z_Out<1>              1       0   /\1   3     FB1_3   STD   2     I/O     O
+Calc_S/Zn<0>          2       0     0   3     FB1_4   STD         (b)     (b)
+Z_Out<2>              1       0     0   4     FB1_5   STD   3     I/O     O
+Z_Out<3>              1       0     0   4     FB1_6   STD   4     I/O     O
+Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA0
+                      2       0     0   3     FB1_7   STD         (b)     (b)
+Z_Out<4>              1       0     0   4     FB1_8   STD   5     I/O     O
+Z_Out<5>              1       0     0   4     FB1_9   STD   6     I/O     O
+Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA1
+                      3       0     0   2     FB1_10  STD         (b)     (b)
+Z_Out<6>              1       0   \/4   0     FB1_11  STD   7     I/O     O
+(unused)              0       0   \/5   0     FB1_12        9     GCK/I/O (b)
+Calc_S/XLXI_11/Zn<1>\$WA3
+                     23      18<-   0   0     FB1_13  STD         (b)     (b)
+(unused)              0       0   /\5   0     FB1_14        10    GCK/I/O GCK
+Z_Out<7>              1       0   /\4   0     FB1_15  STD   11    I/O     O
+(unused)              0       0   \/5   0     FB1_16        12    GCK/I/O (b)
+(unused)              0       0   \/5   0     FB1_17        13    I/O     (b)
+Calc_S/XLXI_11/Zn<2>\$WA3
+                     25      20<-   0   0     FB1_18  STD         (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$BIN_STEP$601_INV$1527 
+                       13: A_In<4>           25: Calc_S/Zn<0> 
+  2: $OpTx$$OpTx$FX_DC$70_INV$1528 
+                       14: A_In<5>           26: Calc_S/Zn<1> 
+  3: $OpTx$$OpTx$FX_DC$71_INV$1529 
+                       15: A_In<6>           27: Calc_S/Zn<2> 
+  4: $OpTx$$OpTx$FX_DC$72_INV$1530 
+                       16: A_In<7>           28: Calc_S/Zn<3> 
+  5: $OpTx$BIN_AND$143 17: C_Bus<0>          29: Calc_S/Zn<4> 
+  6: $OpTx$BIN_STEP$206 
+                       18: C_Bus<1>          30: Calc_S/Zn<5> 
+  7: $OpTx$BIN_STEP$603 
+                       19: C_Bus<2>          31: Calc_S/Zn<6> 
+  8: $OpTx$FX_DC$83    20: C_Bus<3>          32: Calc_S/Zn<7> 
+  9: A_In<0>           21: Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1/Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1_TRST__$INT 
+                                             33: FC_0_.OUT 
+ 10: A_In<1>           22: Calc_S/XLXI_11/Zn<7>\$WA0 
+                                             34: FC_1_.OUT 
+ 11: A_In<2>           23: Calc_S/XLXI_11/Zn<7>\$WA1 
+                                             35: FC_2_.OUT 
+ 12: A_In<3>           24: Calc_S/XLXI_11/Zn<7>\$WA2 
+                                             36: FC_3_.OUT 
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+Z_Out<0>             ........................X............... 1       1
+Z_Out<1>             .........................X.............. 1       1
+Calc_S/Zn<0>         ................@@...@@@........XX...... 7       2
+Z_Out<2>             ..........................X............. 1       1
+Z_Out<3>             ...........................X............ 1       1
+Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA0 
+                     X.....X..X.............................. 3       3
+Z_Out<4>             ............................X........... 1       1
+Z_Out<5>             .............................X.......... 1       1
+Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA1 
+                     .........X..X.......X................... 3       3
+Z_Out<6>             ..............................X......... 1       1
+Calc_S/XLXI_11/Zn<1>\$WA3 
+                     ........XXXXXXXX@@@@.............X.X.... 14      10
+Z_Out<7>             ...............................X........ 1       1
+Calc_S/XLXI_11/Zn<2>\$WA3 
+                     .XXXX@.@XXXXXXXX@@@@.............XXX.... 21      15
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB2 ***********************************
+Number of function block inputs used/remaining:               24/12
+Number of signals used by logic mapping into function block:  42
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1
+                     17      12<-   0   0     FB2_1   STD         (b)     (b)
+(unused)              0       0   /\5   0     FB2_2         71    I/O     (b)
+Calc_S/XLXI_11/Zn<7>\$WA1
+                      1       0   /\3   1     FB2_3   STD   72    I/O     (b)
+(unused)              0       0   \/5   0     FB2_4               (b)     (b)
+Calc_S/XLXI_11/Zn<0>\$WA3
+                     10       5<-   0   0     FB2_5   STD   74    GSR/I/O (b)
+Calc_S/XLXI_11/XLXI_14/add_0/X3/Calc_S/XLXI_11/XLXI_14/add_0/X3_D
+                      5       0     0   0     FB2_6   STD   75    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA0
+                      2       0     0   3     FB2_7   STD         (b)     (b)
+Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA0
+                      2       0   \/2   1     FB2_8   STD   76    GTS/I/O (b)
+(unused)              0       0   \/5   0     FB2_9         77    GTS/I/O (b)
+Calc_S/XLXI_11/Zn<4>\$WA3
+                     20      15<-   0   0     FB2_10  STD         (b)     (b)
+(unused)              0       0   /\5   0     FB2_11        79    I/O     (b)
+Calc_S/XLXI_11/Zn<7>\$WA2
+                      2       0   /\3   0     FB2_12  STD   80    I/O     (b)
+(unused)              0       0   \/5   0     FB2_13              (b)     (b)
+(unused)              0       0   \/5   0     FB2_14        81    I/O     (b)
+Calc_S/XLXI_11/Zn<1>\$WA2
+                     24      19<-   0   0     FB2_15  STD   82    I/O     (b)
+(unused)              0       0   /\5   0     FB2_16        83    I/O     (b)
+Calc_S/XLXI_11/Zn<5>\$WA1
+                      1       0   /\4   0     FB2_17  STD   84    I/O     (b)
+Calc_S/XLXI_11/Zn<6>\$WA1
+                      1       0   \/4   0     FB2_18  STD         (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$BIN_STEP$558_INV$1525 
+                       15: C_Bus<2>          29: Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA1 
+  2: $OpTx$$OpTx$BIN_STEP$601_INV$1527 
+                       16: C_Bus<3>          30: Calc_S/XLXI_11/XLXI_5/Modulas<1>\$WA0 
+  3: $OpTx$BIN_STEP$560 
+                       17: Calc_S/XLXI_11/XLXI_5/IR4<1>\$WA0 
+                                             31: Calc_S/XLXI_11/XLXI_5/Modulas<1>\$WA1 
+  4: $OpTx$BIN_STEP$603 
+                       18: Calc_S/XLXI_11/XLXI_5/IR4<1>\$WA1 
+                                             32: Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1/Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1_TRST__$INT 
+  5: A_In<0>           19: Calc_S/XLXI_11/XLXI_5/IR4<2> 
+                                             33: Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA0 
+  6: A_In<1>           20: Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA0 
+                                             34: Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA1 
+  7: A_In<2>           21: Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA1 
+                                             35: Calc_S/XLXI_11/XLXI_5/XLXN_14<2> 
+  8: A_In<3>           22: Calc_S/XLXI_11/XLXI_5/IR4<3> 
+                                             36: Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA0 
+  9: A_In<4>           23: Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA0 
+                                             37: Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA1 
+ 10: A_In<5>           24: Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA1 
+                                             38: FC_1_.OUT 
+ 11: A_In<6>           25: Calc_S/XLXI_11/XLXI_5/IR4<4> 
+                                             39: FC_4_.OUT 
+ 12: A_In<7>           26: Calc_S/XLXI_11/XLXI_5/IR4<4>\$WA0 
+                                             40: FC_5_.OUT 
+ 13: C_Bus<0>          27: Calc_S/XLXI_11/XLXI_5/IR4<4>\$WA1 
+                                             41: FC_6_.OUT 
+ 14: C_Bus<1>          28: Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA0 
+                                             42: FC_7_.OUT 
+
+Signal                        1         2         3         4         5 Signals FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Used    Inputs
+Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1 
+                     ....X...XXX....................X@@X@@....X........ 11      7
+Calc_S/XLXI_11/Zn<7>\$WA1 
+                     ............@@.X.....................X............ 4       2
+Calc_S/XLXI_11/Zn<0>\$WA3 
+                     ....XXXXXXXX@@XX.....................X............ 13      11
+Calc_S/XLXI_11/XLXI_14/add_0/X3/Calc_S/XLXI_11/XLXI_14/add_0/X3_D 
+                     .......XXXXX...................................... 5       5
+Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA0 
+                     X.X.............@@.....................X.......... 5       3
+Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA0 
+                     .X.X.......................@@...........X......... 5       3
+Calc_S/XLXI_11/Zn<4>\$WA3 
+                     ....XXXXXXXX@@XX.....................X............ 13      11
+Calc_S/XLXI_11/Zn<7>\$WA2 
+                     ............@@XX.............@@......XX........... 8       4
+Calc_S/XLXI_11/Zn<1>\$WA2 
+                     ......X.XXXX@@XXXXX@@X@@X@@..........X.X.......... 22      14
+Calc_S/XLXI_11/Zn<5>\$WA1 
+                     ............@@.X.....................X............ 4       2
+Calc_S/XLXI_11/Zn<6>\$WA1 
+                     ............@@.X.....................X............ 4       2
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB3 ***********************************
+Number of function block inputs used/remaining:               27/9
+Number of signals used by logic mapping into function block:  41
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+Calc_S/XLXI_11/XLXI_5/Modulas<4>\$WA0
+                      2       0   \/3   0     FB3_1   STD         (b)     (b)
+(unused)              0       0   \/5   0     FB3_2         14    I/O     (b)
+Calc_S/XLXI_11/Zn<2>\$WA2
+                     24      19<-   0   0     FB3_3   STD   15    I/O     (b)
+(unused)              0       0   /\5   0     FB3_4               (b)     (b)
+(unused)              0       0   /\5   0     FB3_5         17    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA0
+                      2       0   /\1   2     FB3_6   STD   18    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA0
+                      2       0   \/3   0     FB3_7   STD         (b)     (b)
+(unused)              0       0   \/5   0     FB3_8         19    I/O     (b)
+Calc_S/XLXI_11/Zn<4>\$WA1
+                     16      11<-   0   0     FB3_9   STD   20    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/Modulas<1>\$WA0
+                      2       0   /\3   0     FB3_10  STD         (b)     (b)
+Calc_S/XLXI_11/XLXI_5/Modulas<1>\$WA1
+                      3       0   \/2   0     FB3_11  STD   21    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/IR4<4>\$WA1
+                      5       2<- \/2   0     FB3_12  STD   23    I/O     (b)
+(unused)              0       0   \/5   0     FB3_13              (b)     (b)
+Calc_S/XLXI_11/Zn<4>\$WA0
+                     16      11<-   0   0     FB3_14  STD   24    I/O     (b)
+Calc_S/XLXI_11/Zn<0>\$WA2
+                      1       0   /\4   0     FB3_15  STD   25    I/O     (b)
+(unused)              0       0   \/5   0     FB3_16        26    I/O     (b)
+Calc_S/XLXI_11/Zn<3>\$WA3
+                     13       8<-   0   0     FB3_17  STD   31    I/O     (b)
+Calc_S/XLXI_11/Zn<5>\$WA2
+                      2       0   /\3   0     FB3_18  STD         (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$BIN_STEP$558_INV$1525 
+                       15: C_Bus<1>          29: Calc_S/XLXI_11/XLXI_5/IR7<4> 
+  2: $OpTx$$OpTx$BIN_STEP$563_INV$1526 
+                       16: C_Bus<2>          30: Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA0 
+  3: $OpTx$BIN_STEP$297 
+                       17: C_Bus<3>          31: Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA1 
+  4: $OpTx$BIN_STEP$560 
+                       18: Calc_S/XLXI_11/XLXI_5/IR4<3> 
+                                             32: Calc_S/XLXI_11/XLXI_5/Modulas<3> 
+  5: $OpTx$BIN_STEP$565 
+                       19: Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA0 
+                                             33: Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA0 
+  6: A_In<0>           20: Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA1 
+                                             34: Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1 
+  7: A_In<1>           21: Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA0 
+                                             35: Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1/Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1_TRST__$INT 
+  8: A_In<2>           22: Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA1 
+                                             36: Calc_S/XLXI_11/XLXI_5/XLXN_14<2> 
+  9: A_In<3>           23: Calc_S/XLXI_11/XLXI_5/IR7<2> 
+                                             37: Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA0 
+ 10: A_In<4>           24: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA0 
+                                             38: Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA1 
+ 11: A_In<5>           25: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1 
+                                             39: Calc_S/XLXI_11/XLXI_5/XLXN_14<3> 
+ 12: A_In<6>           26: Calc_S/XLXI_11/XLXI_5/IR7<3> 
+                                             40: Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA0 
+ 13: A_In<7>           27: Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA0 
+                                             41: Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1 
+ 14: C_Bus<0>          28: Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA1 
+                                            
+
+Signal                        1         2         3         4         5 Signals FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Used    Inputs
+Calc_S/XLXI_11/XLXI_5/Modulas<4>\$WA0 
+                     .X..X.................................X@@......... 5       3
+Calc_S/XLXI_11/Zn<2>\$WA2 
+                     ......X..XXXXXXXX...XXX@@X@@X@@................... 20      14
+Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA0 
+                     .X..X..............................X@@............ 5       3
+Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA0 
+                     X..X.............X@@.............................. 5       3
+Calc_S/XLXI_11/Zn<4>\$WA1 
+                     .....XXXXXXXXXXXX................................. 12      12
+Calc_S/XLXI_11/XLXI_5/Modulas<1>\$WA0 
+                     .X..XX............................................ 3       3
+Calc_S/XLXI_11/XLXI_5/Modulas<1>\$WA1 
+                     .....X...X........................X............... 3       3
+Calc_S/XLXI_11/XLXI_5/IR4<4>\$WA1 
+                     ........XXXXX..................................... 5       5
+Calc_S/XLXI_11/Zn<4>\$WA0 
+                     .....XXXXXXXXXXXX................................. 12      12
+Calc_S/XLXI_11/Zn<0>\$WA2 
+                     .............XXXX................................. 4       4
+Calc_S/XLXI_11/Zn<3>\$WA3 
+                     ..X..XXXXXXXXXXXX................................. 13      13
+Calc_S/XLXI_11/Zn<5>\$WA2 
+                     .............XXXX..............X@@................ 7       5
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB4 ***********************************
+Number of function block inputs used/remaining:               25/11
+Number of signals used by logic mapping into function block:  44
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+(unused)              0       0   \/5   0     FB4_1               (b)     (b)
+Calc_S/XLXI_11/Zn<3>\$WA2
+                     24      19<-   0   0     FB4_2   STD   57    I/O     (b)
+(unused)              0       0   /\5   0     FB4_3         58    I/O     (b)
+Calc_S/XLXI_11/Zn<6>\$WA0
+                      3       0   /\2   0     FB4_4   STD         (b)     (b)
+Calc_S/XLXI_11/XLXI_5/Modulas<2>\$WA0
+                      2       0   \/3   0     FB4_5   STD   61    I/O     (b)
+Calc_S/XLXI_11/Zn<3>\$WA0
+                     10       5<-   0   0     FB4_6   STD   62    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA1
+                      3       0   /\2   0     FB4_7   STD         (b)     (b)
+Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA1
+                      3       0   \/2   0     FB4_8   STD   63    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA1
+                      4       2<- \/3   0     FB4_9   STD   65    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/Modulas<2>\$WA1
+                      5       3<- \/3   0     FB4_10  STD         (b)     (b)
+(unused)              0       0   \/5   0     FB4_11        66    I/O     (b)
+Calc_S/XLXI_11/Zn<2>\$WA0
+                     10       8<- \/3   0     FB4_12  STD   67    I/O     (b)
+(unused)              0       0   \/5   0     FB4_13              (b)     (b)
+Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1
+                     17      12<-   0   0     FB4_14  STD   68    I/O     (b)
+Calc_S/Zn<1>          2       1<- /\4   0     FB4_15  STD   69    I/O     (b)
+Calc_S/XLXI_11/Zn<4>\$WA2
+                      2       0   /\1   2     FB4_16  STD         (b)     (b)
+Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3_D
+                      3       0   \/2   0     FB4_17  STD   70    I/O     (b)
+(unused)              0       0   \/5   0     FB4_18              (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$BIN_STEP$563_INV$1526 
+                       16: Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA0 
+                                             31: Calc_S/XLXI_11/XLXI_5/XLXN_14<3> 
+  2: $OpTx$BIN_STEP$565 
+                       17: Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA1 
+                                             32: Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA0 
+  3: A_In<0>           18: Calc_S/XLXI_11/XLXI_5/IR7<2> 
+                                             33: Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1 
+  4: A_In<1>           19: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA0 
+                                             34: Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1/Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1_TRST__$INT 
+  5: A_In<2>           20: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1 
+                                             35: Calc_S/XLXI_11/XLXI_5/XLXN_14<4> 
+  6: A_In<3>           21: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1/Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1_TRST__$INT 
+                                             36: Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA0 
+  7: A_In<4>           22: Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1/Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1_TRST__$INT 
+                                             37: Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA1 
+  8: A_In<5>           23: Calc_S/XLXI_11/XLXI_5/Modulas<4> 
+                                             38: Calc_S/XLXI_11/Zn<6>\$WA0 
+  9: A_In<6>           24: Calc_S/XLXI_11/XLXI_5/Modulas<4>\$WA0 
+                                             39: Calc_S/XLXI_11/Zn<6>\$WA1 
+ 10: A_In<7>           25: Calc_S/XLXI_11/XLXI_5/Modulas<4>\$WA1 
+                                             40: Calc_S/XLXI_11/Zn<6>\$WA2 
+ 11: C_Bus<0>          26: Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA0 
+                                             41: FC_1_.OUT 
+ 12: C_Bus<1>          27: Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA1 
+                                             42: FC_6_.OUT 
+ 13: C_Bus<2>          28: Calc_S/XLXI_11/XLXI_5/XLXN_14<2> 
+                                             43: FC_7_.OUT 
+ 14: C_Bus<3>          29: Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA0 
+                                             44: FC_8_.OUT 
+ 15: Calc_S/XLXI_11/XLXI_14/add_0/X3/Calc_S/XLXI_11/XLXI_14/add_0/X3_D 
+                       30: Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA1 
+                                            
+
+Signal                        1         2         3         4         5 Signals FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Used    Inputs
+Calc_S/XLXI_11/Zn<3>\$WA2 
+                     ..X...XXXX@@XX...........XXX@@X@@.X@@...X.X....... 22      14
+Calc_S/XLXI_11/Zn<6>\$WA0 
+                     ..XX..XX..@@XX..........................X......... 9       7
+Calc_S/XLXI_11/XLXI_5/Modulas<2>\$WA0 
+                     XX.......................@@...............X....... 5       3
+Calc_S/XLXI_11/Zn<3>\$WA0 
+                     ..XXX.XXX.@@XXX.........................X......... 12      10
+Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA1 
+                     ....X.X.............X............................. 3       3
+Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA1 
+                     .....XXX.......................................... 3       3
+Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA1 
+                     .....XXXX......................................... 4       4
+Calc_S/XLXI_11/XLXI_5/Modulas<2>\$WA1 
+                     ..X...XX.............X...@@...............X....... 7       5
+Calc_S/XLXI_11/Zn<2>\$WA0 
+                     ..XXX.XXX.@@XX..........................X......... 11      9
+Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1 
+                     ...X..XXX......@@X@@.............X.......X........ 11      7
+Calc_S/Zn<1>         ..........@@.........................XXXX..X...... 7       5
+Calc_S/XLXI_11/Zn<4>\$WA2 
+                     ..........@@XX........X@@...............X......... 8       4
+Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3_D 
+                     ......XXXX....................X@@................. 7       5
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB5 ***********************************
+Number of function block inputs used/remaining:               21/15
+Number of signals used by logic mapping into function block:  39
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+Calc_S/Zn<3>          2       0   \/1   2     FB5_1   STD         (b)     (b)
+Calc_S/XLXI_11/Zn<7>\$WA0
+                      2       1<- \/4   0     FB5_2   STD   32    I/O     (b)
+Calc_S/XLXI_11/Zn<2>\$WA1
+                     17      12<-   0   0     FB5_3   STD   33    I/O     (b)
+(unused)              0       0   /\5   0     FB5_4               (b)     (b)
+Calc_S/XLXI_11/Zn<6>\$WA2
+                      2       0   /\3   0     FB5_5   STD   34    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA0
+                      2       0     0   3     FB5_6   STD   35    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA0
+                      2       0     0   3     FB5_7   STD         (b)     (b)
+Calc_S/XLXI_11/Zn<0>\$WA1
+                      3       0     0   2     FB5_8   STD   36    I/O     (b)
+Calc_S/XLXI_11/Zn<0>\$WA0
+                      3       0   \/2   0     FB5_9   STD   37    I/O     (b)
+Calc_S/XLXI_11/Zn<1>\$WA1
+                      4       2<- \/3   0     FB5_10  STD         (b)     (b)
+Calc_S/XLXI_11/Zn<1>\$WA0
+                      5       3<- \/3   0     FB5_11  STD   39    I/O     (b)
+Calc_S/XLXI_11/Zn<5>\$WA0
+                      7       3<- \/1   0     FB5_12  STD   40    I/O     (b)
+Calc_S/Zn<5>          2       1<- \/4   0     FB5_13  STD         (b)     (b)
+Calc_S/XLXI_11/Zn<3>\$WA1
+                      7       4<- \/2   0     FB5_14  STD   41    I/O     (b)
+Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27/Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27_D2
+                      7       2<-   0   0     FB5_15  STD   43    I/O     (b)
+(unused)              0       0   \/5   0     FB5_16              (b)     (b)
+$OpTx$BIN_STEP$206   11       6<-   0   0     FB5_17  STD   44    I/O     (b)
+Calc_S/Zn<4>          2       0   /\1   2     FB5_18  STD         (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$BIN_STEP$601_INV$1527 
+                       14: C_Bus<3>          27: Calc_S/XLXI_11/Zn<2>\$WA1 
+  2: $OpTx$BIN_STEP$603 
+                       15: Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27/Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27_D2 
+                                             28: Calc_S/XLXI_11/Zn<2>\$WA2 
+  3: A_In<0>           16: Calc_S/XLXI_11/XLXI_5/IR7<2> 
+                                             29: Calc_S/XLXI_11/Zn<2>\$WA3 
+  4: A_In<1>           17: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA0 
+                                             30: Calc_S/XLXI_11/Zn<3> 
+  5: A_In<2>           18: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1 
+                                             31: Calc_S/XLXI_11/Zn<3>\$WA0 
+  6: A_In<3>           19: Calc_S/XLXI_11/XLXI_5/IR7<3> 
+                                             32: Calc_S/XLXI_11/Zn<3>\$WA1 
+  7: A_In<4>           20: Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA0 
+                                             33: Calc_S/XLXI_11/Zn<3>\$WA2 
+  8: A_In<5>           21: Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA1 
+                                             34: Calc_S/XLXI_11/Zn<3>\$WA3 
+  9: A_In<6>           22: Calc_S/XLXI_11/XLXI_5/Modulas<2> 
+                                             35: Calc_S/XLXI_11/Zn<4> 
+ 10: A_In<7>           23: Calc_S/XLXI_11/XLXI_5/Modulas<2>\$WA0 
+                                             36: Calc_S/XLXI_11/Zn<4>\$WA0 
+ 11: C_Bus<0>          24: Calc_S/XLXI_11/XLXI_5/Modulas<2>\$WA1 
+                                             37: Calc_S/XLXI_11/Zn<4>\$WA1 
+ 12: C_Bus<1>          25: Calc_S/XLXI_11/Zn<2> 
+                                             38: Calc_S/XLXI_11/Zn<4>\$WA2 
+ 13: C_Bus<2>          26: Calc_S/XLXI_11/Zn<2>\$WA0 
+                                             39: Calc_S/XLXI_11/Zn<4>\$WA3 
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+Calc_S/Zn<3>         ..........XX......................X@@@@. 7       3
+Calc_S/XLXI_11/Zn<7>\$WA0 
+                     ..X...X...XXXX.......................... 6       6
+Calc_S/XLXI_11/Zn<2>\$WA1 
+                     ..XXX.XXX.XXXX.......................... 10      10
+Calc_S/XLXI_11/Zn<6>\$WA2 
+                     ..........XXXX.......X@@................ 7       5
+Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA0 
+                     XX................X@@................... 5       3
+Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA0 
+                     XX.............X@@...................... 5       3
+Calc_S/XLXI_11/Zn<0>\$WA1 
+                     ..X...X...XXXX.......................... 6       6
+Calc_S/XLXI_11/Zn<0>\$WA0 
+                     ..X...X...XXXX.......................... 6       6
+Calc_S/XLXI_11/Zn<1>\$WA1 
+                     ..XX..XX..XXXX.......................... 8       8
+Calc_S/XLXI_11/Zn<1>\$WA0 
+                     ..XX..XX..XXXX.......................... 8       8
+Calc_S/XLXI_11/Zn<5>\$WA0 
+                     ..XXX.XXX.XXXX.......................... 10      10
+Calc_S/Zn<5>         ..........XX............XXXXX........... 7       7
+Calc_S/XLXI_11/Zn<3>\$WA1 
+                     .....XXXXXXXXXX......................... 10      10
+Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27/Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27_D2 
+                     ..XXX.XXX............................... 6       6
+$OpTx$BIN_STEP$206   ..XXXXXXXX.............................. 8       8
+Calc_S/Zn<4>         ..........XX.................X@@@@...... 7       3
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+*********************************** FB6 ***********************************
+Number of function block inputs used/remaining:               30/6
+Number of signals used by logic mapping into function block:  65
+Signal              Total   Imp   Exp Unused  Loc     Pwr   Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt              Mode   #    Type    Use
+Calc_S/Zn<2>          2       0   \/3   0     FB6_1   STD         (b)     (b)
+(unused)              0       0   \/5   0     FB6_2         45    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA1
+                     17      12<-   0   0     FB6_3   STD   46    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA0
+                      2       1<- /\4   0     FB6_4   STD         (b)     (b)
+Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA0
+                      2       0   /\1   2     FB6_5   STD   47    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3_D
+                      3       0     0   2     FB6_6   STD   48    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3_D
+                      3       0   \/2   0     FB6_7   STD         (b)     (b)
+Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA1
+                      5       2<- \/2   0     FB6_8   STD   50    I/O     (b)
+Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1
+                      5       2<- \/2   0     FB6_9   STD   51    I/O     (b)
+$OpTx$BIN_STEP$565    2       2<- \/5   0     FB6_10  STD         (b)     (b)
+Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA1
+                     13       8<-   0   0     FB6_11  STD   52    I/O     (b)
+$OpTx$BIN_STEP$603    2       0   /\3   0     FB6_12  STD   53    I/O     (b)
+(unused)              0       0   \/5   0     FB6_13              (b)     (b)
+Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA1
+                     13       8<-   0   0     FB6_14  STD   54    I/O     (b)
+Calc_S/Zn<7>          2       0   /\3   0     FB6_15  STD   55    I/O     (b)
+(unused)              0       0   \/5   0     FB6_16              (b)     (b)
+Calc_S/XLXI_11/XLXI_5/Modulas<4>\$WA1
+                     13       8<-   0   0     FB6_17  STD   56    I/O     (b)
+Calc_S/Zn<6>          2       0   /\3   0     FB6_18  STD         (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$BIN_STEP$558_INV$1525 
+                       23: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA0 
+                                             45: Calc_S/XLXI_11/XLXI_5/XLXN_14<4> 
+  2: $OpTx$BIN_STEP$560 
+                       24: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1 
+                                             46: Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA0 
+  3: A_In<0>           25: Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1/Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1_TRST__$INT 
+                                             47: Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA1 
+  4: A_In<1>           26: Calc_S/XLXI_11/XLXI_5/IR7<3> 
+                                             48: Calc_S/XLXI_11/Zn<0> 
+  5: A_In<2>           27: Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA0 
+                                             49: Calc_S/XLXI_11/Zn<0>\$WA0 
+  6: A_In<4>           28: Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA1 
+                                             50: Calc_S/XLXI_11/Zn<0>\$WA1 
+  7: A_In<5>           29: Calc_S/XLXI_11/XLXI_5/IR7<4> 
+                                             51: Calc_S/XLXI_11/Zn<0>\$WA2 
+  8: A_In<6>           30: Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA0 
+                                             52: Calc_S/XLXI_11/Zn<0>\$WA3 
+  9: A_In<7>           31: Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA1 
+                                             53: Calc_S/XLXI_11/Zn<1> 
+ 10: C_Bus<0>          32: Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1/Calc_S/XLXI_11/XLXI_5/Modulas<3>\$WA1_TRST__$INT 
+                                             54: Calc_S/XLXI_11/Zn<1>\$WA0 
+ 11: C_Bus<1>          33: Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3_D 
+                                             55: Calc_S/XLXI_11/Zn<1>\$WA1 
+ 12: Calc_S/XLXI_11/XLXI_5/IR4<1>\$WA0 
+                       34: Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3_D 
+                                             56: Calc_S/XLXI_11/Zn<1>\$WA2 
+ 13: Calc_S/XLXI_11/XLXI_5/IR4<1>\$WA1 
+                       35: Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3_D 
+                                             57: Calc_S/XLXI_11/Zn<1>\$WA3 
+ 14: Calc_S/XLXI_11/XLXI_5/IR4<2> 
+                       36: Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA0 
+                                             58: Calc_S/XLXI_11/Zn<5>\$WA0 
+ 15: Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA0 
+                       37: Calc_S/XLXI_11/XLXI_5/XLXN_14<1>\$WA1 
+                                             59: Calc_S/XLXI_11/Zn<5>\$WA1 
+ 16: Calc_S/XLXI_11/XLXI_5/IR4<2>\$WA1 
+                       38: Calc_S/XLXI_11/XLXI_5/XLXN_14<2> 
+                                             60: Calc_S/XLXI_11/Zn<5>\$WA2 
+ 17: Calc_S/XLXI_11/XLXI_5/IR4<3> 
+                       39: Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA0 
+                                             61: FC_1_.OUT 
+ 18: Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA0 
+                       40: Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA1 
+                                             62: FC_5_.OUT 
+ 19: Calc_S/XLXI_11/XLXI_5/IR4<3>\$WA1 
+                       41: Calc_S/XLXI_11/XLXI_5/XLXN_14<3> 
+                                             63: FC_6_.OUT 
+ 20: Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA0 
+                       42: Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA0 
+                                             64: FC_7_.OUT 
+ 21: Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA1 
+                       43: Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1 
+                                             65: FC_9_.OUT 
+ 22: Calc_S/XLXI_11/XLXI_5/IR7<2> 
+                       44: Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1/Calc_S/XLXI_11/XLXI_5/XLXN_14<3>\$WA1_TRST__$INT 
+                                            
+
+Signal                        1         2         3         4         5         6         7 Signals FB
+Name                0----+----0----+----0----+----0----+----0----+----0----+----0----+----0 Used    Inputs
+Calc_S/Zn<2>         .........@@..............................................@@@X...X..... 7       2
+Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA1 
+                     ....XXXX...@@X@@........X....................................X........ 11      7
+Calc_S/XLXI_11/XLXI_5/IR7<3>\$WA0 
+                     XX...........X@@...................................................... 5       3
+Calc_S/XLXI_11/XLXI_5/IR7<1>\$WA0 
+                     XX..X................................................................. 3       3
+Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3_D 
+                     .....XXXX................X@@.......................................... 7       5
+Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3_D 
+                     .....XXXX.......X@@................................................... 7       5
+Calc_S/XLXI_11/XLXI_5/XLXN_14<2>\$WA1 
+                     ...X.XX............@@......................X..................X....... 7       5
+Calc_S/XLXI_11/XLXI_5/IR7<2>\$WA1 
+                     ....XXX....@@...........X....................................X........ 7       5
+$OpTx$BIN_STEP$565   ........X...............................XXX.XXX....................... 7       7
+Calc_S/XLXI_11/XLXI_5/XLXN_14<4>\$WA1 
+                     ...X.XXX...........XXX@@.........X.........X..................X....... 12      10
+$OpTx$BIN_STEP$603   ........X................X@@X@@....................................... 7       3
+Calc_S/XLXI_11/XLXI_5/IR7<4>\$WA1 
+                     ....XXXX...XXX@@........X.......X............................X........ 12      10
+Calc_S/Zn<7>         .........@@....................................X@@@@........X......... 8       2
+Calc_S/XLXI_11/XLXI_5/Modulas<4>\$WA1 
+                     ..X..XXX.......................X..XXXX@@.......................X...... 12      10
+Calc_S/Zn<6>         .........@@.........................................X@@@@...X......... 8       2
+                    0----+----1----+----2----+----3----+----4----+----5----+----6----+----7
+                              0         0         0         0         0         0         0
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pwr Mode     - Macrocell power mode
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@) - Signal used as input (wire-AND input) to the macrocell logic.
+    The number of Signals Used may exceed the number of FB Inputs Used due
+    to wire-ANDing in the switch matrix.
+;;-----------------------------------------------------------------;;
+; Implemented Equations.
+
+
+$OpTx$$OpTx$BIN_STEP$558_INV$1525 <= ((NOT A_In(4) AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6))
+	OR (NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR4(3))
+	OR (A_In(7) AND NOT Calc_S/XLXI_11/XLXI_5/IR4(3))
+	OR (NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(4) AND Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(4) AND NOT A_In(6))
+	OR (A_In(2) AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (A_In(2) AND NOT A_In(5) AND NOT A_In(6))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(5) AND NOT A_In(6))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND A_In(2) AND Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND A_In(2) AND NOT A_In(6)));
+
+
+$OpTx$$OpTx$BIN_STEP$563_INV$1526 <= ((NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6))
+	OR (NOT A_In(4) AND NOT A_In(5) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2))
+	OR (NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(3))
+	OR (A_In(7) AND NOT Calc_S/XLXI_11/XLXI_5/XLXN_14(3))
+	OR (NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(2))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(4) AND NOT A_In(6))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(4) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(2))
+	OR (A_In(0) AND NOT A_In(5) AND NOT A_In(6))
+	OR (A_In(0) AND NOT A_In(5) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND A_In(0) AND NOT A_In(6))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND A_In(0) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(2))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(5) AND NOT A_In(6))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(2)));
+
+
+$OpTx$$OpTx$BIN_STEP$601_INV$1527 <= ((NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6))
+	OR (NOT A_In(4) AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR7(3))
+	OR (A_In(7) AND NOT Calc_S/XLXI_11/XLXI_5/IR7(3))
+	OR (NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (A_In(1) AND NOT A_In(5) AND NOT A_In(6))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(5) AND NOT A_In(6))
+	OR (A_In(1) AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(4) AND Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(4) AND NOT A_In(6))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND A_In(1) AND Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND A_In(1) AND NOT A_In(6)));
+
+
+$OpTx$$OpTx$FX_DC$70_INV$1528 <= (A_In(0) AND A_In(4));
+
+
+$OpTx$$OpTx$FX_DC$71_INV$1529 <= (A_In(1) AND A_In(5));
+
+
+$OpTx$$OpTx$FX_DC$72_INV$1530 <= (A_In(0) AND A_In(7));
+
+
+$OpTx$BIN_AND$143 <= ((A_In(3) AND A_In(0) AND NOT A_In(4))
+	OR (A_In(3) AND NOT A_In(4) AND A_In(7)));
+
+
+$OpTx$BIN_STEP$206 <= ((EXP24_.EXP)
+	OR (Calc_S/Zn(4).EXP)
+	OR (NOT A_In(2) AND NOT A_In(1) AND NOT A_In(6) AND NOT A_In(7))
+	OR (NOT A_In(2) AND NOT A_In(0) AND NOT A_In(6) AND NOT A_In(7))
+	OR (NOT A_In(2) AND NOT A_In(4) AND NOT A_In(6) AND NOT A_In(7))
+	OR (A_In(3) AND A_In(2) AND A_In(1) AND NOT A_In(4) AND 
+	A_In(5))
+	OR (A_In(3) AND A_In(2) AND NOT A_In(4) AND A_In(5) AND 
+	NOT A_In(7)));
+
+
+$OpTx$BIN_STEP$297 <= ((A_In(3) AND NOT A_In(2) AND A_In(1) AND A_In(4) AND 
+	NOT A_In(5) AND A_In(6) AND A_In(7))
+	OR (A_In(2) AND A_In(1) AND NOT A_In(0) AND NOT A_In(4) AND 
+	NOT A_In(5) AND A_In(6) AND A_In(7))
+	OR (NOT A_In(3) AND NOT A_In(1) AND NOT A_In(5) AND NOT A_In(6))
+	OR (A_In(3) AND A_In(2) AND NOT A_In(1) AND A_In(5) AND 
+	NOT A_In(6) AND $OpTx$$OpTx$FX_DC$72_INV$1530)
+	OR (A_In(2) AND A_In(1) AND NOT A_In(5) AND NOT A_In(7) AND 
+	$OpTx$$OpTx$FX_DC$70_INV$1528)
+	OR (A_In(3) AND NOT A_In(1) AND NOT A_In(5) AND NOT A_In(7) AND 
+	$OpTx$$OpTx$FX_DC$70_INV$1528)
+	OR (NOT A_In(2) AND A_In(1) AND NOT A_In(5) AND A_In(6) AND 
+	$OpTx$$OpTx$FX_DC$72_INV$1530)
+	OR (A_In(3) AND NOT A_In(1) AND A_In(5) AND A_In(7) AND 
+	$OpTx$$OpTx$FX_DC$70_INV$1528)
+	OR (A_In(2) AND NOT A_In(1) AND NOT A_In(5) AND A_In(6) AND 
+	A_In(7) AND $OpTx$$OpTx$FX_DC$70_INV$1528)
+	OR (A_In(3) AND A_In(1) AND NOT A_In(5) AND A_In(7) AND 
+	$OpTx$$OpTx$FX_DC$70_INV$1528)
+	OR (NOT A_In(3) AND NOT A_In(2) AND NOT A_In(1))
+	OR (NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7))
+	OR (NOT A_In(3) AND NOT A_In(2) AND NOT A_In(6) AND NOT A_In(7))
+	OR (NOT A_In(3) AND NOT A_In(1) AND NOT A_In(6) AND 
+	NOT $OpTx$$OpTx$FX_DC$72_INV$1530)
+	OR (NOT A_In(2) AND NOT A_In(4) AND NOT A_In(5) AND NOT A_In(7))
+	OR (NOT A_In(3) AND NOT A_In(2) AND NOT A_In(5) AND NOT A_In(7))
+	OR (NOT A_In(2) AND NOT A_In(1) AND NOT A_In(5) AND 
+	NOT $OpTx$$OpTx$FX_DC$70_INV$1528)
+	OR (NOT A_In(1) AND NOT A_In(5) AND NOT A_In(6) AND 
+	NOT $OpTx$$OpTx$FX_DC$70_INV$1528)
+	OR (A_In(3) AND A_In(1) AND NOT A_In(0) AND NOT A_In(4) AND 
+	A_In(5) AND A_In(7))
+	OR (NOT A_In(3) AND A_In(2) AND A_In(1) AND NOT A_In(4) AND 
+	A_In(5) AND NOT A_In(7))
+	OR (NOT A_In(3) AND A_In(1) AND NOT A_In(0) AND A_In(5) AND 
+	A_In(6) AND NOT A_In(7))
+	OR (A_In(3) AND NOT A_In(2) AND A_In(1) AND A_In(5) AND 
+	NOT A_In(6) AND A_In(7) AND NOT $OpTx$$OpTx$FX_DC$70_INV$1528)
+	OR (A_In(3) AND NOT A_In(2) AND A_In(1) AND A_In(0) AND 
+	A_In(5) AND A_In(6) AND NOT A_In(7))
+	OR (A_In(3) AND A_In(2) AND NOT A_In(1) AND NOT A_In(4) AND 
+	A_In(5) AND A_In(6) AND NOT $OpTx$$OpTx$FX_DC$72_INV$1530)
+	OR (NOT A_In(3) AND A_In(2) AND A_In(1) AND NOT A_In(0) AND 
+	NOT A_In(5) AND A_In(6) AND A_In(7)));
+
+
+$OpTx$BIN_STEP$560 <= ((NOT Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (A_In(7) AND NOT Calc_S/XLXI_11/XLXI_5/IR4(3)));
+
+
+$OpTx$BIN_STEP$565 <= Calc_S/XLXI_11/XLXI_5/IR7(2)\$WA1.EXP;
+
+
+$OpTx$BIN_STEP$603 <= ((NOT Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (A_In(7) AND NOT Calc_S/XLXI_11/XLXI_5/IR7(3)));
+
+
+$OpTx$FX_DC$83 <= ((NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7))
+	OR (NOT A_In(3) AND NOT A_In(2) AND NOT A_In(1)));
+
+
+Z_Out(0) <= Bits_Out/q1.EXP;
+
+
+Z_Out(1) <= Calc_S/Zn(1);
+
+
+Z_Out(2) <= Calc_S/Zn(2);
+
+
+Z_Out(3) <= Calc_S/Zn(3);
+
+
+Z_Out(4) <= Calc_S/Zn(4);
+
+
+Z_Out(5) <= Calc_S/Zn(5);
+
+
+Z_Out(6) <= Calc_S/Zn(6);
+
+
+Z_Out(7) <= Calc_S/Zn(7);
+
+FTCPE_C_Bus0: FTCPE port map (C_Bus(0),'1',M_In,'0','0');
+
+FTCPE_C_Bus1: FTCPE port map (C_Bus(1),C_Bus(0),M_In,'0','0');
+
+FTCPE_C_Bus2: FTCPE port map (C_Bus(2),C_Bus_T(2),M_In,'0','0');
+C_Bus_T(2) <= (C_Bus(0) AND C_Bus(1));
+
+FTCPE_C_Bus3: FTCPE port map (C_Bus(3),C_Bus_T(3),M_In,'0','0');
+C_Bus_T(3) <= (C_Bus(2) AND C_Bus(0) AND C_Bus(1));
+
+
+Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27/Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27_D2 <= ((Calc_S/XLXI_11/Zn(3)\$WA1.EXP)
+	OR (A_In(2) AND A_In(6))
+	OR (A_In(2) AND A_In(1) AND A_In(5))
+	OR (A_In(1) AND A_In(5) AND A_In(6))
+	OR (A_In(1) AND A_In(0) AND A_In(4) AND A_In(6))
+	OR (A_In(0) AND A_In(4) AND A_In(5) AND A_In(6)));
+
+
+Calc_S/XLXI_11/XLXI_14/add_0/X3/Calc_S/XLXI_11/XLXI_14/add_0/X3_D <= NOT (A_In(3)
+	 XOR 
+Calc_S/XLXI_11/XLXI_14/add_0/X3/Calc_S/XLXI_11/XLXI_14/add_0/X3_D <= NOT (((A_In(4) AND A_In(7))
+	OR (A_In(5) AND A_In(7))
+	OR (A_In(6) AND A_In(7))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7))));
+
+
+Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 <= A_In(3);
+
+
+Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 <= A_In(4)
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 <= A_In(3);
+
+
+Calc_S/XLXI_11/XLXI_5/IR4(2)\$WA0 <= '0';
+
+
+Calc_S/XLXI_11/XLXI_5/IR4(2)\$WA1 <= (A_In(3) AND A_In(4))
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/IR4(2)\$WA1 <= ((A_In(4) AND NOT A_In(5))
+	OR (NOT A_In(4) AND A_In(5)));
+
+
+Calc_S/XLXI_11/XLXI_5/IR4(3)\$WA0 <= '0';
+
+
+Calc_S/XLXI_11/XLXI_5/IR4(3)\$WA1 <= (A_In(3) AND A_In(4) AND NOT A_In(5))
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/IR4(3)\$WA1 <= ((Calc_S/XLXI_11/XLXI_5/IR4(2)\$WA1.EXP)
+	OR (A_In(5) AND NOT A_In(6)));
+
+
+Calc_S/XLXI_11/XLXI_5/IR4(4)\$WA0 <= '0';
+
+
+Calc_S/XLXI_11/XLXI_5/IR4(4)\$WA1 <= (A_In(3) AND A_In(4) AND NOT A_In(5) AND NOT A_In(6))
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/IR4(4)\$WA1 <= ((Calc_S/XLXI_11/XLXI_5/Modulas(1)\$WA1.EXP)
+	OR (A_In(4) AND NOT A_In(7))
+	OR (A_In(5) AND NOT A_In(7)));
+
+
+Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 <= A_In(2);
+
+
+Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 <= A_In(4)
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 <= A_In(2);
+
+
+Calc_S/XLXI_11/XLXI_5/IR7(2)\$WA0 <= FC_5_.OUT;
+
+
+Calc_S/XLXI_11/XLXI_5/IR7(2)\$WA1 <= FC_5_.OUT
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/IR7(2)\$WA1 <= ((Calc_S/XLXI_11/XLXI_5/XLXN_14(2)\$WA1.EXP)
+	OR (NOT A_In(4) AND A_In(5)));
+
+
+Calc_S/XLXI_11/XLXI_5/IR7(2)\$WA1/Calc_S/XLXI_11/XLXI_5/IR7(2)\$WA1_TRST__$INT <= ((NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR4(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (NOT A_In(6) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(3) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(2) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(3) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(3) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (A_In(2) AND NOT A_In(5) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(2) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (A_In(2) AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (A_In(2) AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(3) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (A_In(2) AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(3) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(5) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(4) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(4) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(3) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(5) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR4(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(4) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(3) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND NOT A_In(4) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR4(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND A_In(2) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND A_In(2) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND A_In(2) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(3) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(1)\$WA0 AND A_In(2) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR4(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4)));
+
+
+Calc_S/XLXI_11/XLXI_5/IR7(3)\$WA0 <= Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0.EXP;
+
+
+Calc_S/XLXI_11/XLXI_5/IR7(3)\$WA1 <= ((EXP25_.EXP)
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(3)\$WA0.EXP)
+	OR (A_In(2) AND NOT A_In(5) AND A_In(6) AND 
+	NOT Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (A_In(2) AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (A_In(2) AND A_In(6) AND NOT Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	FC_5_.OUT)
+	OR (A_In(2) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	FC_5_.OUT));
+
+
+Calc_S/XLXI_11/XLXI_5/IR7(4)\$WA0 <= Calc_S/XLXI_11/XLXI_5/IR4(3);
+
+
+Calc_S/XLXI_11/XLXI_5/IR7(4)\$WA1 <= Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3_D
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/IR7(4)\$WA1 <= ((EXP26_.EXP)
+	OR (Calc_S/Zn(7).EXP)
+	OR (A_In(4) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (A_In(5) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR4(2))
+	OR (A_In(2) AND A_In(4) AND NOT A_In(5) AND NOT A_In(6)));
+
+
+Calc_S/XLXI_11/XLXI_5/Modulas(1)\$WA0 <= A_In(0);
+
+
+Calc_S/XLXI_11/XLXI_5/Modulas(1)\$WA1 <= A_In(4)
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/Modulas(1)\$WA1 <= A_In(0);
+
+
+Calc_S/XLXI_11/XLXI_5/Modulas(2)\$WA0 <= FC_7_.OUT;
+
+
+Calc_S/XLXI_11/XLXI_5/Modulas(2)\$WA1 <= FC_7_.OUT
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/Modulas(2)\$WA1 <= Calc_S/XLXI_11/XLXI_5/IR4(3)\$WA1.EXP;
+
+
+Calc_S/XLXI_11/XLXI_5/Modulas(3)\$WA0 <= Calc_S/XLXI_11/XLXI_5/XLXN_14(2);
+
+
+Calc_S/XLXI_11/XLXI_5/Modulas(3)\$WA1 <= ((EXP9_.EXP)
+	OR (Calc_S/XLXI_11/Zn(6)\$WA1.EXP)
+	OR (A_In(0) AND NOT A_In(5) AND A_In(6) AND 
+	NOT Calc_S/XLXI_11/XLXI_5/XLXN_14(2))
+	OR (A_In(0) AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2))
+	OR (A_In(0) AND A_In(6) AND 
+	NOT Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND FC_7_.OUT)
+	OR (A_In(0) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND FC_7_.OUT));
+
+
+Calc_S/XLXI_11/XLXI_5/Modulas(3)\$WA1/Calc_S/XLXI_11/XLXI_5/Modulas(3)\$WA1_TRST__$INT <= ((NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (A_In(0) AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (A_In(0) AND NOT A_In(5) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (A_In(0) AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (A_In(0) AND NOT A_In(5) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND A_In(0) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND A_In(0) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(5) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(4) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(4) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND A_In(0) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND A_In(0) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(4) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 AND NOT A_In(4) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4)));
+
+
+Calc_S/XLXI_11/XLXI_5/Modulas(4)\$WA0 <= Calc_S/XLXI_11/XLXI_5/XLXN_14(3);
+
+
+Calc_S/XLXI_11/XLXI_5/Modulas(4)\$WA1 <= Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3_D
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/Modulas(4)\$WA1 <= ((EXP27_.EXP)
+	OR (Calc_S/Zn(6).EXP)
+	OR (A_In(4) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2))
+	OR (A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2))
+	OR (A_In(0) AND A_In(4) AND NOT A_In(5) AND NOT A_In(6)));
+
+
+Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3_D <= (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6))
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3_D <= ((A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR4(3))
+	OR (NOT A_In(7) AND NOT Calc_S/XLXI_11/XLXI_5/IR4(3)));
+
+
+Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3_D <= (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6))
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3_D <= ((A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR7(3))
+	OR (NOT A_In(7) AND NOT Calc_S/XLXI_11/XLXI_5/IR7(3)));
+
+
+Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3_D <= (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6))
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_15/XLXI_1/X3_D <= ((A_In(7) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(3))
+	OR (NOT A_In(7) AND NOT Calc_S/XLXI_11/XLXI_5/XLXN_14(3)));
+
+
+Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA0 <= A_In(1);
+
+
+Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 <= A_In(4)
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/XLXN_14(1)\$WA1 <= A_In(1);
+
+
+Calc_S/XLXI_11/XLXI_5/XLXN_14(2)\$WA0 <= FC_6_.OUT;
+
+
+Calc_S/XLXI_11/XLXI_5/XLXN_14(2)\$WA1 <= FC_6_.OUT
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/XLXN_14(2)\$WA1 <= ((
+	Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_13/XLXI_1/X3_D.EXP)
+	OR (NOT A_In(4) AND A_In(5)));
+
+
+Calc_S/XLXI_11/XLXI_5/XLXN_14(3)\$WA0 <= Calc_S/XLXI_11/XLXI_5/IR7(2);
+
+
+Calc_S/XLXI_11/XLXI_5/XLXN_14(3)\$WA1 <= ((EXP21_.EXP)
+	OR (Calc_S/Zn(1).EXP)
+	OR (A_In(1) AND NOT A_In(5) AND A_In(6) AND 
+	NOT Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (A_In(1) AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (A_In(1) AND A_In(6) AND NOT Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	FC_6_.OUT)
+	OR (A_In(1) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	FC_6_.OUT));
+
+
+Calc_S/XLXI_11/XLXI_5/XLXN_14(3)\$WA1/Calc_S/XLXI_11/XLXI_5/XLXN_14(3)\$WA1_TRST__$INT <= ((NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR7(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (NOT A_In(6) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(2) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (A_In(1) AND NOT A_In(5) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(2) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (A_In(1) AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (A_In(1) AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (A_In(1) AND NOT A_In(5) AND NOT A_In(6) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(5) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(4) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(4) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND A_In(1) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND A_In(1) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(4) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(5) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR7(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND NOT A_In(4) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR7(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND A_In(1) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1 AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA0 AND A_In(1) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR7(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4)));
+
+
+Calc_S/XLXI_11/XLXI_5/XLXN_14(4)\$WA0 <= Calc_S/XLXI_11/XLXI_5/IR7(3);
+
+
+Calc_S/XLXI_11/XLXI_5/XLXN_14(4)\$WA1 <= Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3/Calc_S/XLXI_11/XLXI_5/XLXI_14/XLXI_1/X3_D
+	 XOR 
+Calc_S/XLXI_11/XLXI_5/XLXN_14(4)\$WA1 <= (($OpTx$BIN_STEP$565.EXP)
+	OR ($OpTx$BIN_STEP$603.EXP)
+	OR (A_In(4) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (A_In(5) AND NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR7(2))
+	OR (A_In(1) AND A_In(4) AND NOT A_In(5) AND NOT A_In(6)));
+
+
+Calc_S/XLXI_11/Zn(0)\$WA0 <= A_In(0)
+	 XOR 
+Calc_S/XLXI_11/Zn(0)\$WA0 <= A_In(4);
+
+
+Calc_S/XLXI_11/Zn(0)\$WA1 <= A_In(0)
+	 XOR 
+Calc_S/XLXI_11/Zn(0)\$WA1 <= A_In(4);
+
+
+Calc_S/XLXI_11/Zn(0)\$WA2 <= '0';
+
+
+Calc_S/XLXI_11/Zn(0)\$WA3 <= ((EXP10_.EXP)
+	OR (A_In(3) AND A_In(2) AND A_In(6) AND A_In(7))
+	OR (A_In(3) AND A_In(2) AND A_In(1) AND A_In(5) AND 
+	A_In(7))
+	OR (A_In(3) AND A_In(2) AND A_In(0) AND A_In(5) AND 
+	A_In(7))
+	OR (A_In(3) AND A_In(2) AND A_In(4) AND A_In(5) AND 
+	A_In(7)));
+
+
+Calc_S/XLXI_11/Zn(1)\$WA0 <= NOT (A_In(1)
+	 XOR 
+Calc_S/XLXI_11/Zn(1)\$WA0 <= NOT (Calc_S/XLXI_11/Zn(1)\$WA1.EXP);
+
+
+Calc_S/XLXI_11/Zn(1)\$WA1 <= (A_In(0) AND A_In(4))
+	 XOR 
+Calc_S/XLXI_11/Zn(1)\$WA1 <= Calc_S/XLXI_11/Zn(0)\$WA0.EXP;
+
+
+Calc_S/XLXI_11/Zn(1)\$WA2 <= ((EXP14_.EXP)
+	OR (EXP15_.EXP)
+	OR (NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR4(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (NOT A_In(6) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR4(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(3) AND Calc_S/XLXI_11/XLXI_5/IR4(4))
+	OR (A_In(2) AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/IR4(4)));
+
+
+Calc_S/XLXI_11/Zn(1)\$WA3 <= ((EXP5_.EXP)
+	OR (EXP6_.EXP)
+	OR (A_In(3) AND NOT A_In(2) AND NOT A_In(6) AND A_In(7))
+	OR (A_In(3) AND NOT A_In(2) AND NOT A_In(1) AND NOT A_In(0) AND 
+	A_In(7))
+	OR (A_In(3) AND NOT A_In(2) AND NOT A_In(1) AND NOT A_In(4) AND 
+	A_In(7))
+	OR (A_In(3) AND NOT A_In(2) AND NOT A_In(1) AND NOT A_In(5) AND 
+	A_In(7)));
+
+
+Calc_S/XLXI_11/Zn(2)\$WA0 <= NOT (A_In(2)
+	 XOR 
+Calc_S/XLXI_11/Zn(2)\$WA0 <= NOT (EXP20_.EXP);
+
+
+Calc_S/XLXI_11/Zn(2)\$WA1 <= ((Calc_S/XLXI_11/Zn(7)\$WA0.EXP)
+	OR (EXP23_.EXP)
+	OR (A_In(2) AND A_In(1) AND A_In(0) AND A_In(4) AND 
+	A_In(6))
+	OR (A_In(2) AND A_In(0) AND A_In(4) AND A_In(5) AND 
+	A_In(6))
+	OR (NOT A_In(2) AND A_In(1) AND A_In(0) AND A_In(4) AND 
+	NOT A_In(6))
+	OR (NOT A_In(2) AND A_In(0) AND A_In(4) AND A_In(5) AND 
+	NOT A_In(6)));
+
+
+Calc_S/XLXI_11/Zn(2)\$WA2 <= ((EXP0_.EXP)
+	OR (EXP1_.EXP)
+	OR (NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR7(3) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (NOT A_In(6) AND NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4))
+	OR (NOT A_In(4) AND NOT A_In(5) AND Calc_S/XLXI_11/XLXI_5/IR7(2) AND 
+	Calc_S/XLXI_11/XLXI_5/IR7(3) AND Calc_S/XLXI_11/XLXI_5/IR7(4)));
+
+
+Calc_S/XLXI_11/Zn(2)\$WA3 <= NOT (((NOT FC_2_.OUT)
+	OR (EXP4_.EXP)
+	OR (EXP8_.EXP)
+	OR (NOT A_In(3) AND NOT A_In(2) AND 
+	NOT $OpTx$$OpTx$FX_DC$72_INV$1530)
+	OR (NOT A_In(3) AND NOT A_In(6) AND NOT A_In(7))
+	OR (A_In(6) AND $OpTx$$OpTx$FX_DC$71_INV$1529 AND 
+	$OpTx$BIN_AND$143)));
+
+
+Calc_S/XLXI_11/Zn(3)\$WA0 <= NOT (Calc_S/XLXI_11/XLXI_14/add_0/X3/Calc_S/XLXI_11/XLXI_14/add_0/X3_D
+	 XOR 
+Calc_S/XLXI_11/Zn(3)\$WA0 <= NOT (((Calc_S/XLXI_11/XLXI_5/Modulas(2)\$WA0.EXP)
+	OR (Calc_S/XLXI_11/XLXI_5/IR7(1)\$WA1.EXP)
+	OR (NOT A_In(2) AND A_In(6))
+	OR (NOT A_In(2) AND NOT A_In(1) AND NOT A_In(0))
+	OR (NOT A_In(2) AND NOT A_In(1) AND A_In(5))));
+
+
+Calc_S/XLXI_11/Zn(3)\$WA1 <= NOT (A_In(3)
+	 XOR 
+Calc_S/XLXI_11/Zn(3)\$WA1 <= NOT (((Calc_S/Zn(5).EXP)
+	OR (NOT A_In(7) AND 
+	NOT Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27/Calc_S/XLXI_11/XLXI_13/add_main/XLXN_27_D2)));
+
+
+Calc_S/XLXI_11/Zn(3)\$WA2 <= ((EXP18_.EXP)
+	OR (EXP19_.EXP)
+	OR (NOT A_In(7) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (NOT A_In(6) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(2) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(3) AND Calc_S/XLXI_11/XLXI_5/XLXN_14(4))
+	OR (A_In(0) AND NOT A_In(5) AND NOT A_In(6) AND NOT A_In(7) AND 
+	Calc_S/XLXI_11/XLXI_5/XLXN_14(4)));
+
+
+Calc_S/XLXI_11/Zn(3)\$WA3 <= NOT ((($OpTx$BIN_STEP$297)
+	OR (EXP17_.EXP)
+	OR (Calc_S/XLXI_11/Zn(5)\$WA2.EXP)
+	OR (A_In(3) AND A_In(2) AND A_In(1) AND A_In(4) AND 
+	NOT A_In(7))
+	OR (NOT A_In(3) AND A_In(0) AND A_In(5) AND A_In(6) AND 
+	A_In(7))
+	OR (A_In(3) AND A_In(1) AND A_In(4) AND A_In(5) AND 
+	A_In(6) AND NOT A_In(7))));
+
+
+Calc_S/XLXI_11/Zn(4)\$WA0 <= ((EXP16_.EXP)
+	OR (Calc_S/XLXI_11/Zn(0)\$WA2.EXP)
+	OR (NOT A_In(3) AND A_In(7))
+	OR (NOT A_In(3) AND NOT A_In(2) AND A_In(6))
+	OR (NOT A_In(2) AND A_In(6) AND A_In(7))
+	OR (NOT A_In(1) AND A_In(5) AND A_In(6) AND A_In(7)));
+
+
+Calc_S/XLXI_11/Zn(4)\$WA1 <= ((EXP3_.EXP)
+	OR (Calc_S/XLXI_11/XLXI_5/Modulas(1)\$WA0.EXP)
+	OR (A_In(3) AND A_In(2) AND A_In(1) AND A_In(0) AND 
+	A_In(4))
+	OR (A_In(3) AND A_In(2) AND A_In(0) AND A_In(4) AND 
+	A_In(5))
+	OR (A_In(2) AND A_In(1) AND A_In(0) AND A_In(4) AND 
+	A_In(7))
+	OR (A_In(2) AND A_In(0) AND A_In(4) AND A_In(5) AND 
+	A_In(7)));
+
+
+Calc_S/XLXI_11/Zn(4)\$WA2 <= Calc_S/XLXI_11/XLXI_5/Modulas(4);
+
+
+Calc_S/XLXI_11/Zn(4)\$WA3 <= (A_In(0) AND A_In(7))
+	 XOR 
+Calc_S/XLXI_11/Zn(4)\$WA3 <= ((EXP11_.EXP)
+	OR (EXP12_.EXP)
+	OR (A_In(2) AND A_In(0) AND NOT A_In(4) AND A_In(5))
+	OR (A_In(3) AND A_In(2) AND A_In(1) AND A_In(4) AND 
+	NOT A_In(6))
+	OR (NOT A_In(3) AND A_In(2) AND NOT A_In(1) AND NOT A_In(0) AND 
+	A_In(5)));
+
+
+Calc_S/XLXI_11/Zn(5)\$WA0 <= (A_In(0) AND A_In(6))
+	 XOR 
+Calc_S/XLXI_11/Zn(5)\$WA0 <= ((Calc_S/XLXI_11/Zn(1)\$WA0.EXP)
+	OR (A_In(2) AND A_In(0) AND A_In(4))
+	OR (A_In(1) AND NOT A_In(4) AND A_In(5)));
+
+
+Calc_S/XLXI_11/Zn(5)\$WA1 <= '0';
+
+
+Calc_S/XLXI_11/Zn(5)\$WA2 <= Calc_S/XLXI_11/XLXI_5/Modulas(3);
+
+
+Calc_S/XLXI_11/Zn(6)\$WA0 <= (A_In(1) AND A_In(4))
+	 XOR 
+Calc_S/XLXI_11/Zn(6)\$WA0 <= (A_In(0) AND A_In(5));
+
+
+Calc_S/XLXI_11/Zn(6)\$WA1 <= '0';
+
+
+Calc_S/XLXI_11/Zn(6)\$WA2 <= Calc_S/XLXI_11/XLXI_5/Modulas(2);
+
+
+Calc_S/XLXI_11/Zn(7)\$WA0 <= Calc_S/Zn(3).EXP;
+
+
+Calc_S/XLXI_11/Zn(7)\$WA1 <= '0';
+
+
+Calc_S/XLXI_11/Zn(7)\$WA2 <= FC_4_.OUT;
+
+
+Calc_S/Zn(0) <= FC_0_.OUT;
+
+
+Calc_S/Zn(1) <= Calc_S/XLXI_11/Zn(4)\$WA2.EXP;
+
+
+Calc_S/Zn(2) <= FC_9_.OUT;
+
+
+Calc_S/Zn(3) <= Calc_S/XLXI_11/Zn(4);
+
+
+Calc_S/Zn(4) <= Calc_S/XLXI_11/Zn(3);
+
+
+Calc_S/Zn(5) <= Calc_S/XLXI_11/Zn(5)\$WA0.EXP;
+
+
+Calc_S/Zn(6) <= Calc_S/XLXI_11/Zn(1);
+
+
+Calc_S/Zn(7) <= Calc_S/XLXI_11/Zn(0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE); 
+ FTCPE (Q,D,C,CLR,PRE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+****************************  Device Pin Out ****************************
+
+Device : XC95108-7-PC84
+
+
+   --------------------------------------------------------------  
+  /11 10 9  8  7  6  5  4  3  2  1  84 83 82 81 80 79 78 77 76 75 \
+ | 12                                                          74 | 
+ | 13                                                          73 | 
+ | 14                                                          72 | 
+ | 15                                                          71 | 
+ | 16                                                          70 | 
+ | 17                                                          69 | 
+ | 18                                                          68 | 
+ | 19                                                          67 | 
+ | 20                                                          66 | 
+ | 21                       XC95108-7-PC84                     65 | 
+ | 22                                                          64 | 
+ | 23                                                          63 | 
+ | 24                                                          62 | 
+ | 25                                                          61 | 
+ | 26                                                          60 | 
+ | 27                                                          59 | 
+ | 28                                                          58 | 
+ | 29                                                          57 | 
+ | 30                                                          56 | 
+ | 31                                                          55 | 
+ | 32                                                          54 | 
+ \ 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 /
+   --------------------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 Z_Out<0>                         43 TIE                           
+  2 Z_Out<1>                         44 TIE                           
+  3 Z_Out<2>                         45 TIE                           
+  4 Z_Out<3>                         46 TIE                           
+  5 Z_Out<4>                         47 TIE                           
+  6 Z_Out<5>                         48 TIE                           
+  7 Z_Out<6>                         49 GND                           
+  8 GND                              50 TIE                           
+  9 TIE                              51 TIE                           
+ 10 M_In                             52 TIE                           
+ 11 Z_Out<7>                         53 TIE                           
+ 12 TIE                              54 TIE                           
+ 13 TIE                              55 TIE                           
+ 14 TIE                              56 TIE                           
+ 15 TIE                              57 TIE                           
+ 16 GND                              58 TIE                           
+ 17 TIE                              59 TDO                           
+ 18 TIE                              60 GND                           
+ 19 TIE                              61 TIE                           
+ 20 TIE                              62 TIE                           
+ 21 TIE                              63 TIE                           
+ 22 VCC                              64 VCC                           
+ 23 TIE                              65 TIE                           
+ 24 TIE                              66 TIE                           
+ 25 TIE                              67 TIE                           
+ 26 TIE                              68 TIE                           
+ 27 GND                              69 TIE                           
+ 28 TDI                              70 TIE                           
+ 29 TMS                              71 TIE                           
+ 30 TCK                              72 TIE                           
+ 31 TIE                              73 VCC                           
+ 32 TIE                              74 TIE                           
+ 33 TIE                              75 TIE                           
+ 34 TIE                              76 TIE                           
+ 35 TIE                              77 TIE                           
+ 36 TIE                              78 VCC                           
+ 37 TIE                              79 TIE                           
+ 38 VCC                              80 TIE                           
+ 39 TIE                              81 TIE                           
+ 40 TIE                              82 TIE                           
+ 41 TIE                              83 TIE                           
+ 42 GND                              84 TIE                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+         PE   = Port Enable pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc95108-7-PC84
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+FASTConnect/UIM optimzation                 : ON
+Local Feedback                              : ON
+Pin Feedback                                : ON
+Input Limit                                 : 36
+Pterm Limit                                 : 25

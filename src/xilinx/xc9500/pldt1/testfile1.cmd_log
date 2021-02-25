@@ -1,0 +1,2 @@
+sch2vhdl -family xc9500 -flat -suppress -w testfile1.sch testfile1.vhf
+xst -intstyle ise -ifn __projnav/testfile1.xst -ofn testfile1.syr

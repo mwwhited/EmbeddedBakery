@@ -1,0 +1,21 @@
+Release 6.3.01i - xst G.36
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to .
+CPU : 0.00 / 0.47 s | Elapsed : 0.00 / 0.00 s
+ 
+--> 
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/Xilinx/bin/adder/adder.vhf in Library work.
+Entity <obufe_mxilinx_adder> (Architecture <behavioral>) compiled.
+Entity <obufe4_mxilinx_adder> (Architecture <behavioral>) compiled.
+Entity <ibuf4_mxilinx_adder> (Architecture <behavioral>) compiled.
+Entity <adder> (Architecture <behavioral>) compiled.
+CPU : 0.08 / 0.56 s | Elapsed : 0.00 / 0.00 s
+ 
+--> 
+
+Total memory usage is 47344 kilobytes
+
+

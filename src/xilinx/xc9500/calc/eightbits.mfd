@@ -1,0 +1,91 @@
+MDF Database:  version 1.0
+MDF_INFO | eightbits | XC95108-7-PC84
+MACROCELL | 5 | 1 | XLXN_2$BUF0
+ATTRIBUTES | 281346 | 0
+INPUTS | 1 | A1
+INPUTP | 1 | 25
+EQ | 2 | 
+   Z0 = A1;
+   Z0.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 2 | 1 | XLXN_3$BUF0
+ATTRIBUTES | 281346 | 0
+INPUTS | 1 | A2
+INPUTP | 1 | 27
+EQ | 2 | 
+   Z1 = A2;
+   Z1.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 3 | 1 | XLXN_4$BUF0
+ATTRIBUTES | 281346 | 0
+INPUTS | 1 | A3
+INPUTP | 1 | 33
+EQ | 2 | 
+   Z2 = A3;
+   Z2.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 4 | 1 | XLXN_5$BUF0
+ATTRIBUTES | 281346 | 0
+INPUTS | 1 | A4
+INPUTP | 1 | 23
+EQ | 2 | 
+   Z3 = A4;
+   Z3.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 5 | 10 | XLXN_6$BUF0
+ATTRIBUTES | 281346 | 0
+INPUTS | 1 | A5
+INPUTP | 1 | 131
+EQ | 2 | 
+   Z4 = A5;
+   Z4.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 2 | 7 | XLXN_7$BUF0
+ATTRIBUTES | 281346 | 0
+INPUTS | 1 | A6
+INPUTP | 1 | 129
+EQ | 2 | 
+   Z5 = A6;
+   Z5.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 2 | 13 | XLXN_8$BUF0
+ATTRIBUTES | 281346 | 0
+INPUTS | 1 | A7
+INPUTP | 1 | 121
+EQ | 2 | 
+   Z6 = A7;
+   Z6.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+MACROCELL | 4 | 10 | XLXN_9$BUF0
+ATTRIBUTES | 281346 | 0
+INPUTS | 1 | A8
+INPUTP | 1 | 127
+EQ | 2 | 
+   Z7 = A8;
+   Z7.OE = Enable;	// GTS
+GLOBALS | 1 | 5 | Enable
+
+PIN | A1 | 64 | 0 | N/A | 25 | 1 | 5 | 1
+PIN | Enable | 256 | 0 | N/A | 4 | 8 | 5 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 5 | 10 | 2 | 7 | 2 | 13 | 4 | 10
+PIN | A2 | 64 | 0 | N/A | 27 | 1 | 2 | 1
+PIN | A3 | 64 | 0 | N/A | 33 | 1 | 3 | 1
+PIN | A4 | 64 | 0 | N/A | 23 | 1 | 4 | 1
+PIN | A5 | 64 | 0 | N/A | 131 | 1 | 5 | 10
+PIN | A6 | 64 | 0 | N/A | 129 | 1 | 2 | 7
+PIN | A7 | 64 | 0 | N/A | 121 | 1 | 2 | 13
+PIN | A8 | 64 | 0 | N/A | 127 | 1 | 4 | 10
+PIN | Z0 | 536871040 | 0 | N/A | 88
+PIN | Z1 | 536871040 | 0 | N/A | 41
+PIN | Z2 | 536871040 | 0 | N/A | 112
+PIN | Z3 | 536871040 | 0 | N/A | 67
+PIN | Z4 | 536871040 | 0 | N/A | 99
+PIN | Z5 | 536871040 | 0 | N/A | 49
+PIN | Z6 | 536871040 | 0 | N/A | 54
+PIN | Z7 | 536871040 | 0 | N/A | 80

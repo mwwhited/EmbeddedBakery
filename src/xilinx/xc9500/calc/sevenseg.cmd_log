@@ -1,0 +1,31 @@
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+xst -intstyle ise -ifn __projnav/sevenseg.xst -ofn sevenseg.syr
+ngdbuild -dd _ngo -i -p xc9500 sevenseg.ngc sevenseg.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk sevenseg.ngd
+hprep6 -s IEEE1149 -n sevenseg -i sevenseg
+XSLTProcess "sevenseg_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+xst -intstyle ise -ifn __projnav/sevenseg.xst -ofn sevenseg.syr
+ngdbuild -dd _ngo -uc sevenseg.ucf -p xc9500 sevenseg.ngc sevenseg.ngd
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+xst -intstyle ise -ifn __projnav/sevenseg.xst -ofn sevenseg.syr
+ngdbuild -dd _ngo -uc sevenseg.ucf -p xc9500 sevenseg.ngc sevenseg.ngd
+cpldfit -p xc95108-7-PC84 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk sevenseg.ngd
+hprep6 -s IEEE1149 -n sevenseg -i sevenseg
+XSLTProcess "sevenseg_build.xml"
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
+xst -intstyle ise -ifn __projnav/sevenseg.xst -ofn sevenseg.syr
+ngdbuild -dd _ngo -i -p xc9500 sevenseg.ngc sevenseg.ngd
+sch2vhdl -family xc9500 -flat -suppress -w sevenseg.sch sevenseg.vhf
