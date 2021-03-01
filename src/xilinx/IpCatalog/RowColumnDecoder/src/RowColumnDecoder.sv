@@ -43,25 +43,33 @@ module RowColumnDecoder #(
     end
 
     // Set Column on Read            
-    always @(posedge ScanClock) begin  
-        $display(">Counter: %b", counter);
-        $display(">ColumnPins: %b", ColumnPins);
+    always @(posedge ScanClock) begin 
+        $display("=== posedge ScanClock ==="); 
+        // $display(">Counter: %b", counter);
+        // $display(">ColumnPins: %b", ColumnPins);
          
         ColumnPins <= ~(1<<counter);
         counter <= counter + 1;
         
-        $display("<Counter: %b", counter);
-        $display("<ColumnPins: %b", ColumnPins);
+        // $display("<Counter: %b", counter);
+        // $display("<ColumnPins: %b", ColumnPins);
     end   
     
     // Read Row Pins
     always @(negedge ScanClock) begin
-        $display(">RowPins: %b", RowPins);
-        $display(">~RowPins: %b", ~RowPins);
-        $display(">Value: %b", Value);
-        if(~RowPins) begin
-            Value <= ($clog2(~ColumnPins) * RowWidth) + $clog2(~RowPins);
-            $display("<Value: %b", Value);
+        $display("=== negedge ScanClock ===");
+        $display(">Row,Col: %b, %b \t ~Row,~Col: %b, %b", RowPins, ColumnPins, ~RowPins, ~ColumnPins);
+        if (~ColumnPins & ~RowPins) begin        
+            for(int c = 0; c < ColumnHeight; c++) begin //TODO: may want to change to dynamic length if possible as this is limited to 32bx32b
+                for(int r = 0; r < RowWidth; r++) begin
+                    //$display(">R,C: %b, %b", r, c);
+                    if (~(ColumnPins[c]) & ~(RowPins[r])) begin
+                        Value <= (c * RowWidth) + r;
+                        
+                        $display("<Value: %b (%h, %h)", Value,r,c);
+                    end
+                end 
+            end
         end
     end 
  
