@@ -78,10 +78,6 @@
 *.runs/impl*/*.bat
 !*.runs/impl*/*utilization*.rpt
 
-### project cache
-*/*.cache/*
-*.cache/*
-
 ### project sim
 */*.sim/*
 *.sim/*
@@ -113,3 +109,8 @@
 */*/*/bd/*/ip/*/*.tcl
 hw_handoff
 ipshared
+
+
+### project cache
+*/*.cache/*
+*.cache/*
