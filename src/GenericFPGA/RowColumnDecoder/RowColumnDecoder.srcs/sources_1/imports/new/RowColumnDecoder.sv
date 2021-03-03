@@ -38,6 +38,7 @@ module RowColumnDecoder #(
     
     initial
     begin
+        ColumnPins <= 0;
         counter <= 0;
         Value <= 'Z;         
     end
@@ -59,10 +60,11 @@ module RowColumnDecoder #(
     always @(negedge ScanClock) begin
         $display("=== negedge ScanClock ===");
         $display(">Row,Col: %b, %b \t ~Row,~Col: %b, %b", RowPins, ColumnPins, ~RowPins, ~ColumnPins);
-        if (~ColumnPins & ~RowPins) begin        
+        if (~ColumnPins && ~RowPins) begin    
+            $display("** CHECK **");    
             for(int c = 0; c < ColumnHeight; c++) begin //TODO: may want to change to dynamic length if possible as this is limited to 32bx32b
                 for(int r = 0; r < RowWidth; r++) begin
-                    //$display(">R,C: %b, %b", r, c);
+                    $display("}R,C: %b, %b (%b, %b)", r, c, RowPins[r], ColumnPins[c]);
                     if (~(ColumnPins[c]) & ~(RowPins[r])) begin
                         Value <= (c * RowWidth) + r;
                         

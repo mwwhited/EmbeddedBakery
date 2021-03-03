@@ -14,22 +14,34 @@ module RowColumnDecoderTestBench;
         .Value(result)        
     );
 
-    int count;   
-    int rowCounter;     
+    initial begin
+    
+        row <= 4'b1111;
+        for(int c =0; c < 10; c++) begin
+             #1 clock = ~clock;
+        end 
         
-    always #1 begin
-        count++;
-        if (count > 8) begin
-            count = 0;
-            case (row)
-                4'b1111 : row <= 4'b1110;
-                4'b1110 : row <= 4'b1101;
-                4'b1101 : row <= 4'b1011;
-                4'b1011 : row <= 4'b0111;
-                default : row <= 4'b1111;
-            endcase            
-        end        
-        clock = ~clock; 
+        row <= 4'b1110;
+        for(int c =0; c < 10; c++) begin
+             #1 clock = ~clock;
+        end 
+        
+        row <= 4'b1101;
+        for(int c =0; c < 10; c++) begin
+             #1 clock = ~clock;
+        end 
+        
+        row <= 4'b1011;
+        for(int c =0; c < 10; c++) begin
+             #1 clock = ~clock;
+        end 
+    
+        row <= 4'b0111;
+        for(int c =0; c < 16; c++) begin
+             #1 clock = ~clock;
+        end 
+        
+        $finish;
     end 
        
 endmodule
