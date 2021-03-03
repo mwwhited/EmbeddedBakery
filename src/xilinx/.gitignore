@@ -44,19 +44,19 @@
 
 # MWHITED excluded all of the .Runs
 ### project runs
-*/*.runs/*
-*.runs/*
+*.runs/
+*/*.runs/
 
 ### project cache
-*/*.cache/*
-*.cache/*
+*/*.cache/
+*.cache/
 
 ### project sim
-*/*.sim/*
-*.sim/*
+*/*.sim/
+*.sim/
 
 ### block design
-*/*/bd/*/hdl
+*/bd/*/hdl
 */*/*/bd/*/hdl
 
 */*/bd/*/*.xdc

@@ -32,85 +32,43 @@ module Host(
 );
 //JD + PModKypd) Hexadecimal Input
 //LD3B:LD0B) Selected hexadecimalvalue byte value
-    RowColumnDecoder pmodKeypad(
-        .clock(CLK100MHZ),
-        .row(jd[7:4]),
-        .column(jd[3:0]),
-        .result(ledB)
-    );   
+
+    wire scanClock;
+
+    KeypadScanDivider clockDivider(
+        .SystemClock(CLK100MHZ),
+        .DividedClock(scanClock)
+    ); 
+
+    wire [3:0] decoded;
+    RowColumnDecoder_0 pmodKeypad(
+        .ScanClock(scanClock),
+        .RowPins(jd[7:4]),
+        .ColumnPins(jd[3:0]),
+        .Value(decoded)
+    );  
+    wire [3:0] mapped; 
+    KeypadNibbleMap keypadMapper(
+        .Source(decoded),
+        .Mapped(mapped)
+    );
+    assign ledB = sw[0] ? mapped : 4'b0;
+    assign ledG = sw[1] ? jd[7:4] : 4'b0;
+    assign ledR = sw[2] ? decoded : 4'b0;
+    assign led = sw;   
+    
     
 //SW3) Register selector (A = 0, B = 1)
 //LD3R) Register selected
 //SW2:SW0) Register byte selector
-//LD2R:LDR0) Register  byte selcted
-    assign ledR = sw;
-      
-    
-    reg [31:0] registerA;
-    reg [31:0] registerB;
-    
-    reg [31:0] registerR;
-    reg [31:0] currentNibble;  
-      
-    assign currentRegister =
-        sw[3] == 1 ?  registerA :
-        sw[3] == 0 ?  registerB :
-        32'bZ;
-    
-    NibbleWriter nibbleWriter(
-        .dataIn(currentRegister),
-        .index(sw[2:0]),
-        .nibble(ledB),
-        .dataOut(registerR)
-    );
-    
-    NibbleReader(
-        .data(registerR),
-        .index(sw[2:0]),
-        .nibble(led)
-    );        
-      
-      /*  
-    always @(ledB) begin
-        if (sw[3]) begin
-            registerA <= registerR;
-        end else begin
-            registerB <= registerR;
-        end   
-    end
-    
-    always @(sw) begin
-        if (sw[3]) begin
-            registerR <= registerA;
-        end else begin
-            registerR <= registerB;
-        end  
-    end
-    */
+//LD2R:LDR0) Register  byte selected
 
-        
 //LD7:LD4) Current byte value
-       
-        
+
 //BTN3) Addition              A <= A + B
 //BTN2) Subtraction           A <= A - B
 //BTN1) Multiplication        A <= A * B
 //BTN0) Division              A <= A / B
 //LD3G:LD0G) Selected operator {Addition, Subtraction, Multiplication, Division}
-    assign ledG = btn;         
 
-      
-  /*  
-   
-   //TODO: debounce input for buttons
-   
-   SimpleCalculator simpleCalculator(
-       .clock(CLK100MHZ),
-       .operation(btn),
-       .inputA(aRegister),
-       .inputB(bRegister),
-       .result(aRegister)
-   );
-   */ 
-   
 endmodule
