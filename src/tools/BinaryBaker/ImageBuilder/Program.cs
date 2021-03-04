@@ -10,6 +10,10 @@ namespace ImageBuilder
     {
         static void Main(string[] args)
         {
+            //var q = from character in CharacterBuffer._buffer
+            //        select $"{(character.Value >> 12 & 0xf).ToString("x")}_{(character.Value >> 8 & 0xf).ToString("x")}_{(character.Value & 0xff).ToString("x2")}";
+
+
             //foreach(var i in CharacterBuffer._buffer)
             //    Console.WriteLine($"{i.Key.ToString("0000")}\t{i.Value.ToString("X4")}");
 
@@ -43,8 +47,8 @@ namespace ImageBuilder
             //    Console.WriteLine();
             //}
 
-            var columns = 80;
-            var rows = 45;
+            var columns = 60;
+            var rows = 33;
             var charPixelWidth = 8;
             var charPixelHeight = 8;
 
@@ -80,15 +84,18 @@ namespace ImageBuilder
             var pixelsWidth = columns * charPixelWidth;
             var pixelsHeight = rows * charPixelHeight;
 
-            var pixels = from y in Enumerable.Range(0, pixelsHeight)
-                         from x in Enumerable.Range(0, pixelsWidth)
+            var pixels = from y in Enumerable.Range(0, 1080) //pixelsHeight)
+                         from x in Enumerable.Range(0, 1920) //pixelsWidth)
 
-                             // Find the current character postion and subpixels
-                         let cx = x / charPixelWidth % columns
-                         let cy = y / charPixelHeight
+                         let realY = y / 4
+                         let realX = x / 4
+
+                         // Find the current character postion and subpixels
+                         let cx = realX / charPixelWidth % columns
+                         let cy = realY / charPixelHeight
                          let ci = cy * columns + cx
-                         let sp = x % charPixelWidth
-                         let sl = y % charPixelHeight
+                         let sp = realX % charPixelWidth+1
+                         let sl = realY % charPixelHeight+1
 
                          // Get character from buffer
                          let charBuffer = CharacterBuffer.GetValue(ci)
@@ -112,6 +119,8 @@ namespace ImageBuilder
                          {
                              x,
                              y,
+                             realX,
+                             realY,
 
                              cx,
                              cy,
@@ -155,7 +164,8 @@ namespace ImageBuilder
                         (int)(clr >> 0 & 0xf) << 4
                         );
 
-            using var bmp = new Bitmap(pixelsWidth, pixelsHeight);
+            //using var bmp = new Bitmap(pixelsWidth, pixelsHeight);
+            using var bmp = new Bitmap(1920, 1080);
             foreach (var i in pixels) //.Take(500)
                 bmp.SetPixel(i.x, i.y, getColor(i.clr));
             bmp.Save("result.png", ImageFormat.Png);

@@ -69,8 +69,8 @@ module Top(
     
         for(int c = 0; c < (60*33); c++) begin
             CharacterBuffer[c] <= {  // 15:12 BgC, 11:8 FgC, 7:0 Char
-                c[4:1],  
-                c[3:0],
+                /* bg */ {c / 16}[3:0],  
+                /* fg */ {c % 16}[3:0],  
                 /*char*/ c[7:0]  
                 };
         end

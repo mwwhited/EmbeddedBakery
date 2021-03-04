@@ -80,8 +80,8 @@ module TextModeController #(
     assign characterX = realX / CharacterPixelWidth % CharacterColumns;
     assign characterY = realY / CharacterPixelHeight;    
     assign characterIndex = characterY * CharacterColumns + characterX;
-    assign subPixel = realX % CharacterPixelWidth;
-    assign subLine = realY % CharacterPixelHeight;
+    assign subPixel = realX % CharacterPixelWidth + 1;
+    assign subLine = realY % CharacterPixelHeight + 1;
 
     // Get character from buffer
     wire [3:0] foreground;
@@ -104,34 +104,14 @@ module TextModeController #(
     // Get actual colors from palette
     wire [11:0] color;
     assign color = ColorPalette[characterSubPixel ? foreground : background];     
-    
-    /*
-    int charX, subColumn, charY, subLine;
-    wire [15:0] currentChar;
-    wire [15:0] currentCharSegment;
-    wire [(CharacterPixelHeight * CharacterPixelWidth - 1):0] currentCharacterMap;
-    wire [7:0] currentCharacterMapLine;
-    wire currentCharacterMapPixel;
-    wire [11:0] bgc;
-    wire [11:0] fgc;
-    wire [11:0] color;
-      */  
-    
-        
+
     always @(posedge ScanClock) begin    
     
         //$display("%h, %h => %h, %h :: %h", realX, realY, characterX, characterY, vCounter);
         //$display("%h, %h :: %h", characterX, characterY, characterIndex);
         //$display("%h, %h :: %h", subPixel, subLine, characterBufferSelected);
         //$display("%h, %h, %h", background, foreground, characterSelected);
-        $display("%h, %h", characterMapped, characterSelected);
-/*
-    assign characterMapped = CharacterMap[characterSelected];
-    assign characterMapLine = (characterMapped >> (CharacterPixelHeight - subLine) * CharacterPixelWidth) & 8'hff;
-    assign characterSubPixel = (characterMapLine >> (CharacterPixelWidth - subPixel) & 1'b1);
-    assign color = ColorPalette[characterSubPixel ? 12'hFFF : 12'h000]; //foreground : background];     
-  */          
-       
+        //$display("%h, %h", characterMapped, characterSelected);
     
         Red <= 4'b0;
         Green <= 4'b0;
@@ -177,8 +157,12 @@ module TextModeController #(
                 FrameComplete <= ~FrameComplete;
             end       
         end 
-        
-        if (~LineBlanking && ~FrameBlanking) begin        
+         
+        if (
+            ~LineBlanking && ~FrameBlanking
+            && CharacterColumns * CharacterPixelWidth * 4 > hCounter
+            && CharacterLines * CharacterPixelHeight * 4 > vCounter
+            ) begin        
             //Draw Pixels
             
             // {Red, Green, Blue} <= vCounter *  FrameWidth + hCounter;
