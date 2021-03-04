@@ -1,8 +1,13 @@
 `timescale 1ns / 1ps
 
-module Top;
+module Top(
+    input CLK100MHZ,
+    output [7:0] jb,
+    output [7:0] jc,
+    output [3:0] led
+);
     
-    reg ScanClock = 0; 
+    wire ScanClock; 
     
     ClockGenerator clockGen(
         .SystemClock(CLK100MHZ),
@@ -25,8 +30,8 @@ module Top;
     wire FrameBlanking;
     
     assign led = {LineComplete, LineBlanking, FrameComplete, FrameBlanking};
-    assign ja = {Blue, Red};
-    assign jb = { 1'b0, 1'b0, VerticalSync, HorizontalSync, Green};
+    assign jb = {Blue, Red};
+    assign jc = { 1'b0, 1'b0, VerticalSync, HorizontalSync, Green};
 
     TextModeController tmc(
         .ScanClock(ScanClock),
