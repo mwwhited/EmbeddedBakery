@@ -54,8 +54,8 @@ module TextModeControllerTestBench;
     
         for(int c = 0; c < 3600; c++) begin
             CharacterBuffer[c] <= {  // 15:12 BgC, 11:8 FgC, 7:0 Char
-                /*bg*/4'h0, // + c[15:12],  
-                /*fg*/4'hF, // + c[11:8],
+                /*bg*/ c % 80, // 4'h0, // + c[15:12],  
+                /*fg*/ c / 80, 4'hF, // + c[11:8],
                 /*char*/ c[7:0]  
                 };
         end

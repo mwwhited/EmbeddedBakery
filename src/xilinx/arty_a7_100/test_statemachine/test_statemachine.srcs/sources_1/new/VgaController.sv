@@ -34,8 +34,8 @@ module TextModeController #(
     parameter VMaxLines = 1125,     //V total period (lines)
     parameter VPolarization = 1,
     
-    parameter CharacterColumns = 80,
-    parameter CharacterLines = 45,
+    parameter CharacterColumns = 60, // 80,
+    parameter CharacterLines = 33, // 45,
     parameter CharacterPixelHeight = 8,
     parameter CharacterPixelWidth = 8,
     
@@ -59,9 +59,53 @@ module TextModeController #(
     input [11:0] ColorPalette [15:0], // RRRR GGGG BBBB
     input [(CharacterPixelHeight * CharacterPixelWidth - 1):0] CharacterMap [255:0] // CharacterPixelHeight x CharacterPixelWidth pixels
 );
-    reg [HCounterWidth:0] hCounter = 0;
-    reg [VCounterWidth:0] vCounter = 0;
+    reg [HCounterWidth:0] hCounter;
+    reg [VCounterWidth:0] vCounter;
     
+    initial begin
+        hCounter <= 0;
+        vCounter <= 0;
+    end
+    
+    wire characterSubPixel;
+    
+    int realX, realY;
+    int characterX, characterY;
+    int characterIndex;
+    int subPixel, subLine; 
+       
+    assign realX = hCounter / 4;
+    assign realY = vCounter / 4;   
+     
+    assign characterX = realX / CharacterPixelWidth % CharacterColumns;
+    assign characterY = realY / CharacterPixelHeight;    
+    assign characterIndex = characterY * CharacterColumns + characterX;
+    assign subPixel = realX % CharacterPixelWidth;
+    assign subLine = realY % CharacterPixelHeight;
+
+    // Get character from buffer
+    wire [3:0] foreground;
+    wire [3:0] background;
+    wire [15:0] characterBufferSelected;
+    wire [7:0] characterSelected;
+    assign characterBufferSelected = CharacterBuffer[characterIndex];
+    assign background = (characterBufferSelected >> 12 & 4'hf);
+    assign foreground = (characterBufferSelected >> 8 & 4'hf);
+    assign characterSelected = (characterBufferSelected & 8'hff);
+    
+     // Get charcter data from character map
+    wire [(CharacterPixelHeight * CharacterPixelWidth - 1):0] characterMapped;
+    wire [7:0] characterMapLine;
+    wire characterSubPixel;
+    assign characterMapped = CharacterMap[characterSelected];
+    assign characterMapLine = (characterMapped >> (CharacterPixelHeight - subLine) * CharacterPixelWidth) & 8'hff;
+    assign characterSubPixel = (characterMapLine >> (CharacterPixelWidth - subPixel) & 1'b1);
+    
+    // Get actual colors from palette
+    wire [11:0] color;
+    assign color = ColorPalette[characterSubPixel ? foreground : background];     
+    
+    /*
     int charX, subColumn, charY, subLine;
     wire [15:0] currentChar;
     wire [15:0] currentCharSegment;
@@ -71,22 +115,24 @@ module TextModeController #(
     wire [11:0] bgc;
     wire [11:0] fgc;
     wire [11:0] color;
-        
-    assign 
-        charX = hCounter / CharacterColumns, subColumn = hCounter % 8,
-        charY = vCounter / CharacterLines, subLine = vCounter % 8, 
-              
-        currentChar = CharacterBuffer[charY * CharacterColumns + charX],
-        currentCharacterMap = CharacterMap[currentChar[7:0]],
-        bgc = ColorPalette[currentChar[15:12]],
-        fgc = ColorPalette[currentChar[11:08]],
-        currentCharacterMapLine = currentCharacterMap >> (subLine * 8),
-        currentCharacterMapPixel = currentCharacterMapLine >> (subColumn * 8),
-        color = currentCharacterMapPixel ? fgc : bgc
-        ;
+      */  
     
         
     always @(posedge ScanClock) begin    
+    
+        //$display("%h, %h => %h, %h :: %h", realX, realY, characterX, characterY, vCounter);
+        //$display("%h, %h :: %h", characterX, characterY, characterIndex);
+        //$display("%h, %h :: %h", subPixel, subLine, characterBufferSelected);
+        //$display("%h, %h, %h", background, foreground, characterSelected);
+        $display("%h, %h", characterMapped, characterSelected);
+/*
+    assign characterMapped = CharacterMap[characterSelected];
+    assign characterMapLine = (characterMapped >> (CharacterPixelHeight - subLine) * CharacterPixelWidth) & 8'hff;
+    assign characterSubPixel = (characterMapLine >> (CharacterPixelWidth - subPixel) & 1'b1);
+    assign color = ColorPalette[characterSubPixel ? 12'hFFF : 12'h000]; //foreground : background];     
+  */          
+       
+    
         Red <= 4'b0;
         Green <= 4'b0;
         Blue <= 4'b0;    

@@ -14,7 +14,8 @@ module Top(
         .VGA_1920x1080(ScanClock)
     );
 
-    reg [15:0] CharacterBuffer [(80 * 45)-1:0]; // 15:12 BgC, 11:8 FgC, 7:0 Char
+    //reg [15:0] CharacterBuffer [(80 * 45)-1:0]; // 15:12 BgC, 11:8 FgC, 7:0 Char
+    reg [15:0] CharacterBuffer [(60 * 33)-1:0]; // 15:12 BgC, 11:8 FgC, 7:0 Char
     reg [11:0] ColorPalette [15:0]; // RRRR GGGG BBBB
     reg [63:0] CharacterMap [255:0]; // CharacterPixelHeight x CharacterPixelWidth pixels
     
@@ -63,13 +64,13 @@ module Top(
     end
     
     */
-
+    
     initial begin
     
-        for(int c = 0; c < 3600; c++) begin
+        for(int c = 0; c < (60*33); c++) begin
             CharacterBuffer[c] <= {  // 15:12 BgC, 11:8 FgC, 7:0 Char
-                /*bg*/4'h0, // + c[15:12],  
-                /*fg*/4'hF, // + c[11:8],
+                c[4:1],  
+                c[3:0],
                 /*char*/ c[7:0]  
                 };
         end
