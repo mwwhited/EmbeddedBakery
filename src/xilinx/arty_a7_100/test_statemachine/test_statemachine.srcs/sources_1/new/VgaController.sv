@@ -34,7 +34,7 @@ module TextModeController #(
     parameter VMaxLines = 1125,     //V total period (lines)
     parameter VPolarization = 1,
     
-    parameter CharacterRows = 80,
+    parameter CharacterColumns = 80,
     parameter CharacterLines = 45,
     parameter CharacterPixelHeight = 8,
     parameter CharacterPixelWidth = 8,
@@ -55,13 +55,37 @@ module TextModeController #(
     output reg LineBlanking,
     output reg FrameBlanking,
     
-    input [15:0] CharacterBuffer [(CharacterRows * CharacterLines)-1:0], // 15:12 BgC, 11:8 FgC, 7:0 Char
+    input [15:0] CharacterBuffer [(CharacterColumns * CharacterLines)-1:0], // 15:12 BgC, 11:8 FgC, 7:0 Char
     input [11:0] ColorPalette [15:0], // RRRR GGGG BBBB
     input [(CharacterPixelHeight * CharacterPixelWidth - 1):0] CharacterMap [255:0] // CharacterPixelHeight x CharacterPixelWidth pixels
 );
     reg [HCounterWidth:0] hCounter = 0;
     reg [VCounterWidth:0] vCounter = 0;
     
+    int charX, subColumn, charY, subLine;
+    wire [15:0] currentChar;
+    wire [15:0] currentCharSegment;
+    wire [(CharacterPixelHeight * CharacterPixelWidth - 1):0] currentCharacterMap;
+    wire [7:0] currentCharacterMapLine;
+    wire currentCharacterMapPixel;
+    wire [11:0] bgc;
+    wire [11:0] fgc;
+    wire [11:0] color;
+        
+    assign 
+        charX = hCounter / CharacterColumns, subColumn = hCounter % 8,
+        charY = vCounter / CharacterLines, subLine = vCounter % 8, 
+              
+        currentChar = CharacterBuffer[charY * CharacterColumns + charX],
+        currentCharacterMap = CharacterMap[currentChar[7:0]],
+        bgc = ColorPalette[currentChar[15:12]],
+        fgc = ColorPalette[currentChar[11:08]],
+        currentCharacterMapLine = currentCharacterMap >> (subLine * 8),
+        currentCharacterMapPixel = currentCharacterMapLine >> (subColumn * 8),
+        color = currentCharacterMapPixel ? fgc : bgc
+        ;
+    
+        
     always @(posedge ScanClock) begin    
         Red <= 4'b0;
         Green <= 4'b0;
@@ -108,23 +132,11 @@ module TextModeController #(
             end       
         end 
         
-        if (~LineBlanking && ~FrameBlanking) begin
-        
-            {Red, Green, Blue} <= vCounter *  FrameWidth + hCounter;
-        
-            /*
-            FrameWidth = 1920,
-            FrameHeight = 1080, 
-            CharacterRows = 80,
-            CharacterLines = 45,
-            CharacterPixelHeight = 8,
-            CharacterPixelWidth = 8,
-            */
-            
-            // X = hCounter
-            // Y = vCounter
-            
+        if (~LineBlanking && ~FrameBlanking) begin        
             //Draw Pixels
+            
+            // {Red, Green, Blue} <= vCounter *  FrameWidth + hCounter;
+            {Red, Green, Blue} <= color;
         end      
     end
     
