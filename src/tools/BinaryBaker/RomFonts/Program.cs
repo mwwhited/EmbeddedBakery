@@ -13,6 +13,7 @@ namespace RomFonts
             var files = Directory.GetFiles(@".\fonts", "*.bin");
             foreach (var file in files)
             {
+                await Console.Out.WriteLineAsync(file);
                 var outfile = Path.ChangeExtension(file, ".txt");
                 using var outStream = File.CreateText(outfile);
 
@@ -25,8 +26,20 @@ namespace RomFonts
                 var outRevHexfile = Path.ChangeExtension(file, ".rev.mem.txt");
                 using var outRevHexStream = File.CreateText(outRevHexfile);
 
+                var outHexMapfile = Path.ChangeExtension(file, ".map.txt");
+                using var outHexMapStream = File.CreateText(outHexMapfile);
+
 
                 var data = File.ReadAllBytes(file);
+                foreach (var i in from b in data.Select((v, i) => new { v, i })
+                                  let g = b.i / 8
+                                  group b by g)
+                {
+                    var hex = $"CharacterMap[{i.Key.ToString("000")}] <= 64'h{string.Join("_", i.Select(e => e.v.ToString("X2")))};";
+                    await Console.Out.WriteLineAsync(hex);
+                    await outHexMapStream.WriteLineAsync(hex);
+                }
+
                 foreach (var i in data.Select((v, i) => new { v, i }))
                 {
                     var bits = new BitArray(new[] { i.v });
@@ -36,7 +49,7 @@ namespace RomFonts
                     var outLine = $"{i.i:X3}\t{i.v:X2}\t{dis}";
                     await Console.Out.WriteLineAsync(outLine);
                     await outStream.WriteLineAsync(outLine);
-                    await outRevStream.WriteLineAsync($"{i.i:X3}\t{i.v:X2}\t{string.Join("",dis.Reverse())}");
+                    await outRevStream.WriteLineAsync($"{i.i:X3}\t{i.v:X2}\t{string.Join("", dis.Reverse())}");
 
                     await outHexStream.WriteLineAsync($"{i.v:X2} // {i.i:X4}: {dis}");
                     byte[] outByte = new byte[1];

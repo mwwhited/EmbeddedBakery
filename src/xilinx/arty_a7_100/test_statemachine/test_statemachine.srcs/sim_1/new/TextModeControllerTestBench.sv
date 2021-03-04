@@ -1,14 +1,8 @@
 `timescale 1ns / 1ps
 
-module Top;
-    
-    reg ScanClock = 0; 
-    
-    ClockGenerator clockGen(
-        .SystemClock(CLK100MHZ),
-        .VGA_1920x1080(ScanClock)
-    );
+module TextModeControllerTestBench;
 
+    reg ScanClock = 0; 
     reg [15:0] CharacterBuffer [(80 * 45)-1:0]; // 15:12 BgC, 11:8 FgC, 7:0 Char
     reg [11:0] ColorPalette [15:0]; // RRRR GGGG BBBB
     reg [63:0] CharacterMap [255:0]; // CharacterPixelHeight x CharacterPixelWidth pixels
@@ -23,10 +17,6 @@ module Top;
     wire FrameComplete;
     wire LineBlanking;
     wire FrameBlanking;
-    
-    assign led = {LineComplete, LineBlanking, FrameComplete, FrameBlanking};
-    assign ja = {Blue, Red};
-    assign jb = { 1'b0, 1'b0, VerticalSync, HorizontalSync, Green};
 
     TextModeController tmc(
         .ScanClock(ScanClock),
@@ -47,7 +37,6 @@ module Top;
         .FrameBlanking(FrameBlanking)
     );
     
-    /*
     reg [3:0] framecount = 0;   
     
     always @(posedge FrameBlanking) begin
@@ -57,7 +46,9 @@ module Top;
         end
     end
     
-    */
+    always #1 begin
+        ScanClock <= ~ScanClock;
+    end
 
     initial begin
     
