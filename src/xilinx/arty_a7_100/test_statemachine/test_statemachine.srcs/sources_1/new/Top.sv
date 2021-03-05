@@ -4,7 +4,7 @@ module Top(
     input CLK100MHZ,
     output [7:0] jb,
     output [7:0] jc,
-    output [3:0] led
+    output reg [3:0] led
 );
     
     wire ScanClock; 
@@ -30,7 +30,7 @@ module Top(
     wire LineBlanking;
     wire FrameBlanking;
     
-    assign led = {LineComplete, LineBlanking, FrameComplete, FrameBlanking};
+    //assign led = {LineComplete, LineBlanking, FrameComplete, FrameBlanking};
     assign jb = {Blue, Red};
     assign jc = { 1'b0, 1'b0, VerticalSync, HorizontalSync, Green};
 
@@ -53,19 +53,26 @@ module Top(
         .FrameBlanking(FrameBlanking)
     );
     
-    /*
-    reg [3:0] framecount = 0;   
+    int framecount = 0;   
     
-    always @(posedge FrameBlanking) begin
+    always @(posedge FrameComplete) begin
         framecount <= framecount + 1;
-        if (framecount > 2) begin
-             $finish;
+        
+        if (framecount % 10 == 0) begin
+            // toggle led 0 every 10 frames
+            led[0] <= ~led[0];
+        end
+        if (framecount % 20 == 0) begin
+            //shift palette every 20 frames
+            for(int c = 0; c < 16; c++) begin
+                ColorPalette[c] <= {ColorPalette[c][10:0], ColorPalette[c][11]};
+            end
         end
     end
     
-    */
-    
     initial begin
+    
+        led <= 0;
     
         for(int c = 0; c < (60*33); c++) begin
             CharacterBuffer[c] <= {  // 15:12 BgC, 11:8 FgC, 7:0 Char

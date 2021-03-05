@@ -34,10 +34,13 @@ module TextModeController #(
     parameter VMaxLines = 1125,     //V total period (lines)
     parameter VPolarization = 1,
     
-    parameter CharacterColumns = 60, // 80,
-    parameter CharacterLines = 33, // 45,
-    parameter CharacterPixelHeight = 8,
+    parameter CharacterColumns = 60, 
+    parameter CharacterLines = 33, 
     parameter CharacterPixelWidth = 8,
+    parameter CharacterPixelHeight = 8,
+    
+    parameter XPixelSubDivision = FrameWidth / CharacterColumns / CharacterPixelWidth,
+    parameter YPixelSubDivision = FrameHeight / CharacterLines / CharacterPixelHeight,
     
     parameter HCounterWidth = $clog2(HMaxPixels),
     parameter VCounterWidth = $clog2(VMaxLines)
@@ -55,6 +58,7 @@ module TextModeController #(
     output reg LineBlanking,
     output reg FrameBlanking,
     
+    //TODO: consider making color bit depth and character width adjustable  
     input [15:0] CharacterBuffer [(CharacterColumns * CharacterLines)-1:0], // 15:12 BgC, 11:8 FgC, 7:0 Char
     input [11:0] ColorPalette [15:0], // RRRR GGGG BBBB
     input [(CharacterPixelHeight * CharacterPixelWidth - 1):0] CharacterMap [255:0] // CharacterPixelHeight x CharacterPixelWidth pixels
@@ -74,9 +78,10 @@ module TextModeController #(
     int characterIndex;
     int subPixel, subLine; 
        
-    assign realX = hCounter / 4;
-    assign realY = vCounter / 4;   
-     
+    // Create adjusted pixels for Font size
+    assign realX = hCounter / XPixelSubDivision;
+    assign realY = vCounter / YPixelSubDivision;   
+    
     assign characterX = realX / CharacterPixelWidth % CharacterColumns;
     assign characterY = realY / CharacterPixelHeight;    
     assign characterIndex = characterY * CharacterColumns + characterX;
@@ -106,19 +111,13 @@ module TextModeController #(
     assign color = ColorPalette[characterSubPixel ? foreground : background];     
 
     always @(posedge ScanClock) begin    
-    
-        //$display("%h, %h => %h, %h :: %h", realX, realY, characterX, characterY, vCounter);
-        //$display("%h, %h :: %h", characterX, characterY, characterIndex);
-        //$display("%h, %h :: %h", subPixel, subLine, characterBufferSelected);
-        //$display("%h, %h, %h", background, foreground, characterSelected);
-        //$display("%h, %h", characterMapped, characterSelected);
-    
+        
         Red <= 4'b0;
         Green <= 4'b0;
         Blue <= 4'b0;    
         
-        HorizontalSync <= 1'b0;
-        VerticalSync <= 1'b0;
+        HorizontalSync <= ~HPolarization;
+        VerticalSync <= ~VPolarization;
         
         LineComplete <= 1'b0;
         FrameComplete <= 1'b0;
@@ -150,7 +149,8 @@ module TextModeController #(
             FrameBlanking <= 1'b1;        
             if (vCounter > FrameHeight + VfpLines && 
                 vCounter < FrameHeight + VfpLines + VpwLines) begin
-                HorizontalSync <=  1'b1;
+                //HorizontalSync <= HPolarization;
+                VerticalSync <= VPolarization;
             end   
             if (vCounter == VMaxLines) begin                
                 vCounter <= -1;
@@ -159,13 +159,13 @@ module TextModeController #(
         end 
          
         if (
+            // Only try to render pixels that are not in the blanking period
             ~LineBlanking && ~FrameBlanking
-            && CharacterColumns * CharacterPixelWidth * 4 > hCounter
-            && CharacterLines * CharacterPixelHeight * 4 > vCounter
+            // Only render text pixels withing the printable area
+            && CharacterColumns * CharacterPixelWidth * XPixelSubDivision > hCounter
+            && CharacterLines * CharacterPixelHeight * YPixelSubDivision > vCounter
             ) begin        
             //Draw Pixels
-            
-            // {Red, Green, Blue} <= vCounter *  FrameWidth + hCounter;
             {Red, Green, Blue} <= color;
         end      
     end
