@@ -1,3 +1,9 @@
+
+
+## These settings have been added to enable Quad-SPI Flash Updating
+set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
+set_property CONFIG_MODE SPIx4 [current_design]
+
 ## This file is a general .xdc for the Arty A7-100 Rev. D
 ## To use it in a project:
 ## - uncomment the lines corresponding to used pins
