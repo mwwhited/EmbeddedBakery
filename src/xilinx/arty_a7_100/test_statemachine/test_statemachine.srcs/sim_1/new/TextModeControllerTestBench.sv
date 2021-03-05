@@ -3,7 +3,7 @@
 module TextModeControllerTestBench;
 
     reg ScanClock = 0; 
-    reg [15:0] CharacterBuffer [(80 * 45)-1:0]; // 15:12 BgC, 11:8 FgC, 7:0 Char
+    reg [15:0] CharacterBuffer [(60 * 33)-1:0]; // 15:12 BgC, 11:8 FgC, 7:0 Char
     reg [11:0] ColorPalette [15:0]; // RRRR GGGG BBBB
     reg [63:0] CharacterMap [255:0]; // CharacterPixelHeight x CharacterPixelWidth pixels
     

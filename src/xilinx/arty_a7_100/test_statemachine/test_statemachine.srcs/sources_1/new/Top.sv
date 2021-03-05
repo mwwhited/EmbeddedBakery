@@ -57,17 +57,20 @@ module Top(
     
     always @(posedge FrameComplete) begin
         framecount <= framecount + 1;
+        CharacterBuffer[framecount % (60 * 33)] <= { 4'h0, {framecount}[3:0], {framecount % 256}[7:0]};
         
         if (framecount % 10 == 0) begin
             // toggle led 0 every 10 frames
             led[0] <= ~led[0];
         end
+        /*
         if (framecount % 20 == 0) begin
             //shift palette every 20 frames
             for(int c = 0; c < 16; c++) begin
                 ColorPalette[c] <= {ColorPalette[c][10:0], ColorPalette[c][11]};
             end
         end
+        */
     end
     
     initial begin
@@ -76,8 +79,8 @@ module Top(
     
         for(int c = 0; c < (60*33); c++) begin
             CharacterBuffer[c] <= {  // 15:12 BgC, 11:8 FgC, 7:0 Char
-                /* bg */ {c / 16}[3:0],  
-                /* fg */ {c % 16}[3:0],  
+                /* bg */ 4'h0, //{c / 16}[3:0],  
+                /* fg */ 4'hf, //{c % 16}[3:0],  
                 /*char*/ c[7:0]  
                 };
         end
@@ -98,6 +101,8 @@ module Top(
         ColorPalette[13] <= 12'h0FF;
         ColorPalette[14] <= 12'hFF0;
         ColorPalette[15] <= 12'hFFF;
+        
+        //$readmemh("C:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/ArtyCalc/ArtyCalc.srcs/sources_1/imports/fonts/901447-10m.mem.txt", CharacterMap);
         
         CharacterMap[000] <= 64'h1C_22_4A_56_4C_20_1E_00;
         CharacterMap[001] <= 64'h3C_24_24_7E_62_62_62_00;
@@ -355,7 +360,7 @@ module Top(
         CharacterMap[253] <= 64'h08_08_08_08_F8_00_00_00;
         CharacterMap[254] <= 64'hF0_F0_F0_F0_00_00_00_00;
         CharacterMap[255] <= 64'hF0_F0_F0_F0_0F_0F_0F_0F;
- 
+         
     end
     
 endmodule
