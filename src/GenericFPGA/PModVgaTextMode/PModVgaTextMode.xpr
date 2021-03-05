@@ -84,6 +84,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../xilinx/IpCatalog/PModVgaTextMode/component.xml">
+        <FileInfo SFType="IPXACT"/>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="TextModeController"/>
