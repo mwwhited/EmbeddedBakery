@@ -21,10 +21,7 @@
 
 module RowColumnDecoder #(
     parameter ColumnHeight = 4,
-    parameter RowWidth = 4,
-    
-    parameter ValueWidth = $clog2(ColumnHeight * RowWidth)-1,
-    parameter CounterWidth = $clog2(ColumnHeight)
+    parameter RowWidth = 4
 )
 (
     input ScanClock,
@@ -34,6 +31,9 @@ module RowColumnDecoder #(
     
     output reg [ValueWidth:0] Value
 );  
+    parameter ValueWidth = $clog2(ColumnHeight * RowWidth)-1;
+    parameter CounterWidth = $clog2(ColumnHeight);
+    
     reg [CounterWidth-1:0] counter;    
     
     initial
