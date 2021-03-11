@@ -4,7 +4,9 @@ module Top(
     input CLK100MHZ,
     output [7:0] jb,
     output [7:0] jc,
-    output reg [3:0] led
+    output reg [3:0] led,
+    input [3:0] sw,
+    inout  [7:0] jd    // PModKypd (hexadecimal keypad)
 );
     
     wire ScanClock; 
@@ -53,16 +55,40 @@ module Top(
         .FrameBlanking(FrameBlanking)
     );
     
+    reg [3:0] mapped; 
+    reg [3:0] grabbed; 
+    PModKypd pmodKeypad(
+        .SystemClock(CLK100MHZ),
+        .RowPins(jd[7:4]),
+        .ColumnPins(jd[3:0]),
+        .Value(mapped)
+    );  
+    
+    assign led = mapped;
+    
+    always @(mapped) begin
+        // [15:0] CharacterBuffer [(60 * 33)-1:0]
+       // CharacterBuffer[textIndex] <= { 4'h0, 4'hFF, 4'h0, grabbed };
+        textIndex <= textIndex + 1;
+        if (textIndex >= 60 * 33) begin
+            textIndex <= 0;
+        end
+    end 
+    
+    int textIndex = 0;
     int framecount = 0;   
     
     always @(posedge FrameComplete) begin
+        grabbed <= mapped;        
+        CharacterBuffer[textIndex] <= { 4'h0, 4'hFF, 4'h0, grabbed };
+        
         framecount <= framecount + 1;
         
-        if (framecount % 10 == 0) begin
-            // toggle led 0 every 10 frames
-            led[0] <= ~led[0];
-        end
-        if (framecount % 20 == 0) begin
+        //if (sw[1] && framecount % 60 == 0) begin
+        //    // toggle led 0 every 10 frames
+        //    led[0] <= ~led[0];
+        //end
+        if (sw[0] && framecount % 20 == 0) begin
             //shift palette every 20 frames
             for(int c = 0; c < 16; c++) begin
                 ColorPalette[c] <= {ColorPalette[c][10:0], ColorPalette[c][11]};

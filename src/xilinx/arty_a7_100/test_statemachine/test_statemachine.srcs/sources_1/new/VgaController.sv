@@ -19,7 +19,6 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module TextModeController #(
     parameter FrameWidth = 1920,
     parameter FrameHeight = 1080, 
@@ -38,17 +37,18 @@ module TextModeController #(
     parameter CharacterLines = 33, 
     parameter CharacterPixelWidth = 8,
     parameter CharacterPixelHeight = 8,
+    parameter CharacterWidth = 8,
     
-    parameter XPixelSubDivision = FrameWidth / CharacterColumns / CharacterPixelWidth,
-    parameter YPixelSubDivision = FrameHeight / CharacterLines / CharacterPixelHeight,
+    parameter RedWidth = 4,
+    parameter GreenWidth = 4,
+    parameter BlueWidth = 4,
     
-    parameter HCounterWidth = $clog2(HMaxPixels),
-    parameter VCounterWidth = $clog2(VMaxLines)
+    parameter PaletteWidth = 4
 )(
     input ScanClock, //148.5 MHz for 1920x1080
-    output reg [3:0] Red,
-    output reg [3:0] Green,
-    output reg [3:0] Blue,
+    output reg [(RedWidth-1):0] Red,
+    output reg [(GreenWidth-1):0] Green,
+    output reg [(BlueWidth-1):0] Blue,
     
     output reg HorizontalSync,
     output reg VerticalSync,
@@ -59,10 +59,18 @@ module TextModeController #(
     output reg FrameBlanking,
     
     //TODO: consider making color bit depth and character width adjustable  
-    input [15:0] CharacterBuffer [(CharacterColumns * CharacterLines)-1:0], // 15:12 BgC, 11:8 FgC, 7:0 Char
-    input [11:0] ColorPalette [15:0], // RRRR GGGG BBBB
+    input [(CharacterBufferWidth-1):0] CharacterBuffer [(CharacterColumns * CharacterLines)-1:0], // 15:12 BgC, 11:8 FgC, 7:0 Char
+    input [(ColorWidth-1):0] ColorPalette [(ColorPaletteCount-1):0], // RGB
     input [(CharacterPixelHeight * CharacterPixelWidth - 1):0] CharacterMap [255:0] // CharacterPixelHeight x CharacterPixelWidth pixels
 );
+    parameter ColorPaletteCount = 2 ** PaletteWidth; 
+    parameter CharacterBufferWidth = PaletteWidth + PaletteWidth + CharacterWidth;
+    parameter ColorWidth = RedWidth + GreenWidth + BlueWidth;
+    parameter XPixelSubDivision = FrameWidth / CharacterColumns / CharacterPixelWidth;
+    parameter YPixelSubDivision = FrameHeight / CharacterLines / CharacterPixelHeight;    
+    parameter HCounterWidth = $clog2(HMaxPixels);
+    parameter VCounterWidth = $clog2(VMaxLines);
+    
     reg [HCounterWidth:0] hCounter;
     reg [VCounterWidth:0] vCounter;
     
@@ -89,25 +97,25 @@ module TextModeController #(
     assign subLine = realY % CharacterPixelHeight + 1;
 
     // Get character from buffer
-    wire [3:0] foreground;
-    wire [3:0] background;
-    wire [15:0] characterBufferSelected;
-    wire [7:0] characterSelected;
+    wire [(PaletteWidth-1):0] foreground;
+    wire [(PaletteWidth-1):0] background;
+    wire [(CharacterBufferWidth-1):0] characterBufferSelected;
+    wire [(CharacterWidth-1):0] characterSelected;
     assign characterBufferSelected = CharacterBuffer[characterIndex];
-    assign background = (characterBufferSelected >> 12 & 4'hf);
-    assign foreground = (characterBufferSelected >> 8 & 4'hf);
-    assign characterSelected = (characterBufferSelected & 8'hff);
+    assign background = characterBufferSelected >> (PaletteWidth + CharacterWidth);
+    assign foreground = characterBufferSelected >> (CharacterWidth);
+    assign characterSelected = characterBufferSelected;
     
      // Get charcter data from character map
-    wire [(CharacterPixelHeight * CharacterPixelWidth - 1):0] characterMapped;
-    wire [7:0] characterMapLine;
+    wire [((CharacterPixelHeight * CharacterPixelWidth) - 1):0] characterMapped;
+    wire [(CharacterPixelWidth-1):0] characterMapLine;
     wire characterSubPixel;
     assign characterMapped = CharacterMap[characterSelected];
-    assign characterMapLine = (characterMapped >> (CharacterPixelHeight - subLine) * CharacterPixelWidth) & 8'hff;
-    assign characterSubPixel = (characterMapLine >> (CharacterPixelWidth - subPixel) & 1'b1);
+    assign characterMapLine = characterMapped >> (CharacterPixelHeight - subLine) * CharacterPixelWidth;
+    assign characterSubPixel = characterMapLine >> (CharacterPixelWidth - subPixel);
     
     // Get actual colors from palette
-    wire [11:0] color;
+    wire [(ColorWidth-1):0] color;
     assign color = ColorPalette[characterSubPixel ? foreground : background];     
 
     always @(posedge ScanClock) begin    
@@ -133,10 +141,10 @@ module TextModeController #(
                       
             if (hCounter > FrameWidth + HfpPixels && 
                 hCounter < FrameWidth + HfpPixels + HpwPixels) begin
-                HorizontalSync <=  1'b1;
+                HorizontalSync <=  HPolarization;
             end  
             if (hCounter == HMaxPixels) begin
-                hCounter <= -1;
+                hCounter <= -1; // Reset
                 vCounter <= vCounter + 1;
                 LineComplete <= ~LineComplete;
             end
@@ -153,7 +161,7 @@ module TextModeController #(
                 VerticalSync <= VPolarization;
             end   
             if (vCounter == VMaxLines) begin                
-                vCounter <= -1;
+                vCounter <= -1; // reset
                 FrameComplete <= ~FrameComplete;
             end       
         end 

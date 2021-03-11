@@ -1,0 +1,409 @@
+// O------------------------------------------------------------------------------O
+// | Example "Hello World" Program (main.cpp)                                     |
+// O------------------------------------------------------------------------------O
+
+//software 18-22 FPS
+//OLC_GFX_OPENGL10  10-15
+//OLC_GFX_OPENGL33  10-15
+
+#define OLC_GFX_OPENGL33 
+
+/*
+*
+#if defined(OLC_GFX_OPENGL10)
+#if defined(OLC_GFX_OPENGL33)
+#if defined(OLC_GFX_OPENGLES2)
+#if defined(OLC_GFX_DIRECTX10)
+#if defined(OLC_GFX_DIRECTX11)
+*/
+
+#define OLC_PGE_APPLICATION
+#include "olcPixelGameEngine.h"
+
+// Override base class with your custom functionality
+class Example : public olc::PixelGameEngine
+{
+public:
+	Example()
+	{
+		// Name your application
+		sAppName = "Example";
+	}
+
+public:
+
+	bool OnUserCreate() override
+	{
+		// Called once at the start, so create things here
+		return true;
+	}
+	bool OnUserUpdate(float fElapsedTime) override
+	{
+		frameCount++;
+		if (frameCount % 10 == 0) {
+			for (int p = 0; p < 16; p++) {
+				palette[p] = (palette[p] << 1 | palette[p] >> 15 & 0x0001);
+			}
+		}
+
+		if (frameCount % 20 == 0) {
+			for (int p = 0; p < columns * rows; p++) {
+				buffer[p] = buffer[p] & 0xff | (buffer[p] & 0x0f00)<<4 | (buffer[p] & 0xf000) >> 4;
+			}
+		}
+
+		for (int k = 1; k < olc::Key::CAPS_LOCK; k++) {
+			olc::Key key = (olc::Key)k;
+			if (GetKey(key).bPressed)
+				OnPressed(key);
+		}
+
+		// Called once per frame, draws random coloured pixels
+
+		for (int x = 0; x < ScreenWidth(); x++)
+			for (int y = 0; y < ScreenHeight(); y++) {
+				Draw(x, y, ResolvePixel(x, y));
+			}
+
+		return true;
+	}
+
+	bool OnPressed(olc::Key k) {
+		buffer[charIndex] = (buffer[charIndex] & 0xff00) | (k & 0xff);
+		charIndex++;
+		if (charIndex > columns * rows) charIndex = 0;
+
+		return true;
+	}
+
+	int frameCount = 0;
+	int charIndex = 0;
+
+	int columns = 60;
+	int rows = 33;
+	int charPixelWidth = 8;
+	int charPixelHeight = 8;
+
+	//int pixelsWidth = columns * charPixelWidth;
+	//int pixelsHeight = rows * charPixelHeight;
+
+	olc::Pixel ResolvePixel(int x, int y) {
+		// Find the current character postion and subpixels
+
+		int realX = x;
+		int realY = y;
+
+		int cx = (realX / charPixelWidth) % columns;
+		int cy = (realY / charPixelHeight);
+		int ci = (cy * columns) + cx;
+		int sp = (realX % charPixelWidth) + 1;
+		int sl = (realY % charPixelHeight) + 1;
+
+		// Get character from buffer
+		int charBuffer = buffer[ci];
+		int bg = (charBuffer >> 12 & 0xf);
+		int fg = (charBuffer >> 8 & 0xf);
+		int charValue = (charBuffer & 0xff);
+
+		// Get charcter data from character map
+		uint64_t charMap = charRom[charValue];
+		uint64_t charMapLine = (charMap >> (8 - sl) * 8) & 0xff;
+		int charMapPixel = (charMapLine >> (8 - sp) & 0x1) == 0x1;
+		int clr = palette[charMapPixel ? fg : bg];
+
+
+		int r = (clr >> 8) & 0xf;
+		int g = (clr >> 4) & 0xf;
+		int b = (clr >> 0) & 0xf;
+
+		r = r << 4 | r;
+		g = g << 4 | g;
+		b = b << 4 | b;
+
+		olc::Pixel pixel = olc::Pixel(r, g, b);
+
+		return pixel;
+	}
+
+	uint16_t buffer[60 * 33] = {};
+	uint16_t palette[16] = { 0x000, 0x00A, 0xA00, 0xA0A, 0x0A0, 0x0AA, 0xAA0, 0xAAA, 0x666, 0x00F, 0xF00, 0xF0F, 0x0F0, 0x0FF, 0xFF0, 0xFFF };
+	uint64_t charRom[256] = {
+		0x1C224A564C201E00
+		, 0x3C24247E62626200
+		, 0x7844447C62627E00
+		, 0x7E42406060627E00
+		, 0x7C46426262667C00
+		, 0x7E40407C60607E00
+		, 0x7E40407E60606000
+		, 0x7E42406E62627E00
+		, 0x4242427E62626200
+		, 0x0808080C0C0C0C00
+		, 0x0404040606467E00
+		, 0x4244487C62626200
+		, 0x4040406060607E00
+		, 0x7E4A4A6A6A6A6A00
+		, 0x7E42426262626200
+		, 0x7E46424242427E00
+		, 0x7E42427E60606000
+		, 0x7E4242424A4E7E00
+		, 0x7C44447C62626200
+		, 0x7E42407E06467E00
+		, 0x3E10101818181800
+		, 0x4242426262627E00
+		, 0x6262626624243C00
+		, 0x4A4A4A6A6A6A7E00
+		, 0x4242661866626200
+		, 0x2222223E18181800
+		, 0x7E42061860627E00
+		, 0x3C20202020203C00
+		, 0x0040201008040200
+		, 0x3C04040404043C00
+		, 0x00081C2A08081414
+		, 0x000010207F201000
+		, 0x0000000000000000
+		, 0x0808080C0C000C00
+		, 0x6C246C0000000000
+		, 0x24247E247E242400
+		, 0x083E203E063E0800
+		, 0x0062640810264600
+		, 0x3C20247E64647C00
+		, 0x1C18100000000000
+		, 0x0408101010080400
+		, 0x2010080808102000
+		, 0x082A1C3E1C2A0800
+		, 0x0008083E08080000
+		, 0x0000000000181808
+		, 0x0000007E00000000
+		, 0x0000000000181800
+		, 0x0002040810204000
+		, 0x7E62524A46467E00
+		, 0x18080818181A3E00
+		, 0x7E42027E60607E00
+		, 0x7C44041E06467E00
+		, 0x444444447E0C0C00
+		, 0x7E407E0606467E00
+		, 0x7E42407E46467E00
+		, 0x7E02020606060600
+		, 0x3C24247E46467E00
+		, 0x7E42427E06060600
+		, 0x0000180000180000
+		, 0x0000180000181808
+		, 0x0E18306030180E00
+		, 0x00007E007E000000
+		, 0x70180C060C187000
+		, 0x7E02027E60006000
+		, 0x00000000FF000000
+		, 0x081C3E7F7F1C3E00
+		, 0x1010101010101010
+		, 0x000000FF00000000
+		, 0x0000FF0000000000
+		, 0x00FF000000000000
+		, 0x0000000000FF0000
+		, 0x2020202020202020
+		, 0x0404040404040404
+		, 0x00000000E0100808
+		, 0x0808080403000000
+		, 0x08080810E0000000
+		, 0x80808080808080FF
+		, 0x8040201008040201
+		, 0x0102040810204080
+		, 0xFF80808080808080
+		, 0xFF01010101010101
+		, 0x003C7E7E7E7E3C00
+		, 0x000000000000FF00
+		, 0x367F7F7F3E1C0800
+		, 0x4040404040404040
+		, 0x0000000003040808
+		, 0x8142241818244281
+		, 0x003C424242423C00
+		, 0x081C2A772A080800
+		, 0x0202020202020202
+		, 0x081C3E7F3E1C0800
+		, 0x08080808FF080808
+		, 0xA050A050A050A050
+		, 0x0808080808080808
+		, 0x0000013E54141400
+		, 0xFF7F3F1F0F070301
+		, 0x0000000000000000
+		, 0xF0F0F0F0F0F0F0F0
+		, 0x00000000FFFFFFFF
+		, 0xFF00000000000000
+		, 0x00000000000000FF
+		, 0x8080808080808080
+		, 0xAA55AA55AA55AA55
+		, 0x0101010101010101
+		, 0x00000000AA55AA55
+		, 0xFFFEFCF8F0E0C080
+		, 0x0303030303030303
+		, 0x080808080F080808
+		, 0x000000000F0F0F0F
+		, 0x080808080F000000
+		, 0x00000000F8080808
+		, 0x000000000000FFFF
+		, 0x000000000F080808
+		, 0x08080808FF000000
+		, 0x00000000FF080808
+		, 0x08080808F8080808
+		, 0xC0C0C0C0C0C0C0C0
+		, 0xE0E0E0E0E0E0E0E0
+		, 0x0707070707070707
+		, 0xFFFF000000000000
+		, 0xFFFFFF0000000000
+		, 0x0000000000FFFFFF
+		, 0x01010101010101FF
+		, 0x00000000F0F0F0F0
+		, 0x0F0F0F0F00000000
+		, 0x08080808F8000000
+		, 0xF0F0F0F000000000
+		, 0xF0F0F0F00F0F0F0F
+		, 0x1C224A564C201E00
+		, 0x00003C047C647C00
+		, 0x40407E4262627E00
+		, 0x00007E4260627E00
+		, 0x02027E4262627E00
+		, 0x00007E427E607E00
+		, 0x1E12107C18181800
+		, 0x00007E42627E027E
+		, 0x40407E4262626200
+		, 0x1800101018181800
+		, 0x0C00080C0C0C447C
+		, 0x4040444878646400
+		, 0x1010101018181800
+		, 0x00007F496D6D6D00
+		, 0x00007E4262626200
+		, 0x00007E4262627E00
+		, 0x00007E42627E4040
+		, 0x00007E42467E0202
+		, 0x00007E4060606000
+		, 0x00007E407E067E00
+		, 0x10107C1018181800
+		, 0x0000424262627E00
+		, 0x0000626266243C00
+		, 0x000049496D6D7F00
+		, 0x000042423C626200
+		, 0x00006262427E027E
+		, 0x00007E0618607E00
+		, 0x3C20202020203C00
+		, 0x0040201008040200
+		, 0x3C04040404043C00
+		, 0x00081C2A08081414
+		, 0x000010207F201000
+		, 0x0000000000000000
+		, 0x0808080C0C000C00
+		, 0x6C246C0000000000
+		, 0x24247E247E242400
+		, 0x083E203E063E0800
+		, 0x0062640810264600
+		, 0x3C20247E64647C00
+		, 0x1C18100000000000
+		, 0x0408101010080400
+		, 0x2010080808102000
+		, 0x082A1C3E1C2A0800
+		, 0x0008083E08080000
+		, 0x0000000000181808
+		, 0x0000007E00000000
+		, 0x0000000000181800
+		, 0x0002040810204000
+		, 0x7E62524A46467E00
+		, 0x38080818181A3E00
+		, 0x7E42027E60607E00
+		, 0x7C44041E06467E00
+		, 0x444444447E0C0C00
+		, 0x7E407E0606467E00
+		, 0x7E42407E46467E00
+		, 0x7E02020606060600
+		, 0x3C24247E46467E00
+		, 0x7E42427E06060600
+		, 0x0000180000180000
+		, 0x0000180000181808
+		, 0x0E18306030180E00
+		, 0x00007E007E000000
+		, 0x70180C060C187000
+		, 0x7E02027E60006000
+		, 0x00000000FF000000
+		, 0x3C24247E62626200
+		, 0x7844447C62627E00
+		, 0x7E42406060627E00
+		, 0x7C46426262667C00
+		, 0x7E40407860607E00
+		, 0x7E40407E60606000
+		, 0x7E42406E62627E00
+		, 0x4242427E62626200
+		, 0x0808080C0C0C0C00
+		, 0x0404040606467E00
+		, 0x4244487C62626200
+		, 0x4040406060607E00
+		, 0x7E4A4A6A6A6A6A00
+		, 0x7E42426262626200
+		, 0x7E46424242427E00
+		, 0x7E42427E60606000
+		, 0x7E4242424A4E7E00
+		, 0x7C44447C62626200
+		, 0x7E42407E06467E00
+		, 0x3E10101818181800
+		, 0x4242426262627E00
+		, 0x6262626624243C00
+		, 0x4A4A4A6A6A6A7E00
+		, 0x4242663C66626200
+		, 0x2222223E18181800
+		, 0x7E42061860627E00
+		, 0x08080808FF080808
+		, 0xA050A050A050A050
+		, 0x0808080808080808
+		, 0xCCCC3333CCCC3333
+		, 0xCC663399CC663399
+		, 0x0000000000000000
+		, 0xF0F0F0F0F0F0F0F0
+		, 0x00000000FFFFFFFF
+		, 0xFF00000000000000
+		, 0x00000000000000FF
+		, 0x8080808080808080
+		, 0xAA55AA55AA55AA55
+		, 0x0101010101010101
+		, 0x00000000AA55AA55
+		, 0x993366CC993366CC
+		, 0x0303030303030303
+		, 0x080808080F080808
+		, 0x000000000F0F0F0F
+		, 0x080808080F000000
+		, 0x00000000F8080808
+		, 0x000000000000FFFF
+		, 0x000000000F080808
+		, 0x08080808FF000000
+		, 0x00000000FF080808
+		, 0x08080808F8080808
+		, 0xC0C0C0C0C0C0C0C0
+		, 0xE0E0E0E0E0E0E0E0
+		, 0x0707070707070707
+		, 0xFFFF000000000000
+		, 0xFFFFFF0000000000
+		, 0x0000000000FFFFFF
+		, 0x0102444850604000
+		, 0x00000000F0F0F0F0
+		, 0x0F0F0F0F00000000
+		, 0x08080808F8000000
+		, 0xF0F0F0F000000000
+		, 0xF0F0F0F00F0F0F0F
+	};
+
+};
+int main()
+{
+	Example demo;
+
+	for (int i = 0; i < 60 * 33; i++) {
+		int bg = ((i / 16) & 0xf);
+		int fg = ((i % 16) & 0xf);
+
+		if (bg == fg)fg = (~fg) & 0xf;
+
+		int c = ((i % 256) & 0xff) << 0;
+
+		demo.buffer[i] = bg << 12 | fg << 8 | c;
+	}
+
+	int mul = 4;
+	if (demo.Construct(1920 / 4, 1080 / 4, 4, 4))
+		demo.Start();
+	return 0;
+}
