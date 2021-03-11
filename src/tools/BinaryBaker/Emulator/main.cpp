@@ -48,7 +48,7 @@ public:
 
 		if (frameCount % 20 == 0) {
 			for (int p = 0; p < columns * rows; p++) {
-				buffer[p] = buffer[p] & 0xff | (buffer[p] & 0x0f00)<<4 | (buffer[p] & 0xf000) >> 4;
+				buffer[p] = buffer[p] & 0xff | (buffer[p] & 0x0f00) << 4 | (buffer[p] & 0xf000) >> 4;
 			}
 		}
 
@@ -391,6 +391,7 @@ int main()
 {
 	Example demo;
 
+	/*
 	for (int i = 0; i < 60 * 33; i++) {
 		int bg = ((i / 16) & 0xf);
 		int fg = ((i % 16) & 0xf);
@@ -401,6 +402,13 @@ int main()
 
 		demo.buffer[i] = bg << 12 | fg << 8 | c;
 	}
+	*/
+
+	for (int x = 0; x < 16; x++)
+		for (int y = 0; y < 16; y++) {
+			int i = (y + 1) * demo.columns + x + 1;
+			demo.buffer[i] = 0x0000 | 0x0F00 | y * 16 + x;
+		}
 
 	int mul = 4;
 	if (demo.Construct(1920 / 4, 1080 / 4, 4, 4))
