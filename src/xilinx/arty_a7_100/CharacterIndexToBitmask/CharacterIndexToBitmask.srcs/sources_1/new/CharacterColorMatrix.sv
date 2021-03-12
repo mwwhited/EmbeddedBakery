@@ -33,7 +33,7 @@ module CharacterColorMatrix #(
     
     input [(CharacterDataWidth - 1):0] CharacterData,
     
-    output reg [(ColorBits - 1):0] Pixels [(CharacterMaskWidth - 1):0]    
+    output [(ColorBits - 1):0] Pixels [(CharacterMaskWidth - 1):0]    
     );
     parameter CharacterDataWidth = ColorBits + ColorBits + CharacterIndexBits;
     parameter CharacterMaskHeightBits = $clog2(CharacterMaskHeight);
@@ -60,10 +60,19 @@ module CharacterColorMatrix #(
         .VerticalOffset(VerticalOffset),
         .CharacterData(characterMap)
     );
-        
-    always @(posedge Clock) begin    
-        for(int p = 0; p < CharacterMaskWidth; p++) begin
+    
+    generate genvar p;
+        for(p = 0; p < CharacterMaskWidth; p++) begin
+            assign Pixels[p] = characterMap[p] ? foregroundColor : backgroundColor;
+        end
+        //foreach(Pixels[p])
+        //    Pixels[p] <= characterMap[p] ? foregroundColor : backgroundColor;        
+    endgenerate 
+     /*
+    always @(negedge Clock) begin
+        foreach(Pixels[p])
             Pixels[p] <= characterMap[p] ? foregroundColor : backgroundColor;
-        end        
-    end  
+    end
+    */
+    
 endmodule

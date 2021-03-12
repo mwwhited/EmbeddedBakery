@@ -44,13 +44,17 @@ module CharacterRom #(
         Write ? {CharacterMaskWidth{1'hZ}} : 
         mask
         ;
-    
-    initial begin
-        $readmemb("C:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/CharacterIndexToBitmask/CharacterIndexToBitmask.srcs/sources_1/imports/fonts/font.txt", maskData);
-    end    
-    always @(posedge Reset) begin
+        
+    function void resetRam();
         //TODO: need to figure out how to make current working directory the project directory        
         $readmemb("C:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/CharacterIndexToBitmask/CharacterIndexToBitmask.srcs/sources_1/imports/fonts/font.txt", maskData);
+    endfunction    
+    
+    initial begin
+        resetRam();
+    end    
+    always @(posedge Reset) begin
+        resetRam();
     end
     
     always @(posedge Clock) begin

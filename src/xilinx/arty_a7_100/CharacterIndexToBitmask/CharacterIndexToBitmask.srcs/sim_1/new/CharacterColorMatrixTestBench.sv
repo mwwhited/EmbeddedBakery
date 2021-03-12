@@ -56,7 +56,7 @@ module CharacterColorMatrixTestBench;
         count <= count + 1;
         VerticalOffset <= count;    
         
-        if (count == 32) begin
+        if (count == 24) begin
             $finish;
         end
     end
