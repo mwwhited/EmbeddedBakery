@@ -4,12 +4,11 @@
 // Engineer: Matthew Whited
 // 
 // Create Date: 03/11/2021 06:07:51 AM
-// Design Name: 
+// Design Name: Character RAM / ROM
 // Module Name: CharacterRom
 // Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Target Devices: Digilent Arty A7 100t - Xilinx Atrix 7 100t 
+// Description: Reconfigurable Character ROM
 // 
 // Dependencies: 
 // 
@@ -38,7 +37,6 @@ module CharacterRom #(
     
     reg [(CharacterMaskWidth - 1):0] maskData [(CharacterIndexes - 1):0][(CharacterMaskHeight - 1):0];
     wire [(CharacterMaskWidth - 1):0] mask;
-    reg resetPulse = 0;
     
     assign mask = maskData[CharacterIndex][VerticalOffset];
     
@@ -48,11 +46,10 @@ module CharacterRom #(
         ;
     
     initial begin
-        resetPulse <= 1;
-    end
-    
-    always @(Reset or posedge resetPulse) begin
-        resetPulse <= 0;
+        $readmemb("C:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/CharacterIndexToBitmask/CharacterIndexToBitmask.srcs/sources_1/imports/fonts/font.txt", maskData);
+    end    
+    always @(posedge Reset) begin
+        //TODO: need to figure out how to make current working directory the project directory        
         $readmemb("C:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/CharacterIndexToBitmask/CharacterIndexToBitmask.srcs/sources_1/imports/fonts/font.txt", maskData);
     end
     
