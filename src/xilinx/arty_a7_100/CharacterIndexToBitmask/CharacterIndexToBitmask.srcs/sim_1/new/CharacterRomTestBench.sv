@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Out-of-Band Development
+// Engineer: Matthew Whited
 // 
 // Create Date: 03/11/2021 07:53:08 AM
 // Design Name: 
@@ -44,7 +44,7 @@ module CharacterRomTestBench;
     bit display = 0;
     int counter = 0;  
     int vertical = 0; 
-    int character = 0;   
+    int character = 0;
     
     assign result = display ? CharacterData : 8'hz;
     assign CharacterData = Write ? {character, vertical[2:0]} : 8'hz;

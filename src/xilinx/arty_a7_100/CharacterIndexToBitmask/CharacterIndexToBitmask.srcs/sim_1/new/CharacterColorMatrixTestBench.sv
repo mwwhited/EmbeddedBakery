@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Out-of-Band Development
+// Engineer: Matthew Whited
 // 
 // Create Date: 03/12/2021 02:13:19 PM
 // Design Name: 
@@ -36,7 +36,7 @@ module CharacterColorMatrixTestBench;
     */     
     reg [15:0] CharacterData = {4'h0, 4'hf, 8'h01};
     
-    wire [3:0] Pixels [7:0];    
+    wire [11:0] Pixels [7:0];    
     
     CharacterColorMatrix characterColorMatrix(
         .Write(Write),

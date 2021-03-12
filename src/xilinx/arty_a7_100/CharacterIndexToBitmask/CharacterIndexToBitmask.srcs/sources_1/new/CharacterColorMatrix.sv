@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Out-of-Band Development
+// Engineer: Matthew Whited
 // 
 // Create Date: 03/12/2021 01:53:16 PM
 // Design Name: 
@@ -19,11 +19,13 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+
 module CharacterColorMatrix #(
     parameter CharacterIndexBits = 8,
     parameter CharacterMaskWidth = 8,
     parameter CharacterMaskHeight = 8,
-    parameter ColorBits = 4
+    parameter ColorIndexWidth = 4, 
+    parameter ColorBits = 12
 ) (
     input Write,
     input Clock,
@@ -35,7 +37,7 @@ module CharacterColorMatrix #(
     
     output [(ColorBits - 1):0] Pixels [(CharacterMaskWidth - 1):0]    
     );
-    parameter CharacterDataWidth = ColorBits + ColorBits + CharacterIndexBits;
+    parameter CharacterDataWidth = ColorIndexWidth + ColorIndexWidth + CharacterIndexBits;
     parameter CharacterMaskHeightBits = $clog2(CharacterMaskHeight);
     parameter CharacterIndexes = 2 ** CharacterIndexBits;
     
@@ -43,36 +45,49 @@ module CharacterColorMatrix #(
     wire [(CharacterIndexBits - 1):0] characterIndex;
     assign characterIndex = CharacterData[(CharacterMaskWidth - 1):0];
     
-    wire [(ColorBits - 1):0] backgroundColor;
-    wire [(ColorBits - 1):0] foregroundColor;
-    assign backgroundColor = CharacterData[(ColorBits - 1 + (ColorBits + CharacterMaskWidth)):0 + (ColorBits + CharacterMaskWidth)];
-    assign foregroundColor = CharacterData[(ColorBits - 1 + (CharacterMaskWidth)):0 + (CharacterMaskWidth)];
-    
+    wire [(ColorIndexWidth - 1):0] backgroundColor;
+    wire [(ColorIndexWidth - 1):0] foregroundColor;
+    assign backgroundColor = CharacterData[(ColorIndexWidth - 1 + (ColorIndexWidth + CharacterMaskWidth)):0 + (ColorIndexWidth + CharacterMaskWidth)];
+    assign foregroundColor = CharacterData[(ColorIndexWidth - 1 + (CharacterMaskWidth)):0 + (CharacterMaskWidth)];
+        
     CharacterRom #(
         .CharacterIndexBits(CharacterIndexBits),
         .CharacterMaskWidth(CharacterMaskWidth),
         .CharacterMaskHeight(CharacterMaskHeight)
     ) characterRom (
-        .Write(Write),
+        //.Write(Write),
+        //.Reset(Reset),
+        .Write(0),
+        .Reset(0),
         .Clock(Clock),
-        .Reset(Reset),
         .CharacterIndex(characterIndex),
         .VerticalOffset(VerticalOffset),
         .CharacterData(characterMap)
     );
-    
+        
+    wire [(ColorIndexWidth - 1):0] colorIndexes [(CharacterMaskWidth - 1):0]  ;
     generate genvar p;
         for(p = 0; p < CharacterMaskWidth; p++) begin
-            assign Pixels[p] = characterMap[p] ? foregroundColor : backgroundColor;
-        end
-        //foreach(Pixels[p])
-        //    Pixels[p] <= characterMap[p] ? foregroundColor : backgroundColor;        
+        
+            assign colorIndexes[p] = characterMap[p] ? foregroundColor : backgroundColor;
+            
+            ColorPaletteRom #(
+                .ColorIndexWidth(ColorIndexWidth),
+                .ColorBits(ColorBits)
+            ) i_ColorPaletteRom(
+                // .Write(Write),
+                // .Reset(Reset),
+                .Write(0),
+                .Reset(0),
+                .Clock(Clock),
+                .ColorIndex(colorIndexes[p]),
+                .ColorValue(Pixels[p])
+            );
+            
+            //assign Pixels[p] = characterMap[p] ? foregroundColor : backgroundColor;
+            
+            
+        end        
     endgenerate 
-     /*
-    always @(negedge Clock) begin
-        foreach(Pixels[p])
-            Pixels[p] <= characterMap[p] ? foregroundColor : backgroundColor;
-    end
-    */
     
 endmodule

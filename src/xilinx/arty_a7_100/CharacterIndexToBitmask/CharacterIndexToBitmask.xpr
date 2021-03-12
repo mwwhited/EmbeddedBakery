@@ -48,7 +48,7 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="arty-a7-100"/>
-    <Option Name="WTXSimLaunchSim" Val="98"/>
+    <Option Name="WTXSimLaunchSim" Val="111"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -84,6 +84,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/ColorPaletteRom.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/CharacterColorMatrix.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -95,6 +102,12 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../tools/BinaryBaker/RomFonts/bin/Debug/net5.0/fonts/font.txt"/>
           <Attr Name="ImportTime" Val="1615466954"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/fonts/colors.txt">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../tools/BinaryBaker/RomFonts/fonts/colors.txt"/>
+          <Attr Name="ImportTime" Val="1615583358"/>
         </FileInfo>
       </File>
       <Config>
@@ -113,6 +126,14 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/new/CharacterColorMatrixTestBench.sv">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/ColorPaletteRomTestBench.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
