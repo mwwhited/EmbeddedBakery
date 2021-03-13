@@ -38,8 +38,15 @@ module Host(
 
     wire [3:0] mapped;
     wire keypadChanged; 
-    PModKypd_0 pmodKeypad(
+    
+    wire scanClock;     
+    ClockDivider_0 _clockDivider(
         .SystemClock(CLK100MHZ),
+        .DividedClock(scanClock)
+    );
+    
+    PModKypd_0 pmodKeypad(
+        .ScanClock(scanClock),
         .RowPins(jd[7:4]),
         .ColumnPins(jd[3:0]),
         .Value(mapped),
