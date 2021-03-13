@@ -26,7 +26,7 @@ module TextModeLineTestBench;
     parameter CharacterMaskWidth = 8;
     parameter CharacterMaskHeight = 8;
     parameter ColorIndexWidth = 4;
-    parameter ColorBits = 12;
+    parameter ColorBits = 2;
     
     parameter CharacterDataWidth = ColorIndexWidth + ColorIndexWidth + CharacterIndexBits;
     parameter ColumnIndexWidth = $clog2(CharactersPerLine) + 1;
@@ -50,12 +50,13 @@ module TextModeLineTestBench;
     wire [(ColorBits - 1):0] PixelColor;
     
     TextModeLine #(
-        .CharactersPerLine(CharactersPerLine)
+        .CharactersPerLine(CharactersPerLine),
+        .ColorBits(ColorBits)
     ) uut(
         .Clock(Clock),
         .Characters(Characters),
         
-        .Reset(Reset),
+        .ResetPixel(Reset),
         .Enable(Enable),
         
         .CharacterLineCompletePulse(CharacterLineCompletePulse),
@@ -66,7 +67,7 @@ module TextModeLineTestBench;
         .CharacterPixelY(CharacterPixelY),
         
         .PixelColor(PixelColor)
-    );
+    ); 
     
     initial begin
         Clock <= 0;

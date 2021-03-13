@@ -30,7 +30,7 @@ module TextModeLine #(
     input Clock,        // Constant
     input [(CharacterDataWidth - 1):0] Characters [(CharactersPerLine - 1):0],  // Text Line Buffer
     
-    input Reset,        // Async Reset
+    input ResetPixel,   // Async ResetPixel
     input Enable,       // High when Active
     
     output CharacterLineCompletePulse,
@@ -47,6 +47,7 @@ module TextModeLine #(
     parameter CharacterPixelWidth = $clog2(CharacterMaskWidth);
     parameter CharacterPixelHeight = $clog2(CharacterMaskHeight);
     parameter CharacterPixelTotal = CharacterMaskWidth * CharactersPerLine;
+    parameter CharacterMaskHeightBits = $clog2(CharacterMaskHeight);
     
     int _counter = 0;
     
@@ -59,13 +60,6 @@ module TextModeLine #(
     
     reg [(ColorBits - 1):0] _pixelColor;
     
-    //assign CharacterLineCompletePulse       = Enable ? _characterLineCompletePulse      : 1'bZ                          ;
-    //assign CharacterPixelLineCompletePulse  = Enable ? _characterPixelLineCompletePulse : 1'bZ                          ;
-    //assign CharacterColumnIndex             = Enable ? _characterColumnIndex            : {ColumnIndexWidth{1'bZ}}      ;
-    //assign CharacterPixelX                  = Enable ? _characterPixelX                 : {CharacterPixelWidth{1'bZ}}   ;
-    //assign CharacterPixelY                  = Enable ? _characterPixelY                 : {CharacterPixelHeight{1'bZ}}  ;
-    //assign PixelColor                       = Enable ? _pixelColor                      : {ColorBits{1'bZ}}             ;
-    
     assign CharacterLineCompletePulse       = _characterLineCompletePulse      ;
     assign CharacterPixelLineCompletePulse  = _characterPixelLineCompletePulse ;
     assign CharacterColumnIndex             = _characterColumnIndex            ;
@@ -73,7 +67,7 @@ module TextModeLine #(
     assign CharacterPixelY                  = _characterPixelY                 ;
     assign PixelColor                       = _pixelColor                      ;
     
-    function void _reset();
+    function void _resetPixel();
         _characterLineCompletePulse         <= 1'b0                            ;
         _characterPixelLineCompletePulse    <= 1'b0                            ;
         _characterColumnIndex               <= {ColumnIndexWidth{1'b0}}        ;
@@ -83,8 +77,8 @@ module TextModeLine #(
         _counter                            <= 0                               ;
     endfunction
     
-    initial _reset();    
-    always @(posedge Reset) _reset();
+    initial _resetPixel();    
+    always @(posedge ResetPixel) _resetPixel();
     
     wire [(CharacterDataWidth - 1):0] _characterData;
     assign _characterData = Characters[_characterColumnIndex];
@@ -97,11 +91,22 @@ module TextModeLine #(
     wire [(ColorIndexWidth - 1):0] _foregroundColor;
     assign _backgroundColor = _characterData[(ColorIndexWidth - 1 + (ColorIndexWidth + CharacterMaskWidth)):0 + (ColorIndexWidth + CharacterMaskWidth)];
     assign _foregroundColor = _characterData[(ColorIndexWidth - 1 + (CharacterMaskWidth)):0 + (CharacterMaskWidth)];
-        
-    CharacterRom characterRom (
-        .CharacterIndex(_characterIndex),
-        .VerticalOffset(_characterPixelY),
-        .CharacterData(_characterMap)
+         
+    wire [(CharacterIndexBits - 1):0] __characterIndex;
+    wire [(CharacterMaskHeightBits - 1):0] __verticalOffset;    
+    wire [(CharacterMaskWidth - 1):0] __characterData;
+    assign __characterIndex = _characterIndex;
+    assign __verticalOffset = _characterPixelY[(CharacterMaskHeightBits - 1):0];
+    assign __characterData = _characterMap;
+    
+    CharacterRom #(    
+        .CharacterIndexBits(CharacterIndexBits),
+        .CharacterMaskWidth(CharacterMaskWidth),
+        .CharacterMaskHeight(CharacterMaskHeight)
+    ) characterRom (
+        .CharacterIndex(__characterIndex),
+        .VerticalOffset(__verticalOffset),
+        .CharacterData(__characterData)
     );
             
     wire _characterPixel [(CharacterMaskWidth - 1):0];
@@ -111,7 +116,11 @@ module TextModeLine #(
     assign _activePixel = _characterPixel[_characterPixelX];    
     wire [(ColorBits - 1):0] _currentPixelColor;
         
-    ColorPaletteRom colorPaletteRom (
+    ColorPaletteRom  #(    
+        .ColorIndexWidth(ColorIndexWidth),
+        .ColorBits(ColorBits)
+    ) colorPaletteRom    
+    (
         .ColorIndex(_activePixel ? _foregroundColor : _backgroundColor),
         .ColorValue(_currentPixelColor)
     ); 
@@ -142,32 +151,5 @@ module TextModeLine #(
             _counter <= _counter + 1;
         end
     end
-    
-/*       
-    CharacterRom characterRom (
-        .CharacterIndex(characterIndex),
-        .VerticalOffset(VerticalOffset),
-        .CharacterData(characterMap)
-    );
-    
-    ColorPaletteRom colorPaletteRom(
-        .ColorIndex(characterMap[p] ? foregroundColor : backgroundColor),
-        .ColorValue(Pixels[p])
-    );
-*/
-        
-/*
-module CharacterColorMatrix #(
-    parameter CharacterIndexBits = 8,
-    parameter CharacterMaskWidth = 8,
-    parameter CharacterMaskHeight = 8,
-    parameter ColorIndexWidth = 4, 
-    parameter ColorBits = 12
-) (    
-    input [(CharacterMaskHeightBits - 1):0] VerticalOffset,    
-    input [(CharacterDataWidth - 1):0] CharacterData,
-    
-    output [(ColorBits - 1):0] Pixels [(CharacterMaskWidth - 1):0]    
-);
-*/
+
 endmodule
