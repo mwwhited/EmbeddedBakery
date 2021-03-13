@@ -21,10 +21,7 @@
 
 module RowColumnDecoder #(
     parameter ColumnHeight = 4,
-    parameter RowWidth = 4,
-    
-    parameter ValueWidth = $clog2(ColumnHeight * RowWidth)-1,
-    parameter CounterWidth = $clog2(ColumnHeight)
+    parameter RowWidth = 4
 )
 (
     input ScanClock,
@@ -32,32 +29,30 @@ module RowColumnDecoder #(
     output reg [(ColumnHeight - 1):0] ColumnPins,
     input [(RowWidth - 1):0] RowPins,
     
-    output reg [ValueWidth:0] Value
+    output reg [ValueWidth:0] Value,
+    output reg ChangedValue
 );  
-    reg [CounterWidth-1:0] counter;    
+    localparam ValueWidth = $clog2(ColumnHeight * RowWidth)-1;
+    localparam CounterWidth = $clog2(ColumnHeight);
     
-    initial
-    begin
-        ColumnPins <= 0;
-        counter <= 0;
-        Value <= 'Z;         
+    reg [CounterWidth-1:0] counter;  
+    
+    initial begin
+        ColumnPins <= {ColumnHeight{1'b0}};
+        counter <= {CounterWidth{1'b0}};
+        Value <= {ValueWidth{1'bZ}};
     end
 
     // Set Column on Read            
     always @(posedge ScanClock) begin 
-        $display("=== posedge ScanClock ==="); 
-        // $display(">Counter: %b", counter);
-        // $display(">ColumnPins: %b", ColumnPins);
-         
+        $display("=== posedge ScanClock ===");          
         ColumnPins <= ~(1<<counter);
         counter <= counter + 1;
-        
-        // $display("<Counter: %b", counter);
-        // $display("<ColumnPins: %b", ColumnPins);
     end   
-    
+        
     // Read Row Pins
     always @(negedge ScanClock) begin
+        ChangedValue <= 1'b0;
         $display("=== negedge ScanClock ===");
         $display(">Row,Col: %b, %b \t ~Row,~Col: %b, %b", RowPins, ColumnPins, ~RowPins, ~ColumnPins);
         if (~ColumnPins && ~RowPins) begin    
@@ -66,7 +61,13 @@ module RowColumnDecoder #(
                 for(int r = 0; r < RowWidth; r++) begin
                     $display("}R,C: %b, %b (%b, %b)", r, c, RowPins[r], ColumnPins[c]);
                     if (~(ColumnPins[c]) & ~(RowPins[r])) begin
-                        Value <= (c * RowWidth) + r;
+                        int tValue = (c * RowWidth) + r;
+                    
+                        if (Value != tValue) begin
+                            ChangedValue <= 1'b1;
+                        end
+                        
+                        Value <= tValue;                      
                         
                         $display("<Value: %b (%h, %h)", Value,r,c);
                     end

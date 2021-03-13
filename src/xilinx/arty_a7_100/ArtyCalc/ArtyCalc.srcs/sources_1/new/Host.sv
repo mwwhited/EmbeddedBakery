@@ -36,12 +36,14 @@ module Host(
 //JD + PModKypd) Hexadecimal Input
 //LD3B:LD0B) Selected hexadecimalvalue byte value
 
-    wire [3:0] mapped; 
+    wire [3:0] mapped;
+    wire keypadChanged; 
     PModKypd_0 pmodKeypad(
         .SystemClock(CLK100MHZ),
         .RowPins(jd[7:4]),
         .ColumnPins(jd[3:0]),
-        .Value(mapped)
+        .Value(mapped),
+        .ChangedValue(keypadChanged)
     );  
     
     assign led = mapped;

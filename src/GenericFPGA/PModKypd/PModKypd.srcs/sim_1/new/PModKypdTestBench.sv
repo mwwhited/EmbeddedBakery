@@ -22,17 +22,15 @@
 
 module PModKypdTestBench;
 
-    reg  SystemClock = 0;
+    reg  ScanClock = 0;
     reg [3:0] RowPins = 0;
     
     wire [3:0] ColumnPins;
     wire [3:0] Value;
     wire ChangedValue;
 
-    PModKypd #(
-        .ScanDividerCount(2)
-    ) uut (
-        .SystemClock(SystemClock),
+    PModKypd uut (
+        .ScanClock(ScanClock),
         .RowPins(RowPins),
         
         .ColumnPins(ColumnPins),
@@ -40,12 +38,12 @@ module PModKypdTestBench;
         .ChangedValue(ChangedValue)
     );
     
-    always #1 SystemClock = ~SystemClock;
+    always #1 ScanClock = ~ScanClock;
     
     int count = 0;
     int dividedCount=0;
     
-    always @(posedge SystemClock) begin
+    always @(posedge ScanClock) begin
         RowPins <= 4'b1111;
         count <= count + 1;
         dividedCount <= count / 4;
