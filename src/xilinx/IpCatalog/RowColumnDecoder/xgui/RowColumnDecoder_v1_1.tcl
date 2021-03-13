@@ -18,15 +18,6 @@ proc validate_PARAM_VALUE.ColumnHeight { PARAM_VALUE.ColumnHeight } {
 	return true
 }
 
-proc update_PARAM_VALUE.CounterWidth { PARAM_VALUE.CounterWidth } {
-	# Procedure called to update CounterWidth when any of the dependent parameters in the arguments change
-}
-
-proc validate_PARAM_VALUE.CounterWidth { PARAM_VALUE.CounterWidth } {
-	# Procedure called to validate CounterWidth
-	return true
-}
-
 proc update_PARAM_VALUE.RowWidth { PARAM_VALUE.RowWidth } {
 	# Procedure called to update RowWidth when any of the dependent parameters in the arguments change
 }
@@ -45,10 +36,5 @@ proc update_MODELPARAM_VALUE.ColumnHeight { MODELPARAM_VALUE.ColumnHeight PARAM_
 proc update_MODELPARAM_VALUE.RowWidth { MODELPARAM_VALUE.RowWidth PARAM_VALUE.RowWidth } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.RowWidth}] ${MODELPARAM_VALUE.RowWidth}
-}
-
-proc update_MODELPARAM_VALUE.CounterWidth { MODELPARAM_VALUE.CounterWidth PARAM_VALUE.CounterWidth } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.CounterWidth}] ${MODELPARAM_VALUE.CounterWidth}
 }
 

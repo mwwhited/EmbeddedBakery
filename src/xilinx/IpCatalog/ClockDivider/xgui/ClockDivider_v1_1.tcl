@@ -9,15 +9,6 @@ proc init_gui { IPINST } {
 
 }
 
-proc update_PARAM_VALUE.CounterLength { PARAM_VALUE.CounterLength } {
-	# Procedure called to update CounterLength when any of the dependent parameters in the arguments change
-}
-
-proc validate_PARAM_VALUE.CounterLength { PARAM_VALUE.CounterLength } {
-	# Procedure called to validate CounterLength
-	return true
-}
-
 proc update_PARAM_VALUE.DividerCount { PARAM_VALUE.DividerCount } {
 	# Procedure called to update DividerCount when any of the dependent parameters in the arguments change
 }
@@ -31,10 +22,5 @@ proc validate_PARAM_VALUE.DividerCount { PARAM_VALUE.DividerCount } {
 proc update_MODELPARAM_VALUE.DividerCount { MODELPARAM_VALUE.DividerCount PARAM_VALUE.DividerCount } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.DividerCount}] ${MODELPARAM_VALUE.DividerCount}
-}
-
-proc update_MODELPARAM_VALUE.CounterLength { MODELPARAM_VALUE.CounterLength PARAM_VALUE.CounterLength } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.CounterLength}] ${MODELPARAM_VALUE.CounterLength}
 }
 
