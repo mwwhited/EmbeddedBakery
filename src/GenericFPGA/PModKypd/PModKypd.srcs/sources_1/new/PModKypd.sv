@@ -19,26 +19,34 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module PModKypd(
+module PModKypd #(
+    parameter ScanDividerCount = 100000
+)(
     input  SystemClock,     // Clock signal
     output [3:0] ColumnPins,
     input [3:0] RowPins,
-    output reg [3:0] Value
-    );
-    
+    output [3:0] Value,
+    output ChangedValue
+);
     wire scanClock;
-    ClockDivider_0 clockDivider(
+    
+    ClockDivider_0 #(
+        .DividerCount(ScanDividerCount)
+    ) clockDivider(
         .SystemClock(SystemClock),
         .DividedClock(scanClock)
     ); 
     
     wire [3:0] decoded;
+    
     RowColumnDecoder_0 pmodKeypad(
         .ScanClock(scanClock),
         .RowPins(RowPins),
         .ColumnPins(ColumnPins),
-        .Value(decoded)
+        .Value(decoded),
+        .ChangedValue(ChangedValue)
     );  
+    
     KeypadNibbleMap keypadMapper(
         .Source(decoded),
         .Mapped(Value)

@@ -18,7 +18,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b99ef504</spirit:value>
+            <spirit:value>3c29b6a3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -34,7 +34,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b99ef504</spirit:value>
+            <spirit:value>3c29b6a3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -49,7 +49,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>520b85aa</spirit:value>
+            <spirit:value>2a8914c7</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -253,10 +253,11 @@
         <xilinx:taxonomy>/Basic_Elements/Decoders</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>RowColumnDecoder_v1_1</xilinx:displayName>
+      <xilinx:autoFamilySupportLevel>level_1</xilinx:autoFamilySupportLevel>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>Out-of-Band-Development</xilinx:vendorDisplayName>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-03-13T15:25:29Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>6</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-03-13T16:00:21Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@545db283_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@48290ee6_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
@@ -297,12 +298,49 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2d9ae6e0_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@51e8136a_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6e958e52_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@129b0362_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34c42c32_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5082ef61_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@413dae7_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e81fca8_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@608d9ed0_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fa5f968_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ebf9741_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dbeedde_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52299874_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a859c26_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a10a729_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5df34efe_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f0f8724_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57541aed_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67785570_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50195fb9_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49df14d7_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@276f089_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68f91019_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58897085_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4af8d3d8_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@710256ba_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52905970_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@463a121c_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c8c111c_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a54677e_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21f628de_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f2fae7f_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63a1e330_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@285a5fdc_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4460bfdb_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@292fa56e_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eea6e15_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ef5f2fe_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f0ac2fb_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32b0e249_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/RowColumnDecoder</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4b88b5ad"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="3aab9db2"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ba6fb540"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="1a4e9834"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e7ea5df3"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="e4aed71c"/>
     </xilinx:packagingInfo>

@@ -20,13 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module ClockDivider #(
-    parameter DividerCount = 100000,    
-    parameter CounterLength = $clog2(DividerCount) + 1
+    parameter DividerCount = 100000
 )
 (
     input SystemClock,
     output reg DividedClock
 );    
+    parameter CounterLength = $clog2(DividerCount) + 1;
     reg [CounterLength-1:0] counter;
     
     initial
