@@ -6,42 +6,29 @@ module RowColumnDecoderTestBench;
     
     wire [3:0] column;
     wire [3:0] result;  
+    wire changedValue;  
         
     RowColumnDecoder underTest(
         .ScanClock(clock),
         .RowPins(row),
         .ColumnPins(column),
-        .Value(result)        
+        .Value(result),
+        .ChangedValue(changedValue)    
     );
-
-    initial begin
     
+    always #1 clock = ~clock;
+    
+    int count = 0;
+    int dividedCount=0;
+    
+    always @(posedge clock) begin
         row <= 4'b1111;
-        for(int c =0; c < 10; c++) begin
-             #1 clock = ~clock;
-        end 
+        count <= count + 1;
+        dividedCount <= count / 4;
         
-        row <= 4'b1110;
-        for(int c =0; c < 10; c++) begin
-             #1 clock = ~clock;
-        end 
-        
-        row <= 4'b1101;
-        for(int c =0; c < 10; c++) begin
-             #1 clock = ~clock;
-        end 
-        
-        row <= 4'b1011;
-        for(int c =0; c < 10; c++) begin
-             #1 clock = ~clock;
-        end 
-    
-        row <= 4'b0111;
-        for(int c =0; c < 16; c++) begin
-             #1 clock = ~clock;
-        end 
-        
-        $finish;
-    end 
+        if (dividedCount[3:0] == ~column) begin
+            row <= column;
+        end    
+    end
        
 endmodule
