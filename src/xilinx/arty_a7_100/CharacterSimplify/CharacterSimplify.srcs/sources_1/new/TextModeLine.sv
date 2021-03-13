@@ -54,8 +54,8 @@ module TextModeLine #(
     reg _characterPixelLineCompletePulse;
     
     reg [(ColumnIndexWidth - 1):0] _characterColumnIndex;    
-    reg [(CharacterPixelWidth - 1):0] _characterPixelX;
-    reg [(CharacterPixelHeight - 1):0] _characterPixelY;
+    int _characterPixelX;
+    int _characterPixelY;
     
     reg [(ColorBits - 1):0] _pixelColor;
     
