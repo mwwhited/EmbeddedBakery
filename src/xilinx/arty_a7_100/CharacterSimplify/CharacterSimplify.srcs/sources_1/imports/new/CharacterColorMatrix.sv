@@ -19,24 +19,18 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module CharacterColorMatrix #(
     parameter CharacterIndexBits = 8,
     parameter CharacterMaskWidth = 8,
     parameter CharacterMaskHeight = 8,
     parameter ColorIndexWidth = 4, 
     parameter ColorBits = 12
-) (
-    // input Write,
-    // input Clock,
-    // input Reset,
-    
-    input [(CharacterMaskHeightBits - 1):0] VerticalOffset,
-    
+) (    
+    input [(CharacterMaskHeightBits - 1):0] VerticalOffset,    
     input [(CharacterDataWidth - 1):0] CharacterData,
     
     output [(ColorBits - 1):0] Pixels [(CharacterMaskWidth - 1):0]    
-    );
+);
     parameter CharacterDataWidth = ColorIndexWidth + ColorIndexWidth + CharacterIndexBits;
     parameter CharacterMaskHeightBits = $clog2(CharacterMaskHeight);
     parameter CharacterIndexes = 2 ** CharacterIndexBits;
@@ -50,37 +44,17 @@ module CharacterColorMatrix #(
     assign backgroundColor = CharacterData[(ColorIndexWidth - 1 + (ColorIndexWidth + CharacterMaskWidth)):0 + (ColorIndexWidth + CharacterMaskWidth)];
     assign foregroundColor = CharacterData[(ColorIndexWidth - 1 + (CharacterMaskWidth)):0 + (CharacterMaskWidth)];
         
-    CharacterRom #(
-        .CharacterIndexBits(CharacterIndexBits),
-        .CharacterMaskWidth(CharacterMaskWidth),
-        .CharacterMaskHeight(CharacterMaskHeight)
-    ) characterRom (
-        //.Write(Write),
-        //.Reset(Reset),
-        //.Write(0),
-        //.Reset(0),
-        //.Clock(Clock),
+    CharacterRom characterRom (
         .CharacterIndex(characterIndex),
         .VerticalOffset(VerticalOffset),
         .CharacterData(characterMap)
     );
         
-    wire [(ColorIndexWidth - 1):0] colorIndexes [(CharacterMaskWidth - 1):0]  ;
     generate genvar p;
         for(p = 0; p < CharacterMaskWidth; p++) begin
         
-            assign colorIndexes[p] = characterMap[p] ? foregroundColor : backgroundColor;
-            
-            ColorPaletteRom #(
-                .ColorIndexWidth(ColorIndexWidth),
-                .ColorBits(ColorBits)
-            ) i_ColorPaletteRom(
-                // .Write(Write),
-                // .Reset(Reset),
-                //.Write(0),
-                //.Reset(0),
-                //.Clock(Clock),
-                .ColorIndex(colorIndexes[p]),
+            ColorPaletteRom colorPaletteRom(
+                .ColorIndex(characterMap[p] ? foregroundColor : backgroundColor),
                 .ColorValue(Pixels[p])
             );
             
