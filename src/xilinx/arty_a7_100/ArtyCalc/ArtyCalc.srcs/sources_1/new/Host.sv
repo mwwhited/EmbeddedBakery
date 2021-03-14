@@ -22,12 +22,12 @@
 
 module Host(    
     input  CLK100MHZ,  // Clock signal
-    //input  [3:0] sw,   // Register + Byte[2:0] Selector
-    output reg [3:0] led,  // Current byte value
-    //output reg [3:0] ledB, // Selected hexadecimalvalue byte value
-    //output reg [3:0] ledG, // Selected operator {Addition, Subtraction, Multiplication, Division}
-    //output reg [3:0] ledR, // Register + Byte[2:0] Selected
-    //input  [3:0] btn,  // Operator selector {Addition, Subtraction, Multiplication, Division}
+    input  [3:0] sw,   // Register + Byte[2:0] Selector
+    output [3:0] led,  // Current byte value
+    output [3:0] ledB, // Selected hexadecimalvalue byte value
+    output [3:0] ledG, // Selected operator {Addition, Subtraction, Multiplication, Division}
+    output [3:0] ledR, // Register + Byte[2:0] Selected
+    input  [3:0] btn,  // Operator selector {Addition, Subtraction, Multiplication, Division}
     inout  [7:0] jd,    // PModKypd (hexadecimal keypad)
     
     output [7:0] jb, //VGA Red/Blue
@@ -52,8 +52,32 @@ module Host(
         .Value(mapped),
         .ChangedValue(keypadChanged)
     );  
+       
+    wire [3:0] _writeKeypad;
+    assign _writeKeypad = mapped;
+    wire [3:0] _readKeypad;
     
+    assign ledG = _readKeypad;
+    
+    KeypadInputFifo keypadFifo( //Width 4, Depth 16 
+        .rst(btn[3]),
+        
+        .wr_clk(keypadChanged),
+        .wr_en(sw[0]),
+        .din(_readKeypad),       
+            
+        .rd_clk(btn[1]),
+        .rd_en(sw[1]),
+        .dout(_readKeypad),
+
+        .full(ledB[3]),
+        .empty(ledB[2]),
+        .wr_rst_busy(ledB[1]),
+        .rd_rst_busy(ledB[0])
+    );
+        
     assign led = mapped;
+    assign ledR = {btn[3], sw[0], btn[1], sw[1]};
     //assign ledG = sw[1] ? jd[7:4] : 4'b0;
     //assign led = sw;   
     

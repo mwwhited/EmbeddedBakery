@@ -19,6 +19,33 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+class PriorityEncoder #(
+    parameter int BitWidth
+);
+    localparam int EncodedBitWidth = $clog2(BitWidth);
+    function [(EncodedBitWidth - 1):0] LSB(
+        [(BitWidth - 1):0] value
+    );
+        for (int c = 0; c < BitWidth; c++) begin
+            if (value[c] == 1'b1) begin
+                return c;
+            end  
+        end
+        return {EncodedBitWidth{1'bZ}};
+    endfunction
+    
+    function [(EncodedBitWidth - 1):0] MSB(
+        [(BitWidth - 1):0] value
+    );
+        for (int c = (BitWidth - 1); c >= 0; c--) begin
+            if (value[c] == 1'b1) begin
+                return c;
+            end  
+        end
+        return {EncodedBitWidth{1'bZ}};
+    endfunction
+endclass
+
 module RowColumnDecoder #(
     parameter ColumnHeight = 4,
     parameter RowWidth = 4
@@ -29,51 +56,73 @@ module RowColumnDecoder #(
     output reg [(ColumnHeight - 1):0] ColumnPins,
     input [(RowWidth - 1):0] RowPins,
     
-    output reg [ValueWidth:0] Value,
-    output reg ChangedValue
+    output reg [(ValueWidth - 1):0] Value,
+    output reg ChangedValue,
+    output reg DetectedValue,
+    output reg ReleasedKey,
+    output PressedKey
 );  
-    localparam ValueWidth = $clog2(ColumnHeight * RowWidth)-1;
-    localparam CounterWidth = $clog2(ColumnHeight);
+    localparam ValueWidth = $clog2(ColumnHeight) + $clog2(RowWidth);
+    reg [(RowWidth - 1):0] _lastScan [($clog2(ColumnHeight)-1):0]; 
     
-    reg [CounterWidth-1:0] counter;  
-    
+    assign PressedKey = ChangedValue && !ReleasedKey; 
+                
     initial begin
-        ColumnPins <= {ColumnHeight{1'b0}};
-        counter <= {CounterWidth{1'b0}};
+        ColumnPins <= {{(ColumnHeight - 1){1'b1}}, 1'b0};
         Value <= {ValueWidth{1'bZ}};
-    end
-
-    // Set Column on Read            
-    always @(posedge ScanClock) begin 
-        $display("=== posedge ScanClock ===");          
-        ColumnPins <= ~(1<<counter);
-        counter <= counter + 1;
-    end   
         
-    // Read Row Pins
-    always @(negedge ScanClock) begin
+        foreach(_lastScan[c]) begin
+            _lastScan[c] <= {RowWidth{1'b1}};
+        end
+    end
+        
+    // Set Column on Read            
+    always @(posedge ScanClock) begin
+        for(int cp = 1; cp < $size(ColumnPins); cp++) begin
+             ColumnPins[cp] <= ColumnPins[cp - 1];
+        end
+        ColumnPins[0] <= ColumnPins[$size(ColumnPins)-1];
+    end  
+    
+    PriorityEncoder #(ColumnHeight) _col;
+    PriorityEncoder #(RowWidth) _row;   
+      
+    always @(negedge ScanClock) begin 
         ChangedValue <= 1'b0;
+        ReleasedKey <= 1'b0;
+        DetectedValue <= 1'b0;
+        
         $display("=== negedge ScanClock ===");
-        $display(">Row,Col: %b, %b \t ~Row,~Col: %b, %b", RowPins, ColumnPins, ~RowPins, ~ColumnPins);
-        if (~ColumnPins && ~RowPins) begin    
-            $display("** CHECK **");    
-            for(int c = 0; c < ColumnHeight; c++) begin //TODO: may want to change to dynamic length if possible as this is limited to 32bx32b
-                for(int r = 0; r < RowWidth; r++) begin
-                    $display("}R,C: %b, %b (%b, %b)", r, c, RowPins[r], ColumnPins[c]);
-                    if (~(ColumnPins[c]) & ~(RowPins[r])) begin
-                        int tValue = (c * RowWidth) + r;
-                    
-                        if (Value != tValue) begin
-                            ChangedValue <= 1'b1;
-                        end
-                        
-                        Value <= tValue;                      
-                        
-                        $display("<Value: %b (%h, %h)", Value,r,c);
-                    end
-                end 
+        $display(">C,R: %b, %b", ColumnPins, RowPins);
+                       
+        if (~ColumnPins) begin    
+        
+            if (_lastScan[_col.LSB(~ColumnPins)] != RowPins) begin
+                //change
+                $display("--- RowPins Changed? ===");
+                ChangedValue <= 1'b1;
+                
+                if (!(~RowPins)) begin
+                    ReleasedKey <= 1'b1;
+                end
+                
             end
+            
+            _lastScan[_col.LSB(~ColumnPins)] <= RowPins;
+            
+            if (~RowPins) begin
+                DetectedValue <= 1'b1;
+            
+                Value <= { 
+                    _col.LSB(~ColumnPins),
+                    _row.LSB(~RowPins)
+                };
+                $display("<Value: %b", { 
+                    _col.LSB(~ColumnPins),
+                    _row.LSB(~RowPins)
+                });
+            end            
         end
     end 
- 
+  
 endmodule
