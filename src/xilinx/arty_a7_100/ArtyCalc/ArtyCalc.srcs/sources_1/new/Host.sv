@@ -37,50 +37,29 @@ module Host(
 //LD3B:LD0B) Selected hexadecimalvalue byte value
 
     wire [3:0] mapped;
-    wire keypadChanged; 
+    int StatusRegister;
     
-    wire scanClock;     
-    ClockDivider_0 _clockDivider(
+    KeypadBuffered pmodKeypad(
         .SystemClock(CLK100MHZ),
-        .DividedClock(scanClock)
-    );
-    
-    PModKypd_0 pmodKeypad(
-        .ScanClock(scanClock),
-        .RowPins(jd[7:4]),
-        .ColumnPins(jd[3:0]),
-        .Value(mapped),
-        .ChangedValue(keypadChanged)
+        .KeypadPmodPort(jd),
+        .StatusRegister(StatusRegister),
+        .CurrentKeypadValue(mapped)
     );  
-       
-    wire [3:0] _writeKeypad;
-    assign _writeKeypad = mapped;
-    wire [3:0] _readKeypad;
     
-    assign ledG = _readKeypad;
-    
-    KeypadInputFifo keypadFifo( //Width 4, Depth 16 
-        .rst(btn[3]),
+    assign ledB = 
+        sw == 4'b1000 ? StatusRegister[03:00] :
+        sw == 4'b1001 ? StatusRegister[07:04] :
+        sw == 4'b1010 ? StatusRegister[11:08] :
+        sw == 4'b1011 ? StatusRegister[15:12] :
         
-        .wr_clk(keypadChanged),
-        .wr_en(sw[0]),
-        .din(_readKeypad),       
-            
-        .rd_clk(btn[1]),
-        .rd_en(sw[1]),
-        .dout(_readKeypad),
-
-        .full(ledB[3]),
-        .empty(ledB[2]),
-        .wr_rst_busy(ledB[1]),
-        .rd_rst_busy(ledB[0])
-    );
+        sw == 4'b1100 ? StatusRegister[19:16] :
+        sw == 4'b1101 ? StatusRegister[23:20] :
+        sw == 4'b1110 ? StatusRegister[27:24] :
+        sw == 4'b1111 ? StatusRegister[31:28] :
         
-    assign led = mapped;
-    assign ledR = {btn[3], sw[0], btn[1], sw[1]};
-    //assign ledG = sw[1] ? jd[7:4] : 4'b0;
-    //assign led = sw;   
-    
+        {$size(ledB){1'b0}};    
+   
+    assign led = mapped;    
     
 //SW3) Register selector (A = 0, B = 1)
 //LD3R) Register selected
