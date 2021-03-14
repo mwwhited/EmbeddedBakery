@@ -106,7 +106,7 @@ module KeypadBuffered(
     // Build out state machines
     
     assign StatusRegister = {
-        writerState                 , //  :: 8   
+        writerState[3:0]            , //  :: 8   
         
         3'b0,
         _keypadFifo_wr_clk          , //  :: 7 
@@ -162,8 +162,8 @@ module KeypadBuffered(
     endfunction
             
     function WriterStates __INITIALIZED();       
-        _keypadFifo_wr_rst <= 1'b1;      
-        _keypadFifo_rd_rst <= 1'b1;  
+        _keypadFifo_wr_rst <= 1'b0;      
+        _keypadFifo_rd_rst <= 1'b0;  
         return IDLE;
     endfunction
     
