@@ -47,8 +47,8 @@ class PriorityEncoder #(
 endclass
 
 module RowColumnDecoder #(
-    parameter ColumnHeight = 4,
-    parameter RowWidth = 4
+    parameter int ColumnHeight = 4,
+    parameter int RowWidth = 4
 )
 (
     input ScanClock,
@@ -56,7 +56,7 @@ module RowColumnDecoder #(
     output reg [(ColumnHeight - 1):0] ColumnPins,
     input [(RowWidth - 1):0] RowPins,
     
-    output reg [(ValueWidth - 1):0] Value,
+    output reg [(($clog2(ColumnHeight) + $clog2(RowWidth)) - 1):0] Value,
     output reg ChangedValue,
     output reg DetectedValue,
     output reg ReleasedKey,
