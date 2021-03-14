@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Sat Mar 13 14:00:29 2021
+// Date        : Sun Mar 14 09:57:10 2021
 // Host        : EvengerBook running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Repos/mwwhited/EmbeddedBakery/src/GenericFPGA/PModKypd/PModKypd.gen/sources_1/ip/RowColumnDecoder_0/RowColumnDecoder_0_sim_netlist.v
@@ -20,22 +20,69 @@ module RowColumnDecoder_0
     ColumnPins,
     RowPins,
     Value,
-    ChangedValue);
+    ChangedValue,
+    DetectedValue,
+    ReleasedKey,
+    PressedKey);
   input ScanClock;
   output [3:0]ColumnPins;
   input [3:0]RowPins;
   output [3:0]Value;
   output ChangedValue;
+  output DetectedValue;
+  output ReleasedKey;
+  output PressedKey;
 
   wire ChangedValue;
   wire [3:0]ColumnPins;
+  wire DetectedValue;
+  wire PressedKey;
+  wire ReleasedKey;
   wire [3:0]RowPins;
   wire ScanClock;
   wire [3:0]Value;
+  wire \Value[1]_INST_0_i_1_n_0 ;
+  wire \Value[1]_INST_0_i_2_n_0 ;
+  wire \Value[3]_INST_0_i_1_n_0 ;
+  wire inst_n_8;
+  wire inst_n_9;
 
+  FDRE #(
+    .INIT(1'b1),
+    .IS_C_INVERTED(1'b1)) 
+    \Value[1]_INST_0_i_1 
+       (.C(ScanClock),
+        .CE(inst_n_9),
+        .D(\Value[1]_INST_0_i_2_n_0 ),
+        .Q(\Value[1]_INST_0_i_1_n_0 ),
+        .R(1'b0));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \Value[1]_INST_0_i_2 
+       (.I0(RowPins[3]),
+        .I1(RowPins[0]),
+        .I2(RowPins[1]),
+        .I3(RowPins[2]),
+        .O(\Value[1]_INST_0_i_2_n_0 ));
+  FDRE #(
+    .INIT(1'b1),
+    .IS_C_INVERTED(1'b1)) 
+    \Value[3]_INST_0_i_1 
+       (.C(ScanClock),
+        .CE(inst_n_9),
+        .D(inst_n_8),
+        .Q(\Value[3]_INST_0_i_1_n_0 ),
+        .R(1'b0));
   RowColumnDecoder_0_RowColumnDecoder inst
        (.ChangedValue(ChangedValue),
-        .Q(ColumnPins),
+        .\ColumnPins_reg[3]_0 (ColumnPins),
+        .D(inst_n_8),
+        .DetectedValue(DetectedValue),
+        .E(inst_n_9),
+        .PressedKey(PressedKey),
+        .Q({\Value[3]_INST_0_i_1_n_0 ,\Value[1]_INST_0_i_1_n_0 }),
+        .ReleasedKey(ReleasedKey),
+        .ReleasedKey_reg_0(ScanClock),
         .RowPins(RowPins),
         .ScanClock(ScanClock),
         .Value(Value));
@@ -43,115 +90,78 @@ endmodule
 
 (* ORIG_REF_NAME = "RowColumnDecoder" *) 
 module RowColumnDecoder_0_RowColumnDecoder
-   (Q,
+   (ChangedValue,
+    DetectedValue,
+    ReleasedKey,
+    PressedKey,
     Value,
-    ChangedValue,
+    D,
+    E,
+    \ColumnPins_reg[3]_0 ,
+    ReleasedKey_reg_0,
+    RowPins,
     ScanClock,
-    RowPins);
-  output [3:0]Q;
-  output [3:0]Value;
+    Q);
   output ChangedValue;
-  input ScanClock;
+  output DetectedValue;
+  output ReleasedKey;
+  output PressedKey;
+  output [3:0]Value;
+  output [0:0]D;
+  output [0:0]E;
+  output [3:0]\ColumnPins_reg[3]_0 ;
+  input ReleasedKey_reg_0;
   input [3:0]RowPins;
+  input ScanClock;
+  input [1:0]Q;
 
   wire ChangedValue;
+  wire [3:0]ChangedValue1;
   wire ChangedValue_i_1_n_0;
   wire ChangedValue_i_2_n_0;
-  wire ChangedValue_i_3_n_0;
-  wire ChangedValue_i_4_n_0;
-  wire ChangedValue_i_5_n_0;
-  wire ChangedValue_i_6_n_0;
-  wire ChangedValue_i_7_n_0;
-  wire ChangedValue_i_8_n_0;
-  wire \ColumnPins[0]_i_1_n_0 ;
-  wire \ColumnPins[1]_i_1_n_0 ;
-  wire \ColumnPins[2]_i_1_n_0 ;
-  wire \ColumnPins[3]_i_1_n_0 ;
-  wire [3:0]Q;
+  wire [3:0]\ColumnPins_reg[3]_0 ;
+  wire [0:0]D;
+  wire DetectedValue;
+  wire DetectedValue_i_1_n_0;
+  wire [0:0]E;
+  wire [1:0]LSB;
+  wire PressedKey;
+  wire [1:0]Q;
+  wire ReleasedKey;
+  wire ReleasedKey_i_1_n_0;
+  wire ReleasedKey_i_2_n_0;
+  wire ReleasedKey_reg_0;
   wire [3:0]RowPins;
   wire ScanClock;
   wire [3:0]Value;
-  wire \Value[0]_i_1_n_0 ;
-  wire \Value[0]_i_2_n_0 ;
-  wire \Value[1]_i_1_n_0 ;
-  wire \Value[2]_i_1_n_0 ;
-  wire \Value[3]_i_1_n_0 ;
-  wire \Value[3]_i_2_n_0 ;
-  wire \Value[3]_i_3_n_0 ;
-  wire [1:0]counter;
-  wire [1:0]p_0_in;
+  wire \Value_tristate_oe[0]_i_1_n_0 ;
+  wire \Value_tristate_oe[1]_i_1_n_0 ;
+  wire \Value_tristate_oe_reg_n_0_[0] ;
+  wire \Value_tristate_oe_reg_n_0_[1] ;
+  wire \Value_tristate_oe_reg_n_0_[2] ;
+  wire \Value_tristate_oe_reg_n_0_[3] ;
+  wire _lastScan_reg_0_1_0_0_i_2_n_0;
+  wire _lastScan_reg_0_1_0_0_i_3_n_0;
 
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'hBE00)) 
     ChangedValue_i_1
        (.I0(ChangedValue_i_2_n_0),
-        .I1(ChangedValue_i_3_n_0),
-        .I2(ChangedValue_i_4_n_0),
-        .I3(ChangedValue_i_5_n_0),
-        .I4(ChangedValue_i_6_n_0),
+        .I1(RowPins[3]),
+        .I2(ChangedValue1[3]),
+        .I3(_lastScan_reg_0_1_0_0_i_2_n_0),
         .O(ChangedValue_i_1_n_0));
   LUT6 #(
-    .INIT(64'h08080808FF080808)) 
+    .INIT(64'h6FF6FFFFFFFF6FF6)) 
     ChangedValue_i_2
-       (.I0(\Value[0]_i_2_n_0 ),
-        .I1(ChangedValue_i_7_n_0),
-        .I2(Value[1]),
-        .I3(\Value[3]_i_3_n_0 ),
-        .I4(ChangedValue_i_8_n_0),
-        .I5(Value[3]),
-        .O(ChangedValue_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h4040C0C040F0F0F0)) 
-    ChangedValue_i_3
-       (.I0(Q[0]),
-        .I1(Value[3]),
-        .I2(\Value[3]_i_3_n_0 ),
-        .I3(Q[3]),
-        .I4(Q[1]),
-        .I5(Value[2]),
-        .O(ChangedValue_i_3_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'h2A00)) 
-    ChangedValue_i_4
-       (.I0(Value[2]),
-        .I1(Q[0]),
-        .I2(Q[2]),
-        .I3(\Value[3]_i_3_n_0 ),
-        .O(ChangedValue_i_4_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT4 #(
-    .INIT(16'h2A00)) 
-    ChangedValue_i_5
-       (.I0(Value[0]),
+       (.I0(ChangedValue1[0]),
         .I1(RowPins[0]),
         .I2(RowPins[2]),
-        .I3(\Value[0]_i_2_n_0 ),
-        .O(ChangedValue_i_5_n_0));
-  LUT6 #(
-    .INIT(64'h4040C0C040F0F0F0)) 
-    ChangedValue_i_6
-       (.I0(RowPins[0]),
-        .I1(Value[1]),
-        .I2(\Value[0]_i_2_n_0 ),
-        .I3(RowPins[3]),
+        .I3(ChangedValue1[2]),
         .I4(RowPins[1]),
-        .I5(Value[0]),
-        .O(ChangedValue_i_6_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    ChangedValue_i_7
-       (.I0(RowPins[2]),
-        .I1(RowPins[3]),
-        .O(ChangedValue_i_7_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    ChangedValue_i_8
-       (.I0(Q[2]),
-        .I1(Q[3]),
-        .O(ChangedValue_i_8_n_0));
+        .I5(ChangedValue1[1]),
+        .O(ChangedValue_i_2_n_0));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     ChangedValue_reg
@@ -160,192 +170,308 @@ module RowColumnDecoder_0_RowColumnDecoder
         .D(ChangedValue_i_1_n_0),
         .Q(ChangedValue),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \ColumnPins[0]_i_1 
-       (.I0(counter[1]),
-        .I1(counter[0]),
-        .O(\ColumnPins[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'hB)) 
-    \ColumnPins[1]_i_1 
-       (.I0(counter[1]),
-        .I1(counter[0]),
-        .O(\ColumnPins[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'hB)) 
-    \ColumnPins[2]_i_1 
-       (.I0(counter[0]),
-        .I1(counter[1]),
-        .O(\ColumnPins[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \ColumnPins[3]_i_1 
-       (.I0(counter[1]),
-        .I1(counter[0]),
-        .O(\ColumnPins[3]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \ColumnPins_reg[0] 
        (.C(ScanClock),
         .CE(1'b1),
-        .D(\ColumnPins[0]_i_1_n_0 ),
-        .Q(Q[0]),
+        .D(\ColumnPins_reg[3]_0 [3]),
+        .Q(\ColumnPins_reg[3]_0 [0]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0)) 
+    .INIT(1'b1)) 
     \ColumnPins_reg[1] 
        (.C(ScanClock),
         .CE(1'b1),
-        .D(\ColumnPins[1]_i_1_n_0 ),
-        .Q(Q[1]),
+        .D(\ColumnPins_reg[3]_0 [0]),
+        .Q(\ColumnPins_reg[3]_0 [1]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0)) 
+    .INIT(1'b1)) 
     \ColumnPins_reg[2] 
        (.C(ScanClock),
         .CE(1'b1),
-        .D(\ColumnPins[2]_i_1_n_0 ),
-        .Q(Q[2]),
+        .D(\ColumnPins_reg[3]_0 [1]),
+        .Q(\ColumnPins_reg[3]_0 [2]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0)) 
+    .INIT(1'b1)) 
     \ColumnPins_reg[3] 
        (.C(ScanClock),
         .CE(1'b1),
-        .D(\ColumnPins[3]_i_1_n_0 ),
-        .Q(Q[3]),
+        .D(\ColumnPins_reg[3]_0 [2]),
+        .Q(\ColumnPins_reg[3]_0 [3]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h2F00)) 
-    \Value[0]_i_1 
-       (.I0(RowPins[2]),
-        .I1(RowPins[1]),
-        .I2(RowPins[3]),
-        .I3(\Value[0]_i_2_n_0 ),
-        .O(\Value[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \Value[0]_i_2 
-       (.I0(Q[1]),
-        .I1(Q[0]),
-        .I2(Q[3]),
-        .I3(Q[2]),
-        .O(\Value[0]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h00007FFF7FFF7FFF)) 
-    \Value[1]_i_1 
-       (.I0(Q[2]),
-        .I1(Q[3]),
-        .I2(Q[0]),
-        .I3(Q[1]),
-        .I4(RowPins[3]),
-        .I5(RowPins[2]),
-        .O(\Value[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'h2F)) 
-    \Value[2]_i_1 
-       (.I0(Q[2]),
-        .I1(Q[1]),
-        .I2(Q[3]),
-        .O(\Value[2]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h7FFF0000)) 
-    \Value[3]_i_1 
-       (.I0(Q[2]),
-        .I1(Q[3]),
-        .I2(Q[0]),
-        .I3(Q[1]),
-        .I4(\Value[3]_i_3_n_0 ),
-        .O(\Value[3]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0777777777777777)) 
-    \Value[3]_i_2 
-       (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(RowPins[2]),
-        .I3(RowPins[3]),
-        .I4(RowPins[0]),
-        .I5(RowPins[1]),
-        .O(\Value[3]_i_2_n_0 ));
+    DetectedValue_i_1
+       (.I0(RowPins[2]),
+        .I1(RowPins[3]),
+        .I2(RowPins[0]),
+        .I3(RowPins[1]),
+        .I4(_lastScan_reg_0_1_0_0_i_2_n_0),
+        .O(DetectedValue_i_1_n_0));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    DetectedValue_reg
+       (.C(ScanClock),
+        .CE(1'b1),
+        .D(DetectedValue_i_1_n_0),
+        .Q(DetectedValue),
+        .R(1'b0));
+  LUT2 #(
+    .INIT(4'h2)) 
+    PressedKey_INST_0
+       (.I0(ChangedValue),
+        .I1(ReleasedKey),
+        .O(PressedKey));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'h0000F600)) 
+    ReleasedKey_i_1
+       (.I0(ChangedValue1[3]),
+        .I1(RowPins[3]),
+        .I2(ChangedValue_i_2_n_0),
+        .I3(_lastScan_reg_0_1_0_0_i_2_n_0),
+        .I4(ReleasedKey_i_2_n_0),
+        .O(ReleasedKey_i_1_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
-    \Value[3]_i_3 
+    ReleasedKey_i_2
        (.I0(RowPins[1]),
         .I1(RowPins[0]),
         .I2(RowPins[3]),
         .I3(RowPins[2]),
-        .O(\Value[3]_i_3_n_0 ));
+        .O(ReleasedKey_i_2_n_0));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
-    \Value_reg[0] 
+    ReleasedKey_reg
        (.C(ScanClock),
-        .CE(\Value[3]_i_1_n_0 ),
-        .D(\Value[0]_i_1_n_0 ),
-        .Q(Value[0]),
+        .CE(1'b1),
+        .D(ReleasedKey_i_1_n_0),
+        .Q(ReleasedKey),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \Value_reg[1] 
-       (.C(ScanClock),
-        .CE(\Value[3]_i_1_n_0 ),
-        .D(\Value[1]_i_1_n_0 ),
-        .Q(Value[1]),
-        .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \Value_reg[2] 
-       (.C(ScanClock),
-        .CE(\Value[3]_i_1_n_0 ),
-        .D(\Value[2]_i_1_n_0 ),
-        .Q(Value[2]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
-    \Value_reg[3] 
-       (.C(ScanClock),
-        .CE(\Value[3]_i_1_n_0 ),
-        .D(\Value[3]_i_2_n_0 ),
-        .Q(Value[3]),
-        .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT1 #(
-    .INIT(2'h1)) 
-    \counter[0]_i_1 
-       (.I0(counter[0]),
-        .O(p_0_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
-    .INIT(4'h6)) 
-    \counter[1]_i_1 
-       (.I0(counter[0]),
-        .I1(counter[1]),
-        .O(p_0_in[1]));
+    .INIT(4'h8)) 
+    \Value[0]_INST_0 
+       (.I0(\Value_tristate_oe_reg_n_0_[0] ),
+        .I1(Q[0]),
+        .O(Value[0]));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \Value[1]_INST_0 
+       (.I0(\Value_tristate_oe_reg_n_0_[1] ),
+        .I1(Q[0]),
+        .O(Value[1]));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \Value[2]_INST_0 
+       (.I0(\Value_tristate_oe_reg_n_0_[2] ),
+        .I1(Q[1]),
+        .O(Value[2]));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \Value[3]_INST_0 
+       (.I0(\Value_tristate_oe_reg_n_0_[3] ),
+        .I1(Q[1]),
+        .O(Value[3]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \Value[3]_INST_0_i_2 
+       (.I0(\ColumnPins_reg[3]_0 [3]),
+        .I1(\ColumnPins_reg[3]_0 [0]),
+        .I2(\ColumnPins_reg[3]_0 [1]),
+        .I3(\ColumnPins_reg[3]_0 [2]),
+        .O(D));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT4 #(
+    .INIT(16'h22A2)) 
+    \Value_tristate_oe[0]_i_1 
+       (.I0(RowPins[0]),
+        .I1(RowPins[1]),
+        .I2(RowPins[2]),
+        .I3(RowPins[3]),
+        .O(\Value_tristate_oe[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT4 #(
+    .INIT(16'h2A00)) 
+    \Value_tristate_oe[1]_i_1 
+       (.I0(RowPins[0]),
+        .I1(RowPins[2]),
+        .I2(RowPins[3]),
+        .I3(RowPins[1]),
+        .O(\Value_tristate_oe[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT4 #(
+    .INIT(16'h22A2)) 
+    \Value_tristate_oe[2]_i_1 
+       (.I0(\ColumnPins_reg[3]_0 [0]),
+        .I1(\ColumnPins_reg[3]_0 [1]),
+        .I2(\ColumnPins_reg[3]_0 [2]),
+        .I3(\ColumnPins_reg[3]_0 [3]),
+        .O(LSB[0]));
+  LUT5 #(
+    .INIT(32'h2AAAAAAA)) 
+    \Value_tristate_oe[3]_i_1 
+       (.I0(_lastScan_reg_0_1_0_0_i_2_n_0),
+        .I1(RowPins[2]),
+        .I2(RowPins[3]),
+        .I3(RowPins[0]),
+        .I4(RowPins[1]),
+        .O(E));
+  LUT4 #(
+    .INIT(16'h2A00)) 
+    \Value_tristate_oe[3]_i_2 
+       (.I0(\ColumnPins_reg[3]_0 [0]),
+        .I1(\ColumnPins_reg[3]_0 [2]),
+        .I2(\ColumnPins_reg[3]_0 [3]),
+        .I3(\ColumnPins_reg[3]_0 [1]),
+        .O(LSB[1]));
   FDRE #(
-    .INIT(1'b0)) 
-    \counter_reg[0] 
+    .IS_C_INVERTED(1'b1)) 
+    \Value_tristate_oe_reg[0] 
        (.C(ScanClock),
-        .CE(1'b1),
-        .D(p_0_in[0]),
-        .Q(counter[0]),
+        .CE(E),
+        .D(\Value_tristate_oe[0]_i_1_n_0 ),
+        .Q(\Value_tristate_oe_reg_n_0_[0] ),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0)) 
-    \counter_reg[1] 
+    .IS_C_INVERTED(1'b1)) 
+    \Value_tristate_oe_reg[1] 
        (.C(ScanClock),
-        .CE(1'b1),
-        .D(p_0_in[1]),
-        .Q(counter[1]),
+        .CE(E),
+        .D(\Value_tristate_oe[1]_i_1_n_0 ),
+        .Q(\Value_tristate_oe_reg_n_0_[1] ),
         .R(1'b0));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \Value_tristate_oe_reg[2] 
+       (.C(ScanClock),
+        .CE(E),
+        .D(LSB[0]),
+        .Q(\Value_tristate_oe_reg_n_0_[2] ),
+        .R(1'b0));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \Value_tristate_oe_reg[3] 
+       (.C(ScanClock),
+        .CE(E),
+        .D(LSB[1]),
+        .Q(\Value_tristate_oe_reg_n_0_[3] ),
+        .R(1'b0));
+  (* OPT_MODIFIED = "MLO" *) 
+  (* RTL_RAM_BITS = "8" *) 
+  (* RTL_RAM_NAME = "inst/_lastScan" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
+  (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "1" *) 
+  (* ram_offset = "0" *) 
+  (* ram_slice_begin = "0" *) 
+  (* ram_slice_end = "0" *) 
+  RAM32X1S #(
+    .INIT(32'h00000003),
+    .IS_WCLK_INVERTED(1'b1)) 
+    _lastScan_reg_0_1_0_0
+       (.A0(_lastScan_reg_0_1_0_0_i_3_n_0),
+        .A1(1'b0),
+        .A2(1'b0),
+        .A3(1'b0),
+        .A4(1'b0),
+        .D(RowPins[0]),
+        .O(ChangedValue1[0]),
+        .WCLK(ReleasedKey_reg_0),
+        .WE(_lastScan_reg_0_1_0_0_i_2_n_0));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    _lastScan_reg_0_1_0_0_i_2
+       (.I0(\ColumnPins_reg[3]_0 [1]),
+        .I1(\ColumnPins_reg[3]_0 [0]),
+        .I2(\ColumnPins_reg[3]_0 [3]),
+        .I3(\ColumnPins_reg[3]_0 [2]),
+        .O(_lastScan_reg_0_1_0_0_i_2_n_0));
+  LUT2 #(
+    .INIT(4'h8)) 
+    _lastScan_reg_0_1_0_0_i_3
+       (.I0(LSB[0]),
+        .I1(D),
+        .O(_lastScan_reg_0_1_0_0_i_3_n_0));
+  (* OPT_MODIFIED = "MLO" *) 
+  (* RTL_RAM_BITS = "8" *) 
+  (* RTL_RAM_NAME = "inst/_lastScan" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
+  (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "1" *) 
+  (* ram_offset = "0" *) 
+  (* ram_slice_begin = "1" *) 
+  (* ram_slice_end = "1" *) 
+  RAM32X1S #(
+    .INIT(32'h00000003),
+    .IS_WCLK_INVERTED(1'b1)) 
+    _lastScan_reg_0_1_1_1
+       (.A0(_lastScan_reg_0_1_0_0_i_3_n_0),
+        .A1(1'b0),
+        .A2(1'b0),
+        .A3(1'b0),
+        .A4(1'b0),
+        .D(RowPins[1]),
+        .O(ChangedValue1[1]),
+        .WCLK(ReleasedKey_reg_0),
+        .WE(_lastScan_reg_0_1_0_0_i_2_n_0));
+  (* OPT_MODIFIED = "MLO" *) 
+  (* RTL_RAM_BITS = "8" *) 
+  (* RTL_RAM_NAME = "inst/_lastScan" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
+  (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "1" *) 
+  (* ram_offset = "0" *) 
+  (* ram_slice_begin = "2" *) 
+  (* ram_slice_end = "2" *) 
+  RAM32X1S #(
+    .INIT(32'h00000003),
+    .IS_WCLK_INVERTED(1'b1)) 
+    _lastScan_reg_0_1_2_2
+       (.A0(_lastScan_reg_0_1_0_0_i_3_n_0),
+        .A1(1'b0),
+        .A2(1'b0),
+        .A3(1'b0),
+        .A4(1'b0),
+        .D(RowPins[2]),
+        .O(ChangedValue1[2]),
+        .WCLK(ReleasedKey_reg_0),
+        .WE(_lastScan_reg_0_1_0_0_i_2_n_0));
+  (* OPT_MODIFIED = "MLO" *) 
+  (* RTL_RAM_BITS = "8" *) 
+  (* RTL_RAM_NAME = "inst/_lastScan" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
+  (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "1" *) 
+  (* ram_offset = "0" *) 
+  (* ram_slice_begin = "3" *) 
+  (* ram_slice_end = "3" *) 
+  RAM32X1S #(
+    .INIT(32'h00000003),
+    .IS_WCLK_INVERTED(1'b1)) 
+    _lastScan_reg_0_1_3_3
+       (.A0(_lastScan_reg_0_1_0_0_i_3_n_0),
+        .A1(1'b0),
+        .A2(1'b0),
+        .A3(1'b0),
+        .A4(1'b0),
+        .D(RowPins[3]),
+        .O(ChangedValue1[3]),
+        .WCLK(ReleasedKey_reg_0),
+        .WE(_lastScan_reg_0_1_0_0_i_2_n_0));
 endmodule
 `ifndef GLBL
 `define GLBL

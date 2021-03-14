@@ -50,8 +50,8 @@
 // IP VLNV: OutOfBandDevelopment.com:ToolKit:RowColumnDecoder:1.2
 // IP Revision: 9
 
-(* X_CORE_INFO = "RowColumnDecoder,Vivado 2020.2" *)
-(* CHECK_LICENSE_TYPE = "RowColumnDecoder_0,RowColumnDecoder,{}" *)
+`timescale 1ns/1ps
+
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module RowColumnDecoder_0 (

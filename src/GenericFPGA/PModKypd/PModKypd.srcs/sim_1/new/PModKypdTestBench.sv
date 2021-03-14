@@ -28,6 +28,9 @@ module PModKypdTestBench;
     wire [3:0] ColumnPins;
     wire [3:0] Value;
     wire ChangedValue;
+    wire DetectedValue;
+    wire ReleasedKey;
+    wire PressedKey;
 
     PModKypd uut (
         .ScanClock(ScanClock),
@@ -35,7 +38,11 @@ module PModKypdTestBench;
         
         .ColumnPins(ColumnPins),
         .Value(Value),
-        .ChangedValue(ChangedValue)
+        
+        .ChangedValue(ChangedValue),
+        .DetectedValue(DetectedValue),
+        .ReleasedKey(ReleasedKey),
+        .PressedKey(PressedKey)
     );
     
     always #1 ScanClock = ~ScanClock;

@@ -24,7 +24,10 @@ module PModKypd (
     output [3:0] ColumnPins,
     input [3:0] RowPins,
     output [3:0] Value,
-    output ChangedValue
+    output ChangedValue,
+    output DetectedValue,
+    output ReleasedKey,
+    output PressedKey
 );        
     wire [3:0] decoded;
     
@@ -33,7 +36,11 @@ module PModKypd (
         .RowPins(RowPins),
         .ColumnPins(ColumnPins),
         .Value(decoded),
-        .ChangedValue(ChangedValue)
+        
+        .ChangedValue(ChangedValue),
+        .DetectedValue(DetectedValue),
+        .ReleasedKey(ReleasedKey),
+        .PressedKey(PressedKey)
     );  
     
     KeypadNibbleMap keypadMapper(
