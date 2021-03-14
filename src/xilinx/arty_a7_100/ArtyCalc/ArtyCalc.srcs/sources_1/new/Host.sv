@@ -35,30 +35,31 @@ module Host(
 );
 //JD + PModKypd) Hexadecimal Input
 //LD3B:LD0B) Selected hexadecimalvalue byte value
-
+           
     wire [3:0] mapped;
-    int StatusRegister;
+    wire [3:0] read;
+    wire [63:0] StatusRegister;
     
     KeypadBuffered pmodKeypad(
-        .SystemClock(CLK100MHZ),
+        .Reset(btn[0]),
+        
+        .KeypadClock(CLK100MHZ),
         .KeypadPmodPort(jd),
-        .StatusRegister(StatusRegister),
-        .CurrentKeypadValue(mapped)
+        .CurrentKeypadValue(mapped),
+        
+        .ReadClock(btn[1]),
+        .ReadEnable(btn[2]),
+        .ReadValue(read),
+        
+        .StatusRegister(StatusRegister)
     );  
     
-    assign ledB = 
-        sw == 4'b1000 ? StatusRegister[03:00] :
-        sw == 4'b1001 ? StatusRegister[07:04] :
-        sw == 4'b1010 ? StatusRegister[11:08] :
-        sw == 4'b1011 ? StatusRegister[15:12] :
-        
-        sw == 4'b1100 ? StatusRegister[19:16] :
-        sw == 4'b1101 ? StatusRegister[23:20] :
-        sw == 4'b1110 ? StatusRegister[27:24] :
-        sw == 4'b1111 ? StatusRegister[31:28] :
-        
-        {$size(ledB){1'b0}};    
-   
+    wire [3:0] _statusRegister [0:15];
+    assign _statusRegister = {<<{StatusRegister}};
+    
+    assign ledB = _statusRegister[sw[3:0]];
+    assign ledG = read;
+    assign ledR = sw;
     assign led = mapped;    
     
 //SW3) Register selector (A = 0, B = 1)
