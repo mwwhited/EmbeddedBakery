@@ -58,10 +58,6 @@ class PriorityEncoder #(
     endfunction
 endclass
 
-/*
-    It looks like 
-*/
-//TODO: add logic to count the number of times the same value is seen before you post events
 module RowColumnDecoder #(
     parameter int ColumnHeight  = 4,
     parameter int RowWidth      = 4
@@ -84,23 +80,13 @@ module RowColumnDecoder #(
         __Reset();
         Value <= {ValueWidth{1'bZ}};                
     end
-    
-    function void __Reset();
-           
-        ReleasedKey   <= 1'b0;  
-        PressedKey    <= 1'b0;   
         
-        ColumnPins <= {{(ColumnHeight - 1){1'b1}}, 1'b0};
-        state = state.first;    
-    
-    endfunction
-    
-    
     typedef enum {
         ScanColumns = 1 ,
         IdleColumns = 2 ,
         KeyPressed  = 3 ,
-        KeyReleased = 4 
+        KeyReleased = 4 ,
+        Reset       = 5 
     } States;
     States state;
     
@@ -108,7 +94,7 @@ module RowColumnDecoder #(
     PriorityEncoder #(RowWidth) _row;  
             
     // Set Column on Read            
-    always_latch // @(posedge ScanClock) begin
+    always_ff @(posedge ScanClock) begin
         state <= CheckStateMachine(state, ColumnPins, RowPins);
     end
     
@@ -122,8 +108,16 @@ module RowColumnDecoder #(
             IdleColumns : return __IdleColumns (request, columnValue, rowValue);
             KeyPressed  : return __KeyPressed  (request, columnValue, rowValue);
             KeyReleased : return __KeyReleased (request, columnValue, rowValue);
-            default     : return state.first;
+            default     : return __Reset();
         endcase
+    endfunction
+    
+    function States __Reset();           
+        ReleasedKey   <= 1'b0;  
+        PressedKey    <= 1'b0;   
+        
+        ColumnPins <= {{(ColumnHeight - 1){1'b1}}, 1'b0};
+        return state.first;
     endfunction
             
     function States __ScanColumns(
@@ -179,8 +173,7 @@ module RowColumnDecoder #(
         input [(ColumnHeight-1):0] columnValue,
         input [(RowWidth - 1):0  ] rowValue
     );
-        __Reset();
-        return state.first;
+        return state.last;
     endfunction 
      
 endmodule

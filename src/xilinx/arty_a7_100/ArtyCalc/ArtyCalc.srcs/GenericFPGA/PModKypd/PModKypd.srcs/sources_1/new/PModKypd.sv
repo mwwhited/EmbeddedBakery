@@ -24,8 +24,6 @@ module PModKypd (
     output [3:0] ColumnPins,
     input [3:0] RowPins,
     output [3:0] Value,
-    output ChangedValue,
-    output DetectedValue,
     output ReleasedKey,
     output PressedKey
 );        
@@ -37,8 +35,6 @@ module PModKypd (
         .ColumnPins(ColumnPins),
         .Value(decoded),
         
-        .ChangedValue(ChangedValue),
-        .DetectedValue(DetectedValue),
         .ReleasedKey(ReleasedKey),
         .PressedKey(PressedKey)
     );  

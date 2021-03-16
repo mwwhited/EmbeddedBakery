@@ -84,6 +84,24 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/KeypadNibbleMap.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/KeypadNibbleMap.sv"/>
+          <Attr Name="ImportTime" Val="1614914791"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/PModKypd.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/PModKypd.sv"/>
+          <Attr Name="ImportTime" Val="1615730115"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/GenericFPGA/RowColumnDecoder/RowColumnDecoder.srcs/sources_1/imports/new/RowColumnDecoder.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../GenericFPGA/RowColumnDecoder/RowColumnDecoder.srcs/sources_1/imports/new/RowColumnDecoder.sv"/>
@@ -95,26 +113,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/AtryTestTop.sv">
         <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/KeypadNibbleMap.sv">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/KeypadNibbleMap.sv"/>
-          <Attr Name="ImportTime" Val="1614914791"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/PModKypd.sv">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/PModKypd.sv"/>
-          <Attr Name="ImportTime" Val="1615730115"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

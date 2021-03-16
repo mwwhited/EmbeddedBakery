@@ -44,85 +44,136 @@ class PriorityEncoder #(
         end
         return {EncodedBitWidth{1'bZ}};
     endfunction
+    
+    function [(BitWidth - 1):0] RotateLeft(
+        [(BitWidth - 1):0] value
+    );
+        return {value[(BitWidth-2):0], value[BitWidth - 1]};
+    endfunction
+    
+    function [(BitWidth - 1):0] RotateRight(
+        [(BitWidth - 1):0] value
+    );
+        return {value[BitWidth - 0], value[(BitWidth-1):1]};
+    endfunction
 endclass
 
 module RowColumnDecoder #(
-    parameter int ColumnHeight = 4,
-    parameter int RowWidth = 4
-)
-(
+    parameter int ColumnHeight  = 4,
+    parameter int RowWidth      = 4
+) (
     input ScanClock,
     
     output reg [(ColumnHeight - 1):0] ColumnPins,
-    input [(RowWidth - 1):0] RowPins,
+    input      [(RowWidth - 1):0] RowPins,
     
     output reg [(($clog2(ColumnHeight) + $clog2(RowWidth)) - 1):0] Value,
-    output reg ChangedValue,
-    output reg DetectedValue,
     output reg ReleasedKey,
-    output PressedKey
+    output reg PressedKey
 );  
     localparam ValueWidth = $clog2(ColumnHeight) + $clog2(RowWidth);
-    reg [(RowWidth - 1):0] _lastScan [($clog2(ColumnHeight)-1):0]; 
     
-    assign PressedKey = ChangedValue && !ReleasedKey; 
-                
+    logic [(ValueWidth - 1):0] _lastColumn;
+    logic [(ValueWidth - 1):0] _lastRow   ;
+                 
     initial begin
-        ColumnPins <= {{(ColumnHeight - 1){1'b1}}, 1'b0};
-        Value <= {ValueWidth{1'bZ}};
-        
-        foreach(_lastScan[c]) begin
-            _lastScan[c] <= {RowWidth{1'b1}};
-        end
+        __Reset();
+        Value <= {ValueWidth{1'bZ}};                
     end
         
-    // Set Column on Read            
-    always @(posedge ScanClock) begin
-        for(int cp = 1; cp < $size(ColumnPins); cp++) begin
-             ColumnPins[cp] <= ColumnPins[cp - 1];
-        end
-        ColumnPins[0] <= ColumnPins[$size(ColumnPins)-1];
-    end  
+    typedef enum {
+        ScanColumns = 1 ,
+        IdleColumns = 2 ,
+        KeyPressed  = 3 ,
+        KeyReleased = 4 ,
+        Reset       = 5 
+    } States;
+    States state;
     
     PriorityEncoder #(ColumnHeight) _col;
-    PriorityEncoder #(RowWidth) _row;   
-      
-    always @(negedge ScanClock) begin 
-        ChangedValue <= 1'b0;
-        ReleasedKey <= 1'b0;
-        DetectedValue <= 1'b0;
+    PriorityEncoder #(RowWidth) _row;  
+            
+    // Set Column on Read            
+    always_ff @(posedge ScanClock) begin
+        state <= CheckStateMachine(state, ColumnPins, RowPins);
+    end
+    
+    function States CheckStateMachine(
+        input States request,        
+        input [(ColumnHeight-1):0] columnValue,
+        input [(RowWidth - 1):0  ] rowValue
+        );
+        case (request) 
+            ScanColumns : return __ScanColumns (request, columnValue, rowValue);
+            IdleColumns : return __IdleColumns (request, columnValue, rowValue);
+            KeyPressed  : return __KeyPressed  (request, columnValue, rowValue);
+            KeyReleased : return __KeyReleased (request, columnValue, rowValue);
+            default     : return __Reset();
+        endcase
+    endfunction
+    
+    function States __Reset();           
+        ReleasedKey   <= 1'b0;  
+        PressedKey    <= 1'b0;   
         
-        $display("=== negedge ScanClock ===");
-        $display(">C,R: %b, %b", ColumnPins, RowPins);
-                       
-        if (~ColumnPins) begin    
-        
-            if (_lastScan[_col.LSB(~ColumnPins)] != RowPins) begin
-                //change
-                $display("--- RowPins Changed? ===");
-                ChangedValue <= 1'b1;
-                
-                if (!(~RowPins)) begin
-                    ReleasedKey <= 1'b1;
-                end
-                
-            end
+        ColumnPins <= {{(ColumnHeight - 1){1'b1}}, 1'b0};
+        return state.first;
+    endfunction
             
-            _lastScan[_col.LSB(~ColumnPins)] <= RowPins;
+    function States __ScanColumns(
+        input States request,        
+        input [(ColumnHeight-1):0] columnValue,
+        input [(RowWidth - 1):0  ] rowValue
+    );      
+        ColumnPins <= _col.RotateLeft(ColumnPins);
+        return IdleColumns;
+    endfunction  
+           
+    function States __IdleColumns(
+        input States request,        
+        input [(ColumnHeight-1):0] columnValue,
+        input [(RowWidth - 1):0  ] rowValue
+    );
+        if (~columnValue && ~rowValue) begin
+            _lastRow <= rowValue;
+            _lastColumn <= columnValue;
+    
+            Value <= {
+                _col.LSB(~columnValue),
+                _row.LSB(~rowValue)
+            };
             
-            if (~RowPins) begin
-                DetectedValue <= 1'b1;
-            
-                Value <= { 
-                    _col.LSB(~ColumnPins),
-                    _row.LSB(~RowPins)
-                };
-                $display("<Value: %b", { 
-                    _col.LSB(~ColumnPins),
-                    _row.LSB(~RowPins)
-                });
-            end            
+            PressedKey    <= 1'b1;
+            return KeyPressed;            
         end
-    end 
-  
+        
+        return ScanColumns;   
+    endfunction   
+             
+    function States __KeyPressed(
+        input States request,        
+        input [(ColumnHeight-1):0] columnValue,
+        input [(RowWidth - 1):0  ] rowValue
+    );
+        _lastRow <= rowValue;
+        _lastColumn <= columnValue;
+        
+        if (_lastColumn == columnValue &&
+            _lastRow == rowValue
+        ) begin
+            return KeyPressed;
+        end     
+        
+        ReleasedKey   <= 1'b1;  
+        return KeyReleased;
+    endfunction    
+         
+    function States __KeyReleased(
+        input States request,        
+        input [(ColumnHeight-1):0] columnValue,
+        input [(RowWidth - 1):0  ] rowValue
+    );
+        return state.last;
+    endfunction 
+     
 endmodule

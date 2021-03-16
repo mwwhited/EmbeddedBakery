@@ -3,7 +3,7 @@
   <spirit:vendor>OutOfBandDevelopment.com</spirit:vendor>
   <spirit:library>ToolKit</spirit:library>
   <spirit:name>PModKypd</spirit:name>
-  <spirit:version>1.2</spirit:version>
+  <spirit:version>1.3</spirit:version>
   <spirit:model>
     <spirit:views>
       <spirit:view>
@@ -16,7 +16,7 @@
           <spirit:localName>xilinx_anylanguagesynthesis_OutOfBandDevelopment_com_ToolKit_ClockDivider_1_1__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagesynthesis_OutOfBandDevelopment_com_ToolKit_RowColumnDecoder_1_2__ref_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_anylanguagesynthesis_OutOfBandDevelopment_com_ToolKit_RowColumnDecoder_1_3__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
@@ -24,7 +24,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>649ecb85</spirit:value>
+            <spirit:value>f1af773c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -38,7 +38,7 @@
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_OutOfBandDevelopment_com_ToolKit_ClockDivider_1_1__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_OutOfBandDevelopment_com_ToolKit_RowColumnDecoder_1_2__ref_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_OutOfBandDevelopment_com_ToolKit_RowColumnDecoder_1_3__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
@@ -46,7 +46,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>649ecb85</spirit:value>
+            <spirit:value>f1af773c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -146,32 +146,6 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>ChangedValue</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>DetectedValue</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
         <spirit:name>ReleasedKey</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
@@ -228,6 +202,7 @@
       <spirit:file>
         <spirit:name>../../../GenericFPGA/PModKypd/PModKypd.srcs/sources_1/ip/RowColumnDecoder_0/RowColumnDecoder_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_pmodKeypad/RowColumnDecoder_0</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>../../../GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/KeypadNibbleMap.sv</spirit:name>
@@ -236,7 +211,7 @@
       <spirit:file>
         <spirit:name>../../../GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/PModKypd.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_6e74c495</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_dd4ea681</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -250,10 +225,10 @@
       </spirit:vendorExtensions>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_OutOfBandDevelopment_com_ToolKit_RowColumnDecoder_1_2__ref_view_fileset</spirit:name>
+      <spirit:name>xilinx_anylanguagesynthesis_OutOfBandDevelopment_com_ToolKit_RowColumnDecoder_1_3__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="OutOfBandDevelopment.com" xilinx:library="ToolKit" xilinx:name="RowColumnDecoder" xilinx:version="1.2">
+          <xilinx:componentRef xilinx:vendor="OutOfBandDevelopment.com" xilinx:library="ToolKit" xilinx:name="RowColumnDecoder" xilinx:version="1.3">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -286,6 +261,7 @@
       <spirit:file>
         <spirit:name>../../../GenericFPGA/PModKypd/PModKypd.srcs/sources_1/ip/RowColumnDecoder_0/RowColumnDecoder_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_pmodKeypad/RowColumnDecoder_0</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>../../../GenericFPGA/PModKypd/PModKypd.srcs/sources_1/new/KeypadNibbleMap.sv</spirit:name>
@@ -307,10 +283,10 @@
       </spirit:vendorExtensions>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagebehavioralsimulation_OutOfBandDevelopment_com_ToolKit_RowColumnDecoder_1_2__ref_view_fileset</spirit:name>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_OutOfBandDevelopment_com_ToolKit_RowColumnDecoder_1_3__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="OutOfBandDevelopment.com" xilinx:library="ToolKit" xilinx:name="RowColumnDecoder" xilinx:version="1.2">
+          <xilinx:componentRef xilinx:vendor="OutOfBandDevelopment.com" xilinx:library="ToolKit" xilinx:name="RowColumnDecoder" xilinx:version="1.3">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -319,7 +295,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/PModKypd_v1_2.tcl</spirit:name>
+        <spirit:name>xgui/PModKypd_v1_3.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_f64a5dae</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
@@ -336,7 +312,7 @@
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>PModKypd_v1_2</spirit:description>
+  <spirit:description>PModKypd_v1_3</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -353,11 +329,11 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>/InputOutput/HumanInterfaceDevice</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>PModKypd_v1_2</xilinx:displayName>
+      <xilinx:displayName>PModKypd_v1_3</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>Out-of-Band-Development</xilinx:vendorDisplayName>
-      <xilinx:coreRevision>7</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-03-14T14:01:08Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>8</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-03-16T16:27:06Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@155cd9a1_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6354793a_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
@@ -485,12 +461,30 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@582b7686_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@72c5d384_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@431a1890_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@424780e1_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68a6d94b_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@788eb608_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ef06dba_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35948a98_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1463724b_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b0c904_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65430438_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65c38d70_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dec3540_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b7dbc64_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76e40044_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5aecd259_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26480496_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bf79b30_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e641bfb_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2adc9ffb_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f1f9982_ARCHIVE_LOCATION">c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/IpCatalog/PModKypd</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="48e7b8d8"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="88c5c4cc"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c0890c85"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="920a2676"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="72210124"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

@@ -44,32 +44,21 @@ module AtryTestTop(
     wire [3:0] ColumnPins    ; assign jd[3:0]   = ColumnPins    ;
     wire [3:0] RowPins       ; assign RowPins   = jd[7:4]       ;
     wire [3:0] Value         ; assign led       = Value         ;
-    wire       ChangedValue  ; assign led_r[0]  = ChangedValue  ;
-    wire       DetectedValue ; assign led_r[1]  = DetectedValue ;
     wire       ReleasedKey   ; assign led_r[2]  = ReleasedKey   ;
-    wire       PressedKey    ; assign led_r[3]  = PressedKey    ;   
-    wire       Debounced     ; assign led_b[3]  = Debounced     ;   
-
-    wire [3:0] StatusRegisterOut [0:15];
-    wire [63:0] StatusRegisterIn;
-    assign StatusRegisterOut = {<<{StatusRegisterIn}};
-    assign led_g = StatusRegisterOut[sw];
+    wire       PressedKey    ; assign led_r[3]  = PressedKey    ;    
     
+    /*
     RowColumnDecoder  #(
         .ColumnHeight  ( 4 ),
         .RowWidth      ( 4 )
-    ) rowColumnDecoder (
-    //PModKypd pModKypd (
+    ) rowColumnDecoder */
+    PModKypd pModKypd (
         .ScanClock     ( ScanClock        ),
         .ColumnPins    ( ColumnPins       ),
         .RowPins       ( RowPins          ),
         .Value         ( Value            ),
-        .ChangedValue  ( ChangedValue     ),
-        .DetectedValue ( DetectedValue    ),
         .ReleasedKey   ( ReleasedKey      ),
-        .PressedKey    ( PressedKey       ),     
-        .StatusRegister( StatusRegisterIn )     
-    );
-    
+        .PressedKey    ( PressedKey       )     
+    );    
     
 endmodule
