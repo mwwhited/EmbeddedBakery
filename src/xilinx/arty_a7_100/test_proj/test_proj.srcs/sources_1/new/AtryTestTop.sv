@@ -34,7 +34,7 @@ module AtryTestTop(
     wire DividedClock        ;
 
     ClockDivider #(
-        .DividerCount ( 10000000      )
+        .DividerCount ( 100000      )
     )clockDivider(
         .SystemClock  ( SystemClock  ),
         .DividedClock ( DividedClock )
@@ -50,15 +50,14 @@ module AtryTestTop(
     wire       PressedKey    ; assign led_r[3]  = PressedKey    ;   
     wire       Debounced     ; assign led_b[3]  = Debounced     ;   
 
-    wire [3:0] StatusRegisterOut [15:0];
+    wire [3:0] StatusRegisterOut [0:15];
     wire [63:0] StatusRegisterIn;
     assign StatusRegisterOut = {<<{StatusRegisterIn}};
     assign led_g = StatusRegisterOut[sw];
     
     RowColumnDecoder  #(
         .ColumnHeight  ( 4 ),
-        .RowWidth      ( 4 ),
-        .DebounceCount ( 4 )
+        .RowWidth      ( 4 )
     ) rowColumnDecoder (
     //PModKypd pModKypd (
         .ScanClock     ( ScanClock        ),
@@ -68,8 +67,7 @@ module AtryTestTop(
         .ChangedValue  ( ChangedValue     ),
         .DetectedValue ( DetectedValue    ),
         .ReleasedKey   ( ReleasedKey      ),
-        .PressedKey    ( PressedKey       ),
-        .Debounced     ( Debounced        ),     
+        .PressedKey    ( PressedKey       ),     
         .StatusRegister( StatusRegisterIn )     
     );
     
