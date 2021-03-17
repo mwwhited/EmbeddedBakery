@@ -34,53 +34,44 @@ module KeypadBuffered(
     output [63:0]   StatusRegister   
     );
         
-    wire _keypadScanClock;     
+    logic _keypadScanClock;     
     ClockDivider_0 clockDivider(
         .SystemClock(KeypadClock),
         .DividedClock(_keypadScanClock)
     );
         
-    wire [3:0] _keypadValue;
-    wire _keypadReleasedKey; 
+    logic [3:0] _keypadValue;
+    logic _keypadReleasedKey; 
+    logic _keypadPressedKey; 
     assign CurrentKeypadValue = _keypadValue;
         
     PModKypd_0 pmodKeypad(
-        .ScanClock(_keypadScanClock),
-        .RowPins(KeypadPmodPort[7:4]),
-        .ColumnPins(KeypadPmodPort[3:0]),
-        .Value(_keypadValue),
-        .ReleasedKey(_keypadReleasedKey)
+        .ScanClock      ( _keypadScanClock      ),
+        .RowPins        ( KeypadPmodPort[7:4]   ),
+        .ColumnPins     ( KeypadPmodPort[3:0]   ),
+        .Value          ( _keypadValue          ),
+        .ReleasedKey    ( _keypadReleasedKey    ),
+        .PressedKey     ( _keypadPressedKey     )
     );  
-     
-    typedef enum {
-        RESET_REQUESTED = 1,
-        INITIALIZING    = 2,
-        INITIALIZED     = 3,
-        IDLE            = 4,
-        KEY_RELEASED    = 5,
-        KEY_CAPTURE     = 6,
-        KEY_WRITEN      = 7
-    } WriterStates;     
-    WriterStates writerState;
-                
+ 
     // --- Setup FIFO ---
-    reg        _keypadFifo_reset_clock      ;
+    logic       _keypadFifo_reset_clock      ;
     
-    wire       _keypadFifo_wr_clk           ;//: IN STD_LOGIC;
-    reg        _keypadFifo_wr_en            ;//: IN STD_LOGIC;
-    reg        _keypadFifo_wr_rst           ;//: IN STD_LOGIC;
-    reg  [3:0] _keypadFifo_din              ;//: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    wire       _keypadFifo_wr_ack           ;//: OUT STD_LOGIC;
-    wire       _keypadFifo_full             ;//: OUT STD_LOGIC;
-    wire [3:0] _keypadFifo_wr_data_count    ;//: OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+    logic       _keypadFifo_wr_clk           ;//: IN STD_LOGIC;
+    logic       _keypadFifo_wr_en            ;//: IN STD_LOGIC;
+    logic       _keypadFifo_wr_rst           ;//: IN STD_LOGIC;
+    logic [3:0] _keypadFifo_din              ;//: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    logic       _keypadFifo_wr_ack           ;//: OUT STD_LOGIC;
+    logic       _keypadFifo_full             ;//: OUT STD_LOGIC;
+    logic [3:0] _keypadFifo_wr_data_count    ;//: OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
 
-    reg        _keypadFifo_rd_clk           ;//: IN STD_LOGIC;
-    reg        _keypadFifo_rd_en            ;//: IN STD_LOGIC;
-    reg        _keypadFifo_rd_rst           ;//: IN STD_LOGIC;
-    wire [3:0] _keypadFifo_dout             ;//: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    wire       _keypadFifo_valid            ;//: OUT STD_LOGIC;
-    wire       _keypadFifo_empty            ;//: OUT STD_LOGIC;
-    wire [3:0] _keypadFifo_rd_data_count    ;//: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    logic       _keypadFifo_rd_clk           ;//: IN STD_LOGIC;
+    logic       _keypadFifo_rd_en            ;//: IN STD_LOGIC;
+    logic       _keypadFifo_rd_rst           ;//: IN STD_LOGIC;
+    logic [3:0] _keypadFifo_dout             ;//: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    logic       _keypadFifo_valid            ;//: OUT STD_LOGIC;
+    logic       _keypadFifo_empty            ;//: OUT STD_LOGIC;
+    logic [3:0] _keypadFifo_rd_data_count    ;//: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 
     assign _keypadFifo_wr_clk   = 
         ( Reset && _keypadFifo_reset_clock) ||
@@ -112,7 +103,6 @@ module KeypadBuffered(
     // Build out state machines
     
     assign StatusRegister = {
-        _keyReleasedCount[27:0]     , //  :: 9
         writerState[3:0]            , //  :: 8   
         
         3'b0,
@@ -138,6 +128,18 @@ module KeypadBuffered(
         _keypadFifo_rd_data_count     //4 :: 0
     };
         
+    typedef enum {
+        RESET_REQUESTED = 1,
+        INITIALIZING    = 2,
+        INITIALIZED     = 3,
+        IDLE            = 4,
+        KEY_PRESSED     = 5,
+        KEY_CAPTURED    = 6,
+        KEY_RELEASED    = 7
+    } WriterStates;     
+    WriterStates writerState;
+                
+        
     initial begin
         writerState <= RESET_REQUESTED; 
     end
@@ -148,27 +150,36 @@ module KeypadBuffered(
             writerState <= RESET_REQUESTED;
         end else begin              
             case (writerState)
-                RESET_REQUESTED:    writerState <= __RESET();
-                INITIALIZING:       writerState <= __INITIALIZING();
-                INITIALIZED:        writerState <= __INITIALIZED();
-                IDLE:               writerState <= __IDLE();
-                KEY_RELEASED:       writerState <= __KEY_RELEASED();
-                KEY_CAPTURE:        writerState <= __KEY_CAPTURE();
-                KEY_WRITEN:         writerState <= __KEY_WRITEN();
+                RESET_REQUESTED:    writerState <= __RESET        ( writerState, _keypadValue );
+                INITIALIZING:       writerState <= __INITIALIZING ( writerState, _keypadValue );
+                INITIALIZED:        writerState <= __INITIALIZED  ( writerState, _keypadValue );
+                IDLE:               writerState <= __IDLE         ( writerState, _keypadValue );
+                KEY_PRESSED:        writerState <= __KEY_PRESSED  ( writerState, _keypadValue );
+                KEY_CAPTURED:       writerState <= __KEY_CAPTURED ( writerState, _keypadValue );
+                KEY_RELEASED:       writerState <= __KEY_RELEASED ( writerState, _keypadValue );
+                default:            writerState <= writerState.first;
             endcase
         end        
     end
     
-    function WriterStates __RESET();        
+    function WriterStates __RESET(
+        input WriterStates request,
+        input logic [3:0] value
+    );        
         _keypadFifo_wr_rst <= 1'b1;      
         _keypadFifo_rd_rst <= 1'b1; 
         _resetCount        <= 0;
-        _keyReleasedCount  <= 0;
+        _keypadFifo_din    <= 4'b0;     
+        _keypadFifo_wr_en  <= 1'b0;      
+        //_keypadFifo_rd_en  <= 1'b0; 
         return INITIALIZING;        
     endfunction  
     
     byte _resetCount;
-    function WriterStates __INITIALIZING();
+    function WriterStates __INITIALIZING(
+        input WriterStates request,
+        input logic [3:0] value
+    );
         _resetCount++;
         if (_resetCount == 6) begin
             return INITIALIZED;
@@ -177,47 +188,55 @@ module KeypadBuffered(
         end        
     endfunction
             
-    function WriterStates __INITIALIZED();       
+    function WriterStates __INITIALIZED(
+        input WriterStates request,
+        input logic [3:0] value
+    );       
         _keypadFifo_wr_rst <= 1'b0;      
         _keypadFifo_rd_rst <= 1'b0;  
         return IDLE;
     endfunction
     
-    function WriterStates __IDLE();
+    function WriterStates __IDLE(
+        input WriterStates request,
+        input logic [3:0] value
+    );
         _keypadFifo_wr_en <= 1'b0;
         
-        if (_keypadReleasedKey) begin
-            return KEY_RELEASED;
+        if (_keypadPressedKey) begin
+            _keypadFifo_din <= _keypadValue;
+            return KEY_PRESSED;
         end
             
         return IDLE;
     endfunction 
     
-    int _keyReleasedCount;
-    function WriterStates __KEY_RELEASED();
-        _keyReleasedCount++;
-        if (_keypadReleasedKey) begin
-            return KEY_RELEASED;
-        end else begin        
-            _keypadFifo_wr_en  <= 1'b1;
-            _keypadFifo_din    <= _keypadValue;
-            return KEY_CAPTURE;
-        end    
+    function WriterStates __KEY_PRESSED(
+        input WriterStates request,
+        input logic [3:0] value
+    );
+        _keypadFifo_wr_en <= 1'b0;
+        return KEY_CAPTURED;
     endfunction
     
-    function WriterStates __KEY_CAPTURE(); 
-        //TODO: do I need two clocks for the capture?  
+    function WriterStates __KEY_CAPTURED(
+        input WriterStates request,
+        input logic [3:0] value
+    ); 
+        _keypadFifo_wr_en  <= 1'b0;
         
-        //if(_keypadFifo_wr_ack) begin
-            _keypadFifo_wr_en  <= 1'b0;
-            return KEY_WRITEN;
-        //end      
+        if (_keypadPressedKey) begin
+            return KEY_PRESSED;
+        end
         
-        //return KEY_CAPTURE;
-        
+        return KEY_RELEASED;            
     endfunction  
     
-    function WriterStates __KEY_WRITEN();
-        return IDLE;
-    endfunction 
+    function WriterStates __KEY_RELEASED(
+        input WriterStates request,
+        input logic [3:0] value
+    );
+        return request.first;
+    endfunction
+        
 endmodule
