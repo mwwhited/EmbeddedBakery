@@ -47,8 +47,8 @@ module Top(
         
     assign din    = { 1'b0, sw[2:0] }   ; 
     assign rst    = btn[0];
-    assign wr_clk = dividedClock & btn[1];
-    assign rd_clk = dividedClock & btn[2];
+    assign wr_clk = dividedClock; // & btn[1];
+    assign rd_clk = dividedClock; // & btn[2];
     assign wr_en  = btn[3];
     assign rd_en  = btn4;
     
