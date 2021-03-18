@@ -17,7 +17,7 @@ module Top2(
     assign btn4 = ja[2];
     
     logic true  = 1'b1      ;
-    logic false = 1'b1      ;
+    logic false = 1'b0      ;
    
     logic       dividedClock ;   
     ClockDivider_0 clockDivider(
@@ -84,13 +84,15 @@ module Top2(
     assign wr_clk   = Clock                            ;          
     assign rd_clk   = Clock                            ;          
     assign din      = sw                               ;  
-    assign wr_en    = _WriteEnable && ~_Reset_Enable   ; 
-    assign rd_en    = _Read_Enable && ~_Reset_Enable   ;
+    assign wr_en    = _WriteEnable;// && ~_Reset_Enable   ; 
+    assign rd_en    = _Read_Enable;// && ~_Reset_Enable   ;
              
     assign led      = btn4 ? { wr_en, rd_en, wr_rst_busy, rd_rst_busy} : dout                             ;
     assign led_g = btn4 ? {full, wr_ack, valid, empty} : 4'b0; 
     assign led_r = (btn[3] || btn4) ? 4'b0 : currentState;    
-    assign led_b = (btn[3] && ~btn4) ? { ResetRequest, ReadRequest , WriteRequest, Clock } : 4'b0;
+    assign led_b = (btn[3] && ~btn4) ? 
+        { ResetRequest, ReadRequest , WriteRequest, Clock } : 
+        {_Reset_Enable, 2'b0, Clock };
               
     fifo_generator_0 fifo (
         .rst           (rst           ), // : IN STD_LOGIC;
@@ -148,6 +150,8 @@ module Top2(
         endcase
     endfunction
         
+    int resetCount = 0;        
+        
     function FifoStates __ResetRequested(
         input FifoStates inputState,
         input [3:0] inputCommand,
@@ -157,10 +161,14 @@ module Top2(
         _WriteEnable    <= false;
         _Read_Enable    <= false;
         errorCount      <= 0;
+        resetCount++;
         
         //Spin with reset set until both read and write reset busy are set 
         _Reset_Enable   <= true;
-        if (wr_rst_busy && rd_rst_busy) begin
+        
+        //if (resetCount < 6) return ResetRequested;
+        
+        if (wr_rst_busy && rd_rst_busy && empty) begin // does it also need to be empty?
             return ResetProcessing;    
         end
         return ResetRequested;
@@ -172,10 +180,11 @@ module Top2(
         input [3:0] inputData
     );
         //Spin with reset cleared until read and write reset busy are cleared
-        
-        if (~rd_rst_busy) begin
-            _Reset_Enable <= false;
-        end if (~wr_rst_busy) begin //  && ~rd_rst_busy
+        resetCount++;
+        //if (resetCount > 60) return Error;
+
+        _Reset_Enable <= false;
+        if (~rd_rst_busy && ~wr_rst_busy) begin 
             return ResetCompleted;    
         end
         
@@ -187,6 +196,7 @@ module Top2(
         input [3:0] inputCommand,
         input [3:0] inputData
     );  
+        resetCount <= 0;
         // Reset process complete wait for next command      
         return Waiting; 
     endfunction
@@ -307,6 +317,7 @@ module Top2(
         input [3:0] inputData
     ); 
         errorCount++;
+        resetCount <= 0;
         if (errorCount == maxErrorCount) return ResetRequested;
         return Waiting;
     endfunction
