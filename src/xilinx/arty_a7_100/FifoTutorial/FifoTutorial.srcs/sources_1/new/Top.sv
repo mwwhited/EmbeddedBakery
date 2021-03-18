@@ -2,13 +2,13 @@
 
 module Top(
     input        CLK100MHZ  ,
-    input  [0:3] sw         ,
-    input  [0:3] btn        ,
-    output [0:3] led_b      ,
-    output [0:3] led_g      ,
-    output [0:3] led_r      ,
-    output [0:3] led        ,
-    inout  [0:7] ja
+    input  [3:0] sw         ,
+    input  [3:0] btn        ,
+    output [3:0] led_b      ,
+    output [3:0] led_g      ,
+    output [3:0] led_r      ,
+    output [3:0] led        ,
+    inout  [7:0] ja
     );
     
     
@@ -45,31 +45,41 @@ module Top(
     logic       wr_rst_busy   ; // : OUT STD_LOGIC;                    
     logic       rd_rst_busy   ; // : OUT STD_LOGIC
         
-    assign din    = sw    ; 
+    assign din    = { 1'b0, sw[2:0] }   ; 
     assign rst    = btn[0];
     assign wr_clk = dividedClock & btn[1];
     assign rd_clk = dividedClock & btn[2];
     assign wr_en  = btn[3];
     assign rd_en  = btn4;
     
-    assign led    = sw4 ? dout : din;
-    /*
-    assign led_b[0] = dividedClock;
-    assign led_b[1] = ja[0];
-    assign led_b[2] = ja[2];
-    assign led_b[3] = ja[3];
-    */
-    assign led_r  = rd_data_count;
-    assign led_g  = wr_data_count;
-    assign led_b  = sw4 ?
+    assign led    = 
+        sw[3] ? 
+            (sw4 ? din : dout)
+        :
+            (sw4 ? wr_data_count : rd_data_count)
+        ;
+    assign led_r  = sw4 ?
     {
-        dividedClock,
-        wr_clk,
-        rd_clk,
+        wr_rst_busy,
+        rd_rst_busy,
+        1'b0,
         1'b0
     } : {
-        full,
+        1'b0,
+        1'b0,
+        wr_rst_busy,
+        rd_rst_busy
+    };
+    // assign led_g  = sw4 ? din : dout;
+    assign led_b  = sw4 ?
+    {
         wr_ack,
+        full,
+        wr_clk,
+        dividedClock
+    } : {
+        dividedClock,
+        rd_clk,
         empty,
         valid
     };
