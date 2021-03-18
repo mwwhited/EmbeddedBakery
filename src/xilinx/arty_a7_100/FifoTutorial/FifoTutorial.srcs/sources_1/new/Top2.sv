@@ -75,8 +75,6 @@ module Top2(
     logic       wr_ack        ; // : OUT STD_LOGIC;                    
     logic       empty         ; // : OUT STD_LOGIC;                    
     logic       valid         ; // : OUT STD_LOGIC;                    
-    logic [3:0] rd_data_count ; // : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); 
-    logic [3:0] wr_data_count ; // : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); 
     logic       wr_rst_busy   ; // : OUT STD_LOGIC;                    
     logic       rd_rst_busy   ; // : OUT STD_LOGIC
          
@@ -88,17 +86,9 @@ module Top2(
     assign rd_en    = _Read_Enable;// && ~_Reset_Enable   ;
              
     assign led   = 
-        btn4 ? 
-            (sw4 ?
-                 { wr_en, rd_en, wr_rst_busy, rd_rst_busy}:
-                 wr_data_count) : 
-        dout                             ;
+        btn4 ? { wr_en, rd_en, wr_rst_busy, rd_rst_busy}:dout                             ;
     assign led_g   = 
-        btn4 ? 
-            (sw4 ?
-                 {full, wr_ack, valid, empty}:
-                 rd_data_count) : 
-         4'b0;
+        btn4 ? {full, wr_ack, valid, empty}: 4'b0;
     assign led_r = (btn[3] || btn4) ? 4'b0 : currentState;    
     assign led_b = (btn[3] && ~btn4) ? 
         { ResetRequest, ReadRequest , WriteRequest, Clock } : 
@@ -116,8 +106,6 @@ module Top2(
         .wr_ack        (wr_ack        ), // : OUT STD_LOGIC;
         .empty         (empty         ), // : OUT STD_LOGIC;
         .valid         (valid         ), // : OUT STD_LOGIC;
-        .rd_data_count (rd_data_count ), // : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-        .wr_data_count (wr_data_count ), // : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
         .wr_rst_busy   (wr_rst_busy   ), // : OUT STD_LOGIC;
         .rd_rst_busy   (rd_rst_busy   )  // : OUT STD_LOGIC
     );
