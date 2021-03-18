@@ -87,8 +87,18 @@ module Top2(
     assign wr_en    = _WriteEnable;// && ~_Reset_Enable   ; 
     assign rd_en    = _Read_Enable;// && ~_Reset_Enable   ;
              
-    assign led      = btn4 ? { wr_en, rd_en, wr_rst_busy, rd_rst_busy} : dout                             ;
-    assign led_g = btn4 ? {full, wr_ack, valid, empty} : 4'b0; 
+    assign led   = 
+        btn4 ? 
+            (sw4 ?
+                 { wr_en, rd_en, wr_rst_busy, rd_rst_busy}:
+                 wr_data_count) : 
+        dout                             ;
+    assign led_g   = 
+        btn4 ? 
+            (sw4 ?
+                 {full, wr_ack, valid, empty}:
+                 rd_data_count) : 
+         4'b0;
     assign led_r = (btn[3] || btn4) ? 4'b0 : currentState;    
     assign led_b = (btn[3] && ~btn4) ? 
         { ResetRequest, ReadRequest , WriteRequest, Clock } : 
@@ -227,14 +237,15 @@ module Top2(
         input FifoStates inputState,
         input [3:0] inputCommand,
         input [3:0] inputData
-    );            
+    );             
         //clear write enable
         _WriteEnable <= false;
-         if (~wr_ack) begin 
-            // if not wr_ack goto error
-            return Error;
+        // this is doing a double write
+        if (~wr_ack) begin //should only spin once.
+            // if not wr_ack Spin
+            return WriteProcessing;
         end else begin 
-            // else goto write complete 
+            // else goto write complete
             return WriteCompleted;
         end 
     endfunction
@@ -277,8 +288,8 @@ module Top2(
         //clear read enable
         _Read_Enable <= false;
          if (~valid) begin 
-            // if not valid goto error
-            return Error;
+            // if not valid wait
+            return ReadProcessing;
         end else begin 
             // else goto read complete 
             return ReadCompleted;
@@ -295,6 +306,10 @@ module Top2(
     
     // ==== ==== ==== ==== ==== ==== ==== ==== ==== 
         
+    // ResetRequest = btn[0]
+    // ReadRequest  = btn[1]
+    // WriteRequest = btn[2]
+        
     function FifoStates __Waiting(
         input FifoStates inputState,
         input [3:0] inputCommand,
@@ -303,9 +318,9 @@ module Top2(
         if (inputCommand[0]) begin
             return ResetRequested;
         end else if (inputCommand[1]) begin
-            return WriteRequested;
-        end else if (inputCommand[2]) begin
             return ReadRequested;
+        end else if (inputCommand[2]) begin
+            return WriteRequested;
         end
     
         return inputState;
