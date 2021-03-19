@@ -35,72 +35,20 @@ module PModShield(
     );
     
     logic dividedClock;
+    int counter = 0;
+    int even    = 0;
     
     ClockDivider_0 ClockDivider(
         .SystemClock(CLK100MHZ),
         .DividedClock(dividedClock)
     ); 
-
-    function logic [6:0] Hex27Segment_D(
-        input logic [3:0] value
-    );
-        //  A    
-        // F B   
-        //  G    
-        // E C   
-        //  D  p 
-        case (value)
-            //               GFEDCBA
-            4'h0 : return 7'b0111111; // 0
-            4'h1 : return 7'b0000110; // 1
-            4'h2 : return 7'b1011011; // 2
-            4'h3 : return 7'b1001111; // 3
-            4'h4 : return 7'b1100110; // 4
-            4'h5 : return 7'b1101101; // 5
-            4'h6 : return 7'b1111101; // 6
-            4'h7 : return 7'b0000111; // 7
-            4'h8 : return 7'b1111111; // 8
-            4'h9 : return 7'b1100111; // 9
-            4'hA : return 7'b1110111; // A
-            4'hB : return 7'b1111100; // b
-            4'hC : return 7'b0111001; // C
-            4'hD : return 7'b1011110; // d
-            4'hE : return 7'b1111001; // E
-            4'hF : return 7'b1110001; // F
-        endcase
-    endfunction 
     
-    function logic [6:0] Hex27Segment_U(
-        input logic [3:0] value
+    PMod7SegmentDisplay_0 ssd(
+        .ScanClock(dividedClock),
+        .PModPort(ps_jd),
+        .Invert(btn[3]),
+        .Value(counter)
     );
-        // p  A
-        //   F B
-        //    G
-        //   E C
-        //    D
-        case (value)
-            //               GCBAFED
-            4'h0 : return 7'b0111111; // 0
-            4'h1 : return 7'b0110000; // 1
-            4'h2 : return 7'b1011011; // 2
-            4'h3 : return 7'b1111001; // 3
-            4'h4 : return 7'b1110100; // 4
-            4'h5 : return 7'b1101101; // 5
-            4'h6 : return 7'b1101111; // 6
-            4'h7 : return 7'b0111000; // 7
-            4'h8 : return 7'b1111111; // 8
-            4'h9 : return 7'b1111100; // 9
-            4'hA : return 7'b1111110; // A
-            4'hB : return 7'b1100111; // b
-            4'hC : return 7'b0001111; // C
-            4'hD : return 7'b1110011; // d
-            4'hE : return 7'b1001111; // E
-            4'hF : return 7'b1001110; // F
-        endcase
-    endfunction 
-    
-    int counter = 0;
-    int even    = 0;
     
     //assign  ps_jd =  { ~even, Hex27Segment(even ? counter[7:4] : counter[3:0]) };
     assign led = btn[2] ? counter[7:4] :counter[3:0];
@@ -122,13 +70,14 @@ module PModShield(
         if (btn[1]) begin
             counter <= 0;
         end
-        
+/*        
         even <= ~even;
         
         ps_jd <= btn[3] ?
           { even, Hex27Segment_D(even ? counter[7:4] : counter[3:0]) } :
           { ~even, Hex27Segment_U(even ? counter[7:4] : counter[3:0]) }
           ;
+          */
     end     
     
 endmodule
