@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Out-of-Band Development
+// Engineer: Matthew Whited
 // 
-// Create Date: 03/18/2021 01:20:15 PM
+// Create Date: 03/19/2021 07:33:20 AM
 // Design Name: 
-// Module Name: PModShield
+// Module Name: PMod7SegmentDisplay
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,28 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module PModShield(
-    input CLK100MHZ,
-    output [7:0] ps_ja,
-    output [7:0] ps_jb,
-    output [7:0] ps_jc,
-    output reg [7:0] ps_jd,
-    output [7:0] ps_je,
-    input  [3:0] btn,
-    output [3:0] led,
-    output [3:0] led_r,
-    output [3:0] led_g,
-    output [3:0] led_b
-    );
-    
-    logic dividedClock;
-    
-    ClockDivider_0 ClockDivider(
-        .SystemClock(CLK100MHZ),
-        .DividedClock(dividedClock)
-    ); 
-
+module PMod7SegmentDisplay(
+    input bit ScanClock,
+    output reg [7:0] PModPort,
+    input bit Invert,
+    input byte Value
+);
     function logic [6:0] Hex27Segment_D(
         input logic [3:0] value
     );
@@ -99,36 +83,14 @@ module PModShield(
         endcase
     endfunction 
     
-    int counter = 0;
-    int even    = 0;
-    
-    //assign  ps_jd =  { ~even, Hex27Segment(even ? counter[7:4] : counter[3:0]) };
-    assign led = btn[2] ? counter[7:4] :counter[3:0];
-    assign led_r[0] = ~even;
-    assign led_r[1] =  even;
-    assign led_r[3] = dividedClock;
-    
-    logic pushed = 0;    
-    
-    always @(posedge dividedClock) begin
-        if (pushed && ~btn[0]) begin
-            pushed <= 0;
-        end
-        if (~pushed && btn[0]) begin
-            pushed <= 1;
-            counter++;
-        end
-                
-        if (btn[1]) begin
-            counter <= 0;
-        end
-        
-        even <= ~even;
-        
-        ps_jd <= btn[3] ?
-          { even, Hex27Segment_D(even ? counter[7:4] : counter[3:0]) } :
-          { ~even, Hex27Segment_U(even ? counter[7:4] : counter[3:0]) }
+    logic highByte;
+       
+    always @(posedge ScanClock) begin
+        highByte <= ~highByte;
+        PModPort <= Invert ?
+          { ~highByte, Hex27Segment_U(highByte ? Value[7:4] : Value[3:0]) } :
+          {  highByte, Hex27Segment_D(highByte ? Value[7:4] : Value[3:0]) } 
           ;
-    end     
-    
+    end    
+
 endmodule
