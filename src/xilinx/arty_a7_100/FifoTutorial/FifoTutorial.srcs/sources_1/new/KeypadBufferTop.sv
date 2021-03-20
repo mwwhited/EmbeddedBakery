@@ -64,19 +64,8 @@ module KeypadBufferTop(
     logic [3:0] Writer_FIFO_din     ; 
     logic       Writer_FIFO_wr_en   ; 
     logic       Writer_FIFO_wr_rst  ; 
-    
-    logic [7:0] StatusRegister      ; 
-    logic [7:0] StatusRegister2     ; 
-    logic [7:0] StatusRegister3     ; 
-    logic [7:0] StatusRegister4     ; 
-    logic [7:0] StatusRegister5     ; 
-    logic [7:0] StatusRegister6     ; 
-    logic [7:0] StatusRegister7     ; 
-    logic [7:0] StatusRegister8     ; 
-        
-    FifoWriter #(
-        .DataWidth(4)
-    ) fifoWriter (
+            
+    TriggeredFIFOWriter_0 fifoWriter (
         .Clock         ( readClock          ),
         
         .InputData     ( KeypadValue        ),
@@ -87,15 +76,6 @@ module KeypadBufferTop(
         .FIFO_wr_clk   ( Writer_FIFO_wr_clk ),
         .FIFO_din      ( Writer_FIFO_din    ),
         .FIFO_wr_en    ( Writer_FIFO_wr_en  )
-        
-        ,.StatusRegister(StatusRegister)
-        ,.StatusRegister2(StatusRegister2)
-        ,.StatusRegister3(StatusRegister3)
-        ,.StatusRegister4(StatusRegister4)
-        ,.StatusRegister5(StatusRegister5)
-        ,.StatusRegister6(StatusRegister6)
-        ,.StatusRegister7(StatusRegister7)
-        ,.StatusRegister8(StatusRegister8)
     );
      
     logic       Reader_rd_clk ;
@@ -105,6 +85,7 @@ module KeypadBufferTop(
     logic       Reader_valid  ;
     
     assign Reader_rd_clk = scanClock;
+    
     assign Reader_rd_en = btn[0];
                             
     fifo_generator_0 fifo (    
@@ -146,16 +127,7 @@ module KeypadBufferTop(
                 PressedKey        ,
                 ReleasedKey        
                 };
-                
-            4'b0100: return StatusRegister;
-            4'b0101: return StatusRegister2;
-            4'b0110: return StatusRegister3;
-            4'b0111: return StatusRegister4;
-            4'b1000: return StatusRegister5;
-            4'b1001: return StatusRegister6;
-            4'b1010: return StatusRegister7;
-            4'b1011: return StatusRegister8;
-                
+                                
             4'b1111: return {4'b0000, Reader_dout     };            
             default : return 8'bZ;
         endcase
