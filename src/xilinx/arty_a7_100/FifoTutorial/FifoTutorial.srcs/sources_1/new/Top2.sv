@@ -1,3 +1,5 @@
+/*
+
 `timescale 1ns / 1ps
 
 module Top2(
@@ -326,3 +328,5 @@ module Top2(
     endfunction
     
 endmodule
+
+*/
