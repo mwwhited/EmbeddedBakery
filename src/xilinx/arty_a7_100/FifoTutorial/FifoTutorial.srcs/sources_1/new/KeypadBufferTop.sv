@@ -77,16 +77,47 @@ module KeypadBufferTop(
         .FIFO_din      ( Writer_FIFO_din    ),
         .FIFO_wr_en    ( Writer_FIFO_wr_en  )
     );
-     
-    logic       Reader_rd_clk ;
-    logic       Reader_rd_en  ;
-    logic [3:0] Reader_dout   ;
-    logic       Reader_empty  ;
-    logic       Reader_valid  ;
+        
+    logic        Reader_rd_clk  ;
+    logic        Reader_rd_en   ;
+    logic [3:0]  Reader_dout    ;
+    logic        Reader_empty   ;
+    logic        Reader_valid   ;
     
-    assign Reader_rd_clk = scanClock;
+    logic        RAM_clka       ;
+    logic        RAM_wea        ;
+    logic [12:0] RAM_addra      ;
+    logic [3 :0] RAM_data       ;
     
-    assign Reader_rd_en = btn[0];
+    int StatusRegister0         ;
+    int StatusRegister1         ;
+    int StatusRegister2         ;
+          
+    FifoToBram #(
+        .DataWidth      (4),
+        .AddressWidth   (13),
+        .LowerBound     (0),
+        .UpperBound     (60*33*2)
+    ) fifoToBram(
+        .Clock      ( readClock     ),
+        //.SetAddressPointer(???),
+        //.AddressPointer   (???),
+        
+        .FIFO_dout  ( Reader_dout   ),
+        .FIFO_rd_clk( Reader_rd_clk ),
+        .FIFO_rd_en ( Reader_rd_en  ),
+        .FIFO_empty ( Reader_empty  ),
+        .FIFO_valid ( Reader_valid  ),
+                
+        .RAM_clka   ( RAM_clka     ),
+        .RAM_wea    ( RAM_wea      ),
+        .RAM_addra  ( RAM_addra    ),
+        .RAM_data   ( RAM_data     )
+        
+        ,.StatusRegister0(StatusRegister0)
+        ,.StatusRegister1(StatusRegister1)
+        ,.StatusRegister2(StatusRegister2)
+    ); 
                             
     fifo_generator_0 fifo (    
         .wr_clk ( Writer_FIFO_wr_clk ), 
@@ -101,36 +132,85 @@ module KeypadBufferTop(
         .empty  ( Reader_empty       ), 
         .valid  ( Reader_valid       )  
     );
+
+    // ======================================    
     
+    logic        bram_clka    ;
+    logic        bram_wea     ;
+    logic [12:0] bram_addra   ;
+    logic [3 :0] bram_dina    ;
+    logic [3 :0] bram_douta   ;
+    
+    assign bram_clka    = RAM_clka  ;
+    assign bram_wea     = RAM_wea   ;
+    assign bram_addra   = RAM_addra ;
+    assign bram_dina    = RAM_data  ;
+    //assign bram_douta   = RAM_data  ;
+    
+    logic        bram_clkb    ;  
+    logic        bram_web     ;  
+    logic [10:0] bram_addrb   ;  
+    logic [15:0] bram_dinb    ;  
+    logic [15:0] bram_doutb   ;  
+    
+    assign bram_clkb    = CLK100MHZ ;
+    assign bram_web     = 1'b0      ;
+    assign bram_dinb    = 16'bZ     ;
+    assign bram_addrb   = { 
+    // if this works I can test a wide range of memory by page addressing with buttons
+        6'b0,
+        sw[3],
+        ps_jb[3:0]
+    }; 
+    
+    blk_mem_gen_0 blockMemory(
+        .clka  ( bram_clka  ), //  : IN STD_LOGIC;
+        .wea   ( bram_wea   ), //  : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        .addra ( bram_addra ), //  : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+        .dina  ( bram_dina  ), //  : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        //.douta ( bram_douta ), //  : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+
+        .clkb  ( bram_clkb  ), //  : IN STD_LOGIC;
+        .web   ( bram_web   ), //  : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        .addrb ( bram_addrb ), //  : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+        .dinb  ( bram_dinb  ), //  : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        .doutb ( bram_doutb )  //  : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)  
+    );
+    
+    // ========================================
+        
     byte displayValue;
     function byte GetValue(
         [3:0] address
     );
         case (address)
-            4'b0000: return { 4'b0000     , KeypadValue     };
+            4'b0000: return { PressedKey, ReleasedKey, KeypadValue };
             4'b0001: return { Reader_dout , Writer_FIFO_din };
-            4'b0010: return {
-                Reader_rd_clk     ,
-                Reader_rd_en      ,
-                Reader_empty      ,
-                Reader_valid      ,
-                
-                Writer_FIFO_wr_clk, 
-                Writer_FIFO_wr_en , 
-                Writer_FIFO_full  , 
-                Writer_FIFO_wr_ack 
-                };
-            4'b0011: return {
-                ReleasedKey       ,
-                PressedKey        ,
-                4'b0              ,
-                PressedKey        ,
-                ReleasedKey        
-                };
-                                
-            4'b1111: return {4'b0000, Reader_dout     };            
-            default : return 8'bZ;
+            4'b0010: return { Reader_rd_clk, Reader_rd_en, Reader_empty, Reader_valid, Writer_FIFO_wr_clk, Writer_FIFO_wr_en, Writer_FIFO_full, Writer_FIFO_wr_ack };
+            
+            4'b0011: return GetSubValue(sw[2:1], StatusRegister0);
+            4'b0100: return GetSubValue(sw[2:1], StatusRegister1);
+            4'b0101: return GetSubValue(sw[2:1], StatusRegister2);
+            4'b0110: return { bram_clkb, RAM_clka, RAM_wea, RAM_data };
+            4'b0111: return GetSubValue(sw[2:1], RAM_addra);
+            
+            4'b1000: return GetSubValue(sw[2:1], bram_addrb);
+            4'b1001: return GetSubValue(sw[2:1], bram_doutb);
+ 
+            default : return 8'b0;
         endcase
+    endfunction    
+    
+    function byte GetSubValue(
+        input [1:0] index,
+        input int value
+        );
+        case (index)
+            2'b00: return value[07:00];
+            2'b01: return value[15:08];
+            2'b10: return value[23:16];
+            2'b11: return value[31:24];
+        endcase        
     endfunction    
     
     assign displayValue = GetValue(ps_ja[3:0]);
@@ -142,5 +222,6 @@ module KeypadBufferTop(
         .Value     ( displayValue ),
         .PModPort  ( ps_jd        )
     );
+    
     
 endmodule
