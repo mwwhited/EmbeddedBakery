@@ -84,7 +84,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../xilinx/IpCatalog/component.xml">
+      <File Path="$PPRDIR/../../xilinx/IpCatalog/TriggeredFIFOWriter/component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
