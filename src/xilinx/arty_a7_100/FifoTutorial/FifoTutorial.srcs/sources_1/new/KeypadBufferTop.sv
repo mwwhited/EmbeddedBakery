@@ -33,7 +33,8 @@ module KeypadBufferTop(
     inout  [7:0] ja         , // PMod Encoder
     inout  [7:0] ps_jd      , // PMod 7 Segment Display
     inout  [7:0] ps_ja      , // PMod 4 Switches
-    inout  [7:0] ps_jb        // PMod 4 Switches
+    inout  [7:0] ps_jb      , // PMod 4 Switches
+    input        ck_rst
     );
     
     logic       scanClock          ; 
@@ -78,30 +79,41 @@ module KeypadBufferTop(
         .FIFO_wr_en    ( Writer_FIFO_wr_en  )
     );
         
-    logic        Reader_rd_clk  ;
-    logic        Reader_rd_en   ;
-    logic [3:0]  Reader_dout    ;
-    logic        Reader_empty   ;
-    logic        Reader_valid   ;
+    logic        Reader_rd_clk      ;
+    logic        Reader_rd_en       ;
+    logic [3:0]  Reader_dout        ;
+    logic        Reader_empty       ;
+    logic        Reader_valid       ;
     
-    logic        RAM_clka       ;
-    logic        RAM_wea        ;
-    logic [12:0] RAM_addra      ;
-    logic [3 :0] RAM_data       ;
+    logic        RAM_clka           ;
+    logic        RAM_wea            ;
+    logic [12:0] RAM_addra          ;
+    logic [3 :0] RAM_data           ;
     
-    int StatusRegister0         ;
-    int StatusRegister1         ;
-    int StatusRegister2         ;
-          
+    logic        SetAddressPointer  ;
+    logic [12:0] AddressPointer     ;
+    
+    assign SetAddressPointer    = ~ck_rst;
+    assign AddressPointer       = 13'b0;
+ 
+ //Note: the fito to blockram ip isn't working as configured
+   // FifoToBlockRam_0 /*#(
+   //     .DataWidth      (4),
+   //     .AddressWidth   (13),
+   //     .LowerBound     (0),
+   //     .UpperBound     (60*33*2)
+   // )*/
+             
     FifoToBram #(
         .DataWidth      (4),
         .AddressWidth   (13),
         .LowerBound     (0),
         .UpperBound     (60*33*2)
-    ) fifoToBram(
+    ) fifoToBram (
         .Clock      ( readClock     ),
-        //.SetAddressPointer(???),
-        //.AddressPointer   (???),
+        
+        .SetAddressPointer(SetAddressPointer),
+        .AddressPointer   (AddressPointer),
         
         .FIFO_dout  ( Reader_dout   ),
         .FIFO_rd_clk( Reader_rd_clk ),
@@ -112,11 +124,7 @@ module KeypadBufferTop(
         .RAM_clka   ( RAM_clka     ),
         .RAM_wea    ( RAM_wea      ),
         .RAM_addra  ( RAM_addra    ),
-        .RAM_data   ( RAM_data     )
-        
-        ,.StatusRegister0(StatusRegister0)
-        ,.StatusRegister1(StatusRegister1)
-        ,.StatusRegister2(StatusRegister2)
+        .RAM_data   ( RAM_data     )        
     ); 
                             
     fifo_generator_0 fifo (    
@@ -158,12 +166,11 @@ module KeypadBufferTop(
     assign bram_dinb    = 16'bZ     ;
     assign bram_addrb   = { 
     // if this works I can test a wide range of memory by page addressing with buttons
-        6'b0,
-        sw[3],
+        7'b0,
         ps_jb[3:0]
     }; 
     
-    blk_mem_gen_0 blockMemory(
+    blk_mem_gen_0 textBuffer (
         .clka  ( bram_clka  ), //  : IN STD_LOGIC;
         .wea   ( bram_wea   ), //  : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         .addra ( bram_addra ), //  : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
@@ -177,6 +184,31 @@ module KeypadBufferTop(
         .doutb ( bram_doutb )  //  : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)  
     );
     
+    logic [2:0] VerticalOffset;
+    logic [3:0] TextValue [7:0];    
+    
+    logic [2:0] _pixel;
+    
+    always @(posedge btn[2]) VerticalOffset++;
+    always @(posedge btn[1]) _pixel++;
+    
+    assign led_g = TextValue[_pixel];
+    
+    /*
+        output [3:0] led_b      ,
+    output [3:0] led_r      ,
+    output [3:0] led_g      ,
+    */
+    
+    TextColorMux textColorMux(
+        .BackgroundColor( bram_doutb[15:12] ),
+        .ForegroundColor( bram_doutb[11:08] ),
+        .Text           ( bram_doutb[07:00] ),
+        
+        .VerticalOffset ( VerticalOffset    ),
+        .Value          ( TextValue         )
+    );
+
     // ========================================
         
     byte displayValue;
@@ -188,9 +220,9 @@ module KeypadBufferTop(
             4'b0001: return { Reader_dout , Writer_FIFO_din };
             4'b0010: return { Reader_rd_clk, Reader_rd_en, Reader_empty, Reader_valid, Writer_FIFO_wr_clk, Writer_FIFO_wr_en, Writer_FIFO_full, Writer_FIFO_wr_ack };
             
-            4'b0011: return GetSubValue(sw[2:1], StatusRegister0);
-            4'b0100: return GetSubValue(sw[2:1], StatusRegister1);
-            4'b0101: return GetSubValue(sw[2:1], StatusRegister2);
+            //4'b0011: return GetSubValue(sw[2:1], StatusRegister0);
+            //4'b0100: return GetSubValue(sw[2:1], StatusRegister1);
+            //4'b0101: return GetSubValue(sw[2:1], StatusRegister2);
             4'b0110: return { bram_clkb, RAM_clka, RAM_wea, RAM_data };
             4'b0111: return GetSubValue(sw[2:1], RAM_addra);
             
@@ -222,6 +254,5 @@ module KeypadBufferTop(
         .Value     ( displayValue ),
         .PModPort  ( ps_jd        )
     );
-    
     
 endmodule

@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Out-of=Band Development
+// Engineer: Matthew Whited
 // 
-// Create Date: 03/20/2021 06:43:47 PM
+// Create Date: 03/21/2021 09:23:53 PM
 // Design Name: 
-// Module Name: FifoToBram
+// Module Name: FifoToBlockRam
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,8 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module FifoToBram #(
+module FifoToBlockRam #(
     parameter int                       DataWidth   ,
     parameter int                       AddressWidth,
     parameter [(AddressWidth - 1):0]    LowerBound  ,
@@ -40,13 +39,8 @@ module FifoToBram #(
     output                              RAM_clka         ,
     output reg                          RAM_wea          ,
     output     [(AddressWidth - 1):0]   RAM_addra        ,
-    inout      [(DataWidth    - 1):0]   RAM_data        
-    
-    ,output int StatusRegister0   
-    ,output int StatusRegister1   
-    ,output int StatusRegister2   
+    inout      [(DataWidth    - 1):0]   RAM_data   
 );
-
     assign FIFO_rd_clk = Clock;
     assign RAM_clka    = Clock;
         
@@ -64,10 +58,6 @@ module FifoToBram #(
     
     reg [(DataWidth    - 1):0] _readInput       ;
     reg [(AddressWidth - 1):0] _addressPointer  ;
-    
-    assign StatusRegister0 = {Clock, currentState};
-    assign StatusRegister1 = _readInput;
-    assign StatusRegister2 = _addressPointer;
     
     assign RAM_addra        = _addressPointer;
     assign RAM_data         = RAM_wea ? _readInput : {$size(RAM_data){1'bZ}};
