@@ -35,7 +35,7 @@ module ColorPaletteRom #(
         
     function void resetRam();
         //TODO: need to figure out how to make current working directory the project directory        
-        $readmemb("FifoTutorial.srcs/sources_1/imports/fonts/colors.txt", paletteData);
+        $readmemb("C:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/FifoTutorial/FifoTutorial.srcs/sources_1/imports/fonts/colors.txt", paletteData);
     endfunction    
     
     initial begin

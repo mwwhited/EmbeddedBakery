@@ -31,9 +31,11 @@ module KeypadBufferTop(
     inout  [7:0] jc         , // PMod VGA-RB
     inout  [7:0] jb         , // PMod VGA-GHV
     inout  [7:0] ja         , // PMod Encoder
-    inout  [7:0] ps_jd      , // PMod 7 Segment Display
     inout  [7:0] ps_ja      , // PMod 4 Switches
     inout  [7:0] ps_jb      , // PMod 4 Switches
+    inout  [7:0] ps_jc      , 
+    inout  [7:0] ps_jd      , // PMod 7 Segment Display
+    inout  [7:0] ps_je      , 
     input        ck_rst
     );
     
@@ -188,14 +190,34 @@ module KeypadBufferTop(
     logic [3:0] TextValue [7:0];    
     
     logic [2:0] _pixel;
+        
+    reg _bnt1Last;
+    reg _bnt2Last;
     
-    always @(posedge btn[2]) VerticalOffset++;
-    always @(posedge btn[1]) _pixel++;
+    always @(posedge scanClock) begin
     
+        if (_bnt1Last && ~btn[1]) begin
+            _bnt1Last <= 0;
+        end else if (~_bnt1Last && btn[1]) begin
+            _bnt1Last <= 1;
+            _pixel++;
+        end
+        
+        if (_bnt2Last && ~btn[2]) begin
+            _bnt2Last <= 0;
+        end else if (~_bnt2Last && btn[2]) begin
+            _bnt2Last <= 1;
+            VerticalOffset++;
+        end
+    
+    end
+        
     assign led_g = TextValue[_pixel];
+    //assign led_r = bram_doutb[15:12];
+    //assign led_b = bram_doutb[11:08];
     
     /*
-        output [3:0] led_b      ,
+    output [3:0] led_b      ,
     output [3:0] led_r      ,
     output [3:0] led_g      ,
     */
@@ -220,8 +242,8 @@ module KeypadBufferTop(
             4'b0001: return { Reader_dout , Writer_FIFO_din };
             4'b0010: return { Reader_rd_clk, Reader_rd_en, Reader_empty, Reader_valid, Writer_FIFO_wr_clk, Writer_FIFO_wr_en, Writer_FIFO_full, Writer_FIFO_wr_ack };
             
-            //4'b0011: return GetSubValue(sw[2:1], StatusRegister0);
-            //4'b0100: return GetSubValue(sw[2:1], StatusRegister1);
+            4'b0011: return GetSubValue(sw[2:1], {1'B0,_pixel, 1'B0,VerticalOffset});
+            //4'b0100: return GetSubValue(sw[2:1], );
             //4'b0101: return GetSubValue(sw[2:1], StatusRegister2);
             4'b0110: return { bram_clkb, RAM_clka, RAM_wea, RAM_data };
             4'b0111: return GetSubValue(sw[2:1], RAM_addra);
