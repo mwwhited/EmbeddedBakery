@@ -23,8 +23,8 @@ module Top(
     input CLK100MHZ,
     input  [7:0] ps_ja,
     input  [7:0] ps_jb,
-    output [0:7] ps_jc,
-    output [0:7] ps_jd,
+    output [7:0] ps_jc,
+    output [7:0] ps_jd,
     
     output [3:0] led_r,
     output [3:0] led_g,
@@ -64,12 +64,17 @@ module Top(
     
     logic [7:0] row = symbol[lineIndex];
     logic [7:0] col = ~(1 << lineIndex);
-    
+ 
+ /*   
     logic [7:0] rm_row = {row[3],row[2],row[1],row[0], row[7],row[6],row[5],row[4]};
     logic [7:0] rm_col = {col[3],col[2],col[1],col[0], col[7],col[6],col[5],col[4]};
         
     assign ps_jc = sw[1] ? rm_row : row;
     assign ps_jd = sw[1] ? rm_col : col;
+*/
+
+    assign ps_jc = sw[1] ? (sw[2] ? col: ~col) : row;
+    assign ps_jd = sw[1] ? (sw[2] ? row: ~row) : col;
 
     always @(posedge CLK100MHZ) begin
         clockdivider <= clockdivider + 1;
