@@ -1,0 +1,6 @@
+Partlist exported from C:/Users/mwwhi/Documents/EAGLE/projects/PmodLED8x8/SCH Basis.sch at 3/30/2021 9:27 AM
+
+Qty Value Device                          Package              Parts                          Description                             MF MPN OC_FARNELL OC_NEWARK POPULARITY
+2         MA06-2                          MA06-2               SV1, SV2                       PIN HEADER                                     unknown    unknown   8         
+8         R-US_0411/15                    0411/15              R1, R2, R3, R4, R5, R6, R7, R8 RESISTOR, American symbol                                                     
+1         SEGMENT_8X8_ROWCATHODEM12A881UR SEGMENT_BL-M12A881UR LED1                           8x8 LED Segment Displays: Row = Cathode                                       
