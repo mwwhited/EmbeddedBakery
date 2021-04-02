@@ -74,7 +74,7 @@ module Top(
 */
 
     assign ps_jc = sw[1] ? (sw[2] ? col: ~col) : row;
-    assign ps_jd = sw[1] ? (sw[2] ? row: ~row) : col;
+    assign ps_jd = sw[1] ? (sw[2] ? col: ~row) : col;
 
     always @(posedge CLK100MHZ) begin
         clockdivider <= clockdivider + 1;
