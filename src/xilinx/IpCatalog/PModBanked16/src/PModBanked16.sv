@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Out-of-Band Development
+// Engineer: Matthew Whited
 // 
-// Create Date: 03/31/2021 12:07:27 AM
+// Create Date: 04/03/2021 04:26:17 PM
 // Design Name: 
-// Module Name: Top
+// Module Name: PModBanked16
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,8 +19,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module PMod16Banked #(
-    parameter ScanDividerCount
+
+module PModBanked16 #(
+    parameter ScanDividerCount = 10000
 ) (
     input         SystemClock,
     inout  [07:0] PModPort,
@@ -35,7 +36,6 @@ module PMod16Banked #(
     int scanCount       = 0;
     
     assign Value = {>>{values}};
-    //assign Value = {values[3], values[2],values[1], values[0]}; 
     assign selection = 1 << bank;
     assign PModPort[3:0] = selection;
     
@@ -56,51 +56,5 @@ module PMod16Banked #(
             bank <= bank == 3 ? 0 : bank + 1;
         end
     end
-    
-endmodule
-
-module Top(
-    input           CLK100MHZ,
-    input  [7:0]    ps_ja, 
-    inout  [7:0]    ps_jb,
-    input  [3:0]    sw,
-    output [3:0]    led,
-    output [3:0]    led_r,
-    output [3:0]    led_g,
-    output [3:0]    led_b  
-    );
-    
-    //assign ps_jb[3:0] = ps_ja[3:0];
-    //assign led = ps_jb[7:4];
-    
-    /*
-    parameter ScanDividerCount
-    input         SystemClock,
-    inout  [07:0] PModPort,
-    output [15:0] Value
-    */
-    
-    logic [15:0] value;
-    
-    assign led = 
-        ps_ja == 0 ? value [03:00] :
-        ps_ja == 1 ? value [07:04] :
-        ps_ja == 2 ? value [11:08] :
-        ps_ja == 3 ? value [15:12] :
-        0
-        ;
-        
-    //assign led_g = sw;        
-    
-    PMod16Banked #(
-        .ScanDividerCount   ( 10000  )
-    ) banked16 (
-        .SystemClock        ( CLK100MHZ ),
-        .PModPort           ( ps_jb     ),
-        .Value              ( value     ),
-        .red(led_r),
-        .blue(led_b)
-    );
-    
     
 endmodule
