@@ -50,6 +50,14 @@ module KeypadBufferTop(
         .DividedClock( readClock )
     );
     
+    logic [15 : 0] bankedValue; // = 0;    
+
+    PModBanked16_0 banked16(    
+        .SystemClock(CLK100MHZ),
+        .PModPort(ps_jb),
+        .Value(bankedValue)
+    );
+    
     logic [3:0] KeypadValue         ; 
     logic       ReleasedKey         ;
     logic       PressedKey          ;
@@ -96,7 +104,11 @@ module KeypadBufferTop(
     logic [12:0] AddressPointer     ;
     
     assign SetAddressPointer    = ~ck_rst;
-    assign AddressPointer       = 13'b0;
+    assign AddressPointer       = 
+        SetAddressPointer ?
+            bankedValue[12:0] :
+            13'bZ
+            ;
  
  //Note: the fito to blockram ip isn't working as configured
    // FifoToBlockRam_0 /*#(
@@ -213,14 +225,6 @@ module KeypadBufferTop(
     end
         
     assign led_g = TextValue[_pixel];
-    //assign led_r = bram_doutb[15:12];
-    //assign led_b = bram_doutb[11:08];
-    
-    /*
-    output [3:0] led_b      ,
-    output [3:0] led_r      ,
-    output [3:0] led_g      ,
-    */
     
     TextColorMux textColorMux(
         .BackgroundColor( bram_doutb[15:12] ),
@@ -250,6 +254,7 @@ module KeypadBufferTop(
             
             4'b1000: return GetSubValue(sw[2:1], bram_addrb);
             4'b1001: return GetSubValue(sw[2:1], bram_doutb);
+            4'b1010: return GetSubValue(sw[2:1], bankedValue);
  
             default : return 8'b0;
         endcase
