@@ -66,7 +66,7 @@ module KeypadBufferTop(
         .PModPort    ( jd          ),
         .Value       ( KeypadValue ),
         .ReleasedKey ( ReleasedKey ),
-        .PressedKey  ( PressedKey )
+        .PressedKey  ( PressedKey  )
     );
         
     logic       Writer_FIFO_full    ; 
