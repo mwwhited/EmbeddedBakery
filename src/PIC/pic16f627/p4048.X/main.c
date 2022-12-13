@@ -10,7 +10,7 @@
  * LD2 = Pin7  (RB1)
  * LD3 = Pin8  (RB2)
  * LD4 = Pin9  (RB3)
- * LD5 = Pin10 (RB4)
+ * LD5 = Pin10 (RB4) // https://electronics.stackexchange.com/questions/644328/proteus-pic16f628a-rb4-not-working
  * LD6 = Pin11 (RB5)
  * 
  * SW1 = Pin17 (RA0)
@@ -31,7 +31,7 @@
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = ON       // RA5/MCLR pin function select (RA5/MCLR pin function is MCLR)
 #pragma config BOREN = ON       // Brown-out Reset Enable bit (BOD Reset enabled)
-#pragma config LVP = ON         // Low-Voltage Programming Enable bit (RB4/PGM pin has PGM function, low-voltage programming enabled)
+#pragma config LVP = OFF        // Low-Voltage Programming Enable bit (RB4/PGM pin has PGM function, low-voltage programming enabled)
 #pragma config CPD = OFF        // Data Code Protection bit (Data memory code protection off)
 #pragma config CP = OFF         // Code Protection bits (Program memory code protection off)
 
@@ -40,19 +40,26 @@
 
 #include <xc.h>
 
-
 void main(void) {
     
-    TRISA = 0x0f; //set port a as inputs
-    TRISB = 0x00; //set port b as outputs
+    CMCON = 0x0F; //enable input mask
+    
+    TRISA = 1; //set port a as inputs
+    TRISB = 0; //set port b as outputs
     
     //TRISB = 0x00;
     
     char x=0x01;
     char dir = 0x0;
+    char z = 0;
     
     PORTB = 0x01;
-    while (1){        
+    while (1){ 
+        
+        z = PORTA;
+        if (z !=0) {
+            x = z;
+        }
         
         if (dir == 0){
             x = x << 1;        

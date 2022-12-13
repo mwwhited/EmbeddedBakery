@@ -7,18 +7,20 @@
 # Each line that follows describes a psect in that object file, until
 # the next object file.  The lines that describe a psect have the
 # format:
-#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-end_init CODE 0 0 0 1 2
-config CONFIG 4 2007 2007 1 2
 $dist/default/production\p4048.X.production.o
-cinit CODE 0 3FE 3FE 2 2
-maintext CODE 0 3B2 3B2 4C 2
-cstackCOMMON COMMON 1 70 70 5 1
-config CONFIG 4 2007 2007 1 2
+cinit CODE 0 3FE 3FE 2 2 1
+idloc IDLOC 5 2000 2000 4 2 1
+maintext CODE 0 3AB 3AB 53 2 1
+cstackCOMMON COMMON 1 70 70 6 1 1
+config CONFIG 4 2007 2007 1 2 1
+$C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
+idloc IDLOC 5 2000 2000 4 2 1
+end_init CODE 0 0 0 1 2 1
+config CONFIG 4 2007 2007 1 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -31,19 +33,17 @@ RAM 120-14F 1
 BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 120-14F 1
-CONST 1-3B1 2
-ENTRY 1-3B1 2
-IDLOC 2000-2003 2
-STACK 20-6F 1
-CODE 1-3B1 2
+CONST 1-3AA 2
+ENTRY 1-3AA 2
+CODE 1-3AA 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
 SFR3 180-1EF 1
-COMMON 75-7D 1
+COMMON 76-7D 1
 EEDATA 2100-217F 2
-STRCODE 1-3B1 2
-STRING 1-3B1 2
+STRCODE 1-3AA 2
+STRING 1-3AA 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -58,29 +58,36 @@ STRING 1-3B1 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\p4048.X.production.o
-3FE cinit CODE >261:C:\Users\mwwhi\AppData\Local\Temp\sli8.s
-3FE cinit CODE >264:C:\Users\mwwhi\AppData\Local\Temp\sli8.s
-3FE cinit CODE >270:C:\Users\mwwhi\AppData\Local\Temp\sli8.s
-3FE cinit CODE >272:C:\Users\mwwhi\AppData\Local\Temp\sli8.s
-3FF cinit CODE >273:C:\Users\mwwhi\AppData\Local\Temp\sli8.s
-3B2 maintext CODE >44:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3B2 maintext CODE >46:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3B6 maintext CODE >47:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3B7 maintext CODE >51:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3B9 maintext CODE >52:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3BA maintext CODE >54:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3BE maintext CODE >57:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3C3 maintext CODE >58:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3C9 maintext CODE >59:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3CA maintext CODE >60:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3D1 maintext CODE >63:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3D7 maintext CODE >65:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3DB maintext CODE >66:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3DD maintext CODE >67:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3E8 maintext CODE >68:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3EA maintext CODE >69:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3EB maintext CODE >71:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
-3EF maintext CODE >72:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3FE cinit CODE >266:C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.s
+3FE cinit CODE >269:C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.s
+3FE cinit CODE >275:C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.s
+3FE cinit CODE >277:C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.s
+3FF cinit CODE >278:C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.s
+3AB maintext CODE >43:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3AB maintext CODE >45:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3AF maintext CODE >47:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3B3 maintext CODE >48:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3B4 maintext CODE >52:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3B6 maintext CODE >53:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3B7 maintext CODE >54:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3B7 maintext CODE >56:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3BB maintext CODE >59:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3BF maintext CODE >60:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3C4 maintext CODE >61:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3C6 maintext CODE >64:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3CB maintext CODE >65:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3CF maintext CODE >66:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3D0 maintext CODE >67:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3D2 maintext CODE >67:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3D5 maintext CODE >70:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3D7 maintext CODE >70:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3DB maintext CODE >72:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3DD maintext CODE >73:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3DF maintext CODE >74:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3EA maintext CODE >75:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3EC maintext CODE >76:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3ED maintext CODE >78:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
+3EF maintext CODE >79:C:\Repos\mwwhited\EmbeddedBakery\src\PIC\pic16f627\p4048.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -95,39 +102,40 @@ $dist/default/production\p4048.X.production.o
 %SYMTAB
 ___latbits 0 0 ABS 0 - dist/default/production\p4048.X.production.o
 __Hspace_0 400 0 ABS 0 - -
-__Hspace_1 75 0 ABS 0 - -
+__Hspace_1 76 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 400F 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-main@x 74 0 COMMON 1 cstackCOMMON dist/default/production\p4048.X.production.o
+main@x 75 0 COMMON 1 cstackCOMMON dist/default/production\p4048.X.production.o
+main@z 73 0 COMMON 1 cstackCOMMON dist/default/production\p4048.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-_main 764 0 CODE 0 maintext dist/default/production\p4048.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
+_main 756 0 CODE 0 maintext dist/default/production\p4048.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\p4048.X.production.o
-start 0 0 CODE 0 init C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-__size_of_main 0 0 ABS 0 - dist/default/production\p4048.X.production.o
+start 0 0 CODE 0 init C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\sli8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
 wtemp0 7E 0 ABS 0 - dist/default/production\p4048.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-main@dir 73 0 COMMON 1 cstackCOMMON dist/default/production\p4048.X.production.o
+main@dir 74 0 COMMON 1 cstackCOMMON dist/default/production\p4048.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-___stacklo 0 0 ABS 0 - C:\Users\mwwhi\AppData\Local\Temp\sli8.o
+___stackhi 0 0 ABS 0 - C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
+___stacklo 0 0 ABS 0 - C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
 start_initialization 7FC 0 CODE 0 cinit dist/default/production\p4048.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\mwwhi\AppData\Local\Temp\sli8.o
+___int_sp 0 0 STACK 2 stack C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 BANK3 1 bank3 -
 __Hcinit 800 0 CODE 0 cinit -
+__Hidloc 4008 0 IDLOC 5 idloc -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
@@ -137,6 +145,7 @@ __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 BANK3 1 bank3 -
 __Lcinit 7FC 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 5 idloc -
 __Lstack 0 0 STACK 2 stack -
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -156,12 +165,11 @@ __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 400 0 ABS 0 - -
-__S1 75 0 ABS 0 - -
-__S2 0 0 ABS 0 - -
+__S1 76 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\mwwhi\AppData\Local\Temp\sli8.o
-__pmaintext 764 0 CODE 0 maintext dist/default/production\p4048.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\mwwhi\AppData\Local\Temp\xcAsjrs.o
+__pmaintext 756 0 CODE 0 maintext dist/default/production\p4048.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __Lspace_0 0 0 ABS 0 - -
@@ -184,6 +192,8 @@ __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\p4048.X.production.o
 __Hend_init 2 0 CODE 0 end_init -
 __end_of_main 7FC 0 CODE 0 maintext dist/default/production\p4048.X.production.o
+_CMCON 1F 0 ABS 0 - dist/default/production\p4048.X.production.o
+_PORTA 5 0 ABS 0 - dist/default/production\p4048.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\p4048.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\p4048.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\p4048.X.production.o
@@ -216,8 +226,8 @@ __initialization 7FC 0 CODE 0 cinit dist/default/production\p4048.X.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 3FE 7FC 2 2
-maintext 0 3B2 764 4C 2
-cstackCOMMON 1 70 70 5 1
+maintext 0 3AB 756 53 2
+cstackCOMMON 1 70 70 6 1
 reset_vec 0 0 0 1 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
