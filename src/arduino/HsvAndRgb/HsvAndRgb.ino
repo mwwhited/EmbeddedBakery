@@ -13,7 +13,7 @@ int s_pot = A1;
 int v_pot = A2;
 
 int deadZone = 0;
-int debug = 0;
+int debug = 1;
 
 struct ColorRgb {
   uint8_t red;
