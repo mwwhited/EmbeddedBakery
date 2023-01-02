@@ -13,26 +13,31 @@ void setup() {
 int digit = 0;
 int time = 0x1100;
 int lastMillis = 0;
+int btnDownMills = 0;
 
 void loop() {
   digit %= 4;
-  //if (digit > 3 || digit < 0) digit = 0;
 
   int currentMillis = millis();
-  if ((currentMillis - lastMillis) > (1000 * 6)){
+  if ((currentMillis - lastMillis) > (10 * 6)){ // (1000 * 6)
      time = AddMinute(time);
      lastMillis = currentMillis;
   }
 
-  // if (digit == 0)
-  //   time = AddMinute(time);
+  int input = (PINB & 0xf0) >> 4;
+  if      ((input & 0x8) == 0) digit = 3;
+  else if ((input & 0x4) == 0) digit = 2;
+  else if ((input & 0x2) == 0) digit = 1;
+  else if ((input & 0x1) == 0) digit = 0;
 
   PORTD = SegmentedDisplay::DigitTo7Segment((time >> (digit << 2)) & 0xf);
 
   PORTB |= 0x0f;  // turn off all digits
-  delayMicroseconds(10);
+  delayMicroseconds(5);
   PORTB &= ~(1 << digit);  //turn on current digit
-
+  delayMicroseconds(20);
+  PORTB |= 0x0f;  // turn off all digits
+  
   digit++;
   //delay(10);
 }

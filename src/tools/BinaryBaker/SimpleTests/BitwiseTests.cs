@@ -55,6 +55,71 @@ namespace SimpleTests
         }
 
 
+        [DataTestMethod]
+        [DataRow(0x120000, 1, 0x120001)]
+        [DataRow(0x120000, 60, 0x120100)]
+        [DataRow(0x120000, -60, 0x115900)]
+        [DataRow(0x120059, 1, 0x120100)]
+        [DataRow(0x125959, 1, 0x130000)]
+        [DataRow(0x235959, 1, 0x000000)]
+        [DataRow(0x120000, 60 * 60, 0x130000)]
+        [DataRow(0x120000, -60 * 60, 0x110000)]
+        [DataRow(0x235959, (60 * 60) + 1, 0x010000)]
+        [DataRow(0x235959, (60 * 60) + 2, 0x010001)]
+        [DataRow(0x235959, -60 * 60 - 1 , 0x225958)]
+        public void AddSecondsTest(int before, int seconds, int expected)
+        {
+            TestContext.WriteLine($"{nameof(before)}  ={before:x6} ({before})");
+            var after = AddSeconds(before, seconds);
+            TestContext.WriteLine($"{nameof(after)}   ={after:x6} ({after})");
+            TestContext.WriteLine($"{nameof(expected)}={expected:x6} ({expected})");
+            Assert.AreEqual(expected, after);
+        }
+
+        int AddSeconds(int input, int seconds)
+        {
+            int h = BCD2Int((input & 0xff0000) >> 16);
+            int m = BCD2Int((input & 0x00ff00) >> 8);
+            int s = BCD2Int((input & 0x0000ff) >> 0);
+
+            s += seconds;
+            while (s < 0)
+            {
+                s += 60;
+                m--;
+            }
+            while (s > 59)
+            {
+                s -= 60;
+                m++;
+            }
+
+            while (m < 0)
+            {
+                m += 60;
+                h--;
+            }
+            while (m > 59)
+            {
+                m -= 60;
+                h++;
+            }
+            while (h < 0)
+            {
+                h += 24;
+            }
+            while (h > 23)
+            {
+                h -= 24;
+            }
+
+            return
+                Int2BCD(h) << 16 |
+                Int2BCD(m) << 8 |
+                Int2BCD(s) << 0
+                ;
+        }
+
 
         int AddMinute(int input)
         {
