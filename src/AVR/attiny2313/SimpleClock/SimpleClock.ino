@@ -11,14 +11,21 @@ void setup() {
 }
 
 int digit = 0;
-int time = 0x1234;
+int time = 0x1100;
+int lastMillis = 0;
 
 void loop() {
   digit %= 4;
   //if (digit > 3 || digit < 0) digit = 0;
 
-if (digit == 0)
-  time = AddMinute(time);
+  int currentMillis = millis();
+  if ((currentMillis - lastMillis) > (1000 * 6)){
+     time = AddMinute(time);
+     lastMillis = currentMillis;
+  }
+
+  // if (digit == 0)
+  //   time = AddMinute(time);
 
   PORTD = SegmentedDisplay::DigitTo7Segment((time >> (digit << 2)) & 0xf);
 
