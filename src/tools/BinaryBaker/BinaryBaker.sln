@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryBaker", "BinaryBaker\BinaryBaker.csproj", "{00406A62-4936-4A36-94B9-E7220BEF0B95}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageBuilder", "ImageBuilder\ImageBuilder.csproj", "{CB2E5C33-201E-4C99-83CD-3455958E3215}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Emulator", "Emulator\Emulator.vcxproj", "{3904AE90-DF9C-4907-A32E-7566479A406F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTests", "SimpleTests\SimpleTests.csproj", "{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,18 @@ Global
 		{3904AE90-DF9C-4907-A32E-7566479A406F}.Release|x64.Build.0 = Release|x64
 		{3904AE90-DF9C-4907-A32E-7566479A406F}.Release|x86.ActiveCfg = Release|Win32
 		{3904AE90-DF9C-4907-A32E-7566479A406F}.Release|x86.Build.0 = Release|Win32
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Debug|x64.Build.0 = Debug|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Debug|x86.Build.0 = Debug|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Release|x64.ActiveCfg = Release|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Release|x64.Build.0 = Release|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Release|x86.ActiveCfg = Release|Any CPU
+		{9568BB2C-5388-4C0E-AF6F-E0309E34A8AB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
