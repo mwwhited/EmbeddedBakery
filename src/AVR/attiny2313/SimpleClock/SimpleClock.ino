@@ -1,6 +1,12 @@
 #include "SegmentedDisplay.h"
 #include "Encoding.h"
 
+/*
+  2023-01-01: Matthew Whited
+  Simple Clock build around the ATTiny2313 MCU
+
+*/
+
 void setup() {
 
   DDRD = 0b1111111;  //Set all of port D to output
@@ -15,7 +21,8 @@ void setup() {
 int digit = 0;
 long time = 0x120000;
 long lastMillis = 0;
-long btnDownMills = 0;
+long btnDownMillis = 0;
+int millisToSecondsAdjustment = 120;
 
 void loop() {
   digit %= 4;
@@ -29,7 +36,7 @@ void loop() {
 
 static void CheckTime(){
   long currentMillis = millis();
-  if ((currentMillis - lastMillis) > (10 * 6)){ // (1000 * 6)
+  if ((currentMillis - lastMillis) > millisToSecondsAdjustment){
     // increment second
     time = AddSeconds(time , 1);
     lastMillis = currentMillis;
@@ -42,8 +49,8 @@ static void CheckTime(){
 
 static void CheckInputs(){
   int input = (PINB & 0xf0) >> 4;
-  if (input != 0xf && btnDownMills == 0){ // detect button press
-    btnDownMills = millis();
+  if (input != 0xf && btnDownMillis == 0){ // detect button press
+    btnDownMillis = millis();
     
     if      ((input & 0x8) == 0){
       time = AddSeconds(time, 60*60); // subtract and hour
@@ -59,8 +66,8 @@ static void CheckInputs(){
     }
 
   }
-  else if (input == 0xf && btnDownMills != 0){ // release
-    btnDownMills = 0;
+  else if (input == 0xf && btnDownMillis != 0){ // release
+    btnDownMillis = 0;
   }
 }
 
