@@ -39,7 +39,6 @@ namespace SimpleTests
             TestContext.WriteLine($"{nameof(digit)}={digit}");
         }
 
-
         [TestMethod]
         public void AddMinuteTest()
         {
@@ -54,6 +53,27 @@ namespace SimpleTests
             }
         }
 
+        [DataTestMethod]
+        [DataRow(0x123456, 0, 4)]
+        [DataRow(0x123456, 1, 3)]
+        [DataRow(0x123456, 2, 2)]
+        [DataRow(0x123456, 3, 1)]
+        public void GetDisplayDigitTest(int time, int digit, int expected)
+        {
+            TestContext.WriteLine($"{nameof(time)}   ={time:x6} ({time})");
+            TestContext.WriteLine($"{nameof(digit)}  ={digit}");
+
+            var offset = digit << 2;
+            var dropseconds = time >> 8;
+            var current = dropseconds >> offset
+            var masked = current & 0xf;
+
+            TestContext.WriteLine($"{nameof(expected)}={expected}");
+            Assert.AreEqual(expected, masked);
+        }
+
+
+
 
         [DataTestMethod]
         [DataRow(0x120000, 1, 0x120001)]
@@ -66,7 +86,7 @@ namespace SimpleTests
         [DataRow(0x120000, -60 * 60, 0x110000)]
         [DataRow(0x235959, (60 * 60) + 1, 0x010000)]
         [DataRow(0x235959, (60 * 60) + 2, 0x010001)]
-        [DataRow(0x235959, -60 * 60 - 1 , 0x225958)]
+        [DataRow(0x235959, -60 * 60 - 1, 0x225958)]
         public void AddSecondsTest(int before, int seconds, int expected)
         {
             TestContext.WriteLine($"{nameof(before)}  ={before:x6} ({before})");

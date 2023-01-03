@@ -1,82 +1,127 @@
 #include "SegmentedDisplay.h"
-
+#include "Encoding.h"
 
 void setup() {
 
-  DDRD = 0b01111111;  //Set all of port D to output
-  DDRB = 0b00001111;  //Set port B [4..7] to input and [0..3] to output
+  DDRD = 0b1111111;  //Set all of port D to output
+  DDRB = 0b00001111; //Set port B [4..7] to input and [0..3] to output
+  DDRA = 0b010;      // set port A[1] to ouput and A[0] to input
 
-  PORTD = 0b00000000;  //Set all low
-  PORTB = 0b00000000;  //Set all low
+  PORTD = 0b0000000;  //Set all low
+  PORTB = 0b00000000; //Set all low
+  PORTA = 0b000;      //Set all low
 }
 
 int digit = 0;
-int time = 0x1100;
-int lastMillis = 0;
-int btnDownMills = 0;
+long time = 0x120000;
+long lastMillis = 0;
+long btnDownMills = 0;
 
 void loop() {
   digit %= 4;
 
-  int currentMillis = millis();
-  if ((currentMillis - lastMillis) > (10 * 6)){ // (1000 * 6)
-     time = AddMinute(time);
-     lastMillis = currentMillis;
-  }
-
-  int input = (PINB & 0xf0) >> 4;
-  if      ((input & 0x8) == 0) digit = 3;
-  else if ((input & 0x4) == 0) digit = 2;
-  else if ((input & 0x2) == 0) digit = 1;
-  else if ((input & 0x1) == 0) digit = 0;
-
-  PORTD = SegmentedDisplay::DigitTo7Segment((time >> (digit << 2)) & 0xf);
-
-  PORTB |= 0x0f;  // turn off all digits
-  delayMicroseconds(5);
-  PORTB &= ~(1 << digit);  //turn on current digit
-  delayMicroseconds(20);
-  PORTB |= 0x0f;  // turn off all digits
-  
+  CheckTime();
+  CheckInputs();
+  DisplayDigit(time, digit);
+ 
   digit++;
-  //delay(10);
 }
 
-int AddMinute(int input) {
-  int h = BCD2Int((input & 0xff00) >> 8);
-  int m = BCD2Int((input & 0x00ff) >> 0);
-
-  m++;
-  if (m > 59) {
-    m = 0;
-    h++;
+static void CheckTime(){
+  long currentMillis = millis();
+  if ((currentMillis - lastMillis) > (10 * 6)){ // (1000 * 6)
+    // increment second
+    time = AddSeconds(time , 1);
+    lastMillis = currentMillis;
+     
+    //toggle colon
+    if ((PINA & 0b010) ==0) { PORTA |= 0b010;}
+    else { PORTA &= ~0b010;}
   }
-  if (h > 24) { h = 0; }
-
-  return Int2BCD(h) << 8 | Int2BCD(m);
 }
 
-int BCD2Int(int bcd) {
-  return
-    (bcd & 0x0f) +
-    (bcd >> 4 & 0x0f) * 10 +
-    (bcd >> 8 & 0x0f) * 100 +
-    (bcd >> 12 & 0x0f) * 1000 +
-    (bcd >> 16 & 0x0f) * 10000 +
-    (bcd >> 20 & 0x0f) * 100000 +
-    (bcd >> 24 & 0x0f) * 1000000 +
-    (bcd >> 28 & 0x0f) * 10000000
-    ;
+static void CheckInputs(){
+  int input = (PINB & 0xf0) >> 4;
+  if (input != 0xf && btnDownMills == 0){ // detect button press
+    btnDownMills = millis();
+    
+    if      ((input & 0x8) == 0){
+      time = AddSeconds(time, 60*60); // subtract and hour
+    } 
+    else if ((input & 0x4) == 0) {
+      time = AddSeconds(time, -60*60); // add an hour
+    } 
+    else if ((input & 0x2) == 0){ 
+      time = AddSeconds(time, 60); // subtract a minute
+    }
+    else if ((input & 0x1) == 0) {
+      time = AddSeconds(time, -60); // add a minute
+    }
+
+  }
+  else if (input == 0xf && btnDownMills != 0){ // release
+    btnDownMills = 0;
+  }
 }
 
-int Int2BCD(int digit) {
-  return 
-    (((digit / 10000000) % 10) << 28) |
-    (((digit / 1000000) % 10) << 24) |
-    (((digit / 100000) % 10) << 20) |
-    (((digit / 10000) % 10) << 16) |
-    (((digit / 1000) % 10) << 12) |
-    (((digit / 100) % 10) << 8) |
-    (((digit / 10) % 10) << 4) |
-    (digit % 10);
+static void DisplayDigit(long time, int digit) {
+
+  int milTime = PINA & 0b001;
+
+  int timeOffset = time >> 8; //drop secounds
+
+  if (!milTime) {
+    int h = Encoding::BCD2Long((timeOffset & 0xff00) >> 8);
+    while (h > 12) {h-=12;}
+    timeOffset &= 0x00ff; //remove hours
+    timeOffset |= Encoding::Long2BCD(h) << 8; // add back hours
+  }
+
+  PORTD = SegmentedDisplay::DigitTo7Segment((timeOffset >> (digit << 2)) & 0xf);
+  PORTB |= 0x0f;  // turn off all digits
+  PORTB &= ~(1 << digit);  //turn on current digit
+}
+
+static long AddSeconds(long input, int seconds)
+{
+    int h = Encoding::BCD2Long((input & 0xff0000) >> 16);
+    int m = Encoding::BCD2Long((input & 0x00ff00) >> 8);
+    int s = Encoding::BCD2Long((input & 0x0000ff) >> 0);
+
+    s += seconds;
+    while (s < 0)
+    {
+        s += 60;
+        m--;
+    }
+    while (s > 59)
+    {
+        s -= 60;
+        m++;
+    }
+
+    while (m < 0)
+    {
+        m += 60;
+        h--;
+    }
+    while (m > 59)
+    {
+        m -= 60;
+        h++;
+    }
+    while (h < 0)
+    {
+        h += 24;
+    }
+    while (h > 23)
+    {
+        h -= 24;
+    }
+
+    return
+        Encoding::Long2BCD(h) << 16 |
+        Encoding::Long2BCD(m) << 8 |
+        Encoding::Long2BCD(s) << 0
+        ;
 }
