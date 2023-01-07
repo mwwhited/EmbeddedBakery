@@ -21,21 +21,50 @@ Notes: Required changes to programming
 
 */
 
+/* 
+  Pinout 
+
+  GND == LED03 (Dp anode)
+  GND == LED07 (Seperator cathode)
+
+  PA0 => Reset
+  PA1 => Ext Crystal 0
+  PA2 => Ext Crystal 1
+
+  PB0 => LED14 (#___ cathode)
+  PB1 => LED11 (_#__ cathode)
+  PB2 => LED10 (__#_ cathode)
+  PB3 => LED06 (___# cathode)
+
+  PB4 <= SW1
+  PB5 <= SW2
+  PB6 <= SW3
+  PB7 => 
+
+  PD0 => LED13 (A anode)
+  PD1 => LED09 (B anode)
+  PD2 => LED04 (C anode)
+  PD3 => LED02 (D anode)
+  PD4 => LED01 (E anode)
+  PD5 => LED12 (F anode)
+  PD6 => LED05 (G anode)
+*/
+
 void setup() {
- DDRD = 0b1111111;  //Set all of port D to output
-  DDRB = 0b00001111; //Set port B [4..7] to input and [0..3] to output
-  //DDRA = 0b010;      // set port A[1] to ouput and A[0] to input //TODO: remap for external clock
+  DDRD = 0b1111111;  //Set all of port D to output
+  DDRB = 0b10001111; //Set port B [0,4..7] to input and [1..3] to output
+
 
   PORTD = 0b0000000;  //Set all low
   PORTB = 0b00000000; //Set all low
-  //PORTA = 0b000;      //Set all low //TODO: remap for external clock
 }
 
 int digit = 0;
 long time = 0x120000;
 long lastMillis = 0;
 long btnDownMillis = 0;
-int millisToSecondsAdjustment = 1000; //120 //Note: with internal clock it was 120
+int millisToSecondsAdjustment = 1000; //Note: you can use 16 to change minutes to seconds
+int milTime = 0;
 
 void loop() {
   digit %= 4;
@@ -54,33 +83,44 @@ static void CheckTime(){
     time = AddSeconds(time , 1);
     lastMillis = currentMillis;
 
-    //TODO: remape this if using external clock     
-    // //toggle colon
-    // if ((PINA & 0b010) ==0) { PORTA |= 0b010;}
-    // else { PORTA &= ~0b010;}
+    //toggle colon
+    if ((PINB & 0b10000000) ==0) { PORTB |= 0b10000000;}
+    else { PORTB &= ~0b10000000;}
   }
 }
 
 static void CheckInputs(){
-  int input = (PINB & 0xf0) >> 4;
+  int input = (PINB & 0b01110000) >> 4;
+
   if (input != 0xf && btnDownMillis == 0){ // detect button press
     btnDownMillis = millis();
-    
-    if      ((input & 0x8) == 0){
-      time = AddSeconds(time, 60*60); // subtract and hour
-    } 
-    else if ((input & 0x4) == 0) {
-      time = AddSeconds(time, -60*60); // add an hour
-    } 
-    else if ((input & 0x2) == 0){ 
-      time &= 0xffff00;//clear seconds on increment
-      time = AddSeconds(time, 60); // subtract a minute
-    }
-    else if ((input & 0x1) == 0) {
-      time &= 0xffff00; //clear seconds on decrement
-      time = AddSeconds(time, -60); // add a minute
-    }
 
+    switch (input) {
+      case 0b100: { //toggle 
+        milTime ^= 1;
+        break;
+      }
+      
+      case 0b010: { //add hour
+        time = AddSeconds(time, 60*60);
+        break;
+      }
+      case 0b110: { //subtract hour
+        time = AddSeconds(time, -60*60);
+        break;
+      }
+      
+      case 0b001: { //add minute
+        time &= 0xffff00;
+        time = AddSeconds(time, 60*60);
+        break;
+      }
+      case 0b101: { //subtract minute
+        time &= 0xffff00;
+        time = AddSeconds(time, -60*60);
+        break;
+      }
+    }
   }
   else if (input == 0xf && btnDownMillis != 0){ // release
     btnDownMillis = 0;
@@ -88,9 +128,6 @@ static void CheckInputs(){
 }
 
 static void DisplayDigit(long time, int digit) {
-
-  int milTime = 1; // PINA & 0b001; //TODO: remap this if using external clock
-
   int timeOffset = time >> 8; //drop secounds
 
   if (!milTime) {
@@ -101,8 +138,9 @@ static void DisplayDigit(long time, int digit) {
   }
 
   PORTD = SegmentedDisplay::DigitTo7Segment((timeOffset >> (digit << 2)) & 0xf);
-  PORTB |= 0x0f;  // turn off all digits
-  PORTB &= ~(1 << digit);  //turn on current digit
+
+  PORTB |= 0x0f;
+  PORTB &= ~(1 << (3-digit));  //turn on current digit
 }
 
 static long AddSeconds(long input, int seconds)
