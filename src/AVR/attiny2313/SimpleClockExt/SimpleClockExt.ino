@@ -10,15 +10,12 @@
 /*
 Design at ./circuits/SimpleClock/SimpleClockExt
 
-Added external clock so lost access to PINA.
 Notes: Required changes to programming
   Press SW1 (PB4) to Toggle 12/24hr clock
   Press SW2 (PB5) to increment hour
   Press SW3 (PB6) to increment minute
   Press SW1 + SW2 to decerment hour
   Press SW1 + SW3 to decerment minute
-  Toggle colon on second
-
 */
 
 /* 
@@ -39,7 +36,7 @@ Notes: Required changes to programming
   PB4 <= SW1
   PB5 <= SW2
   PB6 <= SW3
-  PB7 => 
+  PB7 => LED08 (Seperator anode)
 
   PD0 => LED13 (A anode)
   PD1 => LED09 (B anode)
@@ -54,7 +51,6 @@ void setup() {
   DDRD = 0b1111111;  //Set all of port D to output
   DDRB = 0b10001111; //Set port B [0,4..7] to input and [1..3] to output
 
-
   PORTD = 0b0000000;  //Set all low
   PORTB = 0b00000000; //Set all low
 }
@@ -65,14 +61,24 @@ long lastMillis = 0;
 long btnDownMillis = 0;
 int millisToSecondsAdjustment = 1000; //Note: you can use 16 to change minutes to seconds
 int milTime = 0;
+int IsDebug = 0;
 
 void loop() {
   digit %= 4;
 
-  CheckTime();
-  CheckInputs();
-  DisplayDigit(time, digit);
- 
+  if (IsDebug) {
+    long debugValue =
+      0x000000 |
+      ((long)(PIND & 0xff))<< 16 |
+      ((long)(PINB & 0xff))<< 8
+      ;
+    DisplayDigit(debugValue, digit);
+  } else {
+    CheckTime();
+    CheckInputs();
+    DisplayDigit(time, digit);
+  }
+
   digit++;
 }
 
@@ -89,40 +95,46 @@ static void CheckTime(){
   }
 }
 
+//TODO: get subtraction working and fix debounce
+int lastInput = 0b111;
 static void CheckInputs(){
   int input = (PINB & 0b01110000) >> 4;
 
-  if (input != 0xf && btnDownMillis == 0){ // detect button press
+  if (input != lastInput && btnDownMillis == 0){ // detect button press
     btnDownMillis = millis();
 
     switch (input) {
-      case 0b100: { //toggle 
+      case 0b011: { //toggle 
         milTime ^= 1;
         break;
       }
       
-      case 0b010: { //add hour
+      case 0b101: { //add hour
         time = AddSeconds(time, 60*60);
         break;
       }
-      case 0b110: { //subtract hour
-        time = AddSeconds(time, -60*60);
-        break;
-      }
+      // case 0b001: { //subtract hour
+      //   time = AddSeconds(time, -60*60);
+      //   break;
+      // }
       
-      case 0b001: { //add minute
+      case 0b110: { //add minute
         time &= 0xffff00;
-        time = AddSeconds(time, 60*60);
+        time = AddSeconds(time, 60);
         break;
       }
-      case 0b101: { //subtract minute
-        time &= 0xffff00;
-        time = AddSeconds(time, -60*60);
-        break;
-      }
+      // case 0b010: { //subtract minute
+      //   time &= 0xffff00;
+      //   time = AddSeconds(time, -60);
+      //   break;
+      // }
+
+      // case 0x000: {
+      //   IsDebug ^= 1;
+      // }
     }
   }
-  else if (input == 0xf && btnDownMillis != 0){ // release
+  else if (input == 0b111 && btnDownMillis != 0){ // release
     btnDownMillis = 0;
   }
 }
@@ -130,7 +142,7 @@ static void CheckInputs(){
 static void DisplayDigit(long time, int digit) {
   int timeOffset = time >> 8; //drop secounds
 
-  if (!milTime) {
+  if (milTime == 1) {
     int h = Encoding::BCD2Long((timeOffset & 0xff00) >> 8);
     while (h > 12) {h-=12;}
     timeOffset &= 0x00ff; //remove hours
