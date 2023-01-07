@@ -1,4 +1,6 @@
-# EmbeddedBakery
+# Embedded Bakery
+
+## Summary
 
 This is a collection of various electronics and microprocessor projects.  
 
