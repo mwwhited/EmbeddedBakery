@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "nanoff": {
+      "version": "2.4.24",
+      "commands": [
+        "nanoff"
+      ]
+    }
+  }
+}
