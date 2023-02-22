@@ -1,7 +1,8 @@
 #include <etherShield.h>
 #include <ETHER_28J60.h>
-#define ON      HIGH
-#define OFF     LOW
+
+#define ON      LOW
+#define OFF     HIGH
 
 #define RELAY0  A0
 #define RELAY1  A1
@@ -9,8 +10,10 @@
 #define RELAY3  A3
 #define RELAY4  A4
 #define RELAY5  A5
-#define RELAY6  PD4
-#define RELAY7  PD5
+#define RELAY6  PD3
+#define RELAY7  PD4
+
+// #define RELAY_TEST
 
 static uint8_t mac[6] = {0x54, 0x55, 0x58, 0x10, 0x00, 0x24};  
 static uint8_t ip[4] = {192, 168, 1, 13}; 
@@ -19,7 +22,13 @@ static uint16_t port = 80;
 ETHER_28J60 client;
 
 void setup() {
+  
+#ifdef RELAY_TEST
+  Serial.begin(9600);
+#endif
+
   client.setup(mac, ip, port);
+
   pinMode(RELAY0, OUTPUT);
   pinMode(RELAY1, OUTPUT);
   pinMode(RELAY2, OUTPUT);
@@ -29,19 +38,84 @@ void setup() {
   pinMode(RELAY6, OUTPUT);
   pinMode(RELAY7, OUTPUT);
 
-  digitalWrite(RELAY0, HIGH);
-  digitalWrite(RELAY1, HIGH);
-  digitalWrite(RELAY2, HIGH);
-  digitalWrite(RELAY3, HIGH);
-  digitalWrite(RELAY4, HIGH);
-  digitalWrite(RELAY5, HIGH);
-  digitalWrite(RELAY6, HIGH);
-  digitalWrite(RELAY7, HIGH);
+  digitalWrite(RELAY0, OFF);
+  digitalWrite(RELAY1, OFF);
+  digitalWrite(RELAY2, OFF);
+  digitalWrite(RELAY3, OFF);
+  digitalWrite(RELAY4, OFF);
+  digitalWrite(RELAY5, OFF);
+  digitalWrite(RELAY6, OFF);
+  digitalWrite(RELAY7, OFF);
 }
 
 byte values = 0;
 
+#ifdef RELAY_TEST
+static uint16_t rx = 0;
+#endif
+
 void loop() {
+
+#ifdef RELAY_TEST
+  if (rx > 16 || rx < 0) rx=0;
+
+  Serial.println(rx);
+
+  if (rx ==0){
+    digitalWrite(RELAY0, ON);
+  }
+  else if (rx ==1){
+    digitalWrite(RELAY1, ON);
+  }
+  else if (rx ==2){
+    digitalWrite(RELAY2, ON);
+  }
+  else if (rx ==3){
+    digitalWrite(RELAY3, ON);
+  }
+  else if (rx ==4){
+    digitalWrite(RELAY4, ON);
+  }
+  else if (rx ==5){
+    digitalWrite(RELAY5, ON);
+  }
+  else if (rx ==6){
+    digitalWrite(RELAY6, ON);
+  }
+  else if (rx ==7){
+    digitalWrite(RELAY7, ON);
+  }
+
+  else if (rx ==8){
+    digitalWrite(RELAY0, OFF);
+  }
+  else if (rx ==9){
+    digitalWrite(RELAY1, OFF);
+  }
+  else if (rx ==10){
+    digitalWrite(RELAY2, OFF);
+  }
+  else if (rx == 11){
+    digitalWrite(RELAY3, OFF);    
+  }
+  else if (rx == 12){
+    digitalWrite(RELAY4, OFF);
+  }
+  else if (rx == 13){
+    digitalWrite(RELAY5, OFF);
+  }
+  else if (rx == 14){
+    digitalWrite(RELAY6, OFF);
+  }
+  else if (rx == 15){
+    digitalWrite(RELAY7, OFF);
+  }
+
+  rx++;
+  delay(500);
+  
+#endif
+
   char* params;
   if (params = client.serviceRequest()) {    
     // custom buttons
