@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/circuits/AnalogCalculator/AnalogComputer/AnalogComputer-backups
+/circuits/AnalogCalculator/ComdynaGp6Clone/ComdynaGp6Clone-backups
+/circuits/AnalogCalculator/FastAdc/FastAdc-backups
+/circuits/DiodeLogicBoards/PROM/PROM-backups
