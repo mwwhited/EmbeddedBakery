@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Repos\mwwhited\EmbeddedBakery\circuits\AnalogCalculator\AnalogComputer\AnalogComputer.kicad_sch</source>
+    <date>3/6/2023 10:13:03 AM</date>
+    <tool>Eeschema (6.0.10)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Logarithmic Amplifier</title>
+        <company>Out-of-band Development, LLC</company>
+        <rev>v1</rev>
+        <date>2023-03-06</date>
+        <source>AnalogComputer.kicad_sch</source>
+        <comment number="1" value="Matthew Whited"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/">
+      <title_block>
+        <title>Logarithmic Amplifier</title>
+        <company>Out-of-band Development, LLC</company>
+        <rev>v1</rev>
+        <date>2023-03-06</date>
+        <source>Logarithmic Amplifier.kicad_sch</source>
+        <comment number="1" value="Matthew Whited"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Antilogarithmic Amplifier.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/">
+      <title_block>
+        <title>Logarithmic Amplifier</title>
+        <company>Out-of-band Development, LLC</company>
+        <rev>v1</rev>
+        <date>2023-03-06</date>
+        <source>Logarithmic Amplifier.kicad_sch</source>
+        <comment number="1" value="Matthew Whited"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/">
+      <title_block>
+        <title>Logarithmic Amplifier</title>
+        <company>Out-of-band Development, LLC</company>
+        <rev>v1</rev>
+        <date>2023-03-06</date>
+        <source>Logarithmic Amplifier.kicad_sch</source>
+        <comment number="1" value="Matthew Whited"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Antilogarithmic Amplifier.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="7" name="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Antilogarithmic Amplifier.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="D1">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/"/>
+      <tstamps>1e218ed2-c3a3-433e-8650-713f35bec12b</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/"/>
+      <tstamps>edc46efd-761d-4083-a2db-a311c948761b</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/"/>
+      <tstamps>63d9c8e9-e2f6-485a-bf2e-cdd69d1c553b</tstamps>
+    </comp>
+    <comp ref="D4">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/"/>
+      <tstamps>8b1b8550-d66e-4645-9a16-1e0bc1b36e94</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/"/>
+      <tstamps>d3df78bd-a781-4ae0-a928-acf8dd01040f</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/"/>
+      <tstamps>e4703d06-b655-42e8-8f65-c93576983927</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/"/>
+      <tstamps>c4a99234-39c7-4cfb-b082-d4e5c9bb09af</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/"/>
+      <tstamps>f840de85-a5ef-4819-9d5c-5abb1606c743</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>LM324</value>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="LM324" description="Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"/>
+      <property name="Sheetname" value="Logarithmic Amplifier"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier/" tstamps="/b258d8fb-1fa9-4360-b935-b0ac69a48bdd/"/>
+      <tstamps>63b313d0-139d-450c-ab1c-37ec061821fc 574d96af-8fe7-45ef-8a11-9e21d206a0c5 aeb02e26-ab19-4791-aa9e-22bec060b631 3e2bc28f-84d6-4a64-be61-9d61f19f1fc6 2e629c78-5cb2-4207-8c6d-5e11862b8f4d</tstamps>
+    </comp>
+    <comp ref="D5">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/"/>
+      <tstamps>68b4a73a-b1a1-472a-8b2b-74c559bb0775</tstamps>
+    </comp>
+    <comp ref="D6">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/"/>
+      <tstamps>c1ca81d2-9527-42c5-ad3c-cfd1e2828ee1</tstamps>
+    </comp>
+    <comp ref="D7">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/"/>
+      <tstamps>3253a4ad-fc3f-4063-9124-b3a7bc589fc4</tstamps>
+    </comp>
+    <comp ref="D8">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/"/>
+      <tstamps>3acabddf-bf01-4979-8f64-75fa3a3b4c11</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/"/>
+      <tstamps>aa5c85d6-a368-4129-a640-1d27ad657a48</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/"/>
+      <tstamps>daf483a4-f219-4dc9-aa48-0c84c0ea6047</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/"/>
+      <tstamps>a4e0dd9c-a8cd-47bd-a2c7-251dcf4c3968</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/"/>
+      <tstamps>b13ac938-3f9e-4ecf-a18b-ed79c62f3db5</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>LM324</value>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="LM324" description="Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier/" tstamps="/bf1d90c3-cd96-4c8a-a7fb-5bc8190138ca/"/>
+      <tstamps>767abc87-ec34-4881-831e-d08f0a1818a9 68835643-c7a4-42b6-b9f8-d080572a541a e2863972-f5d4-4522-bab4-4af04722ba7c b8da6568-af4d-4dce-9fb1-d26324fb87bb 5413d69f-a442-4cd8-9d60-a89f24156bd2</tstamps>
+    </comp>
+    <comp ref="D9">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/"/>
+      <tstamps>1e218ed2-c3a3-433e-8650-713f35bec12b</tstamps>
+    </comp>
+    <comp ref="D10">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/"/>
+      <tstamps>edc46efd-761d-4083-a2db-a311c948761b</tstamps>
+    </comp>
+    <comp ref="D11">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/"/>
+      <tstamps>63d9c8e9-e2f6-485a-bf2e-cdd69d1c553b</tstamps>
+    </comp>
+    <comp ref="D12">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/"/>
+      <tstamps>8b1b8550-d66e-4645-9a16-1e0bc1b36e94</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/"/>
+      <tstamps>d3df78bd-a781-4ae0-a928-acf8dd01040f</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/"/>
+      <tstamps>e4703d06-b655-42e8-8f65-c93576983927</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/"/>
+      <tstamps>c4a99234-39c7-4cfb-b082-d4e5c9bb09af</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/"/>
+      <tstamps>f840de85-a5ef-4819-9d5c-5abb1606c743</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>LM324</value>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="LM324" description="Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"/>
+      <property name="Sheetname" value="Logarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier2/" tstamps="/6e6abdf6-4cd3-46b5-a236-3b3c53ee6c51/"/>
+      <tstamps>63b313d0-139d-450c-ab1c-37ec061821fc 574d96af-8fe7-45ef-8a11-9e21d206a0c5 aeb02e26-ab19-4791-aa9e-22bec060b631 3e2bc28f-84d6-4a64-be61-9d61f19f1fc6 2e629c78-5cb2-4207-8c6d-5e11862b8f4d</tstamps>
+    </comp>
+    <comp ref="D13">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/"/>
+      <tstamps>1e218ed2-c3a3-433e-8650-713f35bec12b</tstamps>
+    </comp>
+    <comp ref="D14">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/"/>
+      <tstamps>edc46efd-761d-4083-a2db-a311c948761b</tstamps>
+    </comp>
+    <comp ref="D15">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/"/>
+      <tstamps>63d9c8e9-e2f6-485a-bf2e-cdd69d1c553b</tstamps>
+    </comp>
+    <comp ref="D16">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Logarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/"/>
+      <tstamps>8b1b8550-d66e-4645-9a16-1e0bc1b36e94</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/"/>
+      <tstamps>d3df78bd-a781-4ae0-a928-acf8dd01040f</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/"/>
+      <tstamps>e4703d06-b655-42e8-8f65-c93576983927</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/"/>
+      <tstamps>c4a99234-39c7-4cfb-b082-d4e5c9bb09af</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Logarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/"/>
+      <tstamps>f840de85-a5ef-4819-9d5c-5abb1606c743</tstamps>
+    </comp>
+    <comp ref="U4">
+      <value>LM324</value>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="LM324" description="Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"/>
+      <property name="Sheetname" value="Logarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Logarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Logarithmic Amplifier1/" tstamps="/e2f4230b-19f4-4916-8902-56d8b1497f4b/"/>
+      <tstamps>63b313d0-139d-450c-ab1c-37ec061821fc 574d96af-8fe7-45ef-8a11-9e21d206a0c5 aeb02e26-ab19-4791-aa9e-22bec060b631 3e2bc28f-84d6-4a64-be61-9d61f19f1fc6 2e629c78-5cb2-4207-8c6d-5e11862b8f4d</tstamps>
+    </comp>
+    <comp ref="D17">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/"/>
+      <tstamps>68b4a73a-b1a1-472a-8b2b-74c559bb0775</tstamps>
+    </comp>
+    <comp ref="D18">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/"/>
+      <tstamps>c1ca81d2-9527-42c5-ad3c-cfd1e2828ee1</tstamps>
+    </comp>
+    <comp ref="D19">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/"/>
+      <tstamps>3253a4ad-fc3f-4063-9124-b3a7bc589fc4</tstamps>
+    </comp>
+    <comp ref="D20">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/"/>
+      <tstamps>3acabddf-bf01-4979-8f64-75fa3a3b4c11</tstamps>
+    </comp>
+    <comp ref="R17">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/"/>
+      <tstamps>aa5c85d6-a368-4129-a640-1d27ad657a48</tstamps>
+    </comp>
+    <comp ref="R18">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/"/>
+      <tstamps>daf483a4-f219-4dc9-aa48-0c84c0ea6047</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/"/>
+      <tstamps>a4e0dd9c-a8cd-47bd-a2c7-251dcf4c3968</tstamps>
+    </comp>
+    <comp ref="R20">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/"/>
+      <tstamps>b13ac938-3f9e-4ecf-a18b-ed79c62f3db5</tstamps>
+    </comp>
+    <comp ref="U5">
+      <value>LM324</value>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="LM324" description="Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier1"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier1/" tstamps="/e08a367f-e7da-4039-928c-6b25601fe9d3/"/>
+      <tstamps>767abc87-ec34-4881-831e-d08f0a1818a9 68835643-c7a4-42b6-b9f8-d080572a541a e2863972-f5d4-4522-bab4-4af04722ba7c b8da6568-af4d-4dce-9fb1-d26324fb87bb 5413d69f-a442-4cd8-9d60-a89f24156bd2</tstamps>
+    </comp>
+    <comp ref="D21">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/"/>
+      <tstamps>68b4a73a-b1a1-472a-8b2b-74c559bb0775</tstamps>
+    </comp>
+    <comp ref="D22">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/"/>
+      <tstamps>c1ca81d2-9527-42c5-ad3c-cfd1e2828ee1</tstamps>
+    </comp>
+    <comp ref="D23">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/"/>
+      <tstamps>3253a4ad-fc3f-4063-9124-b3a7bc589fc4</tstamps>
+    </comp>
+    <comp ref="D24">
+      <value>1N4148</value>
+      <libsource lib="pspice" part="DIODE" description="Diode symbol for simulation only. Pin order incompatible with official kicad footprints"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/"/>
+      <tstamps>3acabddf-bf01-4979-8f64-75fa3a3b4c11</tstamps>
+    </comp>
+    <comp ref="R21">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/"/>
+      <tstamps>aa5c85d6-a368-4129-a640-1d27ad657a48</tstamps>
+    </comp>
+    <comp ref="R22">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/"/>
+      <tstamps>daf483a4-f219-4dc9-aa48-0c84c0ea6047</tstamps>
+    </comp>
+    <comp ref="R23">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/"/>
+      <tstamps>a4e0dd9c-a8cd-47bd-a2c7-251dcf4c3968</tstamps>
+    </comp>
+    <comp ref="R24">
+      <value>10k</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/"/>
+      <tstamps>b13ac938-3f9e-4ecf-a18b-ed79c62f3db5</tstamps>
+    </comp>
+    <comp ref="U6">
+      <value>LM324</value>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="LM324" description="Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"/>
+      <property name="Sheetname" value="Antilogarithmic Amplifier2"/>
+      <property name="Sheetfile" value="Antilogarithmic Amplifier.kicad_sch"/>
+      <sheetpath names="/Antilogarithmic Amplifier2/" tstamps="/c80575d4-cc59-4efb-9a68-d311e5a8366a/"/>
+      <tstamps>767abc87-ec34-4881-831e-d08f0a1818a9 68835643-c7a4-42b6-b9f8-d080572a541a e2863972-f5d4-4522-bab4-4af04722ba7c b8da6568-af4d-4dce-9fb1-d26324fb87bb 5413d69f-a442-4cd8-9d60-a89f24156bd2</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Amplifier_Operational" part="LM324">
+      <description>Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14</description>
+      <docs>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x8.7mm*P1.27mm*</fp>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>TSSOP*4.4x5mm*P0.65mm*</fp>
+        <fp>SSOP*5.3x6.2mm*P0.65mm*</fp>
+        <fp>MSOP*3x3mm*P0.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM324</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="output"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="V+" type="power_in"/>
+        <pin num="5" name="+" type="input"/>
+        <pin num="6" name="-" type="input"/>
+        <pin num="7" name="" type="output"/>
+        <pin num="8" name="" type="output"/>
+        <pin num="9" name="-" type="input"/>
+        <pin num="10" name="+" type="input"/>
+        <pin num="11" name="V-" type="power_in"/>
+        <pin num="12" name="+" type="input"/>
+        <pin num="13" name="-" type="input"/>
+        <pin num="14" name="" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="pspice" part="DIODE">
+      <description>Diode symbol for simulation only. Pin order incompatible with official kicad footprints</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">DIODE</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="input"/>
+        <pin num="2" name="A" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Amplifier_Operational">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Amplifier_Operational.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Device.kicad_sym</uri>
+    </library>
+    <library logical="pspice">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/pspice.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+12V">
+      <node ref="U1" pin="4" pinfunction="V+" pintype="power_in"/>
+      <node ref="U2" pin="4" pinfunction="V+" pintype="power_in"/>
+      <node ref="U3" pin="4" pinfunction="V+" pintype="power_in"/>
+      <node ref="U4" pin="4" pinfunction="V+" pintype="power_in"/>
+      <node ref="U5" pin="4" pinfunction="V+" pintype="power_in"/>
+      <node ref="U6" pin="4" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="2" name="-12V">
+      <node ref="U1" pin="11" pinfunction="V-" pintype="power_in"/>
+      <node ref="U2" pin="11" pinfunction="V-" pintype="power_in"/>
+      <node ref="U3" pin="11" pinfunction="V-" pintype="power_in"/>
+      <node ref="U4" pin="11" pinfunction="V-" pintype="power_in"/>
+      <node ref="U5" pin="11" pinfunction="V-" pintype="power_in"/>
+      <node ref="U6" pin="11" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="3" name="/Antilogarithmic Amplifier/AntiLog Input 0">
+      <node ref="D5" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="4" name="/Antilogarithmic Amplifier/AntiLog Input 1">
+      <node ref="D6" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="5" name="/Antilogarithmic Amplifier/AntiLog Input 2">
+      <node ref="D7" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="6" name="/Antilogarithmic Amplifier/AntiLog Input 3">
+      <node ref="D8" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="7" name="/Antilogarithmic Amplifier/AntiLog Output 0">
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="U2" pin="1" pintype="output"/>
+    </net>
+    <net code="8" name="/Antilogarithmic Amplifier/AntiLog Output 1">
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="U2" pin="7" pintype="output"/>
+    </net>
+    <net code="9" name="/Antilogarithmic Amplifier/AntiLog Output 2">
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="U2" pin="8" pintype="output"/>
+    </net>
+    <net code="10" name="/Antilogarithmic Amplifier/AntiLog Output 3">
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="U2" pin="14" pintype="output"/>
+    </net>
+    <net code="11" name="/Antilogarithmic Amplifier1/AntiLog Input 0">
+      <node ref="D17" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="12" name="/Antilogarithmic Amplifier1/AntiLog Input 1">
+      <node ref="D18" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="13" name="/Antilogarithmic Amplifier1/AntiLog Input 2">
+      <node ref="D19" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="14" name="/Antilogarithmic Amplifier1/AntiLog Input 3">
+      <node ref="D20" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="15" name="/Antilogarithmic Amplifier1/AntiLog Output 0">
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="U5" pin="1" pintype="output"/>
+    </net>
+    <net code="16" name="/Antilogarithmic Amplifier1/AntiLog Output 1">
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="U5" pin="7" pintype="output"/>
+    </net>
+    <net code="17" name="/Antilogarithmic Amplifier1/AntiLog Output 2">
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="U5" pin="8" pintype="output"/>
+    </net>
+    <net code="18" name="/Antilogarithmic Amplifier1/AntiLog Output 3">
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="U5" pin="14" pintype="output"/>
+    </net>
+    <net code="19" name="/Antilogarithmic Amplifier2/AntiLog Input 0">
+      <node ref="D21" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="20" name="/Antilogarithmic Amplifier2/AntiLog Input 1">
+      <node ref="D22" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="21" name="/Antilogarithmic Amplifier2/AntiLog Input 2">
+      <node ref="D23" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="22" name="/Antilogarithmic Amplifier2/AntiLog Input 3">
+      <node ref="D24" pin="1" pinfunction="K" pintype="input"/>
+    </net>
+    <net code="23" name="/Antilogarithmic Amplifier2/AntiLog Output 0">
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="U6" pin="1" pintype="output"/>
+    </net>
+    <net code="24" name="/Antilogarithmic Amplifier2/AntiLog Output 1">
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="U6" pin="7" pintype="output"/>
+    </net>
+    <net code="25" name="/Antilogarithmic Amplifier2/AntiLog Output 2">
+      <node ref="R23" pin="2" pintype="passive"/>
+      <node ref="U6" pin="8" pintype="output"/>
+    </net>
+    <net code="26" name="/Antilogarithmic Amplifier2/AntiLog Output 3">
+      <node ref="R24" pin="2" pintype="passive"/>
+      <node ref="U6" pin="14" pintype="output"/>
+    </net>
+    <net code="27" name="/Logarithmic Amplifier/Log Input 0">
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="28" name="/Logarithmic Amplifier/Log Input 1">
+      <node ref="R2" pin="2" pintype="passive"/>
+    </net>
+    <net code="29" name="/Logarithmic Amplifier/Log Input 2">
+      <node ref="R3" pin="2" pintype="passive"/>
+    </net>
+    <net code="30" name="/Logarithmic Amplifier/Log Input 3">
+      <node ref="R4" pin="2" pintype="passive"/>
+    </net>
+    <net code="31" name="/Logarithmic Amplifier/Log Output 0">
+      <node ref="D1" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U1" pin="1" pintype="output"/>
+    </net>
+    <net code="32" name="/Logarithmic Amplifier/Log Output 1">
+      <node ref="D2" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U1" pin="7" pintype="output"/>
+    </net>
+    <net code="33" name="/Logarithmic Amplifier/Log Output 2">
+      <node ref="D3" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U1" pin="8" pintype="output"/>
+    </net>
+    <net code="34" name="/Logarithmic Amplifier/Log Output 3">
+      <node ref="D4" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U1" pin="14" pintype="output"/>
+    </net>
+    <net code="35" name="/Logarithmic Amplifier1/Log Input 0">
+      <node ref="R13" pin="2" pintype="passive"/>
+    </net>
+    <net code="36" name="/Logarithmic Amplifier1/Log Input 1">
+      <node ref="R14" pin="2" pintype="passive"/>
+    </net>
+    <net code="37" name="/Logarithmic Amplifier1/Log Input 2">
+      <node ref="R15" pin="2" pintype="passive"/>
+    </net>
+    <net code="38" name="/Logarithmic Amplifier1/Log Input 3">
+      <node ref="R16" pin="2" pintype="passive"/>
+    </net>
+    <net code="39" name="/Logarithmic Amplifier1/Log Output 0">
+      <node ref="D13" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U4" pin="1" pintype="output"/>
+    </net>
+    <net code="40" name="/Logarithmic Amplifier1/Log Output 1">
+      <node ref="D14" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U4" pin="7" pintype="output"/>
+    </net>
+    <net code="41" name="/Logarithmic Amplifier1/Log Output 2">
+      <node ref="D15" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U4" pin="8" pintype="output"/>
+    </net>
+    <net code="42" name="/Logarithmic Amplifier1/Log Output 3">
+      <node ref="D16" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U4" pin="14" pintype="output"/>
+    </net>
+    <net code="43" name="/Logarithmic Amplifier2/Log Input 0">
+      <node ref="R9" pin="2" pintype="passive"/>
+    </net>
+    <net code="44" name="/Logarithmic Amplifier2/Log Input 1">
+      <node ref="R10" pin="2" pintype="passive"/>
+    </net>
+    <net code="45" name="/Logarithmic Amplifier2/Log Input 2">
+      <node ref="R11" pin="2" pintype="passive"/>
+    </net>
+    <net code="46" name="/Logarithmic Amplifier2/Log Input 3">
+      <node ref="R12" pin="2" pintype="passive"/>
+    </net>
+    <net code="47" name="/Logarithmic Amplifier2/Log Output 0">
+      <node ref="D9" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U3" pin="1" pintype="output"/>
+    </net>
+    <net code="48" name="/Logarithmic Amplifier2/Log Output 1">
+      <node ref="D10" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U3" pin="7" pintype="output"/>
+    </net>
+    <net code="49" name="/Logarithmic Amplifier2/Log Output 2">
+      <node ref="D11" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U3" pin="8" pintype="output"/>
+    </net>
+    <net code="50" name="/Logarithmic Amplifier2/Log Output 3">
+      <node ref="D12" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U3" pin="14" pintype="output"/>
+    </net>
+    <net code="51" name="GND">
+      <node ref="U1" pin="10" pinfunction="+" pintype="input"/>
+      <node ref="U1" pin="12" pinfunction="+" pintype="input"/>
+      <node ref="U1" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U1" pin="5" pinfunction="+" pintype="input"/>
+      <node ref="U2" pin="10" pinfunction="+" pintype="input"/>
+      <node ref="U2" pin="12" pinfunction="+" pintype="input"/>
+      <node ref="U2" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U2" pin="5" pinfunction="+" pintype="input"/>
+      <node ref="U3" pin="10" pinfunction="+" pintype="input"/>
+      <node ref="U3" pin="12" pinfunction="+" pintype="input"/>
+      <node ref="U3" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U3" pin="5" pinfunction="+" pintype="input"/>
+      <node ref="U4" pin="10" pinfunction="+" pintype="input"/>
+      <node ref="U4" pin="12" pinfunction="+" pintype="input"/>
+      <node ref="U4" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U4" pin="5" pinfunction="+" pintype="input"/>
+      <node ref="U5" pin="10" pinfunction="+" pintype="input"/>
+      <node ref="U5" pin="12" pinfunction="+" pintype="input"/>
+      <node ref="U5" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U5" pin="5" pinfunction="+" pintype="input"/>
+      <node ref="U6" pin="10" pinfunction="+" pintype="input"/>
+      <node ref="U6" pin="12" pinfunction="+" pintype="input"/>
+      <node ref="U6" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U6" pin="5" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="52" name="Net-(D1-Pad1)">
+      <node ref="D1" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="53" name="Net-(D2-Pad1)">
+      <node ref="D2" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="54" name="Net-(D3-Pad1)">
+      <node ref="D3" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="55" name="Net-(D4-Pad1)">
+      <node ref="D4" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="U1" pin="13" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="56" name="Net-(D5-Pad2)">
+      <node ref="D5" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="57" name="Net-(D6-Pad2)">
+      <node ref="D6" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="58" name="Net-(D7-Pad2)">
+      <node ref="D7" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U2" pin="9" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="59" name="Net-(D8-Pad2)">
+      <node ref="D8" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="U2" pin="13" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="60" name="Net-(D9-Pad1)">
+      <node ref="D9" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="61" name="Net-(D10-Pad1)">
+      <node ref="D10" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="U3" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="62" name="Net-(D11-Pad1)">
+      <node ref="D11" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="U3" pin="9" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="63" name="Net-(D12-Pad1)">
+      <node ref="D12" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="U3" pin="13" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="64" name="Net-(D13-Pad1)">
+      <node ref="D13" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U4" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="65" name="Net-(D14-Pad1)">
+      <node ref="D14" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="U4" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="66" name="Net-(D15-Pad1)">
+      <node ref="D15" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="U4" pin="9" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="67" name="Net-(D16-Pad1)">
+      <node ref="D16" pin="1" pinfunction="K" pintype="input"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="U4" pin="13" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="68" name="Net-(D17-Pad2)">
+      <node ref="D17" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="U5" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="69" name="Net-(D18-Pad2)">
+      <node ref="D18" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="U5" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="70" name="Net-(D19-Pad2)">
+      <node ref="D19" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="U5" pin="9" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="71" name="Net-(D20-Pad2)">
+      <node ref="D20" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R20" pin="1" pintype="passive"/>
+      <node ref="U5" pin="13" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="72" name="Net-(D21-Pad2)">
+      <node ref="D21" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="U6" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="73" name="Net-(D22-Pad2)">
+      <node ref="D22" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="U6" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="74" name="Net-(D23-Pad2)">
+      <node ref="D23" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R23" pin="1" pintype="passive"/>
+      <node ref="U6" pin="9" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="75" name="Net-(D24-Pad2)">
+      <node ref="D24" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="R24" pin="1" pintype="passive"/>
+      <node ref="U6" pin="13" pinfunction="-" pintype="input"/>
+    </net>
+  </nets>
+</export>

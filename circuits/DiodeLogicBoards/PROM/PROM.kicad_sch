@@ -1,0 +1,31 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 1d3ef6d3-3045-44e0-93ef-44b2fc737c11)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 38.1 25.4) (size 41.91 25.4) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid a18e0f14-9d30-4c32-bac6-59edefbc844b)
+    (property "Sheetname" "MemoryByte" (at 38.1 24.6884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "MemoryByte.kicad_sch" (at 38.1 51.3846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "PROM"
+        (path "/1d3ef6d3-3045-44e0-93ef-44b2fc737c11" (page "2"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
