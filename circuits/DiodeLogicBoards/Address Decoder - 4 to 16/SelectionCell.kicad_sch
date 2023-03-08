@@ -1,0 +1,472 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 14164624-68bd-46d5-8004-0a30e6ff9e09)
+
+  (paper "A4")
+
+  (title_block
+    (title "Diode Transistor Logic - 4 to 16 Address Decoder")
+    (date "2023-03-08")
+    (rev "1")
+    (company "Out-of-Band Development")
+    (comment 1 "Matthew Whited")
+  )
+
+  (lib_symbols
+    (symbol "Diode:1N4148" (pin_numbers hide) (pin_names hide) (in_bom yes) (on_board yes)
+      (property "Reference" "D" (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "1N4148" (at 0 -2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Sim.Device" "D" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Sim.Pins" "1=K 2=A" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "diode" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "100V 0.15A standard switching diode, DO-35" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "D*DO?35*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "1N4148_0_1"
+        (polyline
+          (pts
+            (xy -1.27 1.27)
+            (xy -1.27 -1.27)
+          )
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy -1.27 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 1.27)
+            (xy 1.27 -1.27)
+            (xy -1.27 0)
+            (xy 1.27 1.27)
+          )
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "1N4148_1_1"
+        (pin passive line (at -3.81 0 0) (length 2.54)
+          (name "K" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 3.81 0 180) (length 2.54)
+          (name "A" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+  )
+
+  (junction (at 59.69 43.18) (diameter 0) (color 0 0 0 0)
+    (uuid 12f9f5a8-575a-4379-925b-de8dbe5412ba)
+  )
+  (junction (at 59.69 50.8) (diameter 0) (color 0 0 0 0)
+    (uuid a2453518-d957-4709-9ce7-a6df7a8c9206)
+  )
+  (junction (at 59.69 38.1) (diameter 0) (color 0 0 0 0)
+    (uuid b1ad56e0-ca2e-4ff3-86c4-5dff32a6fcf7)
+  )
+
+  (wire (pts (xy 71.12 58.42) (xy 76.2 58.42))
+    (stroke (width 0) (type default))
+    (uuid 2322e205-367c-456a-95ab-23db77b54ca7)
+  )
+  (wire (pts (xy 59.69 38.1) (xy 63.5 38.1))
+    (stroke (width 0) (type default))
+    (uuid 2985c1a1-056d-4856-85ff-d22e11794582)
+  )
+  (wire (pts (xy 71.12 50.8) (xy 76.2 50.8))
+    (stroke (width 0) (type default))
+    (uuid 2c9c47dd-57f3-4344-b95b-d5cffe72e0c6)
+  )
+  (wire (pts (xy 59.69 50.8) (xy 59.69 58.42))
+    (stroke (width 0) (type default))
+    (uuid 38232341-6301-419c-87f2-f5be55a51c7b)
+  )
+  (wire (pts (xy 57.15 38.1) (xy 59.69 38.1))
+    (stroke (width 0) (type default))
+    (uuid 3f94ba08-9f59-4a73-b172-b22b50064cf4)
+  )
+  (wire (pts (xy 59.69 43.18) (xy 59.69 50.8))
+    (stroke (width 0) (type default))
+    (uuid 487e4075-ad8c-46c0-8355-d633e6e1864e)
+  )
+  (wire (pts (xy 59.69 43.18) (xy 63.5 43.18))
+    (stroke (width 0) (type default))
+    (uuid 54203a34-2387-46d8-a5f5-410c9a9a1f0b)
+  )
+  (wire (pts (xy 71.12 38.1) (xy 76.2 38.1))
+    (stroke (width 0) (type default))
+    (uuid 73663842-189e-45e5-bbae-be30ab139361)
+  )
+  (wire (pts (xy 59.69 58.42) (xy 63.5 58.42))
+    (stroke (width 0) (type default))
+    (uuid 89b18abc-4223-4577-bc72-a989a617e50c)
+  )
+  (wire (pts (xy 59.69 50.8) (xy 63.5 50.8))
+    (stroke (width 0) (type default))
+    (uuid b9d02002-2ca4-43c3-8617-66583b967c2a)
+  )
+  (wire (pts (xy 71.12 43.18) (xy 76.2 43.18))
+    (stroke (width 0) (type default))
+    (uuid d95f9c74-e469-44a5-9866-b1b6e735fe8b)
+  )
+  (wire (pts (xy 59.69 38.1) (xy 59.69 43.18))
+    (stroke (width 0) (type default))
+    (uuid fb19abb6-f286-4e60-b52f-0029d56b4db1)
+  )
+
+  (hierarchical_label "Addr3" (shape input) (at 76.2 58.42 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 2f8e5571-b25b-44f3-9ecf-4c9f7e4937c2)
+  )
+  (hierarchical_label "Addr1" (shape input) (at 76.2 43.18 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 825c3a38-02dd-4b6a-b1e4-5badf899f43a)
+  )
+  (hierarchical_label "Addr2" (shape input) (at 76.2 50.8 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 9268e791-2ea2-4367-8814-07a3a76d1ef4)
+  )
+  (hierarchical_label "Selection" (shape output) (at 57.15 38.1 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 9aeb4ed0-3491-4af8-9849-d28ff9ba17c8)
+  )
+  (hierarchical_label "Addr0" (shape input) (at 76.2 38.1 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid ec1cd4f0-e191-4a5f-9f9e-0d066bc3cce2)
+  )
+
+  (symbol (lib_id "Diode:1N4148") (at 67.31 38.1 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 4d3c0409-21fc-4c07-a0a3-481eb54911ef)
+    (property "Reference" "D1" (at 67.31 33.8201 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1N4148" (at 67.31 35.7411 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" (at 67.31 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" (at 67.31 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Device" "D" (at 67.31 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Pins" "1=K 2=A" (at 67.31 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 97a8aa97-8b97-4a60-b685-0ad4e87cddf2))
+    (pin "2" (uuid 23601c9f-367e-4eb3-a67a-3fe87f174b5c))
+    (instances
+      (project "Address Decoder - 4 to 16"
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ceb50c28-6755-4c4e-8d41-37fcd9ad595e"
+          (reference "D1") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/80e0a643-d0e9-4812-abce-22a2d3a1b8dc"
+          (reference "D5") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/2bb72704-fbb7-4dc4-9508-4697dab1a16e"
+          (reference "D9") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/3feda485-f382-4021-a4f7-6eadf2bb0065"
+          (reference "D13") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/b609ce1b-d867-4c36-83fd-646c75a6779f"
+          (reference "D17") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/315fc303-57be-4b03-9a90-982116c71823"
+          (reference "D25") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/f0f2525f-7bf3-4787-981b-a7057026a2f0"
+          (reference "D29") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/e43b21e6-1473-4659-9fb8-462a7e9176ae"
+          (reference "D21") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/9be42226-4b00-42b1-94a0-b3ad5c6e52fc"
+          (reference "D33") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/0a67ac02-d067-4f90-b20d-f8a5078df0d6"
+          (reference "D41") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ca750a82-478f-49c2-b68c-78b5522f444d"
+          (reference "D45") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/9036fafa-5908-4a68-92b8-bf0bfc8f8510"
+          (reference "D37") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/d6730755-f2b4-43ae-bf42-2c5d841e2df1"
+          (reference "D53") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/cdc83e44-75aa-4364-ba77-f0b31c1206d5"
+          (reference "D49") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ed33d153-7af9-47c6-9333-0e311fa937ca"
+          (reference "D61") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/f292fe5d-20bc-46a6-bbff-f95e91de9087"
+          (reference "D57") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Diode:1N4148") (at 67.31 50.8 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 622bec8c-02a5-43cc-a39e-f5cc4a206294)
+    (property "Reference" "D3" (at 67.31 48.26 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1N4148" (at 67.31 53.34 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" (at 67.31 50.8 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" (at 67.31 50.8 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Device" "D" (at 67.31 50.8 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Pins" "1=K 2=A" (at 67.31 50.8 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 07b6b447-3dc0-4d99-8373-292d33cb4fed))
+    (pin "2" (uuid f89195f2-d1df-4da9-b718-ef66c29f86ae))
+    (instances
+      (project "Address Decoder - 4 to 16"
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ceb50c28-6755-4c4e-8d41-37fcd9ad595e"
+          (reference "D3") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/80e0a643-d0e9-4812-abce-22a2d3a1b8dc"
+          (reference "D7") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/2bb72704-fbb7-4dc4-9508-4697dab1a16e"
+          (reference "D11") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/3feda485-f382-4021-a4f7-6eadf2bb0065"
+          (reference "D15") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/b609ce1b-d867-4c36-83fd-646c75a6779f"
+          (reference "D19") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/315fc303-57be-4b03-9a90-982116c71823"
+          (reference "D27") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/f0f2525f-7bf3-4787-981b-a7057026a2f0"
+          (reference "D31") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/e43b21e6-1473-4659-9fb8-462a7e9176ae"
+          (reference "D23") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/9be42226-4b00-42b1-94a0-b3ad5c6e52fc"
+          (reference "D35") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/0a67ac02-d067-4f90-b20d-f8a5078df0d6"
+          (reference "D43") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ca750a82-478f-49c2-b68c-78b5522f444d"
+          (reference "D47") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/9036fafa-5908-4a68-92b8-bf0bfc8f8510"
+          (reference "D39") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/d6730755-f2b4-43ae-bf42-2c5d841e2df1"
+          (reference "D55") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/cdc83e44-75aa-4364-ba77-f0b31c1206d5"
+          (reference "D51") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ed33d153-7af9-47c6-9333-0e311fa937ca"
+          (reference "D63") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/f292fe5d-20bc-46a6-bbff-f95e91de9087"
+          (reference "D59") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Diode:1N4148") (at 67.31 43.18 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 7094a487-7509-4426-8871-c59d29902650)
+    (property "Reference" "D2" (at 67.31 40.64 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1N4148" (at 67.31 45.72 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" (at 67.31 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" (at 67.31 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Device" "D" (at 67.31 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Pins" "1=K 2=A" (at 67.31 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 2b410606-91b8-4a15-94ee-c84f72faae17))
+    (pin "2" (uuid 500ab242-5bb0-4c56-9d6d-6cd8da11f169))
+    (instances
+      (project "Address Decoder - 4 to 16"
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ceb50c28-6755-4c4e-8d41-37fcd9ad595e"
+          (reference "D2") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/80e0a643-d0e9-4812-abce-22a2d3a1b8dc"
+          (reference "D6") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/2bb72704-fbb7-4dc4-9508-4697dab1a16e"
+          (reference "D10") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/3feda485-f382-4021-a4f7-6eadf2bb0065"
+          (reference "D14") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/b609ce1b-d867-4c36-83fd-646c75a6779f"
+          (reference "D18") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/315fc303-57be-4b03-9a90-982116c71823"
+          (reference "D26") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/f0f2525f-7bf3-4787-981b-a7057026a2f0"
+          (reference "D30") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/e43b21e6-1473-4659-9fb8-462a7e9176ae"
+          (reference "D22") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/9be42226-4b00-42b1-94a0-b3ad5c6e52fc"
+          (reference "D34") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/0a67ac02-d067-4f90-b20d-f8a5078df0d6"
+          (reference "D42") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ca750a82-478f-49c2-b68c-78b5522f444d"
+          (reference "D46") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/9036fafa-5908-4a68-92b8-bf0bfc8f8510"
+          (reference "D38") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/d6730755-f2b4-43ae-bf42-2c5d841e2df1"
+          (reference "D54") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/cdc83e44-75aa-4364-ba77-f0b31c1206d5"
+          (reference "D50") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ed33d153-7af9-47c6-9333-0e311fa937ca"
+          (reference "D62") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/f292fe5d-20bc-46a6-bbff-f95e91de9087"
+          (reference "D58") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Diode:1N4148") (at 67.31 58.42 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 96e387cc-a5ee-40b2-86f2-d6125c41b472)
+    (property "Reference" "D4" (at 67.31 55.88 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1N4148" (at 67.31 60.96 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" (at 67.31 58.42 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" (at 67.31 58.42 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Device" "D" (at 67.31 58.42 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Pins" "1=K 2=A" (at 67.31 58.42 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid d5530446-f988-4bf6-9ea8-a91f758a2089))
+    (pin "2" (uuid bd8ce033-da36-40fe-881b-0d292e8c5d7f))
+    (instances
+      (project "Address Decoder - 4 to 16"
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ceb50c28-6755-4c4e-8d41-37fcd9ad595e"
+          (reference "D4") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/80e0a643-d0e9-4812-abce-22a2d3a1b8dc"
+          (reference "D8") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/2bb72704-fbb7-4dc4-9508-4697dab1a16e"
+          (reference "D12") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/3feda485-f382-4021-a4f7-6eadf2bb0065"
+          (reference "D16") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/b609ce1b-d867-4c36-83fd-646c75a6779f"
+          (reference "D20") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/315fc303-57be-4b03-9a90-982116c71823"
+          (reference "D28") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/f0f2525f-7bf3-4787-981b-a7057026a2f0"
+          (reference "D32") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/e43b21e6-1473-4659-9fb8-462a7e9176ae"
+          (reference "D24") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/9be42226-4b00-42b1-94a0-b3ad5c6e52fc"
+          (reference "D36") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/0a67ac02-d067-4f90-b20d-f8a5078df0d6"
+          (reference "D44") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ca750a82-478f-49c2-b68c-78b5522f444d"
+          (reference "D48") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/9036fafa-5908-4a68-92b8-bf0bfc8f8510"
+          (reference "D40") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/d6730755-f2b4-43ae-bf42-2c5d841e2df1"
+          (reference "D56") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/cdc83e44-75aa-4364-ba77-f0b31c1206d5"
+          (reference "D52") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/ed33d153-7af9-47c6-9333-0e311fa937ca"
+          (reference "D64") (unit 1)
+        )
+        (path "/3808b5d5-d560-43ac-b2f0-a1e42f1054af/f292fe5d-20bc-46a6-bbff-f95e91de9087"
+          (reference "D60") (unit 1)
+        )
+      )
+    )
+  )
+)

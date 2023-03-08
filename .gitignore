@@ -348,7 +348,27 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-/circuits/AnalogCalculator/AnalogComputer/AnalogComputer-backups
-/circuits/AnalogCalculator/ComdynaGp6Clone/ComdynaGp6Clone-backups
-/circuits/AnalogCalculator/FastAdc/FastAdc-backups
-/circuits/DiodeLogicBoards/PROM/PROM-backups
+
+
+# Ignore list for KiCAD Projects
+
+/circuits/**/*-backups
+/circuits/**/*.zip
+
+# Temporary files
+/circuits/**/*.000
+/circuits/**/*.bak
+/circuits/**/*.bck
+/circuits/**/*.kicad_pcb-bak
+/circuits/**/*.sch-bak
+/circuits/**/*~
+/circuits/**/_autosave-*
+/circuits/**/*.tmp
+/circuits/**/*-save.pro
+/circuits/**/*-save.kicad_pcb
+/circuits/**/fp-info-cache
+# Netlist files (exported from Eeschema)
+/circuits/**/*.net
+# Autorouter files (exported from Pcbnew)
+/circuits/**/*.dsn
+/circuits/**/*.ses
