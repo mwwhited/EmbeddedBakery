@@ -372,3 +372,4 @@ MigrationBackup/
 # Autorouter files (exported from Pcbnew)
 /circuits/**/*.dsn
 /circuits/**/*.ses
+/circuits/**/production
