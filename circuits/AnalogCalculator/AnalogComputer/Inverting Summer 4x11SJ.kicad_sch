@@ -5,10 +5,13 @@
   (paper "A4")
 
   (title_block
-    (title "Inverting Summer with 4x10k + 1x1k + SJ")
+    (title "Analog Computer")
     (date "2023-03-08")
-    (company "Out-of-Band Development")
+    (rev "v1")
+    (company "Out-of-band Development, LLC")
     (comment 1 "Matthew Whited")
+    (comment 2 "Inverting Summing Amplifier")
+    (comment 3 "4x10k, 1x1k with Summing Junction and No Feedback")
   )
 
   (lib_symbols
@@ -574,11 +577,11 @@
         )
       )
     )
-    (symbol "power:VSS" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+    (symbol "power:VDD" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "#PWR" (at 0 -3.81 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Value" "VSS" (at 0 3.81 0)
+      (property "Value" "VDD" (at 0 3.81 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -590,10 +593,18 @@
       (property "ki_keywords" "global power" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Power symbol creates a global label with name \"VSS\"" (at 0 0 0)
+      (property "ki_description" "Power symbol creates a global label with name \"VDD\"" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "VSS_0_1"
+      (symbol "VDD_0_1"
+        (polyline
+          (pts
+            (xy -0.762 1.27)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
         (polyline
           (pts
             (xy 0 0)
@@ -604,23 +615,22 @@
         )
         (polyline
           (pts
-            (xy 0.762 1.27)
-            (xy -0.762 1.27)
             (xy 0 2.54)
             (xy 0.762 1.27)
           )
           (stroke (width 0) (type default))
-          (fill (type outline))
+          (fill (type none))
         )
       )
-      (symbol "VSS_1_1"
+      (symbol "VDD_1_1"
         (pin power_in line (at 0 0 90) (length 0) hide
-          (name "VSS" (effects (font (size 1.27 1.27))))
+          (name "VDD" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
       )
     )
   )
+
 
   (junction (at 77.47 97.79) (diameter 0) (color 0 0 0 0)
     (uuid 0274b58a-befc-4195-a113-7b878eef01c8)
@@ -1153,7 +1163,7 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 81.28 36.83 0) (unit 1)
+  (symbol (lib_id "power:VDD") (at 81.28 36.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 23b0fd85-d5e2-4db3-a8e3-33a6da8f855c)
     (property "Reference" "#PWR031" (at 81.28 43.18 0)
@@ -1204,7 +1214,7 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 81.28 92.71 0) (unit 1)
+  (symbol (lib_id "power:VDD") (at 81.28 92.71 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3658f9b6-37c6-41f9-9a08-8192ce05873c)
     (property "Reference" "#PWR033" (at 81.28 99.06 0)
@@ -1338,7 +1348,7 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 81.28 120.65 0) (unit 1)
+  (symbol (lib_id "power:VDD") (at 81.28 120.65 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 75b127b4-28a9-41d1-8a57-2c10f1d9960a)
     (property "Reference" "#PWR034" (at 81.28 127 0)
@@ -1389,7 +1399,7 @@
     )
   )
 
-  (symbol (lib_id "power:VSS") (at 139.7 96.52 180) (unit 1)
+  (symbol (lib_id "power:GND") (at 139.7 96.52 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bf0d8abc-dfe3-4f28-b7c9-55df88db7c59)
     (property "Reference" "#PWR036" (at 139.7 92.71 0)
@@ -1528,7 +1538,7 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 81.28 64.77 0) (unit 1)
+  (symbol (lib_id "power:VDD") (at 81.28 64.77 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fec3b72a-f8a8-4573-a5e6-3fd50ddb7e6d)
     (property "Reference" "#PWR032" (at 81.28 71.12 0)

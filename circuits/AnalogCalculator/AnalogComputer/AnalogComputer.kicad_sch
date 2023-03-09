@@ -5,7 +5,7 @@
   (paper "A4")
 
   (title_block
-    (title "Analog Computer ")
+    (title "Analog Computer")
     (date "2023-03-08")
     (rev "v1")
     (company "Out-of-band Development, LLC")
@@ -434,11 +434,11 @@
         )
       )
     )
-    (symbol "power:VSS" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+    (symbol "power:VDD" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "#PWR" (at 0 -3.81 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Value" "VSS" (at 0 3.81 0)
+      (property "Value" "VDD" (at 0 3.81 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -450,10 +450,18 @@
       (property "ki_keywords" "global power" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Power symbol creates a global label with name \"VSS\"" (at 0 0 0)
+      (property "ki_description" "Power symbol creates a global label with name \"VDD\"" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "VSS_0_1"
+      (symbol "VDD_0_1"
+        (polyline
+          (pts
+            (xy -0.762 1.27)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
         (polyline
           (pts
             (xy 0 0)
@@ -464,23 +472,22 @@
         )
         (polyline
           (pts
-            (xy 0.762 1.27)
-            (xy -0.762 1.27)
             (xy 0 2.54)
             (xy 0.762 1.27)
           )
           (stroke (width 0) (type default))
-          (fill (type outline))
+          (fill (type none))
         )
       )
-      (symbol "VSS_1_1"
+      (symbol "VDD_1_1"
         (pin power_in line (at 0 0 90) (length 0) hide
-          (name "VSS" (effects (font (size 1.27 1.27))))
+          (name "VDD" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
       )
     )
   )
+
 
 
   (no_connect (at 133.35 194.31) (uuid 0727f988-6527-4bf6-b6aa-86751510908e))
@@ -3178,10 +3185,10 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 223.52 123.19 0) (unit 1)
+  (symbol (lib_id "power:VDD") (at 223.52 123.19 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 40885c5f-be26-45fb-8b2a-e1f47c2ee634)
-    (property "Reference" "#PWR030" (at 223.52 129.54 0)
+    (property "Reference" "#PWR030" (at 223.52 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 223.52 127.3255 0)
@@ -3203,10 +3210,10 @@
     )
   )
 
-  (symbol (lib_id "power:VSS") (at 220.98 104.14 0) (unit 1)
+  (symbol (lib_id "power:GND") (at 220.98 104.14 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 818ce6cb-f994-4fab-8ead-55127da72c90)
-    (property "Reference" "#PWR029" (at 220.98 107.95 0)
+    (property "Reference" "#PWR029" (at 220.98 100.33 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VSS" (at 220.98 100.6381 0)

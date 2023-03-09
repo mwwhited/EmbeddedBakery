@@ -4,6 +4,15 @@
 
   (paper "A4")
 
+  (title_block
+    (title "Analog Computer")
+    (date "2023-03-08")
+    (rev "v1")
+    (company "Out-of-band Development, LLC")
+    (comment 1 "Matthew Whited")
+    (comment 2 "Inverting Amplifier")
+  )
+
   (lib_symbols
     (symbol "Amplifier_Operational:LM324" (pin_names (offset 0.127)) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 5.08 0)
@@ -268,11 +277,11 @@
         )
       )
     )
-    (symbol "power:VSS" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+    (symbol "power:VDD" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "#PWR" (at 0 -3.81 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Value" "VSS" (at 0 3.81 0)
+      (property "Value" "VDD" (at 0 3.81 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -284,10 +293,18 @@
       (property "ki_keywords" "global power" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Power symbol creates a global label with name \"VSS\"" (at 0 0 0)
+      (property "ki_description" "Power symbol creates a global label with name \"VDD\"" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "VSS_0_1"
+      (symbol "VDD_0_1"
+        (polyline
+          (pts
+            (xy -0.762 1.27)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
         (polyline
           (pts
             (xy 0 0)
@@ -298,18 +315,16 @@
         )
         (polyline
           (pts
-            (xy 0.762 1.27)
-            (xy -0.762 1.27)
             (xy 0 2.54)
             (xy 0.762 1.27)
           )
           (stroke (width 0) (type default))
-          (fill (type outline))
+          (fill (type none))
         )
       )
-      (symbol "VSS_1_1"
+      (symbol "VDD_1_1"
         (pin power_in line (at 0 0 90) (length 0) hide
-          (name "VSS" (effects (font (size 1.27 1.27))))
+          (name "VDD" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
       )
@@ -636,7 +651,7 @@
     )
   )
 
-  (symbol (lib_id "power:VSS") (at 205.74 59.69 0) (unit 1)
+  (symbol (lib_id "power:GND") (at 205.74 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1ef69288-251d-4a19-b7bc-0a1ae7c30a6e)
     (property "Reference" "#PWR023" (at 205.74 63.5 0)
@@ -787,7 +802,7 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 57.15 60.96 0) (unit 1)
+  (symbol (lib_id "power:VDD") (at 57.15 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 38f3e7d7-970a-44a4-8579-749228acbf6a)
     (property "Reference" "#PWR021" (at 57.15 67.31 0)
