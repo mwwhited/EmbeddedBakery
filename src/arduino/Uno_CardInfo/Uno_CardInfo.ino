@@ -1,3 +1,4 @@
+
 /*
   SD card test
 
@@ -33,9 +34,10 @@ SdFile root;
 // Adafruit SD shields and modules: pin 10
 // Sparkfun SD shield: pin 8
 // MKRZero SD: SDCARD_SS_PIN
-const int chipSelect = 10;
+const int chipSelect = 4;
 
 void setup() {
+
   // Open serial communications and wait for port to open:
   Serial.begin(9600);
   while (!Serial) {
@@ -48,6 +50,7 @@ void setup() {
   // we'll use the initialization code from the utility libraries
   // since we're just testing if the card is working!
   if (!card.init(SPI_HALF_SPEED, chipSelect)) {
+  //if (!card.init(SPI_HALF_SPEED, 4,11,12,13)) {
     Serial.println("initialization failed. Things to check:");
     Serial.println("* is a card inserted?");
     Serial.println("* is your wiring correct?");
