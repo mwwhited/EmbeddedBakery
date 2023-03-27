@@ -17,7 +17,6 @@
       "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "rules": {
-        "min_copper_edge_clearance": 0.0,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0
       },
@@ -247,7 +246,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Input.kicad_pro",
+    "filename": "h4n2rs485.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -264,9 +263,9 @@
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.25,
-        "via_diameter": 0.8,
-        "via_drill": 0.4,
+        "track_width": 0.2,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
         "wire_width": 6
       }
     ],
@@ -302,9 +301,9 @@
       "intersheets_ref_show": false,
       "intersheets_ref_suffix": "",
       "junction_size_choice": 3,
-      "label_size_ratio": 0.375,
-      "pin_symbol_size": 25.0,
-      "text_offset_ratio": 0.15
+      "label_size_ratio": 0.25,
+      "pin_symbol_size": 0.0,
+      "text_offset_ratio": 0.08
     },
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
@@ -313,7 +312,7 @@
     },
     "net_format_name": "",
     "page_layout_descr_file": "",
-    "plot_directory": "../",
+    "plot_directory": "./",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
@@ -324,7 +323,7 @@
   },
   "sheets": [
     [
-      "625f5f0b-1df0-4ad0-8e01-7b90a3d086ac",
+      "2200842c-a19b-4837-849a-ae49d706732e",
       ""
     ]
   ],
