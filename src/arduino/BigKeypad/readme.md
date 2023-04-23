@@ -14,8 +14,8 @@ This is a design build around the Arduino Nano, and I2C 20x4 LCD 2x 4x4 Keypads 
 | D4    | Keypad 4x4 Right:  R1  |   
 | D3    | Keypad 4x4 Middle: R4  |   
 | D2    | Keypad 4x4 Middle: R3  |   
-| A7/21 | Keypad 4x4 Middle: R2  |   
-| A6/20 | Keypad 4x4 Middle: R1  |   
+| A5    | Keypad 4x4 Middle: R2  |   
+| A4    | Keypad 4x4 Middle: R1  |   
 | A3    | Keypad 3x4 Left:   R4  |   
 | A2    | Keypad 3x4 Left:   R3  |   
 | A1    | Keypad 3x4 Left:   R2  |   
