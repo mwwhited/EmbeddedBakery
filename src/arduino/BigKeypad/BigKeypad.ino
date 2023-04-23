@@ -5,6 +5,10 @@ see readme for pin outs
 int cols[] = { 12,11,10,9 };
 int rows[] = { 7,6,5,4, 3,2,A5,A4, A3,A2,A1,A0 };
 
+char keyMap[] = ">/\\~_KI8<LO9v^P0MJU7VFR4BGT5NHY6++++ZQA1XWS2CED3";
+
+//#define DEBUG 1
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -28,29 +32,54 @@ void loop() {
   long read = readRow();
   if (read != last[colIndex]) {
     last[colIndex] = read;
-    int ret = simple(colIndex, read);
+    int ret  = simpler(colIndex, read);
 
-    //Serial.print(colIndex, HEX);    
-    // Serial.print(" - ");
-    // Serial.print(last[0], HEX);
-    // Serial.print(" ");
-    // Serial.print(last[1], HEX);
-    // Serial.print(" ");
-    // Serial.print(last[2], HEX);
-    // Serial.print(" ");
-    // Serial.print(last[3], HEX);    
-    //Serial.print(" - "
+#ifdef DEBUG
     Serial.print("b");
     Serial.print(ret, BIN);
-    Serial.print(" o");
-    Serial.print(ret, OCT);
-    Serial.print(" h");
-    Serial.print(ret, HEX);
+    // Serial.print(" o");
+    // Serial.print(ret, OCT);
+    // Serial.print(" h");
+    // Serial.print(ret, HEX);
     Serial.print(" d");
     Serial.print(ret);
+    Serial.print(" a");
+    Serial.print(keyMap[ret & 0x7f]);
 
     Serial.println();
+#endif
+
+    if (ret) { 
+      if (keyMap[ret & 0x7f] == '\\'){
+        Serial.println();
+      } else {
+        Serial.print(keyMap[ret & 0x7f]);
+      }
+    }
+  
   }
+}
+
+/*
+10KKCCRR
+
+MM  -> Keypad
+CCC -> Column
+RRR -> Row
+*/
+int simpler(int colVal, long rowVal){
+  for(int i = 0; i < 3; i++){
+    int n = nibble(rowVal >> (4 * i));
+    if (n){
+      long ret = 0b10000000;
+      ret |= (n & 0b0011);
+      ret |= (colVal << 2);
+      ret |= ((long)i)<<4;
+      return ret;
+    }
+  }
+
+  return 0;
 }
 
 /*
