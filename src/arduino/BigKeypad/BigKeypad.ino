@@ -1,5 +1,5 @@
 #include <LiquidCrystal_I2C.h>
-#include <Keyboard.h>
+//#include <Keyboard.h>
 
 /*
 see readme for pin outs
@@ -10,7 +10,7 @@ int rows[] = { 0, 1, 4, 5, 6, 7, 8, 9, 15, 14, 16, 10 };
 
 char keyMap[] = ">/\\~_KI8<LO9v^P0MJU7VFR4BGT5NHY6++++ZQA1XWS2CED3";
 
-LiquidCrystal_I2C lcd(0x27, 16, 4);  // I2C address 0x27, 16 column and 2 rows
+LiquidCrystal_I2C lcd(0x27, 20, 4);  // I2C address 0x27, 16 column and 2 rows
 
 // #define DEBUG 1
 
@@ -26,8 +26,17 @@ void setup() {
   // https://arduinogetstarted.com/tutorials/arduino-lcd-i2c
   lcd.init();       //initialize the lcd
   lcd.backlight();  //open the backlight
-  lcd.setCursor(0, 0);
+  lcd.noBlink();
+  lcd.noCursor();
+  lcd.home();
+  lcd.clear();
   lcd.print("Ready!");
+  lcd.setCursor(0,1);
+  lcd.print("1111");
+  lcd.setCursor(0,2);
+  lcd.print("2222");
+  lcd.setCursor(0,3);
+  lcd.print("333");
 
   // lcd.setCursor(0, 0);
   // for (int i = 0; i < 4; i++) {
@@ -78,12 +87,13 @@ void loop() {
 
     if (ret) {
       if (keyMap[ret & 0x7f] == '\\') {
-        lcd.setCursor(0, 0);
+        lcd.home();
         Serial.println();
       } else {
         char key = keyMap[ret & 0x7f];
         Serial.print(key);
-        lcd.print(key);        
+        lcd.print(key);    
+        delay(100);
         // Keyboard.press(key);
       }
     }
