@@ -37,7 +37,7 @@ QueueHandle_t keypadQueue;
 
 const int keypad_cols[] = { A3, A2, A1, A0 };
 const int keypad_rows[] = { 0, 1, 4, 5, 6, 7, 8, 9, 15, 14, 16, 10 };
-const char keypad_keyMap[] = ">/\\~_KI8<LO9v^P0MJU7VFR4BGT5NHY6++++ZQA1XWS2CED3";
+const char keypad_keyMap[] = ">v<~_098\\POI/^LKMNBV7654UYTRJHGF++++ZQA1XWS2CED3";
 
 //TODO: setup scan loop for keypad
 //TODO: debounce input from keypad though queue
@@ -49,10 +49,10 @@ void setup() {
   // put your setup code here, to run once:
 
   displayQueue = xQueueCreate(LCD_DISPLAY_QUEUE_DEPTH, sizeof(int));  //TODO: this should be a struct
-  keypadQueue = xQueueCreate(KEYPAD_QUEUE_DEPTH, sizeof(int));        //TODO: this should be a struct
+  keypadQueue  = xQueueCreate(KEYPAD_QUEUE_DEPTH,      sizeof(int));  //TODO: this should be a struct
 
-  xTaskCreate(TaskSerial, "Serial", 128, NULL, 2, &taskSerialHandle);
-  xTaskCreate(TaskKeypad, "Keypad", 128, NULL, 1, &taskKeypadHandle);
+  xTaskCreate(TaskSerial,  "Serial",  128, NULL, 2, &taskSerialHandle );
+  xTaskCreate(TaskKeypad,  "Keypad",  128, NULL, 1, &taskKeypadHandle );
   xTaskCreate(TaskDisplay, "Display", 128, NULL, 1, &taskDisplayHandle);
 }
 

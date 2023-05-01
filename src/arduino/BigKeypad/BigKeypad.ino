@@ -8,19 +8,19 @@ see readme for pin outs
 int cols[] = { A3, A2, A1, A0 };
 int rows[] = { 0, 1, 4, 5, 6, 7, 8, 9, 15, 14, 16, 10 };
 
-char keyMap[] = ">/\\~_KI8<LO9v^P0MJU7VFR4BGT5NHY6++++ZQA1XWS2CED3";
+char keyMap[] = ">v<~_098\\POI/^LKMNBV7654UYTRJHGF++++ZQA1XWS2CED3";
 
 LiquidCrystal_I2C lcd(0x27, 20, 4);  // I2C address 0x27, 16 column and 2 rows
 
-// #define DEBUG 1
+//#define DEBUG 1
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   //Keyboard.begin();
 
-  while (!Serial) {
-  }
+  // while (!Serial) {
+  // }
   Serial.println("Ready!");
 
   // https://arduinogetstarted.com/tutorials/arduino-lcd-i2c
@@ -28,6 +28,7 @@ void setup() {
   lcd.backlight();  //open the backlight
   lcd.noBlink();
   lcd.noCursor();
+  //lcd.lineWrap(); :(
   lcd.home();
   lcd.clear();
   lcd.print("Ready!");
@@ -36,32 +37,25 @@ void setup() {
   lcd.setCursor(0,2);
   lcd.print("2222");
   lcd.setCursor(0,3);
-  lcd.print("333");
-
-  // lcd.setCursor(0, 0);
-  // for (int i = 0; i < 4; i++) {
-  //   for (int j = 0; j < 20; j++) {
-  //     if (j % 2) {
-  //       lcd.print(i % 3 ? "+" : "-");
-  //     } else {
-  //       lcd.print(i % 5 ? "*" : "x");
-  //     }
-  //   }
-  // }
+  lcd.print("3333");
 
   for (int i = 0; i < 4; i++) {
     pinMode(cols[i], OUTPUT);
+    digitalWrite(cols[i], 1);
   }
 
   for (int i = 0; i < 12; i++) {
     pinMode(rows[i], INPUT_PULLUP);
   }
+  
 }
 
 long last[] = { 0xFFF, 0xFFF, 0xFFF, 0xFFF };
 long colIndex = 0;
 
-void loop() {
+void loop() { 
+
+//}  void loopXX() {
   // put your main code here, to run repeatedly:
 
   colIndex = setColumn(colIndex);
