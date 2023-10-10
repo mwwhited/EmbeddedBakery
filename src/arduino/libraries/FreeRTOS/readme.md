@@ -13,7 +13,7 @@ My other [AVRfreeRTOS Sourceforge Repository](https://sourceforge.net/projects/a
 
 This library was the genesis of [generalised support for the ATmega platform within FreeRTOS](https://github.com/FreeRTOS/FreeRTOS-Kernel/pull/48).
 
-Over the past few years freeRTOS development has become increasingly 32-bit orientated, with little change or improvement for the 8-bit world. As such I'm treating this 16th September 2022 10.5.0 release as my LTS release.
+Over the past few years freeRTOS development has become increasingly 32-bit orientated, with little change or improvement for the 8-bit world. As such I'm treating this FreeRTOS V10.5.x (released May 1 2023) as my LTS release.
 
 
 ## General
@@ -21,7 +21,7 @@ Over the past few years freeRTOS development has become increasingly 32-bit orie
 FreeRTOS has a multitude of configuration options, which can be specified from within the FreeRTOSConfig.h file.
 To keep commonality with all of the Arduino hardware options, some sensible defaults have been selected. Feel free to change these defaults as you gain experience with FreeRTOS.
 
-Normally, the AVR Watchdog Timer is used to generate 15ms time slices (Ticks). For applications requiring high precision timing, the Ticks can be sourced from a hardware timer or external clock. See chapter [Scheduler Tick Sources](./doc/tick_sources.md) for the configuration details.f
+Normally, the AVR Watchdog Timer is used to generate 15ms time slices (Ticks). For applications requiring high precision timing, the Ticks can be sourced from a hardware timer or external clock. See chapter [Scheduler Tick Sources](./doc/tick_sources.md) for the configuration details.
 
 Tasks that finish before their allocated time will hand execution back to the Scheduler.
 
