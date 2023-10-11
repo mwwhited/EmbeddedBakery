@@ -26,6 +26,11 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 // you can also call it with a different address and I2C interface
 //Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x40, Wire);
 
+long park[] = {0,3300,3868,228,2048,2048,2048,2048};
+long up_fd[] = {1138, 1934,2503,1593,3072,569,1024,2844};
+long dn_bk[] = {114,2958,3527,569,1024,2617,3072,796};
+
+
 void setup() {
   Serial.begin(9600);
   Serial.println("16 channel PWM test!");
@@ -57,17 +62,21 @@ void setup() {
 }
 
 void loop() {
-   pwm.setPWM(0 /*pwmnum*/, 0, 2048 /*(i + (4096/16)*pwmnum) % 4096*/ );   
-   pwm.setPWM(1 /*pwmnum*/, 0, 2048 /*(i + (4096/16)*pwmnum) % 4096*/ );
-   pwm.setPWM(2 /*pwmnum*/, 0, 2048/*(i + (4096/16)*pwmnum) % 4096*/ );
-   pwm.setPWM(3 /*pwmnum*/, 0, 2048 /*(i + (4096/16)*pwmnum) % 4096*/ );
-   
-   pwm.setPWM(4 /*pwmnum*/, 0, 2048 /*(i + (4096/16)*pwmnum) % 4096*/ );   
-   pwm.setPWM(5 /*pwmnum*/, 0, 2048 /*(i + (4096/16)*pwmnum) % 4096*/ );
-   pwm.setPWM(6 /*pwmnum*/, 0, 2048 /*(i + (4096/16)*pwmnum) % 4096*/ );
-   pwm.setPWM(7 /*pwmnum*/, 0, 2048 /*(i + (4096/16)*pwmnum) % 4096*/ );
-
-    // for (uint8_t pwmnum=0; pwmnum < 16; pwmnum++) {
-    //   pwm.setPWM(pwmnum, 0, (i + (4096/16)*pwmnum) % 4096 );
-    // }
+  // Drive each PWM in a 'wave'
+  for (uint16_t i=0; i<3; i++) {
+    for (uint8_t pwmnum=0; pwmnum < 8; pwmnum++) {
+      long pwmValue = 0;
+      if (i ==0) {
+        pwmValue=park[pwmnum];
+      } else if (i ==1) {
+        pwmValue=up_fd[pwmnum];
+      } else if (i ==2) {
+        pwmValue=dn_bk[pwmnum];
+      }
+      pwm.setPWM(pwmnum, 0, pwmValue % 4096 );
+    }
+#ifdef ESP8266
+    yield();  // take a breather, required for ESP8266
+#endif
+  }
 }

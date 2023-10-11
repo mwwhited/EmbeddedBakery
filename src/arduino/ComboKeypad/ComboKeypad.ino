@@ -113,7 +113,7 @@ void TaskKeypad(void *pvParameters) {
   int readValue = 0;
   for (;;) {
     vTaskDelay(KEYPAD_SCAN_PERIOD / portTICK_PERIOD_MS);
-    int scanCode = matrixKeypad.readScan();
+    auto scanCode = matrixKeypad.readScan();
     
     //   Serial.println("waiting!");
     //   // https://github.com/feilipu/Arduino_FreeRTOS_Library
