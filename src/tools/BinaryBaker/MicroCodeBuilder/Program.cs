@@ -45,7 +45,7 @@
 
             var mem = parts.Select(p => p).ToArray();
             var bytes = mem.Select(b=>b.Item2).ToArray();
-            File.WriteAllBytes("microCode.bin", bytes);
+            File.WriteAllBytes(@"C:\Repos\notes\shared\Notes\SAP-1 - Eater 8-bit\microCode5.bin", bytes);
         }
 
         public static IEnumerable<string> Expand(string expand)
