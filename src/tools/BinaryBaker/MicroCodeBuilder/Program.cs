@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            var definition = File.ReadAllLines("MicroCode.tsv");
+            var targetFileBin = @"C:\Repos\notes\shared\Notes\SAP-1 - Eater 8-bit\microCode5.bin";
+            var sourceFile = "MicroCode.tsv";
+
+            var definition = File.ReadAllLines(sourceFile);
+            var targetFileTsv = Path.Combine(Path.GetDirectoryName(targetFileBin), sourceFile);
+
+            File.Copy(sourceFile, targetFileTsv);
 
             //var expanded = Expand("0000000mxxx").ToArray();
             //var x2 = expanded.Select(c => Convert.ToInt32(c == 'm' ? '1' : c, 2)).OrderBy(c => c).ToArray();
