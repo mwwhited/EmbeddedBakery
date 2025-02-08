@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2011-2022 Bill Greiman
+ * Copyright (c) 2011-2024 Bill Greiman
  * This file is part of the SdFat library for SD memory cards.
  *
  * MIT License
@@ -23,10 +23,9 @@
  * DEALINGS IN THE SOFTWARE.
  */
 #if defined(__MK64FX512__) || defined(__MK66FX1M0__) || defined(__IMXRT1062__)
-#include "SdioTeensy.h"
-
-#include "SdCardInfo.h"
-#include "SdioCard.h"
+#include "../SdCardInfo.h"
+#include "../SdioCard.h"
+#include "TeensySdioDefs.h"
 //==============================================================================
 // limit of K66 due to errata KINETIS_K_0N65N.
 const uint32_t MAX_BLKCNT = 0XFFFF;
@@ -194,9 +193,10 @@ static bool waitTimeout(bool (*fcn)());
 //------------------------------------------------------------------------------
 static bool (*m_busyFcn)() = 0;
 static bool m_initDone = false;
-static bool m_version2;
-static bool m_highCapacity;
+static bool m_version2 = false;
+static bool m_highCapacity = false;
 static bool m_transferActive = false;
+static bool m_useDma = false;
 static uint8_t m_errorCode = SD_CARD_ERROR_INIT_NOT_CALLED;
 static uint32_t m_errorLine = 0;
 static uint32_t m_rca;
@@ -689,7 +689,7 @@ static bool waitTransferComplete() {
 bool SdioCard::begin(SdioConfig sdioConfig) {
   uint32_t kHzSdClk;
   uint32_t arg;
-  m_sdioConfig = sdioConfig;
+  m_useDma = sdioConfig.useDma();
   m_curState = IDLE_STATE;
   m_initDone = false;
   m_errorCode = SD_CARD_ERROR_NONE;
@@ -764,11 +764,23 @@ bool SdioCard::begin(SdioConfig sdioConfig) {
   // Determine if High Speed mode is supported and set frequency.
   // Check status[16] for error 0XF or status[16] for new mode 0X1.
   uint8_t status[64];
-  if (m_scr.sdSpec() > 0 && cardCMD6(0X00FFFFFF, status) && (2 & status[13]) &&
-      cardCMD6(0X80FFFFF1, status) && (status[16] & 0XF) == 1) {
-    kHzSdClk = 50000;
-  } else {
-    kHzSdClk = 25000;
+  kHzSdClk = 25000;
+  if (m_scr.sdSpec() > 0) {
+    // card is 1.10 or greater - must support CMD6
+    if (!cardCMD6(0X00FFFFFF, status)) {
+      return false;
+    }
+    if (2 & status[13]) {
+      // Card supports High Speed mode - switch mode.
+      if (!cardCMD6(0X80FFFFF1, status)) {
+        return false;
+      }
+      if ((status[16] & 0XF) == 1) {
+        kHzSdClk = 50000;
+      } else {
+        return sdError(SD_CARD_ERROR_CMD6);
+      }
+    }
   }
   // Disable GPIO.
   enableGPIO(false);
@@ -798,6 +810,10 @@ bool SdioCard::cardCMD6(uint32_t arg, uint8_t* status) {
     return sdError(SD_CARD_ERROR_DMA);
   }
   return true;
+}
+//------------------------------------------------------------------------------
+void SdioCard::end() {
+  // to do
 }
 //------------------------------------------------------------------------------
 bool SdioCard::erase(uint32_t firstSector, uint32_t lastSector) {
@@ -839,7 +855,7 @@ uint32_t SdioCard::errorData() const { return m_irqstat; }
 uint32_t SdioCard::errorLine() const { return m_errorLine; }
 //------------------------------------------------------------------------------
 bool SdioCard::isBusy() {
-  if (m_sdioConfig.useDma()) {
+  if (m_useDma) {
     return m_busyFcn ? m_busyFcn() : m_initDone && isBusyCMD13();
   } else {
     if (m_transferActive) {
@@ -920,7 +936,7 @@ bool SdioCard::readSDS(sds_t* sds) {
 }
 //------------------------------------------------------------------------------
 bool SdioCard::readSector(uint32_t sector, uint8_t* dst) {
-  if (m_sdioConfig.useDma()) {
+  if (m_useDma) {
     uint8_t aligned[512];
 
     uint8_t* ptr = (uint32_t)dst & 3 ? aligned : dst;
@@ -961,7 +977,7 @@ bool SdioCard::readSector(uint32_t sector, uint8_t* dst) {
 }
 //------------------------------------------------------------------------------
 bool SdioCard::readSectors(uint32_t sector, uint8_t* dst, size_t n) {
-  if (m_sdioConfig.useDma()) {
+  if (m_useDma) {
     if ((uint32_t)dst & 3) {
       for (size_t i = 0; i < n; i++, sector++, dst += 512) {
         if (!readSector(sector, dst)) {
@@ -1036,8 +1052,10 @@ bool SdioCard::syncDevice() {
 }
 //------------------------------------------------------------------------------
 uint8_t SdioCard::type() const {
-  return m_version2 ? m_highCapacity ? SD_CARD_TYPE_SDHC : SD_CARD_TYPE_SD2
-                    : SD_CARD_TYPE_SD1;
+  return !m_initDone       ? 0
+         : !m_version2     ? SD_CARD_TYPE_SD1
+         : !m_highCapacity ? SD_CARD_TYPE_SD2
+                           : SD_CARD_TYPE_SDHC;
 }
 //------------------------------------------------------------------------------
 bool SdioCard::writeData(const uint8_t* src) {
@@ -1067,7 +1085,7 @@ bool SdioCard::writeData(const uint8_t* src) {
 }
 //------------------------------------------------------------------------------
 bool SdioCard::writeSector(uint32_t sector, const uint8_t* src) {
-  if (m_sdioConfig.useDma()) {
+  if (m_useDma) {
     uint8_t* ptr;
     uint8_t aligned[512];
     if (3 & (uint32_t)src) {
@@ -1110,7 +1128,7 @@ bool SdioCard::writeSector(uint32_t sector, const uint8_t* src) {
 }
 //------------------------------------------------------------------------------
 bool SdioCard::writeSectors(uint32_t sector, const uint8_t* src, size_t n) {
-  if (m_sdioConfig.useDma()) {
+  if (m_useDma) {
     uint8_t* ptr = const_cast<uint8_t*>(src);
     if (3 & (uint32_t)ptr) {
       for (size_t i = 0; i < n; i++, sector++, ptr += 512) {
