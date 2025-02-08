@@ -65,7 +65,7 @@ namespace SimpleTests
 
             var offset = digit << 2;
             var dropseconds = time >> 8;
-            var current = dropseconds >> offset
+            var current = dropseconds >> offset;
             var masked = current & 0xf;
 
             TestContext.WriteLine($"{nameof(expected)}={expected}");
