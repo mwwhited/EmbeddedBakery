@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayMaker", "DisplayMake
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Retired", "Retired", "{3D7A5214-82CC-4674-8E9C-27FAD11E37FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreadBoardEmulator.Cli", "BreadBoardEmulator.Cli\BreadBoardEmulator.Cli.csproj", "{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -173,6 +175,18 @@ Global
 		{5CA4319B-A5B1-408D-8F67-D3B7A4A30A90}.Release|x64.Build.0 = Release|Any CPU
 		{5CA4319B-A5B1-408D-8F67-D3B7A4A30A90}.Release|x86.ActiveCfg = Release|Any CPU
 		{5CA4319B-A5B1-408D-8F67-D3B7A4A30A90}.Release|x86.Build.0 = Release|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Debug|x64.Build.0 = Debug|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Debug|x86.Build.0 = Debug|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Release|x64.ActiveCfg = Release|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Release|x64.Build.0 = Release|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Release|x86.ActiveCfg = Release|Any CPU
+		{7FBE097A-5F96-4083-A93B-B446CA9D3BAE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

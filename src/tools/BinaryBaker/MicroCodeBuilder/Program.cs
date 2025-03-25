@@ -10,7 +10,7 @@
             var definition = File.ReadAllLines(sourceFile);
             var targetFileTsv = Path.Combine(Path.GetDirectoryName(targetFileBin), sourceFile);
 
-            File.Copy(sourceFile, targetFileTsv);
+            File.Copy(sourceFile, targetFileTsv, overwrite:true);
 
             //var expanded = Expand("0000000mxxx").ToArray();
             //var x2 = expanded.Select(c => Convert.ToInt32(c == 'm' ? '1' : c, 2)).OrderBy(c => c).ToArray();
