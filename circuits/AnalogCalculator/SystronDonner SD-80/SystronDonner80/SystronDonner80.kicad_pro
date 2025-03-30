@@ -2,25 +2,10 @@
   "board": {
     "3dviewports": [],
     "design_settings": {
-      "defaults": {
-        "board_outline_line_width": 0.1,
-        "copper_line_width": 0.2,
-        "copper_text_size_h": 1.5,
-        "copper_text_size_v": 1.5,
-        "copper_text_thickness": 0.3,
-        "other_line_width": 0.15,
-        "silk_line_width": 0.15,
-        "silk_text_size_h": 1.0,
-        "silk_text_size_v": 1.0,
-        "silk_text_thickness": 0.15
-      },
+      "defaults": {},
       "diff_pair_dimensions": [],
       "drc_exclusions": [],
-      "rules": {
-        "min_copper_edge_clearance": 0.0,
-        "solder_mask_clearance": 0.0,
-        "solder_mask_min_width": 0.0
-      },
+      "rules": {},
       "track_widths": [],
       "via_dimensions": []
     },
@@ -217,7 +202,6 @@
     "rule_severities": {
       "bus_definition_conflict": "error",
       "bus_entry_needed": "error",
-      "bus_label_syntax": "error",
       "bus_to_bus_conflict": "error",
       "bus_to_net_conflict": "error",
       "different_unit_footprint": "error",
@@ -265,7 +249,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ComdynaGp6Clone.kicad_pro",
+    "filename": "SystronDonner80.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -283,9 +267,9 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.25,
-        "via_diameter": 0.8,
-        "via_drill": 0.4,
+        "track_width": 0.2,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
         "wire_width": 6
       }
     ],
@@ -411,19 +395,9 @@
       "version": 1
     },
     "net_format_name": "",
-    "ngspice": {
-      "fix_include_paths": true,
-      "fix_passive_vals": false,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 0,
-      "workbook_filename": ""
-    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "space_save_all_events": true,
-    "spice_adjust_passive_values": false,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
@@ -435,12 +409,20 @@
   },
   "sheets": [
     [
-      "d8186fbb-621b-4e5c-ab25-0b6509cd1564",
+      "45304ce9-0593-485f-93de-012642aaae97",
       "Root"
     ],
     [
-      "7bee4646-c007-4b6d-9317-2a61c34ffae0",
-      "Operator Functions"
+      "1b91bcb7-67ef-44b7-be45-d211792f6c4c",
+      "Model 3310 - 12371 - Dual High Gain Amplifier"
+    ],
+    [
+      "147ecbaf-57b1-4d66-a36a-67e3d1d59c50",
+      "Model 3310 - Amplifier"
+    ],
+    [
+      "2e3b80eb-cda2-4552-9a50-9b0d37a21338",
+      "Diode Function Generator"
     ]
   ],
   "text_variables": {}

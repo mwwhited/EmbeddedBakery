@@ -1,0 +1,98 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "45304ce9-0593-485f-93de-012642aaae97")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 29.21 21.59)
+		(size 25.4 39.37)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "1b91bcb7-67ef-44b7-be45-d211792f6c4c")
+		(property "Sheetname" "Model 3310 - 12371 - Dual High Gain Amplifier"
+			(at 29.21 20.8784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Model3310.kicad_sch"
+			(at 29.21 61.5446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "SystronDonner80"
+				(path "/45304ce9-0593-485f-93de-012642aaae97"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 55.88)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "2e3b80eb-cda2-4552-9a50-9b0d37a21338")
+		(property "Sheetname" "Diode Function Generator"
+			(at 93.98 55.1684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "DiodeFunctionGenerator.kicad_sch"
+			(at 93.98 60.2746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "SystronDonner80"
+				(path "/45304ce9-0593-485f-93de-012642aaae97"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -2,12 +2,12 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "d8186fbb-621b-4e5c-ab25-0b6509cd1564")
+	(uuid "1d7c60ba-4c39-4a42-869e-2fa1567a835a")
 	(paper "A4")
 	(lib_symbols)
 	(sheet
-		(at 30.48 22.86)
-		(size 20.32 22.86)
+		(at 31.75 31.75)
+		(size 13.97 17.78)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -20,9 +20,9 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "7bee4646-c007-4b6d-9317-2a61c34ffae0")
-		(property "Sheetname" "Operator Functions"
-			(at 30.48 22.1484 0)
+		(uuid "147ecbaf-57b1-4d66-a36a-67e3d1d59c50")
+		(property "Sheetname" "Model 3310 - Amplifier"
+			(at 31.75 31.0384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30,8 +30,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "Operator_Functions.kicad_sch"
-			(at 30.48 46.3046 0)
+		(property "Sheetfile" "Model3310-Amplifier.kicad_sch"
+			(at 31.75 50.1146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40,17 +40,11 @@
 			)
 		)
 		(instances
-			(project "ComdynaGp6Clone"
-				(path "/d8186fbb-621b-4e5c-ab25-0b6509cd1564"
-					(page "2")
+			(project "SystronDonner80"
+				(path "/45304ce9-0593-485f-93de-012642aaae97/1b91bcb7-67ef-44b7-be45-d211792f6c4c"
+					(page "3")
 				)
 			)
 		)
 	)
-	(sheet_instances
-		(path "/"
-			(page "1")
-		)
-	)
-	(embedded_fonts no)
 )
