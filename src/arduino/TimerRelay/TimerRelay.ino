@@ -87,6 +87,8 @@ void setupRelay(Relay &r, void (*isr)()) {
   turnOff(r);
 }
 
+bool loggingEnabled = true;  // Flag for logging state
+
 void setup() {
   Serial.begin(serialBaud);
   Serial1.begin(serialBaud);
@@ -112,23 +114,9 @@ void loop() {
   }
 
   // Periodic status output
-  if (ticks - lastOutput > 1000) {
-    for (int i = 0; i < NUM_RELAYS; i++) {
-      Relay &r = relays[i];
-      Serial.print(r.name);
-      Serial.print(F("> latch:"));
-      Serial.print(r.latch);
-      Serial.print(F(" tick:"));
-      Serial.print(r.ticks);
-      Serial.print(F(" "));
-      if (r.ticks == 0) {
-        Serial.print(F("off"));
-      } else {
-        Serial.print(F("on"));
-      }
-      Serial.println();
-    }
-    Serial.println();
+  if (ticks - lastOutput > 1000 && loggingEnabled) {
+    logRelayStatus(Serial);
+    logRelayStatus(Serial1);
     lastOutput = ticks;
   }
 
@@ -191,18 +179,21 @@ void handleCommand(const String &line, Stream &out) {
     turnOff(relays[i]);
     out.print(relays[i].name);
     out.println(F(" turned off"));
-  } else if (cmd == "read-timeout" && i != -1) {out.print(F("Timeout for "));
+  } else if (cmd == "read-timeout" && i != -1) {
+    out.print(F("Timeout for "));
     out.print(relays[i].name);
     out.print(F(": "));
     out.print(relays[i].timeout);
     out.println(F(" ms"));
-  } else if (cmd == "read-debounce" && i != -1) {out.print(F("Debounce for "));
+  } else if (cmd == "read-debounce" && i != -1) {
+    out.print(F("Debounce for "));
     out.print(relays[i].name);
     out.print(F(": "));
     out.print(relays[i].debounce);
     out.println(F(" ms"));
   } else if (cmd == "status" && i != -1) {
-    out.print(F("%s> latch:"));
+    out.print(relays[i].name);
+    out.print(F("> latch:"));
     out.print(relays[i].latch);
     out.print(F(" tick:"));
     out.print(relays[i].ticks);
@@ -216,9 +207,29 @@ void handleCommand(const String &line, Stream &out) {
   } else if (cmd == "save") {
     saveAllSettings();
     out.println(F("Settings saved to EEPROM"));
+  } else if (cmd == "logging" && arg1 == "on") {
+    loggingEnabled = true;
+    out.println(F("Logging enabled"));
+  } else if (cmd == "logging" && arg1 == "off") {
+    loggingEnabled = false;
+    out.println(F("Logging disabled"));
   } else {
     out.println(F("Unknown command or invalid relay name"));
   }
+}
+
+void logRelayStatus(Stream &s) {
+  for (int i = 0; i < NUM_RELAYS; i++) {
+    Relay &r = relays[i];
+    s.print(r.name);
+    s.print(F("> latch:"));
+    s.print(r.latch);
+    s.print(F(" tick:"));
+    s.print(r.ticks);
+    s.print(F(" "));
+    s.println(r.ticks == 0 ? F("off") : F("on"));
+  }
+  s.println();
 }
 
 // ISRs
