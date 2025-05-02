@@ -16,17 +16,22 @@ All commands can be sent to `Serial` at **9600 baud**. Commands are case-insensi
 | `read-timeout {color}`                | Color name                      | Read current timeout setting for a relay.             |
 | `read-debounce {color}`               | Color name                      | Read current debounce setting for a relay.            |
 | `status {color}`                      | Color name                      | Get current latch status and timer ticks.             |
+| `logging on|off`                      | "on" or "off"                   | Enable or disable periodic status logging.            |
+| `help`                                | None                            | Display list of available commands.                   |
 
 ### Example Usage
 
 ```plaintext
 set-timeout blue 600   // Sets blue relay timeout to 10 minutes (600 seconds)
+set-timeout red 0      // Disables automatic timeout for red relay
 set-debounce red 250   // Sets red button debounce to 250 ms
 on green               // Turns green relay ON
 off yellow             // Turns yellow relay OFF
 save                   // Saves current timeout and debounce settings
 read-timeout blue      // Reads blue relay timeout
 status red             // Shows red relay status
+logging off            // Disables periodic status logging
+help                   // Shows available commands
 ```
 
 ---
@@ -64,3 +69,41 @@ status red             // Shows red relay status
 | Debounce | 200 milliseconds          |
 
 EEPROM memory is automatically initialized with default values if invalid (0 or 0xFFFFFFFF) data is found.
+
+## EEPROM Storage
+
+The controller stores configuration in EEPROM with version tracking to ensure compatibility across firmware updates:
+
+| Address | Size    | Description                  |
+| :------ | :------ | :--------------------------- |
+| 0       | 1 byte  | EEPROM Version               |
+| 1       | 4 bytes | Blue Relay Timeout           |
+| 5       | 4 bytes | Blue Relay Debounce          |
+| 9       | 4 bytes | Green Relay Timeout          |
+| 13      | 4 bytes | Green Relay Debounce         |
+| 17      | 4 bytes | Yellow Relay Timeout         |
+| 21      | 4 bytes | Yellow Relay Debounce        |
+| 25      | 4 bytes | Red Relay Timeout            |
+| 29      | 4 bytes | Red Relay Debounce           |
+
+**Note:** Settings are only written to EEPROM when they change or when the `save` command is issued, to minimize EEPROM wear.
+
+---
+
+## Serial Output Format
+
+When logging is enabled, the controller outputs status information for all relays once per second:
+
+```
+blue> latch:0 tick:0 off
+green> latch:1 tick:1234567 on
+yellow> latch:0 tick:0 off
+red> latch:0 tick:0 off
+```
+
+Where:
+- `latch` is the internal state (1=on, 0=off)
+- `tick` is the millisecond timer value when the relay was turned on
+- The final word indicates current relay state
+
+The built-in LED blinks once per second to indicate the system is operational.
