@@ -22,6 +22,8 @@
 #define USE_SERIAL1 0
 #endif
 
+void(* resetFunc) (void) = 0;//declare reset function at address 0
+
 enum RelayColor { BLUE = 0, GREEN, YELLOW, RED };
 
 struct Relay {
@@ -50,7 +52,7 @@ unsigned long lastOutput = 0;
 volatile unsigned long lastInterruptTime = 0;
 
 bool blink = true;
-bool loggingEnabled = true;
+bool loggingEnabled = false;
 bool settingsChanged = false;  // New flag to track if settings have changed
 
 Stream* serialPorts[2];
@@ -72,13 +74,33 @@ unsigned long elapsedTime(unsigned long start, unsigned long current) {
 //   return (current >= start) ? (current - start) : (~0UL - start + current + 1UL);
 // }
 
-void loadRelaySettings(int i) {
+unsigned long loadRelayTimeout(int i) {
   EEPROM.get(eepromAddr(i, false), relays[i].timeout);
-  EEPROM.get(eepromAddr(i, true), relays[i].debounce);
   if (relays[i].timeout == 0xFFFFFFFF || relays[i].timeout == 0)
     relays[i].timeout = DEFAULT_TIMEOUT;
+  return relays[i].timeout;
+}
+unsigned long loadRelayDebounce(int i) {
+  EEPROM.get(eepromAddr(i, true), relays[i].debounce);
   if (relays[i].debounce == 0xFFFFFFFF || relays[i].debounce == 0)
     relays[i].debounce = DEFAULT_DEBOUNCE;
+  return relays[i].debounce;
+}
+
+unsigned long readRelayTimeout(int i) {
+  unsigned long value;
+  EEPROM.get(eepromAddr(i, false), value);
+  return value;
+}
+unsigned long readRelayDebounce(int i) {
+  unsigned long value;
+  EEPROM.get(eepromAddr(i, true), value);
+  return value;
+}
+
+void loadRelaySettings(int i) {
+  loadRelayTimeout(i);
+  loadRelayDebounce(i);
 }
 
 void saveRelaySettings(int i) {
@@ -277,19 +299,47 @@ void handleCommand(const String &line, Stream &out) {
   } else if (cmd == "off" && i != -1) {
     turnOff(relays[i]);
     out.print(relays[i].name); out.println(F(" turned off"));
-  } else if (cmd == "read-timeout" && i != -1) {
+  } else if (cmd == "show-timeout" && i != -1) {
     out.print(F("Timeout for ")); 
     out.print(relays[i].name);
     out.print(F(": "));
     out.print(relays[i].timeout / 1000);
     out.println(F(" seconds"));
-  } else if (cmd == "read-debounce" && i != -1) {
+  } else if (cmd == "show-debounce" && i != -1) {
     out.print(F("Debounce for "));
     out.print(relays[i].name);
     out.print(F(": "));
     out.print(relays[i].debounce); 
     out.println(F(" ms"));
-  } else if (cmd == "status") {
+  } else if (cmd == "read-timeout" && i != -1) {
+    out.print(F("Timeout for ")); 
+    out.print(relays[i].name);
+    out.print(F(": "));
+    unsigned long value = readRelayTimeout(i);
+    out.print(value / 1000);
+    out.println(F(" seconds"));
+  } else if (cmd == "read-debounce" && i != -1) {
+    out.print(F("Debounce for ")); 
+    out.print(relays[i].name);
+    out.print(F(": "));
+    unsigned long value = readRelayDebounce(i);
+    out.print(value);
+    out.println(F(" ms"));
+  } else if (cmd == "load-timeout" && i != -1) {
+    out.print(F("Timeout for ")); 
+    out.print(relays[i].name);
+    out.print(F("= "));
+    unsigned long value = readRelayTimeout(i);
+    out.print(value / 1000);
+    out.println(F(" seconds"));
+  } else if (cmd == "load-debounce" && i != -1) {
+    out.print(F("Debounce for ")); 
+    out.print(relays[i].name);
+    out.print(F("= "));
+    unsigned long value = readRelayDebounce(i);
+    out.print(value);
+    out.println(F(" ms"));
+  }   else if (cmd == "status") {
     if (i != -1) {
       out.print(relays[i].name); 
       out.print(F("> latch:"));
@@ -316,6 +366,15 @@ void handleCommand(const String &line, Stream &out) {
     } else {
       out.println(F("No changes to save"));
     }
+  } else if (cmd == "load") {
+      out.println(F("Load settings from EEPROM"));      
+      for (int i = 0; i < NUM_RELAYS; i++) {
+        loadRelaySettings(i);
+      }
+  } else if (cmd == "reset") {
+      out.println(F("Resetting device"));      
+      delay(500);
+      resetFunc();
   } else if ((cmd == "logging" || cmd == "log") && (arg1 == "on" || arg1 == "start")) {
     loggingEnabled = true; 
     out.println(F("Logging enabled"));
@@ -328,10 +387,16 @@ void handleCommand(const String &line, Stream &out) {
     out.println(F("  off <relay> - Turn off relay"));
     out.println(F("  set-timeout <relay> <seconds> - Set timeout (0 sets to default)"));
     out.println(F("  set-debounce <relay> <ms> - Set debounce"));
-    out.println(F("  read-timeout <relay> - Read current timeout"));
-    out.println(F("  read-debounce <relay> - Read current debounce"));
+    out.println(F("  show-timeout <relay> - Display current timeout"));
+    out.println(F("  show-debounce <relay> - Display current debounce"));
+    out.println(F("  read-timeout <relay> - Display saved timeout"));
+    out.println(F("  read-debounce <relay> - Display saved debounce"));
+    out.println(F("  load-timeout <relay> - Restore saved timeout"));
+    out.println(F("  load-debounce <relay> - Restore saved debounce"));
     out.println(F("  status <relay> - Show relay status"));
     out.println(F("  save - Save settings to EEPROM"));
+    out.println(F("  load - Load settings from EEPROM"));
+    out.println(F("  reset - Reset device"));
     out.println(F("  logging on|off - Enable/disable status logging"));
     out.println(F("  help - Show this help"));
   } else {
@@ -355,10 +420,34 @@ void logRelayStatus(Stream &s) {
 }
 
 // ISRs
-void BLUE_ISR()   { handleButtonInterrupt(relays[BLUE]); }
-void GREEN_ISR()  { handleButtonInterrupt(relays[GREEN]); }
-void YELLOW_ISR() { handleButtonInterrupt(relays[YELLOW]); }
-void RED_ISR()    { handleButtonInterrupt(relays[RED]); }
+void BLUE_ISR()    {  
+      // for (int i = 0; i < NUM_SERIALS; i++) {
+      //   serialPorts[i]->print(F(" -- BTN -- "));
+      //   serialPorts[i]->print(F("BLUE"));
+      // }
+   handleButtonInterrupt(relays[BLUE]);
+}
+void GREEN_ISR()    {  
+      // for (int i = 0; i < NUM_SERIALS; i++) {
+      //   serialPorts[i]->print(F(" -- BTN -- "));
+      //   serialPorts[i]->print(F("GREEN"));
+      // }
+   handleButtonInterrupt(relays[GREEN]);
+}
+void YELLOW_ISR()    {  
+      // for (int i = 0; i < NUM_SERIALS; i++) {
+      //   serialPorts[i]->print(F(" -- BTN -- "));
+      //   serialPorts[i]->print(F("YELLOW"));
+      // }
+   handleButtonInterrupt(relays[YELLOW]);
+}
+void RED_ISR()    {  
+      // for (int i = 0; i < NUM_SERIALS; i++) {
+      //   serialPorts[i]->print(F(" -- BTN -- "));
+      //   serialPorts[i]->print(F("RED"));
+      // }
+   handleButtonInterrupt(relays[RED]);
+}
 
 void handleButtonInterrupt(Relay &r) {
   unsigned long now = millis();
