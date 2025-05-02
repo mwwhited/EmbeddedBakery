@@ -1,21 +1,21 @@
 #include "PinChangeInterrupt.h"
 #include <EEPROM.h>
 
-// Automatically set USE_SERIAL1 for boards that support Serial1
-#if defined(ARDUINO_AVR_MICRO) || defined(ARDUINO_AVR_LEONARDO) || defined(ARDUINO_AVR_MEGA2560)
-  #define USE_SERIAL1 true
-#else
-  #define USE_SERIAL1 false
-#endif
-
 #define SET_LED_ON 1
 #define SET_LED_OFF 0
 #define SET_Relay_ON 0
 #define SET_Relay_OFF 1
 
 #define serialBaud 9600
-#define DEFAULT_TIMEOUT 1800000UL  // 30 minutes in milliseconds
+#define DEFAULT_TIMEOUT 1800000UL  // 30 minutes
 #define DEFAULT_DEBOUNCE 200
+
+// Enable Serial1 if supported
+#if defined(UBRR1H)
+#define USE_SERIAL1 1
+#else
+#define USE_SERIAL1 0
+#endif
 
 enum RelayColor { BLUE = 0, GREEN, YELLOW, RED };
 
@@ -44,6 +44,13 @@ const int NUM_RELAYS = sizeof(relays) / sizeof(Relay);
 unsigned long lastOutput = 0;
 volatile unsigned long lastInterruptTime = 0;
 
+bool blink = true;
+bool loggingEnabled = true;
+
+Stream* serialPorts[2];
+int NUM_SERIALS = 0;
+
+// EEPROM layout
 int eepromAddr(int index, bool isDebounce) {
   return index * 8 + (isDebounce ? 4 : 0);
 }
@@ -51,13 +58,10 @@ int eepromAddr(int index, bool isDebounce) {
 void loadRelaySettings(int i) {
   EEPROM.get(eepromAddr(i, false), relays[i].timeout);
   EEPROM.get(eepromAddr(i, true), relays[i].debounce);
-
-  if (relays[i].timeout == 0xFFFFFFFF || relays[i].timeout == 0) {
+  if (relays[i].timeout == 0xFFFFFFFF || relays[i].timeout == 0)
     relays[i].timeout = DEFAULT_TIMEOUT;
-  }
-  if (relays[i].debounce == 0xFFFFFFFF || relays[i].debounce == 0) {
+  if (relays[i].debounce == 0xFFFFFFFF || relays[i].debounce == 0)
     relays[i].debounce = DEFAULT_DEBOUNCE;
-  }
 }
 
 void saveRelaySettings(int i) {
@@ -66,9 +70,8 @@ void saveRelaySettings(int i) {
 }
 
 void saveAllSettings() {
-  for (int i = 0; i < NUM_RELAYS; i++) {
+  for (int i = 0; i < NUM_RELAYS; i++)
     saveRelaySettings(i);
-  }
 }
 
 void turnOn(Relay &r) {
@@ -93,12 +96,13 @@ void setupRelay(Relay &r, void (*isr)()) {
   turnOff(r);
 }
 
-bool loggingEnabled = true;
-
 void setup() {
   Serial.begin(serialBaud);
+  serialPorts[NUM_SERIALS++] = &Serial;
+
 #if USE_SERIAL1
   Serial1.begin(serialBaud);
+  serialPorts[NUM_SERIALS++] = &Serial1;
 #endif
 
   for (int i = 0; i < NUM_RELAYS; i++) {
@@ -109,35 +113,37 @@ void setup() {
   setupRelay(relays[GREEN], GREEN_ISR);
   setupRelay(relays[YELLOW], YELLOW_ISR);
   setupRelay(relays[RED], RED_ISR);
+  
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
   unsigned long ticks = millis();
 
   for (int i = 0; i < NUM_RELAYS; i++) {
-    if (relays[i].ticks && (ticks - relays[i].ticks > relays[i].timeout)) {
+    if (relays[i].ticks && (ticks - relays[i].ticks > relays[i].timeout))
       turnOff(relays[i]);
+  }
+
+  if (ticks - lastOutput > 1000) {
+    if (loggingEnabled){
+      for (int i = 0; i < NUM_SERIALS; i++) {
+        logRelayStatus(*serialPorts[i]);
+      }
     }
-  }
-
-  if (ticks - lastOutput > 1000 && loggingEnabled) {
-    logRelayStatus(Serial);
-#if USE_SERIAL1
-    logRelayStatus(Serial1);
-#endif
     lastOutput = ticks;
+    
+    digitalWrite(LED_BUILTIN, (blink = !blink) ? HIGH : LOW); 
   }
 
-  if (Serial.available()) handleSerial(Serial);
-#if USE_SERIAL1
-  if (Serial1.available()) handleSerial(Serial1);
-#endif
+  for (int i = 0; i < NUM_SERIALS; i++) {
+    if (serialPorts[i]->available()) handleSerial(*serialPorts[i]);
+  }
 }
 
 void handleSerial(Stream &s) {
   static String input;
   char c = s.read();
-
   if (c == '\n' || c == '\r') {
     input.trim();
     if (input.length() > 0) handleCommand(input, s);
@@ -160,17 +166,18 @@ void handleCommand(const String &line, Stream &out) {
   int secondSpace = line.indexOf(' ', firstSpace + 1);
 
   cmd = line.substring(0, firstSpace);
-  if (firstSpace > 0) arg1 = line.substring(firstSpace + 1, secondSpace == -1 ? line.length() : secondSpace);
-  if (secondSpace > 0) arg2 = line.substring(secondSpace + 1);
+  if (firstSpace > 0)
+    arg1 = line.substring(firstSpace + 1, secondSpace == -1 ? line.length() : secondSpace);
+  if (secondSpace > 0)
+    arg2 = line.substring(secondSpace + 1);
 
   int i = findRelayByName(arg1);
 
   if (cmd == "set-timeout" && i != -1) {
-    unsigned long sec = arg2.toInt();
-    relays[i].timeout = sec * 1000UL;
+    relays[i].timeout = arg2.toInt() * 1000UL;
     out.print(F("Timeout for "));
-    out.print(relays[i].name);
-    out.print(F(" set to "));
+    out.print(relays[i].name); 
+    out.print(F(" set to ")); 
     out.print(relays[i].timeout);
     out.println(F(" ms"));
   } else if (cmd == "set-debounce" && i != -1) {
@@ -189,7 +196,7 @@ void handleCommand(const String &line, Stream &out) {
     out.print(relays[i].name);
     out.println(F(" turned off"));
   } else if (cmd == "read-timeout" && i != -1) {
-    out.print(F("Timeout for "));
+    out.print(F("Timeout for ")); 
     out.print(relays[i].name);
     out.print(F(": "));
     out.print(relays[i].timeout);
@@ -198,24 +205,24 @@ void handleCommand(const String &line, Stream &out) {
     out.print(F("Debounce for "));
     out.print(relays[i].name);
     out.print(F(": "));
-    out.print(relays[i].debounce);
+    out.print(relays[i].debounce); 
     out.println(F(" ms"));
   } else if (cmd == "status" && i != -1) {
-    out.print(relays[i].name);
+    out.print(relays[i].name); 
     out.print(F("> latch:"));
-    out.print(relays[i].latch);
-    out.print(F(" tick:"));
+    out.print(relays[i].latch); 
+    out.print(F(" tick:")); 
     out.print(relays[i].ticks);
-    out.print(F(" "));
+    out.print(F(" ")); 
     out.println(relays[i].ticks == 0 ? F("off") : F("on"));
   } else if (cmd == "save") {
-    saveAllSettings();
+    saveAllSettings(); 
     out.println(F("Settings saved to EEPROM"));
   } else if (cmd == "logging" && arg1 == "on") {
-    loggingEnabled = true;
+    loggingEnabled = true; 
     out.println(F("Logging enabled"));
   } else if (cmd == "logging" && arg1 == "off") {
-    loggingEnabled = false;
+    loggingEnabled = false; 
     out.println(F("Logging disabled"));
   } else {
     out.println(F("Unknown command or invalid relay name"));
@@ -227,9 +234,9 @@ void logRelayStatus(Stream &s) {
     Relay &r = relays[i];
     s.print(r.name);
     s.print(F("> latch:"));
-    s.print(r.latch);
-    s.print(F(" tick:"));
-    s.print(r.ticks);
+    s.print(r.latch); 
+    s.print(F(" tick:")); 
+    s.print(r.ticks); 
     s.print(F(" "));
     s.println(r.ticks == 0 ? F("off") : F("on"));
   }

@@ -1,21 +1,21 @@
-# Relay Controller - Serial Commands and Arduino Pro Micro Pinout
+# Relay Controller - Serial Commands and Arduino Pro Mini Pinout
 
 ## Serial Commands
 
-All commands can be sent to either `Serial` or `Serial1` at **9600 baud**. Commands are case-insensitive.
+All commands can be sent to `Serial` at **9600 baud**. Commands are case-insensitive.
 
 ### Command List
 
-| Command                               | Arguments                         | Description                                           |
-|:--------------------------------------|:----------------------------------|:------------------------------------------------------|
-| `set-timeout {color} {seconds}`       | Color name, Timeout in seconds    | Set relay auto-off timeout.                           |
-| `set-debounce {color} {milliseconds}` | Color name, Debounce time in ms   | Set button debounce time.                             |
-| `on {color}`                          | Color name                        | Turn a relay ON manually.                             |
-| `off {color}`                         | Color name                        | Turn a relay OFF manually.                            |
-| `save`                                | None                              | Save current timeout and debounce settings to EEPROM. |
-| `read-timeout {color}`                | Color name                        | Read current timeout setting for a relay.             |
-| `read-debounce {color}`               | Color name                        | Read current debounce setting for a relay.            |
-| `status {color}`                      | Color name                        | Get current latch status and timer ticks.             |
+| Command                               | Arguments                       | Description                                           |
+| :------------------------------------ | :------------------------------ | :---------------------------------------------------- |
+| `set-timeout {color} {seconds}`       | Color name, Timeout in seconds  | Set relay auto-off timeout.                           |
+| `set-debounce {color} {milliseconds}` | Color name, Debounce time in ms | Set button debounce time.                             |
+| `on {color}`                          | Color name                      | Turn a relay ON manually.                             |
+| `off {color}`                         | Color name                      | Turn a relay OFF manually.                            |
+| `save`                                | None                            | Save current timeout and debounce settings to EEPROM. |
+| `read-timeout {color}`                | Color name                      | Read current timeout setting for a relay.             |
+| `read-debounce {color}`               | Color name                      | Read current debounce setting for a relay.            |
+| `status {color}`                      | Color name                      | Get current latch status and timer ticks.             |
 
 ### Example Usage
 
@@ -31,36 +31,36 @@ status red             // Shows red relay status
 
 ---
 
-## Arduino Pro Micro Pinout (Relay Connections)
+## Arduino Pro Mini Pinout (Relay Connections)
 
-| Signal                | Arduino Pin   | Description                       |
-|:----------------------|:--------------|:----------------------------------|
-| Blue Button           | 15 (TXLED)    | Input button for blue relay       |
-| Green Button          | 14 (RXLED)    | Input button for green relay      |
-| Yellow Button         | 16 (SCK)      | Input button for yellow relay     |
-| Red Button            | 10 (SS)       | Input button for red relay        |
-| Blue LED              | A3 (F4)       | Status LED for blue relay         |
-| Green LED             | A2 (F5)       | Status LED for green relay        |
-| Yellow LED            | A1 (F6)       | Status LED for yellow relay       |
-| Red LED               | A0 (F7)       | Status LED for red relay          |
-| Blue Relay Control    | 6 (D7)        | Output to control blue relay      |
-| Green Relay Control   | 7 (E6)        | Output to control green relay     |
-| Yellow Relay Control  | 8 (B4)        | Output to control yellow relay    |
-| Red Relay Control     | 9 (B5)        | Output to control red relay       |
+| Signal               | Arduino Pin | Description                    |
+| :------------------- | :---------- | :----------------------------- |
+| Blue Button          | 15 (A1)     | Input button for blue relay    |
+| Green Button         | 14 (A0)     | Input button for green relay   |
+| Yellow Button        | 16 (A2)     | Input button for yellow relay  |
+| Red Button           | 10 (D10)    | Input button for red relay     |
+| Blue LED             | A3          | Status LED for blue relay      |
+| Green LED            | A2          | Status LED for green relay     |
+| Yellow LED           | A1          | Status LED for yellow relay    |
+| Red LED              | A0          | Status LED for red relay       |
+| Blue Relay Control   | 6 (D6)      | Output to control blue relay   |
+| Green Relay Control  | 7 (D7)      | Output to control green relay  |
+| Yellow Relay Control | 8 (D8)      | Output to control yellow relay |
+| Red Relay Control    | 9 (D9)      | Output to control red relay    |
 
 **Notes:**
-- All button pins are set to `INPUT_PULLUP` mode.
-- Relays are **active LOW** (0 = ON, 1 = OFF).
-- LEDs are also **active HIGH**.
+
+* All button pins are set to `INPUT_PULLUP` mode.
+* Relays are **active LOW** (0 = ON, 1 = OFF).
+* LEDs are **active HIGH**.
 
 ---
 
 ## Default Settings
 
-| Setting   | Value                     |
-|:----------|:--------------------------|
-| Timeout   | 30 minutes (1800 seconds) |
-| Debounce  | 200 milliseconds          |
+| Setting  | Value                     |
+| :------- | :------------------------ |
+| Timeout  | 30 minutes (1800 seconds) |
+| Debounce | 200 milliseconds          |
 
 EEPROM memory is automatically initialized with default values if invalid (0 or 0xFFFFFFFF) data is found.
-
