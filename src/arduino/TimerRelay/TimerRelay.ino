@@ -1,6 +1,13 @@
 #include "PinChangeInterrupt.h"
 #include <EEPROM.h>
 
+// Automatically set USE_SERIAL1 for boards that support Serial1
+#if defined(ARDUINO_AVR_MICRO) || defined(ARDUINO_AVR_LEONARDO) || defined(ARDUINO_AVR_MEGA2560)
+  #define USE_SERIAL1 true
+#else
+  #define USE_SERIAL1 false
+#endif
+
 #define SET_LED_ON 1
 #define SET_LED_OFF 0
 #define SET_Relay_ON 0
@@ -37,7 +44,6 @@ const int NUM_RELAYS = sizeof(relays) / sizeof(Relay);
 unsigned long lastOutput = 0;
 volatile unsigned long lastInterruptTime = 0;
 
-// EEPROM layout: 8 bytes per relay (timeout + debounce)
 int eepromAddr(int index, bool isDebounce) {
   return index * 8 + (isDebounce ? 4 : 0);
 }
@@ -87,11 +93,13 @@ void setupRelay(Relay &r, void (*isr)()) {
   turnOff(r);
 }
 
-bool loggingEnabled = true;  // Flag for logging state
+bool loggingEnabled = true;
 
 void setup() {
   Serial.begin(serialBaud);
+#if USE_SERIAL1
   Serial1.begin(serialBaud);
+#endif
 
   for (int i = 0; i < NUM_RELAYS; i++) {
     loadRelaySettings(i);
@@ -106,29 +114,30 @@ void setup() {
 void loop() {
   unsigned long ticks = millis();
 
-  // Auto-off check
   for (int i = 0; i < NUM_RELAYS; i++) {
     if (relays[i].ticks && (ticks - relays[i].ticks > relays[i].timeout)) {
       turnOff(relays[i]);
     }
   }
 
-  // Periodic status output
   if (ticks - lastOutput > 1000 && loggingEnabled) {
     logRelayStatus(Serial);
+#if USE_SERIAL1
     logRelayStatus(Serial1);
+#endif
     lastOutput = ticks;
   }
 
-  // Handle serial input
   if (Serial.available()) handleSerial(Serial);
+#if USE_SERIAL1
   if (Serial1.available()) handleSerial(Serial1);
+#endif
 }
 
 void handleSerial(Stream &s) {
   static String input;
-
   char c = s.read();
+
   if (c == '\n' || c == '\r') {
     input.trim();
     if (input.length() > 0) handleCommand(input, s);
@@ -198,12 +207,7 @@ void handleCommand(const String &line, Stream &out) {
     out.print(F(" tick:"));
     out.print(relays[i].ticks);
     out.print(F(" "));
-    if (relays[i].ticks == 0) {
-      out.print(F("off"));
-    } else {
-      out.print(F("on"));
-    }
-    out.println();
+    out.println(relays[i].ticks == 0 ? F("off") : F("on"));
   } else if (cmd == "save") {
     saveAllSettings();
     out.println(F("Settings saved to EEPROM"));
