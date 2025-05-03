@@ -2,6 +2,7 @@
 #include <EEPROM.h>
 #include <util/atomic.h>
 #include <limits.h>
+#include <avr/wdt.h>
 
 #define SET_LED_ON 1
 #define SET_LED_OFF 0
@@ -171,6 +172,7 @@ void setupRelay(Relay &r, void (*isr)()) {
 }
 
 void setup() {
+  wdt_enable(WDTO_1S);  // Enable 1-second watchdog
   Serial.begin(serialBaud);
   serialPorts[NUM_SERIALS++] = &Serial;
 
@@ -213,6 +215,7 @@ void setup() {
 }
 
 void loop() {
+  wdt_reset();  // Pet the watchdog
   unsigned long ticks = millis();
 
   for (int i = 0; i < NUM_RELAYS; i++) {
@@ -262,6 +265,11 @@ int findRelayByName(const String &name) {
 }
 
 void handleCommand(const String &line, Stream &out) {
+  if (line.length() > MAX_INPUT_LENGTH) {
+    out.println(F("Command too long"));
+    return;
+  }
+  
   String tokens[3];  // cmd, arg1, arg2
   int tokenCount = 0;
   int startPos = 0;
@@ -445,7 +453,15 @@ void logRelayStatus(Stream &s) {
     s.print(F(" tick:")); 
     s.print(r.ticks); 
     s.print(F(" "));
-    s.println(r.ticks == 0 ? F("off") : F("on"));
+    s.print(r.ticks == 0 ? F("off") : F("on"));
+    if (r.ticks > 0) {
+      unsigned long now = millis();
+      unsigned long remaining = (r.timeout - elapsedTime(r.ticks, now)) / 1000;
+      s.print(F(" ("));
+      s.print(remaining);
+      s.print(F("s remaining)"));
+    }
+    s.println();
   }
   s.println();
 }
@@ -459,8 +475,9 @@ void RED_ISR() { handleButtonInterrupt(relays[RED]); }
 void handleButtonInterrupt(Relay &r) {  
   if (debugEnabled) {
       for (int i = 0; i < NUM_SERIALS; i++) {
-        serialPorts[i]->print(F(" -- BTN -- "));
+        serialPorts[i]->print(F(" BTN(");
         serialPorts[i]->println(r.name);
+        serialPorts[i]->print(F(")");
       }
   }
 
