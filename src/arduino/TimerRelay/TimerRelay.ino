@@ -50,19 +50,10 @@ struct Relay {
 };
 
 Relay relays[] = {
-#if defined(IS_PRO_MINI)
-  {"blue",   A3, 13, 6, 0, 0},
-  {"green",  A2, 12, 7, 0, 0},
-  {"yellow", A1, 11, 8, 0, 0},
-  {"red",    A0, 10, 9, 0, 0}
-#elif defined(IS_PRO_MICRO)
-  {"blue",   A3, 15, 6, 0, 0},
-  {"green",  A2, 14, 7, 0, 0},
-  {"yellow", A1, 16, 8, 0, 0},
-  {"red",    A0, 10, 9, 0, 0}
-#else
-#error "Unsupported board"
-#endif
+  {"blue",   A3, 2, 6, 0, 0},
+  {"green",  A2, 3, 7, 0, 0},
+  {"yellow", A1, 4, 8, 0, 0},
+  {"red",    A0, 5, 9, 0, 0}
 };
 
 const int NUM_RELAYS = sizeof(relays) / sizeof(Relay);
@@ -475,9 +466,9 @@ void RED_ISR() { handleButtonInterrupt(relays[RED]); }
 void handleButtonInterrupt(Relay &r) {  
   if (debugEnabled) {
       for (int i = 0; i < NUM_SERIALS; i++) {
-        serialPorts[i]->print(F(" BTN(");
-        serialPorts[i]->println(r.name);
-        serialPorts[i]->print(F(")");
+        serialPorts[i]->print(F(" BTN("));
+        serialPorts[i]->print(r.name);
+        serialPorts[i]->print(F(")"));
       }
   }
 
