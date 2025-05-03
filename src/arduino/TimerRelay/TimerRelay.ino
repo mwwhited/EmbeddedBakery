@@ -334,6 +334,17 @@ void handleCommand(const String &line, Stream &out) {
     out.print(F(": "));
     out.print(relays[i].debounce); 
     out.println(F(" ms"));
+  } else if (cmd == "show") {
+    out.println(F("Current volatile settings:"));
+    for (int i = 0; i < NUM_RELAYS; i++) {
+      out.print(F("  "));
+      out.print(relays[i].name);
+      out.print(F(" => timeout: "));
+      out.print(relays[i].timeout / 1000);
+      out.print(F("s, debounce: "));
+      out.print(relays[i].debounce);
+      out.println(F("ms"));
+    }
   } else if (cmd == "read-timeout" && i != -1) {
     out.print(F("Timeout for ")); 
     out.print(relays[i].name);
@@ -418,6 +429,7 @@ void handleCommand(const String &line, Stream &out) {
     out.println(F("  set-debounce <relay> <ms> - Set debounce"));
     out.println(F("  show-timeout <relay> - Display current timeout"));
     out.println(F("  show-debounce <relay> - Display current debounce"));
+    out.println(F("  show - Show current timeout and debounce for all relays"));
     out.println(F("  read-timeout <relay> - Display saved timeout"));
     out.println(F("  read-debounce <relay> - Display saved debounce"));
     out.println(F("  load-timeout <relay> - Restore saved timeout"));
