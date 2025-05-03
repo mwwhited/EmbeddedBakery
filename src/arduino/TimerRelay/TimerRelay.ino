@@ -15,6 +15,14 @@
 #define EEPROM_VERSION 1
 #define EEPROM_VERSION_ADDR 0
 
+#if defined(ARDUINO_AVR_PRO)
+#define IS_PRO_MINI
+#elif defined(ARDUINO_AVR_LEONARDO)
+#define IS_PRO_MICRO
+#else
+#error "Unsupported board"
+#endif
+
 // Enable Serial1 if supported
 #if defined(UBRR1H)
 #define USE_SERIAL1 1
@@ -41,10 +49,19 @@ struct Relay {
 };
 
 Relay relays[] = {
+#if defined(IS_PRO_MINI)
+  {"blue",   A3, 13, 6, 0, 0},
+  {"green",  A2, 12, 7, 0, 0},
+  {"yellow", A1, 11, 8, 0, 0},
+  {"red",    A0, 10, 9, 0, 0}
+#elif defined(IS_PRO_MICRO)
   {"blue",   A3, 15, 6, 0, 0},
   {"green",  A2, 14, 7, 0, 0},
   {"yellow", A1, 16, 8, 0, 0},
   {"red",    A0, 10, 9, 0, 0}
+#else
+#error "Unsupported board"
+#endif
 };
 
 const int NUM_RELAYS = sizeof(relays) / sizeof(Relay);
@@ -434,44 +451,19 @@ void logRelayStatus(Stream &s) {
 }
 
 // ISRs
-void BLUE_ISR()    {  
-  if (debugEnabled) {
-      for (int i = 0; i < NUM_SERIALS; i++) {
-        serialPorts[i]->print(F(" -- BTN -- "));
-        serialPorts[i]->print(F("BLUE"));
-      }
-  }
-   handleButtonInterrupt(relays[BLUE]);
-}
-void GREEN_ISR()    {  
-  if (debugEnabled) {
-      for (int i = 0; i < NUM_SERIALS; i++) {
-        serialPorts[i]->print(F(" -- BTN -- "));
-        serialPorts[i]->println(F("GREEN"));
-      }
-  }
-   handleButtonInterrupt(relays[GREEN]);
-}
-void YELLOW_ISR()    {  
-  if (debugEnabled) {
-      for (int i = 0; i < NUM_SERIALS; i++) {
-        serialPorts[i]->print(F(" -- BTN -- "));
-        serialPorts[i]->println(F("YELLOW"));
-      }
-  }
-   handleButtonInterrupt(relays[YELLOW]);
-}
-void RED_ISR()    { 
-  if (debugEnabled) {
-      for (int i = 0; i < NUM_SERIALS; i++) {
-        serialPorts[i]->print(F(" -- BTN -- "));
-        serialPorts[i]->println(F("RED"));
-      }
-  } 
-   handleButtonInterrupt(relays[RED]);
-}
+void BLUE_ISR() { handleButtonInterrupt(relays[BLUE]); }
+void GREEN_ISR() { handleButtonInterrupt(relays[GREEN]); }
+void YELLOW_ISR() { handleButtonInterrupt(relays[YELLOW]); }
+void RED_ISR() { handleButtonInterrupt(relays[RED]); }
 
-void handleButtonInterrupt(Relay &r) {
+void handleButtonInterrupt(Relay &r) {  
+  if (debugEnabled) {
+      for (int i = 0; i < NUM_SERIALS; i++) {
+        serialPorts[i]->print(F(" -- BTN -- "));
+        serialPorts[i]->println(r.name);
+      }
+  }
+
   unsigned long now = millis();
   if (elapsedTime(lastInterruptTime, now) < r.debounce) return;
   lastInterruptTime = now;
