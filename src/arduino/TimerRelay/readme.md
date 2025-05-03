@@ -78,7 +78,7 @@ The controller stores configuration in EEPROM with version tracking to ensure co
 | :------ | :------ | :--------------------------- |
 | 0       | 1 byte  | EEPROM Version               |
 | 1       | 4 bytes | Blue Relay Timeout           |
-| 5       | 4 bytes | Blue Relay Debounce          |
+| 5       | 4 bytes | Blue Relay Debounce          |?
 | 9       | 4 bytes | Green Relay Timeout          |
 | 13      | 4 bytes | Green Relay Debounce         |
 | 17      | 4 bytes | Yellow Relay Timeout         |
