@@ -53,6 +53,7 @@ volatile unsigned long lastInterruptTime = 0;
 
 bool blink = true;
 bool loggingEnabled = false;
+bool debugEnabled = false;
 bool settingsChanged = false;  // New flag to track if settings have changed
 
 Stream* serialPorts[2];
@@ -211,6 +212,12 @@ void loop() {
     lastOutput = ticks;
     
     digitalWrite(LED_BUILTIN, (blink = !blink) ? HIGH : LOW); 
+    
+    if (debugEnabled) {
+        for (int i = 0; i < NUM_SERIALS; i++) {
+          serialPorts[i]->print(F("@"));
+        }
+    }
   }
 
   for (int i = 0; i < NUM_SERIALS; i++) {
@@ -381,7 +388,13 @@ void handleCommand(const String &line, Stream &out) {
   } else if ((cmd == "logging" || cmd == "log") && (arg1 == "off" || arg1 == "stop")) {
     loggingEnabled = false; 
     out.println(F("Logging disabled"));
-  } else if (cmd == "help" || cmd == "?") {
+  } else if ((cmd == "debug" || cmd == "log") && (arg1 == "on" || arg1 == "start")) {
+    debugEnabled = true; 
+    out.println(F("debug enabled"));
+  } else if ((cmd == "debug" || cmd == "log") && (arg1 == "off" || arg1 == "stop")) {
+    debugEnabled = false; 
+    out.println(F("debug disabled"));
+  }  else if (cmd == "help" || cmd == "?") {
     out.println(F("Available commands:"));
     out.println(F("  on <relay> - Turn on relay"));
     out.println(F("  off <relay> - Turn off relay"));
@@ -398,6 +411,7 @@ void handleCommand(const String &line, Stream &out) {
     out.println(F("  load - Load settings from EEPROM"));
     out.println(F("  reset - Reset device"));
     out.println(F("  logging on|off - Enable/disable status logging"));
+    out.println(F("  debug on|off - Enable/disable status debuging"));
     out.println(F("  help - Show this help"));
   } else {
     out.println(F("Unknown command or invalid relay name"));
@@ -421,31 +435,39 @@ void logRelayStatus(Stream &s) {
 
 // ISRs
 void BLUE_ISR()    {  
-      // for (int i = 0; i < NUM_SERIALS; i++) {
-      //   serialPorts[i]->print(F(" -- BTN -- "));
-      //   serialPorts[i]->print(F("BLUE"));
-      // }
+  if (debugEnabled) {
+      for (int i = 0; i < NUM_SERIALS; i++) {
+        serialPorts[i]->print(F(" -- BTN -- "));
+        serialPorts[i]->print(F("BLUE"));
+      }
+  }
    handleButtonInterrupt(relays[BLUE]);
 }
 void GREEN_ISR()    {  
-      // for (int i = 0; i < NUM_SERIALS; i++) {
-      //   serialPorts[i]->print(F(" -- BTN -- "));
-      //   serialPorts[i]->print(F("GREEN"));
-      // }
+  if (debugEnabled) {
+      for (int i = 0; i < NUM_SERIALS; i++) {
+        serialPorts[i]->print(F(" -- BTN -- "));
+        serialPorts[i]->println(F("GREEN"));
+      }
+  }
    handleButtonInterrupt(relays[GREEN]);
 }
 void YELLOW_ISR()    {  
-      // for (int i = 0; i < NUM_SERIALS; i++) {
-      //   serialPorts[i]->print(F(" -- BTN -- "));
-      //   serialPorts[i]->print(F("YELLOW"));
-      // }
+  if (debugEnabled) {
+      for (int i = 0; i < NUM_SERIALS; i++) {
+        serialPorts[i]->print(F(" -- BTN -- "));
+        serialPorts[i]->println(F("YELLOW"));
+      }
+  }
    handleButtonInterrupt(relays[YELLOW]);
 }
-void RED_ISR()    {  
-      // for (int i = 0; i < NUM_SERIALS; i++) {
-      //   serialPorts[i]->print(F(" -- BTN -- "));
-      //   serialPorts[i]->print(F("RED"));
-      // }
+void RED_ISR()    { 
+  if (debugEnabled) {
+      for (int i = 0; i < NUM_SERIALS; i++) {
+        serialPorts[i]->print(F(" -- BTN -- "));
+        serialPorts[i]->println(F("RED"));
+      }
+  } 
    handleButtonInterrupt(relays[RED]);
 }
 
