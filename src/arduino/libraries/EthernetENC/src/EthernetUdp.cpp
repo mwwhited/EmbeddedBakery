@@ -19,7 +19,6 @@
 
 #include "Ethernet.h"
 #include "EthernetUdp.h"
-#include "Dns.h"
 
 extern "C" {
 #include "utility/uip-conf.h"
@@ -35,9 +34,9 @@ extern "C" {
 
 // Constructor
 UIPUDP::UIPUDP() :
-    _uip_udp_conn(NULL)
+    _uip_udp_conn(NULL),
+    appdata()
 {
-  memset(&appdata,0,sizeof(appdata));
 }
 
 // initialize, start listening on specified port. Returns 1 if successful, 0 if there are no sockets available to use
@@ -69,7 +68,7 @@ UIPUDP::stop()
       Enc28J60Network::freeBlock(appdata.packet_in);
       _flushBlocks(appdata.packet_next);
       Enc28J60Network::freeBlock(appdata.packet_out);
-      memset(&appdata,0,sizeof(appdata));
+      appdata = uip_udp_userdata_t();
     }
 }
 
@@ -149,11 +148,8 @@ UIPUDP::beginPacket(const char *host, uint16_t port)
 {
   // Look up the host first
   int ret = 0;
-  DNSClient dns;
   IPAddress remote_addr;
-
-  dns.begin(Ethernet.dnsServerIP());
-  ret = dns.getHostByName(host, remote_addr);
+  ret = Ethernet.hostByName(host, remote_addr);
   if (ret == 1) {
     return beginPacket(remote_addr, port);
   } else {

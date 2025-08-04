@@ -25,7 +25,6 @@ extern "C"
 }
 #include "Ethernet.h"
 #include "EthernetClient.h"
-#include "Dns.h"
 
 #define UIP_TCP_PHYH_LEN UIP_LLH_LEN+UIP_IPTCPH_LEN
 
@@ -53,7 +52,7 @@ UIPClient::connect(IPAddress ip, uint16_t port)
   if (conn)
     {
 #if UIP_CONNECT_TIMEOUT > 0
-      uint32_t timeout = millis() + 1000 * UIP_CONNECT_TIMEOUT;
+      uint32_t timeout = millis() + connectTimeout;
 #endif
       while((conn->tcpstateflags & UIP_TS_MASK) != UIP_CLOSED)
         {
@@ -87,11 +86,8 @@ UIPClient::connect(const char *host, uint16_t port)
   // Look up the host first
   int ret = 0;
 #if UIP_UDP
-  DNSClient dns;
   IPAddress remote_addr;
-
-  dns.begin(UIPEthernetClass::_dnsServerAddress);
-  ret = dns.getHostByName(host, remote_addr);
+  ret = Ethernet.hostByName(host, remote_addr);
   if (ret == 1) {
     return connect(remote_addr, port);
   }
@@ -371,6 +367,12 @@ UIPClient::remotePort(void)
   return data ? ntohs(uip_conns[data->conn_index].rport) : 0;
 }
 
+uint8_t
+UIPClient::status()
+{
+  return !data ? UIP_CLOSED :  uip_conns[data->conn_index].tcpstateflags & UIP_TS_MASK;
+}
+
 void
 uipclient_appcall(void)
 {
@@ -532,7 +534,7 @@ UIPClient::_allocateData()
       uip_userdata_t* data = &UIPClient::all_data[sock];
       if (!data->state)
         {
-          memset(data, 0, sizeof(uip_userdata_t));
+          *data = uip_userdata_t();
           data->conn_index = uip_conn - uip_conns; // pointer arithmetics
           data->state = UIP_CLIENT_CONNECTED;
           return data;

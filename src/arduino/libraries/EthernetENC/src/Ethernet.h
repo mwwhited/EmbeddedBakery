@@ -85,6 +85,8 @@ public:
   void begin(const uint8_t* mac, IPAddress ip, IPAddress dns, IPAddress gateway);
   void begin(const uint8_t* mac, IPAddress ip, IPAddress dns, IPAddress gateway, IPAddress subnet);
 
+  void end();
+
   // maintain() must be called at regular intervals to process the incoming serial
   // data and issue IP events to the sketch.  It does not return until all IP
   // events have been processed. Renews dhcp-lease if required.
@@ -93,10 +95,21 @@ public:
   EthernetLinkStatus linkStatus();
   EthernetHardwareStatus hardwareStatus();
 
+  uint8_t* macAddress(uint8_t* mac);
+  void MACAddress(uint8_t *mac_address) { macAddress(mac_address); }
+
   IPAddress localIP();
   IPAddress subnetMask();
   IPAddress gatewayIP();
   IPAddress dnsServerIP();
+  IPAddress dnsIP(int n = 0);
+
+  void setDnsServerIP(const IPAddress dns_server) { _dnsServerAddress = dns_server; }
+  void setDNS(IPAddress dns_server)  { _dnsServerAddress = dns_server; }
+
+  void setHostname(const char* hostname); // only the pointer is stored!
+
+  int hostByName(const char* hostname, IPAddress& result);
 
 private:
   static bool initialized;

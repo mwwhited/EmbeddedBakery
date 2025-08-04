@@ -19,6 +19,7 @@
 
 #include <Arduino.h>
 #include "Ethernet.h"
+#include "Dns.h"
 #include "utility/Enc28J60Network.h"
 
 extern "C"
@@ -55,11 +56,21 @@ void UIPEthernetClass::init(uint8_t csPin)
 }
 
 #if UIP_UDP
+void
+UIPEthernetClass::setHostname(const char* hostname)
+{
+  if (_dhcp == NULL) {
+    _dhcp = new DhcpClass();
+  }
+  _dhcp->setHostname(hostname);
+}
+
 int
 UIPEthernetClass::begin(const uint8_t* mac, unsigned long timeout, unsigned long responseTimeout)
 {
-  static DhcpClass s_dhcp;
-  _dhcp = &s_dhcp;
+  if (_dhcp == NULL) {
+    _dhcp = new DhcpClass();
+  }
 
   // Initialise the basic info
   init(mac);
@@ -106,7 +117,29 @@ UIPEthernetClass::begin(const uint8_t* mac, IPAddress ip, IPAddress dns, IPAddre
   configure(ip,dns,gateway,subnet);
 }
 
+void UIPEthernetClass::end()
+{
+  //close all clients
+  for (int i = 0; i < UIP_CONNS; i++)
+  {
+    if (EthernetClient::all_data[i].state) {
+      EthernetClient client(&EthernetClient::all_data[i]);
+      client.stop();
+    }
+  }
+  // handle clients closings
+  uint32_t st = millis();
+  while (millis() - st < 3000)
+  {
+    tick();
+  }
+  initialized = false;
+  configure(INADDR_NONE, INADDR_NONE, INADDR_NONE, INADDR_NONE);
+}
+
 int UIPEthernetClass::maintain(){
+  if (!initialized)
+    return 0;
   tick();
   int rc = DHCP_CHECK_NONE;
 #if UIP_UDP
@@ -145,6 +178,12 @@ EthernetHardwareStatus UIPEthernetClass::hardwareStatus()
   return EthernetENC28J60;
 }
 
+uint8_t* UIPEthernetClass::macAddress(uint8_t* mac)
+{
+  memcpy(mac, uip_ethaddr.addr, 6);
+  return mac;
+}
+
 IPAddress UIPEthernetClass::localIP()
 {
   IPAddress ret;
@@ -172,6 +211,22 @@ IPAddress UIPEthernetClass::gatewayIP()
 IPAddress UIPEthernetClass::dnsServerIP()
 {
   return _dnsServerAddress;
+}
+
+IPAddress UIPEthernetClass::dnsIP(int n) {
+  return (n == 0) ? _dnsServerAddress : IPAddress();
+}
+
+int UIPEthernetClass::hostByName(const char* hostname, IPAddress& result)
+{
+  // Look up the host first
+  int ret = 0;
+#if UIP_UDP
+  DNSClient dns;
+  dns.begin(_dnsServerAddress);
+  ret = dns.getHostByName(hostname, result);
+#endif
+  return ret;
 }
 
 void
