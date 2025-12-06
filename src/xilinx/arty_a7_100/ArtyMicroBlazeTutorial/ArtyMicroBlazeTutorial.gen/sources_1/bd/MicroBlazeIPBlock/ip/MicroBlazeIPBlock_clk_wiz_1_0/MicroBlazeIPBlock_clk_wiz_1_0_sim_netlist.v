@@ -1,10 +1,11 @@
-// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Tue Mar  9 23:40:12 2021
-// Host        : EvengerBook running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+// Date        : Fri Dec  5 20:38:32 2025
+// Host        : AGIMUS running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_clk_wiz_1_0/MicroBlazeIPBlock_clk_wiz_1_0_sim_netlist.v
+//               c:/repo/a7100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_clk_wiz_1_0/MicroBlazeIPBlock_clk_wiz_1_0_sim_netlist.v
 // Design      : MicroBlazeIPBlock_clk_wiz_1_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -31,7 +32,7 @@ module MicroBlazeIPBlock_clk_wiz_1_0
   wire locked;
   (* RTL_KEEP = "yes" *) wire reset;
 
-  MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz inst
+  MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz inst
        (.clk_in1_n(clk_in1_n),
         .clk_in1_p(clk_in1_p),
         .clk_out1(clk_out1),
@@ -39,8 +40,7 @@ module MicroBlazeIPBlock_clk_wiz_1_0
         .reset(reset));
 endmodule
 
-(* ORIG_REF_NAME = "MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz" *) 
-module MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz
+module MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz
    (clk_out1,
     reset,
     locked,
@@ -53,6 +53,7 @@ module MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz
   input clk_in1_n;
 
   wire clk_in1_MicroBlazeIPBlock_clk_wiz_1_0;
+  wire clk_in1_MicroBlazeIPBlock_clk_wiz_1_0_buf;
   wire clk_in1_n;
   wire clk_in1_p;
   wire clk_out1;
@@ -83,6 +84,10 @@ module MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz
        (.I(clkfbout_MicroBlazeIPBlock_clk_wiz_1_0),
         .O(clkfbout_buf_MicroBlazeIPBlock_clk_wiz_1_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkin1_bufg1
+       (.I(clk_in1_MicroBlazeIPBlock_clk_wiz_1_0_buf),
+        .O(clk_in1_MicroBlazeIPBlock_clk_wiz_1_0));
+  (* BOX_TYPE = "PRIMITIVE" *) 
   (* CAPACITANCE = "DONT_CARE" *) 
   (* IBUF_DELAY_VALUE = "0" *) 
   (* IFD_DELAY_VALUE = "AUTO" *) 
@@ -91,7 +96,7 @@ module MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz
     clkin1_ibufgds
        (.I(clk_in1_p),
         .IB(clk_in1_n),
-        .O(clk_in1_MicroBlazeIPBlock_clk_wiz_1_0));
+        .O(clk_in1_MicroBlazeIPBlock_clk_wiz_1_0_buf));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
        (.I(clk_out1_MicroBlazeIPBlock_clk_wiz_1_0),
@@ -133,7 +138,7 @@ module MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz
     .CLKOUT6_DUTY_CYCLE(0.500000),
     .CLKOUT6_PHASE(0.000000),
     .CLKOUT6_USE_FINE_PS("FALSE"),
-    .COMPENSATION("ZHOLD"),
+    .COMPENSATION("BUF_IN"),
     .DIVCLK_DIVIDE(1),
     .IS_CLKINSEL_INVERTED(1'b0),
     .IS_PSEN_INVERTED(1'b0),

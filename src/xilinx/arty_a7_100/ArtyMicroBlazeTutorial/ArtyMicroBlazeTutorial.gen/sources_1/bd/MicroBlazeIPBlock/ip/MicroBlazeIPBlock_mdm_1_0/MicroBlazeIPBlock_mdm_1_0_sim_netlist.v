@@ -1,10 +1,11 @@
-// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Tue Mar  9 23:40:36 2021
-// Host        : EvengerBook running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+// Date        : Fri Dec  5 20:38:39 2025
+// Host        : AGIMUS running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_mdm_1_0/MicroBlazeIPBlock_mdm_1_0_sim_netlist.v
+//               c:/repo/a7100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_mdm_1_0/MicroBlazeIPBlock_mdm_1_0_sim_netlist.v
 // Design      : MicroBlazeIPBlock_mdm_1_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +13,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "MicroBlazeIPBlock_mdm_1_0,MDM,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "MDM,Vivado 2020.2" *) 
+(* CHECK_LICENSE_TYPE = "MicroBlazeIPBlock_mdm_1_0,MDM,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "MDM,Vivado 2025.2" *) 
 (* NotValidForBitStream *)
 module MicroBlazeIPBlock_mdm_1_0
    (Debug_SYS_Rst,
@@ -25,8 +26,8 @@ module MicroBlazeIPBlock_mdm_1_0
     Dbg_Update_0,
     Dbg_Rst_0,
     Dbg_Disable_0);
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.Debug_SYS_Rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.Debug_SYS_Rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) output Debug_SYS_Rst;
-  (* x_interface_info = "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 CLK" *) output Dbg_Clk_0;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.Debug_SYS_Rst RST" *) (* x_interface_mode = "master RST.Debug_SYS_Rst" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.Debug_SYS_Rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) output Debug_SYS_Rst;
+  (* x_interface_info = "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 CLK" *) (* x_interface_mode = "master MBDEBUG_0" *) output Dbg_Clk_0;
   (* x_interface_info = "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TDI" *) output Dbg_TDI_0;
   (* x_interface_info = "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TDO" *) input Dbg_TDO_0;
   (* x_interface_info = "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 REG_EN" *) output [0:7]Dbg_Reg_En_0;
@@ -937,6 +938,7 @@ module MicroBlazeIPBlock_mdm_1_0
   (* C_DBG_MEM_ACCESS = "0" *) 
   (* C_DBG_REG_ACCESS = "0" *) 
   (* C_DEBUG_INTERFACE = "0" *) 
+  (* C_DEVICE = "xc7a100t" *) 
   (* C_EXT_TRIG_RESET_VALUE = "20'b11110001001000110100" *) 
   (* C_FAMILY = "artix7" *) 
   (* C_INTERCONNECT = "2" *) 
@@ -948,7 +950,6 @@ module MicroBlazeIPBlock_mdm_1_0
   (* C_M_AXI_ADDR_WIDTH = "32" *) 
   (* C_M_AXI_DATA_WIDTH = "32" *) 
   (* C_M_AXI_THREAD_ID_WIDTH = "1" *) 
-  (* C_REVISION = "" *) 
   (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) 
   (* C_S_AXI_ADDR_WIDTH = "4" *) 
   (* C_S_AXI_DATA_WIDTH = "32" *) 
@@ -963,6 +964,7 @@ module MicroBlazeIPBlock_mdm_1_0
   (* C_USE_CONFIG_RESET = "0" *) 
   (* C_USE_CROSS_TRIGGER = "0" *) 
   (* C_USE_UART = "0" *) 
+  (* DONT_TOUCH = 0 *) 
   (* bscan_debug_core = "FALSE" *) 
   MicroBlazeIPBlock_mdm_1_0_MDM U0
        (.Config_Reset(1'b0),
@@ -2493,51 +2495,51 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
     Dbg_Rst_0,
     Dbg_Reg_En_0,
     \Use_BSCAN.command_reg[6]_0 ,
-    mb_data_overrun1__0,
+    \Use_Serial_Unified_Completion.mb_data_overrun1__0 ,
     Dbg_Shift_0,
     tdo,
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ,
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ,
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]_0 ,
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ,
     CLK,
-    \Using_FPGA.Native ,
+    \Use_unisim.MB_SRL16E_I1 ,
     sel_n_reg_0,
     Dbg_Shift_0_0,
     Q,
     SEL,
-    sel_n_reg_1,
+    \Use_E2.BSCANE2_I ,
     Dbg_TDO_0,
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ,
     Ext_JTAG_TDI,
+    \Use_Serial_Unified_Completion.Data_Read_Status.count ,
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1 ,
+    \shift_Count_reg[0]_1 ,
     \Use_Serial_Unified_Completion.completion_status_reg[10]_0 ,
-    \Use_Serial_Unified_Completion.completion_status_reg[15]_0 ,
-    sel,
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 ,
-    \shift_Count_reg[0]_1 );
+    \Use_Serial_Unified_Completion.completion_status_reg[15]_0 );
   output \shift_Count_reg[0]_0 ;
   output Debug_SYS_Rst;
   output Dbg_Rst_0;
   output [0:7]Dbg_Reg_En_0;
   output \Use_BSCAN.command_reg[6]_0 ;
-  output mb_data_overrun1__0;
+  output \Use_Serial_Unified_Completion.mb_data_overrun1__0 ;
   output Dbg_Shift_0;
   output tdo;
-  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ;
-  output \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
+  output \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]_0 ;
+  output \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ;
   input CLK;
-  input \Using_FPGA.Native ;
+  input \Use_unisim.MB_SRL16E_I1 ;
   input sel_n_reg_0;
   input Dbg_Shift_0_0;
   input [3:0]Q;
   input SEL;
-  input sel_n_reg_1;
+  input \Use_E2.BSCANE2_I ;
   input Dbg_TDO_0;
   input \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ;
   input Ext_JTAG_TDI;
+  input \Use_Serial_Unified_Completion.Data_Read_Status.count ;
+  input \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1 ;
+  input \shift_Count_reg[0]_1 ;
   input \Use_Serial_Unified_Completion.completion_status_reg[10]_0 ;
   input [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15]_0 ;
-  input sel;
-  input [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 ;
-  input [0:0]\shift_Count_reg[0]_1 ;
 
   wire A1;
   wire A2;
@@ -2574,26 +2576,34 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   wire \Use_BSCAN.FDC_I_n_9 ;
   wire \Use_BSCAN.command[0]_i_1_n_0 ;
   wire \Use_BSCAN.command_reg[6]_0 ;
+  wire \Use_E2.BSCANE2_I ;
   wire \Use_E2.BSCANE2_I_i_10_n_0 ;
   wire \Use_E2.BSCANE2_I_i_11_n_0 ;
   wire \Use_E2.BSCANE2_I_i_3_n_0 ;
   wire \Use_E2.BSCANE2_I_i_6_n_0 ;
   wire \Use_E2.BSCANE2_I_i_7_n_0 ;
   wire \Use_ID_SRL16E.SRL16E_ID_1_n_0 ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[10] ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[11] ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[12] ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[13] ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[14] ;
-  wire \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_4_n_0 ;
-  wire [0:4]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg ;
-  wire \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
-  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 ;
-  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_1_n_0 ;
-  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count[1]_i_1_n_0 ;
-  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ;
-  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ;
+  (* async_reg = "true" *) wire [15:13]\Use_Serial_Unified_Completion.Completion_Status_Register.sample ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]_0 ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[10] ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[11] ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[12] ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[13] ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[14] ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_2_n_0 ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_4_n_0 ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count[1]_i_1_n_0 ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count[2]_i_1_n_0 ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count[3]_i_1_n_0 ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count[4]_i_1_n_0 ;
+  wire [0:4]\Use_Serial_Unified_Completion.Data_Read_Status.count__0 ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1 ;
+  wire \Use_Serial_Unified_Completion.Write_Instr_Status.count[0]_i_1_n_0 ;
+  wire \Use_Serial_Unified_Completion.Write_Instr_Status.count[1]_i_1_n_0 ;
+  wire \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[1] ;
   wire \Use_Serial_Unified_Completion.completion_block_i_3_n_0 ;
   wire \Use_Serial_Unified_Completion.completion_block_i_4_n_0 ;
   wire \Use_Serial_Unified_Completion.completion_block_reg_n_0 ;
@@ -2604,45 +2614,37 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   wire \Use_Serial_Unified_Completion.completion_status[9]_i_4_n_0 ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[10]_0 ;
   wire [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15]_0 ;
+  wire \Use_Serial_Unified_Completion.mb_data_overrun1__0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_i_2_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_i_3_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ;
+  wire \Use_Serial_Unified_Completion.mb_instr_overrun ;
+  wire \Use_Serial_Unified_Completion.mb_instr_overrun136_out ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ;
-  wire \Using_FPGA.Native ;
+  wire \Use_unisim.MB_SRL16E_I1 ;
   wire [0:7]command;
   wire [0:7]command_1;
   wire command_10;
   wire completion_block0__10;
-  wire completion_ctrl;
+  wire [0:0]completion_ctrl;
   wire [15:0]completion_status;
   wire config_TDO_2;
-  wire mb_data_overrun1__0;
-  wire mb_instr_overrun;
-  wire mb_instr_overrun137_out;
-  wire [5:1]p_0_in;
-  wire p_0_in_1;
-  wire [4:1]p_0_in__0;
+  wire p_0_in;
   wire [14:0]p_1_in;
-  (* async_reg = "true" *) wire [15:13]sample;
-  wire sample_1;
-  wire sel;
   wire sel_n;
   wire sel_n0;
   wire sel_n_reg_0;
-  wire sel_n_reg_1;
-  wire [4:4]shift_Count_reg;
+  wire \shift_Count[1]_i_1_n_0 ;
+  wire \shift_Count[2]_i_1_n_0 ;
+  wire \shift_Count[3]_i_1_n_0 ;
+  wire \shift_Count[4]_i_1_n_0 ;
   wire \shift_Count_reg[0]_0 ;
-  wire [0:0]\shift_Count_reg[0]_1 ;
+  wire \shift_Count_reg[0]_1 ;
+  wire \shift_Count_reg_n_0_[4] ;
   wire sync;
+  wire [0:7]tdi_shifter;
   wire tdi_shifter0;
-  wire \tdi_shifter_reg_n_0_[1] ;
-  wire \tdi_shifter_reg_n_0_[2] ;
-  wire \tdi_shifter_reg_n_0_[3] ;
-  wire \tdi_shifter_reg_n_0_[4] ;
-  wire \tdi_shifter_reg_n_0_[5] ;
-  wire \tdi_shifter_reg_n_0_[6] ;
-  wire \tdi_shifter_reg_n_0_[7] ;
   wire tdo;
 
   LUT3 #(
@@ -2701,15 +2703,16 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
         .Dbg_TDO_0_0(\Use_BSCAN.FDC_I_n_32 ),
         .Debug_Rst_i_reg(Debug_SYS_Rst_i_i_2_n_0),
         .Debug_SYS_Rst(Debug_SYS_Rst),
-        .Debug_SYS_Rst_i_reg(\tdi_shifter_reg_n_0_[1] ),
         .Q(Q),
         .SEL(SEL),
         .\Use_BSCAN.command_reg[6] (\Use_BSCAN.command_reg[6]_0 ),
-        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] (\Use_BSCAN.FDC_I_n_26 ),
-        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] (\Use_BSCAN.FDC_I_n_27 ),
-        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] (\Use_BSCAN.FDC_I_n_28 ),
-        .\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] (\Use_BSCAN.FDC_I_n_30 ),
-        .\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 (\Use_BSCAN.FDC_I_n_31 ),
+        .\Use_E2.BSCANE2_I (\Use_BSCAN.FDC_I_n_33 ),
+        .\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 (\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ),
+        .\Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[13] (\Use_BSCAN.FDC_I_n_26 ),
+        .\Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[14] (\Use_BSCAN.FDC_I_n_27 ),
+        .\Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[15] (\Use_BSCAN.FDC_I_n_28 ),
+        .\Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1] (\Use_BSCAN.FDC_I_n_30 ),
+        .\Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1]_0 (\Use_BSCAN.FDC_I_n_31 ),
         .\Use_Serial_Unified_Completion.completion_block_reg (\Use_BSCAN.FDC_I_n_9 ),
         .\Use_Serial_Unified_Completion.completion_block_reg_0 (\Use_Serial_Unified_Completion.completion_block_reg_n_0 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[0] (Dbg_Shift_0_0),
@@ -2718,38 +2721,30 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
         .\Use_Serial_Unified_Completion.completion_status_reg[5] (\Use_Serial_Unified_Completion.completion_status[5]_i_2_n_0 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[6] (\Use_Serial_Unified_Completion.completion_status[7]_i_2_n_0 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[8] (\Use_Serial_Unified_Completion.completion_status[9]_i_4_n_0 ),
+        .\Use_Serial_Unified_Completion.mb_data_overrun1__0 (\Use_Serial_Unified_Completion.mb_data_overrun1__0 ),
         .\Use_Serial_Unified_Completion.mb_data_overrun_reg (sel_n_reg_0),
         .\Use_Serial_Unified_Completion.mb_data_overrun_reg_0 (Dbg_Shift_0_INST_0_i_3_n_0),
         .\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 (Dbg_Shift_0_INST_0_i_4_n_0),
         .\Use_Serial_Unified_Completion.mb_data_overrun_reg_2 (\Use_Serial_Unified_Completion.mb_data_overrun_i_2_n_0 ),
         .\Use_Serial_Unified_Completion.mb_data_overrun_reg_3 (\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ),
         .\Use_Serial_Unified_Completion.mb_instr_error_reg (Dbg_Shift_0_INST_0_i_1_n_0),
-        .\Use_Serial_Unified_Completion.mb_instr_error_reg_0 (\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ),
-        .\Use_Serial_Unified_Completion.mb_instr_error_reg_1 (\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
+        .\Use_Serial_Unified_Completion.mb_instr_error_reg_0 (\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
+        .\Use_Serial_Unified_Completion.mb_instr_overrun (\Use_Serial_Unified_Completion.mb_instr_overrun ),
+        .\Use_Serial_Unified_Completion.mb_instr_overrun136_out (\Use_Serial_Unified_Completion.mb_instr_overrun136_out ),
         .\Use_Serial_Unified_Completion.mb_instr_overrun_reg (\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ),
-        .\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 (\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ),
+        .\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 (\Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[1] ),
         .\Using_FPGA.Native_0 (\Use_BSCAN.FDC_I_n_13 ),
-        .\Using_FPGA.Native_1 (\tdi_shifter_reg_n_0_[4] ),
-        .\Using_FPGA.Native_2 (\tdi_shifter_reg_n_0_[5] ),
-        .\Using_FPGA.Native_3 (\tdi_shifter_reg_n_0_[7] ),
-        .\Using_FPGA.Native_4 (\tdi_shifter_reg_n_0_[6] ),
-        .\Using_FPGA.Native_5 (\tdi_shifter_reg_n_0_[2] ),
-        .\Using_FPGA.Native_6 (\tdi_shifter_reg_n_0_[3] ),
         .command(command),
         .command_10(command_10),
         .completion_block0__10(completion_block0__10),
         .completion_ctrl(completion_ctrl),
-        .\completion_ctrl_reg[0] (\Use_BSCAN.FDC_I_n_33 ),
         .completion_status(completion_status[10:0]),
-        .mb_data_overrun1__0(mb_data_overrun1__0),
-        .mb_instr_overrun(mb_instr_overrun),
-        .mb_instr_overrun137_out(mb_instr_overrun137_out),
-        .out(sample),
-        .p_0_in_1(p_0_in_1),
+        .out(\Use_Serial_Unified_Completion.Completion_Status_Register.sample ),
+        .p_0_in(p_0_in),
         .p_1_in(p_1_in[9:0]),
-        .sample_1(sample_1),
         .sel_n(sel_n),
         .sync(sync),
+        .tdi_shifter(tdi_shifter),
         .\tdi_shifter_reg[0] (\Use_BSCAN.FDC_I_n_34 ),
         .\tdi_shifter_reg[0]_0 (\Use_BSCAN.FDC_I_n_36 ),
         .\tdi_shifter_reg[1] (\Use_BSCAN.FDC_I_n_35 ));
@@ -2762,7 +2757,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
         .Dbg_Shift_0_2(Dbg_Shift_0_INST_0_i_3_n_0),
         .Dbg_Shift_0_3(Dbg_Shift_0_INST_0_i_4_n_0),
         .Dbg_Shift_0_4(Dbg_Shift_0_0),
-        .\Using_FPGA.Native_0 (\Using_FPGA.Native ),
+        .\Using_FPGA.Native_0 (\Use_unisim.MB_SRL16E_I1 ),
         .sync(sync));
   LUT5 #(
     .INIT(32'h00000008)) 
@@ -2851,24 +2846,24 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
         .A3(A3),
         .Dbg_TDO_0(Dbg_TDO_0),
         .Q(Q[0]),
-        .\Use_E2.BSCANE2_I_i_1_0 (\Use_E2.BSCANE2_I_i_7_n_0 ),
-        .\Use_E2.BSCANE2_I_i_8_0 (\shift_Count_reg[0]_0 ),
-        .\Use_E2.BSCANE2_I_i_8_1 (\Using_FPGA.Native ),
+        .\Use_E2.BSCANE2_I (\Use_E2.BSCANE2_I ),
+        .\Use_E2.BSCANE2_I_0 (\Use_E2.BSCANE2_I_i_3_n_0 ),
+        .\Use_E2.BSCANE2_I_1 (\Use_ID_SRL16E.SRL16E_ID_1_n_0 ),
+        .\Use_E2.BSCANE2_I_2 (\Use_E2.BSCANE2_I_i_6_n_0 ),
+        .\Use_E2.BSCANE2_I_3 (\Use_E2.BSCANE2_I_i_7_n_0 ),
+        .\Use_E2.BSCANE2_I_i_4_0 (\shift_Count_reg_n_0_[4] ),
+        .\Use_unisim.MB_SRL16E_I1_0 (\shift_Count_reg[0]_0 ),
+        .\Use_unisim.MB_SRL16E_I1_1 (\Use_unisim.MB_SRL16E_I1 ),
         .command({command[4],command[5],command[7]}),
         .completion_status(completion_status[0]),
         .config_TDO_2(config_TDO_2),
-        .sel_n_reg(sel_n_reg_1),
-        .sel_n_reg_0(\Use_E2.BSCANE2_I_i_3_n_0 ),
-        .sel_n_reg_1(\Use_ID_SRL16E.SRL16E_ID_1_n_0 ),
-        .sel_n_reg_2(\Use_E2.BSCANE2_I_i_6_n_0 ),
-        .shift_Count_reg(shift_Count_reg),
         .tdo(tdo));
   MicroBlazeIPBlock_mdm_1_0_MB_SRL16E__parameterized1 \Use_Config_SRL16E.SRL16E_2 
        (.A1(A1),
         .A2(A2),
         .A3(A3),
-        .\Use_E2.BSCANE2_I_i_8 (\shift_Count_reg[0]_0 ),
-        .\Use_E2.BSCANE2_I_i_8_0 (\Using_FPGA.Native ),
+        .\Use_unisim.MB_SRL16E_I1_0 (\shift_Count_reg[0]_0 ),
+        .\Use_unisim.MB_SRL16E_I1_1 (\Use_unisim.MB_SRL16E_I1 ),
         .config_TDO_2(config_TDO_2));
   LUT6 #(
     .INIT(64'hFEFCFEFFFFFFFFFF)) 
@@ -2923,244 +2918,244 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
         .A3(A3),
         .ID_TDO_2(ID_TDO_2),
         .\Use_BSCAN.command_reg[5] (\Use_ID_SRL16E.SRL16E_ID_1_n_0 ),
-        .\Use_E2.BSCANE2_I_i_9_0 (\shift_Count_reg[0]_0 ),
-        .\Use_E2.BSCANE2_I_i_9_1 (\Using_FPGA.Native ),
-        .command({command[1],command[2],command[4],command[5],command[6],command[7]}),
-        .shift_Count_reg(shift_Count_reg));
+        .\Use_E2.BSCANE2_I_i_5_0 (\shift_Count_reg_n_0_[4] ),
+        .\Use_unisim.MB_SRL16E_I1_0 (\shift_Count_reg[0]_0 ),
+        .\Use_unisim.MB_SRL16E_I1_1 (\Use_unisim.MB_SRL16E_I1 ),
+        .command({command[1],command[2],command[4],command[5],command[6],command[7]}));
   MicroBlazeIPBlock_mdm_1_0_MB_SRL16E__parameterized5 \Use_ID_SRL16E.SRL16E_ID_2 
        (.A1(A1),
         .A2(A2),
         .A3(A3),
         .ID_TDO_2(ID_TDO_2),
-        .\Use_E2.BSCANE2_I_i_9 (\shift_Count_reg[0]_0 ),
-        .\Use_E2.BSCANE2_I_i_9_0 (\Using_FPGA.Native ));
-  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[10] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .D(mb_instr_overrun),
-        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[10] ),
+        .\Use_unisim.MB_SRL16E_I1_0 (\shift_Count_reg[0]_0 ),
+        .\Use_unisim.MB_SRL16E_I1_1 (\Use_unisim.MB_SRL16E_I1 ));
+  FDRE \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[10] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ),
+        .D(\Use_Serial_Unified_Completion.mb_instr_overrun ),
+        .Q(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[10] ),
         .R(1'b0));
-  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[11] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
+  FDRE \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[11] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ),
         .D(\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
-        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[11] ),
+        .Q(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[11] ),
         .R(1'b0));
-  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[12] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
+  FDRE \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[12] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ),
         .D(\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ),
-        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[12] ),
+        .Q(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[12] ),
         .R(1'b0));
-  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[13] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .D(sample[13]),
-        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[13] ),
+  FDRE \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[13] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ),
+        .D(\Use_Serial_Unified_Completion.Completion_Status_Register.sample [13]),
+        .Q(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[13] ),
         .R(1'b0));
-  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[14] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .D(sample[14]),
-        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[14] ),
+  FDRE \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[14] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ),
+        .D(\Use_Serial_Unified_Completion.Completion_Status_Register.sample [14]),
+        .Q(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[14] ),
         .R(1'b0));
-  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .D(sample[15]),
-        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ),
+  FDRE \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ),
+        .D(\Use_Serial_Unified_Completion.Completion_Status_Register.sample [15]),
+        .Q(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]_0 ),
         .R(1'b0));
   (* ASYNC_REG *) 
   (* KEEP = "yes" *) 
-  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] 
-       (.C(\Using_FPGA.Native ),
+  FDRE \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[13] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.FDC_I_n_26 ),
-        .Q(sample[13]),
+        .Q(\Use_Serial_Unified_Completion.Completion_Status_Register.sample [13]),
         .R(1'b0));
   (* ASYNC_REG *) 
   (* KEEP = "yes" *) 
-  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] 
-       (.C(\Using_FPGA.Native ),
+  FDRE \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[14] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.FDC_I_n_27 ),
-        .Q(sample[14]),
+        .Q(\Use_Serial_Unified_Completion.Completion_Status_Register.sample [14]),
         .R(1'b0));
   (* ASYNC_REG *) 
   (* KEEP = "yes" *) 
-  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] 
-       (.C(\Using_FPGA.Native ),
+  FDRE \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[15] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.FDC_I_n_28 ),
-        .Q(sample[15]),
+        .Q(\Use_Serial_Unified_Completion.Completion_Status_Register.sample [15]),
         .R(1'b0));
   LUT4 #(
     .INIT(16'h0078)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_2 
-       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [1]),
-        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_4_n_0 ),
-        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [0]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_2 
+       (.I0(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [1]),
+        .I1(\Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_4_n_0 ),
+        .I2(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [0]),
         .I3(sel_n_reg_0),
-        .O(p_0_in[5]));
+        .O(\Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
     .INIT(16'h8000)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_4 
-       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
-        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
-        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
-        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
-        .O(\Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_4_n_0 ));
+    \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_4 
+       (.I0(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [2]),
+        .I1(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [4]),
+        .I2(\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ),
+        .I3(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [3]),
+        .O(\Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'h000000007FFF8000)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count[1]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
-        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
-        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
-        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
-        .I4(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [1]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count[1]_i_1 
+       (.I0(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [2]),
+        .I1(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [4]),
+        .I2(\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ),
+        .I3(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [3]),
+        .I4(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [1]),
         .I5(sel_n_reg_0),
-        .O(p_0_in[4]));
+        .O(\Use_Serial_Unified_Completion.Data_Read_Status.count[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT5 #(
     .INIT(32'h00007F80)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count[2]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
-        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
-        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
-        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count[2]_i_1 
+       (.I0(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [3]),
+        .I1(\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ),
+        .I2(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [4]),
+        .I3(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [2]),
         .I4(sel_n_reg_0),
-        .O(p_0_in[3]));
+        .O(\Use_Serial_Unified_Completion.Data_Read_Status.count[2]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h0078)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count[3]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
-        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
-        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count[3]_i_1 
+       (.I0(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [4]),
+        .I1(\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ),
+        .I2(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [3]),
         .I3(sel_n_reg_0),
-        .O(p_0_in[2]));
+        .O(\Use_Serial_Unified_Completion.Data_Read_Status.count[3]_i_1_n_0 ));
   LUT3 #(
     .INIT(8'h06)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count[4]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
-        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count[4]_i_1 
+       (.I0(\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ),
+        .I1(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [4]),
         .I2(sel_n_reg_0),
-        .O(p_0_in[1]));
+        .O(\Use_Serial_Unified_Completion.Data_Read_Status.count[4]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[0] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sel),
-        .D(p_0_in[5]),
-        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [0]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[0] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .D(\Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_2_n_0 ),
+        .Q(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[1] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sel),
-        .D(p_0_in[4]),
-        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [1]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[1] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .D(\Use_Serial_Unified_Completion.Data_Read_Status.count[1]_i_1_n_0 ),
+        .Q(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[2] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sel),
-        .D(p_0_in[3]),
-        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[2] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .D(\Use_Serial_Unified_Completion.Data_Read_Status.count[2]_i_1_n_0 ),
+        .Q(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[3] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sel),
-        .D(p_0_in[2]),
-        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[3] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .D(\Use_Serial_Unified_Completion.Data_Read_Status.count[3]_i_1_n_0 ),
+        .Q(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [3]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[4] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sel),
-        .D(p_0_in[1]),
-        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[4] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .D(\Use_Serial_Unified_Completion.Data_Read_Status.count[4]_i_1_n_0 ),
+        .Q(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [4]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sel),
-        .D(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 ),
-        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .D(\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1 ),
+        .Q(\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ),
         .R(1'b0));
   LUT6 #(
     .INIT(64'h0000FF80FF00FF00)) 
-    \Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ),
+    \Use_Serial_Unified_Completion.Write_Instr_Status.count[0]_i_1 
+       (.I0(\Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[1] ),
         .I1(Dbg_Shift_0_0),
         .I2(sync),
-        .I3(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ),
+        .I3(p_0_in),
         .I4(sel_n_reg_0),
-        .I5(mb_instr_overrun137_out),
-        .O(\Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_1_n_0 ));
+        .I5(\Use_Serial_Unified_Completion.mb_instr_overrun136_out ),
+        .O(\Use_Serial_Unified_Completion.Write_Instr_Status.count[0]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h00F7FFFF00080000)) 
-    \Use_Serial_Unified_Completion._Write_Instr_Status.count[1]_i_1 
+    \Use_Serial_Unified_Completion.Write_Instr_Status.count[1]_i_1 
        (.I0(Dbg_Shift_0_0),
         .I1(sync),
-        .I2(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ),
+        .I2(p_0_in),
         .I3(sel_n_reg_0),
-        .I4(mb_instr_overrun137_out),
-        .I5(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ),
-        .O(\Use_Serial_Unified_Completion._Write_Instr_Status.count[1]_i_1_n_0 ));
+        .I4(\Use_Serial_Unified_Completion.mb_instr_overrun136_out ),
+        .I5(\Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[1] ),
+        .O(\Use_Serial_Unified_Completion.Write_Instr_Status.count[1]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[0] 
-       (.C(\Using_FPGA.Native ),
+    \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[0] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
-        .D(\Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_1_n_0 ),
-        .Q(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ),
+        .D(\Use_Serial_Unified_Completion.Write_Instr_Status.count[0]_i_1_n_0 ),
+        .Q(p_0_in),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] 
-       (.C(\Using_FPGA.Native ),
+    \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1] 
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
-        .D(\Use_Serial_Unified_Completion._Write_Instr_Status.count[1]_i_1_n_0 ),
-        .Q(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ),
+        .D(\Use_Serial_Unified_Completion.Write_Instr_Status.count[1]_i_1_n_0 ),
+        .Q(\Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[1] ),
         .R(1'b0));
   LUT6 #(
     .INIT(64'hFFFFFFFFBAFFBABA)) 
     \Use_Serial_Unified_Completion.completion_block_i_2 
        (.I0(\Use_Serial_Unified_Completion.completion_block_i_3_n_0 ),
-        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[13] ),
-        .I2(sample[13]),
-        .I3(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[14] ),
-        .I4(sample[14]),
+        .I1(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[13] ),
+        .I2(\Use_Serial_Unified_Completion.Completion_Status_Register.sample [13]),
+        .I3(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[14] ),
+        .I4(\Use_Serial_Unified_Completion.Completion_Status_Register.sample [14]),
         .I5(\Use_Serial_Unified_Completion.completion_block_i_4_n_0 ),
         .O(completion_block0__10));
   LUT4 #(
     .INIT(16'h4F44)) 
     \Use_Serial_Unified_Completion.completion_block_i_3 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ),
-        .I1(sample[15]),
-        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[10] ),
-        .I3(mb_instr_overrun),
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]_0 ),
+        .I1(\Use_Serial_Unified_Completion.Completion_Status_Register.sample [15]),
+        .I2(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[10] ),
+        .I3(\Use_Serial_Unified_Completion.mb_instr_overrun ),
         .O(\Use_Serial_Unified_Completion.completion_block_i_3_n_0 ));
   LUT4 #(
     .INIT(16'h4F44)) 
     \Use_Serial_Unified_Completion.completion_block_i_4 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[11] ),
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[11] ),
         .I1(\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
-        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[12] ),
+        .I2(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[12] ),
         .I3(\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ),
         .O(\Use_Serial_Unified_Completion.completion_block_i_4_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_block_reg 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.FDC_I_n_33 ),
         .Q(\Use_Serial_Unified_Completion.completion_block_reg_n_0 ),
@@ -3168,7 +3163,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[10]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[10] ),
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[10] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[11]),
         .O(p_1_in[10]));
@@ -3176,7 +3171,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[11]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[11] ),
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[11] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[12]),
         .O(p_1_in[11]));
@@ -3184,7 +3179,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[12]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[12] ),
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[12] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[13]),
         .O(p_1_in[12]));
@@ -3192,7 +3187,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[13]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[13] ),
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[13] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[14]),
         .O(p_1_in[13]));
@@ -3200,7 +3195,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[14]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[14] ),
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[14] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[15]),
         .O(p_1_in[14]));
@@ -3250,7 +3245,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[0] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[0]),
         .Q(completion_status[0]),
@@ -3258,7 +3253,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[10] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[10]),
         .Q(completion_status[10]),
@@ -3266,7 +3261,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[11] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[11]),
         .Q(completion_status[11]),
@@ -3274,7 +3269,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[12] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[12]),
         .Q(completion_status[12]),
@@ -3282,7 +3277,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[13] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[13]),
         .Q(completion_status[13]),
@@ -3290,7 +3285,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[14] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[14]),
         .Q(completion_status[14]),
@@ -3298,7 +3293,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[15] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(\Use_Serial_Unified_Completion.completion_status_reg[15]_0 ),
         .Q(completion_status[15]),
@@ -3306,7 +3301,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[1] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[1]),
         .Q(completion_status[1]),
@@ -3314,7 +3309,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[2] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[2]),
         .Q(completion_status[2]),
@@ -3322,7 +3317,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[3] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[3]),
         .Q(completion_status[3]),
@@ -3330,7 +3325,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[4] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[4]),
         .Q(completion_status[4]),
@@ -3338,7 +3333,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[5] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[5]),
         .Q(completion_status[5]),
@@ -3346,7 +3341,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[6] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[6]),
         .Q(completion_status[6]),
@@ -3354,7 +3349,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[7] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[7]),
         .Q(completion_status[7]),
@@ -3362,7 +3357,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[8] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[8]),
         .Q(completion_status[8]),
@@ -3370,7 +3365,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[9] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
         .D(p_1_in[9]),
         .Q(completion_status[9]),
@@ -3380,22 +3375,22 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
     .INIT(16'h0002)) 
     \Use_Serial_Unified_Completion.mb_data_overrun_i_2 
        (.I0(\Use_Serial_Unified_Completion.mb_data_overrun_i_3_n_0 ),
-        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
-        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
-        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
+        .I1(\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ),
+        .I2(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [4]),
+        .I3(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [3]),
         .O(\Use_Serial_Unified_Completion.mb_data_overrun_i_2_n_0 ));
   LUT4 #(
     .INIT(16'h0008)) 
     \Use_Serial_Unified_Completion.mb_data_overrun_i_3 
        (.I0(Dbg_Shift_0_0),
-        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [0]),
-        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [1]),
-        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
+        .I1(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [0]),
+        .I2(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [1]),
+        .I3(\Use_Serial_Unified_Completion.Data_Read_Status.count__0 [2]),
         .O(\Use_Serial_Unified_Completion.mb_data_overrun_i_3_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.mb_data_overrun_reg 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.FDC_I_n_32 ),
         .Q(\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ),
@@ -3403,7 +3398,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.mb_instr_error_reg 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.FDC_I_n_31 ),
         .Q(\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
@@ -3411,17 +3406,17 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.FDC_I_n_30 ),
-        .Q(mb_instr_overrun),
+        .Q(\Use_Serial_Unified_Completion.mb_instr_overrun ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \command_1_reg[0] 
        (.C(CLK),
         .CE(command_10),
-        .D(p_0_in_1),
+        .D(tdi_shifter[0]),
         .Q(command_1[0]),
         .R(1'b0));
   FDRE #(
@@ -3429,7 +3424,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
     \command_1_reg[1] 
        (.C(CLK),
         .CE(command_10),
-        .D(\tdi_shifter_reg_n_0_[1] ),
+        .D(tdi_shifter[1]),
         .Q(command_1[1]),
         .R(1'b0));
   FDRE #(
@@ -3437,7 +3432,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
     \command_1_reg[2] 
        (.C(CLK),
         .CE(command_10),
-        .D(\tdi_shifter_reg_n_0_[2] ),
+        .D(tdi_shifter[2]),
         .Q(command_1[2]),
         .R(1'b0));
   FDRE #(
@@ -3445,7 +3440,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
     \command_1_reg[3] 
        (.C(CLK),
         .CE(command_10),
-        .D(\tdi_shifter_reg_n_0_[3] ),
+        .D(tdi_shifter[3]),
         .Q(command_1[3]),
         .R(1'b0));
   FDRE #(
@@ -3453,7 +3448,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
     \command_1_reg[4] 
        (.C(CLK),
         .CE(command_10),
-        .D(\tdi_shifter_reg_n_0_[4] ),
+        .D(tdi_shifter[4]),
         .Q(command_1[4]),
         .R(1'b0));
   FDRE #(
@@ -3461,7 +3456,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
     \command_1_reg[5] 
        (.C(CLK),
         .CE(command_10),
-        .D(\tdi_shifter_reg_n_0_[5] ),
+        .D(tdi_shifter[5]),
         .Q(command_1[5]),
         .R(1'b0));
   FDRE #(
@@ -3469,7 +3464,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
     \command_1_reg[6] 
        (.C(CLK),
         .CE(command_10),
-        .D(\tdi_shifter_reg_n_0_[6] ),
+        .D(tdi_shifter[6]),
         .Q(command_1[6]),
         .R(1'b0));
   FDRE #(
@@ -3477,7 +3472,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
     \command_1_reg[7] 
        (.C(CLK),
         .CE(command_10),
-        .D(\tdi_shifter_reg_n_0_[7] ),
+        .D(tdi_shifter[7]),
         .Q(command_1[7]),
         .R(1'b0));
   FDRE #(
@@ -3510,7 +3505,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDPE #(
     .INIT(1'b1)) 
     sel_n_reg
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(sel_n_reg_0),
         .D(sel_n0),
         .PRE(Functional_Reset),
@@ -3521,7 +3516,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
        (.I0(\shift_Count_reg[0]_0 ),
         .I1(Dbg_Shift_0_0),
         .I2(A1),
-        .O(p_0_in__0[1]));
+        .O(\shift_Count[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT4 #(
     .INIT(16'h7080)) 
@@ -3530,7 +3525,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
         .I1(\shift_Count_reg[0]_0 ),
         .I2(Dbg_Shift_0_0),
         .I3(A2),
-        .O(p_0_in__0[2]));
+        .O(\shift_Count[2]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT5 #(
     .INIT(32'h7F008000)) 
@@ -3540,7 +3535,7 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
         .I2(A1),
         .I3(Dbg_Shift_0_0),
         .I4(A3),
-        .O(p_0_in__0[3]));
+        .O(\shift_Count[3]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h7FFF000080000000)) 
     \shift_Count[4]_i_1 
@@ -3549,12 +3544,12 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
         .I2(\shift_Count_reg[0]_0 ),
         .I3(A2),
         .I4(Dbg_Shift_0_0),
-        .I5(shift_Count_reg),
-        .O(p_0_in__0[4]));
+        .I5(\shift_Count_reg_n_0_[4] ),
+        .O(\shift_Count[4]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[0] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\shift_Count_reg[0]_1 ),
         .Q(\shift_Count_reg[0]_0 ),
@@ -3562,34 +3557,34 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[1] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
-        .D(p_0_in__0[1]),
+        .D(\shift_Count[1]_i_1_n_0 ),
         .Q(A1),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[2] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
-        .D(p_0_in__0[2]),
+        .D(\shift_Count[2]_i_1_n_0 ),
         .Q(A2),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[3] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
-        .D(p_0_in__0[3]),
+        .D(\shift_Count[3]_i_1_n_0 ),
         .Q(A3),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[4] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
-        .D(p_0_in__0[4]),
-        .Q(shift_Count_reg),
+        .D(\shift_Count[4]_i_1_n_0 ),
+        .Q(\shift_Count_reg_n_0_[4] ),
         .R(1'b0));
   LUT6 #(
     .INIT(64'h0100000000000000)) 
@@ -3604,112 +3599,112 @@ module MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL
   FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[0] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(tdi_shifter0),
         .D(Ext_JTAG_TDI),
-        .Q(p_0_in_1),
+        .Q(tdi_shifter[0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[1] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(tdi_shifter0),
-        .D(p_0_in_1),
-        .Q(\tdi_shifter_reg_n_0_[1] ),
+        .D(tdi_shifter[0]),
+        .Q(tdi_shifter[1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[2] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(tdi_shifter0),
-        .D(\tdi_shifter_reg_n_0_[1] ),
-        .Q(\tdi_shifter_reg_n_0_[2] ),
+        .D(tdi_shifter[1]),
+        .Q(tdi_shifter[2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[3] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(tdi_shifter0),
-        .D(\tdi_shifter_reg_n_0_[2] ),
-        .Q(\tdi_shifter_reg_n_0_[3] ),
+        .D(tdi_shifter[2]),
+        .Q(tdi_shifter[3]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[4] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(tdi_shifter0),
-        .D(\tdi_shifter_reg_n_0_[3] ),
-        .Q(\tdi_shifter_reg_n_0_[4] ),
+        .D(tdi_shifter[3]),
+        .Q(tdi_shifter[4]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[5] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(tdi_shifter0),
-        .D(\tdi_shifter_reg_n_0_[4] ),
-        .Q(\tdi_shifter_reg_n_0_[5] ),
+        .D(tdi_shifter[4]),
+        .Q(tdi_shifter[5]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[6] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(tdi_shifter0),
-        .D(\tdi_shifter_reg_n_0_[5] ),
-        .Q(\tdi_shifter_reg_n_0_[6] ),
+        .D(tdi_shifter[5]),
+        .Q(tdi_shifter[6]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[7] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(tdi_shifter0),
-        .D(\tdi_shifter_reg_n_0_[6] ),
-        .Q(\tdi_shifter_reg_n_0_[7] ),
+        .D(tdi_shifter[6]),
+        .Q(tdi_shifter[7]),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "MB_BSCANE2" *) 
 module MicroBlazeIPBlock_mdm_1_0_MB_BSCANE2
-   (\Use_BSCAN.PORT_Selector_reg[0] ,
+   (\Use_E2.BSCANE2_I_0 ,
     DRCK,
     SEL,
-    \Use_BSCAN.PORT_Selector_reg[0]_0 ,
+    \Use_E2.BSCANE2_I_1 ,
     I0,
     Dbg_Update_0,
-    sel,
-    \Use_BSCAN.command_reg[6] ,
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ,
-    \Use_E2.BSCANE2_I_0 ,
-    \shift_Count_reg[0] ,
+    \Use_Serial_Unified_Completion.Data_Read_Status.count ,
+    \Use_E2.BSCANE2_I_2 ,
+    \Use_E2.BSCANE2_I_3 ,
     AR,
     Dbg_TDO_0_0,
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ,
+    \Use_E2.BSCANE2_I_4 ,
+    \Use_E2.BSCANE2_I_5 ,
+    \Use_E2.BSCANE2_I_6 ,
     tdo,
-    mb_data_overrun1__0,
-    completion_status131_out,
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ,
-    \shift_Count_reg[0]_0 ,
+    \Use_Serial_Unified_Completion.mb_data_overrun1__0 ,
+    completion_status130_out,
     Dbg_TDO_0,
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] ,
+    \shift_Count_reg[0] ,
     \Use_Serial_Unified_Completion.completion_status_reg[15] );
-  output \Use_BSCAN.PORT_Selector_reg[0] ;
+  output \Use_E2.BSCANE2_I_0 ;
   output DRCK;
   output SEL;
-  output \Use_BSCAN.PORT_Selector_reg[0]_0 ;
+  output \Use_E2.BSCANE2_I_1 ;
   output I0;
   output Dbg_Update_0;
-  output sel;
-  output \Use_BSCAN.command_reg[6] ;
-  output [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ;
-  output \Use_E2.BSCANE2_I_0 ;
-  output [0:0]\shift_Count_reg[0] ;
+  output \Use_Serial_Unified_Completion.Data_Read_Status.count ;
+  output \Use_E2.BSCANE2_I_2 ;
+  output \Use_E2.BSCANE2_I_3 ;
   output [0:0]AR;
   output Dbg_TDO_0_0;
-  output [0:0]\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ;
+  output \Use_E2.BSCANE2_I_4 ;
+  output \Use_E2.BSCANE2_I_5 ;
+  output [0:0]\Use_E2.BSCANE2_I_6 ;
   input tdo;
-  input mb_data_overrun1__0;
-  input completion_status131_out;
-  input [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
-  input \shift_Count_reg[0]_0 ;
+  input \Use_Serial_Unified_Completion.mb_data_overrun1__0 ;
+  input completion_status130_out;
   input Dbg_TDO_0;
+  input [0:0]\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] ;
+  input \shift_Count_reg[0] ;
   input \Use_Serial_Unified_Completion.completion_status_reg[15] ;
 
   wire [0:0]AR;
@@ -3719,31 +3714,31 @@ module MicroBlazeIPBlock_mdm_1_0_MB_BSCANE2
   wire Dbg_Update_0;
   wire I0;
   wire SEL;
-  wire \Use_BSCAN.PORT_Selector_reg[0] ;
-  wire \Use_BSCAN.PORT_Selector_reg[0]_0 ;
-  wire \Use_BSCAN.command_reg[6] ;
   wire \Use_E2.BSCANE2_I_0 ;
+  wire \Use_E2.BSCANE2_I_1 ;
+  wire \Use_E2.BSCANE2_I_2 ;
+  wire \Use_E2.BSCANE2_I_3 ;
+  wire \Use_E2.BSCANE2_I_4 ;
+  wire \Use_E2.BSCANE2_I_5 ;
+  wire [0:0]\Use_E2.BSCANE2_I_6 ;
   wire \Use_E2.BSCANE2_I_n_2 ;
   wire \Use_E2.BSCANE2_I_n_3 ;
   wire \Use_E2.BSCANE2_I_n_6 ;
   wire \Use_E2.BSCANE2_I_n_8 ;
-  wire [0:0]\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ;
-  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ;
-  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count ;
+  wire [0:0]\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[15] ;
-  wire completion_status131_out;
-  wire mb_data_overrun1__0;
-  wire sel;
-  wire [0:0]\shift_Count_reg[0] ;
-  wire \shift_Count_reg[0]_0 ;
+  wire \Use_Serial_Unified_Completion.mb_data_overrun1__0 ;
+  wire completion_status130_out;
+  wire \shift_Count_reg[0] ;
   wire tdo;
 
   (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \Use_BSCAN.Config_Reg[30]_i_1 
-       (.I0(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
-        .O(\Use_E2.BSCANE2_I_0 ));
+       (.I0(\Use_E2.BSCANE2_I_1 ),
+        .O(\Use_E2.BSCANE2_I_3 ));
   LUT1 #(
     .INIT(2'h1)) 
     \Use_BSCAN.TDI_Shifter[3]_i_2 
@@ -3754,12 +3749,12 @@ module MicroBlazeIPBlock_mdm_1_0_MB_BSCANE2
     .DISABLE_JTAG("FALSE"),
     .JTAG_CHAIN(2)) 
     \Use_E2.BSCANE2_I 
-       (.CAPTURE(\Use_BSCAN.PORT_Selector_reg[0] ),
+       (.CAPTURE(\Use_E2.BSCANE2_I_0 ),
         .DRCK(DRCK),
         .RESET(\Use_E2.BSCANE2_I_n_2 ),
         .RUNTEST(\Use_E2.BSCANE2_I_n_3 ),
         .SEL(SEL),
-        .SHIFT(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
+        .SHIFT(\Use_E2.BSCANE2_I_1 ),
         .TCK(\Use_E2.BSCANE2_I_n_6 ),
         .TDI(I0),
         .TDO(tdo),
@@ -3768,46 +3763,46 @@ module MicroBlazeIPBlock_mdm_1_0_MB_BSCANE2
   (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hE0)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_1 
-       (.I0(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
-        .I1(\Use_BSCAN.PORT_Selector_reg[0] ),
-        .I2(mb_data_overrun1__0),
-        .O(sel));
+    \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_1 
+       (.I0(\Use_E2.BSCANE2_I_1 ),
+        .I1(\Use_E2.BSCANE2_I_0 ),
+        .I2(\Use_Serial_Unified_Completion.mb_data_overrun1__0 ),
+        .O(\Use_Serial_Unified_Completion.Data_Read_Status.count ));
   (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT2 #(
     .INIT(4'h1)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count[5]_i_1 
-       (.I0(\Use_BSCAN.PORT_Selector_reg[0] ),
-        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
-        .O(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ));
+    \Use_Serial_Unified_Completion.Data_Read_Status.count[5]_i_1 
+       (.I0(\Use_E2.BSCANE2_I_0 ),
+        .I1(\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] ),
+        .O(\Use_E2.BSCANE2_I_4 ));
   (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hE0)) 
     \Use_Serial_Unified_Completion.completion_status[15]_i_1 
-       (.I0(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
-        .I1(\Use_BSCAN.PORT_Selector_reg[0] ),
-        .I2(completion_status131_out),
-        .O(\Use_BSCAN.command_reg[6] ));
+       (.I0(\Use_E2.BSCANE2_I_1 ),
+        .I1(\Use_E2.BSCANE2_I_0 ),
+        .I2(completion_status130_out),
+        .O(\Use_E2.BSCANE2_I_2 ));
   (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Use_Serial_Unified_Completion.completion_status[15]_i_2 
-       (.I0(\Use_BSCAN.PORT_Selector_reg[0] ),
+       (.I0(\Use_E2.BSCANE2_I_0 ),
         .I1(\Use_Serial_Unified_Completion.completion_status_reg[15] ),
-        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ));
+        .O(\Use_E2.BSCANE2_I_6 ));
   LUT2 #(
     .INIT(4'h2)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_i_2 
        (.I0(Dbg_TDO_0),
-        .I1(\Use_BSCAN.PORT_Selector_reg[0] ),
+        .I1(\Use_E2.BSCANE2_I_0 ),
         .O(Dbg_TDO_0_0));
   (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \shift_Count[0]_i_1 
-       (.I0(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
-        .I1(\shift_Count_reg[0]_0 ),
-        .O(\shift_Count_reg[0] ));
+       (.I0(\Use_E2.BSCANE2_I_1 ),
+        .I1(\shift_Count_reg[0] ),
+        .O(\Use_E2.BSCANE2_I_5 ));
 endmodule
 
 (* ORIG_REF_NAME = "MB_BUFG" *) 
@@ -3833,19 +3828,19 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     \Use_Serial_Unified_Completion.completion_block_reg ,
     \Use_BSCAN.command_reg[6] ,
     CE,
-    mb_data_overrun1__0,
+    \Use_Serial_Unified_Completion.mb_data_overrun1__0 ,
     \Using_FPGA.Native_0 ,
-    mb_instr_overrun137_out,
+    \Use_Serial_Unified_Completion.mb_instr_overrun136_out ,
     command_10,
     p_1_in,
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] ,
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] ,
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] ,
-    sample_1,
-    \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] ,
-    \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 ,
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[13] ,
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[14] ,
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[15] ,
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ,
+    \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1] ,
+    \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1]_0 ,
     Dbg_TDO_0_0,
-    \completion_ctrl_reg[0] ,
+    \Use_E2.BSCANE2_I ,
     \tdi_shifter_reg[0] ,
     \tdi_shifter_reg[1] ,
     \tdi_shifter_reg[0]_0 ,
@@ -3855,19 +3850,12 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     command,
     \Use_Serial_Unified_Completion.completion_status_reg[0] ,
     \Use_Serial_Unified_Completion.mb_data_overrun_reg ,
-    \Using_FPGA.Native_1 ,
-    \Using_FPGA.Native_2 ,
-    \Using_FPGA.Native_3 ,
-    \Using_FPGA.Native_4 ,
-    \Using_FPGA.Native_5 ,
-    \Using_FPGA.Native_6 ,
-    Debug_SYS_Rst_i_reg,
-    p_0_in_1,
+    tdi_shifter,
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ,
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ,
     \Use_Serial_Unified_Completion.mb_instr_error_reg ,
     sync,
-    \Use_Serial_Unified_Completion.mb_instr_error_reg_0 ,
+    p_0_in,
     Q,
     SEL,
     completion_status,
@@ -3880,8 +3868,8 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     Debug_Rst_i_reg,
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg ,
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ,
-    mb_instr_overrun,
-    \Use_Serial_Unified_Completion.mb_instr_error_reg_1 ,
+    \Use_Serial_Unified_Completion.mb_instr_overrun ,
+    \Use_Serial_Unified_Completion.mb_instr_error_reg_0 ,
     Dbg_TDO_0,
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_2 ,
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_3 ,
@@ -3894,19 +3882,19 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   output \Use_Serial_Unified_Completion.completion_block_reg ;
   output \Use_BSCAN.command_reg[6] ;
   output CE;
-  output mb_data_overrun1__0;
+  output \Use_Serial_Unified_Completion.mb_data_overrun1__0 ;
   output \Using_FPGA.Native_0 ;
-  output mb_instr_overrun137_out;
+  output \Use_Serial_Unified_Completion.mb_instr_overrun136_out ;
   output command_10;
   output [9:0]p_1_in;
-  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] ;
-  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] ;
-  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] ;
-  output sample_1;
-  output \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] ;
-  output \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 ;
+  output \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[13] ;
+  output \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[14] ;
+  output \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[15] ;
+  output \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ;
+  output \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1] ;
+  output \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1]_0 ;
   output Dbg_TDO_0_0;
-  output \completion_ctrl_reg[0] ;
+  output \Use_E2.BSCANE2_I ;
   output \tdi_shifter_reg[0] ;
   output \tdi_shifter_reg[1] ;
   output \tdi_shifter_reg[0]_0 ;
@@ -3916,19 +3904,12 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   input [0:7]command;
   input \Use_Serial_Unified_Completion.completion_status_reg[0] ;
   input \Use_Serial_Unified_Completion.mb_data_overrun_reg ;
-  input \Using_FPGA.Native_1 ;
-  input \Using_FPGA.Native_2 ;
-  input \Using_FPGA.Native_3 ;
-  input \Using_FPGA.Native_4 ;
-  input \Using_FPGA.Native_5 ;
-  input \Using_FPGA.Native_6 ;
-  input Debug_SYS_Rst_i_reg;
-  input p_0_in_1;
+  input [0:7]tdi_shifter;
   input \Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ;
   input \Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ;
   input \Use_Serial_Unified_Completion.mb_instr_error_reg ;
   input sync;
-  input \Use_Serial_Unified_Completion.mb_instr_error_reg_0 ;
+  input p_0_in;
   input [3:0]Q;
   input SEL;
   input [10:0]completion_status;
@@ -3941,13 +3922,13 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   input Debug_Rst_i_reg;
   input \Use_Serial_Unified_Completion.mb_instr_overrun_reg ;
   input \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ;
-  input mb_instr_overrun;
-  input \Use_Serial_Unified_Completion.mb_instr_error_reg_1 ;
+  input \Use_Serial_Unified_Completion.mb_instr_overrun ;
+  input \Use_Serial_Unified_Completion.mb_instr_error_reg_0 ;
   input Dbg_TDO_0;
   input \Use_Serial_Unified_Completion.mb_data_overrun_reg_2 ;
   input \Use_Serial_Unified_Completion.mb_data_overrun_reg_3 ;
   input completion_block0__10;
-  input completion_ctrl;
+  input [0:0]completion_ctrl;
   input Dbg_Rst_0;
   input Debug_SYS_Rst;
 
@@ -3960,18 +3941,19 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   wire Dbg_TDO_0_0;
   wire Debug_Rst_i_reg;
   wire Debug_SYS_Rst;
-  wire Debug_SYS_Rst_i_reg;
   wire [3:0]Q;
   wire Q_0;
   wire SEL;
   wire \Use_BSCAN.command_reg[6] ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3_n_0 ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] ;
-  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] ;
-  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 ;
+  wire \Use_E2.BSCANE2_I ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_3_n_0 ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[13] ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[14] ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[15] ;
+  wire \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1] ;
+  wire \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1]_0 ;
   wire \Use_Serial_Unified_Completion.completion_block_reg ;
   wire \Use_Serial_Unified_Completion.completion_block_reg_0 ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[0] ;
@@ -3980,6 +3962,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   wire \Use_Serial_Unified_Completion.completion_status_reg[5] ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[6] ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[8] ;
+  wire \Use_Serial_Unified_Completion.mb_data_overrun1__0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ;
@@ -3987,37 +3970,28 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg_3 ;
   wire \Use_Serial_Unified_Completion.mb_instr_error_reg ;
   wire \Use_Serial_Unified_Completion.mb_instr_error_reg_0 ;
-  wire \Use_Serial_Unified_Completion.mb_instr_error_reg_1 ;
+  wire \Use_Serial_Unified_Completion.mb_instr_overrun ;
+  wire \Use_Serial_Unified_Completion.mb_instr_overrun136_out ;
+  wire \Use_Serial_Unified_Completion.mb_instr_overrun1__0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_i_5_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_i_6_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_reg ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ;
   wire \Using_FPGA.Native_0 ;
-  wire \Using_FPGA.Native_1 ;
-  wire \Using_FPGA.Native_2 ;
-  wire \Using_FPGA.Native_3 ;
-  wire \Using_FPGA.Native_4 ;
-  wire \Using_FPGA.Native_5 ;
-  wire \Using_FPGA.Native_6 ;
   wire \Using_FPGA.Native_i_2_n_0 ;
   wire [0:7]command;
   wire command_10;
   wire completion_block0__10;
-  wire completion_ctrl;
+  wire [0:0]completion_ctrl;
   wire completion_ctrl0;
-  wire \completion_ctrl_reg[0] ;
   wire [10:0]completion_status;
-  wire mb_data_overrun1__0;
-  wire mb_instr_overrun;
-  wire mb_instr_overrun137_out;
-  wire mb_instr_overrun1__0;
   wire [2:0]out;
-  wire p_0_in_1;
+  wire p_0_in;
   wire [9:0]p_1_in;
-  wire sample_1;
   wire sel_n;
   wire sync;
+  wire [0:7]tdi_shifter;
   wire \tdi_shifter_reg[0] ;
   wire \tdi_shifter_reg[0]_0 ;
   wire \tdi_shifter_reg[1] ;
@@ -4096,7 +4070,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   LUT6 #(
     .INIT(64'hFFFBFFFF00080000)) 
     Debug_Rst_i_i_1
-       (.I0(p_0_in_1),
+       (.I0(tdi_shifter[0]),
         .I1(\Using_FPGA.Native_0 ),
         .I2(command[6]),
         .I3(command[2]),
@@ -4106,7 +4080,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   LUT6 #(
     .INIT(64'hFFFBFFFF00080000)) 
     Debug_SYS_Rst_i_i_1
-       (.I0(Debug_SYS_Rst_i_reg),
+       (.I0(tdi_shifter[1]),
         .I1(\Using_FPGA.Native_0 ),
         .I2(command[6]),
         .I3(command[2]),
@@ -4116,66 +4090,66 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample[13]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample[13]_i_1 
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I1(out[0]),
-        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] ));
+        .O(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[13] ));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample[14]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample[14]_i_1 
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I1(out[1]),
-        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] ));
+        .O(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[14] ));
   LUT2 #(
     .INIT(4'h8)) 
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample[15]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample[15]_i_1 
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I1(out[2]),
-        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] ));
+        .O(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[15] ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT1 #(
     .INIT(2'h1)) 
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_1 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
-        .O(sample_1));
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_1 
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .O(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1 ));
   LUT6 #(
     .INIT(64'h0020800000000000)) 
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2 
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2 
        (.I0(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
         .I1(command[5]),
         .I2(command[4]),
         .I3(command[7]),
         .I4(command[6]),
-        .I5(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3_n_0 ),
-        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ));
+        .I5(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_3_n_0 ),
+        .O(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3 
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_3 
        (.I0(command[2]),
         .I1(Q_0),
-        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3_n_0 ));
+        .O(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h0000080000000000)) 
-    \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_3 
+    \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_3 
        (.I0(command[5]),
         .I1(command[6]),
         .I2(command[7]),
         .I3(\Using_FPGA.Native_0 ),
         .I4(\Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ),
         .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
-        .O(mb_data_overrun1__0));
+        .O(\Use_Serial_Unified_Completion.mb_data_overrun1__0 ));
   LUT6 #(
     .INIT(64'h0000040000000000)) 
-    \Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_2 
+    \Use_Serial_Unified_Completion.Write_Instr_Status.count[0]_i_2 
        (.I0(command[6]),
         .I1(command[5]),
         .I2(command[7]),
         .I3(\Using_FPGA.Native_0 ),
         .I4(\Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ),
         .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
-        .O(mb_instr_overrun137_out));
+        .O(\Use_Serial_Unified_Completion.mb_instr_overrun136_out ));
   LUT6 #(
     .INIT(64'hFFFF55FF000000C0)) 
     \Use_Serial_Unified_Completion.completion_block_i_1 
@@ -4185,7 +4159,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
         .I3(completion_ctrl0),
         .I4(\Use_BSCAN.command_reg[6] ),
         .I5(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
-        .O(\completion_ctrl_reg[0] ));
+        .O(\Use_E2.BSCANE2_I ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h888F)) 
@@ -4193,7 +4167,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
        (.I0(\Use_BSCAN.command_reg[6] ),
         .I1(completion_status[1]),
         .I2(completion_status[0]),
-        .I3(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I3(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .O(p_1_in[0]));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
@@ -4210,7 +4184,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     \Use_Serial_Unified_Completion.completion_status[1]_i_1 
        (.I0(completion_status[1]),
         .I1(completion_status[0]),
-        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I2(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I3(\Use_BSCAN.command_reg[6] ),
         .I4(completion_status[2]),
         .O(p_1_in[1]));
@@ -4220,7 +4194,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
        (.I0(completion_status[2]),
         .I1(completion_status[1]),
         .I2(completion_status[0]),
-        .I3(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I3(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I4(\Use_BSCAN.command_reg[6] ),
         .I5(completion_status[3]),
         .O(p_1_in[2]));
@@ -4229,7 +4203,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     \Use_Serial_Unified_Completion.completion_status[3]_i_1 
        (.I0(completion_status[3]),
         .I1(\Use_Serial_Unified_Completion.completion_status_reg[3] ),
-        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I2(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I3(\Use_BSCAN.command_reg[6] ),
         .I4(completion_status[4]),
         .O(p_1_in[3]));
@@ -4238,7 +4212,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     \Use_Serial_Unified_Completion.completion_status[4]_i_1 
        (.I0(completion_status[4]),
         .I1(\Use_Serial_Unified_Completion.completion_status_reg[4] ),
-        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I2(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I3(\Use_BSCAN.command_reg[6] ),
         .I4(completion_status[5]),
         .O(p_1_in[4]));
@@ -4246,7 +4220,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     .INIT(32'hFF121212)) 
     \Use_Serial_Unified_Completion.completion_status[5]_i_1 
        (.I0(completion_status[5]),
-        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I1(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[5] ),
         .I3(\Use_BSCAN.command_reg[6] ),
         .I4(completion_status[6]),
@@ -4255,7 +4229,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     .INIT(32'hFF121212)) 
     \Use_Serial_Unified_Completion.completion_status[6]_i_1 
        (.I0(completion_status[6]),
-        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I1(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[6] ),
         .I3(\Use_BSCAN.command_reg[6] ),
         .I4(completion_status[7]),
@@ -4264,7 +4238,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     .INIT(64'hFFFF122212221222)) 
     \Use_Serial_Unified_Completion.completion_status[7]_i_1 
        (.I0(completion_status[7]),
-        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I1(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[6] ),
         .I3(completion_status[6]),
         .I4(\Use_BSCAN.command_reg[6] ),
@@ -4275,7 +4249,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     .INIT(32'hFF121212)) 
     \Use_Serial_Unified_Completion.completion_status[8]_i_1 
        (.I0(completion_status[8]),
-        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I1(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[8] ),
         .I3(\Use_BSCAN.command_reg[6] ),
         .I4(completion_status[9]),
@@ -4294,7 +4268,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     .INIT(64'hFFFF122212221222)) 
     \Use_Serial_Unified_Completion.completion_status[9]_i_2 
        (.I0(completion_status[9]),
-        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I1(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[8] ),
         .I3(completion_status[8]),
         .I4(\Use_BSCAN.command_reg[6] ),
@@ -4303,7 +4277,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   LUT6 #(
     .INIT(64'h2000000000000000)) 
     \Use_Serial_Unified_Completion.completion_status[9]_i_3 
-       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3_n_0 ),
+       (.I0(\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_3_n_0 ),
         .I1(command[6]),
         .I2(command[7]),
         .I3(command[4]),
@@ -4316,7 +4290,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
        (.I0(Dbg_TDO_0),
         .I1(completion_ctrl0),
         .I2(\Use_Serial_Unified_Completion.mb_data_overrun_reg ),
-        .I3(mb_data_overrun1__0),
+        .I3(\Use_Serial_Unified_Completion.mb_data_overrun1__0 ),
         .I4(\Use_Serial_Unified_Completion.mb_data_overrun_reg_2 ),
         .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg_3 ),
         .O(Dbg_TDO_0_0));
@@ -4324,22 +4298,22 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     .INIT(64'hA0A0BFFFA0A08000)) 
     \Use_Serial_Unified_Completion.mb_instr_error_i_1 
        (.I0(\Use_Serial_Unified_Completion.mb_instr_overrun_reg ),
-        .I1(mb_instr_overrun1__0),
-        .I2(mb_instr_overrun137_out),
+        .I1(\Use_Serial_Unified_Completion.mb_instr_overrun1__0 ),
+        .I2(\Use_Serial_Unified_Completion.mb_instr_overrun136_out ),
         .I3(\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ),
         .I4(\Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0 ),
-        .I5(\Use_Serial_Unified_Completion.mb_instr_error_reg_1 ),
-        .O(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 ));
+        .I5(\Use_Serial_Unified_Completion.mb_instr_error_reg_0 ),
+        .O(\Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1]_0 ));
   LUT6 #(
     .INIT(64'hA0A0FFBFA0A00080)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_i_1 
        (.I0(\Use_Serial_Unified_Completion.mb_instr_overrun_reg ),
-        .I1(mb_instr_overrun1__0),
-        .I2(mb_instr_overrun137_out),
+        .I1(\Use_Serial_Unified_Completion.mb_instr_overrun1__0 ),
+        .I2(\Use_Serial_Unified_Completion.mb_instr_overrun136_out ),
         .I3(\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ),
         .I4(\Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0 ),
-        .I5(mb_instr_overrun),
-        .O(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] ));
+        .I5(\Use_Serial_Unified_Completion.mb_instr_overrun ),
+        .O(\Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1] ));
   LUT6 #(
     .INIT(64'h00000000AAAA2AAA)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_i_3 
@@ -4348,8 +4322,8 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
         .I2(\Use_Serial_Unified_Completion.mb_instr_overrun_i_5_n_0 ),
         .I3(\Use_Serial_Unified_Completion.mb_instr_error_reg ),
         .I4(sync),
-        .I5(\Use_Serial_Unified_Completion.mb_instr_error_reg_0 ),
-        .O(mb_instr_overrun1__0));
+        .I5(p_0_in),
+        .O(\Use_Serial_Unified_Completion.mb_instr_overrun1__0 ));
   LUT6 #(
     .INIT(64'hFF00000008000000)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_i_4 
@@ -4380,6 +4354,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
         .I5(command[2]),
         .O(\Use_Serial_Unified_Completion.mb_instr_overrun_i_6_n_0 ));
   (* XILINX_LEGACY_PRIM = "FDC_1" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:CE" *) 
   (* box_type = "PRIMITIVE" *) 
   FDCE #(
     .INIT(1'b0),
@@ -4394,10 +4369,10 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
     .INIT(32'h00000800)) 
     \Using_FPGA.Native_i_1 
        (.I0(\Using_FPGA.Native_i_2_n_0 ),
-        .I1(\Using_FPGA.Native_1 ),
-        .I2(\Using_FPGA.Native_2 ),
-        .I3(\Using_FPGA.Native_3 ),
-        .I4(\Using_FPGA.Native_4 ),
+        .I1(tdi_shifter[4]),
+        .I2(tdi_shifter[5]),
+        .I3(tdi_shifter[7]),
+        .I4(tdi_shifter[6]),
         .O(CE));
   LUT1 #(
     .INIT(2'h1)) 
@@ -4407,10 +4382,10 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   LUT6 #(
     .INIT(64'h0000002000000000)) 
     \Using_FPGA.Native_i_2 
-       (.I0(\Using_FPGA.Native_5 ),
-        .I1(\Using_FPGA.Native_6 ),
-        .I2(Debug_SYS_Rst_i_reg),
-        .I3(p_0_in_1),
+       (.I0(tdi_shifter[2]),
+        .I1(tdi_shifter[3]),
+        .I2(tdi_shifter[1]),
+        .I3(tdi_shifter[0]),
         .I4(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I5(Q_0),
         .O(\Using_FPGA.Native_i_2_n_0 ));
@@ -4427,7 +4402,7 @@ module MicroBlazeIPBlock_mdm_1_0_MB_FDC_1
   LUT3 #(
     .INIT(8'hB8)) 
     \completion_ctrl[0]_i_1 
-       (.I0(p_0_in_1),
+       (.I0(tdi_shifter[0]),
         .I1(completion_ctrl0),
         .I2(completion_ctrl),
         .O(\tdi_shifter_reg[0]_0 ));
@@ -4498,52 +4473,52 @@ module MicroBlazeIPBlock_mdm_1_0_MB_LUT1
   input I0;
 
   wire I0;
-  (* DONT_TOUCH *) wire lut1_o;
+  (* DONT_TOUCH *) wire \Using_FPGA.lut1_o ;
 
-  assign Ext_JTAG_TDI = lut1_o;
+  assign Ext_JTAG_TDI = \Using_FPGA.lut1_o ;
   (* box_type = "PRIMITIVE" *) 
   LUT1 #(
     .INIT(2'h2)) 
     \Using_FPGA.Native 
        (.I0(I0),
-        .O(lut1_o));
+        .O(\Using_FPGA.lut1_o ));
 endmodule
 
 (* ORIG_REF_NAME = "MB_SRL16E" *) 
 module MicroBlazeIPBlock_mdm_1_0_MB_SRL16E
    (tdo,
-    \Use_E2.BSCANE2_I_i_8_0 ,
+    \Use_unisim.MB_SRL16E_I1_0 ,
     A1,
     A2,
     A3,
-    \Use_E2.BSCANE2_I_i_8_1 ,
-    sel_n_reg,
+    \Use_unisim.MB_SRL16E_I1_1 ,
+    \Use_E2.BSCANE2_I ,
     Q,
-    sel_n_reg_0,
-    sel_n_reg_1,
-    sel_n_reg_2,
-    \Use_E2.BSCANE2_I_i_1_0 ,
+    \Use_E2.BSCANE2_I_0 ,
+    \Use_E2.BSCANE2_I_1 ,
+    \Use_E2.BSCANE2_I_2 ,
+    \Use_E2.BSCANE2_I_3 ,
     command,
     Dbg_TDO_0,
     completion_status,
-    shift_Count_reg,
+    \Use_E2.BSCANE2_I_i_4_0 ,
     config_TDO_2);
   output tdo;
-  input \Use_E2.BSCANE2_I_i_8_0 ;
+  input \Use_unisim.MB_SRL16E_I1_0 ;
   input A1;
   input A2;
   input A3;
-  input \Use_E2.BSCANE2_I_i_8_1 ;
-  input sel_n_reg;
+  input \Use_unisim.MB_SRL16E_I1_1 ;
+  input \Use_E2.BSCANE2_I ;
   input [0:0]Q;
-  input sel_n_reg_0;
-  input sel_n_reg_1;
-  input sel_n_reg_2;
-  input \Use_E2.BSCANE2_I_i_1_0 ;
+  input \Use_E2.BSCANE2_I_0 ;
+  input \Use_E2.BSCANE2_I_1 ;
+  input \Use_E2.BSCANE2_I_2 ;
+  input \Use_E2.BSCANE2_I_3 ;
   input [2:0]command;
   input Dbg_TDO_0;
   input [0:0]completion_status;
-  input [0:0]shift_Count_reg;
+  input \Use_E2.BSCANE2_I_i_4_0 ;
   input config_TDO_2;
 
   wire A1;
@@ -4551,36 +4526,36 @@ module MicroBlazeIPBlock_mdm_1_0_MB_SRL16E
   wire A3;
   wire Dbg_TDO_0;
   wire [0:0]Q;
-  wire \Use_E2.BSCANE2_I_i_1_0 ;
+  wire \Use_E2.BSCANE2_I ;
+  wire \Use_E2.BSCANE2_I_0 ;
+  wire \Use_E2.BSCANE2_I_1 ;
+  wire \Use_E2.BSCANE2_I_2 ;
+  wire \Use_E2.BSCANE2_I_3 ;
+  wire \Use_E2.BSCANE2_I_i_4_0 ;
   wire \Use_E2.BSCANE2_I_i_4_n_0 ;
-  wire \Use_E2.BSCANE2_I_i_8_0 ;
-  wire \Use_E2.BSCANE2_I_i_8_1 ;
   wire \Use_E2.BSCANE2_I_i_8_n_0 ;
+  wire \Use_unisim.MB_SRL16E_I1_0 ;
+  wire \Use_unisim.MB_SRL16E_I1_1 ;
   wire [2:0]command;
   wire [0:0]completion_status;
   wire config_TDO_1;
   wire config_TDO_2;
-  wire sel_n_reg;
-  wire sel_n_reg_0;
-  wire sel_n_reg_1;
-  wire sel_n_reg_2;
-  wire [0:0]shift_Count_reg;
   wire tdo;
 
   LUT6 #(
     .INIT(64'hEEEEEEEAEAEAEAEA)) 
     \Use_E2.BSCANE2_I_i_1 
-       (.I0(sel_n_reg),
+       (.I0(\Use_E2.BSCANE2_I ),
         .I1(Q),
-        .I2(sel_n_reg_0),
+        .I2(\Use_E2.BSCANE2_I_0 ),
         .I3(\Use_E2.BSCANE2_I_i_4_n_0 ),
-        .I4(sel_n_reg_1),
-        .I5(sel_n_reg_2),
+        .I4(\Use_E2.BSCANE2_I_1 ),
+        .I5(\Use_E2.BSCANE2_I_2 ),
         .O(tdo));
   LUT5 #(
     .INIT(32'hFEEEBAAA)) 
     \Use_E2.BSCANE2_I_i_4 
-       (.I0(\Use_E2.BSCANE2_I_i_1_0 ),
+       (.I0(\Use_E2.BSCANE2_I_3 ),
         .I1(command[0]),
         .I2(command[2]),
         .I3(\Use_E2.BSCANE2_I_i_8_n_0 ),
@@ -4592,21 +4567,21 @@ module MicroBlazeIPBlock_mdm_1_0_MB_SRL16E
        (.I0(completion_status),
         .I1(config_TDO_1),
         .I2(command[1]),
-        .I3(shift_Count_reg),
+        .I3(\Use_E2.BSCANE2_I_i_4_0 ),
         .I4(config_TDO_2),
         .O(\Use_E2.BSCANE2_I_i_8_n_0 ));
   (* box_type = "PRIMITIVE" *) 
-  (* srl_name = "U0/\MDM_Core_I1/JTAG_CONTROL_I/Use_Config_SRL16E.SRL16E_1/Use_unisim.MB_SRL16E_I1 " *) 
+  (* srl_name = "U0/\\MDM_Core_I1/JTAG_CONTROL_I/Use_Config_SRL16E.SRL16E_1/Use_unisim.MB_SRL16E_I1 " *) 
   SRL16E #(
     .INIT(16'h0167),
     .IS_CLK_INVERTED(1'b0)) 
     \Use_unisim.MB_SRL16E_I1 
-       (.A0(\Use_E2.BSCANE2_I_i_8_0 ),
+       (.A0(\Use_unisim.MB_SRL16E_I1_0 ),
         .A1(A1),
         .A2(A2),
         .A3(A3),
         .CE(1'b0),
-        .CLK(\Use_E2.BSCANE2_I_i_8_1 ),
+        .CLK(\Use_unisim.MB_SRL16E_I1_1 ),
         .D(1'b0),
         .Q(config_TDO_1));
 endmodule
@@ -4614,37 +4589,37 @@ endmodule
 (* ORIG_REF_NAME = "MB_SRL16E" *) 
 module MicroBlazeIPBlock_mdm_1_0_MB_SRL16E__parameterized1
    (config_TDO_2,
-    \Use_E2.BSCANE2_I_i_8 ,
+    \Use_unisim.MB_SRL16E_I1_0 ,
     A1,
     A2,
     A3,
-    \Use_E2.BSCANE2_I_i_8_0 );
+    \Use_unisim.MB_SRL16E_I1_1 );
   output config_TDO_2;
-  input \Use_E2.BSCANE2_I_i_8 ;
+  input \Use_unisim.MB_SRL16E_I1_0 ;
   input A1;
   input A2;
   input A3;
-  input \Use_E2.BSCANE2_I_i_8_0 ;
+  input \Use_unisim.MB_SRL16E_I1_1 ;
 
   wire A1;
   wire A2;
   wire A3;
-  wire \Use_E2.BSCANE2_I_i_8 ;
-  wire \Use_E2.BSCANE2_I_i_8_0 ;
+  wire \Use_unisim.MB_SRL16E_I1_0 ;
+  wire \Use_unisim.MB_SRL16E_I1_1 ;
   wire config_TDO_2;
 
   (* box_type = "PRIMITIVE" *) 
-  (* srl_name = "U0/\MDM_Core_I1/JTAG_CONTROL_I/Use_Config_SRL16E.SRL16E_2/Use_unisim.MB_SRL16E_I1 " *) 
+  (* srl_name = "U0/\\MDM_Core_I1/JTAG_CONTROL_I/Use_Config_SRL16E.SRL16E_2/Use_unisim.MB_SRL16E_I1 " *) 
   SRL16E #(
     .INIT(16'h4287),
     .IS_CLK_INVERTED(1'b0)) 
     \Use_unisim.MB_SRL16E_I1 
-       (.A0(\Use_E2.BSCANE2_I_i_8 ),
+       (.A0(\Use_unisim.MB_SRL16E_I1_0 ),
         .A1(A1),
         .A2(A2),
         .A3(A3),
         .CE(1'b0),
-        .CLK(\Use_E2.BSCANE2_I_i_8_0 ),
+        .CLK(\Use_unisim.MB_SRL16E_I1_1 ),
         .D(1'b0),
         .Q(config_TDO_2));
 endmodule
@@ -4652,22 +4627,22 @@ endmodule
 (* ORIG_REF_NAME = "MB_SRL16E" *) 
 module MicroBlazeIPBlock_mdm_1_0_MB_SRL16E__parameterized3
    (\Use_BSCAN.command_reg[5] ,
-    \Use_E2.BSCANE2_I_i_9_0 ,
+    \Use_unisim.MB_SRL16E_I1_0 ,
     A1,
     A2,
     A3,
-    \Use_E2.BSCANE2_I_i_9_1 ,
+    \Use_unisim.MB_SRL16E_I1_1 ,
     command,
-    shift_Count_reg,
+    \Use_E2.BSCANE2_I_i_5_0 ,
     ID_TDO_2);
   output \Use_BSCAN.command_reg[5] ;
-  input \Use_E2.BSCANE2_I_i_9_0 ;
+  input \Use_unisim.MB_SRL16E_I1_0 ;
   input A1;
   input A2;
   input A3;
-  input \Use_E2.BSCANE2_I_i_9_1 ;
+  input \Use_unisim.MB_SRL16E_I1_1 ;
   input [5:0]command;
-  input [0:0]shift_Count_reg;
+  input \Use_E2.BSCANE2_I_i_5_0 ;
   input ID_TDO_2;
 
   wire A1;
@@ -4676,11 +4651,11 @@ module MicroBlazeIPBlock_mdm_1_0_MB_SRL16E__parameterized3
   wire ID_TDO_1;
   wire ID_TDO_2;
   wire \Use_BSCAN.command_reg[5] ;
-  wire \Use_E2.BSCANE2_I_i_9_0 ;
-  wire \Use_E2.BSCANE2_I_i_9_1 ;
+  wire \Use_E2.BSCANE2_I_i_5_0 ;
   wire \Use_E2.BSCANE2_I_i_9_n_0 ;
+  wire \Use_unisim.MB_SRL16E_I1_0 ;
+  wire \Use_unisim.MB_SRL16E_I1_1 ;
   wire [5:0]command;
-  wire [0:0]shift_Count_reg;
 
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFB8C8C)) 
@@ -4699,21 +4674,21 @@ module MicroBlazeIPBlock_mdm_1_0_MB_SRL16E__parameterized3
         .I1(command[0]),
         .I2(command[2]),
         .I3(ID_TDO_1),
-        .I4(shift_Count_reg),
+        .I4(\Use_E2.BSCANE2_I_i_5_0 ),
         .I5(ID_TDO_2),
         .O(\Use_E2.BSCANE2_I_i_9_n_0 ));
   (* box_type = "PRIMITIVE" *) 
-  (* srl_name = "U0/\MDM_Core_I1/JTAG_CONTROL_I/Use_ID_SRL16E.SRL16E_ID_1/Use_unisim.MB_SRL16E_I1 " *) 
+  (* srl_name = "U0/\\MDM_Core_I1/JTAG_CONTROL_I/Use_ID_SRL16E.SRL16E_ID_1/Use_unisim.MB_SRL16E_I1 " *) 
   SRL16E #(
     .INIT(16'h4443),
     .IS_CLK_INVERTED(1'b0)) 
     \Use_unisim.MB_SRL16E_I1 
-       (.A0(\Use_E2.BSCANE2_I_i_9_0 ),
+       (.A0(\Use_unisim.MB_SRL16E_I1_0 ),
         .A1(A1),
         .A2(A2),
         .A3(A3),
         .CE(1'b0),
-        .CLK(\Use_E2.BSCANE2_I_i_9_1 ),
+        .CLK(\Use_unisim.MB_SRL16E_I1_1 ),
         .D(1'b0),
         .Q(ID_TDO_1));
 endmodule
@@ -4721,48 +4696,48 @@ endmodule
 (* ORIG_REF_NAME = "MB_SRL16E" *) 
 module MicroBlazeIPBlock_mdm_1_0_MB_SRL16E__parameterized5
    (ID_TDO_2,
-    \Use_E2.BSCANE2_I_i_9 ,
+    \Use_unisim.MB_SRL16E_I1_0 ,
     A1,
     A2,
     A3,
-    \Use_E2.BSCANE2_I_i_9_0 );
+    \Use_unisim.MB_SRL16E_I1_1 );
   output ID_TDO_2;
-  input \Use_E2.BSCANE2_I_i_9 ;
+  input \Use_unisim.MB_SRL16E_I1_0 ;
   input A1;
   input A2;
   input A3;
-  input \Use_E2.BSCANE2_I_i_9_0 ;
+  input \Use_unisim.MB_SRL16E_I1_1 ;
 
   wire A1;
   wire A2;
   wire A3;
   wire ID_TDO_2;
-  wire \Use_E2.BSCANE2_I_i_9 ;
-  wire \Use_E2.BSCANE2_I_i_9_0 ;
+  wire \Use_unisim.MB_SRL16E_I1_0 ;
+  wire \Use_unisim.MB_SRL16E_I1_1 ;
 
   (* box_type = "PRIMITIVE" *) 
-  (* srl_name = "U0/\MDM_Core_I1/JTAG_CONTROL_I/Use_ID_SRL16E.SRL16E_ID_2/Use_unisim.MB_SRL16E_I1 " *) 
+  (* srl_name = "U0/\\MDM_Core_I1/JTAG_CONTROL_I/Use_ID_SRL16E.SRL16E_ID_2/Use_unisim.MB_SRL16E_I1 " *) 
   SRL16E #(
     .INIT(16'h584D),
     .IS_CLK_INVERTED(1'b0)) 
     \Use_unisim.MB_SRL16E_I1 
-       (.A0(\Use_E2.BSCANE2_I_i_9 ),
+       (.A0(\Use_unisim.MB_SRL16E_I1_0 ),
         .A1(A1),
         .A2(A2),
         .A3(A3),
         .CE(1'b0),
-        .CLK(\Use_E2.BSCANE2_I_i_9_0 ),
+        .CLK(\Use_unisim.MB_SRL16E_I1_1 ),
         .D(1'b0),
         .Q(ID_TDO_2));
 endmodule
 
 (* C_ADDR_SIZE = "32" *) (* C_AVOID_PRIMITIVES = "0" *) (* C_BSCANID = "76547328" *) 
 (* C_DATA_SIZE = "32" *) (* C_DBG_MEM_ACCESS = "0" *) (* C_DBG_REG_ACCESS = "0" *) 
-(* C_DEBUG_INTERFACE = "0" *) (* C_EXT_TRIG_RESET_VALUE = "20'b11110001001000110100" *) (* C_FAMILY = "artix7" *) 
-(* C_INTERCONNECT = "2" *) (* C_JTAG_CHAIN = "2" *) (* C_LMB_PROTOCOL = "0" *) 
-(* C_MB_DBG_PORTS = "1" *) (* C_M_AXIS_DATA_WIDTH = "32" *) (* C_M_AXIS_ID_WIDTH = "7" *) 
-(* C_M_AXI_ADDR_WIDTH = "32" *) (* C_M_AXI_DATA_WIDTH = "32" *) (* C_M_AXI_THREAD_ID_WIDTH = "1" *) 
-(* C_REVISION = "" *) (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) (* C_S_AXI_ADDR_WIDTH = "4" *) 
+(* C_DEBUG_INTERFACE = "0" *) (* C_DEVICE = "xc7a100t" *) (* C_EXT_TRIG_RESET_VALUE = "20'b11110001001000110100" *) 
+(* C_FAMILY = "artix7" *) (* C_INTERCONNECT = "2" *) (* C_JTAG_CHAIN = "2" *) 
+(* C_LMB_PROTOCOL = "0" *) (* C_MB_DBG_PORTS = "1" *) (* C_M_AXIS_DATA_WIDTH = "32" *) 
+(* C_M_AXIS_ID_WIDTH = "7" *) (* C_M_AXI_ADDR_WIDTH = "32" *) (* C_M_AXI_DATA_WIDTH = "32" *) 
+(* C_M_AXI_THREAD_ID_WIDTH = "1" *) (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) (* C_S_AXI_ADDR_WIDTH = "4" *) 
 (* C_S_AXI_DATA_WIDTH = "32" *) (* C_TRACE_ASYNC_RESET = "0" *) (* C_TRACE_CLK_FREQ_HZ = "200000000" *) 
 (* C_TRACE_CLK_OUT_PHASE = "90" *) (* C_TRACE_DATA_WIDTH = "32" *) (* C_TRACE_ID = "110" *) 
 (* C_TRACE_OUTPUT = "0" *) (* C_TRACE_PROTOCOL = "1" *) (* C_USE_BSCAN = "0" *) 
@@ -7821,20 +7796,20 @@ module MicroBlazeIPBlock_mdm_1_0_MDM
   wire Debug_SYS_Rst;
   wire Ext_JTAG_TDI;
   wire Functional_Reset;
-  wire [5:5]\JTAG_CONTROL_I/Use_Serial_Unified_Completion._Data_Read_Status.count_reg ;
-  wire \JTAG_CONTROL_I/completion_status131_out ;
-  wire \JTAG_CONTROL_I/mb_data_overrun1__0 ;
-  wire \JTAG_CONTROL_I/sel ;
+  wire \JTAG_CONTROL_I/Use_Serial_Unified_Completion.Data_Read_Status.count ;
+  wire \JTAG_CONTROL_I/Use_Serial_Unified_Completion.mb_data_overrun1__0 ;
+  wire \JTAG_CONTROL_I/completion_status130_out ;
   wire MDM_Core_I1_n_0;
   wire MDM_Core_I1_n_16;
   wire SEL;
   wire TDI;
+  wire \Use_E2.BSCAN_I_n_10 ;
+  wire \Use_E2.BSCAN_I_n_11 ;
   wire \Use_E2.BSCAN_I_n_12 ;
   wire \Use_E2.BSCAN_I_n_3 ;
   wire \Use_E2.BSCAN_I_n_7 ;
-  wire \Use_E2.BSCAN_I_n_9 ;
-  wire [0:0]p_0_in;
-  wire [0:0]p_0_in__0;
+  wire \Use_E2.BSCAN_I_n_8 ;
+  wire [5:5]\Use_Serial_Unified_Completion.Data_Read_Status.count ;
   wire [15:15]p_1_in;
   wire tdo;
 
@@ -13473,20 +13448,20 @@ module MicroBlazeIPBlock_mdm_1_0_MDM
         .Debug_SYS_Rst(Debug_SYS_Rst),
         .Ext_JTAG_TDI(Ext_JTAG_TDI),
         .SEL(SEL),
-        .\Use_BSCAN.Config_Reg_reg[30]_0 (\Use_E2.BSCAN_I_n_9 ),
-        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] (MDM_Core_I1_n_16),
-        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] (\JTAG_CONTROL_I/Use_Serial_Unified_Completion._Data_Read_Status.count_reg ),
-        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 (p_0_in),
+        .\Use_BSCAN.Config_Reg_reg[30]_0 (\Use_E2.BSCAN_I_n_8 ),
+        .\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15] (MDM_Core_I1_n_16),
+        .\Use_Serial_Unified_Completion.Data_Read_Status.count (\JTAG_CONTROL_I/Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] (\Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 (\Use_E2.BSCAN_I_n_11 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[10] (\Use_E2.BSCAN_I_n_7 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[15] (p_1_in),
-        .\Use_Serial_Unified_Completion.mb_instr_overrun_reg (\Use_E2.BSCAN_I_n_12 ),
-        .\Using_FPGA.Native (Dbg_Clk_0),
-        .completion_status131_out(\JTAG_CONTROL_I/completion_status131_out ),
-        .mb_data_overrun1__0(\JTAG_CONTROL_I/mb_data_overrun1__0 ),
-        .sel(\JTAG_CONTROL_I/sel ),
+        .\Use_Serial_Unified_Completion.mb_data_overrun1__0 (\JTAG_CONTROL_I/Use_Serial_Unified_Completion.mb_data_overrun1__0 ),
+        .\Use_Serial_Unified_Completion.mb_instr_overrun_reg (\Use_E2.BSCAN_I_n_10 ),
+        .\Use_unisim.MB_SRL16E_I1 (Dbg_Clk_0),
+        .completion_status130_out(\JTAG_CONTROL_I/completion_status130_out ),
         .sel_n_reg(Dbg_Capture_0),
         .\shift_Count_reg[0] (MDM_Core_I1_n_0),
-        .\shift_Count_reg[0]_0 (p_0_in__0),
+        .\shift_Count_reg[0]_0 (\Use_E2.BSCAN_I_n_12 ),
         .tdo(tdo));
   MicroBlazeIPBlock_mdm_1_0_MB_BUFG \No_Dbg_Reg_Access.BUFG_DRCK 
        (.DRCK(DRCK),
@@ -13495,23 +13470,23 @@ module MicroBlazeIPBlock_mdm_1_0_MDM
        (.AR(Functional_Reset),
         .DRCK(DRCK),
         .Dbg_TDO_0(Dbg_TDO_0),
-        .Dbg_TDO_0_0(\Use_E2.BSCAN_I_n_12 ),
+        .Dbg_TDO_0_0(\Use_E2.BSCAN_I_n_10 ),
         .Dbg_Update_0(Dbg_Update_0),
         .I0(TDI),
         .SEL(SEL),
-        .\Use_BSCAN.PORT_Selector_reg[0] (Dbg_Capture_0),
-        .\Use_BSCAN.PORT_Selector_reg[0]_0 (\Use_E2.BSCAN_I_n_3 ),
-        .\Use_BSCAN.command_reg[6] (\Use_E2.BSCAN_I_n_7 ),
-        .\Use_E2.BSCANE2_I_0 (\Use_E2.BSCAN_I_n_9 ),
-        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] (p_1_in),
-        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] (p_0_in),
-        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 (\JTAG_CONTROL_I/Use_Serial_Unified_Completion._Data_Read_Status.count_reg ),
+        .\Use_E2.BSCANE2_I_0 (Dbg_Capture_0),
+        .\Use_E2.BSCANE2_I_1 (\Use_E2.BSCAN_I_n_3 ),
+        .\Use_E2.BSCANE2_I_2 (\Use_E2.BSCAN_I_n_7 ),
+        .\Use_E2.BSCANE2_I_3 (\Use_E2.BSCAN_I_n_8 ),
+        .\Use_E2.BSCANE2_I_4 (\Use_E2.BSCAN_I_n_11 ),
+        .\Use_E2.BSCANE2_I_5 (\Use_E2.BSCAN_I_n_12 ),
+        .\Use_E2.BSCANE2_I_6 (p_1_in),
+        .\Use_Serial_Unified_Completion.Data_Read_Status.count (\JTAG_CONTROL_I/Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] (\Use_Serial_Unified_Completion.Data_Read_Status.count ),
         .\Use_Serial_Unified_Completion.completion_status_reg[15] (MDM_Core_I1_n_16),
-        .completion_status131_out(\JTAG_CONTROL_I/completion_status131_out ),
-        .mb_data_overrun1__0(\JTAG_CONTROL_I/mb_data_overrun1__0 ),
-        .sel(\JTAG_CONTROL_I/sel ),
-        .\shift_Count_reg[0] (p_0_in__0),
-        .\shift_Count_reg[0]_0 (MDM_Core_I1_n_0),
+        .\Use_Serial_Unified_Completion.mb_data_overrun1__0 (\JTAG_CONTROL_I/Use_Serial_Unified_Completion.mb_data_overrun1__0 ),
+        .completion_status130_out(\JTAG_CONTROL_I/completion_status130_out ),
+        .\shift_Count_reg[0] (MDM_Core_I1_n_0),
         .tdo(tdo));
   MicroBlazeIPBlock_mdm_1_0_MB_LUT1 \Use_E2.LUT1_I 
        (.Ext_JTAG_TDI(Ext_JTAG_TDI),
@@ -13525,57 +13500,56 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
     Dbg_Rst_0,
     Dbg_Disable_0,
     Dbg_Reg_En_0,
-    completion_status131_out,
-    mb_data_overrun1__0,
+    completion_status130_out,
+    \Use_Serial_Unified_Completion.mb_data_overrun1__0 ,
     Dbg_Shift_0,
     tdo,
-    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ,
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ,
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15] ,
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] ,
     CLK,
-    \Using_FPGA.Native ,
+    \Use_unisim.MB_SRL16E_I1 ,
     sel_n_reg,
     \Use_BSCAN.Config_Reg_reg[30]_0 ,
     Dbg_Shift_0_0,
     SEL,
     \Use_Serial_Unified_Completion.completion_status_reg[15] ,
     Dbg_TDO_0,
-    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ,
-    \shift_Count_reg[0]_0 ,
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg ,
     Ext_JTAG_TDI,
+    \Use_Serial_Unified_Completion.Data_Read_Status.count ,
+    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ,
+    \shift_Count_reg[0]_0 ,
     \Use_Serial_Unified_Completion.completion_status_reg[10] ,
-    AR,
-    sel);
+    AR);
   output \shift_Count_reg[0] ;
   output Debug_SYS_Rst;
   output Dbg_Rst_0;
   output Dbg_Disable_0;
   output [0:7]Dbg_Reg_En_0;
-  output completion_status131_out;
-  output mb_data_overrun1__0;
+  output completion_status130_out;
+  output \Use_Serial_Unified_Completion.mb_data_overrun1__0 ;
   output Dbg_Shift_0;
   output tdo;
-  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ;
-  output [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ;
+  output \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15] ;
+  output [0:0]\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] ;
   input CLK;
-  input \Using_FPGA.Native ;
+  input \Use_unisim.MB_SRL16E_I1 ;
   input sel_n_reg;
   input \Use_BSCAN.Config_Reg_reg[30]_0 ;
   input Dbg_Shift_0_0;
   input SEL;
   input [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15] ;
   input Dbg_TDO_0;
-  input [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
-  input [0:0]\shift_Count_reg[0]_0 ;
   input \Use_Serial_Unified_Completion.mb_instr_overrun_reg ;
   input Ext_JTAG_TDI;
+  input \Use_Serial_Unified_Completion.Data_Read_Status.count ;
+  input \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ;
+  input \shift_Count_reg[0]_0 ;
   input \Use_Serial_Unified_Completion.completion_status_reg[10] ;
   input [0:0]AR;
-  input sel;
 
   wire [0:0]AR;
   wire CLK;
-  wire [0:0]Config_Reg;
   wire Dbg_Disable_0;
   wire [0:7]Dbg_Reg_En_0;
   wire Dbg_Rst_0;
@@ -13584,12 +13558,8 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
   wire Dbg_TDO_0;
   wire Debug_SYS_Rst;
   wire Ext_JTAG_TDI;
-  wire MDM_SEL;
-  wire [3:0]PORT_Selector;
-  wire [3:0]PORT_Selector_1;
   wire SEL;
-  wire [3:0]TDI_Shifter;
-  wire TDI_Shifter0;
+  wire [0:0]\Use_BSCAN.Config_Reg ;
   wire \Use_BSCAN.Config_Reg_reg[11]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_12_n_0 ;
   wire \Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11_n_0 ;
   wire \Use_BSCAN.Config_Reg_reg[27]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_1_n_0 ;
@@ -13622,20 +13592,25 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
   wire \Use_BSCAN.Config_Reg_reg_n_0_[30] ;
   wire \Use_BSCAN.Config_Reg_reg_n_0_[3] ;
   wire \Use_BSCAN.Config_Reg_reg_n_0_[9] ;
+  wire \Use_BSCAN.MDM_SEL ;
+  wire [3:0]\Use_BSCAN.PORT_Selector ;
+  wire [3:0]\Use_BSCAN.PORT_Selector_1 ;
+  wire [3:0]\Use_BSCAN.TDI_Shifter ;
+  wire \Use_BSCAN.TDI_Shifter0 ;
   wire \Use_E2.BSCANE2_I_i_2_n_0 ;
-  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ;
-  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ;
-  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
+  wire \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15] ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count ;
+  wire [0:0]\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] ;
+  wire \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[10] ;
   wire [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15] ;
+  wire \Use_Serial_Unified_Completion.mb_data_overrun1__0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_reg ;
-  wire \Using_FPGA.Native ;
-  wire completion_status131_out;
-  wire mb_data_overrun1__0;
-  wire sel;
+  wire \Use_unisim.MB_SRL16E_I1 ;
+  wire completion_status130_out;
   wire sel_n_reg;
   wire \shift_Count_reg[0] ;
-  wire [0:0]\shift_Count_reg[0]_0 ;
+  wire \shift_Count_reg[0]_0 ;
   wire tdo;
 
   MicroBlazeIPBlock_mdm_1_0_JTAG_CONTROL JTAG_CONTROL_I
@@ -13647,46 +13622,46 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
         .Dbg_TDO_0(Dbg_TDO_0),
         .Debug_SYS_Rst(Debug_SYS_Rst),
         .Ext_JTAG_TDI(Ext_JTAG_TDI),
-        .Q(PORT_Selector),
+        .Q(\Use_BSCAN.PORT_Selector ),
         .SEL(SEL),
-        .\Use_BSCAN.command_reg[6]_0 (completion_status131_out),
-        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 (\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ),
-        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 (\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ),
-        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 (\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .\Use_BSCAN.command_reg[6]_0 (completion_status130_out),
+        .\Use_E2.BSCANE2_I (\Use_E2.BSCANE2_I_i_2_n_0 ),
+        .\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]_0 (\Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15] ),
+        .\Use_Serial_Unified_Completion.Data_Read_Status.count (\Use_Serial_Unified_Completion.Data_Read_Status.count ),
+        .\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 (\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5] ),
+        .\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1 (\Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[10]_0 (\Use_Serial_Unified_Completion.completion_status_reg[10] ),
         .\Use_Serial_Unified_Completion.completion_status_reg[15]_0 (\Use_Serial_Unified_Completion.completion_status_reg[15] ),
+        .\Use_Serial_Unified_Completion.mb_data_overrun1__0 (\Use_Serial_Unified_Completion.mb_data_overrun1__0 ),
         .\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 (\Use_Serial_Unified_Completion.mb_instr_overrun_reg ),
-        .\Using_FPGA.Native (\Using_FPGA.Native ),
-        .mb_data_overrun1__0(mb_data_overrun1__0),
-        .sel(sel),
+        .\Use_unisim.MB_SRL16E_I1 (\Use_unisim.MB_SRL16E_I1 ),
         .sel_n_reg_0(sel_n_reg),
-        .sel_n_reg_1(\Use_E2.BSCANE2_I_i_2_n_0 ),
         .\shift_Count_reg[0]_0 (\shift_Count_reg[0] ),
         .\shift_Count_reg[0]_1 (\shift_Count_reg[0]_0 ),
         .tdo(tdo));
-  (* SHREG_EXTRACT = "yes" *) 
+  (* SHREG_EXTRACT = "YES" *) 
   FDCE #(
     .INIT(1'b0)) 
     \Use_BSCAN.Config_Reg_reg[0] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[1] ),
-        .Q(Config_Reg));
+        .Q(\Use_BSCAN.Config_Reg ));
   FDCE \Use_BSCAN.Config_Reg_reg[10] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_gate__0_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[10] ));
   FDRE \Use_BSCAN.Config_Reg_reg[11]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_12 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg[11]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_12_n_0 ),
         .R(1'b0));
-  (* srl_bus_name = "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg " *) 
-  (* srl_name = "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11 " *) 
+  (* srl_bus_name = "U0/\\MDM_Core_I1/Use_BSCAN.Config_Reg_reg " *) 
+  (* srl_name = "U0/\\MDM_Core_I1/Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11 " *) 
   SRL16E #(
     .INIT(16'h0000)) 
     \Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11 
@@ -13695,41 +13670,41 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
         .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
-        .CLK(\Using_FPGA.Native ),
+        .CLK(\Use_unisim.MB_SRL16E_I1 ),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[25] ),
         .Q(\Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11_n_0 ));
-  (* SHREG_EXTRACT = "yes" *) 
+  (* SHREG_EXTRACT = "YES" *) 
   FDPE #(
     .INIT(1'b1)) 
     \Use_BSCAN.Config_Reg_reg[1] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[2] ),
         .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[1] ));
-  (* SHREG_EXTRACT = "yes" *) 
+  (* SHREG_EXTRACT = "YES" *) 
   FDPE #(
     .INIT(1'b1)) 
     \Use_BSCAN.Config_Reg_reg[25] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[26] ),
         .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[25] ));
   FDCE \Use_BSCAN.Config_Reg_reg[26] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_gate_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[26] ));
   FDRE \Use_BSCAN.Config_Reg_reg[27]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_1 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg[28]_srl2_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_0_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg[27]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_1_n_0 ),
         .R(1'b0));
-  (* srl_bus_name = "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg " *) 
-  (* srl_name = "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg[28]_srl2_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_0 " *) 
+  (* srl_bus_name = "U0/\\MDM_Core_I1/Use_BSCAN.Config_Reg_reg " *) 
+  (* srl_name = "U0/\\MDM_Core_I1/Use_BSCAN.Config_Reg_reg[28]_srl2_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_0 " *) 
   SRL16E #(
     .INIT(16'h0000)) 
     \Use_BSCAN.Config_Reg_reg[28]_srl2_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_0 
@@ -13738,41 +13713,41 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
         .A2(1'b0),
         .A3(1'b0),
         .CE(1'b1),
-        .CLK(\Using_FPGA.Native ),
+        .CLK(\Use_unisim.MB_SRL16E_I1 ),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[30] ),
         .Q(\Use_BSCAN.Config_Reg_reg[28]_srl2_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_0_n_0 ));
-  (* SHREG_EXTRACT = "yes" *) 
+  (* SHREG_EXTRACT = "YES" *) 
   FDPE #(
     .INIT(1'b1)) 
     \Use_BSCAN.Config_Reg_reg[2] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[3] ),
         .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[2] ));
-  (* SHREG_EXTRACT = "yes" *) 
+  (* SHREG_EXTRACT = "YES" *) 
   FDPE #(
     .INIT(1'b1)) 
     \Use_BSCAN.Config_Reg_reg[30] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(1'b0),
         .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[30] ));
   FDCE \Use_BSCAN.Config_Reg_reg[3] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_gate__1_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[3] ));
   FDRE \Use_BSCAN.Config_Reg_reg[4]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_3 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg[5]_srl4_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_2_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg[4]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_3_n_0 ),
         .R(1'b0));
-  (* srl_bus_name = "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg " *) 
-  (* srl_name = "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg[5]_srl4_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_2 " *) 
+  (* srl_bus_name = "U0/\\MDM_Core_I1/Use_BSCAN.Config_Reg_reg " *) 
+  (* srl_name = "U0/\\MDM_Core_I1/Use_BSCAN.Config_Reg_reg[5]_srl4_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_2 " *) 
   SRL16E #(
     .INIT(16'h0000)) 
     \Use_BSCAN.Config_Reg_reg[5]_srl4_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_2 
@@ -13781,98 +13756,98 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
         .A2(1'b0),
         .A3(1'b0),
         .CE(1'b1),
-        .CLK(\Using_FPGA.Native ),
+        .CLK(\Use_unisim.MB_SRL16E_I1 ),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[9] ),
         .Q(\Use_BSCAN.Config_Reg_reg[5]_srl4_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_2_n_0 ));
-  (* SHREG_EXTRACT = "yes" *) 
+  (* SHREG_EXTRACT = "YES" *) 
   FDPE #(
     .INIT(1'b1)) 
     \Use_BSCAN.Config_Reg_reg[9] 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[10] ),
         .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[9] ));
   FDCE \Use_BSCAN.Config_Reg_reg_c 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(1'b1),
         .Q(\Use_BSCAN.Config_Reg_reg_c_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_0 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_0_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_1 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_0_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_1_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_10 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_9_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_10_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_11 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_10_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_11_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_12 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_11_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_12_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_2 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_1_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_2_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_3 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_2_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_3_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_4 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_3_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_4_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_5 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_4_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_5_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_6 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_5_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_6_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_7 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_6_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_7_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_8 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_7_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_8_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_9 
-       (.C(\Using_FPGA.Native ),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
         .CE(1'b1),
         .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_8_n_0 ),
@@ -13899,43 +13874,43 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
     .INIT(32'h00000002)) 
     \Use_BSCAN.PORT_Selector_1[3]_i_1 
        (.I0(SEL),
-        .I1(PORT_Selector[0]),
-        .I2(PORT_Selector[1]),
-        .I3(PORT_Selector[3]),
-        .I4(PORT_Selector[2]),
-        .O(MDM_SEL));
+        .I1(\Use_BSCAN.PORT_Selector [0]),
+        .I2(\Use_BSCAN.PORT_Selector [1]),
+        .I3(\Use_BSCAN.PORT_Selector [3]),
+        .I4(\Use_BSCAN.PORT_Selector [2]),
+        .O(\Use_BSCAN.MDM_SEL ));
   FDCE #(
     .INIT(1'b0)) 
     \Use_BSCAN.PORT_Selector_1_reg[0] 
        (.C(CLK),
-        .CE(MDM_SEL),
+        .CE(\Use_BSCAN.MDM_SEL ),
         .CLR(AR),
-        .D(TDI_Shifter[0]),
-        .Q(PORT_Selector_1[0]));
+        .D(\Use_BSCAN.TDI_Shifter [0]),
+        .Q(\Use_BSCAN.PORT_Selector_1 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \Use_BSCAN.PORT_Selector_1_reg[1] 
        (.C(CLK),
-        .CE(MDM_SEL),
+        .CE(\Use_BSCAN.MDM_SEL ),
         .CLR(AR),
-        .D(TDI_Shifter[1]),
-        .Q(PORT_Selector_1[1]));
+        .D(\Use_BSCAN.TDI_Shifter [1]),
+        .Q(\Use_BSCAN.PORT_Selector_1 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \Use_BSCAN.PORT_Selector_1_reg[2] 
        (.C(CLK),
-        .CE(MDM_SEL),
+        .CE(\Use_BSCAN.MDM_SEL ),
         .CLR(AR),
-        .D(TDI_Shifter[2]),
-        .Q(PORT_Selector_1[2]));
+        .D(\Use_BSCAN.TDI_Shifter [2]),
+        .Q(\Use_BSCAN.PORT_Selector_1 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \Use_BSCAN.PORT_Selector_1_reg[3] 
        (.C(CLK),
-        .CE(MDM_SEL),
+        .CE(\Use_BSCAN.MDM_SEL ),
         .CLR(AR),
-        .D(TDI_Shifter[3]),
-        .Q(PORT_Selector_1[3]));
+        .D(\Use_BSCAN.TDI_Shifter [3]),
+        .Q(\Use_BSCAN.PORT_Selector_1 [3]));
   FDCE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
@@ -13943,8 +13918,8 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
        (.C(CLK),
         .CE(1'b1),
         .CLR(AR),
-        .D(PORT_Selector_1[0]),
-        .Q(PORT_Selector[0]));
+        .D(\Use_BSCAN.PORT_Selector_1 [0]),
+        .Q(\Use_BSCAN.PORT_Selector [0]));
   FDCE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
@@ -13952,8 +13927,8 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
        (.C(CLK),
         .CE(1'b1),
         .CLR(AR),
-        .D(PORT_Selector_1[1]),
-        .Q(PORT_Selector[1]));
+        .D(\Use_BSCAN.PORT_Selector_1 [1]),
+        .Q(\Use_BSCAN.PORT_Selector [1]));
   FDCE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
@@ -13961,8 +13936,8 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
        (.C(CLK),
         .CE(1'b1),
         .CLR(AR),
-        .D(PORT_Selector_1[2]),
-        .Q(PORT_Selector[2]));
+        .D(\Use_BSCAN.PORT_Selector_1 [2]),
+        .Q(\Use_BSCAN.PORT_Selector [2]));
   FDCE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
@@ -13970,50 +13945,50 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
        (.C(CLK),
         .CE(1'b1),
         .CLR(AR),
-        .D(PORT_Selector_1[3]),
-        .Q(PORT_Selector[3]));
+        .D(\Use_BSCAN.PORT_Selector_1 [3]),
+        .Q(\Use_BSCAN.PORT_Selector [3]));
   LUT6 #(
     .INIT(64'h0001000000000000)) 
     \Use_BSCAN.TDI_Shifter[3]_i_1 
-       (.I0(PORT_Selector[2]),
-        .I1(PORT_Selector[3]),
-        .I2(PORT_Selector[1]),
-        .I3(PORT_Selector[0]),
+       (.I0(\Use_BSCAN.PORT_Selector [2]),
+        .I1(\Use_BSCAN.PORT_Selector [3]),
+        .I2(\Use_BSCAN.PORT_Selector [1]),
+        .I3(\Use_BSCAN.PORT_Selector [0]),
         .I4(SEL),
         .I5(Dbg_Shift_0_0),
-        .O(TDI_Shifter0));
+        .O(\Use_BSCAN.TDI_Shifter0 ));
   FDCE #(
     .INIT(1'b0)) 
     \Use_BSCAN.TDI_Shifter_reg[0] 
-       (.C(\Using_FPGA.Native ),
-        .CE(TDI_Shifter0),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_BSCAN.TDI_Shifter0 ),
         .CLR(AR),
-        .D(TDI_Shifter[1]),
-        .Q(TDI_Shifter[0]));
+        .D(\Use_BSCAN.TDI_Shifter [1]),
+        .Q(\Use_BSCAN.TDI_Shifter [0]));
   FDCE #(
     .INIT(1'b0)) 
     \Use_BSCAN.TDI_Shifter_reg[1] 
-       (.C(\Using_FPGA.Native ),
-        .CE(TDI_Shifter0),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_BSCAN.TDI_Shifter0 ),
         .CLR(AR),
-        .D(TDI_Shifter[2]),
-        .Q(TDI_Shifter[1]));
+        .D(\Use_BSCAN.TDI_Shifter [2]),
+        .Q(\Use_BSCAN.TDI_Shifter [1]));
   FDCE #(
     .INIT(1'b0)) 
     \Use_BSCAN.TDI_Shifter_reg[2] 
-       (.C(\Using_FPGA.Native ),
-        .CE(TDI_Shifter0),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_BSCAN.TDI_Shifter0 ),
         .CLR(AR),
-        .D(TDI_Shifter[3]),
-        .Q(TDI_Shifter[2]));
+        .D(\Use_BSCAN.TDI_Shifter [3]),
+        .Q(\Use_BSCAN.TDI_Shifter [2]));
   FDCE #(
     .INIT(1'b0)) 
     \Use_BSCAN.TDI_Shifter_reg[3] 
-       (.C(\Using_FPGA.Native ),
-        .CE(TDI_Shifter0),
+       (.C(\Use_unisim.MB_SRL16E_I1 ),
+        .CE(\Use_BSCAN.TDI_Shifter0 ),
         .CLR(AR),
         .D(Ext_JTAG_TDI),
-        .Q(TDI_Shifter[3]));
+        .Q(\Use_BSCAN.TDI_Shifter [3]));
   FDRE #(
     .INIT(1'b1)) 
     \Use_BSCAN.jtag_disable_reg 
@@ -14025,11 +14000,11 @@ module MicroBlazeIPBlock_mdm_1_0_MDM_Core
   LUT5 #(
     .INIT(32'hFFFFFF04)) 
     \Use_E2.BSCANE2_I_i_2 
-       (.I0(PORT_Selector[0]),
-        .I1(Config_Reg),
-        .I2(PORT_Selector[1]),
-        .I3(PORT_Selector[3]),
-        .I4(PORT_Selector[2]),
+       (.I0(\Use_BSCAN.PORT_Selector [0]),
+        .I1(\Use_BSCAN.Config_Reg ),
+        .I2(\Use_BSCAN.PORT_Selector [1]),
+        .I3(\Use_BSCAN.PORT_Selector [3]),
+        .I4(\Use_BSCAN.PORT_Selector [2]),
         .O(\Use_E2.BSCANE2_I_i_2_n_0 ));
 endmodule
 `ifndef GLBL

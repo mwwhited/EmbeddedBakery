@@ -1,10 +1,11 @@
-// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Tue Mar  9 23:42:56 2021
-// Host        : EvengerBook running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+// Date        : Fri Dec  5 20:38:35 2025
+// Host        : AGIMUS running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_sim_netlist.v
+//               c:/repo/a7100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_sim_netlist.v
 // Design      : MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +13,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "MicroBlazeIPBlock_dlmb_bram_if_cntlr_0,lmb_bram_if_cntlr,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_bram_if_cntlr,Vivado 2020.2" *) 
+(* CHECK_LICENSE_TYPE = "MicroBlazeIPBlock_dlmb_bram_if_cntlr_0,lmb_bram_if_cntlr,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_bram_if_cntlr,Vivado 2025.2" *) 
 (* NotValidForBitStream *)
 module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
    (LMB_Clk,
@@ -35,9 +36,9 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
     BRAM_WEN_A,
     BRAM_Dout_A,
     BRAM_Din_A);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK.LMB_Clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK.LMB_Clk, ASSOCIATED_BUSIF SLMB:SLMB1:SLMB2:SLMB3, ASSOCIATED_RESET LMB_Rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input LMB_Clk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.LMB_Rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.LMB_Rst, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) input LMB_Rst;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB ABUS" *) (* x_interface_parameter = "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD" *) input [0:31]LMB_ABus;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK.LMB_Clk CLK" *) (* x_interface_mode = "slave CLK.LMB_Clk" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK.LMB_Clk, ASSOCIATED_BUSIF SLMB:SLMB1:SLMB2:SLMB3:SLMB4:SLMB5:SLMB6:SLMB7, ASSOCIATED_RESET LMB_Rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input LMB_Clk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.LMB_Rst RST" *) (* x_interface_mode = "slave RST.LMB_Rst" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.LMB_Rst, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) input LMB_Rst;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB ABUS" *) (* x_interface_mode = "slave SLMB" *) (* x_interface_parameter = "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0" *) input [0:31]LMB_ABus;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB WRITEDBUS" *) input [0:31]LMB_WriteDBus;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB ADDRSTROBE" *) input LMB_AddrStrobe;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB READSTROBE" *) input LMB_ReadStrobe;
@@ -48,7 +49,7 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB WAIT" *) output Sl_Wait;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB UE" *) output Sl_UE;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB CE" *) output Sl_CE;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT RST" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORT, MEM_SIZE 8192, MASTER_TYPE BRAM_CTRL, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *) output BRAM_Rst_A;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT RST" *) (* x_interface_mode = "master BRAM_PORT" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORT, MEM_SIZE 8192, MASTER_TYPE BRAM_CTRL, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *) output BRAM_Rst_A;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT CLK" *) output BRAM_Clk_A;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT ADDR" *) output [0:31]BRAM_Addr_A;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT EN" *) output BRAM_EN_A;
@@ -92,6 +93,22 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
   wire NLW_U0_Sl3_Ready_UNCONNECTED;
   wire NLW_U0_Sl3_UE_UNCONNECTED;
   wire NLW_U0_Sl3_Wait_UNCONNECTED;
+  wire NLW_U0_Sl4_CE_UNCONNECTED;
+  wire NLW_U0_Sl4_Ready_UNCONNECTED;
+  wire NLW_U0_Sl4_UE_UNCONNECTED;
+  wire NLW_U0_Sl4_Wait_UNCONNECTED;
+  wire NLW_U0_Sl5_CE_UNCONNECTED;
+  wire NLW_U0_Sl5_Ready_UNCONNECTED;
+  wire NLW_U0_Sl5_UE_UNCONNECTED;
+  wire NLW_U0_Sl5_Wait_UNCONNECTED;
+  wire NLW_U0_Sl6_CE_UNCONNECTED;
+  wire NLW_U0_Sl6_Ready_UNCONNECTED;
+  wire NLW_U0_Sl6_UE_UNCONNECTED;
+  wire NLW_U0_Sl6_Wait_UNCONNECTED;
+  wire NLW_U0_Sl7_CE_UNCONNECTED;
+  wire NLW_U0_Sl7_Ready_UNCONNECTED;
+  wire NLW_U0_Sl7_UE_UNCONNECTED;
+  wire NLW_U0_Sl7_Wait_UNCONNECTED;
   wire NLW_U0_Sl_CE_UNCONNECTED;
   wire NLW_U0_Sl_UE_UNCONNECTED;
   wire NLW_U0_Sl_Wait_UNCONNECTED;
@@ -102,6 +119,10 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
   wire [0:31]NLW_U0_Sl1_DBus_UNCONNECTED;
   wire [0:31]NLW_U0_Sl2_DBus_UNCONNECTED;
   wire [0:31]NLW_U0_Sl3_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl4_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl5_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl6_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl7_DBus_UNCONNECTED;
 
   assign BRAM_Rst_A = \<const0> ;
   assign Sl_CE = \<const0> ;
@@ -109,6 +130,7 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
   assign Sl_Wait = \<const0> ;
   GND GND
        (.G(\<const0> ));
+  (* C_ARBITRATION = "0" *) 
   (* C_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
   (* C_BRAM_AWIDTH = "32" *) 
   (* C_CE_COUNTER_WIDTH = "0" *) 
@@ -123,12 +145,25 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
   (* C_INTERCONNECT = "0" *) 
   (* C_LMB_AWIDTH = "32" *) 
   (* C_LMB_DWIDTH = "32" *) 
+  (* C_LMB_HAS_PROT = "0" *) 
   (* C_LMB_PROTOCOL = "0" *) 
   (* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) 
   (* C_MASK1 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
   (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
   (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK4 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK5 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK6 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK7 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
   (* C_NUM_LMB = "1" *) 
+  (* C_PROT_CFG = "8'b11111111" *) 
+  (* C_PROT_CFG1 = "8'b11111111" *) 
+  (* C_PROT_CFG2 = "8'b11111111" *) 
+  (* C_PROT_CFG3 = "8'b11111111" *) 
+  (* C_PROT_CFG4 = "8'b11111111" *) 
+  (* C_PROT_CFG5 = "8'b11111111" *) 
+  (* C_PROT_CFG6 = "8'b11111111" *) 
+  (* C_PROT_CFG7 = "8'b11111111" *) 
   (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) 
   (* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) 
   (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) 
@@ -148,25 +183,57 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
         .LMB1_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .LMB1_AddrStrobe(1'b0),
         .LMB1_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB1_Prot({1'b0,1'b0}),
         .LMB1_ReadStrobe(1'b0),
         .LMB1_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .LMB1_WriteStrobe(1'b0),
         .LMB2_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .LMB2_AddrStrobe(1'b0),
         .LMB2_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB2_Prot({1'b0,1'b0}),
         .LMB2_ReadStrobe(1'b0),
         .LMB2_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .LMB2_WriteStrobe(1'b0),
         .LMB3_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .LMB3_AddrStrobe(1'b0),
         .LMB3_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB3_Prot({1'b0,1'b0}),
         .LMB3_ReadStrobe(1'b0),
         .LMB3_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .LMB3_WriteStrobe(1'b0),
+        .LMB4_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB4_AddrStrobe(1'b0),
+        .LMB4_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB4_Prot({1'b0,1'b0}),
+        .LMB4_ReadStrobe(1'b0),
+        .LMB4_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB4_WriteStrobe(1'b0),
+        .LMB5_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB5_AddrStrobe(1'b0),
+        .LMB5_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB5_Prot({1'b0,1'b0}),
+        .LMB5_ReadStrobe(1'b0),
+        .LMB5_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB5_WriteStrobe(1'b0),
+        .LMB6_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB6_AddrStrobe(1'b0),
+        .LMB6_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB6_Prot({1'b0,1'b0}),
+        .LMB6_ReadStrobe(1'b0),
+        .LMB6_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB6_WriteStrobe(1'b0),
+        .LMB7_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB7_AddrStrobe(1'b0),
+        .LMB7_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB7_Prot({1'b0,1'b0}),
+        .LMB7_ReadStrobe(1'b0),
+        .LMB7_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB7_WriteStrobe(1'b0),
         .LMB_ABus(LMB_ABus),
         .LMB_AddrStrobe(LMB_AddrStrobe),
         .LMB_BE(LMB_BE),
         .LMB_Clk(LMB_Clk),
+        .LMB_Prot({1'b0,1'b0}),
         .LMB_ReadStrobe(1'b0),
         .LMB_Rst(LMB_Rst),
         .LMB_WriteDBus(LMB_WriteDBus),
@@ -205,6 +272,26 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
         .Sl3_Ready(NLW_U0_Sl3_Ready_UNCONNECTED),
         .Sl3_UE(NLW_U0_Sl3_UE_UNCONNECTED),
         .Sl3_Wait(NLW_U0_Sl3_Wait_UNCONNECTED),
+        .Sl4_CE(NLW_U0_Sl4_CE_UNCONNECTED),
+        .Sl4_DBus(NLW_U0_Sl4_DBus_UNCONNECTED[0:31]),
+        .Sl4_Ready(NLW_U0_Sl4_Ready_UNCONNECTED),
+        .Sl4_UE(NLW_U0_Sl4_UE_UNCONNECTED),
+        .Sl4_Wait(NLW_U0_Sl4_Wait_UNCONNECTED),
+        .Sl5_CE(NLW_U0_Sl5_CE_UNCONNECTED),
+        .Sl5_DBus(NLW_U0_Sl5_DBus_UNCONNECTED[0:31]),
+        .Sl5_Ready(NLW_U0_Sl5_Ready_UNCONNECTED),
+        .Sl5_UE(NLW_U0_Sl5_UE_UNCONNECTED),
+        .Sl5_Wait(NLW_U0_Sl5_Wait_UNCONNECTED),
+        .Sl6_CE(NLW_U0_Sl6_CE_UNCONNECTED),
+        .Sl6_DBus(NLW_U0_Sl6_DBus_UNCONNECTED[0:31]),
+        .Sl6_Ready(NLW_U0_Sl6_Ready_UNCONNECTED),
+        .Sl6_UE(NLW_U0_Sl6_UE_UNCONNECTED),
+        .Sl6_Wait(NLW_U0_Sl6_Wait_UNCONNECTED),
+        .Sl7_CE(NLW_U0_Sl7_CE_UNCONNECTED),
+        .Sl7_DBus(NLW_U0_Sl7_DBus_UNCONNECTED[0:31]),
+        .Sl7_Ready(NLW_U0_Sl7_Ready_UNCONNECTED),
+        .Sl7_UE(NLW_U0_Sl7_UE_UNCONNECTED),
+        .Sl7_Wait(NLW_U0_Sl7_Wait_UNCONNECTED),
         .Sl_CE(NLW_U0_Sl_CE_UNCONNECTED),
         .Sl_DBus(Sl_DBus),
         .Sl_Ready(Sl_Ready),
@@ -213,19 +300,25 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0
         .UE(NLW_U0_UE_UNCONNECTED));
 endmodule
 
-(* C_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* C_BRAM_AWIDTH = "32" *) (* C_CE_COUNTER_WIDTH = "0" *) 
-(* C_CE_FAILING_REGISTERS = "0" *) (* C_ECC = "0" *) (* C_ECC_ONOFF_REGISTER = "0" *) 
-(* C_ECC_ONOFF_RESET_VALUE = "1" *) (* C_ECC_STATUS_REGISTERS = "0" *) (* C_FAMILY = "artix7" *) 
-(* C_FAULT_INJECT = "0" *) (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000000001111111111111" *) (* C_INTERCONNECT = "0" *) 
-(* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) (* C_LMB_PROTOCOL = "0" *) 
-(* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) (* C_MASK1 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-(* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_NUM_LMB = "1" *) (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) 
-(* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_CTRL_HIGHADDR = "32'b00000000000000000000000000000000" *) 
-(* C_UE_FAILING_REGISTERS = "0" *) (* C_WRITE_ACCESS = "2" *) (* ORIG_REF_NAME = "lmb_bram_if_cntlr" *) 
+(* C_ARBITRATION = "0" *) (* C_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* C_BRAM_AWIDTH = "32" *) 
+(* C_CE_COUNTER_WIDTH = "0" *) (* C_CE_FAILING_REGISTERS = "0" *) (* C_ECC = "0" *) 
+(* C_ECC_ONOFF_REGISTER = "0" *) (* C_ECC_ONOFF_RESET_VALUE = "1" *) (* C_ECC_STATUS_REGISTERS = "0" *) 
+(* C_FAMILY = "artix7" *) (* C_FAULT_INJECT = "0" *) (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000000001111111111111" *) 
+(* C_INTERCONNECT = "0" *) (* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) 
+(* C_LMB_HAS_PROT = "0" *) (* C_LMB_PROTOCOL = "0" *) (* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) 
+(* C_MASK1 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+(* C_MASK4 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK5 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK6 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+(* C_MASK7 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_NUM_LMB = "1" *) (* C_PROT_CFG = "8'b11111111" *) 
+(* C_PROT_CFG1 = "8'b11111111" *) (* C_PROT_CFG2 = "8'b11111111" *) (* C_PROT_CFG3 = "8'b11111111" *) 
+(* C_PROT_CFG4 = "8'b11111111" *) (* C_PROT_CFG5 = "8'b11111111" *) (* C_PROT_CFG6 = "8'b11111111" *) 
+(* C_PROT_CFG7 = "8'b11111111" *) (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) (* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) 
+(* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_CTRL_HIGHADDR = "32'b00000000000000000000000000000000" *) (* C_UE_FAILING_REGISTERS = "0" *) 
+(* C_WRITE_ACCESS = "2" *) (* ORIG_REF_NAME = "lmb_bram_if_cntlr" *) 
 module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
    (LMB_Clk,
     LMB_Rst,
     LMB_ABus,
+    LMB_Prot,
     LMB_WriteDBus,
     LMB_AddrStrobe,
     LMB_ReadStrobe,
@@ -237,6 +330,7 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
     Sl_UE,
     Sl_CE,
     LMB1_ABus,
+    LMB1_Prot,
     LMB1_WriteDBus,
     LMB1_AddrStrobe,
     LMB1_ReadStrobe,
@@ -248,6 +342,7 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
     Sl1_UE,
     Sl1_CE,
     LMB2_ABus,
+    LMB2_Prot,
     LMB2_WriteDBus,
     LMB2_AddrStrobe,
     LMB2_ReadStrobe,
@@ -259,6 +354,7 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
     Sl2_UE,
     Sl2_CE,
     LMB3_ABus,
+    LMB3_Prot,
     LMB3_WriteDBus,
     LMB3_AddrStrobe,
     LMB3_ReadStrobe,
@@ -269,6 +365,54 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
     Sl3_Wait,
     Sl3_UE,
     Sl3_CE,
+    LMB4_ABus,
+    LMB4_Prot,
+    LMB4_WriteDBus,
+    LMB4_AddrStrobe,
+    LMB4_ReadStrobe,
+    LMB4_WriteStrobe,
+    LMB4_BE,
+    Sl4_DBus,
+    Sl4_Ready,
+    Sl4_Wait,
+    Sl4_UE,
+    Sl4_CE,
+    LMB5_ABus,
+    LMB5_Prot,
+    LMB5_WriteDBus,
+    LMB5_AddrStrobe,
+    LMB5_ReadStrobe,
+    LMB5_WriteStrobe,
+    LMB5_BE,
+    Sl5_DBus,
+    Sl5_Ready,
+    Sl5_Wait,
+    Sl5_UE,
+    Sl5_CE,
+    LMB6_ABus,
+    LMB6_Prot,
+    LMB6_WriteDBus,
+    LMB6_AddrStrobe,
+    LMB6_ReadStrobe,
+    LMB6_WriteStrobe,
+    LMB6_BE,
+    Sl6_DBus,
+    Sl6_Ready,
+    Sl6_Wait,
+    Sl6_UE,
+    Sl6_CE,
+    LMB7_ABus,
+    LMB7_Prot,
+    LMB7_WriteDBus,
+    LMB7_AddrStrobe,
+    LMB7_ReadStrobe,
+    LMB7_WriteStrobe,
+    LMB7_BE,
+    Sl7_DBus,
+    Sl7_Ready,
+    Sl7_Wait,
+    Sl7_UE,
+    Sl7_CE,
     BRAM_Rst_A,
     BRAM_Clk_A,
     BRAM_Addr_A,
@@ -301,6 +445,7 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
   input LMB_Clk;
   input LMB_Rst;
   input [0:31]LMB_ABus;
+  input [0:1]LMB_Prot;
   input [0:31]LMB_WriteDBus;
   input LMB_AddrStrobe;
   input LMB_ReadStrobe;
@@ -312,6 +457,7 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
   output Sl_UE;
   output Sl_CE;
   input [0:31]LMB1_ABus;
+  input [0:1]LMB1_Prot;
   input [0:31]LMB1_WriteDBus;
   input LMB1_AddrStrobe;
   input LMB1_ReadStrobe;
@@ -323,6 +469,7 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
   output Sl1_UE;
   output Sl1_CE;
   input [0:31]LMB2_ABus;
+  input [0:1]LMB2_Prot;
   input [0:31]LMB2_WriteDBus;
   input LMB2_AddrStrobe;
   input LMB2_ReadStrobe;
@@ -334,6 +481,7 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
   output Sl2_UE;
   output Sl2_CE;
   input [0:31]LMB3_ABus;
+  input [0:1]LMB3_Prot;
   input [0:31]LMB3_WriteDBus;
   input LMB3_AddrStrobe;
   input LMB3_ReadStrobe;
@@ -344,6 +492,54 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
   output Sl3_Wait;
   output Sl3_UE;
   output Sl3_CE;
+  input [0:31]LMB4_ABus;
+  input [0:1]LMB4_Prot;
+  input [0:31]LMB4_WriteDBus;
+  input LMB4_AddrStrobe;
+  input LMB4_ReadStrobe;
+  input LMB4_WriteStrobe;
+  input [0:3]LMB4_BE;
+  output [0:31]Sl4_DBus;
+  output Sl4_Ready;
+  output Sl4_Wait;
+  output Sl4_UE;
+  output Sl4_CE;
+  input [0:31]LMB5_ABus;
+  input [0:1]LMB5_Prot;
+  input [0:31]LMB5_WriteDBus;
+  input LMB5_AddrStrobe;
+  input LMB5_ReadStrobe;
+  input LMB5_WriteStrobe;
+  input [0:3]LMB5_BE;
+  output [0:31]Sl5_DBus;
+  output Sl5_Ready;
+  output Sl5_Wait;
+  output Sl5_UE;
+  output Sl5_CE;
+  input [0:31]LMB6_ABus;
+  input [0:1]LMB6_Prot;
+  input [0:31]LMB6_WriteDBus;
+  input LMB6_AddrStrobe;
+  input LMB6_ReadStrobe;
+  input LMB6_WriteStrobe;
+  input [0:3]LMB6_BE;
+  output [0:31]Sl6_DBus;
+  output Sl6_Ready;
+  output Sl6_Wait;
+  output Sl6_UE;
+  output Sl6_CE;
+  input [0:31]LMB7_ABus;
+  input [0:1]LMB7_Prot;
+  input [0:31]LMB7_WriteDBus;
+  input LMB7_AddrStrobe;
+  input LMB7_ReadStrobe;
+  input LMB7_WriteStrobe;
+  input [0:3]LMB7_BE;
+  output [0:31]Sl7_DBus;
+  output Sl7_Ready;
+  output Sl7_Wait;
+  output Sl7_UE;
+  output Sl7_CE;
   output BRAM_Rst_A;
   output BRAM_Clk_A;
   output [0:31]BRAM_Addr_A;
@@ -546,6 +742,150 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
   assign Sl3_Ready = \<const0> ;
   assign Sl3_UE = \<const0> ;
   assign Sl3_Wait = \<const0> ;
+  assign Sl4_CE = \<const0> ;
+  assign Sl4_DBus[0] = \<const0> ;
+  assign Sl4_DBus[1] = \<const0> ;
+  assign Sl4_DBus[2] = \<const0> ;
+  assign Sl4_DBus[3] = \<const0> ;
+  assign Sl4_DBus[4] = \<const0> ;
+  assign Sl4_DBus[5] = \<const0> ;
+  assign Sl4_DBus[6] = \<const0> ;
+  assign Sl4_DBus[7] = \<const0> ;
+  assign Sl4_DBus[8] = \<const0> ;
+  assign Sl4_DBus[9] = \<const0> ;
+  assign Sl4_DBus[10] = \<const0> ;
+  assign Sl4_DBus[11] = \<const0> ;
+  assign Sl4_DBus[12] = \<const0> ;
+  assign Sl4_DBus[13] = \<const0> ;
+  assign Sl4_DBus[14] = \<const0> ;
+  assign Sl4_DBus[15] = \<const0> ;
+  assign Sl4_DBus[16] = \<const0> ;
+  assign Sl4_DBus[17] = \<const0> ;
+  assign Sl4_DBus[18] = \<const0> ;
+  assign Sl4_DBus[19] = \<const0> ;
+  assign Sl4_DBus[20] = \<const0> ;
+  assign Sl4_DBus[21] = \<const0> ;
+  assign Sl4_DBus[22] = \<const0> ;
+  assign Sl4_DBus[23] = \<const0> ;
+  assign Sl4_DBus[24] = \<const0> ;
+  assign Sl4_DBus[25] = \<const0> ;
+  assign Sl4_DBus[26] = \<const0> ;
+  assign Sl4_DBus[27] = \<const0> ;
+  assign Sl4_DBus[28] = \<const0> ;
+  assign Sl4_DBus[29] = \<const0> ;
+  assign Sl4_DBus[30] = \<const0> ;
+  assign Sl4_DBus[31] = \<const0> ;
+  assign Sl4_Ready = \<const0> ;
+  assign Sl4_UE = \<const0> ;
+  assign Sl4_Wait = \<const0> ;
+  assign Sl5_CE = \<const0> ;
+  assign Sl5_DBus[0] = \<const0> ;
+  assign Sl5_DBus[1] = \<const0> ;
+  assign Sl5_DBus[2] = \<const0> ;
+  assign Sl5_DBus[3] = \<const0> ;
+  assign Sl5_DBus[4] = \<const0> ;
+  assign Sl5_DBus[5] = \<const0> ;
+  assign Sl5_DBus[6] = \<const0> ;
+  assign Sl5_DBus[7] = \<const0> ;
+  assign Sl5_DBus[8] = \<const0> ;
+  assign Sl5_DBus[9] = \<const0> ;
+  assign Sl5_DBus[10] = \<const0> ;
+  assign Sl5_DBus[11] = \<const0> ;
+  assign Sl5_DBus[12] = \<const0> ;
+  assign Sl5_DBus[13] = \<const0> ;
+  assign Sl5_DBus[14] = \<const0> ;
+  assign Sl5_DBus[15] = \<const0> ;
+  assign Sl5_DBus[16] = \<const0> ;
+  assign Sl5_DBus[17] = \<const0> ;
+  assign Sl5_DBus[18] = \<const0> ;
+  assign Sl5_DBus[19] = \<const0> ;
+  assign Sl5_DBus[20] = \<const0> ;
+  assign Sl5_DBus[21] = \<const0> ;
+  assign Sl5_DBus[22] = \<const0> ;
+  assign Sl5_DBus[23] = \<const0> ;
+  assign Sl5_DBus[24] = \<const0> ;
+  assign Sl5_DBus[25] = \<const0> ;
+  assign Sl5_DBus[26] = \<const0> ;
+  assign Sl5_DBus[27] = \<const0> ;
+  assign Sl5_DBus[28] = \<const0> ;
+  assign Sl5_DBus[29] = \<const0> ;
+  assign Sl5_DBus[30] = \<const0> ;
+  assign Sl5_DBus[31] = \<const0> ;
+  assign Sl5_Ready = \<const0> ;
+  assign Sl5_UE = \<const0> ;
+  assign Sl5_Wait = \<const0> ;
+  assign Sl6_CE = \<const0> ;
+  assign Sl6_DBus[0] = \<const0> ;
+  assign Sl6_DBus[1] = \<const0> ;
+  assign Sl6_DBus[2] = \<const0> ;
+  assign Sl6_DBus[3] = \<const0> ;
+  assign Sl6_DBus[4] = \<const0> ;
+  assign Sl6_DBus[5] = \<const0> ;
+  assign Sl6_DBus[6] = \<const0> ;
+  assign Sl6_DBus[7] = \<const0> ;
+  assign Sl6_DBus[8] = \<const0> ;
+  assign Sl6_DBus[9] = \<const0> ;
+  assign Sl6_DBus[10] = \<const0> ;
+  assign Sl6_DBus[11] = \<const0> ;
+  assign Sl6_DBus[12] = \<const0> ;
+  assign Sl6_DBus[13] = \<const0> ;
+  assign Sl6_DBus[14] = \<const0> ;
+  assign Sl6_DBus[15] = \<const0> ;
+  assign Sl6_DBus[16] = \<const0> ;
+  assign Sl6_DBus[17] = \<const0> ;
+  assign Sl6_DBus[18] = \<const0> ;
+  assign Sl6_DBus[19] = \<const0> ;
+  assign Sl6_DBus[20] = \<const0> ;
+  assign Sl6_DBus[21] = \<const0> ;
+  assign Sl6_DBus[22] = \<const0> ;
+  assign Sl6_DBus[23] = \<const0> ;
+  assign Sl6_DBus[24] = \<const0> ;
+  assign Sl6_DBus[25] = \<const0> ;
+  assign Sl6_DBus[26] = \<const0> ;
+  assign Sl6_DBus[27] = \<const0> ;
+  assign Sl6_DBus[28] = \<const0> ;
+  assign Sl6_DBus[29] = \<const0> ;
+  assign Sl6_DBus[30] = \<const0> ;
+  assign Sl6_DBus[31] = \<const0> ;
+  assign Sl6_Ready = \<const0> ;
+  assign Sl6_UE = \<const0> ;
+  assign Sl6_Wait = \<const0> ;
+  assign Sl7_CE = \<const0> ;
+  assign Sl7_DBus[0] = \<const0> ;
+  assign Sl7_DBus[1] = \<const0> ;
+  assign Sl7_DBus[2] = \<const0> ;
+  assign Sl7_DBus[3] = \<const0> ;
+  assign Sl7_DBus[4] = \<const0> ;
+  assign Sl7_DBus[5] = \<const0> ;
+  assign Sl7_DBus[6] = \<const0> ;
+  assign Sl7_DBus[7] = \<const0> ;
+  assign Sl7_DBus[8] = \<const0> ;
+  assign Sl7_DBus[9] = \<const0> ;
+  assign Sl7_DBus[10] = \<const0> ;
+  assign Sl7_DBus[11] = \<const0> ;
+  assign Sl7_DBus[12] = \<const0> ;
+  assign Sl7_DBus[13] = \<const0> ;
+  assign Sl7_DBus[14] = \<const0> ;
+  assign Sl7_DBus[15] = \<const0> ;
+  assign Sl7_DBus[16] = \<const0> ;
+  assign Sl7_DBus[17] = \<const0> ;
+  assign Sl7_DBus[18] = \<const0> ;
+  assign Sl7_DBus[19] = \<const0> ;
+  assign Sl7_DBus[20] = \<const0> ;
+  assign Sl7_DBus[21] = \<const0> ;
+  assign Sl7_DBus[22] = \<const0> ;
+  assign Sl7_DBus[23] = \<const0> ;
+  assign Sl7_DBus[24] = \<const0> ;
+  assign Sl7_DBus[25] = \<const0> ;
+  assign Sl7_DBus[26] = \<const0> ;
+  assign Sl7_DBus[27] = \<const0> ;
+  assign Sl7_DBus[28] = \<const0> ;
+  assign Sl7_DBus[29] = \<const0> ;
+  assign Sl7_DBus[30] = \<const0> ;
+  assign Sl7_DBus[31] = \<const0> ;
+  assign Sl7_Ready = \<const0> ;
+  assign Sl7_UE = \<const0> ;
+  assign Sl7_Wait = \<const0> ;
   assign Sl_CE = \<const0> ;
   assign Sl_DBus[0:31] = BRAM_Din_A;
   assign Sl_UE = \<const0> ;
@@ -614,8 +954,8 @@ module MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
   LUT2 #(
     .INIT(4'h8)) 
     Sl_Ready_INST_0
-       (.I0(lmb_as),
-        .I1(Sl_Rdy),
+       (.I0(Sl_Rdy),
+        .I1(lmb_as),
         .O(Sl_Ready));
 endmodule
 `ifndef GLBL

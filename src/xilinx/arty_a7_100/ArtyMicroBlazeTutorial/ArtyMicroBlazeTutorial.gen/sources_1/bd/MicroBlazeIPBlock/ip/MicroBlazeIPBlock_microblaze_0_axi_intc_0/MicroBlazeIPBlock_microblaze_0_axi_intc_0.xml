@@ -343,7 +343,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_READ_OUTSTANDING">2</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_READ_OUTSTANDING">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -352,7 +352,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_OUTSTANDING">2</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_OUTSTANDING">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -495,6 +495,15 @@
           </spirit:vendorExtensions>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>ASSOCIATED_PORT</spirit:name>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI_ACLK.ASSOCIATED_PORT"/>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>INSERT_VIP</spirit:name>
           <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.S_AXI_ACLK.INSERT_VIP">0</spirit:value>
           <spirit:vendorExtensions>
@@ -599,6 +608,15 @@
           </spirit:vendorExtensions>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>ASSOCIATED_PORT</spirit:name>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PROC_CLOCK.ASSOCIATED_PORT"/>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>INSERT_VIP</spirit:name>
           <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.PROC_CLOCK.INSERT_VIP">0</spirit:value>
           <spirit:vendorExtensions>
@@ -660,7 +678,7 @@
       </spirit:vendorExtensions>
     </spirit:busInterface>
     <spirit:busInterface>
-      <spirit:name>interrupt.irq</spirit:name>
+      <spirit:name>interrupt_irq</spirit:name>
       <spirit:displayName>INTERRUPT</spirit:displayName>
       <spirit:description>Interrupt to other target than MicroBlaze</spirit:description>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="interrupt" spirit:version="1.0"/>
@@ -679,11 +697,11 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>SENSITIVITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.INTERRUPT.IRQ.SENSITIVITY">LEVEL_HIGH</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.INTERRUPT_IRQ.SENSITIVITY">LEVEL_HIGH</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PortWidth</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.INTERRUPT.IRQ.PortWidth">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.INTERRUPT_IRQ.PortWidth">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -694,7 +712,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.interrupt.irq" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.C_IRQ_CONNECTION&apos;)) = 1">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.interrupt_irq" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.C_IRQ_CONNECTION&apos;)) = 1">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -780,11 +798,6 @@
         <spirit:parameter>
           <spirit:name>SENSITIVITY</spirit:name>
           <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.INTERRUPT_INPUT.SENSITIVITY">LEVEL_HIGH</spirit:value>
-          <spirit:vendorExtensions>
-            <xilinx:parameterInfo>
-              <xilinx:parameterUsage>none</xilinx:parameterUsage>
-            </xilinx:parameterInfo>
-          </spirit:vendorExtensions>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PortWidth</spirit:name>
@@ -1234,7 +1247,7 @@ For each bit:
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[0]</spirit:name>
+          <spirit:name>IVAR_0</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 0</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 0</spirit:description>
           <spirit:addressOffset>0x100</spirit:addressOffset>
@@ -1242,7 +1255,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1262,13 +1275,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[0]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 0)">true</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_0" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 0)">true</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[1]</spirit:name>
+          <spirit:name>IVAR_1</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 1</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 1</spirit:description>
           <spirit:addressOffset>0x104</spirit:addressOffset>
@@ -1276,7 +1289,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1296,13 +1309,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[1]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_1" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[2]</spirit:name>
+          <spirit:name>IVAR_2</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 2</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 2</spirit:description>
           <spirit:addressOffset>0x108</spirit:addressOffset>
@@ -1310,7 +1323,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1330,13 +1343,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[2]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 2)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_2" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 2)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[3]</spirit:name>
+          <spirit:name>IVAR_3</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 3</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 3</spirit:description>
           <spirit:addressOffset>0x10C</spirit:addressOffset>
@@ -1344,7 +1357,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1364,13 +1377,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[3]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 3)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_3" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 3)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[4]</spirit:name>
+          <spirit:name>IVAR_4</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 4</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 4</spirit:description>
           <spirit:addressOffset>0x110</spirit:addressOffset>
@@ -1378,7 +1391,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1398,13 +1411,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[4]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 4)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_4" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 4)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[5]</spirit:name>
+          <spirit:name>IVAR_5</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 5</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 5</spirit:description>
           <spirit:addressOffset>0x114</spirit:addressOffset>
@@ -1412,7 +1425,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1432,13 +1445,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[5]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 5)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_5" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 5)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[6]</spirit:name>
+          <spirit:name>IVAR_6</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 6</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 6</spirit:description>
           <spirit:addressOffset>0x118</spirit:addressOffset>
@@ -1446,7 +1459,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1466,13 +1479,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[6]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 6)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_6" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 6)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[7]</spirit:name>
+          <spirit:name>IVAR_7</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 7</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 7</spirit:description>
           <spirit:addressOffset>0x11C</spirit:addressOffset>
@@ -1480,7 +1493,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1500,13 +1513,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[7]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 7)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_7" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 7)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[8]</spirit:name>
+          <spirit:name>IVAR_8</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 8</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 8</spirit:description>
           <spirit:addressOffset>0x120</spirit:addressOffset>
@@ -1514,7 +1527,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1534,13 +1547,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[8]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 8)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_8" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 8)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[9]</spirit:name>
+          <spirit:name>IVAR_9</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 9</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 9</spirit:description>
           <spirit:addressOffset>0x124</spirit:addressOffset>
@@ -1548,7 +1561,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1568,13 +1581,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[9]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 9)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_9" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 9)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[10]</spirit:name>
+          <spirit:name>IVAR_10</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 10</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 10</spirit:description>
           <spirit:addressOffset>0x128</spirit:addressOffset>
@@ -1582,7 +1595,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1602,13 +1615,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[10]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 10)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_10" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 10)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[11]</spirit:name>
+          <spirit:name>IVAR_11</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 11</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 11</spirit:description>
           <spirit:addressOffset>0x12C</spirit:addressOffset>
@@ -1616,7 +1629,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1636,13 +1649,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[11]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 11)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_11" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 11)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[12]</spirit:name>
+          <spirit:name>IVAR_12</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 12</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 12</spirit:description>
           <spirit:addressOffset>0x130</spirit:addressOffset>
@@ -1650,7 +1663,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1670,13 +1683,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[12]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 12)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_12" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 12)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[13]</spirit:name>
+          <spirit:name>IVAR_13</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 13</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 13</spirit:description>
           <spirit:addressOffset>0x134</spirit:addressOffset>
@@ -1684,7 +1697,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1704,13 +1717,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[13]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 13)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_13" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 13)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[14]</spirit:name>
+          <spirit:name>IVAR_14</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 14</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 14</spirit:description>
           <spirit:addressOffset>0x138</spirit:addressOffset>
@@ -1718,7 +1731,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1738,13 +1751,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[14]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 14)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_14" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 14)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[15]</spirit:name>
+          <spirit:name>IVAR_15</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 15</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 15</spirit:description>
           <spirit:addressOffset>0x13C</spirit:addressOffset>
@@ -1752,7 +1765,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1772,13 +1785,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[15]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 15)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_15" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 15)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[16]</spirit:name>
+          <spirit:name>IVAR_16</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 16</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 16</spirit:description>
           <spirit:addressOffset>0x140</spirit:addressOffset>
@@ -1786,7 +1799,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1806,13 +1819,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[16]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 16)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_16" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 16)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[17]</spirit:name>
+          <spirit:name>IVAR_17</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 17</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 17</spirit:description>
           <spirit:addressOffset>0x144</spirit:addressOffset>
@@ -1820,7 +1833,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1840,13 +1853,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[17]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 17)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_17" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 17)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[18]</spirit:name>
+          <spirit:name>IVAR_18</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 18</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 18</spirit:description>
           <spirit:addressOffset>0x148</spirit:addressOffset>
@@ -1854,7 +1867,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1874,13 +1887,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[18]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 18)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_18" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 18)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[19]</spirit:name>
+          <spirit:name>IVAR_19</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 19</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 19</spirit:description>
           <spirit:addressOffset>0x14C</spirit:addressOffset>
@@ -1888,7 +1901,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1908,13 +1921,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[19]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 19)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_19" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 19)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[20]</spirit:name>
+          <spirit:name>IVAR_20</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 20</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 20</spirit:description>
           <spirit:addressOffset>0x150</spirit:addressOffset>
@@ -1922,7 +1935,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1942,13 +1955,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[20]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 20)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_20" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 20)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[21]</spirit:name>
+          <spirit:name>IVAR_21</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 21</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 21</spirit:description>
           <spirit:addressOffset>0x154</spirit:addressOffset>
@@ -1956,7 +1969,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -1976,13 +1989,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[21]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 21)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_21" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 21)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[22]</spirit:name>
+          <spirit:name>IVAR_22</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 22</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 22</spirit:description>
           <spirit:addressOffset>0x158</spirit:addressOffset>
@@ -1990,7 +2003,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2010,13 +2023,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[22]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 22)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_22" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 22)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[23]</spirit:name>
+          <spirit:name>IVAR_23</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 23</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 23</spirit:description>
           <spirit:addressOffset>0x15C</spirit:addressOffset>
@@ -2024,7 +2037,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2044,13 +2057,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[23]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 23)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_23" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 23)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[24]</spirit:name>
+          <spirit:name>IVAR_24</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 24</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 24</spirit:description>
           <spirit:addressOffset>0x160</spirit:addressOffset>
@@ -2058,7 +2071,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2078,13 +2091,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[24]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 24)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_24" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 24)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[25]</spirit:name>
+          <spirit:name>IVAR_25</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 25</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 25</spirit:description>
           <spirit:addressOffset>0x164</spirit:addressOffset>
@@ -2092,7 +2105,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2112,13 +2125,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[25]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 25)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_25" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 25)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[26]</spirit:name>
+          <spirit:name>IVAR_26</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 26</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 26</spirit:description>
           <spirit:addressOffset>0x168</spirit:addressOffset>
@@ -2126,7 +2139,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2146,13 +2159,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[26]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 26)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_26" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 26)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[27]</spirit:name>
+          <spirit:name>IVAR_27</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 27</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 27</spirit:description>
           <spirit:addressOffset>0x16C</spirit:addressOffset>
@@ -2160,7 +2173,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2180,13 +2193,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[27]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 27)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_27" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 27)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[28]</spirit:name>
+          <spirit:name>IVAR_28</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 28</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 28</spirit:description>
           <spirit:addressOffset>0x170</spirit:addressOffset>
@@ -2194,7 +2207,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2214,13 +2227,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[28]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 28)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_28" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 28)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[29]</spirit:name>
+          <spirit:name>IVAR_29</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 29</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 29</spirit:description>
           <spirit:addressOffset>0x174</spirit:addressOffset>
@@ -2228,7 +2241,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2248,13 +2261,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[29]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 29)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_29" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 29)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[30]</spirit:name>
+          <spirit:name>IVAR_30</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 30</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 30</spirit:description>
           <spirit:addressOffset>0x178</spirit:addressOffset>
@@ -2262,7 +2275,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2282,13 +2295,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[30]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 30)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_30" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 30)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVAR[31]</spirit:name>
+          <spirit:name>IVAR_31</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 31</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 31</spirit:description>
           <spirit:addressOffset>0x17C</spirit:addressOffset>
@@ -2296,7 +2309,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),11,18))" spirit:bitStringLength="32">0x000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2316,13 +2329,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR[31]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 31)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVAR_31" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) = 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 31)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[0]</spirit:name>
+          <spirit:name>IVEAR_0</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 0</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 0</spirit:description>
           <spirit:addressOffset>0x200</spirit:addressOffset>
@@ -2330,7 +2343,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2350,13 +2363,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[0]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 0)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_0" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 0)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[1]</spirit:name>
+          <spirit:name>IVEAR_1</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 1</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 1</spirit:description>
           <spirit:addressOffset>0x208</spirit:addressOffset>
@@ -2364,7 +2377,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2384,13 +2397,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[1]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_1" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[2]</spirit:name>
+          <spirit:name>IVEAR_2</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 2</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 2</spirit:description>
           <spirit:addressOffset>0x210</spirit:addressOffset>
@@ -2398,7 +2411,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2418,13 +2431,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[2]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 2)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_2" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 2)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[3]</spirit:name>
+          <spirit:name>IVEAR_3</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 3</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 3</spirit:description>
           <spirit:addressOffset>0x218</spirit:addressOffset>
@@ -2432,7 +2445,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2452,13 +2465,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[3]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 3)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_3" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 3)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[4]</spirit:name>
+          <spirit:name>IVEAR_4</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 4</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 4</spirit:description>
           <spirit:addressOffset>0x220</spirit:addressOffset>
@@ -2466,7 +2479,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2486,13 +2499,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[4]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 4)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_4" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 4)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[5]</spirit:name>
+          <spirit:name>IVEAR_5</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 5</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 5</spirit:description>
           <spirit:addressOffset>0x228</spirit:addressOffset>
@@ -2500,7 +2513,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2520,13 +2533,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[5]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 5)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_5" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 5)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[6]</spirit:name>
+          <spirit:name>IVEAR_6</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 6</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 6</spirit:description>
           <spirit:addressOffset>0x230</spirit:addressOffset>
@@ -2534,7 +2547,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2554,13 +2567,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[6]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 6)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_6" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 6)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[7]</spirit:name>
+          <spirit:name>IVEAR_7</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 7</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 7</spirit:description>
           <spirit:addressOffset>0x238</spirit:addressOffset>
@@ -2568,7 +2581,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2588,13 +2601,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[7]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 7)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_7" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 7)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[8]</spirit:name>
+          <spirit:name>IVEAR_8</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 8</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 8</spirit:description>
           <spirit:addressOffset>0x240</spirit:addressOffset>
@@ -2602,7 +2615,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2622,13 +2635,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[8]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 8)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_8" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 8)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[9]</spirit:name>
+          <spirit:name>IVEAR_9</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 9</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 9</spirit:description>
           <spirit:addressOffset>0x248</spirit:addressOffset>
@@ -2636,7 +2649,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2656,13 +2669,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[9]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 9)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_9" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 9)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[10]</spirit:name>
+          <spirit:name>IVEAR_10</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 10</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 10</spirit:description>
           <spirit:addressOffset>0x250</spirit:addressOffset>
@@ -2670,7 +2683,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2690,13 +2703,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[10]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 10)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_10" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 10)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[11]</spirit:name>
+          <spirit:name>IVEAR_11</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 11</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 11</spirit:description>
           <spirit:addressOffset>0x258</spirit:addressOffset>
@@ -2704,7 +2717,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2724,13 +2737,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[11]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 11)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_11" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 11)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[12]</spirit:name>
+          <spirit:name>IVEAR_12</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 12</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 12</spirit:description>
           <spirit:addressOffset>0x260</spirit:addressOffset>
@@ -2738,7 +2751,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2758,13 +2771,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[12]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 12)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_12" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 12)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[13]</spirit:name>
+          <spirit:name>IVEAR_13</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 13</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 13</spirit:description>
           <spirit:addressOffset>0x268</spirit:addressOffset>
@@ -2772,7 +2785,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2792,13 +2805,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[13]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 13)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_13" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 13)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[14]</spirit:name>
+          <spirit:name>IVEAR_14</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 14</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 14</spirit:description>
           <spirit:addressOffset>0x270</spirit:addressOffset>
@@ -2806,7 +2819,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2826,13 +2839,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[14]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 14)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_14" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 14)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[15]</spirit:name>
+          <spirit:name>IVEAR_15</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 15</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 15</spirit:description>
           <spirit:addressOffset>0x278</spirit:addressOffset>
@@ -2840,7 +2853,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2860,13 +2873,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[15]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 15)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_15" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 15)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[16]</spirit:name>
+          <spirit:name>IVEAR_16</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 16</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 16</spirit:description>
           <spirit:addressOffset>0x280</spirit:addressOffset>
@@ -2874,7 +2887,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2894,13 +2907,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[16]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 16)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_16" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 16)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[17]</spirit:name>
+          <spirit:name>IVEAR_17</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 17</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 17</spirit:description>
           <spirit:addressOffset>0x288</spirit:addressOffset>
@@ -2908,7 +2921,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2928,13 +2941,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[17]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 17)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_17" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 17)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[18]</spirit:name>
+          <spirit:name>IVEAR_18</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 18</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 18</spirit:description>
           <spirit:addressOffset>0x290</spirit:addressOffset>
@@ -2942,7 +2955,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2962,13 +2975,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[18]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 18)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_18" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 18)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[19]</spirit:name>
+          <spirit:name>IVEAR_19</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 19</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 19</spirit:description>
           <spirit:addressOffset>0x298</spirit:addressOffset>
@@ -2976,7 +2989,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -2996,13 +3009,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[19]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 19)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_19" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 19)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[20]</spirit:name>
+          <spirit:name>IVEAR_20</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 20</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 20</spirit:description>
           <spirit:addressOffset>0x2A0</spirit:addressOffset>
@@ -3010,7 +3023,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3030,13 +3043,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[20]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 20)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_20" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 20)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[21]</spirit:name>
+          <spirit:name>IVEAR_21</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 21</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 21</spirit:description>
           <spirit:addressOffset>0x2A8</spirit:addressOffset>
@@ -3044,7 +3057,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3064,13 +3077,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[21]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 21)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_21" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 21)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[22]</spirit:name>
+          <spirit:name>IVEAR_22</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 22</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 22</spirit:description>
           <spirit:addressOffset>0x2B0</spirit:addressOffset>
@@ -3078,7 +3091,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3098,13 +3111,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[22]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 22)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_22" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 22)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[23]</spirit:name>
+          <spirit:name>IVEAR_23</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 23</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 23</spirit:description>
           <spirit:addressOffset>0x2B8</spirit:addressOffset>
@@ -3112,7 +3125,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3132,13 +3145,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[23]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 23)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_23" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 23)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[24]</spirit:name>
+          <spirit:name>IVEAR_24</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 24</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 24</spirit:description>
           <spirit:addressOffset>0x2C0</spirit:addressOffset>
@@ -3146,7 +3159,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3166,13 +3179,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[24]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 24)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_24" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 24)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[25]</spirit:name>
+          <spirit:name>IVEAR_25</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 25</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 25</spirit:description>
           <spirit:addressOffset>0x2C8</spirit:addressOffset>
@@ -3180,7 +3193,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3200,13 +3213,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[25]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 25)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_25" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 25)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[26]</spirit:name>
+          <spirit:name>IVEAR_26</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 26</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 26</spirit:description>
           <spirit:addressOffset>0x2D0</spirit:addressOffset>
@@ -3214,7 +3227,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3234,13 +3247,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[26]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 26)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_26" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 26)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[27]</spirit:name>
+          <spirit:name>IVEAR_27</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 27</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 27</spirit:description>
           <spirit:addressOffset>0x2D8</spirit:addressOffset>
@@ -3248,7 +3261,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3268,13 +3281,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[27]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 27)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_27" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 27)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[28]</spirit:name>
+          <spirit:name>IVEAR_28</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 28</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 28</spirit:description>
           <spirit:addressOffset>0x2E0</spirit:addressOffset>
@@ -3282,7 +3295,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3302,13 +3315,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[28]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 28)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_28" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 28)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[29]</spirit:name>
+          <spirit:name>IVEAR_29</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 29</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 29</spirit:description>
           <spirit:addressOffset>0x2E8</spirit:addressOffset>
@@ -3316,7 +3329,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3336,13 +3349,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[29]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 29)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_29" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 29)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[30]</spirit:name>
+          <spirit:name>IVEAR_30</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 30</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 30</spirit:description>
           <spirit:addressOffset>0x2F0</spirit:addressOffset>
@@ -3350,7 +3363,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3370,13 +3383,13 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[30]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 30)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_30" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 30)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>IVEAR[31]</spirit:name>
+          <spirit:name>IVEAR_31</spirit:name>
           <spirit:displayName>Interrupt Vector Address Register 31</spirit:displayName>
           <spirit:description>Interrupt Vector Address Register 31</spirit:description>
           <spirit:addressOffset>0x2F8</spirit:addressOffset>
@@ -3384,7 +3397,7 @@ For each bit:
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">16</spirit:value>
+            <spirit:value spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="concat(&quot;0x0&quot;,substring(spirit:decode(id(&apos;MODELPARAM_VALUE.C_IVAR_RESET_VALUE&apos;)),3))">0x00000000000000010</spirit:value>
           </spirit:reset>
           <spirit:field>
             <spirit:name>IVA</spirit:name>
@@ -3404,7 +3417,7 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR[31]" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 31)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.IVEAR_31" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_FAST&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_ADDR_WIDTH&apos;)) > 32) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_INTR_INPUTS&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SW_INTR&apos;))) > 31)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
@@ -3415,25 +3428,31 @@ For each bit:
   <spirit:model>
     <spirit:views>
       <spirit:view>
-        <spirit:name>xilinx_vhdlsynthesis</spirit:name>
-        <spirit:displayName>VHDL Synthesis</spirit:displayName>
-        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
-        <spirit:language>vhdl</spirit:language>
-        <spirit:modelName>axi_intc</spirit:modelName>
+        <spirit:name>xilinx_blockmodel</spirit:name>
+        <spirit:displayName>Block Model files</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block_model</spirit:envIdentifier>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:381cde7e</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_externalfiles</spirit:name>
+        <spirit:displayName>External Files</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_vhdlsynthesis_xilinx_com_ip_axi_lite_ipif_3_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_vhdlsynthesis_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 10 04:37:47 UTC 2021</spirit:value>
+            <spirit:value>Sat Dec 06 01:38:36 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d5b73172</spirit:value>
+            <spirit:value>9:381cde7e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3444,27 +3463,7 @@ For each bit:
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d5b73172</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_vhdlsynthesiswrapper</spirit:name>
-        <spirit:displayName>VHDL Synthesis Wrapper</spirit:displayName>
-        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
-        <spirit:language>vhdl</spirit:language>
-        <spirit:modelName>MicroBlazeIPBlock_microblaze_0_axi_intc_0</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 10 04:37:47 UTC 2021</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d5b73172</spirit:value>
+            <spirit:value>9:381cde7e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3483,11 +3482,11 @@ For each bit:
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 10 04:37:47 UTC 2021</spirit:value>
+            <spirit:value>Sat Dec 06 01:23:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c451bae7</spirit:value>
+            <spirit:value>9:b90384c0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3503,29 +3502,54 @@ For each bit:
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 10 04:37:47 UTC 2021</spirit:value>
+            <spirit:value>Sat Dec 06 01:23:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c451bae7</spirit:value>
+            <spirit:value>9:b90384c0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
       <spirit:view>
-        <spirit:name>xilinx_externalfiles</spirit:name>
-        <spirit:displayName>External Files</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
+        <spirit:name>xilinx_vhdlsynthesis</spirit:name>
+        <spirit:displayName>VHDL Synthesis</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>axi_intc</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_vhdlsynthesis_xilinx_com_ip_axi_lite_ipif_3_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsynthesis_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 10 04:40:22 UTC 2021</spirit:value>
+            <spirit:value>Sat Dec 06 01:23:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d5b73172</spirit:value>
+            <spirit:value>9:381cde7e</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsynthesiswrapper</spirit:name>
+        <spirit:displayName>VHDL Synthesis Wrapper</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>MicroBlazeIPBlock_microblaze_0_axi_intc_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Dec 06 01:23:09 UTC 2025</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:381cde7e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4043,11 +4067,11 @@ For each bit:
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector(31 downto 0)">
         <spirit:name>C_KIND_OF_EDGE</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_KIND_OF_EDGE" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_KIND_OF_EDGE" spirit:bitStringLength="32">0xffffffff</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector(31 downto 0)">
         <spirit:name>C_KIND_OF_LVL</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_KIND_OF_LVL" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_KIND_OF_LVL" spirit:bitStringLength="32">0xffffffff</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector(31 downto 0)">
         <spirit:name>C_ASYNC_INTR</spirit:name>
@@ -4155,6 +4179,75 @@ For each bit:
   </spirit:choices>
   <spirit:fileSets>
     <spirit:fileSet>
+      <spirit:name>xilinx_externalfiles_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0.dcp</spirit:name>
+        <spirit:userFileType>dcp</spirit:userFileType>
+        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0_stub.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0_stub.vhdl</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0_sim_netlist.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0_sim_netlist.vhdl</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlbehavioralsimulation_xilinx_com_ip_axi_lite_ipif_3_0__ref_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>axi_lite_ipif_v3_0_4</spirit:logicalName>
+      </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_lite_ipif" xilinx:version="3.0" xilinx:isGenerated="true" xilinx:checksum="db189391">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>axi_intc_v4_1_22</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsimulationwrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim/MicroBlazeIPBlock_microblaze_0_axi_intc_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_xilinx_com_ip_axi_lite_ipif_3_0__ref_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>../../ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd</spirit:name>
@@ -4191,9 +4284,9 @@ For each bit:
         <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/47b8/hdl/axi_intc_v4_1_vh_rfs.vhd</spirit:name>
+        <spirit:name>../../ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>axi_intc_v4_1_15</spirit:logicalName>
+        <spirit:logicalName>axi_intc_v4_1_22</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -4204,75 +4297,6 @@ For each bit:
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_vhdlbehavioralsimulation_xilinx_com_ip_axi_lite_ipif_3_0__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>axi_lite_ipif_v3_0_4</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_lite_ipif" xilinx:version="3.0" xilinx:isGenerated="true" xilinx:checksum="db189391">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/47b8/hdl/axi_intc_v4_1_vh_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>axi_intc_v4_1_15</spirit:logicalName>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_vhdlsimulationwrapper_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>sim/MicroBlazeIPBlock_microblaze_0_axi_intc_0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_externalfiles_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0.dcp</spirit:name>
-        <spirit:userFileType>dcp</spirit:userFileType>
-        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0_stub.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0_stub.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0_sim_netlist.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>MicroBlazeIPBlock_microblaze_0_axi_intc_0_sim_netlist.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-    </spirit:fileSet>
   </spirit:fileSets>
   <spirit:description>The LogiCORE IP AXI Interrupt Controller (AXI INTC) core concentrates multiple interrupt inputs from peripheral devices to a single interrupt output to the system processor.</spirit:description>
   <spirit:parameters>
@@ -4280,212 +4304,178 @@ For each bit:
       <spirit:name>C_HAS_IPR</spirit:name>
       <spirit:displayName>Enable Interrupt Pending Register</spirit:displayName>
       <spirit:description>This check box should be set when the Interrupt Pending Register is required in the core.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_IPR" spirit:choiceRef="choice_pairs_4873554b" spirit:order="1200">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_IPR" spirit:choiceRef="choice_pairs_4873554b" spirit:order="2">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_HAS_SIE</spirit:name>
       <spirit:displayName>Enable Set Interrupt Enable Register</spirit:displayName>
       <spirit:description>This check box should be set when the Set Interrupt Enable Register is required in the core.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_SIE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="1300">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_SIE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="3">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_HAS_CIE</spirit:name>
       <spirit:displayName>Enable Clear Interrupt Enable Register</spirit:displayName>
       <spirit:description>This check box should be set when the Clear Interrupt Enable Register is required in the core.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_CIE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="1600">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_CIE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="4">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_HAS_IVR</spirit:name>
       <spirit:displayName>Enable Interrupt Vector Register</spirit:displayName>
       <spirit:description>This check box should be set when the Interrupt Vector Register is required in the core.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_IVR" spirit:choiceRef="choice_pairs_4873554b" spirit:order="1700">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_IVR" spirit:choiceRef="choice_pairs_4873554b" spirit:order="5">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_HAS_ILR</spirit:name>
       <spirit:displayName>Enable Interrupt Level Register</spirit:displayName>
       <spirit:description>This check box should be set when nested interrupt support using the Interrupt Level Register is required in the core.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_ILR" spirit:choiceRef="choice_pairs_4873554b" spirit:order="1750">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_ILR" spirit:choiceRef="choice_pairs_4873554b" spirit:order="6">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_IRQ_ACTIVE</spirit:name>
       <spirit:displayName>C Irq Active</spirit:displayName>
       <spirit:description>This option should be set to define the IRQ port active logic level. 0 = Falling/Low, 1 = Rising/High.</spirit:description>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IRQ_ACTIVE" spirit:order="1800" spirit:bitStringLength="1">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IRQ_ACTIVE" spirit:order="7" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_KIND_OF_INTR</spirit:name>
       <spirit:displayName>Interrupts type - Edge or Level</spirit:displayName>
       <spirit:description>The setting of each bit in this option indicates the type of incoming interrupt for each bit. 0 = Level, 1 = Edge. Updates of these settings will affect C_KIND_OF_INTR parameter values.</spirit:description>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_KIND_OF_INTR" spirit:order="1900" spirit:bitStringLength="32">0xFFFFFFFE</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_KIND_OF_INTR" spirit:order="8" spirit:bitStringLength="32">0xFFFFFFFE</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_NUM_INTR_INPUTS</spirit:name>
       <spirit:displayName>Number of Peripheral Interrupts</spirit:displayName>
       <spirit:description>The setting of this option indicates number of interrupts input to the core.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_INTR_INPUTS" spirit:order="2000" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_INTR_INPUTS" spirit:order="9" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_NUM_SW_INTR</spirit:name>
       <spirit:displayName>Number of Software Interrupts</spirit:displayName>
       <spirit:description>Number of interrupts controlled by software in addition to the hardware interrupt inputs</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_SW_INTR" spirit:order="2050" spirit:minimum="0" spirit:maximum="31" spirit:rangeType="long">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_SW_INTR" spirit:order="10" spirit:minimum="0" spirit:maximum="31" spirit:rangeType="long">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_KIND_OF_LVL</spirit:name>
       <spirit:displayName>Level type - High or Low</spirit:displayName>
       <spirit:description>The setting of each bit in this option indicates type of logic level for the incoming interrupt of each bit. 0 = Low, 1 = High.</spirit:description>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_KIND_OF_LVL" spirit:order="2100" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_KIND_OF_LVL" spirit:order="11" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_ASYNC_INTR</spirit:name>
       <spirit:displayName>Interrupts asynchronous</spirit:displayName>
       <spirit:description>The setting of each bit in this option indicates whether the incoming interrupt is treated as asynchronous or not. 0 = Synchronous, 1 = Asynchronous.</spirit:description>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ASYNC_INTR" spirit:order="2110" spirit:bitStringLength="32">0xFFFFFFFE</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ASYNC_INTR" spirit:order="12" spirit:bitStringLength="32">0xFFFFFFFE</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_NUM_SYNC_FF</spirit:name>
       <spirit:displayName>Number of synchronization flip-flops</spirit:displayName>
       <spirit:description>Number of synchronization flip-flops used to synchronize asynchronous interrupt inputs</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_SYNC_FF" spirit:order="2120" spirit:minimum="0" spirit:maximum="7" spirit:rangeType="long">2</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_SYNC_FF" spirit:order="13" spirit:minimum="0" spirit:maximum="7" spirit:rangeType="long">2</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_IRQ_IS_LEVEL</spirit:name>
       <spirit:displayName>Interrupt type</spirit:displayName>
       <spirit:description>The setting of this option indicates the IRQ port active type. 0 = Active Edge, 1 = Active Level.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IRQ_IS_LEVEL" spirit:choiceRef="choice_pairs_706a7d3a" spirit:order="2200">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IRQ_IS_LEVEL" spirit:choiceRef="choice_pairs_706a7d3a" spirit:order="14">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_KIND_OF_EDGE</spirit:name>
       <spirit:displayName>Edge type - Rising or Falling</spirit:displayName>
       <spirit:description>The setting of each bit in this option indicates the type of edge for the incoming interrupt of each bit. 0 = Falling, 1 = Rising.</spirit:description>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_KIND_OF_EDGE" spirit:order="2300" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_KIND_OF_EDGE" spirit:order="15" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_HAS_FAST</spirit:name>
       <spirit:displayName>Enable Fast Interrupt Logic</spirit:displayName>
       <spirit:description>This check box should be set when the core is configured with Fast Mode Interrupt. The processor uses this setting to automatically enable the low-latency interrupt functionality. Fast Mode Interrupt is not available when selecting Single interrupt output connection.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_FAST" spirit:choiceRef="choice_pairs_4873554b" spirit:order="2400">1</spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_HAS_FAST">true</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_HAS_FAST" spirit:choiceRef="choice_pairs_4873554b" spirit:order="16">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_ADDR_WIDTH</spirit:name>
       <spirit:displayName>Interrupt Address Width</spirit:displayName>
       <spirit:description>Interrupt address width with Fast Mode Interrupt.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ADDR_WIDTH" spirit:order="2450" spirit:minimum="32" spirit:maximum="64" spirit:rangeType="long">32</spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_ADDR_WIDTH">true</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ADDR_WIDTH" spirit:order="17" spirit:minimum="32" spirit:maximum="64" spirit:rangeType="long">32</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_IVAR_RESET_VALUE</spirit:name>
       <spirit:displayName>Interrupt Vector Address reset value</spirit:displayName>
       <spirit:description>This option determines the Interrupt Vector Address reset value. It should be set to the processor interrupt vector address, which is C_BASE_VECTORS + 0x10 for MicroBlaze. Only used when the core is configured with Fast Mode Interrupt.</spirit:description>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IVAR_RESET_VALUE" spirit:order="2500" spirit:bitStringLength="64">0x0000000000000010</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IVAR_RESET_VALUE" spirit:order="18" spirit:bitStringLength="64">0x0000000000000010</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_ENABLE_ASYNC</spirit:name>
       <spirit:displayName>Enable Asynchronous Clock operation</spirit:displayName>
       <spirit:description>Set this option when the AXI clock is asynchronous to the processor clock. In this case the processor_clk and processor_rst inputs must be connected to the processor clock and reset, respectively. Only used when the core is configured with Fast Mode Interrupt.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ENABLE_ASYNC" spirit:choiceRef="choice_pairs_4873554b" spirit:order="3400">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ENABLE_ASYNC" spirit:choiceRef="choice_pairs_4873554b" spirit:order="19">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">MicroBlazeIPBlock_microblaze_0_axi_intc_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="20">MicroBlazeIPBlock_microblaze_0_axi_intc_0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Sense_of_IRQ_Level_Type</spirit:name>
       <spirit:displayName>Level type</spirit:displayName>
       <spirit:description>The setting of this parameter indicates the IRQ port type of level. 0 = Level Low, 1 = Level High.</spirit:description>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Sense_of_IRQ_Level_Type" spirit:choiceRef="choice_list_eb22ba99" spirit:order="2600">Active_High</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Sense_of_IRQ_Level_Type" spirit:choiceRef="choice_list_eb22ba99" spirit:order="21">Active_High</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Sense_of_IRQ_Edge_Type</spirit:name>
       <spirit:displayName>Edge type</spirit:displayName>
       <spirit:description>The setting of this parameter indicates the IRQ port type of edge. 0 = Falling Edge, 1 = Rising Edge.</spirit:description>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Sense_of_IRQ_Edge_Type" spirit:choiceRef="choice_list_5945ab3f" spirit:order="2700">Rising</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Sense_of_IRQ_Edge_Type" spirit:choiceRef="choice_list_5945ab3f" spirit:order="22">Rising</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_EN_CASCADE_MODE</spirit:name>
       <spirit:displayName>Enable Cascade Interrupt Mode</spirit:displayName>
       <spirit:description>This check box should be set only when the system has more than 32 interrupt sources. This setting is applicable for all instances of the AXI INTC core cascaded together to handle more than 32 interrupts.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_EN_CASCADE_MODE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="2900">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_EN_CASCADE_MODE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="23">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_CASCADE_MASTER</spirit:name>
       <spirit:displayName>Cascade Mode Master</spirit:displayName>
       <spirit:description>This check box should be set only when the system has more than 32 interrupt sources. The setting of this check box is only applicable to the primary instance of the AXI INTC core with the IRQ output directly connected to the processor. For the remaining instances of the cascaded AXI INTC cores, this check box should be left un-checked.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_CASCADE_MASTER" spirit:choiceRef="choice_pairs_4873554b" spirit:order="3000">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_CASCADE_MASTER" spirit:choiceRef="choice_pairs_4873554b" spirit:order="24">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_MB_CLK_NOT_CONNECTED</spirit:name>
       <spirit:displayName>MicroBlaze Clock Connected</spirit:displayName>
       <spirit:description>This parameter should be set only when the core has the processor clock connected to its interrupt interface.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_MB_CLK_NOT_CONNECTED" spirit:choiceRef="choice_pairs_4873554b" spirit:order="4000">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_MB_CLK_NOT_CONNECTED" spirit:choiceRef="choice_pairs_4873554b" spirit:order="25">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_DISABLE_SYNCHRONIZERS</spirit:name>
       <spirit:displayName>Disable Synchronizers</spirit:displayName>
       <spirit:description>This check box should be set only when the core has the processor clock connected to its interrupt interface and the core and processor clock are synchronous.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DISABLE_SYNCHRONIZERS" spirit:choiceRef="choice_pairs_4873554b" spirit:order="3100">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DISABLE_SYNCHRONIZERS" spirit:choiceRef="choice_pairs_4873554b" spirit:order="26">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_S_AXI_ACLK_FREQ_MHZ</spirit:name>
       <spirit:displayName>s_axi_aclk frequency (MHz)</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_ACLK_FREQ_MHZ" spirit:order="4000">100.0</spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_S_AXI_ACLK_FREQ_MHZ">true</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_ACLK_FREQ_MHZ" spirit:order="27">100.0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_PROCESSOR_CLK_FREQ_MHZ</spirit:name>
       <spirit:displayName>processor_clk frequency (MHz)</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROCESSOR_CLK_FREQ_MHZ" spirit:order="4100">100.0</spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_PROCESSOR_CLK_FREQ_MHZ">true</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROCESSOR_CLK_FREQ_MHZ" spirit:order="28">100.0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_IRQ_CONNECTION</spirit:name>
       <spirit:displayName>Interrupt Output Connection</spirit:displayName>
       <spirit:description>Select interrupt output connection bus interface. Normally Bus is used when connecting to MicroBlaze and cascaded AXI Interrupt Controllers. Otherwise Single can be used when Fast Mode Interrupt is not enabled, and the target has a single interrupt input.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IRQ_CONNECTION" spirit:choiceRef="choice_pairs_d4609148" spirit:order="3200">0</spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_IRQ_CONNECTION">false</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IRQ_CONNECTION" spirit:choiceRef="choice_pairs_d4609148" spirit:order="29">0</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>AXI Interrupt Controller</xilinx:displayName>
-      <xilinx:coreRevision>15</xilinx:coreRevision>
+      <xilinx:coreRevision>22</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INTERRUPT.LOW_LATENCY" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INTERRUPT.SENSITIVITY" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INTERRUPT_INPUT.PortWidth" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INTERRUPT_INPUT.SENSITIVITY" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PROC_CLOCK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PROC_CLOCK.ASSOCIATED_PORT" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PROC_CLOCK.ASSOCIATED_RESET" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PROC_CLOCK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PROC_CLOCK.FREQ_HZ" xilinx:valuePermission="bd"/>
@@ -4511,9 +4501,9 @@ For each bit:
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_WSTRB" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.ID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.MAX_BURST_LENGTH" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_READ_OUTSTANDING" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_READ_OUTSTANDING" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_READ_THREADS" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_OUTSTANDING" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_OUTSTANDING" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_THREADS" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.PROTOCOL" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
@@ -4524,6 +4514,7 @@ For each bit:
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.WUSER_BITS_PER_BYTE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.WUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_ACLK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_ACLK.ASSOCIATED_PORT" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_ACLK.ASSOCIATED_RESET" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_ACLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_ACLK.FREQ_HZ" xilinx:valuePermission="bd"/>
@@ -4546,13 +4537,13 @@ For each bit:
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="ee3bd908"/>
+      <xilinx:xilinxVersion>2025.2</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="b1ec1dfb"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="00000000"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="732ad39e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3414384f"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="252e29e1"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="237e32d6"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="1b4434db"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="f9bbb5ae"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

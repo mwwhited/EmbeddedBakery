@@ -1,21 +1,21 @@
--- (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-- (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
--- of Xilinx, Inc. and is protected under U.S. and
--- international copyright and other intellectual property
--- laws.
+-- of AMD and is protected under U.S. and international copyright
+-- and other intellectual property laws.
 -- 
 -- DISCLAIMER
 -- This disclaimer is not a license and does not grant any
 -- rights to the materials distributed herewith. Except as
 -- otherwise provided in a valid license issued to you by
--- Xilinx, and to the maximum extent permitted by applicable
+-- AMD, and to the maximum extent permitted by applicable
 -- law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
--- WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+-- WITH ALL FAULTS, AND AMD HEREBY DISCLAIMS ALL WARRANTIES
 -- AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
 -- BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
 -- INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
--- (2) Xilinx shall not be liable (whether in contract or tort,
+-- (2) AMD shall not be liable (whether in contract or tort,
 -- including negligence, or under any other theory of
 -- liability) for any loss or damage of any kind or nature
 -- related to, arising under or in connection with these
@@ -24,11 +24,11 @@
 -- (including loss of data, profits, goodwill, or any type of
 -- loss or damage suffered as a result of any action brought
 -- by a third party) even if such damage or loss was
--- reasonably foreseeable or Xilinx had been advised of the
+-- reasonably foreseeable or AMD had been advised of the
 -- possibility of the same.
 -- 
 -- CRITICAL APPLICATIONS
--- Xilinx products are not designed or intended to be fail-
+-- AMD products are not designed or intended to be fail-
 -- safe, or for use in any application requiring fail-safe
 -- performance, such as life-support or safety devices or
 -- systems, Class III medical devices, nuclear facilities,
@@ -37,7 +37,7 @@
 -- injury, or severe property or environmental damage
 -- (individually and collectively, "Critical
 -- Applications"). Customer assumes the sole risk and
--- liability of any use of Xilinx products in Critical
+-- liability of any use of AMD products in Critical
 -- Applications, subject only to applicable laws and
 -- regulations governing limitations on product liability.
 -- 
@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:mdm:3.2
--- IP Revision: 19
+-- IP Revision: 29
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY mdm_v3_2_19;
-USE mdm_v3_2_19.MDM;
+LIBRARY mdm_v3_2_29;
+USE mdm_v3_2_29.MDM;
 
 ENTITY MicroBlazeIPBlock_mdm_1_0 IS
   PORT (
@@ -77,7 +77,7 @@ ARCHITECTURE MicroBlazeIPBlock_mdm_1_0_arch OF MicroBlazeIPBlock_mdm_1_0 IS
   COMPONENT MDM IS
     GENERIC (
       C_FAMILY : STRING;
-      C_REVISION : STRING;
+      C_DEVICE : STRING;
       C_JTAG_CHAIN : INTEGER;
       C_USE_BSCAN : INTEGER;
       C_BSCANID : INTEGER;
@@ -1633,23 +1633,26 @@ ARCHITECTURE MicroBlazeIPBlock_mdm_1_0_arch OF MicroBlazeIPBlock_mdm_1_0 IS
     );
   END COMPONENT MDM;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
+  ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Disable_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 DISABLE";
-  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Rst_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 RST";
-  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Update_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 UPDATE";
-  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Shift_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 SHIFT";
   ATTRIBUTE X_INTERFACE_INFO OF Dbg_Capture_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 CAPTURE";
-  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Reg_En_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 REG_EN";
-  ATTRIBUTE X_INTERFACE_INFO OF Dbg_TDO_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TDO";
-  ATTRIBUTE X_INTERFACE_INFO OF Dbg_TDI_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TDI";
   ATTRIBUTE X_INTERFACE_INFO OF Dbg_Clk_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF Debug_SYS_Rst: SIGNAL IS "XIL_INTERFACENAME RST.Debug_SYS_Rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_MODE OF Dbg_Clk_0: SIGNAL IS "master MBDEBUG_0";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Disable_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 DISABLE";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Reg_En_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 REG_EN";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Rst_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 RST";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Shift_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 SHIFT";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_TDI_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TDI";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_TDO_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TDO";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_Update_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 UPDATE";
   ATTRIBUTE X_INTERFACE_INFO OF Debug_SYS_Rst: SIGNAL IS "xilinx.com:signal:reset:1.0 RST.Debug_SYS_Rst RST";
+  ATTRIBUTE X_INTERFACE_MODE OF Debug_SYS_Rst: SIGNAL IS "master RST.Debug_SYS_Rst";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF Debug_SYS_Rst: SIGNAL IS "XIL_INTERFACENAME RST.Debug_SYS_Rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
 BEGIN
   U0 : MDM
     GENERIC MAP (
       C_FAMILY => "artix7",
-      C_REVISION => "",
+      C_DEVICE => "xc7a100t",
       C_JTAG_CHAIN => 2,
       C_USE_BSCAN => 0,
       C_BSCANID => 76547328,

@@ -1,11 +1,12 @@
--- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Tue Mar  9 23:42:35 2021
--- Host        : EvengerBook running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+-- Date        : Fri Dec  5 20:38:39 2025
+-- Host        : AGIMUS running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_xbar_0/MicroBlazeIPBlock_xbar_0_sim_netlist.vhdl
--- Design      : MicroBlazeIPBlock_xbar_0
+--               c:/repo/a7100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0/MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_sim_netlist.vhdl
+-- Design      : MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a100tcsg324-1
@@ -14,7 +15,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_addr_arbiter_sasd is
+entity MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_addr_arbiter_sasd is
   port (
     m_valid_i : out STD_LOGIC;
     SR : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -70,10 +71,10 @@ entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_addr_arbiter_sasd is
     mi_wready : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_addr_arbiter_sasd : entity is "axi_crossbar_v2_1_23_addr_arbiter_sasd";
-end MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_addr_arbiter_sasd;
+  attribute ORIG_REF_NAME of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_addr_arbiter_sasd : entity is "axi_crossbar_v2_1_38_addr_arbiter_sasd";
+end MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_addr_arbiter_sasd;
 
-architecture STRUCTURE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_addr_arbiter_sasd is
+architecture STRUCTURE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_addr_arbiter_sasd is
   signal \^q\ : STD_LOGIC_VECTOR ( 34 downto 0 );
   signal \^sr\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^aa_grant_rnw\ : STD_LOGIC;
@@ -101,12 +102,12 @@ architecture STRUCTURE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_addr_arb
   signal s_amesg : STD_LOGIC_VECTOR ( 48 downto 1 );
   signal \s_arvalid_reg[0]_i_1_n_0\ : STD_LOGIC;
   signal \s_arvalid_reg_reg_n_0_[0]\ : STD_LOGIC;
-  signal s_awvalid_reg : STD_LOGIC;
+  signal s_awvalid_reg : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \s_awvalid_reg[0]_i_1_n_0\ : STD_LOGIC;
   signal s_axi_bready_0_sn_1 : STD_LOGIC;
   signal s_axi_bvalid_0_sn_1 : STD_LOGIC;
   signal s_axi_wready_0_sn_1 : STD_LOGIC;
-  signal s_ready_i : STD_LOGIC;
+  signal s_ready_i : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^target_mi_enc\ : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \gen_axilite.s_axi_awready_i_i_2\ : label is "soft_lutpair2";
@@ -199,7 +200,7 @@ begin
       INIT => X"FFFF53FF00005000"
     )
         port map (
-      I0 => s_awvalid_reg,
+      I0 => s_awvalid_reg(0),
       I1 => s_axi_awvalid(0),
       I2 => s_axi_arvalid(0),
       I3 => p_0_in1_in,
@@ -222,7 +223,7 @@ begin
         port map (
       I0 => s_axi_araddr(9),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(9),
       O => s_amesg(10)
     );
@@ -233,7 +234,7 @@ begin
         port map (
       I0 => s_axi_araddr(10),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(10),
       O => s_amesg(11)
     );
@@ -244,7 +245,7 @@ begin
         port map (
       I0 => s_axi_araddr(11),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(11),
       O => s_amesg(12)
     );
@@ -255,7 +256,7 @@ begin
         port map (
       I0 => s_axi_araddr(12),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(12),
       O => s_amesg(13)
     );
@@ -266,7 +267,7 @@ begin
         port map (
       I0 => s_axi_araddr(13),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(13),
       O => s_amesg(14)
     );
@@ -277,7 +278,7 @@ begin
         port map (
       I0 => s_axi_araddr(14),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(14),
       O => s_amesg(15)
     );
@@ -288,7 +289,7 @@ begin
         port map (
       I0 => s_axi_araddr(15),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(15),
       O => s_amesg(16)
     );
@@ -299,7 +300,7 @@ begin
         port map (
       I0 => s_axi_araddr(16),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(16),
       O => s_amesg(17)
     );
@@ -310,7 +311,7 @@ begin
         port map (
       I0 => s_axi_araddr(17),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(17),
       O => s_amesg(18)
     );
@@ -321,7 +322,7 @@ begin
         port map (
       I0 => s_axi_araddr(18),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(18),
       O => s_amesg(19)
     );
@@ -332,7 +333,7 @@ begin
         port map (
       I0 => s_axi_araddr(0),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(0),
       O => s_amesg(1)
     );
@@ -343,7 +344,7 @@ begin
         port map (
       I0 => s_axi_araddr(19),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(19),
       O => s_amesg(20)
     );
@@ -354,7 +355,7 @@ begin
         port map (
       I0 => s_axi_araddr(20),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(20),
       O => s_amesg(21)
     );
@@ -365,7 +366,7 @@ begin
         port map (
       I0 => s_axi_araddr(21),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(21),
       O => s_amesg(22)
     );
@@ -376,7 +377,7 @@ begin
         port map (
       I0 => s_axi_araddr(22),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(22),
       O => s_amesg(23)
     );
@@ -387,7 +388,7 @@ begin
         port map (
       I0 => s_axi_araddr(23),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(23),
       O => s_amesg(24)
     );
@@ -398,7 +399,7 @@ begin
         port map (
       I0 => s_axi_araddr(24),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(24),
       O => s_amesg(25)
     );
@@ -409,7 +410,7 @@ begin
         port map (
       I0 => s_axi_araddr(25),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(25),
       O => s_amesg(26)
     );
@@ -420,7 +421,7 @@ begin
         port map (
       I0 => s_axi_araddr(26),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(26),
       O => s_amesg(27)
     );
@@ -431,7 +432,7 @@ begin
         port map (
       I0 => s_axi_araddr(27),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(27),
       O => s_amesg(28)
     );
@@ -442,7 +443,7 @@ begin
         port map (
       I0 => s_axi_araddr(28),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(28),
       O => s_amesg(29)
     );
@@ -453,7 +454,7 @@ begin
         port map (
       I0 => s_axi_araddr(1),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(1),
       O => s_amesg(2)
     );
@@ -464,7 +465,7 @@ begin
         port map (
       I0 => s_axi_araddr(29),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(29),
       O => s_amesg(30)
     );
@@ -475,7 +476,7 @@ begin
         port map (
       I0 => s_axi_araddr(30),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(30),
       O => s_amesg(31)
     );
@@ -494,7 +495,7 @@ begin
         port map (
       I0 => s_axi_araddr(31),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(31),
       O => s_amesg(32)
     );
@@ -505,7 +506,7 @@ begin
         port map (
       I0 => s_axi_araddr(2),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(2),
       O => s_amesg(3)
     );
@@ -516,7 +517,7 @@ begin
         port map (
       I0 => s_axi_arprot(0),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awprot(0),
       O => s_amesg(46)
     );
@@ -527,7 +528,7 @@ begin
         port map (
       I0 => s_axi_arprot(1),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awprot(1),
       O => s_amesg(47)
     );
@@ -538,7 +539,7 @@ begin
         port map (
       I0 => s_axi_arprot(2),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awprot(2),
       O => s_amesg(48)
     );
@@ -549,7 +550,7 @@ begin
         port map (
       I0 => s_axi_araddr(3),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(3),
       O => s_amesg(4)
     );
@@ -560,7 +561,7 @@ begin
         port map (
       I0 => s_axi_araddr(4),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(4),
       O => s_amesg(5)
     );
@@ -571,7 +572,7 @@ begin
         port map (
       I0 => s_axi_araddr(5),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(5),
       O => s_amesg(6)
     );
@@ -582,7 +583,7 @@ begin
         port map (
       I0 => s_axi_araddr(6),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(6),
       O => s_amesg(7)
     );
@@ -593,7 +594,7 @@ begin
         port map (
       I0 => s_axi_araddr(7),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(7),
       O => s_amesg(8)
     );
@@ -604,7 +605,7 @@ begin
         port map (
       I0 => s_axi_araddr(8),
       I1 => s_axi_arvalid(0),
-      I2 => s_awvalid_reg,
+      I2 => s_awvalid_reg(0),
       I3 => s_axi_awaddr(8),
       O => s_amesg(9)
     );
@@ -978,7 +979,7 @@ begin
       C => aclk,
       CE => '1',
       D => \gen_no_arbiter.s_ready_i[0]_i_1_n_0\,
-      Q => s_ready_i,
+      Q => s_ready_i(0),
       R => '0'
     );
 \m_atarget_enc[1]_i_2\: unisim.vcomponents.LUT5
@@ -1373,10 +1374,10 @@ m_valid_i_i_3: unisim.vcomponents.LUT5
       INIT => X"0040"
     )
         port map (
-      I0 => s_awvalid_reg,
+      I0 => s_awvalid_reg(0),
       I1 => s_axi_arvalid(0),
       I2 => aresetn_d,
-      I3 => s_ready_i,
+      I3 => s_ready_i(0),
       O => \s_arvalid_reg[0]_i_1_n_0\
     );
 \s_arvalid_reg_reg[0]\: unisim.vcomponents.FDRE
@@ -1396,11 +1397,11 @@ m_valid_i_i_3: unisim.vcomponents.LUT5
     )
         port map (
       I0 => s_axi_arvalid(0),
-      I1 => s_awvalid_reg,
+      I1 => s_awvalid_reg(0),
       I2 => s_axi_awvalid(0),
       I3 => \s_arvalid_reg_reg_n_0_[0]\,
       I4 => aresetn_d,
-      I5 => s_ready_i,
+      I5 => s_ready_i(0),
       O => \s_awvalid_reg[0]_i_1_n_0\
     );
 \s_awvalid_reg_reg[0]\: unisim.vcomponents.FDRE
@@ -1411,7 +1412,7 @@ m_valid_i_i_3: unisim.vcomponents.LUT5
       C => aclk,
       CE => '1',
       D => \s_awvalid_reg[0]_i_1_n_0\,
-      Q => s_awvalid_reg,
+      Q => s_awvalid_reg(0),
       R => '0'
     );
 \s_axi_arready[0]_INST_0\: unisim.vcomponents.LUT2
@@ -1420,7 +1421,7 @@ m_valid_i_i_3: unisim.vcomponents.LUT5
     )
         port map (
       I0 => \^aa_grant_rnw\,
-      I1 => s_ready_i,
+      I1 => s_ready_i(0),
       O => s_axi_arready(0)
     );
 \s_axi_awready[0]_INST_0\: unisim.vcomponents.LUT2
@@ -1428,7 +1429,7 @@ m_valid_i_i_3: unisim.vcomponents.LUT5
       INIT => X"2"
     )
         port map (
-      I0 => s_ready_i,
+      I0 => s_ready_i(0),
       I1 => \^aa_grant_rnw\,
       O => s_axi_awready(0)
     );
@@ -1480,7 +1481,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_decerr_slave is
+entity MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_decerr_slave is
   port (
     mi_bvalid : out STD_LOGIC_VECTOR ( 0 to 0 );
     mi_wready : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1506,10 +1507,10 @@ entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_decerr_slave is
     aa_rready : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_decerr_slave : entity is "axi_crossbar_v2_1_23_decerr_slave";
-end MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_decerr_slave;
+  attribute ORIG_REF_NAME of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_decerr_slave : entity is "axi_crossbar_v2_1_38_decerr_slave";
+end MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_decerr_slave;
 
-architecture STRUCTURE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_decerr_slave is
+architecture STRUCTURE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_decerr_slave is
   signal \gen_axilite.s_axi_arready_i_i_1_n_0\ : STD_LOGIC;
   signal \gen_axilite.s_axi_bvalid_i_i_1_n_0\ : STD_LOGIC;
   signal \gen_axilite.s_axi_rvalid_i_i_1_n_0\ : STD_LOGIC;
@@ -1680,7 +1681,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter is
+entity MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter is
   port (
     \m_ready_d_reg[0]_0\ : out STD_LOGIC;
     m_ready_d : out STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -1700,10 +1701,10 @@ entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter is
     aclk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter : entity is "axi_crossbar_v2_1_23_splitter";
-end MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter;
+  attribute ORIG_REF_NAME of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter : entity is "axi_crossbar_v2_1_38_splitter";
+end MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter;
 
-architecture STRUCTURE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter is
+architecture STRUCTURE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter is
   signal \^m_ready_d\ : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \m_ready_d[0]_i_1_n_0\ : STD_LOGIC;
   signal \m_ready_d[1]_i_1_n_0\ : STD_LOGIC;
@@ -1815,7 +1816,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity \MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter__parameterized0\ is
+entity \MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter__parameterized0\ is
   port (
     m_ready_d : out STD_LOGIC_VECTOR ( 1 downto 0 );
     aresetn_d : in STD_LOGIC;
@@ -1826,10 +1827,10 @@ entity \MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter__parameterized0\ 
     aclk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter__parameterized0\ : entity is "axi_crossbar_v2_1_23_splitter";
-end \MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter__parameterized0\;
+  attribute ORIG_REF_NAME of \MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter__parameterized0\ : entity is "axi_crossbar_v2_1_38_splitter";
+end \MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter__parameterized0\;
 
-architecture STRUCTURE of \MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter__parameterized0\ is
+architecture STRUCTURE of \MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter__parameterized0\ is
   signal \^m_ready_d\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \m_ready_d[0]_i_1_n_0\ : STD_LOGIC;
   signal \m_ready_d[1]_i_1_n_0\ : STD_LOGIC;
@@ -1888,7 +1889,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity MicroBlazeIPBlock_xbar_0_axi_register_slice_v2_1_22_axic_register_slice is
+entity MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_register_slice_v2_1_36_axic_register_slice is
   port (
     sr_rvalid : out STD_LOGIC;
     aa_rready : out STD_LOGIC;
@@ -1911,10 +1912,10 @@ entity MicroBlazeIPBlock_xbar_0_axi_register_slice_v2_1_22_axic_register_slice i
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of MicroBlazeIPBlock_xbar_0_axi_register_slice_v2_1_22_axic_register_slice : entity is "axi_register_slice_v2_1_22_axic_register_slice";
-end MicroBlazeIPBlock_xbar_0_axi_register_slice_v2_1_22_axic_register_slice;
+  attribute ORIG_REF_NAME of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_register_slice_v2_1_36_axic_register_slice : entity is "axi_register_slice_v2_1_36_axic_register_slice";
+end MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_register_slice_v2_1_36_axic_register_slice;
 
-architecture STRUCTURE of MicroBlazeIPBlock_xbar_0_axi_register_slice_v2_1_22_axic_register_slice is
+architecture STRUCTURE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_register_slice_v2_1_36_axic_register_slice is
   signal \^aa_rready\ : STD_LOGIC;
   signal \^aresetn_d_reg[1]_0\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \m_payload_i[12]_i_2_n_0\ : STD_LOGIC;
@@ -3457,7 +3458,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_crossbar_sasd is
+entity MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_crossbar_sasd is
   port (
     Q : out STD_LOGIC_VECTOR ( 34 downto 0 );
     \m_payload_i_reg[34]\ : out STD_LOGIC_VECTOR ( 33 downto 0 );
@@ -3493,10 +3494,10 @@ entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_crossbar_sasd is
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_crossbar_sasd : entity is "axi_crossbar_v2_1_23_crossbar_sasd";
-end MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_crossbar_sasd;
+  attribute ORIG_REF_NAME of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_crossbar_sasd : entity is "axi_crossbar_v2_1_38_crossbar_sasd";
+end MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_crossbar_sasd;
 
-architecture STRUCTURE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_crossbar_sasd is
+architecture STRUCTURE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_crossbar_sasd is
   signal \^q\ : STD_LOGIC_VECTOR ( 34 downto 0 );
   signal aa_grant_rnw : STD_LOGIC;
   signal aa_rready : STD_LOGIC;
@@ -3543,7 +3544,7 @@ architecture STRUCTURE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_crossbar
   attribute SOFT_HLUTNM of \m_atarget_enc[1]_i_1\ : label is "soft_lutpair33";
 begin
   Q(34 downto 0) <= \^q\(34 downto 0);
-addr_arbiter_inst: entity work.MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_addr_arbiter_sasd
+addr_arbiter_inst: entity work.MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_addr_arbiter_sasd
      port map (
       D(3) => addr_arbiter_inst_n_3,
       D(2) => addr_arbiter_inst_n_4,
@@ -3613,7 +3614,7 @@ aresetn_d_reg: unisim.vcomponents.FDRE
       Q => aresetn_d,
       R => '0'
     );
-\gen_decerr.decerr_slave_inst\: entity work.MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_decerr_slave
+\gen_decerr.decerr_slave_inst\: entity work.MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_decerr_slave
      port map (
       Q(0) => m_atarget_hot(3),
       SR(0) => reset,
@@ -3728,7 +3729,7 @@ aresetn_d_reg: unisim.vcomponents.FDRE
       Q => m_atarget_hot(3),
       R => reset
     );
-reg_slice_r: entity work.MicroBlazeIPBlock_xbar_0_axi_register_slice_v2_1_22_axic_register_slice
+reg_slice_r: entity work.MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_register_slice_v2_1_36_axic_register_slice
      port map (
       E(0) => p_1_in,
       Q(1 downto 0) => m_atarget_enc(1 downto 0),
@@ -3775,7 +3776,7 @@ reg_slice_r: entity work.MicroBlazeIPBlock_xbar_0_axi_register_slice_v2_1_22_axi
       I4 => m_axi_bresp(3),
       O => s_axi_bresp(1)
     );
-splitter_ar: entity work.\MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter__parameterized0\
+splitter_ar: entity work.\MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter__parameterized0\
      port map (
       aa_grant_rnw => aa_grant_rnw,
       aclk => aclk,
@@ -3785,7 +3786,7 @@ splitter_ar: entity work.\MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter
       \m_ready_d_reg[1]_1\ => reg_slice_r_n_2,
       m_valid_i => m_valid_i
     );
-splitter_aw: entity work.MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_splitter
+splitter_aw: entity work.MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_splitter
      port map (
       Q(0) => m_atarget_hot(3),
       aa_grant_rnw => aa_grant_rnw,
@@ -3809,7 +3810,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar is
+entity MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar is
   port (
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
@@ -3903,108 +3904,108 @@ entity MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar is
     m_axi_rready : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   attribute C_AXI_ADDR_WIDTH : integer;
-  attribute C_AXI_ADDR_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 32;
+  attribute C_AXI_ADDR_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 32;
   attribute C_AXI_ARUSER_WIDTH : integer;
-  attribute C_AXI_ARUSER_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_AXI_ARUSER_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_AXI_AWUSER_WIDTH : integer;
-  attribute C_AXI_AWUSER_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_AXI_AWUSER_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_AXI_BUSER_WIDTH : integer;
-  attribute C_AXI_BUSER_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_AXI_BUSER_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_AXI_DATA_WIDTH : integer;
-  attribute C_AXI_DATA_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 32;
+  attribute C_AXI_DATA_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 32;
   attribute C_AXI_ID_WIDTH : integer;
-  attribute C_AXI_ID_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_AXI_ID_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_AXI_PROTOCOL : integer;
-  attribute C_AXI_PROTOCOL of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 2;
+  attribute C_AXI_PROTOCOL of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 2;
   attribute C_AXI_RUSER_WIDTH : integer;
-  attribute C_AXI_RUSER_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_AXI_RUSER_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_AXI_SUPPORTS_USER_SIGNALS : integer;
-  attribute C_AXI_SUPPORTS_USER_SIGNALS of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 0;
+  attribute C_AXI_SUPPORTS_USER_SIGNALS of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 0;
   attribute C_AXI_WUSER_WIDTH : integer;
-  attribute C_AXI_WUSER_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_AXI_WUSER_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_CONNECTIVITY_MODE : integer;
-  attribute C_CONNECTIVITY_MODE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 0;
+  attribute C_CONNECTIVITY_MODE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 0;
   attribute C_DEBUG : integer;
-  attribute C_DEBUG of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_DEBUG of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "artix7";
+  attribute C_FAMILY of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "artix7";
   attribute C_M_AXI_ADDR_WIDTH : string;
-  attribute C_M_AXI_ADDR_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "96'b000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000";
+  attribute C_M_AXI_ADDR_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "96'b000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000";
   attribute C_M_AXI_BASE_ADDR : string;
-  attribute C_M_AXI_BASE_ADDR of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "192'b000000000000000000000000000000000100010010100000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000001001000000000000000000000";
+  attribute C_M_AXI_BASE_ADDR of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "192'b000000000000000000000000000000000100010010100000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000001001000000000000000000000";
   attribute C_M_AXI_READ_CONNECTIVITY : string;
-  attribute C_M_AXI_READ_CONNECTIVITY of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001";
+  attribute C_M_AXI_READ_CONNECTIVITY of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001";
   attribute C_M_AXI_READ_ISSUING : string;
-  attribute C_M_AXI_READ_ISSUING of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001";
+  attribute C_M_AXI_READ_ISSUING of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001";
   attribute C_M_AXI_SECURE : string;
-  attribute C_M_AXI_SECURE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+  attribute C_M_AXI_SECURE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
   attribute C_M_AXI_WRITE_CONNECTIVITY : string;
-  attribute C_M_AXI_WRITE_CONNECTIVITY of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001";
+  attribute C_M_AXI_WRITE_CONNECTIVITY of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001";
   attribute C_M_AXI_WRITE_ISSUING : string;
-  attribute C_M_AXI_WRITE_ISSUING of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001";
+  attribute C_M_AXI_WRITE_ISSUING of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001";
   attribute C_NUM_ADDR_RANGES : integer;
-  attribute C_NUM_ADDR_RANGES of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_NUM_ADDR_RANGES of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_NUM_MASTER_SLOTS : integer;
-  attribute C_NUM_MASTER_SLOTS of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 3;
+  attribute C_NUM_MASTER_SLOTS of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 3;
   attribute C_NUM_SLAVE_SLOTS : integer;
-  attribute C_NUM_SLAVE_SLOTS of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_NUM_SLAVE_SLOTS of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_R_REGISTER : integer;
-  attribute C_R_REGISTER of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_R_REGISTER of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_S_AXI_ARB_PRIORITY : integer;
-  attribute C_S_AXI_ARB_PRIORITY of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 0;
+  attribute C_S_AXI_ARB_PRIORITY of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 0;
   attribute C_S_AXI_BASE_ID : integer;
-  attribute C_S_AXI_BASE_ID of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 0;
+  attribute C_S_AXI_BASE_ID of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 0;
   attribute C_S_AXI_READ_ACCEPTANCE : integer;
-  attribute C_S_AXI_READ_ACCEPTANCE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_S_AXI_READ_ACCEPTANCE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_S_AXI_SINGLE_THREAD : integer;
-  attribute C_S_AXI_SINGLE_THREAD of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_S_AXI_SINGLE_THREAD of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute C_S_AXI_THREAD_ID_WIDTH : integer;
-  attribute C_S_AXI_THREAD_ID_WIDTH of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 0;
+  attribute C_S_AXI_THREAD_ID_WIDTH of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 0;
   attribute C_S_AXI_WRITE_ACCEPTANCE : integer;
-  attribute C_S_AXI_WRITE_ACCEPTANCE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute C_S_AXI_WRITE_ACCEPTANCE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "yes";
+  attribute DowngradeIPIdentifiedWarnings of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "yes";
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "axi_crossbar_v2_1_23_axi_crossbar";
+  attribute ORIG_REF_NAME of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "axi_crossbar_v2_1_38_axi_crossbar";
   attribute P_ADDR_DECODE : integer;
-  attribute P_ADDR_DECODE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute P_ADDR_DECODE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute P_AXI3 : integer;
-  attribute P_AXI3 of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute P_AXI3 of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute P_AXI4 : integer;
-  attribute P_AXI4 of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 0;
+  attribute P_AXI4 of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 0;
   attribute P_AXILITE : integer;
-  attribute P_AXILITE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 2;
+  attribute P_AXILITE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 2;
   attribute P_AXILITE_SIZE : string;
-  attribute P_AXILITE_SIZE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "3'b010";
+  attribute P_AXILITE_SIZE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "3'b010";
   attribute P_FAMILY : string;
-  attribute P_FAMILY of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "artix7";
+  attribute P_FAMILY of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "artix7";
   attribute P_INCR : string;
-  attribute P_INCR of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "2'b01";
+  attribute P_INCR of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "2'b01";
   attribute P_LEN : integer;
-  attribute P_LEN of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 8;
+  attribute P_LEN of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 8;
   attribute P_LOCK : integer;
-  attribute P_LOCK of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute P_LOCK of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute P_M_AXI_ERR_MODE : string;
-  attribute P_M_AXI_ERR_MODE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+  attribute P_M_AXI_ERR_MODE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
   attribute P_M_AXI_SUPPORTS_READ : string;
-  attribute P_M_AXI_SUPPORTS_READ of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "3'b111";
+  attribute P_M_AXI_SUPPORTS_READ of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "3'b111";
   attribute P_M_AXI_SUPPORTS_WRITE : string;
-  attribute P_M_AXI_SUPPORTS_WRITE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "3'b111";
+  attribute P_M_AXI_SUPPORTS_WRITE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "3'b111";
   attribute P_ONES : string;
-  attribute P_ONES of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "65'b11111111111111111111111111111111111111111111111111111111111111111";
+  attribute P_ONES of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "65'b11111111111111111111111111111111111111111111111111111111111111111";
   attribute P_RANGE_CHECK : integer;
-  attribute P_RANGE_CHECK of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
+  attribute P_RANGE_CHECK of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is 1;
   attribute P_S_AXI_BASE_ID : string;
-  attribute P_S_AXI_BASE_ID of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "64'b0000000000000000000000000000000000000000000000000000000000000000";
+  attribute P_S_AXI_BASE_ID of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "64'b0000000000000000000000000000000000000000000000000000000000000000";
   attribute P_S_AXI_HIGH_ID : string;
-  attribute P_S_AXI_HIGH_ID of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "64'b0000000000000000000000000000000000000000000000000000000000000000";
+  attribute P_S_AXI_HIGH_ID of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "64'b0000000000000000000000000000000000000000000000000000000000000000";
   attribute P_S_AXI_SUPPORTS_READ : string;
-  attribute P_S_AXI_SUPPORTS_READ of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "1'b1";
+  attribute P_S_AXI_SUPPORTS_READ of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "1'b1";
   attribute P_S_AXI_SUPPORTS_WRITE : string;
-  attribute P_S_AXI_SUPPORTS_WRITE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar : entity is "1'b1";
-end MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar;
+  attribute P_S_AXI_SUPPORTS_WRITE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar : entity is "1'b1";
+end MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar;
 
-architecture STRUCTURE of MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar is
+architecture STRUCTURE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar is
   signal \<const0>\ : STD_LOGIC;
   signal \^m_axi_araddr\ : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal \^m_axi_arprot\ : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -4224,7 +4225,7 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-\gen_sasd.crossbar_sasd_0\: entity work.MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_crossbar_sasd
+\gen_sasd.crossbar_sasd_0\: entity work.MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_crossbar_sasd
      port map (
       Q(34 downto 32) => \^m_axi_arprot\(2 downto 0),
       Q(31 downto 16) => \^m_axi_awaddr\(95 downto 80),
@@ -4267,7 +4268,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity MicroBlazeIPBlock_xbar_0 is
+entity MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0 is
   port (
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
@@ -4311,16 +4312,16 @@ entity MicroBlazeIPBlock_xbar_0 is
     m_axi_rready : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of MicroBlazeIPBlock_xbar_0 : entity is true;
+  attribute NotValidForBitStream of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of MicroBlazeIPBlock_xbar_0 : entity is "MicroBlazeIPBlock_xbar_0,axi_crossbar_v2_1_23_axi_crossbar,{}";
+  attribute CHECK_LICENSE_TYPE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0 : entity is "MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0,axi_crossbar_v2_1_38_axi_crossbar,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of MicroBlazeIPBlock_xbar_0 : entity is "yes";
+  attribute DowngradeIPIdentifiedWarnings of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of MicroBlazeIPBlock_xbar_0 : entity is "axi_crossbar_v2_1_23_axi_crossbar,Vivado 2020.2";
-end MicroBlazeIPBlock_xbar_0;
+  attribute X_CORE_INFO of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0 : entity is "axi_crossbar_v2_1_38_axi_crossbar,Vivado 2025.2";
+end MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0;
 
-architecture STRUCTURE of MicroBlazeIPBlock_xbar_0 is
+architecture STRUCTURE of MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0 is
   signal NLW_inst_m_axi_arburst_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal NLW_inst_m_axi_arcache_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal NLW_inst_m_axi_arid_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -4446,15 +4447,20 @@ architecture STRUCTURE of MicroBlazeIPBlock_xbar_0 is
   attribute P_S_AXI_SUPPORTS_WRITE of inst : label is "1'b1";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of aclk : signal is "xilinx.com:signal:clock:1.0 CLKIF CLK";
+  attribute X_INTERFACE_MODE : string;
+  attribute X_INTERFACE_MODE of aclk : signal is "slave";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME CLKIF, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, ASSOCIATED_BUSIF M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI:M05_AXI:M06_AXI:M07_AXI:M08_AXI:M09_AXI:M10_AXI:M11_AXI:M12_AXI:M13_AXI:M14_AXI:M15_AXI:S00_AXI:S01_AXI:S02_AXI:S03_AXI:S04_AXI:S05_AXI:S06_AXI:S07_AXI:S08_AXI:S09_AXI:S10_AXI:S11_AXI:S12_AXI:S13_AXI:S14_AXI:S15_AXI, ASSOCIATED_RESET ARESETN, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME CLKIF, ASSOCIATED_BUSIF M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI:M05_AXI:M06_AXI:M07_AXI:M08_AXI:M09_AXI:M10_AXI:M11_AXI:M12_AXI:M13_AXI:M14_AXI:M15_AXI:S00_AXI:S01_AXI:S02_AXI:S03_AXI:S04_AXI:S05_AXI:S06_AXI:S07_AXI:S08_AXI:S09_AXI:S10_AXI:S11_AXI:S12_AXI:S13_AXI:S14_AXI:S15_AXI, ASSOCIATED_RESET aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of aresetn : signal is "xilinx.com:signal:reset:1.0 RSTIF RST";
+  attribute X_INTERFACE_MODE of aresetn : signal is "slave";
   attribute X_INTERFACE_PARAMETER of aresetn : signal is "XIL_INTERFACENAME RSTIF, POLARITY ACTIVE_LOW, INSERT_VIP 0, TYPE INTERCONNECT";
   attribute X_INTERFACE_INFO of m_axi_araddr : signal is "xilinx.com:interface:aximm:1.0 M00_AXI ARADDR [31:0] [31:0], xilinx.com:interface:aximm:1.0 M01_AXI ARADDR [31:0] [63:32], xilinx.com:interface:aximm:1.0 M02_AXI ARADDR [31:0] [95:64]";
   attribute X_INTERFACE_INFO of m_axi_arprot : signal is "xilinx.com:interface:aximm:1.0 M00_AXI ARPROT [2:0] [2:0], xilinx.com:interface:aximm:1.0 M01_AXI ARPROT [2:0] [5:3], xilinx.com:interface:aximm:1.0 M02_AXI ARPROT [2:0] [8:6]";
   attribute X_INTERFACE_INFO of m_axi_arready : signal is "xilinx.com:interface:aximm:1.0 M00_AXI ARREADY [0:0] [0:0], xilinx.com:interface:aximm:1.0 M01_AXI ARREADY [0:0] [1:1], xilinx.com:interface:aximm:1.0 M02_AXI ARREADY [0:0] [2:2]";
   attribute X_INTERFACE_INFO of m_axi_arvalid : signal is "xilinx.com:interface:aximm:1.0 M00_AXI ARVALID [0:0] [0:0], xilinx.com:interface:aximm:1.0 M01_AXI ARVALID [0:0] [1:1], xilinx.com:interface:aximm:1.0 M02_AXI ARVALID [0:0] [2:2]";
   attribute X_INTERFACE_INFO of m_axi_awaddr : signal is "xilinx.com:interface:aximm:1.0 M00_AXI AWADDR [31:0] [31:0], xilinx.com:interface:aximm:1.0 M01_AXI AWADDR [31:0] [63:32], xilinx.com:interface:aximm:1.0 M02_AXI AWADDR [31:0] [95:64]";
+  attribute X_INTERFACE_MODE of m_axi_awaddr : signal is "master M00_AXI, master M01_AXI, master M02_AXI";
+  attribute X_INTERFACE_PARAMETER of m_axi_awaddr : signal is "XIL_INTERFACENAME M00_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0, XIL_INTERFACENAME M01_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0, XIL_INTERFACENAME M02_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of m_axi_awprot : signal is "xilinx.com:interface:aximm:1.0 M00_AXI AWPROT [2:0] [2:0], xilinx.com:interface:aximm:1.0 M01_AXI AWPROT [2:0] [5:3], xilinx.com:interface:aximm:1.0 M02_AXI AWPROT [2:0] [8:6]";
   attribute X_INTERFACE_INFO of m_axi_awready : signal is "xilinx.com:interface:aximm:1.0 M00_AXI AWREADY [0:0] [0:0], xilinx.com:interface:aximm:1.0 M01_AXI AWREADY [0:0] [1:1], xilinx.com:interface:aximm:1.0 M02_AXI AWREADY [0:0] [2:2]";
   attribute X_INTERFACE_INFO of m_axi_awvalid : signal is "xilinx.com:interface:aximm:1.0 M00_AXI AWVALID [0:0] [0:0], xilinx.com:interface:aximm:1.0 M01_AXI AWVALID [0:0] [1:1], xilinx.com:interface:aximm:1.0 M02_AXI AWVALID [0:0] [2:2]";
@@ -4463,7 +4469,6 @@ architecture STRUCTURE of MicroBlazeIPBlock_xbar_0 is
   attribute X_INTERFACE_INFO of m_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 M00_AXI BVALID [0:0] [0:0], xilinx.com:interface:aximm:1.0 M01_AXI BVALID [0:0] [1:1], xilinx.com:interface:aximm:1.0 M02_AXI BVALID [0:0] [2:2]";
   attribute X_INTERFACE_INFO of m_axi_rdata : signal is "xilinx.com:interface:aximm:1.0 M00_AXI RDATA [31:0] [31:0], xilinx.com:interface:aximm:1.0 M01_AXI RDATA [31:0] [63:32], xilinx.com:interface:aximm:1.0 M02_AXI RDATA [31:0] [95:64]";
   attribute X_INTERFACE_INFO of m_axi_rready : signal is "xilinx.com:interface:aximm:1.0 M00_AXI RREADY [0:0] [0:0], xilinx.com:interface:aximm:1.0 M01_AXI RREADY [0:0] [1:1], xilinx.com:interface:aximm:1.0 M02_AXI RREADY [0:0] [2:2]";
-  attribute X_INTERFACE_PARAMETER of m_axi_rready : signal is "XIL_INTERFACENAME M00_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0, XIL_INTERFACENAME M01_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0, XIL_INTERFACENAME M02_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of m_axi_rresp : signal is "xilinx.com:interface:aximm:1.0 M00_AXI RRESP [1:0] [1:0], xilinx.com:interface:aximm:1.0 M01_AXI RRESP [1:0] [3:2], xilinx.com:interface:aximm:1.0 M02_AXI RRESP [1:0] [5:4]";
   attribute X_INTERFACE_INFO of m_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 M00_AXI RVALID [0:0] [0:0], xilinx.com:interface:aximm:1.0 M01_AXI RVALID [0:0] [1:1], xilinx.com:interface:aximm:1.0 M02_AXI RVALID [0:0] [2:2]";
   attribute X_INTERFACE_INFO of m_axi_wdata : signal is "xilinx.com:interface:aximm:1.0 M00_AXI WDATA [31:0] [31:0], xilinx.com:interface:aximm:1.0 M01_AXI WDATA [31:0] [63:32], xilinx.com:interface:aximm:1.0 M02_AXI WDATA [31:0] [95:64]";
@@ -4475,6 +4480,8 @@ architecture STRUCTURE of MicroBlazeIPBlock_xbar_0 is
   attribute X_INTERFACE_INFO of s_axi_arready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI ARREADY";
   attribute X_INTERFACE_INFO of s_axi_arvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI ARVALID";
   attribute X_INTERFACE_INFO of s_axi_awaddr : signal is "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
+  attribute X_INTERFACE_MODE of s_axi_awaddr : signal is "slave";
+  attribute X_INTERFACE_PARAMETER of s_axi_awaddr : signal is "XIL_INTERFACENAME S00_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axi_awprot : signal is "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT";
   attribute X_INTERFACE_INFO of s_axi_awready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI AWREADY";
   attribute X_INTERFACE_INFO of s_axi_awvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID";
@@ -4483,7 +4490,6 @@ architecture STRUCTURE of MicroBlazeIPBlock_xbar_0 is
   attribute X_INTERFACE_INFO of s_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI BVALID";
   attribute X_INTERFACE_INFO of s_axi_rdata : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RDATA";
   attribute X_INTERFACE_INFO of s_axi_rready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RREADY";
-  attribute X_INTERFACE_PARAMETER of s_axi_rready : signal is "XIL_INTERFACENAME S00_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axi_rresp : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RRESP";
   attribute X_INTERFACE_INFO of s_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RVALID";
   attribute X_INTERFACE_INFO of s_axi_wdata : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WDATA";
@@ -4491,7 +4497,7 @@ architecture STRUCTURE of MicroBlazeIPBlock_xbar_0 is
   attribute X_INTERFACE_INFO of s_axi_wstrb : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WSTRB";
   attribute X_INTERFACE_INFO of s_axi_wvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WVALID";
 begin
-inst: entity work.MicroBlazeIPBlock_xbar_0_axi_crossbar_v2_1_23_axi_crossbar
+inst: entity work.MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_axi_crossbar_v2_1_38_axi_crossbar
      port map (
       aclk => aclk,
       aresetn => aresetn,

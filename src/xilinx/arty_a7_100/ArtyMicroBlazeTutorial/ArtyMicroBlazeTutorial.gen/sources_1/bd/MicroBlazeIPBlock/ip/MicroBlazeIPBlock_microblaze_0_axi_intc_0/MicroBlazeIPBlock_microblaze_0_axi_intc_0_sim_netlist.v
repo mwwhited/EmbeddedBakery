@@ -1,10 +1,11 @@
-// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Tue Mar  9 23:40:22 2021
-// Host        : EvengerBook running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+// Date        : Fri Dec  5 20:38:36 2025
+// Host        : AGIMUS running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_microblaze_0_axi_intc_0/MicroBlazeIPBlock_microblaze_0_axi_intc_0_sim_netlist.v
+//               c:/repo/a7100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_microblaze_0_axi_intc_0/MicroBlazeIPBlock_microblaze_0_axi_intc_0_sim_netlist.v
 // Design      : MicroBlazeIPBlock_microblaze_0_axi_intc_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +13,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "MicroBlazeIPBlock_microblaze_0_axi_intc_0,axi_intc,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_intc,Vivado 2020.2" *) 
+(* CHECK_LICENSE_TYPE = "MicroBlazeIPBlock_microblaze_0_axi_intc_0,axi_intc,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_intc,Vivado 2025.2" *) 
 (* NotValidForBitStream *)
 module MicroBlazeIPBlock_microblaze_0_axi_intc_0
    (s_axi_aclk,
@@ -40,9 +41,9 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0
     irq,
     processor_ack,
     interrupt_address);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aclk, ASSOCIATED_BUSIF s_axi, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input s_axi_aclk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 s_resetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME s_resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [8:0]s_axi_awaddr;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *) (* x_interface_mode = "slave s_axi_aclk" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aclk, ASSOCIATED_BUSIF s_axi, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input s_axi_aclk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 s_resetn RST" *) (* x_interface_mode = "slave s_resetn" *) (* x_interface_parameter = "XIL_INTERFACENAME s_resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi AWADDR" *) (* x_interface_mode = "slave s_axi" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [8:0]s_axi_awaddr;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi AWVALID" *) input s_axi_awvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi AWREADY" *) output s_axi_awready;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi WDATA" *) input [31:0]s_axi_wdata;
@@ -59,10 +60,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi RRESP" *) output [1:0]s_axi_rresp;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi RVALID" *) output s_axi_rvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi RREADY" *) input s_axi_rready;
-  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt_input INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt_input, SENSITIVITY LEVEL_HIGH, PortWidth 1" *) input [0:0]intr;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 proc_clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME proc_clock, ASSOCIATED_BUSIF interrupt, ASSOCIATED_RESET processor_rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input processor_clk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 proc_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME proc_reset, POLARITY ACTIVE_HIGH, TYPE PROCESSOR, INSERT_VIP 0" *) input processor_rst;
-  (* x_interface_info = "xilinx.com:interface:mbinterrupt:1.0 interrupt INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SENSITIVITY LEVEL_HIGH, LOW_LATENCY 1" *) output irq;
+  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt_input INTERRUPT" *) (* x_interface_mode = "slave interrupt_input" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt_input, SENSITIVITY LEVEL_HIGH, PortWidth 1" *) input [0:0]intr;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 proc_clock CLK" *) (* x_interface_mode = "slave proc_clock" *) (* x_interface_parameter = "XIL_INTERFACENAME proc_clock, ASSOCIATED_BUSIF interrupt, ASSOCIATED_RESET processor_rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeIPBlock_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input processor_clk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 proc_reset RST" *) (* x_interface_mode = "slave proc_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME proc_reset, POLARITY ACTIVE_HIGH, TYPE PROCESSOR, INSERT_VIP 0" *) input processor_rst;
+  (* x_interface_info = "xilinx.com:interface:mbinterrupt:1.0 interrupt INTERRUPT" *) (* x_interface_mode = "master interrupt" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SENSITIVITY LEVEL_HIGH, LOW_LATENCY 1" *) output irq;
   (* x_interface_info = "xilinx.com:interface:mbinterrupt:1.0 interrupt ACK" *) input [1:0]processor_ack;
   (* x_interface_info = "xilinx.com:interface:mbinterrupt:1.0 interrupt ADDRESS" *) output [31:0]interrupt_address;
 
@@ -101,7 +102,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0
   GND GND
        (.G(\<const0> ));
   (* C_ADDR_WIDTH = "32" *) 
-  (* C_ASYNC_INTR = "-2" *) 
+  (* C_ASYNC_INTR = "32'b11111111111111111111111111111110" *) 
   (* C_CASCADE_MASTER = "0" *) 
   (* C_DISABLE_SYNCHRONIZERS = "1" *) 
   (* C_ENABLE_ASYNC = "0" *) 
@@ -117,9 +118,9 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0
   (* C_IRQ_ACTIVE = "1'b1" *) 
   (* C_IRQ_IS_LEVEL = "1" *) 
   (* C_IVAR_RESET_VALUE = "64'b0000000000000000000000000000000000000000000000000000000000010000" *) 
-  (* C_KIND_OF_EDGE = "-1" *) 
-  (* C_KIND_OF_INTR = "-2" *) 
-  (* C_KIND_OF_LVL = "-1" *) 
+  (* C_KIND_OF_EDGE = "32'b11111111111111111111111111111111" *) 
+  (* C_KIND_OF_INTR = "32'b11111111111111111111111111111110" *) 
+  (* C_KIND_OF_LVL = "32'b11111111111111111111111111111111" *) 
   (* C_MB_CLK_NOT_CONNECTED = "1" *) 
   (* C_NUM_INTR_INPUTS = "1" *) 
   (* C_NUM_SW_INTR = "0" *) 
@@ -169,7 +170,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
     p_16_in,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]_0 ,
     Bus_RNW_reg_reg_0,
-    Bus_RNW_reg_reg_1,
     bus2ip_wrce,
     \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0] ,
     ip2bus_wrack_prev2,
@@ -177,6 +177,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
     ip2bus_rdack_prev2,
     Or128_vec2stdlogic,
     D,
+    Bus_RNW_reg_reg_1,
     ip2bus_wrack_reg,
     ip2bus_rdack_reg,
     s_axi_wdata_0_sp_1,
@@ -185,9 +186,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
     s_axi_wdata_1_sp_1,
     Q,
     s_axi_aclk,
-    s_axi_wdata,
-    s_axi_aresetn,
-    sie,
     imr,
     ip2bus_wrack_int_d1,
     ip2bus_rdack_int_d1,
@@ -198,11 +196,14 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
     \s_axi_rdata_i_reg[31] ,
     \s_axi_rdata_i_reg[31]_0 ,
     \GEN_BKEND_CE_REGISTERS[18].ce_out_i_reg[18]_0 ,
+    s_axi_wdata,
+    s_axi_aresetn,
+    sie,
     ip2bus_rdack,
     s_axi_arready,
     s_axi_arready_0,
     ip2bus_wrack,
-    s_axi_wready,
+    s_axi_awready,
     cie,
     \mer_int_reg[0] ,
     p_0_in,
@@ -211,7 +212,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
   output p_16_in;
   output \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]_0 ;
   output Bus_RNW_reg_reg_0;
-  output Bus_RNW_reg_reg_1;
   output [0:0]bus2ip_wrce;
   output \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0] ;
   output ip2bus_wrack_prev2;
@@ -219,6 +219,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
   output ip2bus_rdack_prev2;
   output Or128_vec2stdlogic;
   output [31:0]D;
+  output Bus_RNW_reg_reg_1;
   output ip2bus_wrack_reg;
   output ip2bus_rdack_reg;
   output s_axi_wdata_0_sp_1;
@@ -227,10 +228,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
   output s_axi_wdata_1_sp_1;
   input Q;
   input s_axi_aclk;
-  input [1:0]s_axi_wdata;
-  input s_axi_aresetn;
-  input sie;
-  input imr;
+  input [0:0]imr;
   input ip2bus_wrack_int_d1;
   input ip2bus_rdack_int_d1;
   input \s_axi_rdata_i_reg[0] ;
@@ -240,12 +238,15 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
   input [31:0]\s_axi_rdata_i_reg[31] ;
   input \s_axi_rdata_i_reg[31]_0 ;
   input [6:0]\GEN_BKEND_CE_REGISTERS[18].ce_out_i_reg[18]_0 ;
+  input [1:0]s_axi_wdata;
+  input s_axi_aresetn;
+  input [0:0]sie;
   input ip2bus_rdack;
   input s_axi_arready;
   input [3:0]s_axi_arready_0;
   input ip2bus_wrack;
-  input s_axi_wready;
-  input cie;
+  input s_axi_awready;
+  input [0:0]cie;
   input \mer_int_reg[0] ;
   input p_0_in;
   input Bus_RNW_reg_reg_3;
@@ -284,9 +285,9 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
   wire ce_expnd_i_7;
   wire ce_expnd_i_8;
   wire ce_expnd_i_9;
-  wire cie;
+  wire [0:0]cie;
   wire cs_ce_clr;
-  wire imr;
+  wire [0:0]imr;
   wire ip2bus_rdack;
   wire ip2bus_rdack_int_d1;
   wire ip2bus_rdack_prev2;
@@ -324,6 +325,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
   wire s_axi_aresetn;
   wire s_axi_arready;
   wire [3:0]s_axi_arready_0;
+  wire s_axi_awready;
   wire \s_axi_rdata_i[0]_i_5_n_0 ;
   wire \s_axi_rdata_i[0]_i_6_n_0 ;
   wire \s_axi_rdata_i[1]_i_3_n_0 ;
@@ -341,8 +343,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
   wire \s_axi_wdata[0]_0 ;
   wire s_axi_wdata_0_sn_1;
   wire s_axi_wdata_1_sn_1;
-  wire s_axi_wready;
-  wire sie;
+  wire [0:0]sie;
 
   assign s_axi_wdata_0_sp_1 = s_axi_wdata_0_sn_1;
   assign s_axi_wdata_1_sp_1 = s_axi_wdata_1_sn_1;
@@ -1134,7 +1135,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
     .INIT(64'hAAAAAAAAAAAEAAAA)) 
     s_axi_wready_INST_0
        (.I0(ip2bus_wrack),
-        .I1(s_axi_wready),
+        .I1(s_axi_awready),
         .I2(s_axi_arready_0[2]),
         .I3(s_axi_arready_0[1]),
         .I4(s_axi_arready_0[3]),
@@ -1142,13 +1143,13 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_address_decoder
         .O(ip2bus_wrack_reg));
 endmodule
 
-(* C_ADDR_WIDTH = "32" *) (* C_ASYNC_INTR = "-2" *) (* C_CASCADE_MASTER = "0" *) 
+(* C_ADDR_WIDTH = "32" *) (* C_ASYNC_INTR = "32'b11111111111111111111111111111110" *) (* C_CASCADE_MASTER = "0" *) 
 (* C_DISABLE_SYNCHRONIZERS = "1" *) (* C_ENABLE_ASYNC = "0" *) (* C_EN_CASCADE_MODE = "0" *) 
 (* C_FAMILY = "artix7" *) (* C_HAS_CIE = "1" *) (* C_HAS_FAST = "1" *) 
 (* C_HAS_ILR = "0" *) (* C_HAS_IPR = "1" *) (* C_HAS_IVR = "1" *) 
 (* C_HAS_SIE = "1" *) (* C_INSTANCE = "MicroBlazeIPBlock_microblaze_0_axi_intc_0" *) (* C_IRQ_ACTIVE = "1'b1" *) 
-(* C_IRQ_IS_LEVEL = "1" *) (* C_IVAR_RESET_VALUE = "64'b0000000000000000000000000000000000000000000000000000000000010000" *) (* C_KIND_OF_EDGE = "-1" *) 
-(* C_KIND_OF_INTR = "-2" *) (* C_KIND_OF_LVL = "-1" *) (* C_MB_CLK_NOT_CONNECTED = "1" *) 
+(* C_IRQ_IS_LEVEL = "1" *) (* C_IVAR_RESET_VALUE = "64'b0000000000000000000000000000000000000000000000000000000000010000" *) (* C_KIND_OF_EDGE = "32'b11111111111111111111111111111111" *) 
+(* C_KIND_OF_INTR = "32'b11111111111111111111111111111110" *) (* C_KIND_OF_LVL = "32'b11111111111111111111111111111111" *) (* C_MB_CLK_NOT_CONNECTED = "1" *) 
 (* C_NUM_INTR_INPUTS = "1" *) (* C_NUM_SW_INTR = "0" *) (* C_NUM_SYNC_FF = "2" *) 
 (* C_S_AXI_ADDR_WIDTH = "9" *) (* C_S_AXI_DATA_WIDTH = "32" *) (* ORIG_REF_NAME = "axi_intc" *) 
 (* hdl = "VHDL" *) (* imp_netlist = "TRUE" *) (* ip_group = "LOGICORE" *) 
@@ -1212,12 +1213,12 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_intc
   output [1:0]processor_ack_out;
 
   wire \<const0> ;
+  wire AXI_LITE_IPIF_I_n_17;
   wire AXI_LITE_IPIF_I_n_20;
   wire AXI_LITE_IPIF_I_n_21;
   wire AXI_LITE_IPIF_I_n_22;
   wire AXI_LITE_IPIF_I_n_23;
-  wire AXI_LITE_IPIF_I_n_7;
-  wire AXI_LITE_IPIF_I_n_9;
+  wire AXI_LITE_IPIF_I_n_8;
   wire [31:0]Douta;
   wire INTC_CORE_I_n_0;
   wire INTC_CORE_I_n_7;
@@ -1229,9 +1230,9 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_intc
   wire Or128_vec2stdlogic19_out;
   wire [5:2]bus2ip_addr;
   wire [2:2]bus2ip_wrce;
-  wire cie;
-  wire ier;
-  wire imr;
+  wire [0:0]cie;
+  wire [0:0]ier;
+  wire [0:0]imr;
   wire [31:0]interrupt_address;
   wire [0:0]intr;
   wire ip2bus_rdack;
@@ -1242,8 +1243,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_intc
   wire ip2bus_wrack_prev2;
   wire [0:0]ipr;
   wire irq;
-  wire isr;
-  wire ivr;
+  wire [0:0]isr;
+  wire [0:0]ivr;
   wire p_0_in;
   wire [1:0]processor_ack;
   wire s_axi_aclk;
@@ -1252,6 +1253,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_intc
   wire s_axi_arready;
   wire s_axi_arvalid;
   wire [8:0]s_axi_awaddr;
+  wire s_axi_awready;
   wire s_axi_awvalid;
   wire s_axi_bready;
   wire [1:1]\^s_axi_bresp ;
@@ -1261,26 +1263,25 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_intc
   wire [1:1]\^s_axi_rresp ;
   wire s_axi_rvalid;
   wire [31:0]s_axi_wdata;
-  wire s_axi_wready;
   wire [3:0]s_axi_wstrb;
   wire s_axi_wvalid;
-  wire sie;
+  wire [0:0]sie;
 
   assign processor_ack_out[1] = \<const0> ;
   assign processor_ack_out[0] = \<const0> ;
-  assign s_axi_awready = s_axi_wready;
   assign s_axi_bresp[1] = \^s_axi_bresp [1];
   assign s_axi_bresp[0] = \<const0> ;
   assign s_axi_rresp[1] = \^s_axi_rresp [1];
   assign s_axi_rresp[0] = \<const0> ;
+  assign s_axi_wready = s_axi_awready;
   MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif AXI_LITE_IPIF_I
        (.Bus_RNW_reg(\I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg ),
-        .Bus_RNW_reg_reg(AXI_LITE_IPIF_I_n_7),
+        .Bus_RNW_reg_reg(AXI_LITE_IPIF_I_n_17),
         .Bus_RNW_reg_reg_0(AXI_LITE_IPIF_I_n_21),
         .Or128_vec2stdlogic(Or128_vec2stdlogic),
         .Or128_vec2stdlogic19_out(Or128_vec2stdlogic19_out),
         .Q(Douta),
-        .\REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0] (AXI_LITE_IPIF_I_n_9),
+        .\REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0] (AXI_LITE_IPIF_I_n_8),
         .\bus2ip_addr_i_reg[5] (bus2ip_addr),
         .bus2ip_wrce(bus2ip_wrce),
         .cie(cie),
@@ -1293,7 +1294,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_intc
         .ip2bus_wrack(ip2bus_wrack),
         .ip2bus_wrack_int_d1(ip2bus_wrack_int_d1),
         .ip2bus_wrack_prev2(ip2bus_wrack_prev2),
-        .ip2bus_wrack_reg(s_axi_wready),
+        .ip2bus_wrack_reg(s_axi_awready),
         .ipr(ipr),
         .isr(isr),
         .ivr(ivr),
@@ -1329,10 +1330,9 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_intc
        (.Bus_RNW_reg(\I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg ),
         .\CIE_GEN.CIE_BIT_GEN[0].cie_reg[0]_0 (AXI_LITE_IPIF_I_n_21),
         .Douta(Douta),
-        .\REG_GEN[0].IAR_FAST_MODE_GEN.iar_reg[0]_0 (AXI_LITE_IPIF_I_n_9),
+        .\REG_GEN[0].IAR_FAST_MODE_GEN.iar_reg[0]_0 (AXI_LITE_IPIF_I_n_8),
         .\REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0]_0 (AXI_LITE_IPIF_I_n_20),
-        .\SIE_GEN.SIE_BIT_GEN[0].sie_reg[0]_0 (AXI_LITE_IPIF_I_n_7),
-        .bus2ip_addr_i(bus2ip_addr),
+        .\SIE_GEN.SIE_BIT_GEN[0].sie_reg[0]_0 (AXI_LITE_IPIF_I_n_17),
         .bus2ip_wrce(bus2ip_wrce),
         .cie(cie),
         .ier(ier),
@@ -1351,6 +1351,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_intc
         .p_16_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_16_in ),
         .p_18_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_18_in ),
         .processor_ack(processor_ack),
+        .\ram_i[0].Doutb_reg[0] (bus2ip_addr),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_aresetn(s_axi_aresetn),
         .s_axi_aresetn_0(INTC_CORE_I_n_0),
@@ -1391,7 +1392,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
     Bus_RNW_reg,
     s_axi_rvalid_i_reg,
     s_axi_bvalid_i_reg,
-    Bus_RNW_reg_reg,
     bus2ip_wrce,
     \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0] ,
     ip2bus_wrack_prev2,
@@ -1399,6 +1399,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
     ip2bus_rdack_prev2,
     Or128_vec2stdlogic,
     \bus2ip_addr_i_reg[5] ,
+    Bus_RNW_reg_reg,
     ip2bus_wrack_reg,
     ip2bus_rdack_reg,
     s_axi_wdata_0_sp_1,
@@ -1410,10 +1411,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
     rst_reg,
     s_axi_aclk,
     s_axi_arvalid,
-    s_axi_wstrb,
-    s_axi_wdata,
-    s_axi_aresetn,
-    sie,
     imr,
     ip2bus_wrack_int_d1,
     ip2bus_rdack_int_d1,
@@ -1424,6 +1421,9 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
     \mer_int_reg[0] ,
     p_0_in,
     ivr,
+    s_axi_wdata,
+    s_axi_aresetn,
+    sie,
     s_axi_awvalid,
     s_axi_wvalid,
     s_axi_bready,
@@ -1432,6 +1432,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
     ip2bus_wrack,
     s_axi_araddr,
     s_axi_awaddr,
+    s_axi_wstrb,
     cie);
   output p_15_in;
   output p_16_in;
@@ -1440,7 +1441,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
   output Bus_RNW_reg;
   output s_axi_rvalid_i_reg;
   output s_axi_bvalid_i_reg;
-  output Bus_RNW_reg_reg;
   output [0:0]bus2ip_wrce;
   output \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0] ;
   output ip2bus_wrack_prev2;
@@ -1448,6 +1448,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
   output ip2bus_rdack_prev2;
   output Or128_vec2stdlogic;
   output [3:0]\bus2ip_addr_i_reg[5] ;
+  output Bus_RNW_reg_reg;
   output ip2bus_wrack_reg;
   output ip2bus_rdack_reg;
   output s_axi_wdata_0_sp_1;
@@ -1459,20 +1460,19 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
   input rst_reg;
   input s_axi_aclk;
   input s_axi_arvalid;
-  input [3:0]s_axi_wstrb;
-  input [1:0]s_axi_wdata;
-  input s_axi_aresetn;
-  input sie;
-  input imr;
+  input [0:0]imr;
   input ip2bus_wrack_int_d1;
   input ip2bus_rdack_int_d1;
   input [31:0]Q;
   input [0:0]ipr;
-  input ier;
-  input isr;
+  input [0:0]ier;
+  input [0:0]isr;
   input \mer_int_reg[0] ;
   input p_0_in;
-  input ivr;
+  input [0:0]ivr;
+  input [1:0]s_axi_wdata;
+  input s_axi_aresetn;
+  input [0:0]sie;
   input s_axi_awvalid;
   input s_axi_wvalid;
   input s_axi_bready;
@@ -1481,7 +1481,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
   input ip2bus_wrack;
   input [6:0]s_axi_araddr;
   input [6:0]s_axi_awaddr;
-  input cie;
+  input [3:0]s_axi_wstrb;
+  input [0:0]cie;
 
   wire Bus_RNW_reg;
   wire Bus_RNW_reg_reg;
@@ -1492,9 +1493,9 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
   wire \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0] ;
   wire [3:0]\bus2ip_addr_i_reg[5] ;
   wire [0:0]bus2ip_wrce;
-  wire cie;
-  wire ier;
-  wire imr;
+  wire [0:0]cie;
+  wire [0:0]ier;
+  wire [0:0]imr;
   wire ip2bus_rdack;
   wire ip2bus_rdack_int_d1;
   wire ip2bus_rdack_prev2;
@@ -1504,8 +1505,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
   wire ip2bus_wrack_prev2;
   wire ip2bus_wrack_reg;
   wire [0:0]ipr;
-  wire isr;
-  wire ivr;
+  wire [0:0]isr;
+  wire [0:0]ivr;
   wire \mer_int_reg[0] ;
   wire p_0_in;
   wire p_15_in;
@@ -1531,7 +1532,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_axi_lite_ipif
   wire s_axi_wdata_1_sn_1;
   wire [3:0]s_axi_wstrb;
   wire s_axi_wvalid;
-  wire sie;
+  wire [0:0]sie;
 
   assign s_axi_wdata_0_sp_1 = s_axi_wdata_0_sn_1;
   assign s_axi_wdata_1_sp_1 = s_axi_wdata_1_sn_1;
@@ -1600,8 +1601,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
     p_0_in,
     isr,
     ier,
-    Douta,
     interrupt_address,
+    Douta,
     s_axi_aclk,
     \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0]_0 ,
     \SIE_GEN.SIE_BIT_GEN[0].sie_reg[0]_0 ,
@@ -1618,20 +1619,20 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
     p_16_in,
     intr,
     bus2ip_wrce,
-    bus2ip_addr_i);
+    \ram_i[0].Doutb_reg[0] );
   output s_axi_aresetn_0;
-  output ivr;
+  output [0:0]ivr;
   output irq;
   output [0:0]ipr;
-  output imr;
-  output sie;
-  output cie;
+  output [0:0]imr;
+  output [0:0]sie;
+  output [0:0]cie;
   output \mer_int_reg[0]_0 ;
   output p_0_in;
-  output isr;
-  output ier;
-  output [31:0]Douta;
+  output [0:0]isr;
+  output [0:0]ier;
   output [31:0]interrupt_address;
+  output [31:0]Douta;
   input s_axi_aclk;
   input \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0]_0 ;
   input \SIE_GEN.SIE_BIT_GEN[0].sie_reg[0]_0 ;
@@ -1648,7 +1649,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
   input p_16_in;
   input [0:0]intr;
   input [0:0]bus2ip_wrce;
-  input [3:0]bus2ip_addr_i;
+  input [3:0]\ram_i[0].Doutb_reg[0] ;
 
   wire \ACK_EN_SYNC_ON_AXI_CLK_GEN.NO_CASCADE_MASTER.first_ack_active_i_1_n_0 ;
   wire Bus_RNW_reg;
@@ -1656,6 +1657,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
   wire [31:0]Douta;
   wire \INTR_DETECT_GEN[0].LVL_DETECT_GEN.hw_intr[0]_i_1_n_0 ;
   wire \IPR_GEN.ipr[0]_i_1_n_0 ;
+  wire [1:0]\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state ;
+  wire [1:0]\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state__0 ;
   wire \IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.in_idle_reg_n_0 ;
   wire \IVAR_INDEX_SYNC_ON_AXI_CLK_GEN.ivar_index_axi_clk[0]_i_1_n_0 ;
   wire \IVR_GEN.ivr[0]_i_1_n_0 ;
@@ -1672,28 +1675,25 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
   wire \SIE_GEN.SIE_BIT_GEN[0].sie_reg[0]_0 ;
   wire ack_b01;
   wire ack_or;
-  wire [3:0]bus2ip_addr_i;
   wire [0:0]bus2ip_wrce;
-  wire cie;
-  wire [1:0]current_state;
-  wire [1:0]current_state__0;
+  wire [0:0]cie;
   wire first_ack;
   wire first_ack_active;
-  wire hw_intr;
+  wire [0:0]hw_intr;
   wire idle_and_irq;
   wire idle_and_irq_d1;
-  wire ier;
-  wire imr;
+  wire [0:0]ier;
+  wire [0:0]imr;
   wire in_idle;
   wire [31:0]interrupt_address;
   wire [0:0]intr;
   wire [0:0]ipr;
   wire irq;
-  wire isr;
+  wire [0:0]isr;
   wire ivar_index_axi_clk;
   wire ivar_index_sample_en;
   wire ivar_index_sample_en_i;
-  wire ivr;
+  wire [0:0]ivr;
   wire \mer_int_reg[0]_0 ;
   wire \mer_int_reg[0]_1 ;
   wire \mer_int_reg[1]_0 ;
@@ -1702,6 +1702,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
   wire p_16_in;
   wire p_18_in;
   wire [1:0]processor_ack;
+  wire [3:0]\ram_i[0].Doutb_reg[0] ;
   wire s_axi_aclk;
   wire s_axi_aresetn;
   wire s_axi_aresetn_0;
@@ -1710,7 +1711,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
   wire second_ack0;
   wire second_ack_sync_d1;
   wire second_ack_sync_d2;
-  wire sie;
+  wire [0:0]sie;
 
   (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT3 #(
@@ -1775,33 +1776,37 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
        (.I0(ivar_index_sample_en),
         .I1(ack_or),
         .I2(imr),
-        .I3(current_state[1]),
-        .I4(current_state[0]),
+        .I3(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [1]),
+        .I4(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [0]),
         .I5(first_ack),
-        .O(current_state__0[0]));
+        .O(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state__0 [0]));
   (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT5 #(
     .INIT(32'h1C101010)) 
     \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[1]_i_1 
        (.I0(second_ack_sync_d2),
-        .I1(current_state[0]),
-        .I2(current_state[1]),
+        .I1(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [0]),
+        .I2(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [1]),
         .I3(first_ack),
         .I4(imr),
-        .O(current_state__0[1]));
+        .O(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state__0 [1]));
   (* FSM_ENCODED_STATES = "gen_level_irq:01,wait_ack:10,idle:00" *) 
-  FDRE \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg[0] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(current_state__0[0]),
-        .Q(current_state[0]),
+        .D(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state__0 [0]),
+        .Q(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [0]),
         .R(s_axi_aresetn_0));
   (* FSM_ENCODED_STATES = "gen_level_irq:01,wait_ack:10,idle:00" *) 
-  FDRE \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg[1] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg[1] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(current_state__0[1]),
-        .Q(current_state[1]),
+        .D(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state__0 [1]),
+        .Q(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [1]),
         .R(s_axi_aresetn_0));
   (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT4 #(
@@ -1839,8 +1844,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
   LUT2 #(
     .INIT(4'h2)) 
     \IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.Irq_i_2 
-       (.I0(current_state[0]),
-        .I1(current_state[1]),
+       (.I0(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [0]),
+        .I1(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [1]),
         .O(Irq_i));
   FDRE \IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.Irq_reg 
        (.C(s_axi_aclk),
@@ -1851,8 +1856,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
   LUT2 #(
     .INIT(4'h1)) 
     \IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.in_idle_i_1 
-       (.I0(current_state[0]),
-        .I1(current_state[1]),
+       (.I0(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [0]),
+        .I1(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [1]),
         .O(in_idle));
   FDRE \IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.in_idle_reg 
        (.C(s_axi_aclk),
@@ -1862,10 +1867,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_intc_core
         .R(s_axi_aresetn_0));
   MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar \IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I 
        (.Douta(Douta),
-        .bus2ip_addr_i(bus2ip_addr_i),
         .bus2ip_wrce(bus2ip_wrce),
         .interrupt_address(interrupt_address),
         .ivar_index_axi_clk(ivar_index_axi_clk),
+        .\ram_i[0].Doutb_reg[0]_0 (\ram_i[0].Doutb_reg[0] ),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata));
   (* SOFT_HLUTNM = "soft_lutpair38" *) 
@@ -2030,28 +2035,28 @@ endmodule
 
 (* ORIG_REF_NAME = "shared_ram_ivar" *) 
 module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
-   (Douta,
-    interrupt_address,
+   (interrupt_address,
+    Douta,
     s_axi_aclk,
     s_axi_wdata,
     bus2ip_wrce,
-    bus2ip_addr_i,
+    \ram_i[0].Doutb_reg[0]_0 ,
     ivar_index_axi_clk);
-  output [31:0]Douta;
   output [31:0]interrupt_address;
+  output [31:0]Douta;
   input s_axi_aclk;
   input [31:0]s_axi_wdata;
   input [0:0]bus2ip_wrce;
-  input [3:0]bus2ip_addr_i;
+  input [3:0]\ram_i[0].Doutb_reg[0]_0 ;
   input ivar_index_axi_clk;
 
   wire [31:0]Douta;
   wire [31:0]Doutb0;
-  wire [3:0]bus2ip_addr_i;
   wire [0:0]bus2ip_wrce;
   wire [31:0]interrupt_address;
   wire ivar_index_axi_clk;
   wire [31:0]p_2_out;
+  wire [3:0]\ram_i[0].Doutb_reg[0]_0 ;
   wire s_axi_aclk;
   wire [31:0]s_axi_wdata;
 
@@ -2440,9 +2445,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .Q(interrupt_address[9]),
         .R(1'b0));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2451,10 +2458,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_0_0 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[0]),
         .DPO(Doutb0[0]),
@@ -2467,9 +2474,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2478,10 +2487,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_10_10 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[10]),
         .DPO(Doutb0[10]),
@@ -2494,9 +2503,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2505,10 +2516,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_11_11 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[11]),
         .DPO(Doutb0[11]),
@@ -2521,9 +2532,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2532,10 +2545,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_12_12 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[12]),
         .DPO(Doutb0[12]),
@@ -2548,9 +2561,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2559,10 +2574,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_13_13 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[13]),
         .DPO(Doutb0[13]),
@@ -2575,9 +2590,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2586,10 +2603,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_14_14 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[14]),
         .DPO(Doutb0[14]),
@@ -2602,9 +2619,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2613,10 +2632,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_15_15 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[15]),
         .DPO(Doutb0[15]),
@@ -2629,9 +2648,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2640,10 +2661,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_16_16 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[16]),
         .DPO(Doutb0[16]),
@@ -2656,9 +2677,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2667,10 +2690,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_17_17 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[17]),
         .DPO(Doutb0[17]),
@@ -2683,9 +2706,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2694,10 +2719,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_18_18 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[18]),
         .DPO(Doutb0[18]),
@@ -2710,9 +2735,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2721,10 +2748,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_19_19 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[19]),
         .DPO(Doutb0[19]),
@@ -2737,9 +2764,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2748,10 +2777,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_1_1 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[1]),
         .DPO(Doutb0[1]),
@@ -2764,9 +2793,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2775,10 +2806,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_20_20 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[20]),
         .DPO(Doutb0[20]),
@@ -2791,9 +2822,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2802,10 +2835,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_21_21 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[21]),
         .DPO(Doutb0[21]),
@@ -2818,9 +2851,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2829,10 +2864,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_22_22 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[22]),
         .DPO(Doutb0[22]),
@@ -2845,9 +2880,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2856,10 +2893,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_23_23 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[23]),
         .DPO(Doutb0[23]),
@@ -2872,9 +2909,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2883,10 +2922,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_24_24 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[24]),
         .DPO(Doutb0[24]),
@@ -2899,9 +2938,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2910,10 +2951,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_25_25 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[25]),
         .DPO(Doutb0[25]),
@@ -2926,9 +2967,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2937,10 +2980,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_26_26 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[26]),
         .DPO(Doutb0[26]),
@@ -2953,9 +2996,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2964,10 +3009,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_27_27 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[27]),
         .DPO(Doutb0[27]),
@@ -2980,9 +3025,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -2991,10 +3038,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_28_28 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[28]),
         .DPO(Doutb0[28]),
@@ -3007,9 +3054,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3018,10 +3067,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_29_29 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[29]),
         .DPO(Doutb0[29]),
@@ -3034,9 +3083,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3045,10 +3096,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_2_2 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[2]),
         .DPO(Doutb0[2]),
@@ -3061,9 +3112,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3072,10 +3125,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_30_30 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[30]),
         .DPO(Doutb0[30]),
@@ -3088,9 +3141,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3099,10 +3154,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_31_31 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[31]),
         .DPO(Doutb0[31]),
@@ -3115,9 +3170,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3126,10 +3183,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_3_3 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[3]),
         .DPO(Doutb0[3]),
@@ -3142,9 +3199,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3153,10 +3212,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h0000FFFF)) 
     \ram_i[0].ram_reg_0_15_4_4 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[4]),
         .DPO(Doutb0[4]),
@@ -3169,9 +3228,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3180,10 +3241,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_5_5 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[5]),
         .DPO(Doutb0[5]),
@@ -3196,9 +3257,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3207,10 +3270,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_6_6 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[6]),
         .DPO(Doutb0[6]),
@@ -3223,9 +3286,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3234,10 +3299,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_7_7 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[7]),
         .DPO(Doutb0[7]),
@@ -3250,9 +3315,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3261,10 +3328,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_8_8 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[8]),
         .DPO(Doutb0[8]),
@@ -3277,9 +3344,11 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
         .WCLK(s_axi_aclk),
         .WE(bus2ip_wrce));
   (* RTL_RAM_BITS = "512" *) 
-  (* RTL_RAM_NAME = "INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram" *) 
+  (* RTL_RAM_NAME = "axi_intc/INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg" *) 
+  (* RTL_RAM_STYLE = "distributed" *) 
   (* RTL_RAM_TYPE = "RAM_TDP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1D" *) 
+  (* XILINX_TRANSFORM_PINMAP = "GND:DPRA4,A4" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
   (* ram_offset = "0" *) 
@@ -3288,10 +3357,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_shared_ram_ivar
   RAM32X1D #(
     .INIT(32'h00000000)) 
     \ram_i[0].ram_reg_0_15_9_9 
-       (.A0(bus2ip_addr_i[0]),
-        .A1(bus2ip_addr_i[1]),
-        .A2(bus2ip_addr_i[2]),
-        .A3(bus2ip_addr_i[3]),
+       (.A0(\ram_i[0].Doutb_reg[0]_0 [0]),
+        .A1(\ram_i[0].Doutb_reg[0]_0 [1]),
+        .A2(\ram_i[0].Doutb_reg[0]_0 [2]),
+        .A3(\ram_i[0].Doutb_reg[0]_0 [3]),
         .A4(1'b0),
         .D(s_axi_wdata[9]),
         .DPO(Doutb0[9]),
@@ -3314,7 +3383,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
     Bus_RNW_reg_reg,
     s_axi_rvalid_i_reg_0,
     s_axi_bvalid_i_reg_0,
-    Bus_RNW_reg_reg_0,
     bus2ip_wrce,
     \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0] ,
     ip2bus_wrack_prev2,
@@ -3322,6 +3390,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
     ip2bus_rdack_prev2,
     Or128_vec2stdlogic,
     \bus2ip_addr_i_reg[5]_0 ,
+    Bus_RNW_reg_reg_0,
     ip2bus_wrack_reg,
     ip2bus_rdack_reg,
     s_axi_wdata_0_sp_1,
@@ -3333,10 +3402,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
     rst_reg_0,
     s_axi_aclk,
     s_axi_arvalid,
-    s_axi_wstrb,
-    s_axi_wdata,
-    s_axi_aresetn,
-    sie,
     imr,
     ip2bus_wrack_int_d1,
     ip2bus_rdack_int_d1,
@@ -3347,6 +3412,9 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
     \mer_int_reg[0] ,
     p_0_in,
     ivr,
+    s_axi_wdata,
+    s_axi_aresetn,
+    sie,
     s_axi_awvalid,
     s_axi_wvalid,
     s_axi_bready,
@@ -3355,6 +3423,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
     ip2bus_wrack,
     s_axi_araddr,
     s_axi_awaddr,
+    s_axi_wstrb,
     cie);
   output p_15_in;
   output p_16_in;
@@ -3363,7 +3432,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   output Bus_RNW_reg_reg;
   output s_axi_rvalid_i_reg_0;
   output s_axi_bvalid_i_reg_0;
-  output Bus_RNW_reg_reg_0;
   output [0:0]bus2ip_wrce;
   output \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0] ;
   output ip2bus_wrack_prev2;
@@ -3371,6 +3439,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   output ip2bus_rdack_prev2;
   output Or128_vec2stdlogic;
   output [3:0]\bus2ip_addr_i_reg[5]_0 ;
+  output Bus_RNW_reg_reg_0;
   output ip2bus_wrack_reg;
   output ip2bus_rdack_reg;
   output s_axi_wdata_0_sp_1;
@@ -3382,20 +3451,19 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   input rst_reg_0;
   input s_axi_aclk;
   input s_axi_arvalid;
-  input [3:0]s_axi_wstrb;
-  input [1:0]s_axi_wdata;
-  input s_axi_aresetn;
-  input sie;
-  input imr;
+  input [0:0]imr;
   input ip2bus_wrack_int_d1;
   input ip2bus_rdack_int_d1;
   input [31:0]Q;
   input [0:0]ipr;
-  input ier;
-  input isr;
+  input [0:0]ier;
+  input [0:0]isr;
   input \mer_int_reg[0] ;
   input p_0_in;
-  input ivr;
+  input [0:0]ivr;
+  input [1:0]s_axi_wdata;
+  input s_axi_aresetn;
+  input [0:0]sie;
   input s_axi_awvalid;
   input s_axi_wvalid;
   input s_axi_bready;
@@ -3404,7 +3472,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   input ip2bus_wrack;
   input [6:0]s_axi_araddr;
   input [6:0]s_axi_awaddr;
-  input cie;
+  input [3:0]s_axi_wstrb;
+  input [0:0]cie;
 
   wire Bus_RNW_reg_reg;
   wire Bus_RNW_reg_reg_0;
@@ -3434,10 +3503,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   wire [3:0]\bus2ip_addr_i_reg[5]_0 ;
   wire bus2ip_rnw_i_reg_n_0;
   wire [0:0]bus2ip_wrce;
-  wire cie;
+  wire [0:0]cie;
   wire clear;
-  wire ier;
-  wire imr;
+  wire [0:0]ier;
+  wire [0:0]imr;
   wire ip2bus_error;
   wire ip2bus_rdack;
   wire ip2bus_rdack_int_d1;
@@ -3453,11 +3522,10 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   wire is_write_i_1_n_0;
   wire is_write_i_2_n_0;
   wire is_write_reg_n_0;
-  wire isr;
-  wire ivr;
+  wire [0:0]isr;
+  wire [0:0]ivr;
   wire \mer_int_reg[0] ;
   wire p_0_in;
-  wire [1:0]p_0_out;
   wire p_15_in;
   wire p_16_in;
   wire p_5_in;
@@ -3472,7 +3540,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   wire s_axi_awvalid;
   wire s_axi_bready;
   wire [0:0]s_axi_bresp;
-  wire s_axi_bresp_i;
+  wire [0:0]s_axi_bresp_i;
   wire \s_axi_bresp_i[1]_i_1_n_0 ;
   wire s_axi_bvalid_i_i_1_n_0;
   wire s_axi_bvalid_i_reg_0;
@@ -3484,7 +3552,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   wire \s_axi_rdata_i[31]_i_5_n_0 ;
   wire s_axi_rready;
   wire [0:0]s_axi_rresp;
-  wire s_axi_rresp_i;
+  wire [0:0]s_axi_rresp_i;
   wire s_axi_rvalid_i_i_1_n_0;
   wire s_axi_rvalid_i_reg_0;
   wire [1:0]s_axi_wdata;
@@ -3493,11 +3561,14 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   wire s_axi_wdata_1_sn_1;
   wire [3:0]s_axi_wstrb;
   wire s_axi_wvalid;
-  wire sie;
+  wire [0:0]sie;
   wire start2;
   wire start2_i_1_n_0;
-  wire [1:0]state;
   wire state1__2;
+  wire \state[0]_i_1_n_0 ;
+  wire \state[1]_i_1_n_0 ;
+  wire \state_reg_n_0_[0] ;
+  wire \state_reg_n_0_[1] ;
 
   assign s_axi_wdata_0_sp_1 = s_axi_wdata_0_sn_1;
   assign s_axi_wdata_1_sp_1 = s_axi_wdata_1_sn_1;
@@ -3607,8 +3678,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
   LUT2 #(
     .INIT(4'h9)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[3]_i_1 
-       (.I0(state[0]),
-        .I1(state[1]),
+       (.I0(\state_reg_n_0_[0] ),
+        .I1(\state_reg_n_0_[1] ),
         .O(clear));
   (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT4 #(
@@ -3674,6 +3745,7 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
         .s_axi_aresetn(s_axi_aresetn),
         .s_axi_arready(is_read_reg_n_0),
         .s_axi_arready_0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg ),
+        .s_axi_awready(is_write_reg_n_0),
         .\s_axi_rdata_i_reg[0] (\s_axi_rdata_i[0]_i_2_n_0 ),
         .\s_axi_rdata_i_reg[0]_0 (\s_axi_rdata_i[0]_i_3_n_0 ),
         .\s_axi_rdata_i_reg[0]_1 (\s_axi_rdata_i[0]_i_4_n_0 ),
@@ -3684,7 +3756,6 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
         .\s_axi_wdata[0]_0 (\s_axi_wdata[0]_0 ),
         .s_axi_wdata_0_sp_1(s_axi_wdata_0_sn_1),
         .s_axi_wdata_1_sp_1(s_axi_wdata_1_sn_1),
-        .s_axi_wready(is_write_reg_n_0),
         .sie(sie));
   LUT3 #(
     .INIT(8'hAC)) 
@@ -3739,8 +3810,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
        (.I0(s_axi_arvalid),
         .I1(s_axi_awvalid),
         .I2(s_axi_wvalid),
-        .I3(state[1]),
-        .I4(state[0]),
+        .I3(\state_reg_n_0_[1] ),
+        .I4(\state_reg_n_0_[0] ),
         .O(\bus2ip_addr_i[8]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
@@ -3864,8 +3935,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
     .INIT(32'h08FF0808)) 
     s_axi_bvalid_i_i_1
        (.I0(ip2bus_wrack_reg),
-        .I1(state[1]),
-        .I2(state[0]),
+        .I1(\state_reg_n_0_[1] ),
+        .I2(\state_reg_n_0_[0] ),
         .I3(s_axi_bready),
         .I4(s_axi_bvalid_i_reg_0),
         .O(s_axi_bvalid_i_i_1_n_0));
@@ -4201,8 +4272,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
     .INIT(32'h08FF0808)) 
     s_axi_rvalid_i_i_1
        (.I0(ip2bus_rdack_reg),
-        .I1(state[0]),
-        .I2(state[1]),
+        .I1(\state_reg_n_0_[0] ),
+        .I2(\state_reg_n_0_[1] ),
         .I3(s_axi_rready),
         .I4(s_axi_rvalid_i_reg_0),
         .O(s_axi_rvalid_i_i_1_n_0));
@@ -4221,8 +4292,8 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
        (.I0(s_axi_awvalid),
         .I1(s_axi_wvalid),
         .I2(s_axi_arvalid),
-        .I3(state[1]),
-        .I4(state[0]),
+        .I3(\state_reg_n_0_[1] ),
+        .I4(\state_reg_n_0_[0] ),
         .O(start2_i_1_n_0));
   FDRE start2_reg
        (.C(s_axi_aclk),
@@ -4231,24 +4302,24 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
         .Q(start2),
         .R(rst));
   LUT5 #(
-    .INIT(32'h77FC44FC)) 
+    .INIT(32'h0FCAFFCA)) 
     \state[0]_i_1 
-       (.I0(state1__2),
-        .I1(state[0]),
-        .I2(s_axi_arvalid),
-        .I3(state[1]),
-        .I4(ip2bus_wrack_reg),
-        .O(p_0_out[0]));
+       (.I0(s_axi_arvalid),
+        .I1(ip2bus_wrack_reg),
+        .I2(\state_reg_n_0_[1] ),
+        .I3(\state_reg_n_0_[0] ),
+        .I4(state1__2),
+        .O(\state[0]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h55FFFF0C5500FF0C)) 
     \state[1]_i_1 
        (.I0(state1__2),
         .I1(p_5_in),
         .I2(s_axi_arvalid),
-        .I3(state[1]),
-        .I4(state[0]),
+        .I3(\state_reg_n_0_[1] ),
+        .I4(\state_reg_n_0_[0] ),
         .I5(ip2bus_rdack_reg),
-        .O(p_0_out[1]));
+        .O(\state[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT2 #(
     .INIT(4'h8)) 
@@ -4256,17 +4327,21 @@ module MicroBlazeIPBlock_microblaze_0_axi_intc_0_slave_attachment
        (.I0(s_axi_awvalid),
         .I1(s_axi_wvalid),
         .O(p_5_in));
-  FDRE \state_reg[0] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \state_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(p_0_out[0]),
-        .Q(state[0]),
+        .D(\state[0]_i_1_n_0 ),
+        .Q(\state_reg_n_0_[0] ),
         .R(rst));
-  FDRE \state_reg[1] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \state_reg[1] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(p_0_out[1]),
-        .Q(state[1]),
+        .D(\state[1]_i_1_n_0 ),
+        .Q(\state_reg_n_0_[1] ),
         .R(rst));
 endmodule
 `ifndef GLBL

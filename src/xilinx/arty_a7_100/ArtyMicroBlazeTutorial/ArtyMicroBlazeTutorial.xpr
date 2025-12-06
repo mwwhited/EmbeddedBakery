@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2020.2 (64-bit)              -->
-<!--                                                         -->
-<!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
+<!-- Product Version: Vivado v2025.2 (64-bit)                              -->
+<!--                                                                         -->
+<!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
+<!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="54" Path="C:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.xpr">
+<Project Product="Vivado" Version="7" Minor="71" Path="C:/repo/a7100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="3906f74a8d3c445386d891d7f90b2fd0"/>
@@ -12,27 +13,37 @@
     <Option Name="CompiledLibDirXSim" Val=""/>
     <Option Name="CompiledLibDirModelSim" Val="$PCACHEDIR/compile_simlib/modelsim"/>
     <Option Name="CompiledLibDirQuesta" Val="$PCACHEDIR/compile_simlib/questa"/>
-    <Option Name="CompiledLibDirIES" Val="$PCACHEDIR/compile_simlib/ies"/>
     <Option Name="CompiledLibDirXcelium" Val="$PCACHEDIR/compile_simlib/xcelium"/>
     <Option Name="CompiledLibDirVCS" Val="$PCACHEDIR/compile_simlib/vcs"/>
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="SimulatorInstallDirModelSim" Val=""/>
     <Option Name="SimulatorInstallDirQuesta" Val=""/>
-    <Option Name="SimulatorInstallDirIES" Val=""/>
     <Option Name="SimulatorInstallDirXcelium" Val=""/>
     <Option Name="SimulatorInstallDirVCS" Val=""/>
     <Option Name="SimulatorInstallDirRiviera" Val=""/>
     <Option Name="SimulatorInstallDirActiveHdl" Val=""/>
     <Option Name="SimulatorGccInstallDirModelSim" Val=""/>
     <Option Name="SimulatorGccInstallDirQuesta" Val=""/>
-    <Option Name="SimulatorGccInstallDirIES" Val=""/>
     <Option Name="SimulatorGccInstallDirXcelium" Val=""/>
     <Option Name="SimulatorGccInstallDirVCS" Val=""/>
     <Option Name="SimulatorGccInstallDirRiviera" Val=""/>
     <Option Name="SimulatorGccInstallDirActiveHdl" Val=""/>
+    <Option Name="SimulatorVersionXsim" Val="2025.2"/>
+    <Option Name="SimulatorVersionModelSim" Val="2025.2"/>
+    <Option Name="SimulatorVersionQuesta" Val="2025.2"/>
+    <Option Name="SimulatorVersionXcelium" Val="25.03.002"/>
+    <Option Name="SimulatorVersionVCS" Val="X-2025.06"/>
+    <Option Name="SimulatorVersionRiviera" Val="2024.10"/>
+    <Option Name="SimulatorVersionActiveHdl" Val="15.0"/>
+    <Option Name="SimulatorGccVersionXsim" Val="9.3.0"/>
+    <Option Name="SimulatorGccVersionModelSim" Val="7.4.0"/>
+    <Option Name="SimulatorGccVersionQuesta" Val="7.4.0"/>
+    <Option Name="SimulatorGccVersionXcelium" Val="9.3.0"/>
+    <Option Name="SimulatorGccVersionVCS" Val="9.2.0"/>
+    <Option Name="SimulatorGccVersionRiviera" Val="9.3.0"/>
+    <Option Name="SimulatorGccVersionActiveHdl" Val="9.3.0"/>
     <Option Name="BoardPart" Val="digilentinc.com:arty-a7-100:part0:1.0"/>
-    <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../../../../Users/mwwhi/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
@@ -43,6 +54,8 @@
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
     <Option Name="EnableCoreContainer" Val="TRUE"/>
+    <Option Name="EnableResourceEstimation" Val="FALSE"/>
+    <Option Name="SimCompileState" Val="TRUE"/>
     <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
@@ -73,8 +86,10 @@
     <Option Name="SimTypes" Val="tlm_dpi"/>
     <Option Name="MEMEnableMemoryMapGeneration" Val="TRUE"/>
     <Option Name="DcpsUptoDate" Val="TRUE"/>
+    <Option Name="UseInlineHdlIP" Val="TRUE"/>
+    <Option Name="LocalIPRepoLeafDirName" Val="ip_repo"/>
   </Configuration>
-  <FileSets Version="1" Minor="31">
+  <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/bd/MicroBlazeIPBlock/MicroBlazeIPBlock.bd">
@@ -83,47 +98,47 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_ilmb_v10_0/MicroBlazeIPBlock_ilmb_v10_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_ilmb_v10_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_microblaze_0_0/MicroBlazeIPBlock_microblaze_0_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_microblaze_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_reset_inv_0_0/MicroBlazeIPBlock_reset_inv_0_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_reset_inv_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_mdm_1_0/MicroBlazeIPBlock_mdm_1_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_mdm_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_clk_wiz_1_0/MicroBlazeIPBlock_clk_wiz_1_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_clk_wiz_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_microblaze_0_axi_intc_0/MicroBlazeIPBlock_microblaze_0_axi_intc_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_microblaze_0_axi_intc_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_lmb_bram_0/MicroBlazeIPBlock_lmb_bram_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_lmb_bram_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_xbar_0/MicroBlazeIPBlock_xbar_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_axi_uart16550_0_0/MicroBlazeIPBlock_axi_uart16550_0_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_axi_uart16550_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_axi_gpio_0_0/MicroBlazeIPBlock_axi_gpio_0_0.xci">
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_axi_gpio_0_0\MicroBlazeIPBlock_axi_gpio_0_0.xci">
           <Proxy FileSetName="MicroBlazeIPBlock_axi_gpio_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_dlmb_v10_0/MicroBlazeIPBlock_dlmb_v10_0.xci">
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_axi_uart16550_0_0\MicroBlazeIPBlock_axi_uart16550_0_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_axi_uart16550_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_clk_wiz_1_0\MicroBlazeIPBlock_clk_wiz_1_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_clk_wiz_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_dlmb_bram_if_cntlr_0\MicroBlazeIPBlock_dlmb_bram_if_cntlr_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_dlmb_v10_0\MicroBlazeIPBlock_dlmb_v10_0.xci">
           <Proxy FileSetName="MicroBlazeIPBlock_dlmb_v10_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0.xci">
-          <Proxy FileSetName="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0"/>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_ilmb_bram_if_cntlr_0\MicroBlazeIPBlock_ilmb_bram_if_cntlr_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_ilmb_v10_0\MicroBlazeIPBlock_ilmb_v10_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_ilmb_v10_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_lmb_bram_0\MicroBlazeIPBlock_lmb_bram_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_lmb_bram_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_mdm_1_0\MicroBlazeIPBlock_mdm_1_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_mdm_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_microblaze_0_0\MicroBlazeIPBlock_microblaze_0_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_microblaze_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_microblaze_0_axi_intc_0\MicroBlazeIPBlock_microblaze_0_axi_intc_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_microblaze_0_axi_intc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0\MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_reset_inv_0_0\MicroBlazeIPBlock_reset_inv_0_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_reset_inv_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MicroBlazeIPBlock.bd" FileRelPathName="ip\MicroBlazeIPBlock_rst_clk_wiz_1_100M_0\MicroBlazeIPBlock_rst_clk_wiz_1_100M_0.xci">
+          <Proxy FileSetName="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/MicroBlazeIPBlock/hdl/MicroBlazeIPBlock_wrapper.v">
@@ -153,6 +168,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
+      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="MicroBlazeIPBlock_wrapper"/>
@@ -166,6 +182,18 @@
         <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
         <Option Name="PamPseudoTop" Val="pseudo_tb"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="CosimPdi" Val=""/>
+        <Option Name="CosimPlatform" Val=""/>
+        <Option Name="CosimElf" Val=""/>
+        <Option Name="CosimRootfs" Val=""/>
+        <Option Name="CosimSDfile" Val=""/>
+        <Option Name="CosimSDDir" Val=""/>
+        <Option Name="CosimOutDir" Val=""/>
+        <Option Name="CosimXsa" Val=""/>
+        <Option Name="CosimAIKernel" Val=""/>
+        <Option Name="LogicalNoCTop" Val=""/>
+        <Option Name="LogicalNoCTopLib" Val=""/>
+        <Option Name="Dmv" Val=""/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
@@ -174,21 +202,51 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
-    <FileSet Name="MicroBlazeIPBlock_ilmb_v10_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_ilmb_v10_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_ilmb_v10_0">
-      <Config>
-        <Option Name="TopModule" Val="MicroBlazeIPBlock_ilmb_v10_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="MicroBlazeIPBlock_microblaze_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_microblaze_0_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_microblaze_0_0">
       <Config>
         <Option Name="TopModule" Val="MicroBlazeIPBlock_microblaze_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="MicroBlazeIPBlock_reset_inv_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_reset_inv_0_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_reset_inv_0_0">
+    <FileSet Name="MicroBlazeIPBlock_microblaze_0_axi_intc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_microblaze_0_axi_intc_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_microblaze_0_axi_intc_0">
       <Config>
-        <Option Name="TopModule" Val="MicroBlazeIPBlock_reset_inv_0_0"/>
+        <Option Name="TopModule" Val="MicroBlazeIPBlock_microblaze_0_axi_intc_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0">
+      <Config>
+        <Option Name="TopModule" Val="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0">
+      <Config>
+        <Option Name="TopModule" Val="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MicroBlazeIPBlock_lmb_bram_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_lmb_bram_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_lmb_bram_0">
+      <Config>
+        <Option Name="TopModule" Val="MicroBlazeIPBlock_lmb_bram_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MicroBlazeIPBlock_dlmb_v10_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_dlmb_v10_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_dlmb_v10_0">
+      <Config>
+        <Option Name="TopModule" Val="MicroBlazeIPBlock_dlmb_v10_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MicroBlazeIPBlock_ilmb_v10_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_ilmb_v10_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_ilmb_v10_0">
+      <Config>
+        <Option Name="TopModule" Val="MicroBlazeIPBlock_ilmb_v10_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MicroBlazeIPBlock_axi_uart16550_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_axi_uart16550_0_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_axi_uart16550_0_0">
+      <Config>
+        <Option Name="TopModule" Val="MicroBlazeIPBlock_axi_uart16550_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -204,39 +262,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="MicroBlazeIPBlock_reset_inv_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_reset_inv_0_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_reset_inv_0_0">
+      <Config>
+        <Option Name="TopModule" Val="MicroBlazeIPBlock_reset_inv_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="MicroBlazeIPBlock_clk_wiz_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_clk_wiz_1_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_clk_wiz_1_0">
       <Config>
         <Option Name="TopModule" Val="MicroBlazeIPBlock_clk_wiz_1_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MicroBlazeIPBlock_microblaze_0_axi_intc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_microblaze_0_axi_intc_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_microblaze_0_axi_intc_0">
-      <Config>
-        <Option Name="TopModule" Val="MicroBlazeIPBlock_microblaze_0_axi_intc_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MicroBlazeIPBlock_lmb_bram_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_lmb_bram_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_lmb_bram_0">
-      <Config>
-        <Option Name="TopModule" Val="MicroBlazeIPBlock_lmb_bram_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MicroBlazeIPBlock_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_xbar_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_xbar_0">
-      <Config>
-        <Option Name="TopModule" Val="MicroBlazeIPBlock_xbar_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0">
-      <Config>
-        <Option Name="TopModule" Val="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MicroBlazeIPBlock_axi_uart16550_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_axi_uart16550_0_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_axi_uart16550_0_0">
-      <Config>
-        <Option Name="TopModule" Val="MicroBlazeIPBlock_axi_uart16550_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -246,15 +280,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="MicroBlazeIPBlock_dlmb_v10_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_dlmb_v10_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_dlmb_v10_0">
+    <FileSet Name="MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0">
       <Config>
-        <Option Name="TopModule" Val="MicroBlazeIPBlock_dlmb_v10_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" RelGenDir="$PGENDIR/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0">
-      <Config>
-        <Option Name="TopModule" Val="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0"/>
+        <Option Name="TopModule" Val="MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -277,12 +305,10 @@
       <Option Name="Description" Val="Active-HDL Simulator"/>
     </Simulator>
   </Simulators>
-  <Runs Version="1" Minor="15">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1">
+  <Runs Version="1" Minor="22">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -290,179 +316,151 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_ilmb_v10_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_ilmb_v10_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_ilmb_v10_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_ilmb_v10_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_v10_0_synth_1">
+    <Run Id="MicroBlazeIPBlock_microblaze_0_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_microblaze_0_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_microblaze_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_microblaze_0_axi_intc_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_microblaze_0_axi_intc_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_axi_intc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_microblaze_0_axi_intc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_intc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_intc_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_lmb_bram_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_lmb_bram_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_lmb_bram_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_lmb_bram_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_lmb_bram_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_lmb_bram_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_dlmb_v10_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_dlmb_v10_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_dlmb_v10_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_dlmb_v10_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_v10_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_v10_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_ilmb_v10_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_ilmb_v10_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_ilmb_v10_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_ilmb_v10_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_v10_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_v10_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_axi_uart16550_0_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_axi_uart16550_0_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_axi_uart16550_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_axi_uart16550_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_uart16550_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_uart16550_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_mdm_1_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_mdm_1_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_mdm_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_mdm_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_mdm_1_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_mdm_1_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_reset_inv_0_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_reset_inv_0_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_reset_inv_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_reset_inv_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_reset_inv_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_reset_inv_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_clk_wiz_1_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_clk_wiz_1_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_clk_wiz_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_clk_wiz_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_clk_wiz_1_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_clk_wiz_1_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_axi_gpio_0_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_axi_gpio_0_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_axi_gpio_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_axi_gpio_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_gpio_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_gpio_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
         </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_microblaze_0_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_microblaze_0_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_microblaze_0_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_0_synth_1">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 32 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_reset_inv_0_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_reset_inv_0_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_reset_inv_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_reset_inv_0_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_reset_inv_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_mdm_1_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_mdm_1_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_mdm_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_mdm_1_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_mdm_1_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_clk_wiz_1_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_clk_wiz_1_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_clk_wiz_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_clk_wiz_1_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_clk_wiz_1_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_microblaze_0_axi_intc_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_microblaze_0_axi_intc_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_axi_intc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_microblaze_0_axi_intc_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_intc_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_lmb_bram_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_lmb_bram_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_lmb_bram_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_lmb_bram_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_lmb_bram_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_xbar_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_xbar_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_xbar_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_axi_uart16550_0_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_axi_uart16550_0_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_axi_uart16550_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_axi_uart16550_0_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_uart16550_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_axi_gpio_0_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_axi_gpio_0_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_axi_gpio_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_axi_gpio_0_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_gpio_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_dlmb_v10_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_dlmb_v10_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_dlmb_v10_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_dlmb_v10_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_v10_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -478,11 +476,9 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_ilmb_v10_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_ilmb_v10_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_ilmb_v10_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_v10_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_microblaze_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_microblaze_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -493,15 +489,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_microblaze_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_microblaze_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_microblaze_0_axi_intc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_axi_intc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_microblaze_0_axi_intc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_intc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_intc_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -512,15 +506,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_reset_inv_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_reset_inv_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_reset_inv_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_reset_inv_0_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -531,15 +523,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -550,15 +540,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_mdm_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_mdm_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_mdm_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_mdm_1_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_lmb_bram_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_lmb_bram_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_lmb_bram_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_lmb_bram_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_lmb_bram_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -569,15 +557,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_clk_wiz_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_clk_wiz_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_clk_wiz_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_clk_wiz_1_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_dlmb_v10_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_dlmb_v10_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_dlmb_v10_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_v10_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_v10_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -588,15 +574,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_microblaze_0_axi_intc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_axi_intc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_microblaze_0_axi_intc_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_intc_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_ilmb_v10_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_ilmb_v10_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_ilmb_v10_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_v10_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_v10_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -607,15 +591,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_lmb_bram_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_lmb_bram_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_lmb_bram_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_lmb_bram_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_axi_uart16550_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_axi_uart16550_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_axi_uart16550_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_uart16550_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_uart16550_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -626,15 +608,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_xbar_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_xbar_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_rst_clk_wiz_1_100M_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -645,15 +625,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_ilmb_bram_if_cntlr_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_mdm_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_mdm_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_mdm_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_mdm_1_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_mdm_1_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -664,15 +642,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_axi_uart16550_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_axi_uart16550_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_axi_uart16550_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_uart16550_0_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_reset_inv_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_reset_inv_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_reset_inv_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_reset_inv_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_reset_inv_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -683,15 +659,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_axi_gpio_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_axi_gpio_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_axi_gpio_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_gpio_0_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_clk_wiz_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_clk_wiz_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_clk_wiz_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_clk_wiz_1_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_clk_wiz_1_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -702,15 +676,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_dlmb_v10_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_dlmb_v10_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_dlmb_v10_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_v10_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_axi_gpio_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_axi_gpio_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_axi_gpio_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_gpio_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_axi_gpio_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -721,13 +693,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_dlmb_bram_if_cntlr_0_impl_1">
+    <Run Id="MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>
         </StratHandle>
         <Step Id="init_design"/>
@@ -740,7 +712,7 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>

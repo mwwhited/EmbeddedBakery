@@ -1,21 +1,21 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
-// of Xilinx, Inc. and is protected under U.S. and
-// international copyright and other intellectual property
-// laws.
+// of AMD and is protected under U.S. and international copyright
+// and other intellectual property laws.
 // 
 // DISCLAIMER
 // This disclaimer is not a license and does not grant any
 // rights to the materials distributed herewith. Except as
 // otherwise provided in a valid license issued to you by
-// Xilinx, and to the maximum extent permitted by applicable
+// AMD, and to the maximum extent permitted by applicable
 // law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
-// WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+// WITH ALL FAULTS, AND AMD HEREBY DISCLAIMS ALL WARRANTIES
 // AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
 // BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
 // INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
-// (2) Xilinx shall not be liable (whether in contract or tort,
+// (2) AMD shall not be liable (whether in contract or tort,
 // including negligence, or under any other theory of
 // liability) for any loss or damage of any kind or nature
 // related to, arising under or in connection with these
@@ -24,11 +24,11 @@
 // (including loss of data, profits, goodwill, or any type of
 // loss or damage suffered as a result of any action brought
 // by a third party) even if such damage or loss was
-// reasonably foreseeable or Xilinx had been advised of the
+// reasonably foreseeable or AMD had been advised of the
 // possibility of the same.
 // 
 // CRITICAL APPLICATIONS
-// Xilinx products are not designed or intended to be fail-
+// AMD products are not designed or intended to be fail-
 // safe, or for use in any application requiring fail-safe
 // performance, such as life-support or safety devices or
 // systems, Class III medical devices, nuclear facilities,
@@ -37,7 +37,7 @@
 // injury, or severe property or environmental damage
 // (individually and collectively, "Critical
 // Applications"). Customer assumes the sole risk and
-// liability of any use of Xilinx products in Critical
+// liability of any use of AMD products in Critical
 // Applications, subject only to applicable laws and
 // regulations governing limitations on product liability.
 // 
@@ -47,9 +47,9 @@
 // DO NOT MODIFY THIS FILE.
 
 
-#include "MicroBlazeIPBlock_xbar_0_sc.h"
+#include "MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_sc.h"
 
-#include "MicroBlazeIPBlock_xbar_0.h"
+#include "MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0.h"
 
 #include "axi_crossbar.h"
 
@@ -61,7 +61,7 @@
 
 
 #ifdef XILINX_SIMULATOR
-MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_xbar_0_sc(nm), aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
+MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_sc(nm), aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
 {
 
   // initialize pins
@@ -334,11 +334,11 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
 
 }
 
-void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
+void MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::before_end_of_elaboration()
 {
   // configure 'S00_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "S00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "S00_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -444,7 +444,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
   // configure 'M00_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M00_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -469,8 +469,8 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
     M00_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M00_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M00_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M00_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M00_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M00_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -577,7 +577,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
   // configure 'M01_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M01_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M01_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -602,8 +602,8 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
     M01_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M01_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M01_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M01_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M01_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M01_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -710,7 +710,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
   // configure 'M02_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M02_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M02_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -735,8 +735,8 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
     M02_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M02_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M02_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M02_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M02_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M02_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -849,7 +849,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
 
 #ifdef XM_SYSTEMC
-MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_xbar_0_sc(nm), aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
+MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_sc(nm), aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
 {
 
   // initialize pins
@@ -1122,11 +1122,11 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
 
 }
 
-void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
+void MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::before_end_of_elaboration()
 {
   // configure 'S00_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "S00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "S00_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -1232,7 +1232,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
   // configure 'M00_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M00_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -1257,8 +1257,8 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
     M00_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M00_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M00_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M00_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M00_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M00_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -1365,7 +1365,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
   // configure 'M01_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M01_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M01_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -1390,8 +1390,8 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
     M01_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M01_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M01_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M01_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M01_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M01_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -1498,7 +1498,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
   // configure 'M02_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M02_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M02_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -1523,8 +1523,8 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
     M02_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M02_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M02_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M02_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M02_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M02_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -1637,7 +1637,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
 
 #ifdef RIVIERA
-MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_xbar_0_sc(nm), aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
+MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_sc(nm), aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
 {
 
   // initialize pins
@@ -1910,11 +1910,11 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
 
 }
 
-void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
+void MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::before_end_of_elaboration()
 {
   // configure 'S00_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "S00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "S00_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -2020,7 +2020,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
   // configure 'M00_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M00_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -2045,8 +2045,8 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
     M00_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M00_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M00_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M00_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M00_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M00_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -2153,7 +2153,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
   // configure 'M01_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M01_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M01_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -2178,8 +2178,8 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
     M01_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M01_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M01_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M01_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M01_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M01_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -2286,7 +2286,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
   // configure 'M02_AXI' transactor
 
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M02_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M02_AXI_TLM_MODE") != 1)
   {
     // Instantiate Socket Stubs
 
@@ -2311,8 +2311,8 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
     M02_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M02_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M02_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M02_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M02_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M02_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -2425,7 +2425,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
 
 #ifdef VCSSYSTEMC
-MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_xbar_0_sc(nm),  aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
+MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_sc(nm),  aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
 {
   // initialize pins
   mp_impl->aclk(aclk);
@@ -2635,8 +2635,8 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
     M00_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M00_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M00_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M00_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M00_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M00_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -2825,8 +2825,8 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
     M01_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M01_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M01_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M01_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M01_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M01_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -2985,8 +2985,8 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
     M02_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M02_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M02_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M02_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M02_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M02_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -3137,10 +3137,10 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
 
 }
 
-void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
+void MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::before_end_of_elaboration()
 {
   // configure 'S00_AXI' transactor
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "S00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "S00_AXI_TLM_MODE") != 1)
   {
     mp_impl->target_0_rd_socket->bind(*(mp_S00_AXI_transactor->rd_socket));
     mp_impl->target_0_wr_socket->bind(*(mp_S00_AXI_transactor->wr_socket));
@@ -3156,7 +3156,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
   }
 
   // configure 'M00_AXI' transactor
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M00_AXI_TLM_MODE") != 1)
   {
     mp_impl->initiator_0_rd_socket->bind(*(mp_M00_AXI_transactor->rd_socket));
     mp_impl->initiator_0_wr_socket->bind(*(mp_M00_AXI_transactor->wr_socket));
@@ -3172,7 +3172,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
   }
 
   // configure 'M01_AXI' transactor
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M01_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M01_AXI_TLM_MODE") != 1)
   {
     mp_impl->initiator_1_rd_socket->bind(*(mp_M01_AXI_transactor->rd_socket));
     mp_impl->initiator_1_wr_socket->bind(*(mp_M01_AXI_transactor->wr_socket));
@@ -3188,7 +3188,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
   }
 
   // configure 'M02_AXI' transactor
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M02_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M02_AXI_TLM_MODE") != 1)
   {
     mp_impl->initiator_2_rd_socket->bind(*(mp_M02_AXI_transactor->rd_socket));
     mp_impl->initiator_2_wr_socket->bind(*(mp_M02_AXI_transactor->wr_socket));
@@ -3211,7 +3211,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
 
 #ifdef MTI_SYSTEMC
-MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_xbar_0_sc(nm),  aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
+MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0(const sc_core::sc_module_name& nm) : MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0_sc(nm),  aclk("aclk"), aresetn("aresetn"), s_axi_awaddr("s_axi_awaddr"), s_axi_awprot("s_axi_awprot"), s_axi_awvalid("s_axi_awvalid"), s_axi_awready("s_axi_awready"), s_axi_wdata("s_axi_wdata"), s_axi_wstrb("s_axi_wstrb"), s_axi_wvalid("s_axi_wvalid"), s_axi_wready("s_axi_wready"), s_axi_bresp("s_axi_bresp"), s_axi_bvalid("s_axi_bvalid"), s_axi_bready("s_axi_bready"), s_axi_araddr("s_axi_araddr"), s_axi_arprot("s_axi_arprot"), s_axi_arvalid("s_axi_arvalid"), s_axi_arready("s_axi_arready"), s_axi_rdata("s_axi_rdata"), s_axi_rresp("s_axi_rresp"), s_axi_rvalid("s_axi_rvalid"), s_axi_rready("s_axi_rready"), m_axi_awaddr("m_axi_awaddr"), m_axi_awprot("m_axi_awprot"), m_axi_awvalid("m_axi_awvalid"), m_axi_awready("m_axi_awready"), m_axi_wdata("m_axi_wdata"), m_axi_wstrb("m_axi_wstrb"), m_axi_wvalid("m_axi_wvalid"), m_axi_wready("m_axi_wready"), m_axi_bresp("m_axi_bresp"), m_axi_bvalid("m_axi_bvalid"), m_axi_bready("m_axi_bready"), m_axi_araddr("m_axi_araddr"), m_axi_arprot("m_axi_arprot"), m_axi_arvalid("m_axi_arvalid"), m_axi_arready("m_axi_arready"), m_axi_rdata("m_axi_rdata"), m_axi_rresp("m_axi_rresp"), m_axi_rvalid("m_axi_rvalid"), m_axi_rready("m_axi_rready")
 {
   // initialize pins
   mp_impl->aclk(aclk);
@@ -3421,8 +3421,8 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
     M00_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M00_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M00_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M00_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M00_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M00_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M00_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M00_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -3611,8 +3611,8 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
     M01_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M01_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M01_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M01_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M01_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M01_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M01_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M01_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -3771,8 +3771,8 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
     M02_AXI_transactor_param_props.addLong("HAS_BRESP", "1");
     M02_AXI_transactor_param_props.addLong("HAS_RRESP", "1");
     M02_AXI_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
-    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "2");
-    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "2");
+    M02_AXI_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "1");
+    M02_AXI_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "1");
     M02_AXI_transactor_param_props.addLong("MAX_BURST_LENGTH", "1");
     M02_AXI_transactor_param_props.addLong("NUM_READ_THREADS", "1");
     M02_AXI_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
@@ -3923,10 +3923,10 @@ MicroBlazeIPBlock_xbar_0::MicroBlazeIPBlock_xbar_0(const sc_core::sc_module_name
 
 }
 
-void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
+void MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::before_end_of_elaboration()
 {
   // configure 'S00_AXI' transactor
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "S00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "S00_AXI_TLM_MODE") != 1)
   {
     mp_impl->target_0_rd_socket->bind(*(mp_S00_AXI_transactor->rd_socket));
     mp_impl->target_0_wr_socket->bind(*(mp_S00_AXI_transactor->wr_socket));
@@ -3942,7 +3942,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
   }
 
   // configure 'M00_AXI' transactor
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M00_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M00_AXI_TLM_MODE") != 1)
   {
     mp_impl->initiator_0_rd_socket->bind(*(mp_M00_AXI_transactor->rd_socket));
     mp_impl->initiator_0_wr_socket->bind(*(mp_M00_AXI_transactor->wr_socket));
@@ -3958,7 +3958,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
   }
 
   // configure 'M01_AXI' transactor
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M01_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M01_AXI_TLM_MODE") != 1)
   {
     mp_impl->initiator_1_rd_socket->bind(*(mp_M01_AXI_transactor->rd_socket));
     mp_impl->initiator_1_wr_socket->bind(*(mp_M01_AXI_transactor->wr_socket));
@@ -3974,7 +3974,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
   }
 
   // configure 'M02_AXI' transactor
-  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_xbar_0", "M02_AXI_TLM_MODE") != 1)
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0", "M02_AXI_TLM_MODE") != 1)
   {
     mp_impl->initiator_2_rd_socket->bind(*(mp_M02_AXI_transactor->rd_socket));
     mp_impl->initiator_2_wr_socket->bind(*(mp_M02_AXI_transactor->wr_socket));
@@ -3996,7 +3996,7 @@ void MicroBlazeIPBlock_xbar_0::before_end_of_elaboration()
 
 
 
-MicroBlazeIPBlock_xbar_0::~MicroBlazeIPBlock_xbar_0()
+MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0::~MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0()
 {
   delete mp_S00_AXI_transactor;
   delete mp_s_axi_awvalid_converter;
@@ -4095,15 +4095,15 @@ MicroBlazeIPBlock_xbar_0::~MicroBlazeIPBlock_xbar_0()
 }
 
 #ifdef MTI_SYSTEMC
-SC_MODULE_EXPORT(MicroBlazeIPBlock_xbar_0);
+SC_MODULE_EXPORT(MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0);
 #endif
 
 #ifdef XM_SYSTEMC
-XMSC_MODULE_EXPORT(MicroBlazeIPBlock_xbar_0);
+XMSC_MODULE_EXPORT(MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0);
 #endif
 
 #ifdef RIVIERA
-SC_MODULE_EXPORT(MicroBlazeIPBlock_xbar_0);
+SC_MODULE_EXPORT(MicroBlazeIPBlock_microblaze_0_axi_periph_imp_xbar_0);
 SC_REGISTER_BV(96);
 #endif
 

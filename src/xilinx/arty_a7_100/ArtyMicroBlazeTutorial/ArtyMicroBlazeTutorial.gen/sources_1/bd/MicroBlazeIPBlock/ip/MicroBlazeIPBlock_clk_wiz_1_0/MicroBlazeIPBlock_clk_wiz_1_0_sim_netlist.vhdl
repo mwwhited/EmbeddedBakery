@@ -1,10 +1,11 @@
--- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Tue Mar  9 23:40:12 2021
--- Host        : EvengerBook running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+-- Date        : Fri Dec  5 20:38:32 2025
+-- Host        : AGIMUS running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Repos/mwwhited/EmbeddedBakery/src/xilinx/arty_a7_100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_clk_wiz_1_0/MicroBlazeIPBlock_clk_wiz_1_0_sim_netlist.vhdl
+--               c:/repo/a7100/ArtyMicroBlazeTutorial/ArtyMicroBlazeTutorial.gen/sources_1/bd/MicroBlazeIPBlock/ip/MicroBlazeIPBlock_clk_wiz_1_0/MicroBlazeIPBlock_clk_wiz_1_0_sim_netlist.vhdl
 -- Design      : MicroBlazeIPBlock_clk_wiz_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +15,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz is
+entity MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
     reset : in STD_LOGIC;
@@ -22,12 +23,11 @@ entity MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz is
     clk_in1_p : in STD_LOGIC;
     clk_in1_n : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz : entity is "MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz";
-end MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz;
+end MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz;
 
-architecture STRUCTURE of MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz is
+architecture STRUCTURE of MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz is
   signal clk_in1_MicroBlazeIPBlock_clk_wiz_1_0 : STD_LOGIC;
+  signal clk_in1_MicroBlazeIPBlock_clk_wiz_1_0_buf : STD_LOGIC;
   signal clk_out1_MicroBlazeIPBlock_clk_wiz_1_0 : STD_LOGIC;
   signal clkfbout_MicroBlazeIPBlock_clk_wiz_1_0 : STD_LOGIC;
   signal clkfbout_buf_MicroBlazeIPBlock_clk_wiz_1_0 : STD_LOGIC;
@@ -49,6 +49,7 @@ architecture STRUCTURE of MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wi
   signal NLW_mmcm_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of clkf_buf : label is "PRIMITIVE";
+  attribute BOX_TYPE of clkin1_bufg1 : label is "PRIMITIVE";
   attribute BOX_TYPE of clkin1_ibufgds : label is "PRIMITIVE";
   attribute CAPACITANCE : string;
   attribute CAPACITANCE of clkin1_ibufgds : label is "DONT_CARE";
@@ -64,6 +65,11 @@ clkf_buf: unisim.vcomponents.BUFG
       I => clkfbout_MicroBlazeIPBlock_clk_wiz_1_0,
       O => clkfbout_buf_MicroBlazeIPBlock_clk_wiz_1_0
     );
+clkin1_bufg1: unisim.vcomponents.BUFG
+     port map (
+      I => clk_in1_MicroBlazeIPBlock_clk_wiz_1_0_buf,
+      O => clk_in1_MicroBlazeIPBlock_clk_wiz_1_0
+    );
 clkin1_ibufgds: unisim.vcomponents.IBUFDS
     generic map(
       IOSTANDARD => "DEFAULT"
@@ -71,7 +77,7 @@ clkin1_ibufgds: unisim.vcomponents.IBUFDS
         port map (
       I => clk_in1_p,
       IB => clk_in1_n,
-      O => clk_in1_MicroBlazeIPBlock_clk_wiz_1_0
+      O => clk_in1_MicroBlazeIPBlock_clk_wiz_1_0_buf
     );
 clkout1_buf: unisim.vcomponents.BUFG
      port map (
@@ -115,7 +121,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT6_DUTY_CYCLE => 0.500000,
       CLKOUT6_PHASE => 0.000000,
       CLKOUT6_USE_FINE_PS => false,
-      COMPENSATION => "ZHOLD",
+      COMPENSATION => "BUF_IN",
       DIVCLK_DIVIDE => 1,
       IS_CLKINSEL_INVERTED => '0',
       IS_PSEN_INVERTED => '0',
@@ -183,7 +189,7 @@ end MicroBlazeIPBlock_clk_wiz_1_0;
 
 architecture STRUCTURE of MicroBlazeIPBlock_clk_wiz_1_0 is
 begin
-inst: entity work.MicroBlazeIPBlock_clk_wiz_1_0_MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz
+inst: entity work.MicroBlazeIPBlock_clk_wiz_1_0_clk_wiz
      port map (
       clk_in1_n => clk_in1_n,
       clk_in1_p => clk_in1_p,
