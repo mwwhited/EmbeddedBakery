@@ -2,6 +2,8 @@
 
 ## Summary
 
+WiFi/Ethernet relay controller using ESP8266 with ENC28J60 Ethernet module. Controls an 8-channel relay module via web interface.
+
 ## Required Devices
 
 * [Nodemcu ESP8266](https://www.nodemcu.com/index_en.html)
