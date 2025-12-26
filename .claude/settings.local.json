@@ -1,7 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(du:*)",
+      "WebSearch",
+      "WebFetch(domain:wiki.lynxmotion.com)",
+      "WebFetch(domain:forums.parallax.com)",
+      "WebFetch(domain:www.lynxmotion.com)",
+      "WebFetch(domain:community.robotshop.com)",
+      "WebFetch(domain:web.archive.org)"
     ],
     "deny": [],
     "ask": []

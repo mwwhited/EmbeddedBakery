@@ -75,3 +75,12 @@ kibot -c docs.kibot.yaml
 - **FPGA**: Xilinx Artix-7, Zynq-7020, Altera Cyclone II, XC9500 CPLD
 - **PCB Design**: KiCad with custom symbols (`circuits/MyCustomSymbols.kicad_sym`) and footprints (`circuits/MyCustomLibrary.pretty/`)
 - **HDL**: VHDL and Verilog for FPGA designs
+
+## Style Guide
+
+Follow the formatting conventions defined in `STYLEGUIDE.md`. Key requirements:
+
+- **Markdown tables**: Align all vertical bars (`|`) for human readability
+- **Pin mappings**: Use fixed-width table format with aligned columns
+- **ASCII diagrams**: Use consistent monospace spacing for chip pinouts
+- **File headers**: Include project name, author, version, and date
