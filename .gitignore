@@ -349,7 +349,6 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-
 # Ignore list for KiCAD Projects
 
 /circuits/**/*-backups
@@ -373,3 +372,6 @@ MigrationBackup/
 /circuits/**/*.dsn
 /circuits/**/*.ses
 /circuits/**/production
+
+*.pdf
+*_tmp.html
