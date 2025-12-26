@@ -2,189 +2,121 @@
  * Phase 1 AI - Obstacle Avoidance Robot
  * Converted from Basic Stamp 2 to ATtiny2313
  * Original by Matthew Whited - v0.1 - 12/29/2001
- * ATtiny2313 port - 2025
+ *
+ * This is a direct port of the original PBASIC code.
+ * See Phase2 for a modern refactored version.
  *
  * Hardware:
  *   - Lynxmotion IRPD (IR Proximity Detector)
  *   - Dual Mini H-Bridge motor driver
  *   - Status LED
- *
- * Pin Mapping (ATtiny2313):
- *   PD2 - IRPD Left LED control (output)
- *   PD3 - IRPD Right LED control (output)
- *   PD4 - IRPD Signal input (input)
- *   PD5 - H-Bridge B1 (left motor)
- *   PD6 - H-Bridge B2 (left motor)
- *   PB0 - H-Bridge A1 (right motor)
- *   PB1 - H-Bridge A2 (right motor)
- *   PB2 - Status LED
  */
 
 #include <avr/io.h>
 #include <util/delay.h>
 
-/* Pin definitions */
-#define IRPD_LEFT_LED   PD2
-#define IRPD_RIGHT_LED  PD3
-#define IRPD_SIGNAL     PD4
+/* Pin Definitions (accent accent accent match original BS2 wiring) */
+#define IRPD_LEFT_LED   PD2   /* BS2 Pin 0 */
+#define IRPD_RIGHT_LED  PD3   /* BS2 Pin 1 */
+#define IRPD_SIGNAL     PD4   /* BS2 Pin 2 */
+#define MOTOR_LEFT_B1   PD5   /* BS2 Pin 3 */
+#define MOTOR_LEFT_B2   PD6   /* BS2 Pin 4 */
+#define MOTOR_RIGHT_A1  PB0   /* BS2 Pin 5 */
+#define MOTOR_RIGHT_A2  PB1   /* BS2 Pin 6 */
+#define STATUS_LED      PB2   /* BS2 Pin 7 */
 
-#define MOTOR_LEFT_B1   PD5
-#define MOTOR_LEFT_B2   PD6
-#define MOTOR_RIGHT_A1  PB0
-#define MOTOR_RIGHT_A2  PB1
-
-#define STATUS_LED      PB2
-
-/* Helper macros */
-#define SET_HIGH(port, pin)   ((port) |= (1 << (pin)))
-#define SET_LOW(port, pin)    ((port) &= ~(1 << (pin)))
-#define READ_PIN(pinreg, pin) ((pinreg) & (1 << (pin)))
-
-/* Motor control functions */
-static void motor_forward(void)
-{
-    /* Left motor forward: B1=LOW, B2=HIGH */
-    SET_LOW(PORTD, MOTOR_LEFT_B1);
-    SET_HIGH(PORTD, MOTOR_LEFT_B2);
-
-    /* Right motor forward: A1=HIGH, A2=LOW */
-    SET_HIGH(PORTB, MOTOR_RIGHT_A1);
-    SET_LOW(PORTB, MOTOR_RIGHT_A2);
-
-    /* Status LED off */
-    SET_LOW(PORTB, STATUS_LED);
-}
-
-static void motor_turn_right(void)
-{
-    /* Left motor forward: B1=LOW, B2=HIGH */
-    SET_LOW(PORTD, MOTOR_LEFT_B1);
-    SET_HIGH(PORTD, MOTOR_LEFT_B2);
-
-    /* Right motor backward: A1=LOW, A2=HIGH */
-    SET_LOW(PORTB, MOTOR_RIGHT_A1);
-    SET_HIGH(PORTB, MOTOR_RIGHT_A2);
-
-    /* Status LED off */
-    SET_LOW(PORTB, STATUS_LED);
-}
-
-static void motor_turn_left(void)
-{
-    /* Left motor backward: B1=HIGH, B2=LOW */
-    SET_HIGH(PORTD, MOTOR_LEFT_B1);
-    SET_LOW(PORTD, MOTOR_LEFT_B2);
-
-    /* Right motor forward: A1=HIGH, A2=LOW */
-    SET_HIGH(PORTB, MOTOR_RIGHT_A1);
-    SET_LOW(PORTB, MOTOR_RIGHT_A2);
-
-    /* Status LED off */
-    SET_LOW(PORTB, STATUS_LED);
-}
-
-static void motor_backup(void)
-{
-    /* Left motor backward: B1=HIGH, B2=LOW */
-    SET_HIGH(PORTD, MOTOR_LEFT_B1);
-    SET_LOW(PORTD, MOTOR_LEFT_B2);
-
-    /* Right motor backward: A1=LOW, A2=HIGH */
-    SET_LOW(PORTB, MOTOR_RIGHT_A1);
-    SET_HIGH(PORTB, MOTOR_RIGHT_A2);
-
-    /* Status LED on (indicates backup) */
-    SET_HIGH(PORTB, STATUS_LED);
-}
-
-/*
- * Read IRPD sensor
- * The IRPD works by pulsing an IR LED and reading the detector.
- * Pulse sequence: HIGH 5ms, LOW 5ms, HIGH 5ms, then read.
- * Returns 1 if clear (no obstacle), 0 if obstacle detected.
- */
+/* Read IRPD sensor - pulse LED and read detector */
 static uint8_t read_irpd(uint8_t led_pin)
 {
     uint8_t result;
 
-    /* Pulse sequence for IRPD */
-    SET_HIGH(PORTD, led_pin);
+    PORTD |= (1 << led_pin);   /* HIGH */
     _delay_ms(5);
-    SET_LOW(PORTD, led_pin);
+    PORTD &= ~(1 << led_pin);  /* LOW */
     _delay_ms(5);
-    SET_HIGH(PORTD, led_pin);
+    PORTD |= (1 << led_pin);   /* HIGH */
     _delay_ms(5);
 
-    /* Read detector signal */
-    result = READ_PIN(PIND, IRPD_SIGNAL) ? 1 : 0;
+    result = (PIND & (1 << IRPD_SIGNAL)) ? 1 : 0;
 
-    /* Turn off LED */
-    SET_LOW(PORTD, led_pin);
+    PORTD &= ~(1 << led_pin);  /* LOW */
 
     return result;
 }
 
-static void init_ports(void)
+/* Motor: Forward */
+static void forward(void)
 {
-    /* PORTD: PD2, PD3, PD5, PD6 as outputs; PD4 as input */
-    DDRD = (1 << IRPD_LEFT_LED) | (1 << IRPD_RIGHT_LED) |
-           (1 << MOTOR_LEFT_B1) | (1 << MOTOR_LEFT_B2);
-    PORTD = 0;
+    PORTD &= ~(1 << MOTOR_LEFT_B1);   /* LOW 3 */
+    PORTB &= ~(1 << MOTOR_RIGHT_A2);  /* LOW 6 */
+    PORTB |= (1 << MOTOR_RIGHT_A1);   /* HIGH 5 */
+    PORTD |= (1 << MOTOR_LEFT_B2);    /* HIGH 4 */
+    PORTB &= ~(1 << STATUS_LED);      /* LOW 7 */
+}
 
-    /* PORTB: PB0, PB1, PB2 as outputs */
-    DDRB = (1 << MOTOR_RIGHT_A1) | (1 << MOTOR_RIGHT_A2) | (1 << STATUS_LED);
-    PORTB = 0;
+/* Motor: Turn Right */
+static void turn_r(void)
+{
+    PORTD &= ~(1 << MOTOR_LEFT_B1);   /* LOW 3 */
+    PORTB &= ~(1 << MOTOR_RIGHT_A1);  /* LOW 5 */
+    PORTD |= (1 << MOTOR_LEFT_B2);    /* HIGH 4 */
+    PORTB |= (1 << MOTOR_RIGHT_A2);   /* HIGH 6 */
+    PORTB &= ~(1 << STATUS_LED);      /* LOW 7 */
+}
+
+/* Motor: Turn Left */
+static void turn_l(void)
+{
+    PORTD &= ~(1 << MOTOR_LEFT_B2);   /* LOW 4 */
+    PORTB &= ~(1 << MOTOR_RIGHT_A2);  /* LOW 6 */
+    PORTD |= (1 << MOTOR_LEFT_B1);    /* HIGH 3 */
+    PORTB |= (1 << MOTOR_RIGHT_A1);   /* HIGH 5 */
+    PORTB &= ~(1 << STATUS_LED);      /* LOW 7 */
+}
+
+/* Motor: Backup */
+static void backup(void)
+{
+    PORTD &= ~(1 << MOTOR_LEFT_B2);   /* LOW 4 */
+    PORTB &= ~(1 << MOTOR_RIGHT_A1);  /* LOW 5 */
+    PORTD |= (1 << MOTOR_LEFT_B1);    /* HIGH 3 */
+    PORTB |= (1 << MOTOR_RIGHT_A2);   /* HIGH 6 */
+    PORTB |= (1 << STATUS_LED);       /* HIGH 7 */
 }
 
 int main(void)
 {
-    uint8_t temp_left, temp_right;
-    uint8_t action;
+    uint8_t templ, tempr, action;
 
-    init_ports();
+    /* Configure outputs */
+    DDRD = (1 << IRPD_LEFT_LED) | (1 << IRPD_RIGHT_LED) |
+           (1 << MOTOR_LEFT_B1) | (1 << MOTOR_LEFT_B2);
+    DDRB = (1 << MOTOR_RIGHT_A1) | (1 << MOTOR_RIGHT_A2) | (1 << STATUS_LED);
 
-    /* Initial delay (1 second) */
+    /* Initial delay */
     _delay_ms(1000);
 
+    /* Main loop */
     while (1) {
-        /* Main loop delay */
         _delay_ms(750);
 
         /* Test right sensor */
-        temp_right = read_irpd(IRPD_RIGHT_LED);
+        tempr = read_irpd(IRPD_RIGHT_LED);
 
         /* Test left sensor */
-        temp_left = read_irpd(IRPD_LEFT_LED);
+        templ = read_irpd(IRPD_LEFT_LED);
 
-        /*
-         * Calculate action based on sensor readings:
-         * temp_left=1, temp_right=1: both clear -> action=0 -> forward
-         * temp_left=0, temp_right=1: left obstacle -> action=1 -> turn right
-         * temp_left=1, temp_right=0: right obstacle -> action=2 -> turn left
-         * temp_left=0, temp_right=0: both obstacle -> action=3 -> backup
-         */
+        /* Calculate action (matches original BS2 logic) */
         action = 0;
-        if (temp_left == 0) {
-            action += 1;
-        }
-        if (temp_right == 0) {
-            action += 2;
-        }
+        if (templ == 0) action += 1;
+        if (tempr == 0) action += 2;
 
+        /* Execute action */
         switch (action) {
-            case 0:
-                motor_forward();
-                break;
-            case 1:
-                motor_turn_right();
-                break;
-            case 2:
-                motor_turn_left();
-                break;
-            case 3:
-            default:
-                motor_backup();
-                break;
+            case 0: forward(); break;
+            case 1: turn_r();  break;
+            case 2: turn_l();  break;
+            case 3: backup();  break;
         }
     }
 
