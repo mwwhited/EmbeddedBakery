@@ -10,7 +10,12 @@
       "WebFetch(domain:forums.parallax.com)",
       "WebFetch(domain:www.lynxmotion.com)",
       "WebFetch(domain:community.robotshop.com)",
-      "WebFetch(domain:web.archive.org)"
+      "WebFetch(domain:web.archive.org)",
+      "WebFetch(domain:leap.tardate.com)",
+      "WebFetch(domain:www.electricalelibrary.com)",
+      "WebFetch(domain:www.elecrow.com)",
+      "WebFetch(domain:www.icstation.com)",
+      "WebFetch(domain:www.instructables.com)"
     ],
     "deny": [],
     "ask": []
