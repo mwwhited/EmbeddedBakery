@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CircuitGroup Version="1.2">
+  <Circuit Name="Half Adder">
+    <Gates>
+      <Gate Type="And" Name="And" ID="1" NumInputs="2">
+        <Point X="672" Y="128" Angle="0" />
+      </Gate>
+      <Gate Type="Xor" Name="Xor" ID="2">
+        <Point X="672" Y="192" Angle="0" />
+      </Gate>
+      <Gate Type="UserInput" Name="A" ID="3">
+        <Point X="480" Y="96" Angle="0" />
+      </Gate>
+      <Gate Type="UserInput" Name="B" ID="4">
+        <Point X="480" Y="224" Angle="0" />
+      </Gate>
+      <Gate Type="UserOutput" Name="Cout" ID="5">
+        <Point X="864" Y="96" Angle="0" />
+      </Gate>
+      <Gate Type="UserOutput" Name="S" ID="6">
+        <Point X="864" Y="224" Angle="0" />
+      </Gate>
+    </Gates>
+    <Wires>
+      <Wire>
+        <From ID="4" Port="0" />
+        <To ID="1" Port="0" />
+      </Wire>
+      <Wire>
+        <From ID="3" Port="0" />
+        <To ID="1" Port="1" />
+      </Wire>
+      <Wire>
+        <From ID="4" Port="0" />
+        <To ID="2" Port="0" />
+      </Wire>
+      <Wire>
+        <From ID="3" Port="0" />
+        <To ID="2" Port="1" />
+      </Wire>
+      <Wire>
+        <From ID="1" Port="0" />
+        <To ID="5" Port="0" />
+      </Wire>
+      <Wire>
+        <From ID="2" Port="0" />
+        <To ID="6" Port="0" />
+      </Wire>
+    </Wires>
+  </Circuit>
+  <Circuit Name="Full Adder">
+    <Gates>
+      <Gate Type="IC" Name="Half Adder" ID="1">
+        <Point X="576" Y="160" Angle="0" />
+      </Gate>
+      <Gate Type="IC" Name="Half Adder" ID="2">
+        <Point X="717.33333333333348" Y="225.3333333333334" Angle="0" />
+      </Gate>
+      <Gate Type="UserInput" Name="A" ID="3">
+        <Point X="416" Y="128" Angle="0" />
+      </Gate>
+      <Gate Type="UserInput" Name="B" ID="4">
+        <Point X="416" Y="192" Angle="0" />
+      </Gate>
+      <Gate Type="UserInput" Name="Cin" ID="5">
+        <Point X="416" Y="256" Angle="0" />
+      </Gate>
+      <Gate Type="UserOutput" Name="Cout" ID="6">
+        <Point X="992" Y="160" Angle="0" />
+      </Gate>
+      <Gate Type="UserOutput" Name="S" ID="7">
+        <Point X="992" Y="224" Angle="0" />
+      </Gate>
+      <Gate Type="Or" Name="Or" ID="8" NumInputs="2">
+        <Point X="864" Y="160" Angle="0" />
+      </Gate>
+    </Gates>
+    <Wires>
+      <Wire>
+        <From ID="3" Port="0" />
+        <To ID="1" Port="0" />
+      </Wire>
+      <Wire>
+        <From ID="4" Port="0" />
+        <To ID="1" Port="1" />
+      </Wire>
+      <Wire>
+        <From ID="1" Port="1" />
+        <To ID="2" Port="0" />
+      </Wire>
+      <Wire>
+        <From ID="5" Port="0" />
+        <To ID="2" Port="1" />
+      </Wire>
+      <Wire>
+        <From ID="8" Port="0" />
+        <To ID="6" Port="0" />
+      </Wire>
+      <Wire>
+        <From ID="2" Port="1" />
+        <To ID="7" Port="0" />
+      </Wire>
+      <Wire>
+        <From ID="2" Port="0" />
+        <To ID="8" Port="0" />
+      </Wire>
+      <Wire>
+        <From ID="1" Port="0" />
+        <To ID="8" Port="1" />
+      </Wire>
+    </Wires>
+  </Circuit>
+</CircuitGroup>

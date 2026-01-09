@@ -1,0 +1,10 @@
+Bill of Materials for:
+C:\Documents and Settings\Administrator\My Documents\portfolio\circuitmaker\calculator\4bit_adder.BOM
+
+Item	Count	Label-Value	Attributes		Designation
+1	1			SIP4			A
+2	1			SIP4			B
+3	1	5V		(none)			Cin
+4	4	74LS86		DIP14			U1,U3,U5,U6
+5	3	74LS08		DIP14			U2,U4,U7
+6	1	4050		DIP16			U8
