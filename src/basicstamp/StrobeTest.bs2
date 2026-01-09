@@ -1,0 +1,21 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+Strobe     PIN 8
+
+IsOn       CON 1
+IsOff      CON 0
+
+TimeOn     CON 500
+TimeOff    CON 250
+
+Reset:
+    Strobe = IsOff
+    OUTPUT    Strobe
+
+Main:
+  Strobe = IsOn
+  PAUSE TimeOn
+  Strobe = IsOff
+  PAUSE TimeOff
+  GOTO Main
