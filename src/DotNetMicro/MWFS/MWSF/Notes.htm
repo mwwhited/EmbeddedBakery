@@ -1,0 +1,229 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <table width='100%' border='1' style='text-align: center;'>
+        <tr style='font-weight: bold;'>
+            <td colspan='33'>
+                File Block
+            </td>
+        </tr>
+        <tr>
+        <td width='*'>&nbsp;</td>
+        <td width='3%'>0-0</td>
+        <td width='3%'>0-1</td>
+        <td width='3%'>0-2</td>
+        <td width='3%'>0-3</td>
+        <td width='3%'>0-4</td>
+        <td width='3%'>0-5</td>
+        <td width='3%'>0-6</td>
+        <td width='3%'>0-7</td>
+        <td width='3%'>1-0</td>
+        <td width='3%'>1-1</td>
+        <td width='3%'>1-2</td>
+        <td width='3%'>1-3</td>
+        <td width='3%'>1-4</td>
+        <td width='3%'>1-5</td>
+        <td width='3%'>1-6</td>
+        <td width='3%'>1-7</td>
+        <td width='3%'>2-0</td>
+        <td width='3%'>2-1</td>
+        <td width='3%'>2-2</td>
+        <td width='3%'>2-3</td>
+        <td width='3%'>2-4</td>
+        <td width='3%'>2-5</td>
+        <td width='3%'>2-6</td>
+        <td width='3%'>2-7</td>
+        <td width='3%'>3-0</td>
+        <td width='3%'>3-1</td>
+        <td width='3%'>3-2</td>
+        <td width='3%'>3-3</td>
+        <td width='3%'>3-4</td>
+        <td width='3%'>3-5</td>
+        <td width='3%'>3-6</td>
+        <td width='3%'>3-7</td>
+        </tr>
+        <tr style='font-weight: bold;'>
+            <td>
+                B/B
+            </td>
+            <td colspan='8'>
+                Byte 0
+            </td>
+            <td colspan='8'>
+                Byte 1
+            </td>
+            <td colspan='8'>
+                Byte 2
+            </td>
+            <td colspan='8'>
+                Byte 3
+            </td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                0
+            </td>
+            <td colspan='32'>
+                File ID (From FAT)
+            </td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                1
+            </td>
+            <td colspan='32'>
+                Previous Block
+            </td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                2
+            </td>
+            <td colspan='32'>
+                Next Block
+            </td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                3
+            </td>
+            <td colspan='23'>
+                Reserved
+            </td>
+            <td colspan='9'>
+                Length
+            </td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                4:127
+            </td>
+            <td colspan='8'>
+                0
+            </td>
+            <td colspan='8'>
+                1
+            </td>
+            <td colspan='8'>
+                2
+            </td>
+            <td colspan='8'>
+                3
+            </td>
+        </tr>
+    </table>
+    <hr />
+    <table width='100%' border='1' style='text-align: center;'>
+        <tr style='font-weight: bold;'>
+            <td colspan='33'>
+                Boot Block
+            </td>
+        </tr>
+                <tr>
+        <td width='*'>&nbsp;</td>
+        <td width='3%'>0-0</td>
+        <td width='3%'>0-1</td>
+        <td width='3%'>0-2</td>
+        <td width='3%'>0-3</td>
+        <td width='3%'>0-4</td>
+        <td width='3%'>0-5</td>
+        <td width='3%'>0-6</td>
+        <td width='3%'>0-7</td>
+        <td width='3%'>1-0</td>
+        <td width='3%'>1-1</td>
+        <td width='3%'>1-2</td>
+        <td width='3%'>1-3</td>
+        <td width='3%'>1-4</td>
+        <td width='3%'>1-5</td>
+        <td width='3%'>1-6</td>
+        <td width='3%'>1-7</td>
+        <td width='3%'>2-0</td>
+        <td width='3%'>2-1</td>
+        <td width='3%'>2-2</td>
+        <td width='3%'>2-3</td>
+        <td width='3%'>2-4</td>
+        <td width='3%'>2-5</td>
+        <td width='3%'>2-6</td>
+        <td width='3%'>2-7</td>
+        <td width='3%'>3-0</td>
+        <td width='3%'>3-1</td>
+        <td width='3%'>3-2</td>
+        <td width='3%'>3-3</td>
+        <td width='3%'>3-4</td>
+        <td width='3%'>3-5</td>
+        <td width='3%'>3-6</td>
+        <td width='3%'>3-7</td>
+        </tr>
+        <tr style='font-weight: bold;'>
+            <td>
+                B/B
+            </td>
+            <td colspan='8'>
+                Byte 0
+            </td>
+            <td colspan='8'>
+                Byte 1
+            </td>
+            <td colspan='8'>
+                Byte 2
+            </td>
+            <td colspan='8'>
+                Byte 3
+            </td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                0
+            </td>
+            <td colspan='32'>
+                Boot File ID
+            </td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                1
+            </td>
+            <td colspan='8'>
+                Version
+            </td>
+            <td colspan='19'>Reserved</td>
+            <td colspan='5'>Length</td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                2
+            </td>
+            <td colspan='8'>
+                M (0x4D)
+            </td>
+            <td colspan='8'>
+                W (0x57)
+            </td>
+            <td colspan='8'>
+                F (0x46)
+            </td>
+            <td colspan='8'>
+                S (0x53)
+            </td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                0
+            </td>
+            <td colspan='32'>
+                Disk ID
+            </td>
+        </tr>
+        <tr>
+            <td style='font-weight: bold;'>
+                                4:31</td>
+            <td colspan='32'>
+                Reserved
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

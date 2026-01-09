@@ -1,0 +1,12 @@
+﻿<p:Window xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:p="clr-namespace:Microsoft.SPOT.Presentation;assembly=Microsoft.SPOT.TinyCore"
+          xmlns="clr-namespace:Microsoft.SPOT.Presentation.Controls;assembly=Microsoft.SPOT.TinyCore"
+          Width="320" Height="240" Background="Blue" Foreground="White">
+  <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+    <Text x:Name="FullName" TextAlignment="Center" Font="small">FullName</Text>
+    <Text x:Name="FileAs" TextAlignment="Center" Font="small">FileAs</Text>
+    <Text x:Name="HomeTelephoneNumber" TextAlignment="Center" Font="small">HomeTelephoneNumber</Text>
+    <Text x:Name="MobileTelephoneNumber" TextAlignment="Center" Font="small">MobileTelephoneNumber</Text>
+    <Text x:Name="BusinessTelephoneNumber" TextAlignment="Center" Font="small">BusinessTelephoneNumber</Text>
+  </StackPanel>
+</p:Window>

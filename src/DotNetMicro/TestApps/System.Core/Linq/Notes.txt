@@ -1,0 +1,1 @@
+﻿http://blogs.oberon.ch/tamberg/2009-02-06/implementing-linq-on-the-dotnet-mf.html

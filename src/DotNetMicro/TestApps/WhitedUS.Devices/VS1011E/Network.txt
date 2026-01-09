@@ -1,0 +1,67 @@
+﻿
+#if NETWORK
+            AR1010.Instance.Disable();
+            VS1011e.Enable();
+            bool isLoaded = false;
+            using (var deStream = new FiFoBlock())
+            {
+                Debug.Print("Network Thread");
+                new Thread(new ThreadStart(delegate()
+                {
+                    try
+                    {
+                        //In_Too_Deep track06 wordup
+                        HttpStream.SendToStream("http://192.168.2.110/track06.mp3", deStream);
+                        isLoaded = true;
+                        Debug.Print("Loaded from Network");
+                    }
+                    catch (Exception)
+                    {
+                        isLoaded = true;
+                        Debug.Print("could not load from network");
+                    }
+                })).Start();
+
+                Debug.Print("Buffering...");
+                var lstDwn = 0L;
+                while (deStream.Length < 1024 * 1024 && !isLoaded)
+                {
+                    if (lstDwn != deStream.Length)
+                    {
+                        lstDwn = deStream.Length;
+                        Debug.Print("Downloaded: " + lstDwn.ToString());
+                    }
+                    Thread.Sleep(100);
+                }
+
+                new Thread(new ThreadStart(delegate
+                {
+                    while (!isLoaded)
+                    {
+                        Thread.Sleep(500);
+                        deStream.TruncateBefore();
+                    }
+                })).Start();
+
+                Debug.Print("start play");
+                deStream.Seek(0, SeekOrigin.Begin);
+                int bufferSize = 0;
+                const int STREAMSIZE = 32;
+                byte[] bufferData = new byte[STREAMSIZE];
+                int sent = 0;
+
+                VS1011e.SetVolume(255,255);
+
+                while (true)
+                {
+                    bufferSize = deStream.Read(bufferData, 0, STREAMSIZE);
+                    VS1011e.Write(bufferData, 0, bufferSize);
+                    sent += bufferSize;
+
+                    //if (sent % 1024 == 0)
+                    //Thread.Sleep(1);
+
+                    if (bufferSize < 0 && isLoaded) break;
+                }
+            }
+#endif

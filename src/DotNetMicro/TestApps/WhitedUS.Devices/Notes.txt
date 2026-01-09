@@ -1,0 +1,34 @@
+﻿== I2C Addresses ==
+	0x10 //  FM Radio    -   AR1010
+	0x1D //  Tahoe II    -   MMA7455
+	0x3f //  Tahoe II    -   
+	0x68 //  RTC         -   DS1307
+
+== GPIO Pins and Uses ==
+	I2C Bus
+		SDA			=>	Meridian.Pins.I2C_SDA
+		SCL			=>	Meridian.Pins.I2C_SCL
+		
+	SPI Bus
+		MOSI		=>	Meridian.Pins.SPI_MOSI
+		MISO		=>	Meridian.Pins.SPI_MISO
+		SCLK		=>	Meridian.Pins.SPI_SCLK
+		
+	-- SPI Devices --
+	VS1011e
+		Reset		=>	Meridian.Pins.TIN
+		DREQ		=>	Meridian.Pins.SPI_RDY
+		BSync		=>	Meridian.Pins.GPIO10
+		CS			=>	Meridian.Pins.TMR2OUT
+		
+	Build-In SD Card
+		CS			=>	Meridian.Pins.GPIO15
+		CardDetect	=>	Meridian.Pins.GPIO12
+		WriteProtect=>	Meridian.Pins.GPIO13
+		
+	Add-on SD Card
+		CS			=>	Meridian.Pins.SPI_SS
+		
+	Built-In Ethernet
+		CS			=>	Meridian.Pins.REV
+		Interrupt	=>	Meridian.Pins.CLS

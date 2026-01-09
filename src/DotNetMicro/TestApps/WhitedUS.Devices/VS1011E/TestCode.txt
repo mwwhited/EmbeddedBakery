@@ -1,0 +1,87 @@
+﻿            try
+            {
+                //Select the volume for the SD card
+                var v = VolumeInfo.GetVolumes()
+                    .Where(p => ((VolumeInfo)p).Name == "SD1")
+                    .FirstOrDefault() as VolumeInfo;
+                if (v != null)
+                {
+                    /*
+                     * Even if the SD card becomes corrupt it typically makes it to here
+                     * but it is no longer able to list files so the next part returns null
+                     */
+                    //Select first MP3 file in the root directory of SD card
+                    var file = Directory.GetFiles(v.RootDirectory)
+                        .Where(f => ((string)f).IndexOf(".mp3") > 0)
+                        .FirstOrDefault() as string;
+
+                    Debug.Print("file: " + (file ?? string.Empty));
+
+                    if (file != null && File.Exists(file))
+                    {
+                        //this is a SPI device that uses the pins listed below
+                        //PIN_DREQ 	= Meridian.Pins.SPI_RDY;<= Data Ready
+                        //PIN_RST 	= Meridian.Pins.TIN; 	<= Hardware Reset
+                        //PIN_BSYNC = Meridian.Pins.GPIO10; <= Data Clip Select
+                        //PIN_CS 	= Meridian.Pins.TMR2OUT;<= Control Clip Select
+                        VS1011e.Enable();           //control spi message (initialize device) 
+                        VS1011e.Reset();            //control spi message (make sure device is ready)
+                        VS1011e.SetVolume(21);      //control spi message (set volume to max)
+                        const int bufferSize = 512;
+                        const int packetLen = 32;
+                        var buffer = new byte[bufferSize];
+                        var bufferLen = bufferSize;
+                        using (var fs = File.OpenRead(file))
+                        {
+                            /*
+                             * this loop is where the SD Card become corrupt
+                             */
+                            while (bufferLen > 0)
+                            {
+                                bufferLen = fs.Read(buffer, 0, bufferSize);
+                                Debug.Print("bufferLen: " + bufferLen.ToString());
+                                if (buffer.Length > 0)
+                                    for (int i = 0; i < bufferSize; i += packetLen)
+                                        /*
+                                         * this method really just checked to make sure the device 
+                                         * is ready as well as checks that the is no longer than 32 
+                                         * bytes before sending using the SPI.
+                                         */
+                                        VS1011e.Write(buffer, i, packetLen);    //data spi message
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Debug.Print("no mp3 files found");
+                    }
+                }
+                else
+                {
+                    Debug.Print("SD1 not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.ToString());
+            }
+
+            ///* this is the method that VS1011e.Write() uses to call the SPI Bus */
+            //private SPI _slaveDevice;
+            //public void Write(SPI.Configuration config, ushort[] writeBuffer)
+            //{
+            //    _slaveDevice.Config = config;
+            //    lock (_slaveDevice)
+            //    {
+            //        _slaveDevice.Write(writeBuffer);
+            //    }
+            //}
+
+            //public void WriteRead(SPI.Configuration config, byte[] writeBuffer, byte[] readBuffer)
+            //{
+            //    _slaveDevice.Config = config;
+            //    lock (_slaveDevice)
+            //    {
+            //        _slaveDevice.WriteRead(writeBuffer, readBuffer);
+            //    }
+            //}

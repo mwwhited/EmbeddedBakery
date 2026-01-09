@@ -1,0 +1,30 @@
+﻿<p:Window xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:p="clr-namespace:Microsoft.SPOT.Presentation;assembly=Microsoft.SPOT.TinyCore"
+          xmlns="clr-namespace:Microsoft.SPOT.Presentation.Controls;assembly=Microsoft.SPOT.TinyCore"
+          Width="320" Height="240" Background="Gray">
+  <StackPanel x:Name="reportPanel" Orientation="Vertical" VerticalAlignment="Center" Width="320">
+    <Text x:Name="title" TextAlignment="Center" Font="small">Yahoo weather</Text>
+    <Text x:Name="location" TextAlignment="Center" Font="small" >City, State - Country</Text>
+    <Text x:Name="temperature" TextAlignment="Center" Font="small" >63 F</Text>
+    <Text x:Name="wind" TextAlignment="Center" Font="small" >5 mph</Text>
+    <Text x:Name="astronomy" TextAlignment="Center" Font="small" >sunrise sunset</Text>
+    <Text x:Name="condition" TextAlignment="Center" Font="small" >cloudy</Text>
+    <Image x:Name="icon" HorizontalAlignment="Center" Bitmap="Broken" />
+    <ListBox x:Name="forcast" Width="320" HorizontalAlignment="Center">
+      <ListBoxItem Width="320">
+        <Text TextAlignment="Center" Font="small" >forcast</Text>
+        <!--<StackPanel Width="320" Orientation="Horizontal">
+          <Text TextAlignment="Center" Font="small" >forcast2</Text>
+          <Image HorizontalAlignment="Center" Bitmap="Broken" Height="24" Width="24"  />
+        </StackPanel>-->
+      </ListBoxItem>
+      <ListBoxItem Width="320">
+        <Text TextAlignment="Center" Font="small" >forcast</Text>
+        <!--<StackPanel Width="320" Orientation="Horizontal">
+          <Text TextAlignment="Center" Font="small" >forcast2</Text>
+          <Image HorizontalAlignment="Center" Bitmap="Broken" Height="24" Width="24"  />
+        </StackPanel>-->
+      </ListBoxItem>
+    </ListBox>
+  </StackPanel>
+</p:Window>

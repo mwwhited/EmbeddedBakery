@@ -1,0 +1,33 @@
+﻿#if MicroSD
+            var d = CD17B10.Instance;
+
+            var t = new byte[] { 10 }.ToUInt();
+
+            try
+            {
+                //Debug.Print("IC Version: " + d.ICVersion.ToString());
+                //Debug.Print("FW Version: " + d.FWVersion.ToString());
+                //Debug.Print("Current Time: " + d.Time.ToString());
+
+                var vid = d.Mount();
+                //Debug.Print("VolumeID: " + vid.ToString());
+                //Debug.Print("FreeSectorCount: " + d.FreeSectorCount.ToString());
+
+                //var mdRet = d.MakeDirectory("log", false);
+                var cdRet = d.ChangeDirectory("log");
+                var size = d.Open(false, "test2.txt", 0);
+                var prea = d.WritePreallocate(0, 1024);
+                // the write is not working
+                var wBuffer = Encoding.UTF8.GetBytes("say Hello");
+                var retW1 = d.Write(0, wBuffer, (uint)(wBuffer.Length));
+                wBuffer = Encoding.UTF8.GetBytes(" to the World!");
+                var retW2 = d.Write(0, wBuffer, (uint)14);
+                var retC = d.Close(0);
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+
+            return;
+#endif

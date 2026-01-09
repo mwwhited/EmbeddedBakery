@@ -1,0 +1,11 @@
+﻿<p:Window xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:p="clr-namespace:Microsoft.SPOT.Presentation;assembly=Microsoft.SPOT.TinyCore"
+          xmlns="clr-namespace:Microsoft.SPOT.Presentation.Controls;assembly=Microsoft.SPOT.TinyCore"
+          Width="320" Height="240" Background="Green">
+  <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+    <Text x:Name="Subject" TextAlignment="Center" Font="small">Subject</Text>
+    <Text x:Name="StartTime" TextAlignment="Center" Font="small">Start</Text>
+    <Text x:Name="EndTime" TextAlignment="Center" Font="small">End</Text>
+    <Text x:Name="Body" TextAlignment="Center" Font="small">Body</Text>
+  </StackPanel>
+</p:Window>

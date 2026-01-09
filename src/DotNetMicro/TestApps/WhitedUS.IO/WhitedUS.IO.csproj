@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <AssemblyName>WhitedUS.IO</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WhitedUS.IO</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA713024-3B01-4566-863C-310ABA7F002B}</ProjectGuid>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UseMySPIBus_</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;UseMySPIBus_</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="DEBlock.cs" />
+    <Compile Include="FiFoBlock.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="I2CBus.cs" />
+    <Compile Include="I2CSlaveDevice.cs" />
+    <Compile Include="ISPIBus.cs" />
+    <Compile Include="Linq\ValueConverters.cs" />
+    <None Include="MySPIBus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPIBus.cs" />
+    <Compile Include="SPISlaveDevice.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DeviceSolutions.SPOT.Hardware.Meridian, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DeviceSolutions.SPOT.Hardware.TahoeII, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SPOT.Hardware" />
+    <Reference Include="Microsoft.SPOT.IO" />
+    <Reference Include="Microsoft.SPOT.Native" />
+    <Reference Include="Microsoft.SPOT.Net" />
+    <Reference Include="System" />
+    <Reference Include="System.IO" />
+    <Reference Include="System.Net.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\System.Core\System.Core.csproj">
+      <Project>{33D49C41-F17A-4C30-B6F9-7562A91776D4}</Project>
+      <Name>System.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

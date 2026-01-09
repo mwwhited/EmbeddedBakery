@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MWSF", "MWSF\MWSF.csproj", "{56433F72-F70E-4DC7-8E45-8F9E82D940B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhitedUS.MWFS", "WhitedUS.MWFS\WhitedUS.MWFS.csproj", "{8069C6B4-01C6-4BCE-9A21-E11C39F7127C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56433F72-F70E-4DC7-8E45-8F9E82D940B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56433F72-F70E-4DC7-8E45-8F9E82D940B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56433F72-F70E-4DC7-8E45-8F9E82D940B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56433F72-F70E-4DC7-8E45-8F9E82D940B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8069C6B4-01C6-4BCE-9A21-E11C39F7127C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8069C6B4-01C6-4BCE-9A21-E11C39F7127C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8069C6B4-01C6-4BCE-9A21-E11C39F7127C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8069C6B4-01C6-4BCE-9A21-E11C39F7127C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

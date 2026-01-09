@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFWindowApplicationHelloWorld", "MFWindowApplicationHelloWorld\MFWindowApplicationHelloWorld.csproj", "{47BE5C61-3028-4929-AB0E-3E3888A9204F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFEmulator1", "MFEmulator1\MFEmulator1.csproj", "{C4EDD449-9EFA-4F72-A6D3-F2C7BE30F651}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelloWorld", "ConsoleHelloWorld\ConsoleHelloWorld.csproj", "{4F0F23AB-CD73-4755-B702-4186DDEF24CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFTetris", "MFTetris\MFTetris.csproj", "{F27AB498-C5CD-429B-88EA-ACEAAD98AEAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47BE5C61-3028-4929-AB0E-3E3888A9204F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47BE5C61-3028-4929-AB0E-3E3888A9204F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47BE5C61-3028-4929-AB0E-3E3888A9204F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{47BE5C61-3028-4929-AB0E-3E3888A9204F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47BE5C61-3028-4929-AB0E-3E3888A9204F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47BE5C61-3028-4929-AB0E-3E3888A9204F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C4EDD449-9EFA-4F72-A6D3-F2C7BE30F651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4EDD449-9EFA-4F72-A6D3-F2C7BE30F651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4EDD449-9EFA-4F72-A6D3-F2C7BE30F651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4EDD449-9EFA-4F72-A6D3-F2C7BE30F651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F0F23AB-CD73-4755-B702-4186DDEF24CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F0F23AB-CD73-4755-B702-4186DDEF24CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F0F23AB-CD73-4755-B702-4186DDEF24CA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4F0F23AB-CD73-4755-B702-4186DDEF24CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F0F23AB-CD73-4755-B702-4186DDEF24CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F0F23AB-CD73-4755-B702-4186DDEF24CA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F27AB498-C5CD-429B-88EA-ACEAAD98AEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27AB498-C5CD-429B-88EA-ACEAAD98AEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27AB498-C5CD-429B-88EA-ACEAAD98AEAA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F27AB498-C5CD-429B-88EA-ACEAAD98AEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27AB498-C5CD-429B-88EA-ACEAAD98AEAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27AB498-C5CD-429B-88EA-ACEAAD98AEAA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

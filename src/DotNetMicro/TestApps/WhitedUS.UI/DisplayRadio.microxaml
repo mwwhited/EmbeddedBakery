@@ -1,0 +1,12 @@
+﻿<p:Window xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:p="clr-namespace:Microsoft.SPOT.Presentation;assembly=Microsoft.SPOT.TinyCore"
+          xmlns="clr-namespace:Microsoft.SPOT.Presentation.Controls;assembly=Microsoft.SPOT.TinyCore"
+          Width="320" Height="240" Background="Yellow">
+  <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+    <Text TextAlignment="Center" Font="small">FM Radio (AR1010/I2C)</Text>
+    <Text x:Name="station" TextAlignment="Center" Font="small">station</Text>
+    <Text x:Name="volume" TextAlignment="Center" Font="small">volume</Text>
+    <Text x:Name="signal" TextAlignment="Center" Font="small">signal</Text>
+    <Text x:Name="channel" TextAlignment="Center" Font="small">channel</Text>
+  </StackPanel>
+</p:Window>
